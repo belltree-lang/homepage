@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>べるフィット | やさしい医療フィットネス</title>
+    <title>べるフィット | 医療発想のメディカルフィットネス</title>
     <meta
       name="description"
-      content="60代女性のための、やさしい医療フィットネス。おしゃべりから始まる、無理のない運動習慣。"
+      content="べるフィットは、医療発想でからだを整える日本のメディカルフィットネス。上質で落ち着いた空間で、無理なく続く健康習慣を支えます。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,186 +22,302 @@
             colors: {
               primaryBlue: '#1F4E79',
               hoverBlue: '#163A5A',
-              brownAccent: '#6B3E2E',
+              accentBrown: '#6B3E2E',
               softBg: '#F5F7FA',
+              warmTint: '#EEF2F6',
               pureWhite: '#FFFFFF'
             },
             fontFamily: {
               sans: ['Noto Sans JP', 'sans-serif']
             },
-            borderRadius: {
-              xl: '12px',
-              '2xl': '16px'
+            maxWidth: {
+              premium: '1100px'
+            },
+            boxShadow: {
+              subtle: '0 10px 30px rgba(22, 58, 90, 0.08)',
+              button: '0 8px 18px rgba(31, 78, 121, 0.24)'
             }
           }
         }
       };
     </script>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+        background: #f5f7fa;
+        color: #233241;
+        line-height: 1.9;
+        letter-spacing: 0.01em;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(180deg, #ffffff 0%, #f2f6fb 52%, #eef2f6 100%);
+      }
+
+      .section-line {
+        width: 76px;
+        height: 1px;
+        background: rgba(107, 62, 46, 0.52);
+      }
+
+      .premium-card {
+        border-radius: 16px;
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      }
+
+      .premium-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(22, 58, 90, 0.1);
+      }
+
+      .cta-btn {
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .cta-btn:hover {
+        transform: scale(1.03);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.45s ease, opacity 0.3s ease, margin-top 0.3s ease;
+      }
+
+      .faq-item.open .faq-answer {
+        max-height: 240px;
+        opacity: 1;
+        margin-top: 0.75rem;
+      }
+
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+      }
+    </style>
   </head>
-  <body class="bg-softBg text-slate-800 antialiased">
-    <header class="sticky top-0 z-50 border-b border-slate-200 bg-pureWhite/95 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="#top" class="text-xl font-bold tracking-wide text-primaryBlue sm:text-2xl">べるフィット</a>
+  <body>
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur-md">
+      <div class="mx-auto flex w-full max-w-premium items-center justify-between px-5 py-4 lg:px-8">
+        <a href="#top" class="text-[1.45rem] font-semibold tracking-[0.14em] text-primaryBlue">べるフィット</a>
+        <nav class="hidden items-center gap-8 text-[1rem] text-slate-700 md:flex">
+          <a class="transition hover:text-primaryBlue" href="#philosophy">理念</a>
+          <a class="transition hover:text-primaryBlue" href="#program">プログラム</a>
+          <a class="transition hover:text-primaryBlue" href="#faq">FAQ</a>
+        </nav>
         <a
-          href="tel:000-0000-0000"
-          class="rounded-xl bg-primaryBlue px-4 py-3 text-base font-medium text-pureWhite transition hover:bg-hoverBlue focus:outline-none focus:ring-4 focus:ring-primaryBlue/30 sm:px-5"
-          aria-label="お電話でお問い合わせ"
-          >お電話はこちら</a
+          href="#contact"
+          class="cta-btn rounded-2xl bg-primaryBlue px-5 py-3 text-[1rem] font-medium text-white shadow-button hover:bg-hoverBlue"
+          >体験相談</a
         >
       </div>
     </header>
 
     <main id="top">
-      <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
-        <div class="rounded-2xl bg-pureWhite p-8 shadow-sm sm:p-10 lg:p-14">
-          <p class="mb-5 text-base font-medium text-brownAccent">やさしい医療フィットネス</p>
-          <h1 class="mb-6 text-3xl font-bold leading-relaxed text-primaryBlue sm:text-4xl lg:text-5xl">
-            この先も、自分の脚で歩いていくために。
-          </h1>
-          <p class="mb-4 text-xl font-medium leading-relaxed text-slate-700 sm:text-2xl">
-            でも、今日はやる気ゼロでも大丈夫です。
-          </p>
-          <p class="mb-8 max-w-3xl text-lg leading-loose text-slate-600 sm:text-xl">
-            60代女性のための、やさしい医療フィットネス。おしゃべりから始まる、無理のない運動習慣。
-          </p>
-          <div class="flex flex-col gap-4 sm:flex-row">
-            <a
-              href="tel:000-0000-0000"
-              class="inline-flex min-h-12 items-center justify-center rounded-xl bg-primaryBlue px-7 py-4 text-lg font-medium text-pureWhite transition hover:bg-hoverBlue focus:outline-none focus:ring-4 focus:ring-primaryBlue/30"
-              >お電話で体験予約</a
-            >
-            <a
-              href="#contact"
-              class="inline-flex min-h-12 items-center justify-center rounded-xl border-2 border-primaryBlue bg-pureWhite px-7 py-4 text-lg font-medium text-primaryBlue transition hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-primaryBlue/20"
-              >フォームから予約</a
-            >
+      <section class="hero-gradient py-24">
+        <div class="mx-auto grid w-full max-w-premium items-center gap-12 px-5 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+          <div>
+            <p class="mb-5 text-[0.95rem] font-medium tracking-[0.15em] text-accentBrown">MEDICAL FITNESS FOR WELL AGING</p>
+            <h1 class="text-[2.2rem] font-semibold leading-[1.45] tracking-[0.08em] text-primaryBlue sm:text-[2.8rem]">
+              穏やかに、確かに。
+              <br />
+              医療発想で整える、
+              <br class="hidden sm:block" />
+              新しい日常。
+            </h1>
+            <p class="mt-7 max-w-xl text-[1.05rem] text-slate-700 sm:text-[1.16rem]">
+              べるフィットは、身体機能の維持と回復を目的に設計された、
+              メディカルフィットネスブランド。静けさと温かさを両立した上質な環境で、
+              一人ひとりに無理のない運動習慣を提供します。
+            </p>
+            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#contact"
+                class="cta-btn inline-flex items-center justify-center rounded-2xl bg-primaryBlue px-8 py-4 text-[1.02rem] font-medium text-white shadow-button hover:bg-hoverBlue"
+                >初回カウンセリングを予約</a
+              >
+              <a
+                href="#program"
+                class="cta-btn inline-flex items-center justify-center rounded-2xl border border-accentBrown px-8 py-4 text-[1.02rem] font-medium text-accentBrown hover:bg-accentBrown/5"
+                >プログラムを見る</a
+              >
+            </div>
+          </div>
+
+          <div class="premium-card relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-subtle">
+            <div class="absolute inset-0 bg-gradient-to-br from-primaryBlue/5 via-transparent to-accentBrown/10"></div>
+            <div class="relative">
+              <div class="mb-5 h-40 rounded-2xl bg-gradient-to-r from-[#dfe8f2] to-[#e9dfd9]"></div>
+              <h2 class="text-[1.22rem] font-semibold text-primaryBlue">臨床知見に基づく設計</h2>
+              <p class="mt-3 text-[1rem] text-slate-700">
+                姿勢・可動域・バランスを丁寧に評価し、当日の体調に合わせて負荷を調整。
+                速さより、継続できる質を重視します。
+              </p>
+              <div class="mt-6 section-line"></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="bg-softBg py-14 sm:py-16">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-          <div class="rounded-2xl bg-pureWhite p-8 sm:p-10">
-            <h2 class="mb-6 text-2xl font-bold text-primaryBlue sm:text-3xl">こんなお悩みありませんか？</h2>
-            <ul class="space-y-4 text-lg leading-relaxed sm:text-xl">
-              <li class="rounded-xl bg-softBg px-5 py-4">最近、階段がつらい</li>
-              <li class="rounded-xl bg-softBg px-5 py-4">将来歩けなくなるのが不安</li>
-              <li class="rounded-xl bg-softBg px-5 py-4">ジムは怖い</li>
-              <li class="rounded-xl bg-softBg px-5 py-4">運動が続かない</li>
-              <li class="rounded-xl bg-softBg px-5 py-4">家にいる時間が増えた</li>
-            </ul>
+      <section id="philosophy" class="py-24">
+        <div class="mx-auto w-full max-w-premium px-5 lg:px-8">
+          <div class="mb-12">
+            <h2 class="text-[2rem] font-semibold tracking-[0.05em] text-primaryBlue">べるフィットの理念</h2>
+            <div class="mt-5 section-line"></div>
+          </div>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="premium-card rounded-2xl border border-slate-200 bg-white p-7 shadow-subtle">
+              <h3 class="text-[1.18rem] font-medium text-primaryBlue">医学的な安心感</h3>
+              <p class="mt-3 text-[1rem] text-slate-700">国家資格者監修の評価軸を導入し、状態に応じた個別プランを作成します。</p>
+            </article>
+            <article class="premium-card rounded-2xl border border-slate-200 bg-white p-7 shadow-subtle">
+              <h3 class="text-[1.18rem] font-medium text-primaryBlue">静かな継続性</h3>
+              <p class="mt-3 text-[1rem] text-slate-700">過度な達成目標ではなく、日々の機能改善を積み重ねる運動設計です。</p>
+            </article>
+            <article class="premium-card rounded-2xl border border-slate-200 bg-white p-7 shadow-subtle">
+              <h3 class="text-[1.18rem] font-medium text-primaryBlue">品位ある空間体験</h3>
+              <p class="mt-3 text-[1rem] text-slate-700">落ち着いた色彩と余白設計で、心身が緩むセッション環境を整えています。</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-        <h2 class="mb-8 text-2xl font-bold text-primaryBlue sm:text-3xl">べるフィットの考え方</h2>
-        <ul class="grid gap-4 sm:grid-cols-2">
-          <li class="rounded-2xl bg-pureWhite p-6 text-lg leading-relaxed">運動目的でも、おしゃべり目的でも歓迎</li>
-          <li class="rounded-2xl bg-pureWhite p-6 text-lg leading-relaxed">家から出ることが最大の目的でも大丈夫</li>
-          <li class="rounded-2xl bg-pureWhite p-6 text-lg leading-relaxed">やる気ゼロでも問題ありません</li>
-          <li class="rounded-2xl bg-pureWhite p-6 text-lg leading-relaxed">話していたら自然に動いていた</li>
-          <li class="rounded-2xl bg-pureWhite p-6 text-lg leading-relaxed sm:col-span-2">また来たいと思える場所に</li>
-        </ul>
-      </section>
-
-      <section class="bg-pureWhite py-14 sm:py-16">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 class="mb-8 text-2xl font-bold text-primaryBlue sm:text-3xl">なぜ安心なのか</h2>
-          <ul class="space-y-4 text-lg leading-relaxed sm:text-xl">
-            <li class="rounded-xl border border-slate-200 px-5 py-4">医療系国家資格者が運営</li>
-            <li class="rounded-xl border border-slate-200 px-5 py-4">無理な負荷はかけません</li>
-            <li class="rounded-xl border border-slate-200 px-5 py-4">体調に合わせて調整</li>
-            <li class="rounded-xl border border-slate-200 px-5 py-4">小さな変化にも気づく体制</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-        <h2 class="mb-8 text-2xl font-bold text-primaryBlue sm:text-3xl">1日の流れ</h2>
-        <ol class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <li class="rounded-2xl bg-pureWhite p-6">
-            <p class="mb-3 text-sm font-semibold text-brownAccent">STEP 1</p>
-            <p class="text-lg leading-relaxed">ご来館・体調チェック</p>
-          </li>
-          <li class="rounded-2xl bg-pureWhite p-6">
-            <p class="mb-3 text-sm font-semibold text-brownAccent">STEP 2</p>
-            <p class="text-lg leading-relaxed">おしゃべりしながら準備運動</p>
-          </li>
-          <li class="rounded-2xl bg-pureWhite p-6">
-            <p class="mb-3 text-sm font-semibold text-brownAccent">STEP 3</p>
-            <p class="text-lg leading-relaxed">やさしい筋力・バランストレーニング</p>
-          </li>
-          <li class="rounded-2xl bg-pureWhite p-6">
-            <p class="mb-3 text-sm font-semibold text-brownAccent">STEP 4</p>
-            <p class="text-lg leading-relaxed">休憩と水分補給</p>
-          </li>
-          <li class="rounded-2xl bg-pureWhite p-6">
-            <p class="mb-3 text-sm font-semibold text-brownAccent">STEP 5</p>
-            <p class="text-lg leading-relaxed">体調に合わせた軽運動</p>
-          </li>
-          <li class="rounded-2xl bg-pureWhite p-6">
-            <p class="mb-3 text-sm font-semibold text-brownAccent">STEP 6</p>
-            <p class="text-lg leading-relaxed">振り返り・次回のご案内</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="bg-pureWhite py-14 sm:py-16">
-        <div class="mx-auto max-w-4xl px-4 sm:px-6">
-          <h2 class="mb-8 text-2xl font-bold text-primaryBlue sm:text-3xl">よくあるご質問</h2>
-          <div class="space-y-4" id="faq">
-            <details class="group rounded-xl border border-slate-200 bg-softBg p-5" open>
-              <summary class="cursor-pointer list-none text-lg font-medium leading-relaxed">持病があっても大丈夫？</summary>
-              <p class="mt-4 text-base leading-loose text-slate-600">医療系国家資格者が体調を確認しながら対応します。まずはお気軽にご相談ください。</p>
-            </details>
-            <details class="group rounded-xl border border-slate-200 bg-softBg p-5">
-              <summary class="cursor-pointer list-none text-lg font-medium leading-relaxed">運動が苦手でも大丈夫？</summary>
-              <p class="mt-4 text-base leading-loose text-slate-600">もちろんです。話すことから始めて、できる範囲でゆっくり進めます。</p>
-            </details>
-            <details class="group rounded-xl border border-slate-200 bg-softBg p-5">
-              <summary class="cursor-pointer list-none text-lg font-medium leading-relaxed">無理に頑張らされませんか？</summary>
-              <p class="mt-4 text-base leading-loose text-slate-600">無理な負荷はかけません。体調と気分に合わせて内容を調整します。</p>
-            </details>
-            <details class="group rounded-xl border border-slate-200 bg-softBg p-5">
-              <summary class="cursor-pointer list-none text-lg font-medium leading-relaxed">体験だけでもいいですか？</summary>
-              <p class="mt-4 text-base leading-loose text-slate-600">体験だけでも大歓迎です。雰囲気を見てからご検討いただけます。</p>
-            </details>
+      <section id="program" class="bg-warmTint py-24">
+        <div class="mx-auto w-full max-w-premium px-5 lg:px-8">
+          <div class="mb-12">
+            <h2 class="text-[2rem] font-semibold tracking-[0.05em] text-primaryBlue">プログラム構成</h2>
+            <div class="mt-5 section-line"></div>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article class="premium-card rounded-2xl bg-white p-8 shadow-subtle">
+              <p class="text-[0.9rem] tracking-[0.12em] text-accentBrown">01 ASSESSMENT</p>
+              <h3 class="mt-2 text-[1.25rem] font-medium text-primaryBlue">コンディション評価</h3>
+              <p class="mt-3 text-[1rem] text-slate-700">血圧・姿勢・既往歴・生活動線を確認し、無理のない開始ラインを定義します。</p>
+            </article>
+            <article class="premium-card rounded-2xl bg-white p-8 shadow-subtle">
+              <p class="text-[0.9rem] tracking-[0.12em] text-accentBrown">02 MOBILITY</p>
+              <h3 class="mt-2 text-[1.25rem] font-medium text-primaryBlue">可動域と呼吸の調整</h3>
+              <p class="mt-3 text-[1rem] text-slate-700">深い呼吸と関節モビリティを整え、身体の緊張を解きながら準備を行います。</p>
+            </article>
+            <article class="premium-card rounded-2xl bg-white p-8 shadow-subtle">
+              <p class="text-[0.9rem] tracking-[0.12em] text-accentBrown">03 STABILITY</p>
+              <h3 class="mt-2 text-[1.25rem] font-medium text-primaryBlue">支持性トレーニング</h3>
+              <p class="mt-3 text-[1rem] text-slate-700">下肢・体幹を中心に、日常動作へつながる安定性を丁寧に育てます。</p>
+            </article>
+            <article class="premium-card rounded-2xl bg-white p-8 shadow-subtle">
+              <p class="text-[0.9rem] tracking-[0.12em] text-accentBrown">04 CARE</p>
+              <h3 class="mt-2 text-[1.25rem] font-medium text-primaryBlue">振り返りと次回提案</h3>
+              <p class="mt-3 text-[1rem] text-slate-700">当日の変化を記録し、翌日以降も実践しやすい生活内アドバイスへ接続します。</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div class="rounded-2xl bg-primaryBlue px-6 py-12 text-center text-pureWhite sm:px-10">
-          <h2 class="mb-4 text-2xl font-bold leading-relaxed sm:text-4xl">まずは、気軽なお電話から。</h2>
-          <p class="mb-8 text-lg leading-loose text-slate-100 sm:text-xl">
-            「少し話を聞いてみたい」だけでも大丈夫です。
-          </p>
-          <a
-            href="tel:000-0000-0000"
-            class="inline-flex min-h-12 items-center justify-center rounded-xl bg-pureWhite px-8 py-4 text-xl font-bold text-primaryBlue transition hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-pureWhite/40"
-            >お電話で体験予約する</a
-          >
+      <section id="faq" class="py-24">
+        <div class="mx-auto w-full max-w-premium px-5 lg:px-8">
+          <div class="mb-12">
+            <h2 class="text-[2rem] font-semibold tracking-[0.05em] text-primaryBlue">よくあるご質問</h2>
+            <div class="mt-5 section-line"></div>
+          </div>
+          <div class="space-y-4">
+            <article class="faq-item rounded-2xl border border-slate-200 bg-white p-6 shadow-subtle open">
+              <button class="faq-trigger flex w-full items-center justify-between gap-4 text-left" aria-expanded="true">
+                <span class="text-[1.08rem] font-medium text-slate-800">医療的な配慮が必要でも利用できますか。</span>
+                <span class="faq-icon text-[1.5rem] leading-none text-accentBrown">+</span>
+              </button>
+              <div class="faq-answer text-[1rem] text-slate-700">
+                はい。既往歴や主治医の指示を確認したうえで、身体状態に合わせて強度を個別に調整します。
+              </div>
+            </article>
+
+            <article class="faq-item rounded-2xl border border-slate-200 bg-white p-6 shadow-subtle">
+              <button class="faq-trigger flex w-full items-center justify-between gap-4 text-left" aria-expanded="false">
+                <span class="text-[1.08rem] font-medium text-slate-800">運動経験がほとんどなくても大丈夫ですか。</span>
+                <span class="faq-icon text-[1.5rem] leading-none text-accentBrown">+</span>
+              </button>
+              <div class="faq-answer text-[1rem] text-slate-700">
+                問題ありません。呼吸と姿勢のリセットから始め、最小負荷で安全に習慣化できる流れを設計しています。
+              </div>
+            </article>
+
+            <article class="faq-item rounded-2xl border border-slate-200 bg-white p-6 shadow-subtle">
+              <button class="faq-trigger flex w-full items-center justify-between gap-4 text-left" aria-expanded="false">
+                <span class="text-[1.08rem] font-medium text-slate-800">どのくらいの頻度で通うのが理想ですか。</span>
+                <span class="faq-icon text-[1.5rem] leading-none text-accentBrown">+</span>
+              </button>
+              <div class="faq-answer text-[1rem] text-slate-700">
+                週1回から始める方が多く、体調や目標に応じて週1〜2回を基本に提案しています。
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-white py-24">
+        <div class="mx-auto w-full max-w-premium px-5 lg:px-8">
+          <div class="rounded-2xl bg-primaryBlue px-8 py-14 text-center shadow-subtle sm:px-12">
+            <p class="text-[0.92rem] tracking-[0.14em] text-slate-200">FIRST CONSULTATION</p>
+            <h2 class="mt-3 text-[2rem] font-semibold tracking-[0.04em] text-white">静かな第一歩を、ここから。</h2>
+            <p class="mx-auto mt-5 max-w-2xl text-[1.05rem] text-slate-100">
+              施設見学とコンディションヒアリングを含む初回相談を承っています。
+              現在の不安や目標を、専門スタッフが丁寧に伺います。
+            </p>
+            <div class="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+              <a
+                href="tel:03-0000-0000"
+                class="cta-btn inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-[1.02rem] font-medium text-primaryBlue shadow-button hover:bg-slate-100"
+                >お電話で相談する</a
+              >
+              <a
+                href="mailto:info@bellefit.jp"
+                class="cta-btn inline-flex items-center justify-center rounded-2xl border border-white/80 px-8 py-4 text-[1.02rem] font-medium text-white hover:bg-white/10"
+                >メールで問い合わせる</a
+              >
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="bg-slate-900 py-10 text-slate-200">
-      <div class="mx-auto grid max-w-6xl gap-4 px-4 text-base sm:px-6 sm:text-lg">
-        <p>住所：〒000-0000 東京都〇〇区〇〇 0-0-0</p>
-        <p>電話番号：<a class="underline hover:text-white" href="tel:000-0000-0000">000-0000-0000</a></p>
-        <p>営業時間：平日 9:00〜18:00</p>
-        <p class="pt-2 text-sm text-slate-400">© 2026 べるフィット All Rights Reserved.</p>
+    <footer class="bg-hoverBlue py-12 text-white">
+      <div class="mx-auto grid w-full max-w-premium gap-3 px-5 text-[0.98rem] lg:px-8">
+        <p class="text-[1.1rem] font-medium tracking-[0.08em]">べるフィット</p>
+        <p>〒100-0000 東京都千代田区丸の内 0-0-0</p>
+        <p>Tel: 03-0000-0000 / 平日 9:00–18:00</p>
+        <p class="pt-2 text-white/75">© 2026 Bellefit Medical Fitness. All rights reserved.</p>
       </div>
     </footer>
 
     <script>
-      document.querySelectorAll('#faq details').forEach((detail) => {
-        detail.addEventListener('toggle', () => {
-          if (detail.open) {
-            document.querySelectorAll('#faq details').forEach((other) => {
-              if (other !== detail) other.open = false;
-            });
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach((item) => {
+        const trigger = item.querySelector('.faq-trigger');
+
+        trigger.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          faqItems.forEach((other) => {
+            other.classList.remove('open');
+            other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
           }
         });
       });
