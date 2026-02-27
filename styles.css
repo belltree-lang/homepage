@@ -16,26 +16,28 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.8;
-}
-
-main {
-  padding-bottom: 86px;
+  line-height: 1.85;
 }
 
 .container {
-  width: min(1120px, calc(100% - 48px));
+  width: min(980px, calc(100% - 48px));
   margin: 0 auto;
 }
 
+.container.narrow {
+  width: min(840px, calc(100% - 48px));
+}
+
 .section {
-  padding: 88px 0;
+  padding: 82px 0;
 }
 
 h1,
 h2,
+h3,
 p,
-ul {
+ul,
+ol {
   margin: 0;
 }
 
@@ -49,8 +51,19 @@ h1 {
 h2 {
   font-size: clamp(1.35rem, 3vw, 2rem);
   color: var(--azzurro);
-  margin-bottom: 28px;
+  margin-bottom: 18px;
   font-weight: 700;
+}
+
+h3 {
+  color: var(--marrone);
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+}
+
+.lead,
+.closing {
+  margin-bottom: 20px;
 }
 
 .hero {
@@ -59,87 +72,59 @@ h2 {
 }
 
 .achievement-list,
-.history-list {
+.history-list,
+.partner-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.achievement-list {
+  margin-bottom: 20px;
+}
+
+.achievement-list li,
+.history-list li,
+.partner-list li,
+.model-list li,
+.business-card,
+.message-frame {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.achievement-list li,
+.history-list li,
+.partner-list li,
+.model-list li,
+.business-card {
+  padding: 16px 18px;
+}
+
+.model-list {
   list-style: none;
   padding: 0;
   display: grid;
   gap: 14px;
-}
-
-.achievement-list li,
-.history-list li {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 16px 18px;
-}
-
-.support-model p {
-  font-size: 1.12rem;
+  margin: 0 0 20px;
 }
 
 .message-frame {
-  min-height: 140px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: var(--card);
+  padding: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.signature {
+  font-weight: 500;
 }
 
 .business-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-}
-
-.business-card {
-  min-height: 186px;
-  height: 100%;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--card);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 14px;
-}
-
-.business-card svg,
-.line-icon svg {
-  width: 34px;
-  height: 34px;
-  stroke: var(--marrone);
-  fill: none;
-  stroke-width: 1.8;
-}
-
-.partner-icons {
-  display: flex;
-  gap: 22px;
-}
-
-.line-icon {
-  width: 74px;
-  height: 74px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: var(--card);
-}
-
-.footer-contact {
-  position: fixed;
-  inset: auto 0 0;
-  background: var(--azzurro);
-  padding: 14px 20px;
-  text-align: center;
-}
-
-.footer-contact a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
 }
 
 .fade-in {
@@ -153,26 +138,17 @@ h2 {
   transform: translateY(0);
 }
 
-@media (max-width: 1024px) {
-  .business-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 720px) {
   .section {
-    padding: 64px 0;
+    padding: 60px 0;
   }
 
-  .container {
-    width: min(1120px, calc(100% - 30px));
+  .container,
+  .container.narrow {
+    width: min(980px, calc(100% - 30px));
   }
 
   .business-grid {
     grid-template-columns: 1fr;
-  }
-
-  .partner-icons {
-    flex-wrap: wrap;
   }
 }
