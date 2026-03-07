@@ -242,6 +242,7 @@ li {
 .business-grid {
   display: grid;
   gap: var(--space-block);
+  align-items: stretch;
 }
 
 .achievements-grid {
@@ -289,6 +290,12 @@ li {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
+}
+
+.business-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card {
