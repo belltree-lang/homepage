@@ -15,14 +15,71 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a class="site-logo" href="#hero">Belltree</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#hero">Home</a>
+          <a href="#services">Services</a>
+          <a href="#company">Company</a>
+          <a href="mailto:info@example.com">Contact</a>
+        </nav>
+      </div>
+    </header>
+
     <main>
-      <section class="section hero fade-in" id="hero">
+      <section id="hero">
         <div class="container">
-          <h1>運動から介護、終活まで。<br />地域で人生後半を支える総合サポート企業。</h1>
+          <div class="hero-content">
+            <p class="hero-eyebrow">Bell Tree Healthcare Community</p>
+            <h1>地域と人生に寄り添う<br />ヘルスケアコミュニティ</h1>
+            <p class="hero-subtitle">
+              株式会社べるつりーは<br />
+              医療・運動・生活支援を通じて<br />
+              人生に長く寄り添う地域サービスを提供します。
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#business-units">サービスを見る</a>
+              <a class="button button-secondary" href="#company-history">会社概要</a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="section achievements fade-in" id="achievements">
+      <section id="company">
+        <div class="container layout-two-column">
+          <div class="company-copy">
+            <p class="section-label">Company</p>
+            <div class="company-block">
+              <h2>Mission</h2>
+              <p class="company-keyword">第二の家族</p>
+              <p>
+                地域の人が安心して<br />
+                人生を相談できる場所をつくる。
+              </p>
+            </div>
+            <div class="company-block">
+              <h2>Concept</h2>
+              <p>
+                健康<br />
+                予防<br />
+                生活支援<br />
+                終活
+              </p>
+            </div>
+          </div>
+          <div class="company-visual" aria-hidden="true">
+            <div class="company-visual-panel">
+              <span>健康</span>
+              <span>予防</span>
+              <span>生活支援</span>
+              <span>終活</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements">
         <div class="container">
           <h2>地域で積み重ねてきた実績</h2>
           <p class="lead">2011年の創業以来、地域に根ざし、継続してきました。</p>
@@ -39,7 +96,7 @@
         </div>
       </section>
 
-      <section class="section support-model fade-in" id="support-model">
+      <section id="support-model">
         <div class="container">
           <h2>人生の変化に寄り添う支援モデル</h2>
           <p class="lead">
@@ -74,7 +131,7 @@
         </div>
       </section>
 
-      <section class="section representative fade-in" id="representative-message">
+      <section id="founder-message">
         <div class="container narrow">
           <h2>代表メッセージ</h2>
           <div class="message-frame">
@@ -116,7 +173,7 @@
         </div>
       </section>
 
-      <section class="section business fade-in" id="business">
+      <section id="business-units">
         <div class="container">
           <h2>私たちの事業</h2>
           <div class="business-grid" aria-label="私たちの事業">
@@ -149,7 +206,55 @@
         </div>
       </section>
 
-      <section class="section partners fade-in" id="partners">
+      <section id="services">
+        <div class="container">
+          <h2>主要サービス</h2>
+          <div class="services-grid" aria-label="主要サービス">
+            <article class="card service-card">
+              <div class="service-icon" aria-hidden="true">BF</div>
+              <h3>べるフィット</h3>
+              <p>メディカルフィットネス</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-icon" aria-hidden="true">HM</div>
+              <h3>訪問鍼灸マッサージ</h3>
+              <p>在宅医療サポート</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-icon" aria-hidden="true">CM</div>
+              <h3>居宅介護支援</h3>
+              <p>ケアプラン作成</p>
+            </article>
+            <article class="card service-card">
+              <div class="service-icon" aria-hidden="true">LS</div>
+              <h3>終活支援</h3>
+              <p>行政書士サービス</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="community">
+        <div class="container">
+          <h2>地域活動・コミュニティ活動</h2>
+          <div class="community-grid" aria-label="地域活動・コミュニティ活動">
+            <article class="card community-card">
+              <h3>子ども食堂</h3>
+            </article>
+            <article class="card community-card">
+              <h3>フードバンク</h3>
+            </article>
+            <article class="card community-card">
+              <h3>高齢者運動教室</h3>
+            </article>
+            <article class="card community-card">
+              <h3>地域イベント</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="partnerships">
         <div class="container">
           <h2>地域・専門機関との連携</h2>
           <p class="lead">私たちは、地域や専門機関との連携を大切にしています。</p>
@@ -160,7 +265,7 @@
         </div>
       </section>
 
-      <section class="section history fade-in" id="history">
+      <section id="company-history">
         <div class="container">
           <h2>沿革</h2>
           <ul class="history-list" aria-label="沿革">
@@ -173,6 +278,34 @@
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-block">
+          <h2 class="footer-title">Company</h2>
+          <p>株式会社べるつりー</p>
+        </div>
+        <div class="footer-block">
+          <h2 class="footer-title">Links</h2>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#company-history">Company</a></li>
+          </ul>
+        </div>
+        <div class="footer-block">
+          <h2 class="footer-title">Contact</h2>
+          <address class="footer-contact">
+            東京都町田市<br />
+            <a href="mailto:info@example.com">info@example.com</a>
+          </address>
+        </div>
+        <div class="footer-block">
+          <h2 class="footer-title">Copyright</h2>
+          <p>© Belltree Inc.</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="main.js"></script>
   </body>
