@@ -29,6 +29,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -220,39 +221,6 @@ li {
   color: var(--color-primary);
 }
 
-.type-hero-title {
-  font-size: var(--font-size-hero-title);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.3;
-  color: var(--color-primary);
-}
-
-.type-section-title {
-  font-size: var(--font-size-section-title);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.3;
-  color: var(--color-secondary);
-}
-
-.type-body {
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-body);
-  color: var(--color-text);
-}
-
-.space-section {
-  padding-top: var(--space-section);
-  padding-bottom: var(--space-section);
-}
-
-.space-block > * + * {
-  margin-top: var(--space-block);
-}
-
-.space-block-top {
-  margin-top: var(--space-block);
-}
-
 .lead,
 .closing,
 .achievement-list,
@@ -401,6 +369,29 @@ li {
   font-weight: var(--font-weight-semibold);
 }
 
+#contact {
+  padding: 120px 0;
+}
+
+.contact-content {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.contact-link {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 footer {
   padding: 40px 0;
   color: var(--color-surface);
@@ -487,8 +478,26 @@ footer {
     min-height: auto;
   }
 
+  .hero-content {
+    max-width: 100%;
+  }
+
   h1 {
     font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .layout-two-column,
+  .services-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .company-visual-panel {
+    width: 100%;
   }
 
   .hero-actions {
@@ -498,6 +507,21 @@ footer {
 
   .button {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
 
