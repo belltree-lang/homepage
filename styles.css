@@ -306,18 +306,6 @@ li {
   color: var(--color-primary);
 }
 
-.services-grid {
-  display: grid;
-  gap: 2rem;
-  margin-top: var(--space-block);
-}
-
-.community-grid {
-  display: grid;
-  gap: 2rem;
-  margin-top: var(--space-block);
-}
-
 .card,
 .message-frame,
 .business-card {
@@ -341,29 +329,6 @@ li {
 .business-card:focus-within {
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(11, 46, 78, 0.12);
-}
-
-.service-card {
-  display: grid;
-  gap: 1rem;
-}
-
-.community-card {
-  display: grid;
-  align-items: center;
-  min-height: 12rem;
-}
-
-.service-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  background: var(--color-accent);
-  color: var(--color-primary);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.04em;
 }
 
 .section-label {
@@ -442,29 +407,6 @@ li {
   color: var(--color-secondary);
   font-size: 1.125rem;
   font-weight: var(--font-weight-semibold);
-}
-
-#contact {
-  padding: 120px 0;
-}
-
-.contact-content {
-  display: grid;
-  justify-items: center;
-  gap: 1rem;
-  text-align: center;
-}
-
-.contact-link {
-  color: var(--color-secondary);
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-}
-
-.contact-link:hover,
-.contact-link:focus-visible {
-  color: var(--color-primary);
-  text-decoration: underline;
 }
 
 footer {
@@ -595,7 +537,6 @@ footer {
 
   .layout-two-column,
   .hero-content,
-  .services-grid,
   .footer-content {
     grid-template-columns: 1fr;
   }
@@ -633,9 +574,3 @@ footer {
   }
 }
 
-@media (min-width: 1200px) {
-  .services-grid,
-  .community-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
