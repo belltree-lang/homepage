@@ -48,9 +48,9 @@
   --space-section-gap: 2rem;
   --space-grid-gap: 28px;
   --space-card-padding: 32px;
-  --container-page: 68.75rem;
-  --container-narrow: 47.5rem;
-  --container-wide: 80rem;
+  --container-page: 1100px;
+  --container-narrow: 760px;
+  --container-wide: 1280px;
   --container-gutter: clamp(1rem, 2.5vw, 2rem);
   --breakpoint-tablet: 48rem;
   --breakpoint-desktop: 64rem;
@@ -213,6 +213,10 @@ section > .container.narrow,
 section > .container.wide {
   display: grid;
   align-content: start;
+}
+
+section > .container > .section-header {
+  width: 100%;
 }
 
 section,
@@ -518,11 +522,11 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 
 .card,
 .partner-logo {
-  padding: var(--space-card-padding);
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
 }
 
 .card {
+  padding: var(--space-card-padding);
   position: relative;
 }
 
@@ -739,6 +743,15 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 .container.narrow .section-header > .lead,
 .container.narrow p,
 .container.narrow li {
+  max-width: none;
+}
+
+.container.narrow .hero-copy,
+.container.narrow .hero-description,
+.container.narrow .page-intro,
+.container.narrow .section-intro,
+.container.narrow .section-intro-narrow,
+.container.narrow .lead {
   max-width: none;
 }
 
