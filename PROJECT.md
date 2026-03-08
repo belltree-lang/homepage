@@ -1,184 +1,51 @@
-# PROJECT.md
+# Project Overview
 
-## Project Name
+This repository contains the official homepage for a healthcare-focused organization that integrates fitness, preventive care, community support, and end-of-life planning.
 
-BellTree Corporate Website
+Purpose
 
----
+Provide a calm, trustworthy corporate website that communicates the organization's philosophy, services, and support ecosystem.
 
-# Project Purpose
+Audience
 
-This repository contains the implementation of the BellTree corporate website.
+Adults seeking long-term health support, including middle-aged and older individuals.
 
-BellTree is a healthcare and community-focused organization providing:
+Brand Tone
 
-- medical support
-- exercise and fitness programs
-- home visit therapy
-- care management
-- end-of-life planning services
+Calm
+Trustworthy
+Professional
+Healthcare-oriented
+Minimal and modern
 
-The website must communicate:
+Design Principles
 
-- trust
-- professionalism
-- community impact
-- clarity of services
+Readable long-form content
+Simple layout structure
+Soft color contrast
+Minimal visual noise
+Corporate healthcare tone
 
-The site is designed to serve:
+Technology
 
-- local residents
-- potential clients
-- partner institutions
-- potential staff
+Static HTML
+CSS only
+No frontend frameworks
+Minimal JavaScript
 
----
+Repository Structure
 
-# Design Philosophy
+index.html – Main homepage markup
+styles.css – Global styling
+tasks – Implementation tasks for AI development
+reports – Generated review and analysis reports
+ARCHITECTURE.md – Structural guidelines
+design-system.md – Design tokens and visual system
 
-The website should feel:
+Development Model
 
-- calm
-- trustworthy
-- human-centered
-- community-oriented
+The repository uses an AI development loop:
 
-The visual language should reflect healthcare professionalism rather than startup-style marketing.
-
-Primary design goals:
-
-- Trust
-- Clarity
-- Accessibility
-- Calm design
+tasks → implementation → review → analysis → improvements
 
 ---
-
-# Technology Stack
-
-The site intentionally uses a minimal stack.
-
-- HTML
-- CSS
-
-No frameworks are used.
-
-Avoid adding:
-
-- React
-- Vue
-- build tools
-- heavy JavaScript libraries
-
-The site should remain lightweight and fast.
-
----
-
-# Key Files
-
-- index.html
-- styles.css
-- design-system.md
-- AGENTS.md
-- PROJECT.md
-
----
-
-# Task System
-
-Implementation work is divided into independent tasks located in:
-
-- /tasks
-
-Each task file contains:
-
-- purpose
-- files to modify
-- implementation steps
-- acceptance criteria
-
-AI agents must follow these tasks strictly.
-
----
-
-# Design System
-
-All visual rules are defined in:
-
-- design-system.md
-
-This includes:
-
-- color palette
-- typography scale
-- layout spacing
-- card design
-- responsive rules
-
-Any UI change must follow the design system.
-
----
-
-# Development Rules
-
-When implementing tasks:
-
-1. Only modify files listed in the task.
-2. Do not introduce frameworks or dependencies.
-3. Preserve existing content unless instructed.
-4. Maintain accessibility and semantic HTML.
-
----
-
-# Layout System
-
-Container width:
-
-- max-width: 1200px
-
-Section spacing:
-
-- padding: 100px top / bottom
-
-Grid behavior:
-
-- mobile -> 1 column
-- tablet -> 2 columns
-- desktop -> up to 4 columns
-
----
-
-# Accessibility Goals
-
-The site should maintain:
-
-- readable typography
-- good contrast
-- semantic HTML
-- keyboard accessible navigation
-- alt text for images
-
----
-
-# Performance Goals
-
-The site should remain lightweight.
-
-Guidelines:
-
-- minimal CSS
-- no heavy JS
-- optimized images
-- fast loading
-
----
-
-# Final Goal
-
-Create a corporate website that clearly communicates:
-
-- Who BellTree is
-- What services are offered
-- Why the organization matters
-
-while maintaining a calm, professional healthcare-oriented design.

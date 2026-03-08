@@ -2,9 +2,7 @@
 
 Goal
 
-Evaluate the current repository architecture after Tasks 20–24 UI improvements.
-
-Focus on structural quality, maintainability, and design consistency.
+Evaluate the repository architecture after UI improvements.
 
 Scope
 
@@ -20,7 +18,6 @@ reports
 Checks
 
 HTML
-
 semantic structure
 heading hierarchy
 duplicate ids
@@ -28,7 +25,6 @@ invalid nesting
 section readability
 
 CSS
-
 unused selectors
 duplicate styles
 design token usage
@@ -36,13 +32,11 @@ layout consistency
 responsive rules
 
 Architecture
-
 consistency between ARCHITECTURE.md and design-system.md
 token conflicts
 documentation clarity
 
 Tasks
-
 task structure quality
 parallelization potential
 task scope overlap
@@ -53,7 +47,7 @@ Generate:
 
 reports/structure-analysis.md
 
-The report must contain:
+The report must include:
 
 Repository overview
 HTML structure quality
@@ -65,6 +59,7 @@ Overall architecture score (0–10)
 
 Rules
 
-Do not modify files in this task.
-
+Do not modify code in this task.
 Analysis only.
+
+---
