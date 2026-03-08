@@ -915,6 +915,63 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
   object-fit: cover;
 }
 
+.image-placeholder,
+.about-image,
+.company-image,
+.team-photo,
+.flow-visual {
+  width: 100%;
+  min-height: 360px;
+  border-radius: 12px;
+  background: #eef3f7;
+  display: block;
+  overflow: hidden;
+}
+
+.image-placeholder img,
+.about-image img,
+.company-image img,
+.team-photo img,
+.flow-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card .image-placeholder {
+  min-height: 220px;
+}
+
+.page-hero-content .image-placeholder,
+.two-column-layout .image-placeholder,
+.layout-two-column .image-placeholder,
+.contact-grid .image-placeholder {
+  min-height: 320px;
+}
+
+.about-image {
+  min-height: 400px;
+}
+
+.company-image {
+  min-height: 320px;
+}
+
+.team-photo {
+  min-height: 280px;
+}
+
+.flow-visual {
+  min-height: 280px;
+}
+
+.cta-section,
+.cta-panel {
+  background-size: cover;
+  background-position: center;
+}
+
 .hero-visual::after,
 .cta-panel::before {
   content: "";
@@ -2138,6 +2195,18 @@ blockquote {
   .trust-grid,
   .support-flow .flow-grid {
     grid-template-columns: 1fr;
+  }
+
+  .image-placeholder,
+  .about-image,
+  .company-image,
+  .team-photo,
+  .flow-visual,
+  .page-hero-content .image-placeholder,
+  .two-column-layout .image-placeholder,
+  .layout-two-column .image-placeholder,
+  .contact-grid .image-placeholder {
+    min-height: 240px;
   }
 }
 
