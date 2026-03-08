@@ -445,14 +445,14 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 .hero-copy {
   max-width: 42rem;
   padding: var(--space-card-padding);
-  border: 1px solid rgba(201, 214, 227, 0.96);
   border-radius: var(--radius-xl);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(249, 252, 255, 0.96)),
     var(--surface-gradient);
   box-shadow:
     var(--shadow-md),
-    0 0 0 1px rgba(255, 255, 255, 0.65) inset;
+    0 0 0 1px rgba(201, 214, 227, 0.7) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(0.625rem);
 }
 
