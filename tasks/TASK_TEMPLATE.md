@@ -1,21 +1,30 @@
-# Task XX – Title
+# Task XXX – Title
 
-Goal
+## Goal
+このタスクの目的
 
-Describe the purpose.
+## Scope
+変更可能ファイル
+- index.html
+- styles.css
 
-Scope
+## Changes
+具体的変更
 
-Files that may be modified.
+## Constraints
+禁止事項
+- framework追加禁止
+- design token必須
+- semantic HTML維持
 
-Changes
+## Acceptance Criteria
+完了条件
+- UI崩れなし
+- design-systemと一致
+- CSS重複なし
 
-Specific implementation instructions.
+## Dependencies
+依存タスク
 
-Constraints
-
-Rules that must not be violated.
-
-Acceptance Criteria
-
-Conditions that define completion.
+## Parallel Safety
+衝突しない範囲
