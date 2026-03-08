@@ -22,7 +22,7 @@
           <a href="../">ホーム</a>
           <a href="../services/">サービス</a>
           <a href="./" aria-current="page">会社情報</a>
-          <a href="../contact/">お問い合わせ</a>
+          <a class="nav-cta" href="../contact/">お問い合わせ</a>
         </nav>
       </div>
     </header>
@@ -43,7 +43,7 @@
             </div>
             <div class="card stack">
               <p class="trust-label">理念</p>
-              <h3>第二の家族</h3>
+              <p class="hero-card-title">第二の家族</p>
               <p class="muted">地域の人が安心して人生を相談できる場所をつくることが私たちの中心です。</p>
             </div>
           </div>
@@ -151,32 +151,60 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer-grid">
-        <div class="footer-block">
-          <p class="footer-title">会社情報</p>
-          <p>株式会社べるつりー</p>
+      <div class="container footer-shell">
+        <div class="footer-grid">
+          <div class="footer-block footer-block-brand">
+            <p class="footer-title">会社情報</p>
+            <p class="footer-company">株式会社べるつりー</p>
+            <p class="footer-summary">運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+            <dl class="footer-company-details">
+              <div>
+                <dt>拠点</dt>
+                <dd>東京都町田市</dd>
+              </div>
+              <div>
+                <dt>対応領域</dt>
+                <dd>運動支援・訪問施術・介護支援・終活準備</dd>
+              </div>
+            </dl>
+          </div>
+          <nav class="footer-block footer-nav-block" aria-label="フッター主要導線">
+            <p class="footer-title">主要導線</p>
+            <ul class="footer-links">
+              <li><a href="../">ホーム</a></li>
+              <li><a href="../services/">サービス</a></li>
+              <li><a href="./">会社情報</a></li>
+              <li><a href="../contact/">お問い合わせ</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-block footer-nav-block" aria-label="フッターサービス導線">
+            <p class="footer-title">サービス導線</p>
+            <ul class="footer-secondary-links">
+              <li><a href="../services/fitness/">べるフィット</a></li>
+              <li><a href="../services/acupuncture/">訪問鍼灸マッサージ</a></li>
+              <li><a href="../services/home-care/">居宅介護支援</a></li>
+              <li><a href="../services/legal/">行政書士支援</a></li>
+              <li><a href="../services/community/">地域コミュニティ支援</a></li>
+            </ul>
+          </nav>
+          <div class="footer-block footer-block-contact">
+            <p class="footer-title">相談窓口</p>
+            <p class="footer-contact-label">地域に根ざした総合相談窓口</p>
+            <address class="footer-contact">
+              <p class="footer-contact-row">
+                <span class="footer-contact-key">所在地</span>
+                <span>東京都町田市</span>
+              </p>
+              <p class="footer-contact-row">
+                <span class="footer-contact-key">メール</span>
+                <a href="mailto:info@example.com">info@example.com</a>
+              </p>
+            </address>
+            <p class="footer-meta">医療、運動、介護、終活支援を横断してご案内します。</p>
+          </div>
         </div>
-        <div class="footer-block">
-          <p class="footer-title">主要導線</p>
-          <ul class="footer-links">
-            <li><a href="../">ホーム</a></li>
-            <li><a href="../services/">サービス</a></li>
-            <li><a href="./">会社情報</a></li>
-            <li><a href="../contact/">お問い合わせ</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <p class="footer-title">関連導線</p>
-          <ul class="footer-secondary-links">
-            <li><a href="../services/">サービス一覧</a></li>
-            <li><a href="../contact/">相談窓口</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <p class="footer-title">相談窓口</p>
-          <address class="footer-contact">
-            <a href="mailto:info@example.com">メールで相談する</a>
-          </address>
+        <div class="footer-bottom">
+          <p class="footer-meta">© BellTree Inc. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
