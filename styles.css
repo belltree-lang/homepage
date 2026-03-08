@@ -602,7 +602,6 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 }
 
 .card,
-.hero-visual,
 .icon,
 .partner-logo {
   background: linear-gradient(180deg, var(--color-surface), var(--color-surface-strong));
@@ -898,6 +897,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 }
 
 .hero-visual {
+  border: none;
   position: relative;
   overflow: hidden;
   min-height: 26rem;
