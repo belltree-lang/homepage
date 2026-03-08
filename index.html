@@ -34,7 +34,7 @@
           <a href="./" aria-current="page">ホーム</a>
           <a href="./services/">サービス</a>
           <a href="./about/">会社情報</a>
-          <a href="./contact/">お問い合わせ</a>
+          <a class="nav-cta" href="./contact/">お問い合わせ</a>
         </nav>
       </div>
     </header>
@@ -43,7 +43,7 @@
       <section id="hero">
         <div class="container">
           <div class="hero">
-            <div class="stack">
+            <div class="stack hero-copy">
               <p class="eyebrow">地域伴走型ヘルスケア</p>
               <h1 class="hero-title">運動から介護、終活まで。<br />地域で人生後半を支える総合サポート企業。</h1>
               <p class="hero-description">
@@ -63,8 +63,8 @@
                 </article>
               </div>
               <div class="hero-actions">
-                <a class="button button-primary" href="./services/">サービス一覧を見る</a>
-                <a class="button button-secondary" href="./about/">会社情報を見る</a>
+                <a class="button button-primary" href="./contact/">相談する</a>
+                <a class="button button-secondary" href="./services/">サービス一覧を見る</a>
               </div>
               <div class="route-nav-secondary" aria-label="ホーム内セクション">
                 <a href="#support-model">支援モデル</a>
@@ -110,21 +110,41 @@
             <h2>地域で積み重ねてきた実績</h2>
             <p class="section-intro">単発のサービス提供ではなく、継続支援の積み重ねを信頼情報として提示します。</p>
           </div>
-          <div class="grid grid-3">
-            <article class="card service-card card-interactive">
-              <p class="metric-label">訪問施術</p>
-              <h3>累計16,000件以上</h3>
-              <p class="muted">継続的な自宅支援を地域で積み上げてきました。</p>
+          <div class="achievement-stats" aria-label="実績指標">
+            <article class="card achievement-stat-card">
+              <p class="metric-label">創業年</p>
+              <p class="achievement-stat-value">2011<span>年</span></p>
+              <p class="achievement-stat-note">創業2011年</p>
             </article>
-            <article class="card service-card card-interactive">
+            <article class="card achievement-stat-card">
+              <p class="metric-label">累計施術実績</p>
+              <p class="achievement-stat-value">16,000<span>+</span></p>
+              <p class="achievement-stat-note">累計16,000件以上の施術実績</p>
+            </article>
+            <article class="card achievement-stat-card">
               <p class="metric-label">現在患者数</p>
-              <h3>約200名</h3>
-              <p class="muted">通所や訪問を横断した支援体制を継続しています。</p>
+              <p class="achievement-stat-value">約200<span>名</span></p>
+              <p class="achievement-stat-note">現在患者数 約200名</p>
             </article>
-            <article class="card service-card card-interactive">
-              <p class="metric-label">専門職</p>
-              <h3>国家資格保有スタッフ12名</h3>
-              <p class="muted">ケアマネジャーや行政書士準備体制を含めた専門連携です。</p>
+            <article class="card achievement-stat-card">
+              <p class="metric-label">運動支援利用者</p>
+              <p class="achievement-stat-value">約260<span>名</span></p>
+              <p class="achievement-stat-note">べるフィット利用者 約260名（現在利用者数）</p>
+            </article>
+            <article class="card achievement-stat-card">
+              <p class="metric-label">国家資格者</p>
+              <p class="achievement-stat-value">12<span>名</span></p>
+              <p class="achievement-stat-note">国家資格保有スタッフ 12名</p>
+            </article>
+            <article class="card achievement-stat-card">
+              <p class="metric-label">ケアマネジャー</p>
+              <p class="achievement-stat-value">4<span>名</span></p>
+              <p class="achievement-stat-note">ケアマネジャー 4名在籍</p>
+            </article>
+            <article class="card achievement-stat-card">
+              <p class="metric-label">行政書士</p>
+              <p class="achievement-stat-value">1<span>名</span></p>
+              <p class="achievement-stat-note">行政書士 1名在籍（2026年開業予定）</p>
             </article>
           </div>
         </div>
@@ -295,36 +315,58 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer-grid">
-        <div class="footer-block">
-          <p class="footer-title">会社情報</p>
-          <p>株式会社べるつりー</p>
-          <p class="footer-meta">東京都町田市を拠点に地域支援を展開。</p>
+      <div class="container footer-shell">
+        <div class="footer-grid">
+          <div class="footer-block footer-block-brand">
+            <p class="footer-title">会社情報</p>
+            <p class="footer-company">株式会社べるつりー</p>
+            <p class="footer-summary">運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+            <dl class="footer-company-details">
+              <div>
+                <dt>拠点</dt>
+                <dd>東京都町田市</dd>
+              </div>
+              <div>
+                <dt>対応領域</dt>
+                <dd>運動支援・訪問施術・介護支援・終活準備</dd>
+              </div>
+            </dl>
+          </div>
+          <nav class="footer-block footer-nav-block" aria-label="フッター主要導線">
+            <p class="footer-title">主要導線</p>
+            <ul class="footer-links">
+              <li><a href="./">ホーム</a></li>
+              <li><a href="./services/">サービス</a></li>
+              <li><a href="./about/">会社情報</a></li>
+              <li><a href="./contact/">お問い合わせ</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-block footer-nav-block" aria-label="ホーム内導線">
+            <p class="footer-title">ホーム内導線</p>
+            <ul class="footer-secondary-links">
+              <li><a href="#support-model">支援モデル</a></li>
+              <li><a href="#business-units">事業一覧</a></li>
+              <li><a href="#trust">信頼情報</a></li>
+            </ul>
+          </nav>
+          <div class="footer-block footer-block-contact">
+            <p class="footer-title">相談窓口</p>
+            <p class="footer-contact-label">地域に根ざした総合相談窓口</p>
+            <address class="footer-contact">
+              <p class="footer-contact-row">
+                <span class="footer-contact-key">所在地</span>
+                <span>東京都町田市</span>
+              </p>
+              <p class="footer-contact-row">
+                <span class="footer-contact-key">メール</span>
+                <a href="mailto:info@example.com">info@example.com</a>
+              </p>
+            </address>
+            <p class="footer-meta">医療、運動、介護、終活支援を横断してご案内します。</p>
+          </div>
         </div>
-        <div class="footer-block">
-          <p class="footer-title">主要導線</p>
-          <ul class="footer-links">
-            <li><a href="./">ホーム</a></li>
-            <li><a href="./services/">サービス</a></li>
-            <li><a href="./about/">会社情報</a></li>
-            <li><a href="./contact/">お問い合わせ</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <p class="footer-title">ホーム内導線</p>
-          <ul class="footer-secondary-links">
-            <li><a href="#support-model">支援モデル</a></li>
-            <li><a href="#business-units">事業一覧</a></li>
-            <li><a href="#trust">信頼情報</a></li>
-          </ul>
-        </div>
-        <div class="footer-block">
-          <p class="footer-title">相談窓口</p>
-          <address class="footer-contact">
-            東京都町田市<br />
-            <a href="mailto:info@example.com">メールで相談する</a>
-          </address>
-          <p class="footer-meta">© Belltree Inc.</p>
+        <div class="footer-bottom">
+          <p class="footer-meta">© BellTree Inc. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
