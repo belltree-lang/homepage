@@ -50,6 +50,50 @@ Each section must clearly communicate one idea.
 
 ---
 
+# Page Shell System
+
+All pages must follow a shared shell structure.
+
+Common page structure:
+
+1. Site Header
+2. Main Content
+3. Footer
+
+Each shell must preserve:
+
+- the same header navigation pattern
+- the same container system
+- the same spacing rhythm
+- the same footer information structure
+
+Homepage shell:
+
+- Hero
+- Narrative section flow
+- Trust-building content blocks
+- Footer
+
+Service page shell:
+
+- Page hero
+- Service overview
+- Detailed content sections
+- Related support information
+- Footer
+
+Company page shell:
+
+- Page hero
+- Company overview
+- Mission and philosophy content
+- History or profile sections
+- Footer
+
+The shell system must make all page types feel like part of one corporate website while allowing content-specific section order inside the main content area.
+
+---
+
 # Container System
 
 All sections follow a unified container layout.

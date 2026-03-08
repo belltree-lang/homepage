@@ -48,3 +48,33 @@
   - Text Color: `#1F4E79`
   - Radius: `999px`
   - Padding: `14px 24px`
+
+## Component Catalog
+
+### Hero
+
+- Responsibility: Present the company value proposition, primary context, and top-level CTA at the start of the page.
+
+### SectionHeader
+
+- Responsibility: Group section label, title, and introductory copy into one reusable header block.
+
+### Card
+
+- Responsibility: Provide a reusable surface for grouped content with shared padding, border, radius, and shadow.
+
+### CTA Panel
+
+- Responsibility: Highlight a trust-oriented action area that guides users toward inquiry without breaking the page narrative.
+
+### Grid
+
+- Responsibility: Arrange repeated content blocks in responsive 1-column, 2-column, 3-column, or 4-column layouts.
+
+### Two Column
+
+- Responsibility: Align paired content such as copy and visual support in a balanced responsive split layout.
+
+### Trust Blocks
+
+- Responsibility: Surface credibility signals such as metrics, reassurance points, and partnerships in compact repeatable units.
