@@ -1,8 +1,10 @@
 :root {
   --color-primary: #1f4e79;
   --color-secondary: #2c3e50;
+  --color-slate: #2c3e50;
   --color-background: #f5f7fa;
   --color-accent: #c9d6e3;
+  --color-light-gray: #f5f7fa;
   --color-text: #222222;
   --color-surface: #ffffff;
   --color-border: #c9d6e3;
@@ -145,14 +147,10 @@ footer {
   outline-offset: 3px;
 }
 
-#hero {
-  background: linear-gradient(135deg, #ffffff 0%, #eef3f8 50%, var(--color-background) 100%);
-}
-
-.hero-content {
+.hero {
   display: grid;
-  gap: var(--space-block);
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
 .hero-text {
@@ -169,26 +167,33 @@ footer {
   color: var(--color-primary);
 }
 
-.hero-subtitle {
+#hero {
+  background: linear-gradient(135deg, #ffffff 0%, #eef3f8 50%, var(--color-background) 100%);
+}
+
+.hero-title {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+.hero-description {
+  max-width: 520px;
   margin-top: 1.5rem;
-  max-width: 32rem;
+  font-size: 18px;
+  color: var(--color-slate);
 }
 
 .hero-actions {
+  margin-top: 24px;
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .hero-visual {
-  min-height: 280px;
-  border: 1px solid var(--color-border);
-  border-radius: calc(var(--radius-card) * 1.5);
-  background:
-    radial-gradient(circle at top left, rgba(201, 214, 227, 0.8), transparent 45%),
-    linear-gradient(180deg, rgba(31, 78, 121, 0.08), rgba(31, 78, 121, 0.02)),
-    var(--color-surface);
-  box-shadow: var(--shadow-card);
+  background: var(--color-light-gray);
+  border-radius: 16px;
+  height: 260px;
 }
 
 .button {
@@ -442,7 +447,7 @@ footer {
     gap: 0.75rem 1.25rem;
   }
 
-  .hero-content,
+  .hero,
   .layout-two-column,
   .footer-content {
     grid-template-columns: 1fr;
@@ -452,7 +457,7 @@ footer {
     text-align: center;
   }
 
-  .hero-subtitle {
+  .hero-description {
     max-width: none;
   }
 
@@ -471,8 +476,12 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .layout-two-column,
-  .hero-content {
+  .hero {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+
+  .layout-two-column {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -483,10 +492,6 @@ footer {
 }
 
 @media (min-width: 1024px) {
-  .hero-content {
-    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-  }
-
   .hero-text {
     text-align: left;
   }
