@@ -393,7 +393,8 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 }
 
 .page-hero,
-#hero {
+#hero,
+.hero {
   position: relative;
   overflow: clip;
   background:
@@ -402,7 +403,8 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 }
 
 .page-hero::before,
-#hero::before {
+#hero::before,
+.hero::before {
   content: "";
   position: absolute;
   inset: auto -6rem -6rem auto;
@@ -413,7 +415,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 }
 
 .page-hero .container,
-#hero .container {
+.hero-inner {
   position: relative;
 }
 
@@ -422,7 +424,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
   border-color: rgba(184, 202, 220, 0.95);
 }
 
-.hero,
+.hero-layout,
 .page-hero-content,
 .layout-two-column,
 .two-column-layout,
@@ -433,7 +435,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
   gap: var(--space-section-gap);
 }
 
-.hero {
+.hero-layout {
   display: grid;
   align-items: center;
   min-height: clamp(41rem, 86vh, 54rem);
@@ -1873,7 +1875,7 @@ blockquote {
     padding: 0.95rem 1.2rem;
   }
 
-  .hero,
+  .hero-layout,
   .page-hero-content,
   .layout-two-column,
   .two-column-layout,
@@ -1912,7 +1914,7 @@ blockquote {
     font-size: 0.98rem;
   }
 
-  .hero {
+  .hero-layout {
     min-height: auto;
     padding: var(--space-lg) 0 0;
   }
@@ -2044,7 +2046,7 @@ blockquote {
 }
 
 @media (min-width: 768px) {
-  .hero,
+  .hero-layout,
   .page-hero-content,
   .layout-two-column,
   .two-column-layout,
