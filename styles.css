@@ -424,7 +424,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
   border-color: rgba(184, 202, 220, 0.95);
 }
 
-.hero-layout,
+.hero-grid,
 .page-hero-content,
 .layout-two-column,
 .two-column-layout,
@@ -435,11 +435,44 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
   gap: var(--space-section-gap);
 }
 
-.hero-layout {
+.hero-grid {
   display: grid;
   align-items: center;
   min-height: clamp(41rem, 86vh, 54rem);
   padding: clamp(var(--space-lg), 4vw, var(--space-2xl)) 0;
+}
+
+.service-overview {
+  padding: 80px 0;
+}
+
+.service-overview .grid-3 {
+  display: grid;
+  gap: 24px;
+}
+
+.service-overview .service-card {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.trust-bar {
+  background: #f6f8fb;
+  padding: 40px 0;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.trust-item {
+  display: grid;
+  gap: var(--space-sm);
 }
 
 .hero-copy {
@@ -1875,7 +1908,7 @@ blockquote {
     padding: 0.95rem 1.2rem;
   }
 
-  .hero-layout,
+  .hero-grid,
   .page-hero-content,
   .layout-two-column,
   .two-column-layout,
@@ -1914,9 +1947,14 @@ blockquote {
     font-size: 0.98rem;
   }
 
-  .hero-layout {
+  .hero-grid {
     min-height: auto;
     padding: var(--space-lg) 0 0;
+  }
+
+  .trust-grid,
+  .service-overview .grid-3 {
+    grid-template-columns: 1fr;
   }
 
   .hero-story,
@@ -2046,7 +2084,7 @@ blockquote {
 }
 
 @media (min-width: 768px) {
-  .hero-layout,
+  .hero-grid,
   .page-hero-content,
   .layout-two-column,
   .two-column-layout,
