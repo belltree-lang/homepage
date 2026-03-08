@@ -2,52 +2,30 @@
 
 ## Purpose
 
-Provide strict rules for AI agents working in this repository.
+Define AI behavioral constraints for this repository.
 
-## General Rules
+## Behavioral Constraints
 
-- Do not introduce frameworks.
-- Keep the project static HTML + CSS.
-- Follow `ARCHITECTURE.md` for layout structure.
-- Follow `design-system.md` for visual tokens.
+- Execute work from the authoritative Task OS only.
+- Treat `tasks/_active` as executable work and `tasks/_planned` as queued work.
+- Move blocked tasks to `tasks/_blocked` when dependencies are not satisfied.
+- Move finished tasks to `tasks/_completed` after implementation and verification.
+- Treat `tasks/_superseded` as non-executable archive.
+- Modify only files explicitly allowed by the active task scope.
+- Preserve existing user changes outside task scope.
+- Do not introduce frameworks, bundlers, or backend services.
+- Keep the site deployable as static files.
+- Do not rewrite task content during implementation unless the task explicitly asks for it.
+- Prefer safe, local refactors over speculative architectural changes.
 
-## File Ownership
+## Governance References
 
-`index.html`  
-Owned by UI agent.
+- Architecture authority: `governance/ARCHITECTURE.md`
+- Design authority: `governance/design-system.md`
+- Project overview: `governance/PROJECT.md`
 
-`styles.css`  
-Owned by CSS agent.
+## Execution Model
 
-Content text  
-Owned by Content agent.
+Default loop:
 
-SEO metadata  
-Owned by SEO agent.
-
-`reports`  
-Owned by Review agent.
-
-## Change Rules
-
-Agents must modify only their owned files.
-
-Do not modify governance documents unless the task explicitly requires it.
-
-## Design Rules
-
-Always prefer design tokens over literal values.
-
-## Example
-
-Use:
-
-`var(--border-color)`
-
-Avoid:
-
-`#e6e8ef`
-
-## Development Model
-
-`tasks -> implementation -> review -> analysis -> improvement`
+`read task -> implement scoped change -> verify -> move task state`
