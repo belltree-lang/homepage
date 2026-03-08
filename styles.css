@@ -714,17 +714,28 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 .section-header {
   display: grid;
   gap: 1rem;
-  margin-bottom: 2rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
   align-content: start;
+  justify-items: start;
+  max-width: none;
+  padding-inline: 0.125rem;
+}
+
+.section-header > h2,
+.section-header > .section-intro,
+.section-header > .section-intro-narrow,
+.section-header > .page-intro,
+.section-header > .lead {
   max-width: 48rem;
 }
 
 .section-header-divider::after {
   content: "";
   display: block;
-  width: 5rem;
+  width: 6rem;
   height: 0.125rem;
-  margin-top: var(--space-md);
+  margin-top: 0.875rem;
   border-radius: var(--radius-pill);
   background: linear-gradient(90deg, var(--color-primary), rgba(var(--color-primary-rgb), 0.2));
 }
