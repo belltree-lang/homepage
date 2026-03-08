@@ -281,6 +281,10 @@ section[id] {
   max-width: 12ch;
 }
 
+.hero-description {
+  max-width: 38rem;
+}
+
 .hero-story,
 .trust-blocks,
 .service-list,
@@ -344,6 +348,13 @@ section[id] {
   height: 100%;
 }
 
+.hero-story-card,
+.trust-block,
+.service-card,
+.contact-card {
+  align-content: start;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -381,12 +392,18 @@ section[id] {
   border: 0;
   border-radius: 0;
   color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.1875rem;
+  box-shadow: none;
 }
 
 .section-header {
   display: grid;
   gap: var(--space-md);
   margin-bottom: var(--space-2xl);
+  align-content: start;
 }
 
 .section-header-divider::after {
@@ -535,6 +552,14 @@ section[id] {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.hero-trust-list {
+  margin-top: var(--space-sm);
+}
+
+.hero-trust-list .card {
+  background: linear-gradient(180deg, rgba(var(--color-primary-rgb), 0.06), rgba(255, 255, 255, 0.98));
+}
+
 .hero-trust-value,
 .achievement-value,
 .trust-value {
@@ -619,6 +644,7 @@ section[id] {
 .timeline-card {
   position: relative;
   padding-left: calc(var(--space-xl) + var(--space-md));
+  background: linear-gradient(180deg, var(--color-surface), rgba(var(--color-primary-rgb), 0.03));
 }
 
 .timeline-card::before {
@@ -652,6 +678,7 @@ section[id] {
   position: relative;
   align-items: start;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
 .cta-panel::before {
@@ -689,6 +716,7 @@ section[id] {
 .trust-block {
   display: grid;
   gap: var(--space-sm);
+  background: linear-gradient(180deg, var(--color-surface), rgba(var(--color-primary-rgb), 0.03));
 }
 
 .trust-label {
@@ -700,7 +728,7 @@ section[id] {
 }
 
 .footer {
-  background: var(--color-surface);
+  background: linear-gradient(180deg, var(--color-surface), var(--color-background-soft));
   border-top: var(--border-default);
 }
 
@@ -798,6 +826,10 @@ section[id] {
   .service-list,
   .trust-blocks,
   .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
