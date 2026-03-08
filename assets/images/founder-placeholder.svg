@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 360" role="img" aria-labelledby="title desc">
+  <title id="title">Founder Placeholder</title>
+  <desc id="desc">Simple portrait placeholder for founder profile.</desc>
+  <rect width="320" height="360" rx="24" fill="#f5f7fa"/>
+  <circle cx="160" cy="120" r="56" fill="#c9d6e3"/>
+  <path d="M80 294c20-54 62-82 80-82s60 28 80 82" fill="#dce5ee"/>
+  <rect x="96" y="252" width="128" height="22" rx="11" fill="#1f4e79" opacity=".12"/>
+</svg>

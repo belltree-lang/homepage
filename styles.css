@@ -90,7 +90,12 @@ li {
 
 section,
 footer {
-  padding: var(--space-section) 0;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+section + section {
+  margin-top: 0;
 }
 
 .section-alt {
@@ -199,9 +204,10 @@ footer {
 }
 
 .hero-visual {
-  background: var(--color-light-gray);
+  background: linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
   border-radius: 16px;
   height: 260px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
 .button {
@@ -250,6 +256,13 @@ footer {
   border-radius: 8px;
 }
 
+.icon svg,
+.icon-small svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-primary);
+}
+
 .lead,
 .closing,
 .achievements-grid,
@@ -275,6 +288,9 @@ footer {
 }
 
 .support-node {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
   padding: 20px;
   border: 1px solid #e6e8ef;
   border-radius: 12px;
@@ -402,6 +418,23 @@ footer {
   margin-top: 1.25rem;
 }
 
+.founder-profile {
+  display: grid;
+  gap: 24px;
+}
+
+.founder-photo {
+  width: 100%;
+  max-width: 220px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.founder-message {
+  display: grid;
+}
+
 .signature {
   font-weight: 500;
 }
@@ -415,6 +448,14 @@ footer {
   flex-direction: column;
   gap: 0.75rem;
   height: 100%;
+}
+
+.card-hover {
+  transition: transform 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
 }
 
 .partner-list,
@@ -449,6 +490,27 @@ footer {
   color: var(--color-text);
   background: var(--color-surface);
   border-top: 1px solid #e6e8ef;
+}
+
+.partner-logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.partner-logo {
+  display: grid;
+  place-items: center;
+  min-height: 88px;
+  padding: 20px;
+  border: 1px solid #e6e8ef;
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--color-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .footer-links {
@@ -500,6 +562,11 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .support-diagram,
+  .partner-logos {
+    grid-template-columns: 1fr;
+  }
+
   .hero-text {
     text-align: center;
   }
@@ -530,6 +597,11 @@ footer {
 
   .layout-two-column {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .founder-profile {
+    grid-template-columns: 220px minmax(0, 1fr);
+    align-items: start;
   }
 
   .business-grid {
