@@ -19,3 +19,7 @@ task-17 SEO improvements
 task-18 align governance docs
 
 task-19 localize navigation copy
+
+task-40 localize secondary copy
+
+task-41 replace placeholder contact
