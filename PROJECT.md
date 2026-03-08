@@ -48,4 +48,14 @@ The repository uses an AI development loop:
 
 tasks → implementation → review → analysis → improvements
 
+AI Development Model
+
+This repository supports multi-agent AI development:
+
+UI agent
+CSS agent
+Content agent
+SEO agent
+Review agent
+
 ---
