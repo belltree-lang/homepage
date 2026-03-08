@@ -58,4 +58,10 @@ Content agent
 SEO agent
 Review agent
 
+AI Team Execution
+
+Run:
+
+scripts/run-ai-team.md
+
 ---
