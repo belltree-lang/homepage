@@ -32,9 +32,9 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --line-height-tight: 1.25;
-  --line-height-heading: 1.18;
-  --line-height-base: 1.9;
-  --line-height-relaxed: 2;
+  --line-height-heading: 1.25;
+  --line-height-base: 1.7;
+  --line-height-relaxed: 1.7;
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
@@ -44,12 +44,12 @@
   --space-2xl: 3.25rem;
   --space-3xl: 5rem;
   --space-4xl: 6.25rem;
-  --space-section-y: clamp(5.5rem, 8vw, 7rem);
-  --space-section-gap: clamp(2rem, 4vw, 3.25rem);
-  --space-grid-gap: clamp(1.25rem, 2vw, 2rem);
-  --container-page: 72rem;
+  --space-section-y: 6rem;
+  --space-section-gap: 2rem;
+  --space-grid-gap: 1.5rem;
+  --container-page: 68.75rem;
   --container-narrow: 48rem;
-  --container-wide: 76rem;
+  --container-wide: 68.75rem;
   --container-gutter: clamp(1rem, 2.5vw, 2rem);
   --breakpoint-tablet: 48rem;
   --breakpoint-desktop: 64rem;
@@ -141,7 +141,7 @@ h3 {
   font-weight: var(--font-weight-semibold);
   color: var(--color-secondary);
   letter-spacing: -0.02em;
-  line-height: 1.32;
+  line-height: var(--line-height-heading);
   text-wrap: balance;
 }
 
@@ -582,11 +582,13 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
   align-items: center;
   justify-content: center;
   min-width: 11rem;
+  height: 3.5rem;
   min-height: 3.5rem;
   padding: 1rem 1.5rem;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   font-weight: var(--font-weight-semibold);
+  line-height: 1.25;
   text-decoration: none;
   letter-spacing: 0.01em;
   position: relative;
@@ -711,8 +713,8 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 
 .section-header {
   display: grid;
-  gap: clamp(0.75rem, 1.5vw, 1rem);
-  margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+  gap: 1rem;
+  margin-bottom: 2rem;
   align-content: start;
   max-width: 48rem;
 }
@@ -1074,7 +1076,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 .achievement-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
-  gap: var(--space-lg);
+  gap: var(--space-grid-gap);
   align-items: stretch;
 }
 
@@ -1099,12 +1101,12 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 .achievement-stat-card::after {
   content: "";
   position: absolute;
-  inset: auto -2rem -2rem auto;
-  width: 5rem;
-  height: 5rem;
+  inset: auto -2.5rem -2.5rem auto;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.08), rgba(var(--color-primary-rgb), 0));
-  opacity: 0.7;
+  background: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.06), rgba(var(--color-primary-rgb), 0));
+  opacity: 0.55;
   pointer-events: none;
 }
 
@@ -1152,7 +1154,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 
 .support-node-text {
   width: 100%;
-  max-width: 18ch;
+  max-width: 19ch;
   color: var(--color-text-muted);
 }
 
@@ -1177,6 +1179,7 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 
 #support-model .grid {
   align-items: stretch;
+  gap: var(--space-grid-gap);
 }
 
 .partner-logo {
