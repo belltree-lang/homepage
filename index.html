@@ -29,10 +29,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
     <header class="site-header">
       <div class="container site-header-inner">
-        <a class="site-logo" href="#hero">Belltree</a>
-        <nav class="site-nav" aria-label="Primary">
+        <a class="site-logo" href="#hero">BellTree</a>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
           <a href="#hero">ホーム</a>
           <a href="#mission">理念</a>
           <a href="#business-units">事業</a>
@@ -41,12 +42,12 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section id="hero">
         <div class="container">
           <div class="hero">
             <div class="hero-text">
-              <p class="hero-eyebrow eyebrow">Bell Tree Healthcare Community</p>
+              <p class="hero-eyebrow eyebrow">地域連携型ヘルスケア</p>
               <h1 class="hero-title">地域と人生に寄り添う<br />ヘルスケアコミュニティ</h1>
               <p class="hero-description section-intro section-intro-narrow">
                 株式会社べるつりーは<br />
@@ -67,16 +68,30 @@
                 <a class="button button-primary" href="#business-units">サービスを見る</a>
                 <a class="button button-secondary" href="#company-history">会社概要</a>
               </div>
+              <ul class="hero-trust-list" aria-label="信頼指標">
+                <li class="hero-trust-item">
+                  <span class="hero-trust-value">1000+</span>
+                  <span class="hero-trust-label">訪問施術利用者</span>
+                </li>
+                <li class="hero-trust-item">
+                  <span class="hero-trust-value">20+</span>
+                  <span class="hero-trust-label">地域活動年数</span>
+                </li>
+                <li class="hero-trust-item">
+                  <span class="hero-trust-value">30</span>
+                  <span class="hero-trust-label">年間地域イベント</span>
+                </li>
+              </ul>
             </div>
             <div class="hero-visual" aria-hidden="true">
               <div class="hero-visual-shell">
                 <img class="hero-orbit" src="assets/images/hero-orbit.svg" alt="" />
                 <div class="hero-floating-card hero-floating-card-primary">
-                  <p class="hero-floating-label">Support Flow</p>
+                  <p class="hero-floating-label">支援の流れ</p>
                   <p class="hero-floating-value">運動 → 訪問 → 介護 → 終活</p>
                 </div>
                 <div class="hero-floating-card hero-floating-card-secondary">
-                  <p class="hero-floating-label">Community Reach</p>
+                  <p class="hero-floating-label">地域との接点</p>
                   <p class="hero-floating-value">地域密着の継続支援</p>
                 </div>
               </div>
@@ -89,17 +104,21 @@
         <div class="container">
           <div class="section-header section-header-divider">
             <h2>実績例</h2>
+            <p class="section-intro">地域に根ざした活動の積み重ねを、数値でわかりやすく示しています。</p>
           </div>
           <div class="achievements-grid grid grid-tablet-2 grid-desktop-3" aria-label="実績例">
             <article class="achievement-card card card-interactive">
+              <p class="metric-label">利用実績</p>
               <h3>訪問施術利用者</h3>
               <p class="achievement-value">1000人以上</p>
             </article>
             <article class="achievement-card card card-interactive">
+              <p class="metric-label">地域活動</p>
               <h3>地域活動</h3>
               <p class="achievement-value">20年以上</p>
             </article>
             <article class="achievement-card card card-interactive">
+              <p class="metric-label">年間開催</p>
               <h3>地域イベント</h3>
               <p class="achievement-value">年間30回</p>
             </article>
@@ -110,7 +129,7 @@
       <section class="section-alt" id="mission">
         <div class="container layout-two-column">
           <div class="company-copy">
-            <p class="section-label eyebrow">Mission</p>
+            <p class="section-label eyebrow">企業理念</p>
             <div class="company-block">
               <span class="icon icon-panel" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -119,7 +138,7 @@
                   />
                 </svg>
               </span>
-              <h2>Mission</h2>
+              <h2>理念</h2>
               <p class="company-keyword">第二の家族</p>
               <p>
                 地域の人が安心して<br />
@@ -134,7 +153,7 @@
                   />
                 </svg>
               </span>
-              <h3>Concept</h3>
+              <h3>支える領域</h3>
               <p>
                 健康<br />
                 予防<br />
@@ -163,8 +182,10 @@
               私たちは、その変化を分断せず、一体で支える体制を整えています。
             </p>
           </div>
+          <p class="diagram-intro eyebrow">支援の流れ</p>
           <div class="support-diagram grid grid-2">
             <div class="support-node card">
+              <span class="support-node-step">01</span>
               <span class="icon icon-panel" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                   <path
@@ -176,6 +197,7 @@
               <span class="support-node-text">予防と運動習慣の入り口</span>
             </div>
             <div class="support-node card">
+              <span class="support-node-step">02</span>
               <span class="icon icon-panel" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                   <path
@@ -187,6 +209,7 @@
               <span class="support-node-text">身体ケアを自宅まで継続</span>
             </div>
             <div class="support-node card">
+              <span class="support-node-step">03</span>
               <span class="icon icon-panel" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                   <path
@@ -198,6 +221,7 @@
               <span class="support-node-text">家族と地域につながる支援</span>
             </div>
             <div class="support-node card">
+              <span class="support-node-step">04</span>
               <span class="icon icon-panel" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                   <path
@@ -360,8 +384,12 @@
             <p class="lead section-intro">私たちは、地域や専門機関との連携を大切にしています。</p>
           </div>
           <div class="partner-logos grid grid-tablet-2" aria-label="連携先ロゴ一覧">
-            <div class="partner-logo card" aria-label="アルファ医療福祉専門学校 ロゴ">ALPHA</div>
-            <div class="partner-logo card" aria-label="テクノジム ジャパン ロゴ">TECHNOGYM</div>
+            <div class="partner-logo card" aria-label="アルファ医療福祉専門学校 ロゴ">
+              <img class="partner-logo-mark" src="assets/images/partner-alpha.svg" alt="" />
+            </div>
+            <div class="partner-logo card" aria-label="テクノジム ジャパン ロゴ">
+              <img class="partner-logo-mark" src="assets/images/partner-technogym.svg" alt="" />
+            </div>
           </div>
           <ul class="partner-list" aria-label="地域・専門機関との連携">
             <li class="card">アルファ医療福祉専門学校（産学連携）</li>
@@ -389,13 +417,18 @@
         <div class="container">
           <div class="cta-panel card">
             <div class="section-header section-header-compact">
-              <p class="section-label eyebrow">Consultation</p>
+              <p class="section-label eyebrow">相談窓口</p>
               <h2>地域に根ざした支援についてご相談ください</h2>
               <p class="lead section-intro section-intro-narrow">
                 医療・運動・生活支援・終活支援を一体で考える入口として、
                 相談しやすい導線を用意しています。
               </p>
             </div>
+            <ul class="cta-points" aria-label="相談の特徴">
+              <li class="cta-point">まずは事業全体の整理から相談できます</li>
+              <li class="cta-point">身体・生活・将来準備を横断して確認できます</li>
+              <li class="cta-point">地域に根ざした継続支援の流れをご案内します</li>
+            </ul>
             <div class="hero-actions cta-actions">
               <a class="button button-primary" href="mailto:info@example.com">お問い合わせ</a>
               <a class="button button-secondary" href="#business-units">事業を見る</a>
