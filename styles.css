@@ -266,6 +266,23 @@ footer {
   max-width: 42rem;
 }
 
+.support-diagram {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 520px;
+  margin-top: 40px;
+}
+
+.support-node {
+  padding: 20px;
+  border: 1px solid #e6e8ef;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
+  font-weight: 500;
+}
+
 .achievements-grid,
 .business-grid,
 .partner-list,
