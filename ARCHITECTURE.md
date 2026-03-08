@@ -56,9 +56,9 @@ All sections follow a unified container layout.
 
 ```css
 .container {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px;
 }
 ```
 
@@ -66,7 +66,7 @@ Section spacing:
 
 ```css
 section {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 ```
 
@@ -99,8 +99,8 @@ Many sections use card-based layouts.
 Card style:
 
 background: white  
-border-radius: 8px  
-padding: 24px  
+border-radius: 12px  
+padding: 32px  
 box-shadow: subtle
 
 Cards must feel clean and readable.
@@ -111,7 +111,7 @@ Cards must feel clean and readable.
 
 Primary font:
 
-system-ui
+Noto Sans JP, sans-serif
 
 Scale:
 
@@ -132,9 +132,10 @@ Avoid dense paragraphs.
 
 Primary colors:
 
-Navy: #0B2E4E  
-Emerald: #2FAF90  
-Gray background: #F5F7F8  
+Primary: #1F4E79  
+Secondary: #2C3E50  
+Background: #F5F7FA  
+Accent: #C9D6E3  
 Text: #222222  
 White: #FFFFFF
 
