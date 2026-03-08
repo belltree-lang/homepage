@@ -898,14 +898,21 @@ main > section:nth-of-type(even):not(.section-alt):not(.section-soft):not(.trust
 
 .hero-visual {
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
-  min-height: 26rem;
+  min-height: 520px;
   padding: var(--space-xl);
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(233, 240, 247, 0.92)),
-    var(--surface-gradient);
+  background: #eef3f7;
   box-shadow: var(--shadow-lg);
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-visual::after,
