@@ -9,7 +9,7 @@
   --color-accent-hover: #A86550;
   --color-surface: #FFFFFF;
   --color-text: #2C2C2C;
-  --color-text-muted: #666666;
+  --color-text-muted: #525252;
   --color-border: #E5E0D8;
   --color-border-strong: #C4BCB3;
 
@@ -529,5 +529,142 @@ p:last-child { margin-bottom: 0; }
 
 /* Utility */
 .mb-0 { margin-bottom: 0 !important; }
-.mt-xl { margin-top: var(--space-xl); }
 .mt-2xl { margin-top: var(--space-2xl); }
+
+/* Floating Action Button (FAB) */
+.fab-container {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-xs);
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .fab-container {
+    bottom: var(--space-md);
+    right: var(--space-md);
+  }
+}
+.fab-button {
+  pointer-events: auto;
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 1.5rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border: 2px solid var(--color-surface);
+}
+.fab-button:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-surface);
+  transform: translateY(-4px);
+}
+.fab-label {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  box-shadow: var(--shadow-sm);
+  pointer-events: auto;
+  margin-bottom: 2px;
+  opacity: 0.9;
+}
+
+/* Service Stepper / Lifecycle Indicator */
+.service-stepper {
+  display: flex;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: calc(var(--space-2xl) * -0.5);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 10;
+}
+.service-stepper-item {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-sm);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--color-surface);
+  transition: background-color 0.3s ease;
+}
+.service-stepper-item:last-child {
+  border-right: none;
+}
+.service-stepper-item.active {
+  background: var(--color-background-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  box-shadow: inset 0 -3px 0 var(--color-primary);
+}
+@media (max-width: 767px) {
+  .service-stepper {
+    flex-wrap: wrap;
+    border-radius: var(--radius-sm);
+  }
+  .service-stepper-item {
+    flex: 1 1 50%;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .service-stepper-item:nth-child(2), .service-stepper-item:nth-child(4) {
+    border-right: none;
+  }
+  .service-stepper-item:nth-child(3), .service-stepper-item:nth-child(4) {
+    border-bottom: none;
+  }
+}
+
+/* FAQ List */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+.faq-q {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  gap: 0.5rem;
+}
+.faq-a {
+  color: var(--color-text-muted);
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+.faq-icon {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+}
+
