@@ -4,593 +4,220 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>株式会社べるつりー | 地域で人生後半を支える総合サポート企業</title>
-    <meta
-      name="description"
-      content="株式会社べるつりーは、運動から介護、終活までを支える地域密着型の総合サポート企業です。医療、運動、生活支援を横断して継続的に伴走します。"
-    />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:site_name" content="株式会社べるつりー" />
-    <meta property="og:title" content="株式会社べるつりー | 地域で人生後半を支える総合サポート企業" />
-    <meta
-      property="og:description"
-      content="運動から介護、終活まで。地域で人生後半を支える総合サポート企業として、医療・運動・生活支援を一体で提供します。"
-    />
+    <meta name="description" content="株式会社べるつりーは、運動から介護、終活までを支える地域密着型の総合サポート企業です。医療、運動、生活支援を横断して継続的に伴走します。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">本文へ移動</a>
     <header class="site-header">
       <div class="container site-header-inner">
         <a class="site-logo" href="./">BellTree</a>
         <nav class="site-nav" aria-label="主要ナビゲーション">
           <a href="./" aria-current="page">ホーム</a>
-          <a href="./services/">サービス</a>
           <a href="./about/">会社情報</a>
-          <a class="nav-cta" href="./contact/">お問い合わせ</a>
+          <a href="./services/">サービス一覧</a>
+          <a href="./news/">お知らせ</a>
+          <a class="nav-cta" href="./contact/">ご相談窓口</a>
         </nav>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="hero" id="hero">
-        <div class="container hero-inner">
-          <div class="hero-grid">
-            <div class="stack hero-copy">
-              <p class="eyebrow">地域伴走型ヘルスケア</p>
-              <h1 class="hero-title">運動から介護、終活まで。<br />地域で人生後半を支える総合サポート企業。</h1>
-              <p class="hero-description">
-                元気な今の運動習慣づくりから、通えなくなったときの訪問支援、介護、終活準備まで。
-                べるつりーは地域の中で相談先が変わり続けない支援体制をつくります。
+      <!-- Premium Hero Section -->
+      <section class="section-spacing section-spacing-lg bg-soft">
+        <div class="container">
+          <div class="editorial-split">
+            <div>
+              <p class="text-lead" style="color: var(--color-accent); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-xs);">地域で伴走する総合ヘルスケア</p>
+              <h1 style="margin-bottom: var(--space-lg);">人生の後半を、<br/>もっと安心できる時間に。</h1>
+              <p class="text-lead text-muted" style="margin-bottom: var(--space-xl);">
+                元気な今の運動習慣づくりから、通えなくなったときの訪問支援、介護、そして終活準備まで。<br/>
+                べるつりーは、相談先が変わり続けない支援体制で、あなたとご家族の人生に伴走します。
               </p>
-              <div class="hero-story" aria-label="べるつりーの提供価値">
-                <article class="card hero-story-card">
-                  <p class="trust-label">相談導線</p>
-                  <p class="hero-card-title">相談の入口を一つに</p>
-                  <p class="hero-story-text">運動、施術、介護、終活を別々ではなく、一つの流れとして相談できます。</p>
-                </article>
-                <article class="card hero-story-card">
-                  <p class="trust-label">継続支援</p>
-                  <p class="hero-card-title">状態変化に合わせて伴走</p>
-                  <p class="hero-story-text">今の悩みだけでなく、次に必要になる支援まで見通してご案内します。</p>
-                </article>
+              <div class="actions-group">
+                <a href="./contact/" class="btn btn-primary">まずは相談してみる</a>
+                <a href="#integrated-support" class="btn btn-secondary">支援の流れを見る</a>
               </div>
-              <div class="hero-actions">
-                <a class="button button-primary" href="./contact/">相談する</a>
-                <a class="button button-secondary" href="./services/">サービス一覧を見る</a>
-              </div>
-              <div class="route-nav-secondary" aria-label="ホーム内セクション">
-                <a href="#support-model">支援モデル</a>
-                <a href="#business-units">事業一覧</a>
-                <a href="#trust">信頼情報</a>
-              </div>
-              <ul class="hero-trust-list" aria-label="信頼指標">
-                <li class="card card-compact">
-                  <span class="trust-value">2011</span>
-                  <span class="muted">創業</span>
-                </li>
-                <li class="card card-compact">
-                  <span class="trust-value">16,000+</span>
-                  <span class="muted">累計施術実績</span>
-                </li>
-                <li class="card card-compact">
-                  <span class="trust-value">260</span>
-                  <span class="muted">運動支援利用者</span>
-                </li>
-              </ul>
             </div>
-            <div class="hero-visual" aria-hidden="true">
-              <div class="hero-visual-shell">
-                <img class="hero-orbit" src="./assets/images/hero-orbit.svg" alt="" />
-                <div class="hero-floating-card hero-floating-card-primary">
-                  <p class="hero-floating-label">支援の流れ</p>
-                  <p class="hero-floating-value">運動 → 訪問 → 介護 → 終活</p>
-                </div>
-                <div class="hero-floating-card hero-floating-card-secondary">
-                  <p class="hero-floating-label">相談導線</p>
-                  <p class="hero-floating-value">地域で継続できる伴走型サポート</p>
-                </div>
-              </div>
+            <div class="editorial-image">
+              <!-- Placeholder for emotional, warm homepage hero image -->
+              <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem;">[Hero Image: Warm interaction between staff and older adult]</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="service-overview" aria-label="サービス概要">
-        <div class="container grid-3">
-          <div class="service-card">
-            <div class="image-placeholder" aria-hidden="true"></div>
-            <h3>運動・健康づくり</h3>
-            <p>べるフィット</p>
-            <p>地域で健康習慣をつくるフィットネス</p>
+      <!-- Consultation Entry / Concern-Based -->
+      <section class="section-spacing container-narrow" style="margin: 0 auto; text-align: center;">
+        <div class="section-header">
+          <span class="eyebrow">For You</span>
+          <h2>こんな不安はありませんか？</h2>
+          <p class="text-muted">今すぐ制度やサービスが必要か分からない段階でも、次の一歩を整理する相談先としてご利用いただけます。</p>
+        </div>
+        
+        <div class="grid grid-2" style="text-align: left;">
+          <div class="card bg-surface">
+            <h4>「最近、体力の衰えを感じる」</h4>
+            <p class="text-muted mt-xl mb-0">無理なく続けられる運動習慣から始めたい方へ。</p>
           </div>
-          <div class="service-card">
-            <div class="image-placeholder" aria-hidden="true"></div>
-            <h3>訪問支援</h3>
-            <p>訪問鍼灸マッサージ</p>
-            <p>通院困難な方への医療支援</p>
+          <div class="card bg-surface">
+            <h4>「通院や外出が難しくなってきた」</h4>
+            <p class="text-muted mt-xl mb-0">ご自宅に伺い、医療的な身体ケアを継続します。</p>
           </div>
-          <div class="service-card">
-            <div class="image-placeholder" aria-hidden="true"></div>
-            <h3>介護・終活</h3>
-            <p>地域生活サポート</p>
-            <p>介護・生活・終活まで支援</p>
+          <div class="card bg-surface">
+            <h4>「親の介護が心配になってきた」</h4>
+            <p class="text-muted mt-xl mb-0">制度の利用や生活設計をケアマネジャーが一緒に整理します。</p>
           </div>
+          <div class="card bg-surface">
+            <h4>「将来の準備に不安がある」</h4>
+            <p class="text-muted mt-xl mb-0">相続や終活など、少し先の未来に向けた法的な準備を支えます。</p>
+          </div>
+        </div>
+        <div class="mt-2xl">
+          <a href="./contact/" class="btn btn-primary">現状の不安を相談する</a>
         </div>
       </section>
 
-      <section class="trust-section" aria-label="信頼情報概要">
-        <div class="container trust-grid">
-          <h2>地域で人生後半を支える体制</h2>
-          <div class="trust-item">
-            <h4>国家資格者在籍</h4>
-            <p>鍼灸師・マッサージ師など専門職</p>
-          </div>
-          <div class="trust-item">
-            <h4>地域連携</h4>
-            <p>医療・介護・地域団体と連携</p>
-          </div>
-          <div class="trust-item">
-            <h4>人生後半サポート</h4>
-            <p>健康・介護・終活まで一体支援</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="support-flow" aria-label="支援の流れ">
+      <!-- Integrated Ecosystem Flow -->
+      <section id="integrated-support" class="section-spacing bg-alt">
         <div class="container">
-          <h2>支援の流れ</h2>
-          <div class="image-placeholder flow-visual" aria-hidden="true"></div>
-          <div class="flow-grid">
-            <div class="card flow-step-card">運動</div>
-            <div class="card flow-step-card">訪問</div>
-            <div class="card flow-step-card">介護</div>
-            <div class="card flow-step-card">終活</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-section" aria-label="お問い合わせ案内">
-        <div class="container cta-box">
-          <h2>地域での生活や将来の準備について<br />お気軽にご相談ください</h2>
-          <a class="button button-primary cta-button" href="./contact/">お問い合わせはこちら</a>
-        </div>
-      </section>
-
-      <section class="section-soft" id="audience">
-        <div class="container narrow">
-          <div class="section-header section-header-divider">
-            <p class="section-label">For You</p>
-            <h2>こんな方へ</h2>
-            <p class="section-intro">今すぐ制度やサービスが必要か分からない段階でも、次の一歩を整理する相談先としてご利用いただけます。</p>
-          </div>
-          <div class="card stack">
-            <ul class="detail-list" aria-label="よくあるお悩み">
-              <li>最近体力の衰えを感じる</li>
-              <li>親の介護が心配</li>
-              <li>通院が難しくなってきた</li>
-              <li>終活を少し考え始めた</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="achievements">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">実績</p>
-            <h2>地域で積み重ねてきた実績</h2>
-            <p class="section-intro">単発のサービス提供ではなく、継続支援の積み重ねを信頼情報として提示します。</p>
-          </div>
-          <div class="achievement-stats" aria-label="実績指標">
-            <article class="card achievement-stat-card">
-              <p class="metric-label">創業年</p>
-              <p class="achievement-stat-value">2011<span>年</span></p>
-              <p class="achievement-stat-note">創業2011年</p>
-              <p class="muted">地域に根ざした支援体制を積み重ねてきた出発点です。</p>
-            </article>
-            <article class="card achievement-stat-card">
-              <p class="metric-label">累計施術実績</p>
-              <p class="achievement-stat-value">16,000<span>+</span></p>
-              <p class="achievement-stat-note">累計16,000件以上の施術実績</p>
-              <p class="muted">地域で積み重ねてきた継続支援の実績です。</p>
-            </article>
-            <article class="card achievement-stat-card">
-              <p class="metric-label">現在患者数</p>
-              <p class="achievement-stat-value">約200<span>名</span></p>
-              <p class="achievement-stat-note">現在患者数 約200名</p>
-              <p class="muted">現在も訪問支援を必要とする方を継続して支えています。</p>
-            </article>
-            <article class="card achievement-stat-card">
-              <p class="metric-label">運動支援利用者</p>
-              <p class="achievement-stat-value">約260<span>名</span></p>
-              <p class="achievement-stat-note">べるフィット利用者 約260名（現在利用者数）</p>
-              <p class="muted">元気な今から身体づくりに取り組む利用者数です。</p>
-            </article>
-            <article class="card achievement-stat-card">
-              <p class="metric-label">国家資格者</p>
-              <p class="achievement-stat-value">12<span>名</span></p>
-              <p class="achievement-stat-note">国家資格保有スタッフ 12名</p>
-              <p class="muted">専門資格を持つスタッフが多面的な支援を支えます。</p>
-            </article>
-            <article class="card achievement-stat-card">
-              <p class="metric-label">ケアマネジャー</p>
-              <p class="achievement-stat-value">4<span>名</span></p>
-              <p class="achievement-stat-note">ケアマネジャー 4名在籍</p>
-              <p class="muted">介護保険や生活設計の相談に継続対応できる体制です。</p>
-            </article>
-            <article class="card achievement-stat-card">
-              <p class="metric-label">行政書士</p>
-              <p class="achievement-stat-value">1<span>名</span></p>
-              <p class="achievement-stat-note">行政書士 1名在籍（2026年開業予定）</p>
-              <p class="muted">相続や後見など将来準備まで見据えた相談体制を整えています。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-soft" id="support-model">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">支援モデル</p>
-            <h2>人生の変化に寄り添う支援モデル</h2>
-            <p class="section-intro">
-              元気な今から介護や将来準備まで、支援が途中で途切れない構造を整えています。
+          <div class="section-header">
+            <span class="eyebrow">Our Support Model</span>
+            <h2>人生の変化に合わせて、<br/>支援が途切れない構造</h2>
+            <p class="text-muted" style="max-width: 600px;">
+              私たちは、運動から介護までを個別のサービスとしてではなく、「一つの連続した支援」として提供します。状態が変わっても、ご相談窓口はべるつりーのままです。
             </p>
           </div>
-          <div class="grid grid-4">
-            <article class="card support-node">
-              <span class="support-node-step">01</span>
-              <h3 class="support-node-title">運動習慣</h3>
-              <p class="support-node-text">べるフィットを入口に、身体づくりを継続します。</p>
-            </article>
-            <article class="card support-node">
-              <span class="support-node-step">02</span>
-              <h3 class="support-node-title">訪問支援</h3>
-              <p class="support-node-text">通えなくなっても自宅で支援を継続します。</p>
-            </article>
-            <article class="card support-node">
-              <span class="support-node-step">03</span>
-              <h3 class="support-node-title">介護連携</h3>
-              <p class="support-node-text">制度活用と生活設計をケアマネジャーが支えます。</p>
-            </article>
-            <article class="card support-node">
-              <span class="support-node-step">04</span>
-              <h3 class="support-node-title">終活支援</h3>
-              <p class="support-node-text">相続や後見の準備まで見通して伴走します。</p>
-            </article>
+
+          <div class="ecosystem-flow">
+            <div class="ecosystem-node">
+              <span class="ecosystem-node-badge">STEP 01</span>
+              <h4>運動習慣</h4>
+              <p class="text-muted mt-xl mb-0">べるフィットを入口に、元気な身体づくりを継続します。</p>
+              <a href="./services/fitness/" style="margin-top: auto; padding-top: var(--space-md); color: var(--color-accent); font-weight: var(--font-weight-medium); font-size: var(--font-size-sm);">べるフィットを見る &rarr;</a>
+            </div>
+            <div class="ecosystem-node">
+              <span class="ecosystem-node-badge">STEP 02</span>
+              <h4>訪問支援</h4>
+              <p class="text-muted mt-xl mb-0">通えなくなっても、自宅で身体のケアを継続的に行います。</p>
+              <a href="./services/acupuncture/" style="margin-top: auto; padding-top: var(--space-md); color: var(--color-accent); font-weight: var(--font-weight-medium); font-size: var(--font-size-sm);">訪問支援を見る &rarr;</a>
+            </div>
+            <div class="ecosystem-node">
+              <span class="ecosystem-node-badge">STEP 03</span>
+              <h4>介護連携</h4>
+              <p class="text-muted mt-xl mb-0">介護制度の活用と生活設計をケアマネジャーが専門的に支えます。</p>
+              <a href="./services/home-care/" style="margin-top: auto; padding-top: var(--space-md); color: var(--color-accent); font-weight: var(--font-weight-medium); font-size: var(--font-size-sm);">居宅介護支援を見る &rarr;</a>
+            </div>
+            <div class="ecosystem-node">
+              <span class="ecosystem-node-badge">STEP 04</span>
+              <h4>終活・法務</h4>
+              <p class="text-muted mt-xl mb-0">相続や後見の準備まで見通して、行政書士が伴走します。</p>
+              <a href="./services/legal/" style="margin-top: auto; padding-top: var(--space-md); color: var(--color-accent); font-weight: var(--font-weight-medium); font-size: var(--font-size-sm);">行政書士支援を見る &rarr;</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="business-units">
+      <!-- Trust Metrics & Partnerships -->
+      <section class="section-spacing">
         <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">事業一覧</p>
-            <h2>私たちの事業</h2>
-            <p class="section-intro">それぞれの事業が独立するのではなく、人生の変化に応じてつながる構成です。</p>
-          </div>
-          <div class="service-list">
-            <article class="card service-card card-interactive">
-              <div class="image-placeholder" aria-hidden="true"></div>
-              <h3>べるフィット</h3>
-              <p class="muted">人生後半のための運動習慣づくりを支えるメディカルフィットネス。</p>
-              <a class="button button-text" href="./services/fitness/">詳細を見る</a>
-            </article>
-            <article class="card service-card card-interactive">
-              <div class="image-placeholder" aria-hidden="true"></div>
-              <h3>訪問鍼灸マッサージ</h3>
-              <p class="muted">通院が難しい方へ、在宅で継続的な身体ケアを提供します。</p>
-              <a class="button button-text" href="./services/acupuncture/">詳細を見る</a>
-            </article>
-            <article class="card service-card card-interactive">
-              <div class="image-placeholder" aria-hidden="true"></div>
-              <h3>居宅介護支援</h3>
-              <p class="muted">介護保険制度の活用から生活設計まで伴走します。</p>
-              <a class="button button-text" href="./services/home-care/">詳細を見る</a>
-            </article>
-            <article class="card service-card card-interactive">
-              <div class="image-placeholder" aria-hidden="true"></div>
-              <h3>行政書士支援</h3>
-              <p class="muted">相続、後見、死後事務などの将来準備を一体で支えます。</p>
-              <a class="button button-text" href="./services/legal/">詳細を見る</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-alt" id="company-story">
-        <div class="container narrow">
-          <div class="section-header section-header-divider">
-            <p class="section-label">代表メッセージ</p>
-            <h2>支援が途切れない地域の相談窓口へ</h2>
-          </div>
-          <div class="card stack">
-            <div class="image-placeholder company-image" aria-hidden="true"></div>
-            <p>
-              地域で医療・介護に携わる中で、支援が制度や役割の境界で途切れる瞬間を多く見てきました。
-            </p>
-            <p>
-              べるつりーは、運動、施術、介護、終活を別々の窓口ではなく、一つの流れとして相談できる場を目指しています。
-            </p>
-            <p class="signature">株式会社べるつりー 代表取締役 鈴木 俊平</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="timeline">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">沿革</p>
-            <h2>沿革</h2>
-          </div>
-          <ul class="history-list">
-            <li class="card timeline-card">
-              <h3>2011年</h3>
-              <p class="muted">訪問鍼灸マッサージ事業開始</p>
-            </li>
-            <li class="card timeline-card">
-              <h3>2014年</h3>
-              <p class="muted">居宅介護支援事業所 開設</p>
-            </li>
-            <li class="card timeline-card">
-              <h3>2021年</h3>
-              <p class="muted">べるフィット 開業</p>
-            </li>
-            <li class="card timeline-card">
-              <h3>2026年</h3>
-              <p class="muted">べるリーガル行政書士事務所 開業予定</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="trust-section" id="trust">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">信頼基盤</p>
-            <h2>地域・専門機関との連携</h2>
-            <p class="section-intro">地域の学校、パートナー企業、多職種連携を通じて支援の質と継続性を保っています。</p>
-          </div>
-          <div class="trust-blocks">
-            <article class="card trust-block">
-              <p class="trust-label">Partner</p>
-              <h3>アルファ医療福祉専門学校</h3>
-              <p class="muted">産学連携による人材育成と地域接点づくり。</p>
-            </article>
-            <article class="card trust-block">
-              <p class="trust-label">Technology</p>
-              <h3>テクノジム ジャパン</h3>
-              <p class="muted">機器導入と技術連携による運動支援の強化。</p>
-            </article>
-            <article class="card trust-block">
-              <p class="trust-label">Profession</p>
-              <h3>多職種連携</h3>
-              <p class="muted">国家資格者、ケアマネジャー、将来準備支援を横断して対応。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="news">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">News</p>
-            <h2>地域活動・お知らせ</h2>
-            <p class="section-intro">最新の更新を3件掲載しています。サービス案内だけでなく、地域活動や連携に関する動きもこちらからご確認いただけます。</p>
-          </div>
-          <div class="news-list" aria-label="地域活動と最新のお知らせ">
-            <article class="card news-card">
-              <p class="news-date">2026.03.01</p>
-              <h3>べるリーガル行政書士事務所の開業準備状況を公開しました</h3>
-              <p class="muted">終活支援の一体対応に向けた準備内容と、今後のご案内予定をお知らせします。</p>
-              <a class="button button-text" href="./news/">詳細を見る</a>
-            </article>
-            <article class="card news-card">
-              <p class="news-date">2026.02.14</p>
-              <h3>地域向け運動相談会の開催日程を更新しました</h3>
-              <p class="muted">べるフィットの見学や運動習慣づくりの相談ができる最新スケジュールを掲載しています。</p>
-              <a class="button button-text" href="./news/">詳細を見る</a>
-            </article>
-            <article class="card news-card">
-              <p class="news-date">2026.01.20</p>
-              <h3>訪問鍼灸マッサージの対応エリア情報を更新しました</h3>
-              <p class="muted">現在の対応エリアとご相談の流れを見直し、より分かりやすく整理しました。</p>
-              <a class="button button-text" href="./news/">詳細を見る</a>
-            </article>
-          </div>
-          <div class="section-link-row">
-            <a class="button button-text section-link" href="./news/">すべてのお知らせを見る</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-soft" id="consultation-flow">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">Consultation Flow</p>
-            <h2>ご相談の流れ</h2>
-            <p class="section-intro">初回のお問い合わせから継続サポートまで、状況に合わせて無理なく進められる相談フローを整えています。</p>
-          </div>
-          <div class="image-placeholder flow-visual" aria-hidden="true"></div>
-          <div class="grid grid-4 flow-grid" aria-label="ご相談の流れ">
-            <article class="card flow-step-card">
-              <span class="support-node-step">01</span>
-              <h3 class="flow-step-title">お問い合わせ</h3>
-              <p class="muted">身体の不安、介護、終活準備など、今気になっていることをお問い合わせフォームやメールでお知らせください。</p>
-            </article>
-            <article class="card flow-step-card">
-              <span class="support-node-step">02</span>
-              <h3 class="flow-step-title">状況ヒアリング</h3>
-              <p class="muted">現在の生活状況や困りごと、ご家族の不安を整理し、どこから支援を始めると良いかを一緒に確認します。</p>
-            </article>
-            <article class="card flow-step-card">
-              <span class="support-node-step">03</span>
-              <h3 class="flow-step-title">最適なサポート提案</h3>
-              <p class="muted">運動、訪問支援、介護、将来準備の中から、今の状態に合うサポート導線を組み合わせてご提案します。</p>
-            </article>
-            <article class="card flow-step-card">
-              <span class="support-node-step">04</span>
-              <h3 class="flow-step-title">継続サポート</h3>
-              <p class="muted">状態変化があっても支援が途切れないよう、必要に応じて他サービスや地域連携先へつなぎながら伴走します。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="community-partnership">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">Regional Collaboration</p>
-            <h2>地域とともに支える取り組み</h2>
-            <p class="section-intro">企業単独で完結せず、地域の医療・教育・福祉資源と連携しながら、人生後半を支える土台を広げています。</p>
-          </div>
-          <div class="grid grid-4 community-grid">
-            <article class="card community-card">
-              <p class="trust-label">Medical</p>
-              <h3>医療機関との連携</h3>
-              <p class="muted">身体状態の共有や支援方針の擦り合わせを行い、通所・訪問・介護へつながる相談導線を整えています。</p>
-            </article>
-            <article class="card community-card">
-              <p class="trust-label">Event</p>
-              <h3>地域健康イベント</h3>
-              <p class="muted">運動相談会や健康啓発の場を通じて、元気なうちから相談しやすい地域接点づくりに取り組んでいます。</p>
-            </article>
-            <article class="card community-card">
-              <p class="trust-label">Academia</p>
-              <h3>大学との共同活動</h3>
-              <p class="muted">学生や研究機関との協働により、地域の課題把握や次世代人材との接点づくりを進めています。</p>
-            </article>
-            <article class="card community-card">
-              <p class="trust-label">Social Care</p>
-              <h3>社会的処方の取り組み</h3>
-              <p class="muted">身体だけでなく孤立や生活不安にも目を向け、地域資源と結びつける支援のあり方を模索しています。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-alt" id="faq">
-        <div class="container narrow">
-          <div class="section-header section-header-divider">
-            <p class="section-label">FAQ</p>
-            <h2>よくあるご相談</h2>
-            <p class="section-intro">初めてご相談いただく方から多く寄せられる質問をまとめました。現在の状態がはっきりしていない段階でもご相談いただけます。</p>
-          </div>
-          <div class="faq-list">
-            <details class="card faq-item" open>
-              <summary>足腰の衰えや体力低下が気になり始めた段階でも相談できますか？</summary>
-              <p>もちろんご相談いただけます。べるつりーは、介護が必要になってからではなく、元気な今のうちから身体や生活の変化を整理することを大切にしています。つまずきやすい、外出が減った、運動を始めたいが何から取り組めばよいか分からないといった段階でもご相談の対象です。必要に応じて運動習慣づくりから訪問支援、介護相談まで見通しをご案内します。</p>
-            </details>
-            <details class="card faq-item">
-              <summary>運動が苦手で体力に自信がなくても、べるフィットを利用できますか？</summary>
-              <p>はい、運動経験がない方や体力に不安のある方でも始めやすいようにご案内しています。大切なのは無理なく続けられることなので、現在の身体状況や生活リズムを踏まえて取り組み方を考えます。いきなり強い運動を勧めるのではなく、習慣として定着しやすい内容を一緒に整理し、必要になれば訪問支援や介護相談にもつなげます。</p>
-            </details>
-            <details class="card faq-item">
-              <summary>家族の介護について、まだ制度が必要か分からない段階でも相談できますか？</summary>
-              <p>制度の利用が確定していない段階でも問題ありません。ご本人の状態やご家族の負担感、生活上の困りごとを整理しながら、今すぐ制度が必要なのか、まずは別の支援から始めるべきなのかを確認していきます。介護保険、訪問支援、運動の継続、将来準備を切り離さずに見通せるので、何を相談すべきか分からない状態からでも対応できます。</p>
-            </details>
-            <details class="card faq-item">
-              <summary>終活や相続の準備は、どのタイミングで相談するのがよいですか？</summary>
-              <p>終活や相続の相談は、困りごとが大きくなる前の早い段階ほど整理しやすくなります。親御さんの体調変化が気になり始めたとき、ご家族で今後の生活を話し始めたとき、介護や医療の選択肢を考え始めたときが一つの目安です。身体や生活支援の相談とあわせて将来準備の必要性を見通せるため、急ぎの手続きが発生する前から準備を進められます。</p>
-            </details>
-            <details class="card faq-item">
-              <summary>相談できる対象は高齢の本人だけですか？家族だけでも問い合わせできますか？</summary>
-              <p>ご本人だけでなく、ご家族からのご相談も受け付けています。離れて暮らす親御さんのことが心配、今後必要になる支援を先に整理しておきたい、通院や介護の負担が増えてきたといったご相談も少なくありません。最初から具体的なサービスを決めていただく必要はなく、現状の不安や気になっていることを共有いただければ、必要に応じてご本人も含めた進め方をご案内します。</p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-soft" id="cta">
-        <div class="container">
-          <div class="cta-panel card final-cta-panel">
-            <div class="section-header section-header-compact">
-              <p class="section-label">Final CTA</p>
-              <h2>まずはお気軽にご相談ください</h2>
-              <p class="section-intro">
-                身体の不安、介護の相談、運動習慣づくり、将来準備まで、現在の状況に合った相談の入口をご案内します。何から相談すればよいか分からない段階でも問題ありません。
+          <div class="editorial-split reverse">
+            <div>
+              <div class="section-header">
+                <span class="eyebrow">Trust & Experience</span>
+                <h2>地域で積み重ねてきた実績</h2>
+              </div>
+              <p class="text-muted mb-0">
+                2011年の創業以来、単なるサービス提供ではなく、地域に根ざした「継続支援」を何よりも大切にしてきました。
+                国家資格を持つ専門スタッフと、教育機関や他企業との連携を通じ、質の高い支援体制を構築しています。
               </p>
-            </div>
-            <div class="stack">
-              <ul class="cta-points" aria-label="相談の特徴">
-                <li class="cta-point">現在の困りごとと将来の不安をまとめて整理できます</li>
-                <li class="cta-point">ご本人だけでなくご家族からのご相談にも対応します</li>
-                <li class="cta-point">地域で継続しやすい支援導線をご提案します</li>
-              </ul>
-              <div class="hero-actions">
-                <a class="button button-primary" href="./contact/">お問い合わせ</a>
-                <a class="button button-secondary" href="./services/">サービス一覧</a>
+              
+              <div class="grid grid-2 mt-2xl" style="gap: var(--space-lg);">
+                <div style="border-left: 2px solid var(--color-accent); padding-left: var(--space-md);">
+                  <div style="font-size: var(--font-size-heading-lg); font-weight: var(--font-weight-bold); color: var(--color-primary); line-height: 1;">16,000<span style="font-size: var(--font-size-heading-sm);">+</span></div>
+                  <div class="text-muted mt-xl mb-0" style="font-size: var(--font-size-sm);">累計施術実績</div>
+                </div>
+                <div style="border-left: 2px solid var(--color-accent); padding-left: var(--space-md);">
+                  <div style="font-size: var(--font-size-heading-lg); font-weight: var(--font-weight-bold); color: var(--color-primary); line-height: 1;">260<span style="font-size: var(--font-size-heading-sm);">名</span></div>
+                  <div class="text-muted mt-xl mb-0" style="font-size: var(--font-size-sm);">現在の運動支援利用者</div>
+                </div>
+                <div style="border-left: 2px solid var(--color-accent); padding-left: var(--space-md);">
+                  <div style="font-size: var(--font-size-heading-lg); font-weight: var(--font-weight-bold); color: var(--color-primary); line-height: 1;">12<span style="font-size: var(--font-size-heading-sm);">名</span></div>
+                  <div class="text-muted mt-xl mb-0" style="font-size: var(--font-size-sm);">国家資格保有スタッフ</div>
+                </div>
+                <div style="border-left: 2px solid var(--color-accent); padding-left: var(--space-md);">
+                  <div style="font-size: var(--font-size-heading-lg); font-weight: var(--font-weight-bold); color: var(--color-primary); line-height: 1;">2011<span style="font-size: var(--font-size-heading-sm);">年</span></div>
+                  <div class="text-muted mt-xl mb-0" style="font-size: var(--font-size-sm);">創業</div>
+                </div>
               </div>
-              <p class="muted">ご本人・ご家族どちらからでもご相談いただけます。</p>
             </div>
+            <div class="editorial-image">
+               <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem;">[Company Image: Professional team or facility]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ultimate Consultation Banner -->
+      <section class="section-spacing container">
+        <div class="consultation-banner">
+          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">地域に根ざした支援について</p>
+          <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">まずはお気軽にご相談ください</h2>
+          <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
+            医療、運動、生活支援、終活支援までを横断して、あなたの現在地に合った相談先をご案内します。何から相談すればよいか分からない段階でも問題ありません。
+          </p>
+          <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
+             <a href="./contact/" class="btn btn-primary" style="background-color: var(--color-surface); color: var(--color-primary);">お問い合わせフォームへ</a>
+             <a href="./services/" class="btn btn-secondary" style="border-color: var(--color-surface); color: var(--color-surface);">サービス一覧を見る</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer-shell">
+    <footer class="site-footer">
+      <div class="container">
         <div class="footer-grid">
-          <div class="footer-block footer-block-brand">
-            <p class="footer-title">会社情報</p>
-            <p class="footer-company">株式会社べるつりー</p>
-            <p class="footer-summary">運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
-            <dl class="footer-company-details">
-              <div>
-                <dt>拠点</dt>
-                <dd>東京都町田市</dd>
-              </div>
-              <div>
-                <dt>対応領域</dt>
-                <dd>運動支援・訪問施術・介護支援・終活準備</dd>
-              </div>
-            </dl>
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+            <p style="opacity: 0.8; font-size: var(--font-size-sm); margin-top: auto;">東京都町田市<br/><a href="mailto:info@example.com">info@example.com</a></p>
           </div>
-          <nav class="footer-block footer-nav-block" aria-label="フッター主要導線">
-            <p class="footer-title">主要導線</p>
-            <ul class="footer-links">
+          
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
               <li><a href="./">ホーム</a></li>
-              <li><a href="./services/">サービス</a></li>
-              <li><a href="./about/">会社情報</a></li>
+              <li><a href="./about/">会社概要・理念</a></li>
+              <li><a href="./news/">お知らせ・地域活動</a></li>
+              <li><a href="./recruitment/">採用情報</a></li>
               <li><a href="./contact/">お問い合わせ</a></li>
             </ul>
-          </nav>
-          <nav class="footer-block footer-nav-block" aria-label="フッターサービス導線">
-            <p class="footer-title">サービス導線</p>
-            <ul class="footer-secondary-links">
-              <li><a href="./services/fitness/">べるフィット</a></li>
-              <li><a href="./services/acupuncture/">訪問鍼灸マッサージ</a></li>
-              <li><a href="./services/home-care/">居宅介護支援</a></li>
-              <li><a href="./services/legal/">行政書士支援</a></li>
-              <li><a href="./services/community/">地域コミュニティ支援</a></li>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>サービス</h3>
+            <ul>
+              <li><a href="./services/">サービス一覧</a></li>
+              <li><a href="./services/fitness/">べるフィット (運動支援)</a></li>
+              <li><a href="./services/acupuncture/">訪問鍼灸マッサージ (在宅支援)</a></li>
+              <li><a href="./services/home-care/">居宅介護支援 (制度活用)</a></li>
+              <li><a href="./services/legal/">べるリーガル (行政書士/法務)</a></li>
             </ul>
-          </nav>
-          <div class="footer-block footer-block-contact">
-            <p class="footer-title">相談窓口</p>
-            <p class="footer-contact-label">地域に根ざした総合相談窓口</p>
-            <address class="footer-contact">
-              <p class="footer-contact-row">
-                <span class="footer-contact-key">所在地</span>
-                <span>東京都町田市</span>
-              </p>
-              <p class="footer-contact-row">
-                <span class="footer-contact-key">メール</span>
-                <a href="mailto:info@example.com">info@example.com</a>
-              </p>
-            </address>
-            <p class="footer-meta">医療、運動、介護、終活支援を横断してご案内します。</p>
+          </div>
+
+          <div class="footer-nav">
+            <h3>コミュニティ</h3>
+            <ul>
+              <li><a href="./services/community/">地域活動</a></li>
+              <li><a href="./services/community/#partners">パートナーシップ</a></li>
+            </ul>
           </div>
         </div>
+        
         <div class="footer-bottom">
-          <p class="footer-meta">© BellTree Inc. All Rights Reserved.</p>
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

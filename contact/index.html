@@ -3,157 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>お問い合わせ | 株式会社べるつりー</title>
-    <meta name="description" content="株式会社べるつりーへのお問い合わせページです。サービス相談や支援導線の確認はこちらから。" />
+    <title>ご相談窓口 | 株式会社べるつりー</title>
+    <meta name="description" content="株式会社べるつりーのご相談窓口です。サービス選び、将来準備などお気軽にご相談ください。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">本文へ移動</a>
     <header class="site-header">
       <div class="container site-header-inner">
         <a class="site-logo" href="../">BellTree</a>
         <nav class="site-nav" aria-label="主要ナビゲーション">
           <a href="../">ホーム</a>
-          <a href="../services/">サービス</a>
           <a href="../about/">会社情報</a>
-          <a class="nav-cta" href="./" aria-current="page">お問い合わせ</a>
+          <a href="../services/">サービス一覧</a>
+          <a href="../news/">お知らせ</a>
+          <a class="nav-cta" href="./" aria-current="page">ご相談窓口</a>
         </nav>
       </div>
     </header>
 
-    <main id="main-content" class="page-shell">
-      <section class="page-hero">
+    <main id="main-content">
+      <section class="section-spacing bg-soft">
         <div class="container">
-          <div class="page-hero-content">
-            <div class="stack">
-              <div class="breadcrumbs">
-                <a href="../">ホーム</a>
-                <span>/</span>
-                <span>お問い合わせ</span>
-              </div>
-              <p class="eyebrow">お問い合わせ</p>
-              <h1 class="page-title">お問い合わせ</h1>
-              <p class="page-intro">現在の悩み、将来準備、サービスの選び方などを整理したい方に向けた相談導線です。</p>
-            </div>
-            <div class="card stack">
-              <div class="image-placeholder about-image" aria-hidden="true"></div>
-              <p class="trust-label">相談の入口</p>
-              <p class="hero-card-title">まずは全体像の確認から</p>
-              <p class="muted">身体、生活、制度、終活支援まで含めて、どこから相談すべきかを一緒に整理します。</p>
-            </div>
+          <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="eyebrow" style="margin-bottom: var(--space-md);">Contact</span>
+            <h1 style="margin-bottom: var(--space-lg);">ご相談窓口</h1>
+            <p class="text-lead text-muted">
+              「何から相談すればいいか分からない」という状態でも構いません。身体、生活、将来に関する不安を一緒に整理します。
+            </p>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="container contact-grid">
-          <h2 class="visually-hidden">お問い合わせ方法</h2>
-          <article class="card contact-card">
-              <p class="trust-label">メール</p>
-            <h3>メール</h3>
-            <p class="muted">サービス相談、連携相談、企業情報に関するお問い合わせ。</p>
-            <a class="button button-primary" href="mailto:info@example.com">メールで相談する</a>
-          </article>
-          <article class="card contact-card">
-              <p class="trust-label">情報導線</p>
-            <h3>先に情報を確認する</h3>
-            <p class="muted">相談前にサービス一覧や会社情報を確認したい場合はこちらです。</p>
-            <div class="inline-links">
-              <a class="button button-secondary" href="../services/">サービス</a>
-              <a class="button button-secondary" href="../about/">会社情報</a>
+      <section class="section-spacing container-narrow" style="margin: 0 auto;">
+         <div class="grid grid-2">
+            <div class="card" style="text-align: center; padding: var(--space-2xl) var(--space-lg);">
+               <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--space-sm);">✉️</div>
+               <h3 style="margin-bottom: var(--space-md);">メールでご相談</h3>
+               <p class="text-muted text-sm mb-lg">時間帯を問わず、状況の詳細をお送りいただけます。担当者よりご返信差し上げます。</p>
+               <a href="mailto:info@example.com" class="btn btn-primary" style="width: 100%; justify-content: center;">メールを送信する</a>
+               <p class="text-muted mt-sm" style="font-size: 0.75rem;">info@example.com</p>
             </div>
-          </article>
-        </div>
+            
+            <div class="card" style="text-align: center; padding: var(--space-2xl) var(--space-lg); background-color: var(--color-surface-hover);">
+               <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--space-sm);">☎️</div>
+               <h3 style="margin-bottom: var(--space-md);">お電話でのご相談</h3>
+               <p class="text-muted text-sm mb-lg">直接担当者とお話しされたい方はこちらにご連絡ください。（平日 9:00 - 18:00）</p>
+               <a href="tel:042-000-0000" class="btn btn-secondary" style="width: 100%; justify-content: center; background: white;">042-000-0000</a>
+            </div>
+         </div>
       </section>
 
-      <section class="trust-section">
-        <div class="container">
-          <div class="section-header section-header-divider">
-            <p class="section-label">相談整理</p>
+      <section class="section-spacing bg-alt mt-xl">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">Points</span>
             <h2>ご相談の整理ポイント</h2>
+            <p class="text-muted mt-md">事前に以下のどれにあてはまるかご自身で考えていただくとスムーズですが、考えずにお問い合わせいただいても問題ありません。</p>
           </div>
-          <div class="trust-blocks">
-            <article class="card trust-block">
-              <p class="trust-label">身体</p>
-              <h3>身体の不安</h3>
-              <p class="muted">運動習慣、通院負担、訪問支援の必要性を整理します。</p>
-            </article>
-            <article class="card trust-block">
-              <p class="trust-label">生活</p>
-              <h3>生活の不安</h3>
-              <p class="muted">介護制度や生活設計の相談導線を確認します。</p>
-            </article>
-            <article class="card trust-block">
-              <p class="trust-label">将来</p>
-              <h3>将来の準備</h3>
-              <p class="muted">終活や法務支援が必要な時期と内容を整理します。</p>
-            </article>
+          <div class="grid grid-3 mt-2xl">
+            <div class="card">
+               <span class="eyebrow">01. 身体</span>
+               <h4 style="margin-bottom: var(--space-xs);">身体の不安</h4>
+               <p class="text-muted text-sm mb-0">運動習慣、通院負担、訪問支援がお悩みの方。べるフィットや訪問マッサージの案内となります。</p>
+            </div>
+            <div class="card">
+               <span class="eyebrow">02. 生活</span>
+               <h4 style="margin-bottom: var(--space-xs);">生活の不安</h4>
+               <p class="text-muted text-sm mb-0">介護制度の利用や家族の負担など、生活設計のお悩み。居宅介護支援のご案内となります。</p>
+            </div>
+            <div class="card">
+               <span class="eyebrow">03. 将来</span>
+               <h4 style="margin-bottom: var(--space-xs);">将来の不安</h4>
+               <p class="text-muted text-sm mb-0">相続、後見など将来の手続きに関するお悩み。べるリーガル（行政書士）のご案内となります。</p>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer-shell">
+    <footer class="site-footer">
+      <div class="container">
         <div class="footer-grid">
-          <div class="footer-block footer-block-brand">
-            <p class="footer-title">会社情報</p>
-            <p class="footer-company">株式会社べるつりー</p>
-            <p class="footer-summary">運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
-            <dl class="footer-company-details">
-              <div>
-                <dt>拠点</dt>
-                <dd>東京都町田市</dd>
-              </div>
-              <div>
-                <dt>対応領域</dt>
-                <dd>運動支援・訪問施術・介護支援・終活準備</dd>
-              </div>
-            </dl>
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+            <p style="opacity: 0.8; font-size: var(--font-size-sm); margin-top: auto;">東京都町田市<br/><a href="mailto:info@example.com">info@example.com</a></p>
           </div>
-          <nav class="footer-block footer-nav-block" aria-label="フッター主要導線">
-            <p class="footer-title">主要導線</p>
-            <ul class="footer-links">
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
               <li><a href="../">ホーム</a></li>
-              <li><a href="../services/">サービス</a></li>
-              <li><a href="../about/">会社情報</a></li>
+              <li><a href="../about/">会社概要・理念</a></li>
+              <li><a href="../news/">お知らせ・地域活動</a></li>
+              <li><a href="../recruitment/">採用情報</a></li>
               <li><a href="./">お問い合わせ</a></li>
             </ul>
-          </nav>
-          <nav class="footer-block footer-nav-block" aria-label="フッターサービス導線">
-            <p class="footer-title">サービス導線</p>
-            <ul class="footer-secondary-links">
-              <li><a href="../services/fitness/">べるフィット</a></li>
-              <li><a href="../services/acupuncture/">訪問鍼灸マッサージ</a></li>
-              <li><a href="../services/home-care/">居宅介護支援</a></li>
-              <li><a href="../services/legal/">行政書士支援</a></li>
-              <li><a href="../services/community/">地域コミュニティ支援</a></li>
+          </div>
+          <div class="footer-nav">
+            <h3>サービス</h3>
+            <ul>
+              <li><a href="../services/">サービス一覧</a></li>
+              <li><a href="../services/fitness/">べるフィット (運動支援)</a></li>
+              <li><a href="../services/acupuncture/">訪問鍼灸マッサージ (在宅支援)</a></li>
+              <li><a href="../services/home-care/">居宅介護支援 (制度活用)</a></li>
+              <li><a href="../services/legal/">べるリーガル (行政書士)</a></li>
             </ul>
-          </nav>
-          <div class="footer-block footer-block-contact">
-            <p class="footer-title">相談窓口</p>
-            <p class="footer-contact-label">地域に根ざした総合相談窓口</p>
-            <address class="footer-contact">
-              <p class="footer-contact-row">
-                <span class="footer-contact-key">所在地</span>
-                <span>東京都町田市</span>
-              </p>
-              <p class="footer-contact-row">
-                <span class="footer-contact-key">メール</span>
-                <a href="mailto:info@example.com">info@example.com</a>
-              </p>
-            </address>
-            <p class="footer-meta">医療、運動、介護、終活支援を横断してご案内します。</p>
+          </div>
+          <div class="footer-nav">
+            <h3>コミュニティ</h3>
+            <ul>
+              <li><a href="../services/community/">地域活動</a></li>
+              <li><a href="../services/community/#partners">パートナーシップ</a></li>
+            </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-meta">© BellTree Inc. All Rights Reserved.</p>
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
