@@ -4,359 +4,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>採用情報 | 株式会社べるつりー — 地域医療プロジェクトへの参加</title>
-  <meta name="description" content="株式会社べるつりーの採用情報。鍼灸マッサージ師を中心に募集。医療×運動×介護が一体となった地域健康拠点で、あなたの専門性を活かしませんか。" />
+  <title>採用情報 | 株式会社べるつりー — 地域の健康を支える仕事</title>
+  <meta name="description" content="株式会社べるつりーの採用情報。鍼灸マッサージ師・フィットネストレーナー・運動サポーターを募集。医療×運動×介護を連携した地域健康拠点で働きませんか。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    /* Recruitment-specific styles */
-    .recruit-hero {
-      background: linear-gradient(135deg, var(--color-primary) 0%, #2A4A7F 60%, #1e5a7a 100%);
+    .recruit-top-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2A4A7F 55%, #1e5a7a 100%);
       color: var(--color-surface);
       padding: var(--space-4xl) 0 var(--space-3xl);
       position: relative;
       overflow: hidden;
     }
 
-    .recruit-hero::before {
+    .recruit-top-hero::before {
       content: '';
       position: absolute;
-      top: -30%;
-      right: -10%;
-      width: 60%;
+      top: -20%;
+      right: -5%;
+      width: 55%;
       height: 160%;
       background: rgba(255, 255, 255, 0.03);
-      transform: rotate(15deg);
+      transform: rotate(12deg);
       pointer-events: none;
     }
 
-    .recruit-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      left: -5%;
-      width: 40%;
-      height: 120%;
-      background: rgba(194, 122, 101, 0.08);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .recruit-hero h1 {
+    .recruit-top-hero h1 {
       color: var(--color-surface);
       font-size: clamp(2rem, 5vw, 3.2rem);
     }
 
-    .recruit-hero .eyebrow {
+    .recruit-top-hero .eyebrow {
       color: var(--color-accent);
     }
 
-    .recruit-hero .text-muted {
+    .recruit-top-hero .text-muted {
       color: rgba(255, 255, 255, 0.8);
     }
 
-    .vision-card {
+    /* Job Cards */
+    .job-top-card {
       background: var(--color-surface);
-      border-radius: var(--radius-lg);
-      padding: var(--space-xl);
-      border-left: 4px solid var(--color-accent);
-      box-shadow: var(--shadow-md);
-    }
-
-    .feature-tag {
-      display: inline-block;
-      background: var(--color-background-alt);
-      color: var(--color-primary);
-      border-radius: var(--radius-pill);
-      padding: 0.35rem 1rem;
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-semibold);
-      margin: 0.25rem;
-    }
-
-    .work-style-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-md);
-    }
-
-    @media (min-width: 768px) {
-      .work-style-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .work-style-item {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: var(--space-lg);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .work-style-item:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .work-style-icon {
-      font-size: 2rem;
-      margin-bottom: var(--space-xs);
-    }
-
-    .work-style-label {
-      font-weight: var(--font-weight-bold);
-      color: var(--color-primary);
-      font-size: var(--font-size-sm);
-    }
-
-    .day-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      position: relative;
-    }
-
-    .day-flow-item {
-      display: flex;
-      gap: var(--space-lg);
-      align-items: flex-start;
-      padding-bottom: var(--space-xl);
-      position: relative;
-    }
-
-    .day-flow-item:not(:last-child)::before {
-      content: '';
-      position: absolute;
-      left: 27px;
-      top: 56px;
-      bottom: 0;
-      width: 2px;
-      background: var(--color-border);
-    }
-
-    .day-flow-time {
-      min-width: 56px;
-      height: 56px;
-      background: var(--color-primary);
-      color: var(--color-surface);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: var(--font-weight-bold);
-      flex-shrink: 0;
-      z-index: 1;
-    }
-
-    .day-flow-content h4 {
-      margin-bottom: 4px;
-      padding-top: 14px;
-    }
-
-    .career-step {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: var(--space-md) var(--space-lg);
-      margin-bottom: var(--space-sm);
-      position: relative;
-    }
-
-    .career-step-num {
-      background: var(--color-accent);
-      color: var(--color-surface);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: var(--font-weight-bold);
-      font-size: var(--font-size-sm);
-      flex-shrink: 0;
-    }
-
-    .training-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: var(--space-lg);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .training-card-icon {
-      font-size: 2rem;
-      margin-bottom: var(--space-sm);
-    }
-
-    .fit-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
-    }
-
-    .fit-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      padding: var(--space-sm) var(--space-md);
-      background: var(--color-surface);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--color-border);
-    }
-
-    .fit-ok {
-      border-left: 3px solid #2e7d32;
-    }
-
-    .fit-ng {
-      border-left: 3px solid #c62828;
-    }
-
-    .fit-icon-ok {
-      color: #2e7d32;
-      font-size: 1.25rem;
-    }
-
-    .fit-icon-ng {
-      color: #c62828;
-      font-size: 1.25rem;
-    }
-
-    .job-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .job-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+    .job-top-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
     }
 
-    .job-card-header {
-      background: var(--color-primary);
+    .job-top-card-header {
+      padding: var(--space-xl) var(--space-xl) var(--space-lg);
       color: var(--color-surface);
-      padding: var(--space-lg);
     }
 
-    .job-card-header.accent {
-      background: var(--color-accent);
+    .job-top-card-header.navy {
+      background: linear-gradient(135deg, var(--color-primary), #2A4A7F);
     }
 
-    .job-card-body {
-      padding: var(--space-lg);
+    .job-top-card-header.green {
+      background: linear-gradient(135deg, #1a4a2e, #2d6a4f);
     }
 
-    .job-card .priority-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
+    .job-top-card-header.rose {
+      background: linear-gradient(135deg, #6b2737, #a0424a);
+    }
+
+    .job-top-card-header h3 {
       color: var(--color-surface);
-      border-radius: var(--radius-pill);
-      padding: 0.2rem 0.75rem;
-      font-size: 0.75rem;
-      font-weight: var(--font-weight-bold);
       margin-bottom: var(--space-xs);
     }
 
-    .job-detail-row {
+    .job-top-card-body {
+      padding: var(--space-lg);
+      flex: 1;
       display: flex;
-      gap: var(--space-sm);
-      padding: var(--space-xs) 0;
-      border-bottom: 1px solid var(--color-border);
+      flex-direction: column;
+    }
+
+    .job-top-card-points {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-lg);
+      flex: 1;
+    }
+
+    .job-top-card-point {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
       font-size: var(--font-size-sm);
-    }
-
-    .job-detail-row:last-child {
-      border-bottom: none;
-    }
-
-    .job-detail-label {
       color: var(--color-text-muted);
-      min-width: 80px;
-      font-weight: var(--font-weight-medium);
     }
 
-    .salary-highlight {
-      background: linear-gradient(135deg, var(--color-primary), #2A4A7F);
+    .job-top-card-point::before {
+      content: '·';
+      color: var(--color-accent);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .priority-ribbon {
+      display: inline-block;
+      background: var(--color-accent);
       color: var(--color-surface);
-      border-radius: var(--radius-lg);
-      padding: var(--space-2xl);
+      border-radius: var(--radius-pill);
+      padding: 0.2rem 0.8rem;
+      font-size: 0.72rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-xs);
+      letter-spacing: 0.05em;
+    }
+
+    /* Env benefits */
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-md);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .benefit-icon {
+      font-size: 1.75rem;
+      min-width: 40px;
       text-align: center;
     }
 
-    .salary-num {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: var(--font-weight-bold);
-      color: var(--color-surface);
+    /* Persona tags */
+    .persona-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 0.5rem 1.25rem;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      box-shadow: var(--shadow-sm);
     }
 
     .cta-section {
-      background: linear-gradient(135deg, #1A365D 0%, var(--color-accent) 100%);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
       color: var(--color-surface);
       border-radius: var(--radius-lg);
       padding: var(--space-3xl) var(--space-2xl);
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
 
     .cta-section h2 {
       color: var(--color-surface);
-    }
-
-    .stat-box {
-      text-align: center;
-      padding: var(--space-lg);
-    }
-
-    .stat-number {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: var(--font-weight-bold);
-      color: var(--color-accent);
-      display: block;
-    }
-
-    .stat-label {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-    }
-
-    .atmosphere-bar {
-      display: flex;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      height: 64px;
-      margin-top: var(--space-lg);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .atmosphere-segment {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      font-weight: var(--font-weight-bold);
-      font-size: var(--font-size-sm);
-      gap: 2px;
-    }
-
-    .atmosphere-segment span {
-      font-size: 0.7rem;
-      font-weight: var(--font-weight-regular);
-      opacity: 0.9;
     }
   </style>
 </head>
@@ -378,226 +189,79 @@
 
   <main id="main-content">
 
-    <!-- ===== HERO ===== -->
-    <section class="recruit-hero">
+    <!-- HERO -->
+    <section class="recruit-top-hero">
       <div class="container" style="position: relative; z-index: 2;">
         <span class="eyebrow"
-          style="display: block; margin-bottom: var(--space-md); letter-spacing: 0.1em; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Recruitment
-          — 地域医療プロジェクトへの参加</span>
-        <h1 style="margin-bottom: var(--space-lg); max-width: 700px;">医療・運動・介護をつなぐ、<br />地域の健康拠点をつくりませんか。</h1>
-        <p class="text-lead text-muted" style="max-width: 600px; margin-bottom: var(--space-2xl);">
-          べるつりーは「鍼灸マッサージ院、フィットネス、通所リハビリ、居宅介護支援」を一体で提供する地域拠点です。あなたの専門性が、地域を変える力になります。</p>
+          style="display: block; margin-bottom: var(--space-md); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em;">Recruitment
+          Information</span>
+        <h1 style="margin-bottom: var(--space-lg); max-width: 680px;">地域の健康を支える仕事を<br />一緒にしませんか。</h1>
+        <p class="text-lead text-muted" style="max-width: 580px; margin-bottom: var(--space-2xl);">株式会社べるつりーは<strong
+            style="color: rgba(255,255,255,0.95);">医療 × 運動 ×
+            介護</strong>を連携させた地域健康サービスを提供しています。高齢化が進む地域社会の中で、健康づくりや生活支援の重要性はますます高まっています。私たちと一緒に、地域の方々が安心して暮らせる社会をつくりませんか。
+        </p>
         <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
           <a href="#jobs" class="btn btn-primary" style="background-color: var(--color-accent);">募集職種を見る</a>
-          <a href="#contact-cta" class="btn btn-secondary"
-            style="border-color: rgba(255,255,255,0.5); color: var(--color-surface);">カジュアル面談を申し込む</a>
-        </div>
-        <div class="grid grid-3 reveal" style="margin-top: var(--space-3xl); gap: var(--space-lg);">
-          <div class="stat-box" style="background: rgba(255,255,255,0.07); border-radius: var(--radius-md);">
-            <span class="stat-number" style="color: #f0c080;">残業なし</span>
-            <span class="stat-label" style="color: rgba(255,255,255,0.7);">書類業務も業務時間内に完結</span>
-          </div>
-          <div class="stat-box" style="background: rgba(255,255,255,0.07); border-radius: var(--radius-md);">
-            <span class="stat-number" style="color: #f0c080;">副業OK</span>
-            <span class="stat-label" style="color: rgba(255,255,255,0.7);">自由度の高い働き方を支持</span>
-          </div>
-          <div class="stat-box" style="background: rgba(255,255,255,0.07); border-radius: var(--radius-md);">
-            <span class="stat-number" style="color: #f0c080;">直行直帰</span>
-            <span class="stat-label" style="color: rgba(255,255,255,0.7);">訪問エリアも柔軟に調整</span>
-          </div>
+          <a href="../contact/" class="btn btn-secondary"
+            style="border-color: rgba(255,255,255,0.4); color: var(--color-surface);">まずは見学・相談</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== VISION ===== -->
+    <!-- MISSION -->
     <section class="section-spacing">
       <div class="container">
         <div class="editorial-split reveal">
           <div>
-            <span class="eyebrow">Our Vision</span>
-            <h2 style="margin-bottom: var(--space-lg);">社会的処方の<br />地域拠点を目指して</h2>
+            <span class="eyebrow">Our Mission</span>
+            <h2 style="margin-bottom: var(--space-lg);">べるつりーの仕事</h2>
             <p class="text-muted" style="margin-bottom: var(--space-lg);">
-              べるつりーは単なる治療院やフィットネスクラブではありません。地域住民が「運動から施術、介護支援まで」を一つの場所で継続してサービスを受けられる、<strong>医療×運動×介護が一体となった地域健康拠点</strong>の構築を目指しています。
-            </p>
-            <div class="vision-card">
-              <p
-                style="margin-bottom: var(--space-md); font-weight: var(--font-weight-semibold); color: var(--color-primary);">
-                患者様を中心とした連携モデル</p>
-              <div style="display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap;">
-                <span class="feature-tag">🏃 運動（べるフィット）</span>
-                <span style="color: var(--color-accent); font-size: 1.5rem;">↓</span>
-                <span class="feature-tag">🩺 施術（鍼灸マッサージ）</span>
-                <span style="color: var(--color-accent); font-size: 1.5rem;">↓</span>
-                <span class="feature-tag">🤝 介護（居宅介護支援）</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              style="background: var(--color-background-alt); border-radius: var(--radius-lg); padding: var(--space-2xl); height: 100%; display: flex; flex-direction: column; gap: var(--space-xl);">
-              <div>
-                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏥</div>
-                <h4>チーム医療</h4>
-                <p class="text-muted" style="font-size: var(--font-size-sm);">
-                  鍼灸マッサージ師、フィットネストレーナー、ケアマネジャーが協働し、専門の壁を越えてケアします。</p>
-              </div>
-              <div>
-                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">💊</div>
-                <h4>社会的処方</h4>
-                <p class="text-muted" style="font-size: var(--font-size-sm);">
-                  薬だけではなく、運動・コミュニティ参加といった「非医療的処方」で地域の健康を守ります。</p>
-              </div>
-              <div>
-                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🔗</div>
-                <h4>運動施設との連携</h4>
-                <p class="text-muted" style="font-size: var(--font-size-sm);">
-                  べるフィットと鍼灸院が連携。施術後のリハビリ継続や、予防段階からの支援も可能にします。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== WORK STYLE ===== -->
-    <section class="section-spacing bg-alt">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="eyebrow">Work Style</span>
-          <h2>自由度の高い働き方</h2>
-          <p class="text-muted">べるつりーは、スタッフが長く、いきいきと働き続けられる環境を大切にしています。</p>
-        </div>
-        <div class="work-style-grid mt-2xl reveal">
-          <div class="work-style-item">
-            <div class="work-style-icon">🏠</div>
-            <div class="work-style-label">直行直帰</div>
-            <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: var(--space-xs);">
-              職場に寄らず、自宅から直接患者宅へ向かえます</p>
-          </div>
-          <div class="work-style-item">
-            <div class="work-style-icon">📅</div>
-            <div class="work-style-label">休日選択</div>
-            <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: var(--space-xs);">希望に合わせた休日設定が可能です
-            </p>
-          </div>
-          <div class="work-style-item">
-            <div class="work-style-icon">💼</div>
-            <div class="work-style-label">副業OK</div>
-            <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: var(--space-xs);">スキルと時間を有効活用できます
-            </p>
-          </div>
-          <div class="work-style-item">
-            <div class="work-style-icon">⏰</div>
-            <div class="work-style-label">時短勤務</div>
-            <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: var(--space-xs);">ライフスタイルに合わせた勤務時間
-            </p>
-          </div>
-          <div class="work-style-item">
-            <div class="work-style-icon">🗺️</div>
-            <div class="work-style-label">訪問エリア調整</div>
-            <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: var(--space-xs);">
-              自宅周辺エリアに絞った訪問も相談可能</p>
-          </div>
-          <div class="work-style-item">
-            <div class="work-style-icon">🚀</div>
-            <div class="work-style-label">将来の業務委託</div>
-            <p class="text-muted" style="font-size: var(--font-size-sm); margin-top: var(--space-xs);">独立志向の方もキャリア設計できます
-            </p>
-          </div>
-        </div>
-        <div class="vision-card mt-2xl reveal" style="text-align: center;">
-          <p
-            style="margin: 0; font-weight: var(--font-weight-semibold); color: var(--color-primary); font-size: var(--font-size-lead);">
-            残業なし。申し送り・施術録もすべて<strong>業務時間内</strong>に完結します。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== JOB DETAIL (Acupuncture) ===== -->
-    <section class="section-spacing">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Job Detail</span>
-          <h2>鍼灸マッサージ師の<br />仕事内容</h2>
-        </div>
-        <div class="editorial-split reveal">
-          <div>
+              私たちの仕事は単なるサービス提供ではありません。患者様・利用者様・ご家族・医療機関・介護事業所——多くの方と連携しながら<strong>地域の健康を支える仕事</strong>です。</p>
             <p class="text-muted" style="margin-bottom: var(--space-xl);">
-              メインの業務は<strong>訪問施術</strong>です。患者様のご自宅や施設に伺い、はり・きゅう・マッサージを通じて健康維持と機能回復をサポートします。</p>
+              将来的には<strong>社会的処方の拠点</strong>として、地域医療の一部を担う存在になることを目指しています。</p>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <div class="feature-list-icon">🩺</div>
+                <div>訪問鍼灸マッサージ</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">🏋️</div>
+                <div>メディカルフィットネス（べるフィット）</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">🤝</div>
+                <div>介護支援（居宅介護支援事業所）</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">🌿</div>
+                <div>通所リハビリ</div>
+              </li>
+            </ul>
+          </div>
+          <div>
             <div
-              style="background: var(--color-background-alt); border-radius: var(--radius-md); padding: var(--space-xl); margin-bottom: var(--space-lg);">
-              <p
-                style="font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: var(--space-sm);">
-                治療院 vs 訪問 の割合</p>
-              <div style="display: flex; gap: var(--space-md); align-items: center;">
-                <div style="text-align: center;">
-                  <div style="font-size: 2.5rem; font-weight: var(--font-weight-bold); color: var(--color-primary);">3
-                  </div>
-                  <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">治療院</div>
+              style="background: var(--color-background-alt); border-radius: var(--radius-lg); padding: var(--space-2xl); height: 100%;">
+              <h3 style="margin-bottom: var(--space-xl);">患者様を中心とした連携モデル</h3>
+              <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                <div
+                  style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); display: flex; align-items: center; gap: var(--space-md); border: 1px solid var(--color-border);">
+                  <span style="font-size: 1.75rem;">🏃</span>
+                  <div><strong>運動</strong><br /><span class="text-muted"
+                      style="font-size: var(--font-size-sm);">べるフィットで健康習慣づくり</span></div>
                 </div>
-                <div style="color: var(--color-border-strong); font-size: 2rem;">:</div>
-                <div style="text-align: center;">
-                  <div style="font-size: 2.5rem; font-weight: var(--font-weight-bold); color: var(--color-accent);">7
-                  </div>
-                  <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">訪問</div>
+                <div style="text-align: center; color: var(--color-accent); font-size: 1.5rem;">↓</div>
+                <div
+                  style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); display: flex; align-items: center; gap: var(--space-md); border: 1px solid var(--color-border);">
+                  <span style="font-size: 1.75rem;">🩺</span>
+                  <div><strong>施術</strong><br /><span class="text-muted"
+                      style="font-size: var(--font-size-sm);">訪問鍼灸マッサージで生活を支援</span></div>
                 </div>
-              </div>
-            </div>
-            <ul class="feature-list">
-              <li class="feature-list-item">
-                <div class="feature-list-icon">✓</div>
-                <div><strong>はり・きゅう・マッサージ</strong>の施術</div>
-              </li>
-              <li class="feature-list-item">
-                <div class="feature-list-icon">✓</div>
-                <div>施術録の記録</div>
-              </li>
-              <li class="feature-list-item">
-                <div class="feature-list-icon">✓</div>
-                <div>ご家族・ケアマネジャーへの報告・連携</div>
-              </li>
-              <li class="feature-list-item">
-                <div class="feature-list-icon">✓</div>
-                <div>訪問先：患者様のご自宅 / 介護施設</div>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin-bottom: var(--space-lg);">1日の流れ</h3>
-            <div class="day-flow">
-              <div class="day-flow-item">
-                <div class="day-flow-time">AM<br />直行</div>
-                <div class="day-flow-content">
-                  <h4>自宅 → 訪問先へ直行</h4>
-                  <p class="text-muted" style="font-size: var(--font-size-sm);">職場に立ち寄らず、直接患者宅へ。移動時間は15〜30分。</p>
-                </div>
-              </div>
-              <div class="day-flow-item">
-                <div class="day-flow-time">午前</div>
-                <div class="day-flow-content">
-                  <h4>午前 3〜4件の訪問施術</h4>
-                  <p class="text-muted" style="font-size: var(--font-size-sm);">1件あたり約30分の施術。移動を挟みながらテンポよく回ります。</p>
-                </div>
-              </div>
-              <div class="day-flow-item">
-                <div class="day-flow-time">昼</div>
-                <div class="day-flow-content">
-                  <h4>昼休憩・申し送り入力</h4>
-                  <p class="text-muted" style="font-size: var(--font-size-sm);">施術録・申し送りは業務時間内に入力。残業になりません。</p>
-                </div>
-              </div>
-              <div class="day-flow-item">
-                <div class="day-flow-time">午後</div>
-                <div class="day-flow-content">
-                  <h4>午後 3〜4件の訪問施術</h4>
-                  <p class="text-muted" style="font-size: var(--font-size-sm);">1日平均 6〜8件。無理のないペースで計画されています。</p>
-                </div>
-              </div>
-              <div class="day-flow-item">
-                <div class="day-flow-time">夕方<br />直帰</div>
-                <div class="day-flow-content">
-                  <h4>最終訪問先 → 自宅へ直帰</h4>
-                  <p class="text-muted" style="font-size: var(--font-size-sm);">残業なし。プライベートな時間をしっかり確保できます。</p>
+                <div style="text-align: center; color: var(--color-accent); font-size: 1.5rem;">↓</div>
+                <div
+                  style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); display: flex; align-items: center; gap: var(--space-md); border: 1px solid var(--color-border);">
+                  <span style="font-size: 1.75rem;">🤝</span>
+                  <div><strong>介護</strong><br /><span class="text-muted"
+                      style="font-size: var(--font-size-sm);">居宅介護支援で安心の老後を</span></div>
                 </div>
               </div>
             </div>
@@ -606,254 +270,74 @@
       </div>
     </section>
 
-    <!-- ===== TRAINING ===== -->
-    <section class="section-spacing bg-soft">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="eyebrow">Training &amp; Growth</span>
-          <h2>充実した研修制度</h2>
-          <p class="text-muted">すべての研修は<strong>業務時間内</strong>に実施。入社後の不安をゼロにするサポート体制があります。</p>
-        </div>
-
-        <!-- Growth Steps -->
-        <div style="max-width: 640px; margin: 0 auto var(--space-3xl);">
-          <h3 style="margin-bottom: var(--space-lg); text-align: center;">成長ステップ</h3>
-          <div class="career-step reveal">
-            <div class="career-step-num">1</div>
-            <div><strong>入社・同行訪問</strong><br /><span class="text-muted"
-                style="font-size: var(--font-size-sm);">先輩と一緒に現場を学ぶ安心のスタート</span></div>
-          </div>
-          <div style="text-align: center; color: var(--color-accent); font-size: 1.5rem; margin: 4px 0;">↓</div>
-          <div class="career-step reveal">
-            <div class="career-step-num">2</div>
-            <div><strong>基本施術習得（約3ヶ月）</strong><br /><span class="text-muted"
-                style="font-size: var(--font-size-sm);">週2回の技術研修で着実にスキルアップ</span></div>
-          </div>
-          <div style="text-align: center; color: var(--color-accent); font-size: 1.5rem; margin: 4px 0;">↓</div>
-          <div class="career-step reveal">
-            <div class="career-step-num">3</div>
-            <div><strong>先輩と共同で患者対応（半年〜1年）</strong><br /><span class="text-muted"
-                style="font-size: var(--font-size-sm);">実践を積みながら自信をつける段階</span></div>
-          </div>
-          <div style="text-align: center; color: var(--color-accent); font-size: 1.5rem; margin: 4px 0;">↓</div>
-          <div class="career-step reveal">
-            <div class="career-step-num">4</div>
-            <div><strong>単独訪問・新規患者対応</strong><br /><span class="text-muted"
-                style="font-size: var(--font-size-sm);">独り立ち後もデビュー研修は随時継続</span></div>
-          </div>
-        </div>
-
-        <div class="grid grid-3 reveal">
-          <div class="training-card">
-            <div class="training-card-icon">🏠</div>
-            <h4>同行訪問</h4>
-            <p class="text-muted" style="font-size: var(--font-size-sm);">デビュー後も希望に応じて同行訪問を継続実施。不安なく現場に入れます。</p>
-          </div>
-          <div class="training-card">
-            <div class="training-card-icon">🔬</div>
-            <h4>技術研修</h4>
-            <p class="text-muted" style="font-size: var(--font-size-sm);">初期・育成研修は週2回。症例検討ミーティングは週1回。鍼灸・各種手技療法を体系的に学びます。
-            </p>
-          </div>
-          <div class="training-card">
-            <div class="training-card-icon">📚</div>
-            <h4>座学・知識研修</h4>
-            <p class="text-muted" style="font-size: var(--font-size-sm);">中医学・東洋医学・リハビリ・介護知識・機能訓練など、多角的な知識を習得できます。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CAREER ===== -->
-    <section class="section-spacing">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="eyebrow">Career Path</span>
-          <h2>キャリアパス</h2>
-          <p class="text-muted">施術者としての専門性を磨くも良し、マネジメントや独立を目指すも良し。あなたのビジョンに合わせたキャリアを描けます。</p>
-        </div>
-        <div class="grid grid-3 mt-2xl reveal">
-          <div class="card" style="text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">👑</div>
-            <h4>マネジメント</h4>
-            <p class="text-muted" style="font-size: var(--font-size-sm);">院長・管理職として組織を牽引。給与50万円以上を目指せます。</p>
-          </div>
-          <div class="card" style="text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">🩺</div>
-            <h4>訪問施術スペシャリスト</h4>
-            <p class="text-muted" style="font-size: var(--font-size-sm);">訪問のプロとして地域の患者様を支える専門職として深化。歩合制の収入アップも。</p>
-          </div>
-          <div class="card" style="text-align: center;">
-            <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">🚀</div>
-            <h4>独立・事業運営</h4>
-            <p class="text-muted" style="font-size: var(--font-size-sm);">フィットネス事業参画、将来的な業務委託や独立も支援します。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PERSONA ===== -->
-    <section class="section-spacing bg-alt">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="eyebrow">Who We're Looking For</span>
-          <h2>求める人物像</h2>
-        </div>
-        <div class="editorial-split reveal">
-          <div>
-            <h3 style="margin-bottom: var(--space-lg);">こんな想いを持つ方を歓迎します</h3>
-            <ul class="feature-list">
-              <li class="feature-list-item">
-                <div class="feature-list-icon" style="font-size: 1.5rem;">🏘️</div>
-                <div><strong>地域医療・介護と連携した仕事がしたい</strong><br /><span class="text-muted"
-                    style="font-size: var(--font-size-sm);">病院の中だけでなく、地域全体に貢献したい方</span></div>
-              </li>
-              <li class="feature-list-item">
-                <div class="feature-list-icon" style="font-size: 1.5rem;">🏋️</div>
-                <div><strong>運動・リハビリ・医療を組み合わせた仕事に興味がある</strong><br /><span class="text-muted"
-                    style="font-size: var(--font-size-sm);">複合的な視点でケアしたい方</span></div>
-              </li>
-              <li class="feature-list-item">
-                <div class="feature-list-icon" style="font-size: 1.5rem;">🌿</div>
-                <div><strong>東洋医学を深く学びたい</strong><br /><span class="text-muted"
-                    style="font-size: var(--font-size-sm);">中医学・東洋医学の体系的な研修が受けられます</span></div>
-              </li>
-              <li class="feature-list-item">
-                <div class="feature-list-icon" style="font-size: 1.5rem;">📈</div>
-                <div><strong>自由度の高い環境で成長したい</strong><br /><span class="text-muted"
-                    style="font-size: var(--font-size-sm);">個人の裁量を活かしながらキャリアを積みたい方</span></div>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin-bottom: var(--space-lg);">向いている人 / 向いていない人</h3>
-            <p
-              style="font-weight: var(--font-weight-semibold); color: var(--color-primary); margin-bottom: var(--space-sm);">
-              ✅ こんな方は活躍できます</p>
-            <ul class="fit-list" style="margin-bottom: var(--space-lg);">
-              <li class="fit-item fit-ok"><span class="fit-icon-ok">✓</span>人と話すことが好き・高齢者と関わることが好き</li>
-              <li class="fit-item fit-ok"><span class="fit-icon-ok">✓</span>真面目にコツコツと努力を続けられる</li>
-              <li class="fit-item fit-ok"><span class="fit-icon-ok">✓</span>成長意欲があり、学び続けたい</li>
-            </ul>
-            <p
-              style="font-weight: var(--font-weight-semibold); color: var(--color-text-muted); margin-bottom: var(--space-sm);">
-              ⚠️ こんな方はミスマッチかもしれません</p>
-            <ul class="fit-list">
-              <li class="fit-item fit-ng"><span class="fit-icon-ng">✗</span>収入のみを目的として働きたい方</li>
-              <li class="fit-item fit-ng"><span class="fit-icon-ng">✗</span>コミュニケーションが苦手な方</li>
-              <li class="fit-item fit-ng"><span class="fit-icon-ng">✗</span>成長意欲がない方</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Atmosphere -->
-        <div style="margin-top: var(--space-3xl);" class="reveal">
-          <h3 style="text-align: center; margin-bottom: var(--space-xs);">職場の雰囲気</h3>
-          <p class="text-muted text-center" style="margin-bottom: 0;">「自由・穏やか・挑戦」の3つが共存するカルチャーです</p>
-          <div class="atmosphere-bar">
-            <div class="atmosphere-segment"
-              style="flex: 5; background: var(--color-primary); color: var(--color-surface);">
-              <strong>C</strong><span>自由・個人裁量</span>
-            </div>
-            <div class="atmosphere-segment"
-              style="flex: 3; background: var(--color-background-alt); color: var(--color-primary);">
-              <strong>B</strong><span>穏やか</span>
-            </div>
-            <div class="atmosphere-segment"
-              style="flex: 2; background: var(--color-accent); color: var(--color-surface);">
-              <strong>E</strong><span>挑戦</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== JOBS ===== -->
-    <section id="jobs" class="section-spacing">
+    <!-- JOBS -->
+    <section id="jobs" class="section-spacing bg-alt">
       <div class="container">
         <div class="section-header text-center">
           <span class="eyebrow">Open Positions</span>
           <h2>募集職種</h2>
-          <p class="text-muted">現在、以下の職種で新しい仲間を募集しています。主力採用は鍼灸マッサージ師です。</p>
+          <p class="text-muted">現在、以下の3職種で新しい仲間を募集しています。</p>
         </div>
 
-        <div class="grid reveal" style="grid-template-columns: 1fr; gap: var(--space-xl);">
+        <div class="grid grid-3 mt-2xl reveal">
 
-          <!-- Job 1: Acupuncture - Priority -->
-          <div class="job-card">
-            <div class="job-card-header accent">
-              <span class="priority-badge">★ 優先採用</span>
-              <h3 style="color: var(--color-surface); margin-bottom: var(--space-xs);">鍼灸マッサージ師（訪問施術）</h3>
-              <p style="color: rgba(255,255,255,0.85); margin: 0; font-size: var(--font-size-sm);">
-                地域の患者様のご自宅・施設に訪問し、はり・きゅう・マッサージで健康をサポートします。</p>
+          <!-- 1. Acupuncture -->
+          <div class="job-top-card">
+            <div class="job-top-card-header navy">
+              <span class="priority-ribbon">★ 優先採用</span>
+              <h3>鍼灸マッサージ師</h3>
+              <p style="color: rgba(255,255,255,0.8); font-size: var(--font-size-sm); margin: 0;">訪問施術を中心に患者様の生活を支える</p>
             </div>
-            <div class="job-card-body">
-              <div style="display: grid; gap: var(--space-md);">
-                <div>
-                  <div class="job-detail-row"><span class="job-detail-label">給与</span><span>初任給 <strong>月23万円〜</strong>
-                      / 平均 26万円 / 院長 50万円以上</span></div>
-                  <div class="job-detail-row"><span class="job-detail-label">歩合</span><span>週30件以上から
-                      1件1,250円の歩合加算</span></div>
-                  <div class="job-detail-row"><span class="job-detail-label">勤務形態</span><span>訪問施術メイン（治療院：訪問 ＝
-                      3：7）</span></div>
-                  <div class="job-detail-row"><span class="job-detail-label">1日の件数</span><span>平均 6〜8件（1件 約30分）</span>
-                  </div>
-                  <div class="job-detail-row"><span class="job-detail-label">残業</span><span><strong
-                        style="color: #2e7d32;">なし</strong>（書類業務は業務時間内に完結）</span></div>
-                  <div class="job-detail-row"><span class="job-detail-label">働き方</span><span>直行直帰 / 副業OK / 時短勤務 / 休日選択 /
-                      将来の業務委託</span></div>
-                  <div class="job-detail-row"><span class="job-detail-label">対象</span><span>26〜30歳優先、新卒歓迎 /
-                      リラクゼーション・病院経験者歓迎</span></div>
-                  <div class="job-detail-row"><span
-                      class="job-detail-label">資格</span><span>鍼灸師・あん摩マッサージ指圧師いずれか（または両方）</span></div>
-                </div>
-                <a href="../contact/" class="btn btn-primary" id="apply-acupuncture"
-                  style="align-self: flex-start;">応募・カジュアル面談を申し込む →</a>
+            <div class="job-top-card-body">
+              <div class="job-top-card-points">
+                <div class="job-top-card-point">1日6〜8件の訪問施術</div>
+                <div class="job-top-card-point">チーム医療・運動施設との連携</div>
+                <div class="job-top-card-point">残業なし・直行直帰・副業OK</div>
+                <div class="job-top-card-point">初任給23万円〜 / 院長50万円以上</div>
               </div>
+              <a href="./acupuncture/" class="btn btn-primary" style="width: 100%; justify-content: center;">詳細を見る →</a>
             </div>
           </div>
 
-          <!-- Jobs 2 & 3 -->
-          <div class="grid grid-2" style="gap: var(--space-xl);">
-            <div class="job-card">
-              <div class="job-card-header">
-                <span class="priority-badge">募集中</span>
-                <h3
-                  style="color: var(--color-surface); margin-bottom: var(--space-xs); font-size: var(--font-size-heading-sm);">
-                  フィットネストレーナー</h3>
-                <p style="color: rgba(255,255,255,0.85); margin: 0; font-size: var(--font-size-sm);">
-                  べるフィットでの運動指導・プログラム立案</p>
-              </div>
-              <div class="job-card-body">
-                <div class="job-detail-row"><span
-                    class="job-detail-label">業務内容</span><span>運動プログラム立案・指導、進捗管理、フレイル予防支援</span></div>
-                <div class="job-detail-row"><span class="job-detail-label">特徴</span><span>鍼灸・介護チームとの連携支援が可能</span></div>
-                <div style="margin-top: var(--space-md);">
-                  <a href="../contact/" class="btn btn-secondary"
-                    style="font-size: var(--font-size-sm); padding: 0.75rem 1.5rem;">詳細を問い合わせる →</a>
-                </div>
-              </div>
+          <!-- 2. Fitness Trainer -->
+          <div class="job-top-card">
+            <div class="job-top-card-header green">
+              <span
+                style="display: inline-block; background: rgba(255,255,255,0.2); color: var(--color-surface); border-radius: var(--radius-pill); padding: 0.2rem 0.8rem; font-size: 0.72rem; font-weight: var(--font-weight-bold); margin-bottom: var(--space-xs);">募集中</span>
+              <h3>フィットネストレーナー</h3>
+              <p style="color: rgba(255,255,255,0.8); font-size: var(--font-size-sm); margin: 0;">リハビリ型運動施設で高齢者の健康づくりを
+              </p>
             </div>
+            <div class="job-top-card-body">
+              <div class="job-top-card-points">
+                <div class="job-top-card-point">少人数制（1部 最大6名）</div>
+                <div class="job-top-card-point">医療・介護チームとの連携</div>
+                <div class="job-top-card-point">リハビリ的運動・AIマシン指導</div>
+                <div class="job-top-card-point">資格不要・未経験OK</div>
+              </div>
+              <a href="./fitness/" class="btn btn-primary"
+                style="width: 100%; justify-content: center; background-color: #2d6a4f;">詳細を見る →</a>
+            </div>
+          </div>
 
-            <div class="job-card">
-              <div class="job-card-header">
-                <span class="priority-badge">募集中</span>
-                <h3
-                  style="color: var(--color-surface); margin-bottom: var(--space-xs); font-size: var(--font-size-heading-sm);">
-                  運動サポーター</h3>
-                <p style="color: rgba(255,255,255,0.85); margin: 0; font-size: var(--font-size-sm);">
-                  コミュニティスタッフとして地域の健康を支える</p>
+          <!-- 3. Seed Support -->
+          <div class="job-top-card">
+            <div class="job-top-card-header rose">
+              <span
+                style="display: inline-block; background: rgba(255,255,255,0.2); color: var(--color-surface); border-radius: var(--radius-pill); padding: 0.2rem 0.8rem; font-size: 0.72rem; font-weight: var(--font-weight-bold); margin-bottom: var(--space-xs);">パート・アルバイト歓迎</span>
+              <h3>運動サポーター<br /><span style="font-size: 0.8em; opacity: 0.85;">（シード）</span></h3>
+              <p style="color: rgba(255,255,255,0.8); font-size: var(--font-size-sm); margin: 0;">女性限定フィットネスでコミュニティを支える
+              </p>
+            </div>
+            <div class="job-top-card-body">
+              <div class="job-top-card-points">
+                <div class="job-top-card-point">未経験歓迎・資格不要</div>
+                <div class="job-top-card-point">会員様とのコミュニケーション重視</div>
+                <div class="job-top-card-point">地域コミュニティの居場所づくり</div>
+                <div class="job-top-card-point">パート・アルバイト / 正社員登用あり</div>
               </div>
-              <div class="job-card-body">
-                <div class="job-detail-row"><span
-                    class="job-detail-label">業務内容</span><span>通所リハビリ・地域活動のサポート、コミュニティ形成支援</span></div>
-                <div class="job-detail-row"><span class="job-detail-label">特徴</span><span>地域づくりに関わる、やりがいのある仕事です</span>
-                </div>
-                <div style="margin-top: var(--space-md);">
-                  <a href="../contact/" class="btn btn-secondary"
-                    style="font-size: var(--font-size-sm); padding: 0.75rem 1.5rem;">詳細を問い合わせる →</a>
-                </div>
-              </div>
+              <a href="./seed/" class="btn btn-primary"
+                style="width: 100%; justify-content: center; background-color: #a0424a;">詳細を見る →</a>
             </div>
           </div>
 
@@ -861,21 +345,97 @@
       </div>
     </section>
 
-    <!-- ===== CTA ===== -->
-    <section id="contact-cta" class="section-spacing container">
+    <!-- WORK ENVIRONMENT -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Work Environment</span>
+          <h2>働く環境</h2>
+          <p class="text-muted">スタッフが長く、いきいきと働き続けられる環境を大切にしています。</p>
+        </div>
+        <div class="grid grid-3 mt-2xl reveal" style="gap: var(--space-md);">
+          <div class="benefit-item">
+            <span class="benefit-icon">📅</span>
+            <div>
+              <strong>年間休日130日以上</strong>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">休日選択制でライフスタイルに合わせた働き方</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">📚</span>
+            <div>
+              <strong>研修制度充実</strong>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">業務時間内に技術・知識研修を実施</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🎓</span>
+            <div>
+              <strong>資格取得補助</strong>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">成長をサポートするキャリア支援制度</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🏋️</span>
+            <div>
+              <strong>フィットネス施設利用無料</strong>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">べるフィットをスタッフが無料で利用可能</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">👥</span>
+            <div>
+              <strong>チームで働く環境</strong>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">鍼灸・運動・介護のプロが連携するチーム体制</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🚀</span>
+            <div>
+              <strong>副業・将来の独立支援</strong>
+              <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">副業OK・業務委託・独立支援も可能</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONA -->
+    <section class="section-spacing bg-soft">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
+          <span class="eyebrow">Who We're Looking For</span>
+          <h2>求める人物像</h2>
+          <p class="text-muted">職種を問わず、べるつりーではこんな方を歓迎します。</p>
+        </div>
+        <div
+          style="display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center; margin-top: var(--space-2xl);"
+          class="reveal">
+          <span class="persona-tag"><span>💬</span> 人と関わることが好きな方</span>
+          <span class="persona-tag"><span>📈</span> 成長意欲のある方</span>
+          <span class="persona-tag"><span>🏘️</span> 地域の健康づくりに興味がある方</span>
+          <span class="persona-tag"><span>👴</span> 高齢者と関わることが好きな方</span>
+          <span class="persona-tag"><span>🌱</span> 真面目にコツコツ努力できる方</span>
+          <span class="persona-tag"><span>🔗</span> チームで働くことが好きな方</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-spacing container">
       <div class="cta-section reveal">
         <span
-          style="display: block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.7);">Join
-          Our Project</span>
-        <h2 style="margin-bottom: var(--space-md);">地域医療プロジェクトへ、<br />一緒に参加しませんか？</h2>
+          style="display: block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.65);">Apply
+          / Contact</span>
+        <h2 style="margin-bottom: var(--space-md);">まずはお気軽に<br />お問い合わせください。</h2>
         <p
-          style="max-width: 560px; margin: 0 auto var(--space-2xl); color: rgba(255,255,255,0.85); line-height: var(--line-height-loose);">
-          これは単なる求人ではありません。医療・運動・介護をつなぐ地域健康拠点というプロジェクトへの参加です。まずはカジュアルな面談からでも歓迎します。</p>
+          style="max-width: 520px; margin: 0 auto var(--space-2xl); color: rgba(255,255,255,0.85); line-height: var(--line-height-loose);">
+          施設見学も随時受け付けています。「どんな職場か見てみたい」「少し話を聞きたい」という段階でも歓迎です。</p>
         <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
-          <a href="../contact/" class="btn btn-primary" id="cta-apply-main"
-            style="background-color: var(--color-surface); color: var(--color-primary); font-weight: var(--font-weight-bold);">応募・カジュアル面談を申し込む</a>
-          <a href="../contact/" class="btn btn-secondary"
-            style="border-color: rgba(255,255,255,0.4); color: var(--color-surface);">まずは見学・質問だけでもOK</a>
+          <a href="../contact/" class="btn btn-primary" id="cta-contact"
+            style="background-color: var(--color-surface); color: var(--color-primary); font-weight: var(--font-weight-bold);">お問い合わせはこちら</a>
+          <a href="#jobs" class="btn btn-secondary"
+            style="border-color: rgba(255,255,255,0.4); color: var(--color-surface);">募集職種を見る</a>
         </div>
       </div>
     </section>
@@ -902,19 +462,19 @@
           </ul>
         </div>
         <div class="footer-nav">
-          <h3>サービス</h3>
+          <h3>採用職種</h3>
           <ul>
-            <li><a href="../services/">サービス一覧</a></li>
-            <li><a href="../services/fitness/">べるフィット</a></li>
-            <li><a href="../services/acupuncture/">訪問鍼灸マッサージ</a></li>
-            <li><a href="../services/home-care/">居宅介護支援</a></li>
+            <li><a href="./acupuncture/">鍼灸マッサージ師</a></li>
+            <li><a href="./fitness/">フィットネストレーナー</a></li>
+            <li><a href="./seed/">運動サポーター（シード）</a></li>
           </ul>
         </div>
         <div class="footer-nav">
-          <h3>採用</h3>
+          <h3>サービス</h3>
           <ul>
-            <li><a href="#jobs">募集職種</a></li>
-            <li><a href="#contact-cta">面談を申し込む</a></li>
+            <li><a href="../services/fitness/">べるフィット</a></li>
+            <li><a href="../services/acupuncture/">訪問鍼灸マッサージ</a></li>
+            <li><a href="../services/home-care/">居宅介護支援</a></li>
           </ul>
         </div>
       </div>
@@ -939,9 +499,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('active');
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
