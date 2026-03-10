@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>運動サポーター採用 | べるフィット シード（株式会社べるつりー）</title>
+    <meta name="description"
+        content="べるフィット「シード」（女性限定クイックフィットネス）の運動サポーター採用。パート・アルバイト歓迎・未経験OK。地域の女性の健康とコミュニティを支える仕事です。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <style>
+        /* Seed theme: warm rose/blush for women-focused facility */
+        :root {
+            --seed-primary: #8b3a3a;
+            --seed-mid: #b5534e;
+            --seed-light: #f7e8e8;
+            --seed-pale: #fdf4f4;
+        }
+
+        .seed-hero {
+            background: linear-gradient(135deg, #6b2737 0%, #a0424a 55%, #c4666a 100%);
+            color: var(--color-surface);
+            padding: var(--space-4xl) 0 var(--space-3xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .seed-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -5%;
+            width: 55%;
+            height: 160%;
+            background: rgba(255, 255, 255, 0.04);
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .seed-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 200, 200, 0.06);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .seed-hero h1 {
+            color: var(--color-surface);
+            font-size: clamp(1.9rem, 5vw, 3.1rem);
+        }
+
+        .seed-hero .eyebrow {
+            color: #f5bfc0;
+        }
+
+        .seed-hero .text-muted {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .seed-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--color-surface);
+            border-radius: var(--radius-pill);
+            padding: 0.4rem 1.2rem;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            margin: 0.25rem;
+        }
+
+        .leaf-seed-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .service-pill {
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+        }
+
+        .service-pill.leaf {
+            background: #e8f5e9;
+            border: 2px solid #2d6a4f;
+            opacity: 0.7;
+        }
+
+        .service-pill.seed {
+            background: var(--seed-light);
+            border: 2px solid var(--seed-mid);
+        }
+
+        .service-pill-label {
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-lead);
+            margin-bottom: var(--space-xs);
+        }
+
+        .service-pill.leaf .service-pill-label {
+            color: #1a4a2e;
+        }
+
+        .service-pill.seed .service-pill-label {
+            color: var(--seed-primary);
+        }
+
+        .hours-block {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hours-row {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-md) var(--space-lg);
+        }
+
+        .hours-row+.hours-row {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .hours-label {
+            min-width: 80px;
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-sm);
+            border-radius: var(--radius-pill);
+            padding: 0.2rem 0.7rem;
+            text-align: center;
+        }
+
+        .hours-label.leaf {
+            background: #e8f5e9;
+            color: #1a4a2e;
+        }
+
+        .hours-label.seed {
+            background: var(--seed-light);
+            color: var(--seed-primary);
+        }
+
+        .hours-time {
+            font-size: var(--font-size-lead);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+        }
+
+        .role-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .role-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .role-icon-box {
+            width: 48px;
+            height: 48px;
+            background: var(--seed-light);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .day-timeline {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .day-block {
+            display: flex;
+            gap: var(--space-md);
+            align-items: stretch;
+            position: relative;
+        }
+
+        .day-block+.day-block {
+            margin-top: 0;
+        }
+
+        .day-block-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 56px;
+        }
+
+        .day-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .day-dot.leaf {
+            background: #2d6a4f;
+            color: var(--color-surface);
+        }
+
+        .day-dot.seed {
+            background: var(--seed-mid);
+            color: var(--color-surface);
+        }
+
+        .day-dot.neutral {
+            background: var(--color-background-alt);
+            color: var(--color-primary);
+            border: 2px solid var(--color-border);
+        }
+
+        .day-line {
+            width: 2px;
+            flex: 1;
+            min-height: 24px;
+            margin: 4px 0;
+        }
+
+        .day-line.leaf {
+            background: #2d6a4f;
+        }
+
+        .day-line.seed {
+            background: var(--seed-mid);
+        }
+
+        .day-line.neutral {
+            background: var(--color-border);
+        }
+
+        .day-content {
+            padding: 8px 0 var(--space-lg) 0;
+        }
+
+        .day-content h4 {
+            margin-bottom: 2px;
+        }
+
+        .day-content .time-tag {
+            display: inline-block;
+            border-radius: var(--radius-pill);
+            padding: 0.1rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: 4px;
+        }
+
+        .time-tag.leaf {
+            background: #e8f5e9;
+            color: #1a4a2e;
+        }
+
+        .time-tag.seed {
+            background: var(--seed-light);
+            color: var(--seed-primary);
+        }
+
+        .time-tag.neutral {
+            background: var(--color-background-alt);
+            color: var(--color-text-muted);
+        }
+
+        .fit-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .fit-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--color-surface);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border);
+            font-size: var(--font-size-sm);
+        }
+
+        .fit-ok {
+            border-left: 3px solid var(--seed-mid);
+        }
+
+        .fit-ng {
+            border-left: 3px solid #9e9e9e;
+        }
+
+        .fit-icon {
+            font-size: 1.1rem;
+        }
+
+        .employment-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .employment-card.primary {
+            border-color: var(--seed-mid);
+            border-width: 2px;
+        }
+
+        .employment-card .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--seed-mid);
+            color: var(--color-surface);
+            border-radius: var(--radius-pill);
+            padding: 0.2rem 1rem;
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-bold);
+            white-space: nowrap;
+        }
+
+        .appeal-card {
+            background: var(--seed-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+            border: 1px solid #e8c0c0;
+        }
+
+        .appeal-card-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #6b2737 0%, #a0424a 100%);
+            color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-3xl) var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section h2 {
+            color: var(--color-surface);
+        }
+
+        .btn-seed {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-pill);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-body);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: none;
+            background-color: var(--color-surface);
+            color: var(--seed-primary);
+            box-shadow: var(--shadow-sm);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .btn-seed:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--seed-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-seed-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-pill);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-body);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: transparent;
+            color: var(--color-surface);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-seed-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-surface);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container site-header-inner">
+            <a class="site-logo" href="../../">BellTree</a>
+            <nav class="site-nav" aria-label="主要ナビゲーション">
+                <a href="../../">ホーム</a>
+                <a href="../../about/">会社情報</a>
+                <a href="../../services/">サービス一覧</a>
+                <a href="../../news/">お知らせ</a>
+                <a href="../" style="color: var(--color-accent);">採用情報</a>
+                <a class="nav-cta" href="../../contact/">ご相談窓口</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===== HERO ===== -->
+        <section class="seed-hero">
+            <div class="container" style="position: relative; z-index: 2;">
+                <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+                    <span class="eyebrow"
+                        style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em;">べるフィット
+                        シード — 運動サポーター募集</span>
+                    <span
+                        style="background: rgba(255,255,255,0.2); color: var(--color-surface); border-radius: var(--radius-pill); padding: 0.15rem 0.7rem; font-size: 0.7rem; font-weight: var(--font-weight-bold);">女性限定施設</span>
+                </div>
+                <h1 style="margin-bottom: var(--space-lg); max-width: 640px;">地域の女性の健康と<br />つながりを支える仕事。</h1>
+                <p class="text-lead text-muted" style="max-width: 560px; margin-bottom: var(--space-xl);">
+                    べるフィット「シード」は女性限定のクイックフィットネス施設です。運動サポーターは、会員様の運動を支えながら地域コミュニティの居場所をつくる、やりがいのある仕事です。</p>
+                <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                    <a href="#apply" class="btn-seed" id="hero-apply">応募・見学を申し込む</a>
+                    <a href="#role" class="btn-seed-outline">仕事内容を見る</a>
+                </div>
+                <div style="margin-top: var(--space-2xl); display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+                    <span class="seed-badge">👩 女性限定施設</span>
+                    <span class="seed-badge">🌱 未経験歓迎</span>
+                    <span class="seed-badge">⏰ パート・アルバイト歓迎</span>
+                    <span class="seed-badge">💬 コミュニティ重視</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEED INTRO ===== -->
+        <section class="section-spacing">
+            <div class="container">
+                <div class="editorial-split reveal">
+                    <div>
+                        <span class="eyebrow">About Seed</span>
+                        <h2 style="margin-bottom: var(--space-lg);">シードってどんな施設？</h2>
+                        <p class="text-muted" style="margin-bottom: var(--space-lg);">
+                            べるフィットには、通所リハビリ型の「リーフ」と女性限定クイックフィットネスの「シード」という2つのサービスがあります。運動サポーターが担当するのは<strong
+                                style="color: var(--seed-primary);">シード</strong>です。</p>
+
+                        <div class="leaf-seed-compare" style="margin-bottom: var(--space-xl);">
+                            <div class="service-pill leaf">
+                                <div class="service-pill-label">🌿 リーフ</div>
+                                <p style="font-size: var(--font-size-sm); color: #2d6a4f; margin: 0;">通所リハビリ型<br />運動施設
+                                </p>
+                            </div>
+                            <div class="service-pill seed">
+                                <div class="service-pill-label">🌱 シード</div>
+                                <p style="font-size: var(--font-size-sm); color: var(--seed-primary); margin: 0;">
+                                    女性限定<br />クイックフィットネス<br /><strong>← こちらを担当</strong></p>
+                            </div>
+                        </div>
+
+                        <ul class="feature-list">
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                <div><strong>女性限定</strong>の安心できる空間</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                <div><strong>出入り自由型</strong>でゆったり利用できる</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                <div>常時<strong>10名前後</strong>が利用</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                <div>運動だけでなく<strong>地域の居場所・コミュニティ</strong>としての役割も</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div
+                            style="background: var(--seed-pale); border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-lg);">
+                            <p style="font-size: 2rem; text-align: center; margin-bottom: var(--space-sm);">🌱</p>
+                            <h3 style="color: var(--seed-primary); text-align: center; margin-bottom: var(--space-md);">
+                                シードの目的</h3>
+                            <ul class="feature-list">
+                                <li class="feature-list-item">
+                                    <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                    <div>健康維持・軽運動の習慣づくり</div>
+                                </li>
+                                <li class="feature-list-item">
+                                    <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                    <div>フレイル予防</div>
+                                </li>
+                                <li class="feature-list-item">
+                                    <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                    <div>会員同士の交流・コミュニティ形成</div>
+                                </li>
+                                <li class="feature-list-item">
+                                    <div class="feature-list-icon" style="color: var(--seed-mid);">✓</div>
+                                    <div>地域の居場所としての機能</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 style="margin-bottom: var(--space-md);">営業時間</h3>
+                        <div class="hours-block">
+                            <div class="hours-row">
+                                <span class="hours-label leaf">リーフ</span>
+                                <div>
+                                    <div class="hours-time">9:00〜11:30</div>
+                                    <div class="hours-time">13:30〜16:30</div>
+                                </div>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-label seed">シード</span>
+                                <div>
+                                    <div class="hours-time" style="color: var(--seed-primary);">11:30〜13:30</div>
+                                    <div class="hours-time" style="color: var(--seed-primary);">16:30〜20:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ROLE ===== -->
+        <section id="role" class="section-spacing bg-soft">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Job Role</span>
+                    <h2>運動サポーターの仕事</h2>
+                    <p class="text-muted">難しい専門技術は必要ありません。会員様に寄り添い、<strong>安心できる居場所づくり</strong>を担うコミュニティスタッフです。</p>
+                </div>
+
+                <div style="background: var(--seed-light); border: 2px solid var(--seed-mid); border-radius: var(--radius-md); padding: var(--space-xl); text-align: center; margin-bottom: var(--space-2xl);"
+                    class="reveal">
+                    <p
+                        style="font-size: var(--font-size-lead); font-weight: var(--font-weight-bold); color: var(--seed-primary); margin: 0;">
+                        「トレーナー」ではなく<br />会員様の運動を支える<strong>コミュニティスタッフ</strong>です</p>
+                </div>
+
+                <div class="grid grid-2 reveal" style="gap: var(--space-md);">
+                    <div class="role-item">
+                        <div class="role-icon-box">💬</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">会員様との会話・コミュニティ</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                会員様と積極的に会話し、通いたくなる居心地のよい雰囲気をつくります。</p>
+                        </div>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-icon-box">🗣️</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">運動の声かけ・サポート</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                「今日も来てよかった」と思ってもらえるよう、運動への前向きな声かけをします。</p>
+                        </div>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-icon-box">🤸</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">簡単な運動サポート</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                運動の補助やフォームの簡単なアドバイス。難しい専門知識は不要です。</p>
+                        </div>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-icon-box">🪟</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">受付対応</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                来館された会員様の受付・チェックイン対応を行います。</p>
+                        </div>
+                    </div>
+                    <div class="role-item" style="grid-column: 1 / -1;">
+                        <div class="role-icon-box">🧹</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">清掃・環境整備</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                清潔で気持ちのよい施設環境を維持します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DAY FLOW ===== -->
+        <section class="section-spacing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">A Day in the Life</span>
+                    <h2>1日の仕事の流れ</h2>
+                    <p class="text-muted">シードは11:30〜13:30 / 16:30〜20:00の営業。シフトに合わせた働き方が可能です。</p>
+                </div>
+
+                <div class="day-timeline mt-2xl reveal">
+                    <!-- 午前シフト例 -->
+                    <div class="day-block">
+                        <div class="day-block-left">
+                            <div class="day-dot leaf">🌿</div>
+                            <div class="day-line leaf"></div>
+                        </div>
+                        <div class="day-content">
+                            <span class="time-tag leaf">9:00〜11:30</span>
+                            <h4>【リーフ】午前の通所リハ補助</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm);">スタッフ状況に応じてリーフのサポートに入る場合もあります。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="day-block">
+                        <div class="day-block-left">
+                            <div class="day-dot seed">🌱</div>
+                            <div class="day-line seed"></div>
+                        </div>
+                        <div class="day-content">
+                            <span class="time-tag seed">11:30〜13:30</span>
+                            <h4>【シード】昼のセッション対応</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm);">受付対応、会員様との会話・声かけ、運動サポート、清掃など。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="day-block">
+                        <div class="day-block-left">
+                            <div class="day-dot neutral">🍱</div>
+                            <div class="day-line leaf"></div>
+                        </div>
+                        <div class="day-content">
+                            <span class="time-tag neutral">13:30〜16:30</span>
+                            <h4>休憩・リーフ午後サポート</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm);">
+                                シードクローズ中は休憩。リーフのサポートや施設整備を行う時間帯です。</p>
+                        </div>
+                    </div>
+
+                    <div class="day-block">
+                        <div class="day-block-left">
+                            <div class="day-dot seed">🌱</div>
+                            <div class="day-line seed"></div>
+                        </div>
+                        <div class="day-content">
+                            <span class="time-tag seed">16:30〜20:00</span>
+                            <h4>【シード】夕方〜夜のセッション対応</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm);">
+                                夕方から仕事終わりの会員様が多い時間帯。活気ある会話でコミュニティを盛り上げます。</p>
+                        </div>
+                    </div>
+
+                    <div class="day-block">
+                        <div class="day-block-left">
+                            <div class="day-dot neutral">✨</div>
+                        </div>
+                        <div class="day-content" style="padding-bottom: 0;">
+                            <span class="time-tag neutral">閉店後</span>
+                            <h4>清掃・片付け・退勤</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: var(--seed-pale); border: 1px solid #e8c0c0; border-radius: var(--radius-md); padding: var(--space-lg); margin-top: var(--space-2xl); text-align: center; max-width: 540px; margin-left: auto; margin-right: auto;"
+                    class="reveal">
+                    <p style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: 4px;">⏰
+                        シフト制で柔軟に働けます</p>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                        昼のみ・夕方のみなど、ご都合に合わせたシフト調整が可能です（要相談）。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FIT / APPEAL ===== -->
+        <section class="section-spacing bg-alt">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Is This Job Right for You?</span>
+                    <h2>向いている人 / 向いていない人</h2>
+                </div>
+                <div class="editorial-split reveal">
+                    <div>
+                        <p
+                            style="font-weight: var(--font-weight-semibold); color: var(--seed-primary); margin-bottom: var(--space-sm);">
+                            ✅ こんな方は活躍できます</p>
+                        <ul class="fit-list" style="margin-bottom: var(--space-xl);">
+                            <li class="fit-item fit-ok"><span class="fit-icon">💬</span>人と話すことが好き・おしゃべりが得意</li>
+                            <li class="fit-item fit-ok"><span class="fit-icon">🌟</span>明るく前向きに周囲を盛り上げられる</li>
+                            <li class="fit-item fit-ok"><span class="fit-icon">👴</span>高齢者と関わることが好き・得意</li>
+                            <li class="fit-item fit-ok"><span class="fit-icon">🏃</span>健康や運動に興味がある</li>
+                        </ul>
+                        <p
+                            style="font-weight: var(--font-weight-semibold); color: var(--color-text-muted); margin-bottom: var(--space-sm);">
+                            ⚠️ こんな方はミスマッチかもしれません</p>
+                        <ul class="fit-list">
+                            <li class="fit-item fit-ng"><span class="fit-icon"
+                                    style="color: #9e9e9e;">✗</span>コミュニケーションが苦手な方</li>
+                            <li class="fit-item fit-ng"><span class="fit-icon"
+                                    style="color: #9e9e9e;">✗</span>人と関わる仕事が苦手な方</li>
+                            <li class="fit-item fit-ng"><span class="fit-icon" style="color: #9e9e9e;">✗</span>成長意欲がない方
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: var(--space-lg);">この仕事の魅力</h3>
+                        <div style="display: grid; gap: var(--space-sm);">
+                            <div class="appeal-card">
+                                <div class="appeal-card-icon">🌿</div>
+                                <p
+                                    style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: 4px;">
+                                    地域の健康づくりに関われる</p>
+                                <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                    地域の女性の健康と笑顔を毎日直接支えられます。</p>
+                            </div>
+                            <div class="appeal-card">
+                                <div class="appeal-card-icon">💞</div>
+                                <p
+                                    style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: 4px;">
+                                    人との交流が多い</p>
+                                <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                    会員様との会話が仕事の中心。人が好きな方にぴったり。</p>
+                            </div>
+                            <div class="appeal-card">
+                                <div class="appeal-card-icon">🏘️</div>
+                                <p
+                                    style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: 4px;">
+                                    地域コミュニティを育てる仕事</p>
+                                <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                    フィットネス施設であり、地域の「居場所」でもあるシードを一緒に育てていきます。</p>
+                            </div>
+                            <div class="appeal-card">
+                                <div class="appeal-card-icon">🌱</div>
+                                <p
+                                    style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: 4px;">
+                                    未経験から始められる</p>
+                                <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                    運動・接客の研修を一から行います。特別な資格は不要です。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EMPLOYMENT ===== -->
+        <section class="section-spacing">
+            <div class="container container-narrow">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Employment Details</span>
+                    <h2>応募資格・雇用形態</h2>
+                </div>
+                <div class="grid grid-3 mt-2xl reveal" style="gap: var(--space-lg);">
+                    <div class="employment-card primary">
+                        <div class="badge">優先採用</div>
+                        <div style="font-size: 2rem; margin: var(--space-md) 0 var(--space-sm);">👩‍💼</div>
+                        <h4 style="color: var(--seed-primary);">パート</h4>
+                        <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                            主婦・主夫の方や、ライフスタイルに合わせて働きたい方に最適</p>
+                    </div>
+                    <div class="employment-card">
+                        <div style="font-size: 2rem; margin: var(--space-md) 0 var(--space-sm);">🧑‍🎓</div>
+                        <h4>アルバイト</h4>
+                        <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                            学生の方も歓迎。スキマ時間を活用して地域に貢献できます</p>
+                    </div>
+                    <div class="employment-card">
+                        <div style="font-size: 2rem; margin: var(--space-md) 0 var(--space-sm);">💼</div>
+                        <h4>正社員登用</h4>
+                        <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                            希望者には正社員登用制度あり。将来的なキャリアアップも可能</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--space-xl);" class="reveal">
+                    <div
+                        style="background: var(--seed-pale); border-radius: var(--radius-md); padding: var(--space-xl); display: flex; gap: var(--space-lg); align-items: flex-start; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <p
+                                style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: var(--space-xs);">
+                                歓迎する年齢層</p>
+                            <p
+                                style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 4px;">
+                                30〜50代</p>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">次点：学生の方も歓迎</p>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <p
+                                style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: var(--space-xs);">
+                                必要資格</p>
+                            <p
+                                style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 4px;">
+                                不要</p>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">未経験者も一から研修します</p>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <p
+                                style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: var(--space-xs);">
+                                研修</p>
+                            <p
+                                style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 4px;">
+                                充実</p>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">運動サポート・接客を一から指導</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <section id="apply" class="section-spacing container">
+            <div class="cta-section reveal">
+                <span
+                    style="display: block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.65);">Join
+                    べるフィット シード</span>
+                <h2 style="margin-bottom: var(--space-md);">地域の女性の笑顔を、<br />一緒につくりませんか？</h2>
+                <p
+                    style="max-width: 520px; margin: 0 auto var(--space-2xl); color: rgba(255,255,255,0.85); line-height: var(--line-height-loose);">
+                    パート・アルバイト歓迎、未経験OK。まずは施設の見学やカジュアルな話し合いからでも大歓迎です。</p>
+                <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
+                    <a href="../../contact/" class="btn-seed" id="cta-apply-main">応募・見学を申し込む</a>
+                    <a href="../../contact/" class="btn-seed-outline" id="cta-question">質問だけでもOK</a>
+                </div>
+                <p style="margin-top: var(--space-xl); font-size: var(--font-size-sm); color: rgba(255,255,255,0.55);">
+                    トレーナー採用は
+                    <a href="../fitness/" style="color: rgba(255,255,255,0.85); text-decoration: underline;">べるフィット
+                        トレーナー採用ページ</a>
+                    をご覧ください
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">BellTree</div>
+                    <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br />医療×運動×介護が一体となった地域健康拠点を目指しています。</p>
+                    <p style="opacity: 0.8; font-size: var(--font-size-sm); margin-top: auto;">東京都町田市<br /><a
+                            href="mailto:info@example.com">info@example.com</a></p>
+                </div>
+                <div class="footer-nav">
+                    <h3>企業情報</h3>
+                    <ul>
+                        <li><a href="../../">ホーム</a></li>
+                        <li><a href="../../about/">会社概要・理念</a></li>
+                        <li><a href="../">採用情報トップ</a></li>
+                        <li><a href="../../contact/">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>採用情報</h3>
+                    <ul>
+                        <li><a href="../">鍼灸マッサージ師</a></li>
+                        <li><a href="../fitness/">べるフィット トレーナー</a></li>
+                        <li><a href="./">シード 運動サポーター</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>サービス</h3>
+                    <ul>
+                        <li><a href="../../services/fitness/">べるフィット</a></li>
+                        <li><a href="../../services/acupuncture/">訪問鍼灸マッサージ</a></li>
+                        <li><a href="../../services/home-care/">居宅介護支援</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; BellTree Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fab-container">
+        <div class="fab-label">運動サポーターに応募</div>
+        <a href="../../contact/" class="fab-button" id="fab-seed-apply" style="background-color: var(--seed-mid);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>応募する</span>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
