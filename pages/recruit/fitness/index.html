@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>トレーナー採用 | べるフィット（株式会社べるつりー）</title>
+    <meta name="description" content="べるフィット（メディカルフィットネス）のトレーナー採用情報。未経験者歓迎・資格不要。高齢者の健康を運動で支える、やりがいある仕事です。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../../../styles.css" />
+    <style>
+        .fitness-hero {
+            background: linear-gradient(135deg, #1a4a2e 0%, #2d6a4f 55%, #1a6b4a 100%);
+            color: var(--color-surface);
+            padding: var(--space-4xl) 0 var(--space-3xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fitness-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -5%;
+            width: 50%;
+            height: 150%;
+            background: rgba(255, 255, 255, 0.03);
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .fitness-hero h1 {
+            color: var(--color-surface);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+        }
+
+        .fitness-hero .eyebrow {
+            color: #a8d5b5;
+        }
+
+        .fitness-hero .text-muted {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .concept-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--color-surface);
+            border-radius: var(--radius-pill);
+            padding: 0.4rem 1.2rem;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            margin: 0.25rem;
+        }
+
+        .program-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .program-step {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: flex-start;
+            padding-bottom: var(--space-lg);
+            position: relative;
+        }
+
+        .program-step:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 27px;
+            top: 56px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #2d6a4f, transparent);
+        }
+
+        .program-step-num {
+            min-width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #1a4a2e, #2d6a4f);
+            color: var(--color-surface);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: var(--font-weight-bold);
+            flex-shrink: 0;
+            z-index: 1;
+            box-shadow: 0 4px 12px rgba(26, 74, 46, 0.3);
+        }
+
+        .program-step-content {
+            padding-top: 12px;
+        }
+
+        .program-step-content h4 {
+            margin-bottom: 2px;
+        }
+
+        .program-step-time {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #1a4a2e;
+            border-radius: var(--radius-pill);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-xs);
+        }
+
+        .session-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border-top: 3px solid #2d6a4f;
+        }
+
+        .session-time {
+            font-size: var(--font-size-lead);
+            font-weight: var(--font-weight-bold);
+            color: #1a4a2e;
+            margin-bottom: var(--space-xs);
+        }
+
+        .day-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .day-step {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+            padding: var(--space-sm) 0;
+            position: relative;
+        }
+
+        .day-step:not(:last-child)::after {
+            content: '↓';
+            position: absolute;
+            left: 18px;
+            bottom: -14px;
+            color: #2d6a4f;
+            font-size: 1.2rem;
+            z-index: 2;
+        }
+
+        .day-step-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #2d6a4f;
+            color: var(--color-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .day-step-label {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+        }
+
+        .machine-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sm);
+        }
+
+        @media (min-width: 480px) {
+            .machine-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .machine-item {
+            background: #e8f5e9;
+            border-radius: var(--radius-sm);
+            padding: var(--space-sm);
+            text-align: center;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            color: #1a4a2e;
+        }
+
+        .machine-item-icon {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .role-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+
+        .role-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .role-icon {
+            width: 48px;
+            height: 48px;
+            background: #e8f5e9;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .training-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            padding: var(--space-sm) var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .training-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2d6a4f;
+            flex-shrink: 0;
+        }
+
+        .fit-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .fit-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--color-surface);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .fit-ok {
+            border-left: 3px solid #2d6a4f;
+        }
+
+        .fit-ng {
+            border-left: 3px solid #c62828;
+        }
+
+        .fit-icon-ok {
+            color: #2d6a4f;
+            font-size: 1.2rem;
+        }
+
+        .fit-icon-ng {
+            color: #c62828;
+            font-size: 1.2rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1a4a2e 0%, #2d6a4f 100%);
+            color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-3xl) var(--space-2xl);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--color-surface);
+        }
+
+        .no-req-banner {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 2px solid #2d6a4f;
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            text-align: center;
+        }
+
+        /* Green accent overrides for this page */
+        .btn-green {
+            background-color: #2d6a4f;
+            color: var(--color-surface);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-pill);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-body);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-green:hover {
+            background-color: #1a4a2e;
+            color: var(--color-surface);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-green-outline {
+            background-color: transparent;
+            color: var(--color-surface);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-pill);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-body);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-green-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-surface);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container site-header-inner">
+            <a class="site-logo" href="../../../">BellTree</a>
+            <nav class="site-nav" aria-label="主要ナビゲーション">
+                <a href="../../../">ホーム</a>
+                <a href="../../../about/">会社情報</a>
+                <a href="../../../pages/services/">サービス一覧</a>
+                <a href="../../../news/">お知らせ</a>
+                <a href="../../" style="color: var(--color-accent);">採用情報</a>
+                <a class="nav-cta" href="../../../contact/">ご相談窓口</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===== HERO ===== -->
+        <section class="fitness-hero">
+            <!-- PHOTO: trainer assisting member -->
+            <div class="container" style="position: relative; z-index: 2;">
+                <span class="eyebrow"
+                    style="display: block; margin-bottom: var(--space-md); letter-spacing: 0.1em; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">べるフィット
+                    — スタッフ募集（トレーナー）</span>
+                <h1 style="margin-bottom: var(--space-lg); max-width: 680px;">「難しい専門知識より、<br />人に寄り添う力」が活きる仕事。<br />
+                    <span style="font-size: 0.68em; opacity: 0.9;">高齢者の運動を、医療・介護チームとともに支えるメディカルフィットネスのトレーナーです。</span></h1>
+                <p class="text-lead text-muted" style="max-width: 580px; margin-bottom: var(--space-xl);">
+                    1回最大６名の少人数制。AIマシンで運動をサポートし、仕上げに手でストレッチ。<br />
+                    資格不要・未経験OK。<strong>月給21万円スタート。</strong></p>
+                <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                    <a href="#apply" class="btn-green" id="hero-apply">まず施設を見学してみる</a>
+                    <a href="#role" class="btn-green-outline">仕事内容を見る</a>
+                </div>
+                <div style="margin-top: var(--space-2xl); display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+                    <span class="concept-badge">🌿 未経験者歓迎</span>
+                    <span class="concept-badge">📋 資格不要</span>
+                    <span class="concept-badge">🚗 送迎業務なし</span>
+                    <span class="concept-badge">🏥 医療・介護連携</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DIFFERENTIATION ===== -->
+        <section class="section-spacing bg-soft">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Why べるフィット?</span>
+                    <h2>一般ジムとの違い</h2>
+                    <p class="text-muted">トレーナー求人はたくさんあります。共に考えてほしいのは、この施設にしかない仕事の質です。</p>
+                </div>
+                <div class="grid grid-3 mt-2xl reveal" style="gap: var(--space-md);">
+                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border-top: 4px solid #2d6a4f; text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F46B;</div>
+                        <h3 style="color: #1a4a2e; margin-bottom: var(--space-xs);">① 少人数制</h3>
+                        <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">リーフでは1回最大8名のプログラム。<br />一人ひとりの状態を把握しながら指導できます。</p>
+                    </div>
+                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border-top: 4px solid #2d6a4f; text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F3E5;</div>
+                        <h3 style="color: #1a4a2e; margin-bottom: var(--space-xs);">② 医療連携</h3>
+                        <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">鍼灸マッサージ師・ケアマネジャーと連携しながら<br />健康改善をサポートします。</p>
+                    </div>
+                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border-top: 4px solid #2d6a4f; text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F4C5;</div>
+                        <h3 style="color: #1a4a2e; margin-bottom: var(--space-xs);">③ 長期的な関係</h3>
+                        <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">同じ利用者様と数年単位で関わるため<br />変化を実感できる仕事です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FACILITY INTRO ===== -->
+        <section class="section-spacing">
+            <div class="container">
+                <div class="editorial-split reveal">
+                    <div>
+                        <span class="eyebrow">About べるフィット</span>
+                        <h2 style="margin-bottom: var(--space-lg);">メディカルフィットネスとは？</h2>
+                        <p class="text-muted" style="margin-bottom: var(--space-lg);">
+                            べるフィットは、一般的なスポーツジムとは異なります。病気・痛み・体力低下を抱える方が<strong>安全に運動できる</strong>よう、医療・介護と連携しながら支援するフィットネス施設です。
+                        </p>
+                        <div
+                            style="background: #e8f5e9; border-radius: var(--radius-md); padding: var(--space-lg); margin-bottom: var(--space-lg);">
+                            <p
+                                style="font-weight: var(--font-weight-bold); color: #1a4a2e; margin-bottom: var(--space-sm); font-size: var(--font-size-lead);">
+                                🌿 未病治（みびょうち）</p>
+                            <p class="text-muted" style="margin: 0;">
+                                病気や痛みが重くなる前に、運動を通じて健康を維持する。東洋医学の「未病」という考え方を施設理念に掲げています。</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: #2d6a4f;">✓</div>
+                                <div>高齢者・要支援者のリハビリ的運動支援</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: #2d6a4f;">✓</div>
+                                <div>フレイル予防・健康維持プログラム</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: #2d6a4f;">✓</div>
+                                <div>20代〜高齢者まで通えるフィットネスジム</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: #2d6a4f;">✓</div>
+                                <div>鍼灸マッサージ院・介護支援との一体連携</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div
+                            style="background: var(--color-background-alt); border-radius: var(--radius-lg); padding: var(--space-2xl);">
+                            <h3 style="margin-bottom: var(--space-xl); color: var(--color-primary);">施設データ</h3>
+                            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border);">
+                                    <span class="text-muted" style="font-size: var(--font-size-sm);">1部あたりの定員</span>
+                                    <strong style="color: #1a4a2e;">6名</strong>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border);">
+                                    <span class="text-muted" style="font-size: var(--font-size-sm);">トレーナー配置</span>
+                                    <strong style="color: #1a4a2e;">約3名 / 部</strong>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border);">
+                                    <span class="text-muted" style="font-size: var(--font-size-sm);">1日のセッション数</span>
+                                    <strong style="color: #1a4a2e;">4部制</strong>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border);">
+                                    <span class="text-muted" style="font-size: var(--font-size-sm);">AIマシン台数</span>
+                                    <strong style="color: #1a4a2e;">6台</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: var(--space-sm) 0;">
+                                    <span class="text-muted" style="font-size: var(--font-size-sm);">送迎業務</span>
+                                    <strong style="color: #2d6a4f;">専用ドライバーが担当（トレーナー不要）</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="no-req-banner" style="margin-top: var(--space-lg);">
+                            <p style="font-size: 2rem; margin-bottom: var(--space-xs);">🎓</p>
+                            <p
+                                style="font-weight: var(--font-weight-bold); color: #1a4a2e; font-size: var(--font-size-lead); margin-bottom: var(--space-xs);">
+                                資格不要・未経験OK</p>
+                            <p class="text-muted" style="margin: 0; font-size: var(--font-size-sm);">
+                                入社後の研修制度で、未経験からトレーナーとして活躍できます</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-spacing bg-soft">
+            <div class="container">
+                <!-- PHOTO: training session -->
+                <div class="section-header text-center">
+                    <span class="eyebrow">Program Flow</span>
+                    <h2>1回60分の運動プログラム</h2>
+                    <p class="text-muted">安全で効果的な運動の流れは体系化されています。未経験でも習得しやすい構成です。</p>
+                </div>
+                <div class="editorial-split reveal">
+                    <div class="program-flow">
+                        <div class="program-step">
+                            <div class="program-step-num">①</div>
+                            <div class="program-step-content">
+                                <span class="program-step-time">10分</span>
+                                <h4>バイタルチェック・準備運動</h4>
+                                <p class="text-muted" style="font-size: var(--font-size-sm);">
+                                    血圧・体温測定など健康状態の確認後、安全に体を動かす準備をします。</p>
+                            </div>
+                        </div>
+                        <div class="program-step">
+                            <div class="program-step-num">②</div>
+                            <div class="program-step-content">
+                                <span class="program-step-time">24分</span>
+                                <h4>AIフィットネスマシン</h4>
+                                <p class="text-muted" style="font-size: var(--font-size-sm);">
+                                    6台のAIマシンを使ったサーキットトレーニング（2周）。全身の主要筋群をバランスよく鍛えます。</p>
+                            </div>
+                        </div>
+                        <div class="program-step">
+                            <div class="program-step-num">③</div>
+                            <div class="program-step-content">
+                                <span class="program-step-time">20分</span>
+                                <h4>TRXトレーニング</h4>
+                                <p class="text-muted" style="font-size: var(--font-size-sm);">
+                                    サスペンションを使った自体重トレーニング。体幹と機能的な動きを改善します。</p>
+                            </div>
+                        </div>
+                        <div class="program-step">
+                            <div class="program-step-num">④</div>
+                            <div class="program-step-content">
+                                <span class="program-step-time">5分</span>
+                                <h4>トレーナーストレッチ</h4>
+                                <p class="text-muted" style="font-size: var(--font-size-sm);">
+                                    トレーナーが手で行う仕上げのストレッチ。利用者との対話が生まれる大切な時間です。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: var(--space-lg);">AIフィットネスマシン 6台構成</h3>
+                        <div class="machine-grid" style="margin-bottom: var(--space-xl);">
+                            <div class="machine-item">
+                                <div class="machine-item-icon">🍑</div>お尻
+                            </div>
+                            <div class="machine-item">
+                                <div class="machine-item-icon">💪</div>胸
+                            </div>
+                            <div class="machine-item">
+                                <div class="machine-item-icon">🔙</div>背中
+                            </div>
+                            <div class="machine-item">
+                                <div class="machine-item-icon">🦵</div>太もも
+                            </div>
+                            <div class="machine-item">
+                                <div class="machine-item-icon">🌀</div>お腹
+                            </div>
+                            <div class="machine-item">
+                                <div class="machine-item-icon">🫀</div>腰
+                            </div>
+                        </div>
+                        <div style="background: #e8f5e9; border-radius: var(--radius-md); padding: var(--space-lg);">
+                            <p
+                                style="font-weight: var(--font-weight-semibold); color: #1a4a2e; margin-bottom: var(--space-sm);">
+                                サーキットトレーニング方式</p>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                6台を順番に使い、2セット実施。マシンがAIで負荷を管理するため、安全で効果的な運動が実現できます。</p>
+                        </div>
+
+                        <h3 style="margin-top: var(--space-xl); margin-bottom: var(--space-md);">1日4部制のセッション</h3>
+                        <div class="grid grid-2" style="gap: var(--space-sm);">
+                            <div class="session-card">
+                                <div
+                                    style="font-size: 0.75rem; color: #2d6a4f; font-weight: var(--font-weight-bold); margin-bottom: 4px;">
+                                    1部</div>
+                                <div class="session-time">9:00〜10:30</div>
+                            </div>
+                            <div class="session-card">
+                                <div
+                                    style="font-size: 0.75rem; color: #2d6a4f; font-weight: var(--font-weight-bold); margin-bottom: 4px;">
+                                    2部</div>
+                                <div class="session-time">10:30〜12:00</div>
+                            </div>
+                            <div class="session-card">
+                                <div
+                                    style="font-size: 0.75rem; color: #2d6a4f; font-weight: var(--font-weight-bold); margin-bottom: 4px;">
+                                    3部</div>
+                                <div class="session-time">13:30〜15:00</div>
+                            </div>
+                            <div class="session-card">
+                                <div
+                                    style="font-size: 0.75rem; color: #2d6a4f; font-weight: var(--font-weight-bold); margin-bottom: 4px;">
+                                    4部</div>
+                                <div class="session-time">15:00〜16:30</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ROLE ===== -->
+        <section id="role" class="section-spacing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Trainer's Role</span>
+                    <h2>トレーナーの役割</h2>
+                    <p class="text-muted">リハビリ的運動を通じて、利用者の健康と笑顔を直接支える仕事です。</p>
+                </div>
+                <div class="grid grid-3 mt-2xl reveal" style="gap: var(--space-md);">
+                    <div class="role-card">
+                        <div class="role-icon">🤸</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">準備体操・ウォームアップ</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                利用者が安全に運動に入れるよう、体を丁寧に準備します。</p>
+                        </div>
+                    </div>
+                    <div class="role-card">
+                        <div class="role-icon">🤖</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">マシン指導・フォーム補助</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                AIマシンの操作をサポートし、正しいフォームで安全に使えるよう補助します。</p>
+                        </div>
+                    </div>
+                    <div class="role-card">
+                        <div class="role-icon">🪢</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">TRX指導</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                サスペンショントレーニングを個人の体力に合わせて指導します。</p>
+                        </div>
+                    </div>
+                    <div class="role-card">
+                        <div class="role-icon">🙌</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">ストレッチ施術</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                運動後のトレーナーストレッチ。利用者と会話しながら柔軟性を高めます。</p>
+                        </div>
+                    </div>
+                    <div class="role-card">
+                        <div class="role-icon">🛡️</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">安全管理</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                高齢者・要支援者の体調変化に気づき、安全に運動できる環境を守ります。</p>
+                        </div>
+                    </div>
+                    <div class="role-card">
+                        <div class="role-icon">🔗</div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">医療・介護との連携</h4>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">
+                                鍼灸マッサージ師やケアマネジャーと情報共有し、チームでのサポートに貢献します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DAY FLOW ===== -->
+        <section class="section-spacing bg-alt">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">A Day in the Life</span>
+                    <h2>1日の仕事の流れ</h2>
+                </div>
+                <div class="day-timeline mt-2xl reveal">
+                    <div class="day-step">
+                        <div class="day-step-dot">🏢</div>
+                        <div><span class="day-step-label">出勤</span></div>
+                    </div>
+                    <div style="height: var(--space-xl);"></div>
+                    <div class="day-step">
+                        <div class="day-step-dot">1️⃣</div>
+                        <div>
+                            <span class="day-step-label">1部 指導</span>
+                            <span class="text-muted" style="font-size: var(--font-size-sm); display: block;">9:00〜10:30
+                                / 最大6名</span>
+                        </div>
+                    </div>
+                    <div style="height: var(--space-xl);"></div>
+                    <div class="day-step">
+                        <div class="day-step-dot">2️⃣</div>
+                        <div>
+                            <span class="day-step-label">2部 指導</span>
+                            <span class="text-muted" style="font-size: var(--font-size-sm); display: block;">10:30〜12:00
+                                / 最大6名</span>
+                        </div>
+                    </div>
+                    <div style="height: var(--space-xl);"></div>
+                    <div class="day-step">
+                        <div class="day-step-dot">🍱</div>
+                        <div>
+                            <span class="day-step-label">昼休憩</span>
+                            <span class="text-muted"
+                                style="font-size: var(--font-size-sm); display: block;">12:00〜13:30</span>
+                        </div>
+                    </div>
+                    <div style="height: var(--space-xl);"></div>
+                    <div class="day-step">
+                        <div class="day-step-dot">3️⃣</div>
+                        <div>
+                            <span class="day-step-label">3部 指導</span>
+                            <span class="text-muted" style="font-size: var(--font-size-sm); display: block;">13:30〜15:00
+                                / 最大6名</span>
+                        </div>
+                    </div>
+                    <div style="height: var(--space-xl);"></div>
+                    <div class="day-step">
+                        <div class="day-step-dot">4️⃣</div>
+                        <div>
+                            <span class="day-step-label">4部 指導</span>
+                            <span class="text-muted" style="font-size: var(--font-size-sm); display: block;">15:00〜16:30
+                                / 最大6名</span>
+                        </div>
+                    </div>
+                    <div style="height: var(--space-xl);"></div>
+                    <div class="day-step">
+                        <div class="day-step-dot">🧹</div>
+                        <div>
+                            <span class="day-step-label">清掃・片付け・退勤</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); max-width: 480px; margin: var(--space-2xl) auto 0; text-align: center;"
+                    class="reveal">
+                    <p style="font-size: 1.5rem; margin-bottom: var(--space-xs);">🚗</p>
+                    <p style="font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 4px;">
+                        送迎は専用ドライバーが担当</p>
+                    <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">トレーナーは送迎業務なし。指導に集中できる環境です。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TRAINING ===== -->
+        <section class="section-spacing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Training Program</span>
+                    <h2>未経験者のための研修制度</h2>
+                    <p class="text-muted">スポーツや介護の経験がない方でも、しっかりした研修でトレーナーとしてデビューできます。</p>
+                </div>
+                <div class="editorial-split reveal">
+                    <div>
+                        <div
+                            style="background: #e8f5e9; border-radius: var(--radius-lg); padding: var(--space-2xl); text-align: center; margin-bottom: var(--space-xl);">
+                            <div style="font-size: 3rem; margin-bottom: var(--space-sm);">🎓</div>
+                            <h3 style="color: #1a4a2e; margin-bottom: var(--space-sm);">資格不要<br />未経験OK</h3>
+                            <p class="text-muted" style="margin: 0;">入社後、専任スタッフが丁寧に育成します。</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: #2d6a4f;">✓</div>
+                                <div>研修はすべて業務時間内に実施</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: #2d6a4f;">✓</div>
+                                <div>先輩トレーナーによるOJT</div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="color: #2d6a4f;">✓</div>
+                                <div>段階的にスキルアップできる仕組み</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: var(--space-lg);">研修内容</h3>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <div class="training-item">
+                                <div class="training-dot"></div>運動指導の基礎・声かけの方法
+                            </div>
+                            <div class="training-item">
+                                <div class="training-dot"></div>AIフィットネスマシンの操作・指導
+                            </div>
+                            <div class="training-item">
+                                <div class="training-dot"></div>TRXトレーニングの指導技術
+                            </div>
+                            <div class="training-item">
+                                <div class="training-dot"></div>ストレッチの手技と補助方法
+                            </div>
+                            <div class="training-item">
+                                <div class="training-dot"></div>高齢者の運動特性・注意点
+                            </div>
+                            <div class="training-item">
+                                <div class="training-dot"></div>リハビリ的運動の考え方・実践
+                            </div>
+                            <div class="training-item">
+                                <div class="training-dot"></div>緊急時対応・安全管理
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== SALARY & CAREER ===== -->
+        <section class="section-spacing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Income & Career</span>
+                    <h2>給与とキャリアパス</h2>
+                    <p class="text-muted">入社後の成長に合わせて、着実に収入とキャリアが伸びる環境です。</p>
+                </div>
+                <div class="editorial-split reveal" style="align-items: start;">
+                    <div>
+                        <h3 style="margin-bottom: var(--space-lg);">給与モデル</h3>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <div style="background: var(--color-background-alt); border-radius: var(--radius-md); padding: var(--space-lg); border-left: 4px solid #2d6a4f;">
+                                <p style="font-size: 0.75rem; color: #2d6a4f; font-weight: 700; margin-bottom: 4px;">入社時</p>
+                                <p style="font-size: 1.75rem; font-weight: 800; color: #1a4a2e; margin-bottom: 4px;">月給 210,000円</p>
+                                <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">研修期間中も同額支給。交通費・社会保険完備。</p>
+                            </div>
+                            <div style="background: var(--color-background-alt); border-radius: var(--radius-md); padding: var(--space-lg); border-left: 4px solid #2d6a4f;">
+                                <p style="font-size: 0.75rem; color: #2d6a4f; font-weight: 700; margin-bottom: 4px;">3年目（目安）</p>
+                                <p style="font-size: 1.75rem; font-weight: 800; color: #1a4a2e; margin-bottom: 4px;">月給 250,000円</p>
+                                <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">昇給実績に基づく目安。スキル・貢献度に応じて反映。</p>
+                            </div>
+                            <div style="background: #e8f5e9; border-radius: var(--radius-md); padding: var(--space-lg); border-left: 4px solid #1a4a2e;">
+                                <p style="font-size: 0.75rem; color: #1a4a2e; font-weight: 700; margin-bottom: var(--space-sm);">役職手当</p>
+                                <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                                    <div><p style="font-weight: 700; color: #1a4a2e; margin: 0;">施設リーダー</p><p style="color: #2d6a4f; font-weight: 700; font-size: 1.1rem; margin: 0;">+30,000円</p></div>
+                                    <div><p style="font-weight: 700; color: #1a4a2e; margin: 0;">施設長</p><p style="color: #2d6a4f; font-weight: 700; font-size: 1.1rem; margin: 0;">+50,000円</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: var(--space-lg);">キャリアパス</h3>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <div style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                                <span style="background: #2d6a4f; color: #fff; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; flex-shrink: 0;">1</span>
+                                <div><p style="font-weight: 700; margin:0;">トレーナー</p><p class="text-muted" style="font-size: var(--font-size-sm); margin:0;">研修 → OJT → 独立指導</p></div>
+                            </div>
+                            <div style="text-align:center; color:#2d6a4f; font-size:1.2rem;">↓</div>
+                            <div style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                                <span style="background: #2d6a4f; color: #fff; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; flex-shrink: 0;">2</span>
+                                <div><p style="font-weight: 700; margin:0;">シニアトレーナー</p><p class="text-muted" style="font-size: var(--font-size-sm); margin:0;">後輩指導・プログラム開発</p></div>
+                            </div>
+                            <div style="text-align:center; color:#2d6a4f; font-size:1.2rem;">↓</div>
+                            <div style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                                <span style="background: #2d6a4f; color: #fff; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; flex-shrink: 0;">3</span>
+                                <div><p style="font-weight: 700; margin:0;">施設リーダー</p><p class="text-muted" style="font-size: var(--font-size-sm); margin:0;">運営管理・スタッフ育成 +30,000円</p></div>
+                            </div>
+                            <div style="text-align:center; color:#2d6a4f; font-size:1.2rem;">↓</div>
+                            <div style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: #e8f5e9; border-radius: var(--radius-md); border: 1px solid #a5d6a7;">
+                                <span style="background: #1a4a2e; color: #fff; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; flex-shrink: 0;">4</span>
+                                <div><p style="font-weight: 700; color: #1a4a2e; margin:0;">施設長</p><p class="text-muted" style="font-size: var(--font-size-sm); margin:0;">事業経営・地域連携 +50,000円</p></div>
+                            </div>
+                            <div style="text-align:center; color:#2d6a4f; font-size:1.2rem;">↓</div>
+                            <div style="display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-surface); border-radius: var(--radius-md); border: 1px dashed #2d6a4f;">
+                                <span style="background: #2d6a4f; color: #fff; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; flex-shrink: 0;">+</span>
+                                <div><p style="font-weight: 700; margin:0;">多拠点・訪問パーソナル</p><p class="text-muted" style="font-size: var(--font-size-sm); margin:0;">他拠点マネジメント / 訪問専門トレーナー事業参加</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PERSONA ===== -->
+        <section class="section-spacing bg-soft">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Who We're Looking For</span>
+                    <h2>求める人物像</h2>
+                </div>
+                <div class="editorial-split reveal">
+                    <div>
+                        <h3 style="margin-bottom: var(--space-lg);">こんな想いを持つ方を歓迎します</h3>
+                        <ul class="feature-list">
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="font-size: 1.5rem;">🏋️</div>
+                                <div><strong>運動が好き</strong><br /><span class="text-muted"
+                                        style="font-size: var(--font-size-sm);">運動が好き・体を動かすことが楽しい方</span></div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="font-size: 1.5rem;">💬</div>
+                                <div><strong>人と話すことが好き</strong><br /><span class="text-muted"
+                                        style="font-size: var(--font-size-sm);">利用者様とのコミュニケーションを楽しめる方</span></div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="font-size: 1.5rem;">👴</div>
+                                <div><strong>高齢者と関わる仕事がしたい</strong><br /><span class="text-muted"
+                                        style="font-size: var(--font-size-sm);">お年寄りとの関わりに喜びを感じられる方</span></div>
+                            </li>
+                            <li class="feature-list-item">
+                                <div class="feature-list-icon" style="font-size: 1.5rem;">🌱</div>
+                                <div><strong>健康づくりに興味がある</strong><br /><span class="text-muted"
+                                        style="font-size: var(--font-size-sm);">人の健康をサポートすることに意義を感じる方</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: var(--space-lg);">向いている人 / 向いていない人</h3>
+                        <p
+                            style="font-weight: var(--font-weight-semibold); color: var(--color-primary); margin-bottom: var(--space-sm);">
+                            ✅ こんな方は活躍できます</p>
+                        <ul class="fit-list" style="margin-bottom: var(--space-lg);">
+                            <li class="fit-item fit-ok"><span class="fit-icon-ok">✓</span>人と話すことが好き・明るく前向き</li>
+                            <li class="fit-item fit-ok"><span class="fit-icon-ok">✓</span>高齢者と関わることが好き・得意</li>
+                            <li class="fit-item fit-ok"><span class="fit-icon-ok">✓</span>コツコツ真面目に努力できる</li>
+                            <li class="fit-item fit-ok"><span class="fit-icon-ok">✓</span>成長意欲があり、学び続けたい</li>
+                        </ul>
+                        <p
+                            style="font-weight: var(--font-weight-semibold); color: var(--color-text-muted); margin-bottom: var(--space-sm);">
+                            ⚠️ こんな方はミスマッチかもしれません</p>
+                        <ul class="fit-list">
+                            <li class="fit-item fit-ng"><span class="fit-icon-ng">✗</span>コミュニケーションが苦手な方</li>
+                            <li class="fit-item fit-ng"><span class="fit-icon-ng">✗</span>収入のみを目的として働きたい方</li>
+                            <li class="fit-item fit-ng"><span class="fit-icon-ng">✗</span>成長意欲がない方</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-spacing bg-soft">
+            <div class="container container-narrow">
+                <!-- PHOTO: staff meeting -->
+                <div class="section-header text-center">
+                    <span class="eyebrow">Our Culture</span>
+                    <h2>職場の雰囲気</h2>
+                    <p class="text-muted">スタッフ幅広く平均勤続10.2年。長く働ける理由には、文化があります。</p>
+                </div>
+                <div class="grid grid-3 mt-2xl reveal" style="gap: var(--space-md); text-align: center;">
+                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F33F;</div>
+                        <h4 style="color: #1a4a2e; margin-bottom: var(--space-xs);">自由</h4>
+                        <p class="text-muted" style="font-size: var(--font-size-sm);">直行直帰・副業OKなど個人の裁量を尊重。まじめに働ける環境。</p>
+                    </div>
+                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F60C;</div>
+                        <h4 style="color: #1a4a2e; margin-bottom: var(--space-xs);">穏やか</h4>
+                        <p class="text-muted" style="font-size: var(--font-size-sm);">社長・管理職が現場に立ち、スタッフ同士の中も良い人間関係。見学時に雰囲気を感じて応募する人が多い。</p>
+                    </div>
+                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F680;</div>
+                        <h4 style="color: #1a4a2e; margin-bottom: var(--space-xs);">挑戦</h4>
+                        <p class="text-muted" style="font-size: var(--font-size-sm);">毎週の研修・ケアマネ資格取得支援など、成長欲求に応える環境。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <section id="apply" class="section-spacing container">
+            <div class="cta-section reveal">
+                <span
+                    style="display: block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.65);">Join
+                    べるフィット</span>
+                <h2 style="margin-bottom: var(--space-md);">「話だけ聞きたい」で<br />まったく構いません。</h2>
+                <p
+                    style="max-width: 540px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.85); line-height: var(--line-height-loose);">話だけ聞きたい段階でも大歓迎です。まずは施設見学から、べるフィットの雰囲気を実際に体感してください。</p>
+                <!-- 応募段階 -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: var(--space-xs); flex-wrap: wrap; margin-bottom: var(--space-xl); font-size: var(--font-size-sm); color: rgba(255,255,255,0.8);">
+                    <span style="background:rgba(255,255,255,0.12); border-radius:999px; padding:0.35rem 1rem;">見学</span>
+                    <span>→</span>
+                    <span style="background:rgba(255,255,255,0.12); border-radius:999px; padding:0.35rem 1rem;">カジュアル面談</span>
+                    <span>→</span>
+                    <span style="background:rgba(255,255,255,0.12); border-radius:999px; padding:0.35rem 1rem;">書類選考</span>
+                    <span>→</span>
+                    <span style="background:rgba(255,255,255,0.12); border-radius:999px; padding:0.35rem 1rem;">面接</span>
+                    <span>→</span>
+                    <span style="background:rgba(255,255,255,0.2); border-radius:999px; padding:0.35rem 1rem; font-weight:700; color:#fff;">内定</span>
+                </div>
+                <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
+                    <a href="../../../contact/" class="btn-green" id="cta-main-apply"
+                        style="background-color: var(--color-surface); color: #1a4a2e; font-weight: var(--font-weight-bold); padding: 1rem 2.5rem; border-radius: var(--radius-pill); display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease;">施設見学を申し込む</a>
+                    <a href="../../../contact/" class="btn-green-outline" id="cta-question">LINEで質問する</a>
+                </div>
+                <p style="margin-top: var(--space-xl); font-size: var(--font-size-sm); color: rgba(255,255,255,0.6);">
+                    鍼灸マッサージ師の採用情報は
+                    <a href="../../" style="color: rgba(255,255,255,0.9); text-decoration: underline;">採用情報トップページ</a>
+                    をご覧ください
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">BellTree</div>
+                    <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br />医療×運動×介護が一体となった地域健康拠点を目指しています。</p>
+                    <p style="opacity: 0.8; font-size: var(--font-size-sm); margin-top: auto;">東京都町田市<br /><a
+                            href="mailto:info@example.com">info@example.com</a></p>
+                </div>
+                <div class="footer-nav">
+                    <h3>企業情報</h3>
+                    <ul>
+                        <li><a href="../../../">ホーム</a></li>
+                        <li><a href="../../../about/">会社概要・理念</a></li>
+                        <li><a href="../../../news/">お知らせ</a></li>
+                        <li><a href="../../">採用情報</a></li>
+                        <li><a href="../../../contact/">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>採用情報</h3>
+                    <ul>
+                        <li><a href="../../">採用トップ（鍼灸マッサージ師）</a></li>
+                        <li><a href="./">べるフィット トレーナー</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>サービス</h3>
+                    <ul>
+                        <li><a href="../../../pages/services/fitness/">べるフィット</a></li>
+                        <li><a href="../../../pages/services/acupuncture/">訪問鍼灸マッサージ</a></li>
+                        <li><a href="../../../pages/services/home-care/">居宅介護支援</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; BellTree Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fab-container">
+        <div class="fab-label">トレーナーに応募する</div>
+        <a href="../../../contact/" class="fab-button" id="fab-trainer-apply" style="background-color: #2d6a4f;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>応募する</span>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
+
