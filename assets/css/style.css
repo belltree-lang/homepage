@@ -1,22 +1,156 @@
+/* 1 Reset */
 @import url('./reset.css');
+
+/* 2 Design Tokens */
 @import url('./variables.css');
 
-/* Main Stylesheet Reference */
+/* 3 Base Typography */
 body {
   font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: var(--line-height-base);
   letter-spacing: var(--letter-spacing-base);
 }
 
+.text-lead {
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-loose);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+/* 4 Layout Containers */
 .container {
   max-width: var(--container-base);
   margin-inline: auto;
   padding-inline: var(--container-padding);
 }
 
-/* ── Header Navigation ── */
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.section-spacing {
+  padding-block: var(--space-3xl);
+}
+
+/* 5 Grid System */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+/* 6 Components */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.bg-soft {
+  background-color: var(--color-background-soft);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-heading);
+  margin-bottom: var(--space-xs);
+}
+
+/* 7 Utilities */
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+
+.mt-md {
+  margin-top: var(--space-md);
+}
+
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+
+/* 8 Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -89,8 +223,36 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-/* Responsive Header */
+/* 9 Footer */
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding-block: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer .text-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-footer a {
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.site-footer a:hover {
+  opacity: 0.8;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+/* 10 Responsive */
 @media (max-width: 768px) {
+  /* Header Responsive */
   .site-header-inner {
     height: auto;
     padding-top: var(--space-xs);
@@ -109,5 +271,21 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--space-xs) var(--space-md);
+  }
+
+  /* Grid Responsive */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer Responsive */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Spacing Adjustments */
+  .section-spacing {
+    padding-block: var(--space-2xl);
   }
 }
