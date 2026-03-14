@@ -36,13 +36,13 @@ jobs:
           rm -f wp-load.php
 
           echo 'Removing WordPress directories'
-          rm -r wp-admin/
-          rm -r wp-includes/
+          rm -rf wp-admin/
+          rm -rf wp-includes/
 
           echo 'Keeping wp-content for safety'
 
           echo 'Disabling WordPress rewrite rules'
-          mv .htaccess .htaccess.backup
+          mv -f .htaccess .htaccess.backup || true
 
           echo 'Remaining files after cleanup:'
           cls -l
