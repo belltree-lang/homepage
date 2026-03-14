@@ -1,0 +1,25 @@
+name: FTP Inspect
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/ftp-inspect.yml
+
+jobs:
+  inspect:
+    name: Inspect FTP Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Inspect server root
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          echo "Connecting to FTP server and listing files..."
+          lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; cls -l"
