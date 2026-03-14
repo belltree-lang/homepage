@@ -5,7 +5,6 @@ on:
 
 jobs:
   cleanup:
-    name: Clean WordPress Files
     runs-on: ubuntu-latest
 
     steps:
@@ -18,30 +17,33 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          echo "Connecting to FTP server and performing cleanup..."
           lftp -c "
-            set ftp:ssl-allow no;
-            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-            
-            # Remove WordPress core files
-            rm index.php;
-            rm xmlrpc.php;
-            rm readme.html;
-            rm license.txt;
-            rm wp-config.php;
-            rm wp-login.php;
-            rm wp-settings.php;
-            rm wp-cron.php;
-            rm wp-load.php;
+          set ftp:ssl-allow no;
+          open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
 
-            # Remove WordPress directories
-            rm -r wp-admin/;
-            rm -r wp-includes/;
-            rm -r wp-content/;
+          echo 'Listing current files before cleanup:'
+          cls -l
 
-            # Rename htaccess to disable rewrite rules
-            mv .htaccess .htaccess.backup;
+          echo 'Removing WordPress PHP files'
+          rm -f index.php
+          rm -f xmlrpc.php
+          rm -f readme.html
+          rm -f license.txt
+          rm -f wp-config.php
+          rm -f wp-login.php
+          rm -f wp-settings.php
+          rm -f wp-cron.php
+          rm -f wp-load.php
 
-            echo 'Cleanup complete! Listing remaining files:';
-            cls -l;
+          echo 'Removing WordPress directories'
+          rm -r wp-admin/
+          rm -r wp-includes/
+
+          echo 'Keeping wp-content for safety'
+
+          echo 'Disabling WordPress rewrite rules'
+          mv .htaccess .htaccess.backup
+
+          echo 'Remaining files after cleanup:'
+          cls -l
           "
