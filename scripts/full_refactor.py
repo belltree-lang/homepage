@@ -74,16 +74,20 @@ def fix_html_content(content):
     content = re.sub(r'href="\.\.(?:/\.\.)*/*', 'href="/', content)
     content = re.sub(r'src="\.\.(?:/\.\.)*/*', 'src="/', content)
     
+    # Fix for CSS background-image url() tags
+    content = re.sub(r'url\([\'"]?\.\.(?:/\.\.)*/*', 'url("/', content)
+
     # Special fix for cases where my previous script added /../
     content = re.sub(r'href="/\.\./+', 'href="/', content)
     content = re.sub(r'src="/\.\./+', 'src="/', content)
+    content = re.sub(r'url\([\'"]?/\.\./+', 'url("/', content)
 
     # Ensure all local paths for specific folders start with /
-    # This avoids adding / to external links (http)
     folders = ['pages', 'news', 'about', 'contact', 'assets']
     for folder in folders:
         content = re.sub(rf'href="{re.escape(folder)}/', rf'href="/{folder}/', content)
         content = re.sub(rf'src="{re.escape(folder)}/', rf'src="/{folder}/', content)
+        content = re.sub(rf'url\([\'"]?{re.escape(folder)}/', rf'url("/{folder}/', content)
         
     return content
 
