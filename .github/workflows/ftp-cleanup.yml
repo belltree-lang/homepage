@@ -1,0 +1,47 @@
+name: FTP Cleanup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    name: Clean WordPress Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Execute Cleanup
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          echo "Connecting to FTP server and performing cleanup..."
+          lftp -c "
+            set ftp:ssl-allow no;
+            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
+            
+            # Remove WordPress core files
+            rm index.php;
+            rm xmlrpc.php;
+            rm readme.html;
+            rm license.txt;
+            rm wp-config.php;
+            rm wp-login.php;
+            rm wp-settings.php;
+            rm wp-cron.php;
+            rm wp-load.php;
+
+            # Remove WordPress directories
+            rm -r wp-admin/;
+            rm -r wp-includes/;
+            rm -r wp-content/;
+
+            # Rename htaccess to disable rewrite rules
+            mv .htaccess .htaccess.backup;
+
+            echo 'Cleanup complete! Listing remaining files:';
+            cls -l;
+          "
