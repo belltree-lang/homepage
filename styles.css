@@ -541,17 +541,6 @@ p:last-child { margin-bottom: 0; }
 .mb-0 { margin-bottom: 0 !important; }
 .mt-2xl { margin-top: var(--space-2xl); }
 
-/* Reveal Animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Floating Action Button (FAB) */
 .fab-container {
   position: fixed;

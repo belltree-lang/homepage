@@ -28,7 +28,7 @@
       <!-- Premium Hero Section -->
       <section class="section-spacing section-spacing-lg bg-soft">
         <div class="container">
-          <div class="editorial-split reveal">
+          <div class="editorial-split">
             <div>
               <p class="text-lead" style="color: var(--color-accent); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-xs);">地域で伴走する総合ヘルスケア</p>
               <h1 style="margin-bottom: var(--space-lg);">人生の後半を、<br/>もっと安心できる時間に。</h1>
@@ -57,7 +57,7 @@
           <p class="text-muted">今すぐ制度やサービスが必要か分からない段階でも、次の一歩を整理する相談先としてご利用いただけます。</p>
         </div>
         
-        <div class="grid grid-2 reveal" style="text-align: left;">
+        <div class="grid grid-2" style="text-align: left;">
           <div class="card bg-surface">
             <h4>「最近、体力の衰えを感じる」</h4>
             <p class="text-muted mt-xl mb-0">無理なく続けられる運動習慣から始めたい方へ。</p>
@@ -91,7 +91,7 @@
             </p>
           </div>
 
-          <div class="ecosystem-flow reveal">
+          <div class="ecosystem-flow">
             <div class="ecosystem-node">
               <span class="ecosystem-node-badge">STEP 01</span>
               <h4>運動習慣</h4>
@@ -129,7 +129,7 @@
             <p class="text-muted">国家資格・専門資格を持つスタッフがチームで支援します。</p>
           </div>
           
-          <div class="team-grid mt-2xl reveal">
+          <div class="team-grid mt-2xl">
             <div class="team-member">
               <div class="team-icon">🏃</div>
               <h4 style="margin-bottom: var(--space-xs);">健康運動指導士</h4>
@@ -167,7 +167,7 @@
                 2011年の創業以来、町田市・南大沢エリアを中心に地域密着の「継続支援」を提供してきました。確かな資格と医療機関・地域包括支援センターとの連携がご家族の安心を支えます。
               </p>
               
-              <ul class="feature-list mt-2xl reveal">
+              <ul class="feature-list mt-2xl">
                 <li class="feature-list-item">
                   <div class="feature-list-icon">✓</div>
                   <div>
@@ -204,7 +204,7 @@
             <p class="text-muted">途切れない支援体制が、実際の暮らしをどう守るのかをご紹介します。</p>
           </div>
 
-          <div class="journey-grid mt-2xl reveal">
+          <div class="journey-grid mt-2xl">
             <!-- Story 1: Preventing Decline -->
             <div class="journey-card">
               <div class="journey-profile">
@@ -268,7 +268,7 @@
       <!-- Community & Local Engagement Teaser -->
       <section class="section-spacing">
         <div class="container container-narrow">
-          <div class="section-header text-center reveal">
+          <div class="section-header text-center">
             <span class="eyebrow">Community & Local Engagement</span>
             <h2>地域密着のコミュニティ活動</h2>
             <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
@@ -276,7 +276,7 @@
             </p>
           </div>
 
-          <div class="grid grid-2 mt-2xl reveal">
+          <div class="grid grid-2 mt-2xl">
             <div class="card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
               <div style="width: 100%; aspect-ratio: 16/9; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.25rem;">
                 [Photo: Local Health Seminars]
@@ -298,7 +298,7 @@
             </div>
           </div>
 
-          <div class="text-center mt-2xl reveal">
+          <div class="text-center mt-2xl">
             <a href="./pages/services/community/" class="btn btn-primary">地域活動の詳細・パートナー協働を見る</a>
           </div>
         </div>
@@ -312,7 +312,7 @@
             <h2>よくあるご質問</h2>
             <p class="text-muted">ご相談前によくいただく疑問やご不安にお答えします。</p>
           </div>
-          <div class="faq-list mt-2xl reveal">
+          <div class="faq-list mt-2xl">
             <div class="faq-item">
               <p class="faq-q"><span class="faq-icon">Q.</span><span>まだどのサービスを使うか決まっていませんが相談していいですか？</span></p>
               <p class="faq-a"><span class="faq-icon">A.</span><span>はい、問題ありません。現在の状況をお伺いし、運動、訪問施術、介護、あるいはお住まいの地域の他のサービスの中から最適な選択肢を一緒に考えます。</span></p>
@@ -325,9 +325,8 @@
         </div>
       </section>
 
-      <!-- Ultimate Consultation Banner -->
       <section class="section-spacing container">
-        <div class="consultation-banner reveal">
+        <div class="consultation-banner">
           <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">地域に根ざした支援について</p>
           <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">まずはお気軽にご相談ください</h2>
           <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
@@ -393,19 +392,6 @@
         <span>相談窓口</span>
       </a>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-            }
-          });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-      });
-    </script>
   </body>
 </html>
 

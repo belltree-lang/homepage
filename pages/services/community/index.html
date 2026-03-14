@@ -40,11 +40,11 @@
 
       <!-- Target/Problem Section (Restored) -->
       <section class="section-spacing container-narrow" style="margin: 0 auto;">
-         <div class="section-header text-center reveal">
+         <div class="section-header text-center">
             <span class="eyebrow">Target</span>
             <h2>こんなお悩みから始められます</h2>
          </div>
-         <div class="grid grid-2 mt-2xl reveal">
+         <div class="grid grid-2 mt-2xl">
             <div class="card">
                <h4 style="margin-bottom: var(--space-sm);">地域のつながりが減ってきた</h4>
                <p class="text-muted text-sm mb-0">退職や加齢に伴い外出の機会が減った方に、無理なく参加できる地域の居場所やイベントをご案内します。</p>
@@ -59,7 +59,7 @@
       <!-- Community Activities -->
       <section class="section-spacing">
         <div class="container">
-          <div class="section-header text-center reveal">
+          <div class="section-header text-center">
             <span class="eyebrow">Activities</span>
             <h2>地域密着のコミュニティ活動</h2>
             <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
@@ -68,7 +68,7 @@
           </div>
 
           <!-- Activity 1: SOFT Exercise -->
-          <div class="editorial-split reveal mt-2xl" style="margin-top: var(--space-3xl);">
+          <div class="editorial-split mt-2xl" style="margin-top: var(--space-3xl);">
             <div class="editorial-image">
               <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.25rem; min-height: 250px;">[Photo: SOFT Exercise]</div>
             </div>
@@ -98,7 +98,7 @@
           </div>
 
           <!-- Activity 2: Tama-daira -->
-          <div class="editorial-split reverse reveal" style="margin-top: var(--space-4xl);">
+          <div class="editorial-split reverse" style="margin-top: var(--space-4xl);">
             <div class="editorial-image">
               <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.25rem; min-height: 250px;">[Photo: Health Seminar]</div>
             </div>
@@ -128,7 +128,7 @@
           </div>
 
           <!-- Activity 3: Kenko Club -->
-          <div class="editorial-split reveal" style="margin-top: var(--space-4xl);">
+          <div class="editorial-split" style="margin-top: var(--space-4xl);">
             <div class="editorial-image">
               <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.25rem; min-height: 250px;">[Photo: Kenko Club]</div>
             </div>
@@ -162,14 +162,14 @@
       <!-- Partnerships -->
       <section id="partners" class="section-spacing bg-alt">
         <div class="container">
-          <div class="section-header text-center reveal">
+          <div class="section-header text-center">
             <span class="eyebrow">Partnerships & Collaborations</span>
             <h2>組織の枠を超えた連携</h2>
             <p class="text-muted" style="max-width: 800px; margin: 0 auto;">
               私たち一企業だけで地域の課題をすべて解決することはできません。地域の優れた団体・企業と協働・連携し、医療や介護の枠を超えて地域全体の支援力を高めています。
             </p>
           </div>
-          <div class="grid grid-2 mt-2xl reveal">
+          <div class="grid grid-2 mt-2xl">
             <div class="card text-center" style="display: flex; flex-direction: column; align-items: center;">
               <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">🤝</div>
               <h4 style="margin-bottom: var(--space-xs);">バラエティクラブ</h4>
@@ -195,7 +195,7 @@
       </section>
 
       <section class="section-spacing container">
-        <div class="consultation-banner reveal">
+        <div class="consultation-banner">
           <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">ご案内</p>
           <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">地域活動や連携についてのご相談</h2>
           <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
@@ -257,19 +257,6 @@
         <span>相談窓口</span>
       </a>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-            }
-          });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-      });
-    </script>
   </body>
 </html>
 

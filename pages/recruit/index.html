@@ -496,7 +496,7 @@
     <!-- MISSION -->
     <section class="section-spacing">
       <div class="container">
-        <div class="editorial-split reveal">
+        <div class="editorial-split">
           <div>
             <span class="eyebrow">Our Mission</span>
             <h2 style="margin-bottom: var(--space-lg);">べるつりーの仕事</h2>
@@ -541,7 +541,7 @@
           <h2>募集職種</h2>
           <p class="text-muted">現在、以下の3職種で新しい仲間を募集しています。</p>
         </div>
-        <div class="grid grid-3 mt-2xl reveal">
+        <div class="grid grid-3 mt-2xl">
 
           <!-- 鍼灸マッサージ師 -->
           <div class="job-top-card">
@@ -623,7 +623,7 @@
           <h2>それぞれのキャリア、<br />それぞれの働き方。</h2>
           <p class="text-muted">べるつりーには、多様なキャリアパスがあります。</p>
         </div>
-        <div class="grid grid-3 mt-2xl reveal">
+        <div class="grid grid-3 mt-2xl">
 
           <!-- PHOTO: 院長写真（全身または上半身、笑顔） -->
           <!-- 丸山 -->
@@ -678,7 +678,7 @@
           <h2>キャリアと年収モデル</h2>
           <p class="text-muted">鍼灸マッサージ師のキャリアパス一例。努力と経験に応じた成長が可能です。</p>
         </div>
-        <div class="salary-timeline mt-2xl reveal">
+        <div class="salary-timeline mt-2xl">
 
           <div class="salary-step">
             <div class="salary-step-left">
@@ -743,7 +743,7 @@
           <h2>働く環境</h2>
           <p class="text-muted">スタッフが長く、いきいきと働き続けられる環境を大切にしています。</p>
         </div>
-        <div class="grid grid-3 mt-2xl reveal" style="gap: var(--space-md);">
+        <div class="grid grid-3 mt-2xl" style="gap: var(--space-md);">
           <div class="benefit-item"><span class="benefit-icon">📅</span>
             <div><strong>年間休日130日以上</strong>
               <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">休日選択制でライフスタイルに合わせた働き方</p>
@@ -785,7 +785,7 @@
           <span class="eyebrow">Our Facility</span>
           <h2>施設・現場紹介</h2>
         </div>
-        <div class="grid grid-2 mt-2xl reveal" style="gap: var(--space-lg);">
+        <div class="grid grid-2 mt-2xl" style="gap: var(--space-lg);">
           <div>
             <img src="../../assets/images/recruitment/facility_fitness.png" alt="べるフィット フィットネス施設の様子"
               style="width: 100%; border-radius: var(--radius-lg); object-fit: cover; aspect-ratio: 4/3; box-shadow: var(--shadow-md);" />
@@ -811,8 +811,7 @@
           <p class="text-muted">職種を問わず、べるつりーではこんな方を歓迎します。</p>
         </div>
         <div
-          style="display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center; margin-top: var(--space-2xl);"
-          class="reveal">
+          style="display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center; margin-top: var(--space-2xl);">
           <span class="persona-tag"><span>💬</span> 人と関わることが好きな方</span>
           <span class="persona-tag"><span>📈</span> 成長意欲のある方</span>
           <span class="persona-tag"><span>🏘️</span> 地域の健康づくりに興味がある方</span>
@@ -825,7 +824,7 @@
 
     <!-- CTA -->
     <section id="apply" class="section-spacing container">
-      <div class="cta-section reveal">
+      <div class="cta-section">
         <span
           style="display: block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.65);">Apply
           / Contact</span>
@@ -916,15 +915,6 @@
     </a>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    });
-  </script>
 </body>
 
 </html>
-
