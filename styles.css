@@ -932,3 +932,43 @@ textarea.form-control {
   color: var(--color-text-muted);
   margin-top: var(--space-xs);
 }
+
+/* Professional CTA Block */
+.professional-cta {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.professional-cta__title {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.professional-cta__text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.professional-cta__link {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.professional-cta__link:hover {
+  transform: translateX(5px);
+}
