@@ -508,6 +508,7 @@
                     <span
                         style="background: rgba(255,255,255,0.2); color: var(--color-surface); border-radius: var(--radius-pill); padding: 0.15rem 0.7rem; font-size: 0.7rem; font-weight: var(--font-weight-bold);">女性限定施設</span>
                 </div>
+                <span class="status-label status-closed" style="margin-bottom: var(--space-xs);">受付終了</span>
                 <h1 style="margin-bottom: var(--space-lg); max-width: 640px;">資格も経験も不要。<br />
                     <span style="font-size: 0.72em;">女性限定の小さなフィットネス施設で、<br />会員さんと話して笑わせる仕事です。</span>
                 </h1>
@@ -877,82 +878,15 @@
                                 style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 4px;">
                                 30〜50代</p>
                             <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">次点：学生の方も歓迎</p>
-                         <div class="footer-nav">
-            <h3>企業情報</h3>
-            <ul>
-              <li><a href="../../../index.html">ホーム</a></li>
-              <li><a href="../../../about/index.html">会社概要</a></li>
-              <li><a href="../../../model/index.html">理念とモデル</a></li>
-              <li><a href="../../../news/index.html">お知らせ</a></li>
-              <li><a href="../index.html" aria-current="page">採用情報</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-nav">
-            <h3>解決策と事例</h3>
-            <ul>
-              <li><a href="../../../solutions/index.html">悩み別解決策</a></li>
-              <li><a href="../../../pages/services/index.html">サービス一覧</a></li>
-              <li><a href="../../../cases/index.html">改善事例</a></li>
-              <li><a href="../../../team/index.html">スタッフ紹介</a></li>
-              <li><a href="../../../family/index.html">ご家族の方へ</a></li>
-            </ul>
-          </div>
- 
-          <div class="footer-nav">
-            <h3>地域・お問い合わせ</h3>
-            <ul>
-              <li><a href="../../../community/index.html">地域連携・活動</a></li>
-              <li><a href="../../../contact/index.html">お問い合わせ</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; BellTree Inc. All Rights Reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Mobile Menu Toggle logic
-      const menuToggle = document.querySelector('.menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mobileClose = document.querySelector('.mobile-close');
-      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', () => {
-          mobileMenu.classList.add('is-active');
-          document.body.style.overflow = 'hidden';
-          menuToggle.setAttribute('aria-expanded', 'true');
-        });
-
-        const closeMenu = () => {
-          mobileMenu.classList.remove('is-active');
-          document.body.style.overflow = '';
-          menuToggle.setAttribute('aria-expanded', 'false');
-        };
-
-        if (mobileClose) {
-          mobileClose.addEventListener('click', closeMenu);
-        }
-        
-        // Close on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', closeMenu);
-        });
-      }
-
-      // Mobile Dropdown logic
-      dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const content = toggle.nextElementSibling;
-          toggle.classList.toggle('is-active');
-          content.classList.toggle('is-active');
-        });
-      });
-    </script>
-    </div>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">次点：学生の方も歓迎</p>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <p style="font-weight: var(--font-weight-bold); color: var(--seed-primary); margin-bottom: var(--space-xs);">募集条件</p>
+                            <p style="font-size: 1.25rem; font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 4px;">時給 1,263円〜</p>
+                            <p class="text-muted" style="font-size: var(--font-size-sm); margin: 0;">週1日3時間から。見学のみも歓迎です。</p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
