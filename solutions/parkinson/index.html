@@ -394,7 +394,9 @@
           menuToggle.setAttribute('aria-expanded', 'false');
         };
 
-        mobileClose.addEventListener('click', closeMenu);
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
         
         // Close on link click
         mobileMenu.querySelectorAll('a').forEach(link => {

@@ -374,7 +374,7 @@
             <ul>
               <li><a href="../../index.html">ホーム</a></li>
               <li><a href="../../about/index.html">会社概要</a></li>
-              <li><a href="../../model/">理念とモデル</a></li>
+              <li><a href="../../model/index.html">理念とモデル</a></li>
               <li><a href="../../news/index.html">お知らせ</a></li>
               <li><a href="../../pages/recruit/index.html">採用情報</a></li>
             </ul>
@@ -394,9 +394,8 @@
           <div class="footer-nav">
             <h3>地域・お問い合わせ</h3>
             <ul>
-              <li><a href="community/">地域連携・活動</a></li>
-              
-              <li><a href="../../contact/">お問い合わせ</a></li>
+              <li><a href="../../community/index.html">地域連携・活動</a></li>
+              <li><a href="../../contact/index.html">お問い合わせ</a></li>
             </ul>
           </div>
         </div>
@@ -425,7 +424,9 @@
           menuToggle.setAttribute('aria-expanded', 'false');
         };
 
-        mobileClose.addEventListener('click', closeMenu);
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
         
         // Close on link click
         mobileMenu.querySelectorAll('a').forEach(link => {

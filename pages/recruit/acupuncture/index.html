@@ -424,10 +424,53 @@
             <li class="nav-cta-item"><a class="nav-cta" href="../../../contact/index.html">ご相談窓口</a></li>
           </ul>
         </nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </div>
 </header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-header">
+      <a class="site-logo" href="../../../index.html">BellTree</a>
+      <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="../../../index.html">ホーム</a></li>
+        <li class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle">悩み別解決策 <span class="arrow"></span></button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="../../../solutions/index.html">すべて見る</a></li>
+            <li><a href="../../../solutions/index.html#physical">お体の悩み</a></li>
+            <li><a href="../../../solutions/index.html#life">生活の悩み</a></li>
+            <li><a href="../../../solutions/index.html#future">将来の悩み</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle">サービス一覧 <span class="arrow"></span></button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="../../../pages/services/index.html">すべて見る</a></li>
+            <li><a href="../../../pages/services/index.html#medical">訪問施術</a></li>
+            <li><a href="../../../pages/services/index.html#fitness">フィットネス</a></li>
+            <li><a href="../../../pages/services/index.html#care">介護支援</a></li>
+          </ul>
+        </li>
+        <li><a href="../../../cases/index.html">改善事例</a></li>
+        <li><a href="../../../team/index.html">スタッフ紹介</a></li>
+        <li><a href="../../../about/index.html">会社概要</a></li>
+        <li><a href="../../../pages/recruit/index.html" aria-current="page">採用情報</a></li>
+        <li><a href="../../../contact/index.html" class="mobile-cta-link">ご相談窓口</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
     <main id="main-content">
 
@@ -1002,20 +1045,82 @@
                 <div style="background: var(--color-surface); border: 2px solid var(--color-accent); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);"
                     class="reveal">
                     <div
-                        style="background: linear-gradient(135deg, var(--color-primary), #2A4A7F); padding: var(--space-xl);">
-                        <span
-                            style="display: inline-block; background: var(--color-accent); color: var(--color-surface); border-radius: var(--radius-pill); padding: 0.2rem 0.8rem; font-size: 0.72rem; font-weight: var(--font-weight-bold); margin-bottom: var(--space-xs);">★
-                            優先採用</span>
-                        <h3 style="color: var(--color-surface);">鍼灸マッサージ師（訪問施術）</h3>
-                        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: var(--font-size-sm);">
-                            地域の患者様のご自宅・施設に訪問し、はり・きゅう・マッサージで健康をサポートします。</p>
-                    </div>
-                    <div style="padding: var(--space-xl);">
-                        <div class="job-detail-row"><span class="job-detail-label">給与</span><span>初任給
-                                <strong>月23万円〜</strong> / 平均 26万円 / 院長 50万円以上</span></div>
-                        <div class="job-detail-row"><span class="job-detail-label">歩合</span><span>週30件以上から
-                                1件1,250円の歩合加算</span></div>
-                        <div class="job-detail-row"><span class="job-detail-label">勤務形態</span><span>訪問施術メイン（治療院：訪問 ＝
+                        style="background: linear-gradient(135deg, var(--color-primary), #2A4A7F); padding: var(--spa          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../../../index.html">ホーム</a></li>
+              <li><a href="../../../about/index.html">会社概要</a></li>
+              <li><a href="../../../model/index.html">理念とモデル</a></li>
+              <li><a href="../../../news/index.html">お知らせ</a></li>
+              <li><a href="../index.html" aria-current="page">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../../../solutions/index.html">悩み別解決策</a></li>
+              <li><a href="../../../pages/services/index.html">サービス一覧</a></li>
+              <li><a href="../../../cases/index.html">改善事例</a></li>
+              <li><a href="../../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../../family/index.html">ご家族の方へ</a></li>
+            </ul>
+          </div>
+ 
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../../../community/index.html">地域連携・活動</a></li>
+              <li><a href="../../../contact/index.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
+��問 ＝
                                 3：7）</span></div>
                         <div class="job-detail-row"><span class="job-detail-label">1日の件数</span><span>平均7件（最大9件・1件
                                 約30分）</span></div>
