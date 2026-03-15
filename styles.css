@@ -160,11 +160,13 @@ p:last-child { margin-bottom: 0; }
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: rgba(251, 248, 242, 0.98);
-  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 1000;
-  border-bottom: 1px solid var(--color-border);
-  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(229, 224, 216, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header-inner {
@@ -251,8 +253,28 @@ p:last-child { margin-bottom: 0; }
   color: var(--color-primary);
   text-decoration: none;
   padding: var(--space-sm) 0;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   display: block;
+  position: relative;
+}
+
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-list a:hover::after,
+.nav-list a[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-list a:hover,
@@ -311,18 +333,18 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateX(-50%) translateY(20px);
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(229, 224, 216, 0.6);
   box-shadow: var(--shadow-lg);
-  border-radius: var(--radius-md);
-  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
   display: flex;
-  gap: var(--space-2xl);
+  gap: var(--space-3xl);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  min-width: 400px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 540px;
   z-index: 1100;
 }
 
@@ -811,16 +833,17 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: var(--space-3xl);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: var(--space-4xl);
   }
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .footer-logo {
