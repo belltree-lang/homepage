@@ -21,7 +21,7 @@
           <nav class="utility-nav" aria-label="補助ナビゲーション">
             <ul class="utility-list">
               <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
-              <li><a href="../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="../../pages/recruit/index.html" class="utility-link recruit">採用情報</a></li>
             </ul>
           </nav>
 
@@ -379,8 +379,7 @@
           <div class="footer-nav">
             <h3>地域・お問い合わせ</h3>
             <ul>
-              <li><a href="community/">地域連携・活動</a></li>
-              <li><a href="./community/">地域活動</a></li>
+              <li><a href="../../community/index.html">地域連携・活動</a></li>
               <li><a href="../../contact/">お問い合わせ</a></li>
             </ul>
           </div>
@@ -390,13 +389,7 @@
         </div>
       </div>
     </footer>
-    <div class="fab-container">
-      <div class="fab-label">ご相談はこちら</div>
-      <a href="../../contact/" class="fab-button">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        <span>相談窓口</span>
-      </a>
-    </div>
+    </footer>
     <script>
       // Mobile Menu Toggle logic
       const menuToggle = document.querySelector('.menu-toggle');
@@ -417,7 +410,9 @@
           menuToggle.setAttribute('aria-expanded', 'false');
         };
 
-        mobileClose.addEventListener('click', closeMenu);
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
         
         // Close on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
