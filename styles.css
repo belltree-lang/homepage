@@ -1046,3 +1046,72 @@ textarea.form-control {
 .professional-cta__link:hover {
   transform: translateX(5px);
 }
+
+/* Recruitment Status Labels */
+.status-label {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-pill);
+  color: var(--color-surface);
+  line-height: 1;
+  text-align: center;
+}
+
+.status-hiring { background-color: #2d6a4f; } /* Green */
+.status-priority { background-color: #d97706; } /* Orange/Gold */
+.status-closed { background-color: #64748b; } /* Gray */
+
+/* Recruitment Summary Section */
+.recruit-summary-section {
+  padding: var(--space-xl) 0;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.recruit-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .recruit-summary {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xl);
+  }
+}
+
+.recruit-summary__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-right: var(--space-md);
+}
+
+.recruit-summary__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recruit-summary__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.recruit-summary__item:hover {
+  opacity: 0.7;
+}
+
