@@ -43,54 +43,119 @@
             <span class="eyebrow" style="margin-bottom: var(--space-md);">Contact</span>
             <h1 style="margin-bottom: var(--space-lg);">ご相談窓口</h1>
             <p class="text-lead text-muted">
-              「何から相談すればいいか分からない」という状態でも構いません。身体、生活、将来に関する不安を一緒に整理します。
+              「何から相談すればいいか分からない」という状態でも構いません。<br/>目的の窓口をお選びいただくか、フォームよりお気軽にご連絡ください。
             </p>
+          </div>
+
+          <!-- Inquiry Branching Section -->
+          <div class="contact-branch-grid">
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏠</div>
+                <h3>訪問施術</h3>
+                <p>訪問鍼灸マッサージの無料体験、医療保険の利用、ご家族・ケアマネジャー様からのご相談はこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
+
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">📋</div>
+                <h3>居宅介護支援</h3>
+                <p>ケアプランの作成依頼、介護保険の手続き、在宅での生活支援体制に関するご相談はこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
+
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏃</div>
+                <h3>べるフィット</h3>
+                <p>フィットネス施設の見学予約、運動プログラムの内容、利用料金に関するお問い合わせはこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
+
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🤝</div>
+                <h3>採用情報</h3>
+                <p>求人への応募、施設見学の希望、採用条件やキャリアに関するご質問・ご相談はこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section-spacing container-narrow" style="margin: 0 auto;">
-         <div class="grid grid-2">
-            <div class="card" style="text-align: center; padding: var(--space-2xl) var(--space-lg);">
-               <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--space-sm);">✉️</div>
-               <h3 style="margin-bottom: var(--space-md);">メールでご相談</h3>
-               <p class="text-muted text-sm mb-lg">時間帯を問わず、状況の詳細をお送りいただけます。担当者よりご返信差し上げます。</p>
-               <a href="mailto:info@example.com" class="btn btn-primary" style="width: 100%; justify-content: center;">メールを送信する</a>
-               <p class="text-muted mt-sm" style="font-size: 0.75rem;">info@example.com</p>
+      <section id="contact-form" class="section-spacing container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Inquiry Form</span>
+          <h2>お問い合わせフォーム</h2>
+          <p class="text-muted mt-md">以下のフォームに必要事項をご記入ください。通常2営業日以内に担当者よりご連絡いたします。</p>
+        </div>
+
+        <div class="contact-form-section">
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="inquiry-type">お問い合わせ項目 <span style="color: var(--color-accent);">*</span></label>
+              <select id="inquiry-type" name="inquiry-type" class="form-control" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="acupuncture">訪問施術について</option>
+                <option value="care-management">居宅介護支援について</option>
+                <option value="fitness">べるフィット（運動）について</option>
+                <option value="recruit">採用について</option>
+                <option value="other">その他のお問い合わせ</option>
+              </select>
             </div>
-            
-            <div class="card" style="text-align: center; padding: var(--space-2xl) var(--space-lg); background-color: var(--color-surface-hover);">
-               <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--space-sm);">☎️</div>
-               <h3 style="margin-bottom: var(--space-md);">お電話でのご相談</h3>
-               <p class="text-muted text-sm mb-lg">直接担当者とお話しされたい方はこちらにご連絡ください。（平日 9:00 - 18:00）</p>
-               <a href="tel:042-000-0000" class="btn btn-secondary" style="width: 100%; justify-content: center; background: white;">042-000-0000</a>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="name">お名前 <span style="color: var(--color-accent);">*</span></label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="例：山田 太郎" required>
+              </div>
+              <div class="form-group">
+                <label for="kana">ふりがな</label>
+                <input type="text" id="kana" name="kana" class="form-control" placeholder="例：やまだ たろう">
+              </div>
             </div>
-         </div>
+
+            <div class="form-group">
+              <label for="email">メールアドレス <span style="color: var(--color-accent);">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="example@mail.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">電話番号</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="000-0000-0000">
+            </div>
+
+            <div class="form-group">
+              <label for="message">お問い合わせ内容 <span style="color: var(--color-accent);">*</span></label>
+              <textarea id="message" name="message" class="form-control" placeholder="ご質問やご相談内容を詳しくご記入ください。" required></textarea>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-xl);">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px;">送信内容を確認する</button>
+              <p class="form-help">※「個人情報の取り扱い」に同意の上、送信ボタンを押してください。</p>
+            </div>
+          </form>
+        </div>
       </section>
 
-      <section class="section-spacing bg-alt mt-xl">
-        <div class="container container-narrow">
+      <section class="section-spacing bg-alt">
+        <div class="container-narrow" style="margin: 0 auto;">
           <div class="section-header text-center">
-            <span class="eyebrow">Points</span>
-            <h2>ご相談の整理ポイント</h2>
-            <p class="text-muted mt-md">事前に以下のどれにあてはまるかご自身で考えていただくとスムーズですが、考えずにお問い合わせいただいても問題ありません。</p>
+            <span class="eyebrow">Direct Contact</span>
+            <h2>お急ぎの方はお電話で</h2>
+            <p class="text-muted mt-md">代表番号におかけいただければ、各担当へお繋ぎいたします。</p>
           </div>
-          <div class="grid grid-3 mt-2xl">
-            <div class="card">
-               <span class="eyebrow">01. 身体</span>
-               <h4 style="margin-bottom: var(--space-xs);">身体の不安</h4>
-               <p class="text-muted text-sm mb-0">運動習慣、通院負担、訪問支援がお悩みの方。べるフィットや訪問マッサージの案内となります。</p>
-            </div>
-            <div class="card">
-               <span class="eyebrow">02. 生活</span>
-               <h4 style="margin-bottom: var(--space-xs);">生活の不安</h4>
-               <p class="text-muted text-sm mb-0">介護制度の利用や家族の負担など、生活設計のお悩み。居宅介護支援のご案内となります。</p>
-            </div>
-            <div class="card">
-               <span class="eyebrow">03. 将来</span>
-               <h4 style="margin-bottom: var(--space-xs);">将来の不安</h4>
-               <p class="text-muted text-sm mb-0">相続、後見など将来の手続きに関するお悩み。べるリーガル（行政書士）のご案内となります。</p>
-            </div>
+          
+          <div class="card" style="text-align: center; padding: var(--space-xl); border-color: var(--color-primary);">
+             <div style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--space-sm);">☎️</div>
+             <h3 style="margin-bottom: var(--space-xs);">042-000-0000</h3>
+             <p class="text-muted text-sm">受付時間：平日 9:00 - 18:00</p>
+             <a href="tel:042-000-0000" class="btn btn-secondary mt-md">お電話をかける</a>
           </div>
         </div>
       </section>
