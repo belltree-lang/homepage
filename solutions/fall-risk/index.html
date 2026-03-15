@@ -11,32 +11,185 @@
     <link rel="stylesheet" href="../../styles.css" />
   </head>
   <body>
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <a class="site-logo" href="../../index.html">BellTree</a>
-      <div class="site-nav-group">
-        <nav class="utility-nav" aria-label="補助ナビゲーション">
-          <ul class="utility-list">
-            <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
-            <li><a href="../../pages/recruit/index.html" class="utility-link recruit">採用情報</a></li>
-          </ul>
-        </nav>
-        <nav class="site-nav" aria-label="主要ナビゲーション">
-          <ul class="nav-list">
-            <li><a href="../../index.html">ホーム</a></li>
-            <li><a href="../../solutions/index.html" aria-current="page">悩み別解決策</a></li>
-            <li><a href="../../pages/services/index.html">サービス一覧</a></li>
-            <li><a href="../../cases/index.html">改善事例</a></li>
-            <li><a href="../../team/index.html">スタッフ紹介</a></li>
-            <li><a href="../../about/index.html">会社概要</a></li>
-            <li class="nav-cta-item"><a class="nav-cta" href="../../contact/index.html">ご相談窓口</a></li>
-          </ul>
-        </nav>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="site-logo" href="../../index.html">BellTree</a>
+
+        <div class="site-nav-group">
+          <!-- Desktop Utility Nav -->
+          <nav class="utility-nav" aria-label="補助ナビゲーション">
+            <ul class="utility-list">
+              <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+              <li><a href="../../pages/recruit/index.html" class="utility-link recruit">採用情報</a></li>
+            </ul>
+          </nav>
+
+          <!-- Desktop Main Nav -->
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <ul class="nav-list">
+              <li><a href="../../index.html">ホーム</a></li>
+              <li class="has-dropdown">
+                <a href="../../solutions/index.html" aria-current="page">お悩み別解決策</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">身体の悩み</p>
+                    <ul>
+                      <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+                      <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+                      <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+                      <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">生活機能・予防</p>
+                    <ul>
+                      <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+                      <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護・終活</p>
+                    <ul>
+                      <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+                      <li><a href="../../solutions/end-of-life-preparation/index.html">終活の準備</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown">
+                <a href="../../pages/services/index.html">サービス一覧</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">健康・運動</p>
+                    <ul>
+                      <li><a href="../../pages/services/fitness/index.html">べるフィット</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">訪問施術</p>
+                    <ul>
+                      <li><a href="../../pages/services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護支援</p>
+                    <ul>
+                      <li><a href="../../pages/services/home-care/index.html">居宅介護支援</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">法務支援</p>
+                    <ul>
+                      <li><a href="../../pages/services/legal/index.html">行政書士・終活支援</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-cta">
+          <a class="nav-cta" href="../../contact/index.html">ご相談窓口</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          メニュー
+        </button>
       </div>
     </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../solutions/index.html">お悩み別解決策</a></li>
+        <li aria-current="page">転倒リスク</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    <ul class="mobile-nav-list">
+      <li><a href="../../index.html">ホーム</a></li>
+      <li>
+        <button class="mobile-dropdown-toggle">お悩み別解決策</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">身体の悩み</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+              <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+              <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+              <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">生活機能・予防</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+              <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護・終活</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+              <li><a href="../../solutions/end-of-life-preparation/index.html">終活の準備</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="mobile-dropdown-toggle">サービス一覧</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">健康・運動</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../pages/services/fitness/index.html">べるフィット</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">訪問施術</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../pages/services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../pages/services/home-care/index.html">居宅介護支援</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">法務支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../pages/services/legal/index.html">行政書士・終活支援</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="../../cases/index.html">改善事例</a></li>
+      <li><a href="../../team/index.html">スタッフ紹介</a></li>
+      <li><a href="../../about/index.html">会社概要</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <a href="../../contact/index.html" class="nav-cta mobile-menu-cta">ご相談窓口</a>
+      <ul class="mobile-utility-list">
+        <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+        <li><a href="../../pages/recruit/index.html" class="utility-link recruit">採用情報</a></li>
+      </ul>
+    </div>
   </div>
-</header>
 
     <main id="main-content">
       <section class="section-spacing bg-soft">
@@ -141,6 +294,42 @@
           </div>
         </div>
       </section>
+      <!-- Contextual Sub-navigation -->
+      <section class="section-spacing container">
+        <div class="sub-nav-block">
+          <h3 class="sub-nav-title">関連するサービス・解決策</h3>
+          <div class="sub-nav-grid">
+            <a href="../../pages/services/fitness/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🏃</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">べるフィット</span>
+                <span class="sub-nav-desc">バランス強化・正しい歩行</span>
+              </div>
+            </a>
+            <a href="../../pages/services/acupuncture/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🏠</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">訪問鍼灸マッサージ</span>
+                <span class="sub-nav-desc">感覚活性化・ふらつき抑制</span>
+              </div>
+            </a>
+            <a href="../frailty/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🧘</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">フレイル</span>
+                <span class="sub-nav-desc">体力の衰えを予防する</span>
+              </div>
+            </a>
+            <a href="../../cases/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">📋</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">改善事例</span>
+                <span class="sub-nav-desc">サポート実績を見る</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -187,5 +376,42 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        mobileClose.addEventListener('click', closeMenu);
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
   </body>
 </html>
