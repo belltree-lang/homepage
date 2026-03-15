@@ -1,0 +1,15 @@
+# BellTree Maintenance Mode
+# To disable maintenance mode:
+# Comment out or remove the rewrite rules below
+
+RewriteEngine On
+
+# Avoid infinite loops and allow assets to load
+RewriteCond %{REQUEST_URI} !/maintenance\.html$
+RewriteCond %{REQUEST_URI} !/assets/
+RewriteCond %{REQUEST_URI} !/images/
+RewriteCond %{REQUEST_URI} !/fonts/
+RewriteCond %{REQUEST_URI} !/styles\.css$
+
+# Redirect all other traffic to maintenance.html
+RewriteRule ^.*$ /maintenance.html [R=302,L]
