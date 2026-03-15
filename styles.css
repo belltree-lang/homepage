@@ -1335,6 +1335,7 @@ textarea.form-control {
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
+  margin-bottom: 0.5rem;
 }
 
 .status-hiring {
