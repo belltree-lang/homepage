@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>地域連携・地域活動 | 株式会社べるつりー</title>
+    <meta name="description" content="地域と医療・介護をつなぐ取り組み。医療機関や介護事業所との連携、地域コミュニティ活動を通じて、誰もが安心して暮らせる社会づくりに貢献します。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .ecosystem-diagram {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        max-width: 600px;
+        margin: var(--space-2xl) auto;
+      }
+      .ecosystem-step {
+        background: var(--color-surface);
+        border: 2px solid var(--color-border);
+        border-radius: var(--radius-md);
+        padding: var(--space-lg);
+        text-align: center;
+        position: relative;
+        box-shadow: var(--shadow-sm);
+      }
+      .ecosystem-step:not(:last-child)::after {
+        content: '↓';
+        position: absolute;
+        bottom: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        color: var(--color-accent);
+        font-weight: bold;
+      }
+      .ecosystem-step h4 {
+        margin-bottom: 4px;
+        color: var(--color-primary);
+      }
+      
+      .referral-flow {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-md);
+        margin-top: var(--space-2xl);
+      }
+      .flow-card {
+        background: var(--color-surface);
+        padding: var(--space-lg);
+        border-radius: var(--radius-md);
+        border-bottom: 4px solid var(--color-accent);
+        box-shadow: var(--shadow-sm);
+        height: 100%;
+      }
+      .flow-num {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background: var(--color-accent);
+        color: var(--color-surface);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 32px;
+        font-weight: bold;
+        margin-bottom: var(--space-md);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a class="site-logo" href="../">BellTree</a>
+        <div class="site-nav-group">
+          <nav class="site-utility-nav" aria-label="サブナビゲーション">
+            <a href="../community/">医療・介護関係者の皆様へ</a>
+            <a href="../recruit/">採用情報</a>
+          </nav>
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <a href="../">ホーム</a>
+            <a href="../solutions/">悩み別解決策</a>
+            <a href="../pages/services/">サービス一覧</a>
+            <a href="../cases/">改善事例</a>
+            <a href="../team/">スタッフ紹介</a>
+            <a href="../about/">会社概要</a>
+            <a class="nav-cta" href="../contact/">ご相談窓口</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- SECTION 1: Hero -->
+      <section class="section-spacing bg-soft">
+        <div class="container container-narrow text-center">
+          <span class="eyebrow">Community & Regional Cooperation</span>
+          <h1>地域と医療・介護をつなぐ取り組み</h1>
+          <p class="text-lead text-muted mt-lg">
+            べるつりーは、地域の医療機関や介護事業所と緊密に連携し、<br/>
+            一人ひとりの暮らしの質を地域全体で支える「健康共生エコシステム」の構築を目指しています。
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 2: BellTree's Role -->
+      <section class="section-spacing">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">Our Role</span>
+            <h2>医療と日常をつなぐ架け橋として</h2>
+            <p class="text-muted">
+              病院やクリニックでの専門的な治療が終わった後も、住み慣れた地域で安心して生活を続けられるよう、日常の健康管理と身体機能を支える役割を担います。
+            </p>
+          </div>
+
+          <div class="ecosystem-diagram">
+            <div class="ecosystem-step">
+              <h4>医療機関（病院・クリニック）</h4>
+              <p class="text-sm text-muted">急性期・維持期の専門的な治療</p>
+            </div>
+            <div class="ecosystem-step">
+              <h4>訪問支援（鍼灸・マッサージ）</h4>
+              <p class="text-sm text-muted">自宅での痛み緩和・機能維持</p>
+            </div>
+            <div class="ecosystem-step">
+              <h4>予防・フィットネス（べるフィット）</h4>
+              <p class="text-sm text-muted">筋力向上・フレイル予防</p>
+            </div>
+            <div class="ecosystem-step">
+              <h4>地域コミュニティ参加</h4>
+              <p class="text-sm text-muted">社会的なつながりと居場所づくり</p>
+            </div>
+          </div>
+          <p class="text-center text-muted text-sm mt-xl">
+            医療から介護、そして自立した地域生活へ。私たちはこの循環を支えるハブとして機能します。
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Medical and Care Collaboration -->
+      <section class="section-spacing bg-alt">
+        <div class="container">
+          <div class="editorial-split">
+            <div>
+              <span class="eyebrow">Partnership</span>
+              <h2>多職種・多機関との連携体制</h2>
+              <p class="text-muted mb-xl">
+                べるつりーは、以下のような地域の専門機関や団体と情報共有を行い、多角的な支援を行っています。
+              </p>
+              <ul class="feature-list">
+                <li class="feature-list-item">
+                  <div class="feature-list-icon">✓</div>
+                  <div><strong>地域包括支援センター：</strong> 権利擁護や福祉課題の解決に協力。</div>
+                </li>
+                <li class="feature-list-item">
+                  <div class="feature-list-icon">✓</div>
+                  <div><strong>ケアマネジャー：</strong> ケアプランに基づく適切なサービス提供。</div>
+                </li>
+                <li class="feature-list-item">
+                  <div class="feature-list-icon">✓</div>
+                  <div><strong>医療機関：</strong> 往診医や訪問看護との身体情報の共有。</div>
+                </li>
+                <li class="feature-list-item">
+                  <div class="feature-list-icon">✓</div>
+                  <div><strong>介護施設：</strong> 通所・入所サービスの枠を超えた機能訓練支援。</div>
+                </li>
+                <li class="feature-list-item">
+                  <div class="feature-list-icon">✓</div>
+                  <div><strong>町内会・自治会：</strong> 地域の居場所づくりや見守り活動への協力。</div>
+                </li>
+              </ul>
+            </div>
+            <div class="editorial-image">
+               <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.25rem;">[Network Photo: Professional Collaboration]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Common Consultation Themes -->
+      <section class="section-spacing">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">Focus Area</span>
+            <h2>ご相談の多い症状・状態</h2>
+            <p class="text-muted">
+              医療的処置の一段落後、機能維持や生活環境の整備が必要なケースに幅広く対応しています。
+            </p>
+          </div>
+
+          <div class="grid grid-2 mt-2xl" style="gap: var(--space-lg);">
+            <div class="card bg-soft">
+              <h3 style="font-size: 1.2rem; border-left: 4px solid var(--color-accent); padding-left: var(--space-sm); margin-bottom: var(--space-lg);">整形外科系</h3>
+              <ul class="feature-list" style="gap: var(--space-sm);">
+                <li class="feature-list-item"><div class="feature-list-icon">・</div><div>腰痛（慢性期・脊柱管狭窄症等）</div></li>
+                <li class="feature-list-item"><div class="feature-list-icon">・</div><div>膝痛（変形性膝関節症等）</div></li>
+                <li class="feature-list-item"><div class="feature-list-icon">・</div><div>慢性的な各部位の関節痛</div></li>
+              </ul>
+            </div>
+            <div class="card bg-soft">
+              <h3 style="font-size: 1.2rem; border-left: 4px solid var(--color-accent); padding-left: var(--space-sm); margin-bottom: var(--space-lg);">神経系</h3>
+              <ul class="feature-list" style="gap: var(--space-sm);">
+                <li class="feature-list-item"><div class="feature-list-icon">・</div><div>脳梗塞・脳出血後遺症（麻痺等）</div></li>
+                <li class="feature-list-item"><div class="feature-list-icon">・</div><div>パーキンソン病などの進行性疾患</div></li>
+                <li class="feature-list-item"><div class="feature-list-icon">・</div><div>神経痛によるしびれ・不調</div></li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-center text-muted text-sm mt-xl">
+             ※医療機関での治療方針を尊重し、主治医と連携しながら機能維持・向上をサポートします。
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 5: Referral and Collaboration Flow -->
+      <section class="section-spacing bg-soft">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="eyebrow">Protocol</span>
+            <h2>連携・紹介のフロー</h2>
+            <p class="text-muted">専門職の皆さまとスムーズに連携し、円滑なサービス提供を開始します。</p>
+          </div>
+
+          <div class="referral-flow">
+            <div class="flow-card">
+              <span class="flow-num">1</span>
+              <h4>ご相談・ご紹介</h4>
+              <p class="text-sm text-muted">電話、FAX、またはWEBフォームより。まずは状況をお伺いします。</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-num">2</span>
+              <h4>状況アセスメント</h4>
+              <p class="text-sm text-muted">国家資格スタッフが訪問または面談し、身体状況や支援ニーズを評価。</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-num">3</span>
+              <h4>サービス提案</h4>
+              <p class="text-sm text-muted">ご本人、ご家族、関係職種と共に、最適な支援プランを調整します。</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-num">4</span>
+              <h4>サービス開始</h4>
+              <p class="text-sm text-muted">連携に基づき、安全・確実なアプローチで支援をスタートします。</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-num">5</span>
+              <h4>定期報告・共有</h4>
+              <p class="text-sm text-muted">施術報告書等を通じ、主治医やケアマネジャーへ経過を共有します。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: Community Activities -->
+      <section class="section-spacing">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="eyebrow">Social Engagement</span>
+            <h2>地域密着のコミュニティ活動</h2>
+            <p class="text-muted">「参加すること」が力になる。私たちは多様な居場所づくりを行っています。</p>
+          </div>
+
+          <div class="grid grid-3 mt-2xl">
+            <div class="card card-hover">
+              <div style="font-size: 2rem; margin-bottom: var(--space-sm);">👟</div>
+              <h4>SOFT エクササイズ</h4>
+              <p class="text-sm text-muted">高齢者向けに開発された低負荷・高効率の運動教室。地域で3年以上継続しています。</p>
+            </div>
+            <div class="card card-hover">
+              <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🎤</div>
+              <h4>健康セミナー・相談会</h4>
+              <p class="text-sm text-muted">地域の自治会館等で、フレイル予防や健康管理のノウハウを共有しています。</p>
+            </div>
+            <div class="card card-hover">
+              <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🧡</div>
+              <h4>ボランティア・多世代交流</h4>
+              <p class="text-sm text-muted">地域の学生やボランティア団体と協力し、世代を超えたつながりを育みます。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: Future Initiatives -->
+      <section class="section-spacing bg-alt">
+        <div class="container container-narrow text-center">
+          <span class="eyebrow">Future Initiative</span>
+          <h2>持続可能な地域ケアへの探究</h2>
+          <p class="text-muted mt-lg">
+            今後は、大学・研究機関等との共同研究を通じて、<br/>
+            地域コミュニティにおける健康増進活動の有効性をデータで示し、<br/>
+            より質の高い支援モデルの構築に取り組んでいく予定です。
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 8: Contact for Collaboration -->
+      <section class="section-spacing">
+        <div class="container">
+          <div class="grid grid-2" style="gap: var(--space-xl);">
+            <div class="card bg-soft p-2xl text-center">
+              <span class="eyebrow">For Professionals</span>
+              <h3 style="margin: var(--space-md) 0;">医療・介護関係者の皆さまへ</h3>
+              <p class="text-sm text-muted mb-xl">ご紹介や連携に関するお問い合わせ、法人提携のご相談はこちらから承ります。</p>
+              <a href="../contact/" class="btn btn-primary">連携・ご紹介窓口へ</a>
+            </div>
+            <div class="card bg-soft p-2xl text-center">
+              <span class="eyebrow">For Residents</span>
+              <h3 style="margin: var(--space-md) 0;">地域活動への参加・ご相談</h3>
+              <p class="text-sm text-muted mb-xl">イベントへの参加希望や、地域での活動依頼、活動内容の詳細についてはこちらから。</p>
+              <a href="../contact/" class="btn btn-secondary">活動・参加のお問い合わせ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../">ホーム</a></li>
+              <li><a href="../about/">会社概要</a></li>
+              <li><a href="../model/">理念とモデル</a></li>
+              <li><a href="../news/">お知らせ</a></li>
+              <li><a href="../recruit/">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../solutions/">悩み別解決策</a></li>
+              <li><a href="../pages/services/">サービス一覧</a></li>
+              <li><a href="../cases/">改善事例</a></li>
+              <li><a href="../team/">スタッフ紹介</a></li>
+              <li><a href="../family/">ご家族の方へ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="./" aria-current="page">地域連携・活動</a></li>
+              <li><a href="../contact/">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <div class="fab-container">
+      <div class="fab-label">ご相談はこちら</div>
+      <a href="../contact/" class="fab-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span>相談窓口</span>
+      </a>
+    </div>
+  </body>
+</html>
