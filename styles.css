@@ -224,20 +224,36 @@ p:last-child { margin-bottom: 0; }
   gap: 4px;
 }
 
-.site-utility-nav {
+.utility-nav {
   display: flex;
   gap: var(--space-md);
+  align-items: center;
 }
 
-.site-utility-nav a {
+.utility-link {
   font-size: 0.75rem;
   color: var(--color-text-muted);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-medium);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 4px 0;
 }
 
-.site-utility-nav a:hover {
+.utility-link:hover {
+  color: var(--color-accent);
+}
+
+.utility-link.recruit {
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+}
+
+.utility-link.recruit:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-soft);
   color: var(--color-accent);
 }
 
