@@ -217,6 +217,43 @@ p:last-child { margin-bottom: 0; }
   background-color: var(--color-accent-hover);
 }
 
+.site-nav-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.site-utility-nav {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.site-utility-nav a {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-utility-nav a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 767px) {
+  .site-header-inner {
+    height: auto;
+    padding: var(--space-sm) 0;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  .site-nav-group {
+    align-items: center;
+    width: 100%;
+  }
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
