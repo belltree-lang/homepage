@@ -376,10 +376,53 @@
             <li class="nav-cta-item"><a class="nav-cta" href="../../../contact/index.html">ご相談窓口</a></li>
           </ul>
         </nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </div>
 </header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-header">
+      <a class="site-logo" href="../../../index.html">BellTree</a>
+      <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="../../../index.html">ホーム</a></li>
+        <li class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle">悩み別解決策 <span class="arrow"></span></button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="../../../solutions/index.html">すべて見る</a></li>
+            <li><a href="../../../solutions/index.html#physical">お体の悩み</a></li>
+            <li><a href="../../../solutions/index.html#life">生活の悩み</a></li>
+            <li><a href="../../../solutions/index.html#future">将来の悩み</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle">サービス一覧 <span class="arrow"></span></button>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="../../../pages/services/index.html">すべて見る</a></li>
+            <li><a href="../../../pages/services/index.html#medical">訪問施術</a></li>
+            <li><a href="../../../pages/services/index.html#fitness">フィットネス</a></li>
+            <li><a href="../../../pages/services/index.html#care">介護支援</a></li>
+          </ul>
+        </li>
+        <li><a href="../../../cases/index.html">改善事例</a></li>
+        <li><a href="../../../team/index.html">スタッフ紹介</a></li>
+        <li><a href="../../../about/index.html">会社概要</a></li>
+        <li><a href="../../../pages/recruit/index.html" aria-current="page">採用情報</a></li>
+        <li><a href="../../../contact/index.html" class="mobile-cta-link">ご相談窓口</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
     <main id="main-content">
 
@@ -954,17 +997,82 @@
                     <p class="text-muted">スタッフ幅広く平均勤続10.2年。長く働ける理由には、文化があります。</p>
                 </div>
                 <div class="grid grid-3 mt-2xl" style="gap: var(--space-md); text-align: center;">
-                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);">
-                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F33F;</div>
-                        <h4 style="color: #1a4a2e; margin-bottom: var(--space-xs);">自由</h4>
-                        <p class="text-muted" style="font-size: var(--font-size-sm);">直行直帰・副業OKなど個人の裁量を尊重。まじめに働ける環境。</p>
-                    </div>
-                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);">
-                        <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F60C;</div>
-                        <h4 style="color: #1a4a2e; margin-bottom: var(--space-xs);">穏やか</h4>
-                        <p class="text-muted" style="font-size: var(--font-size-sm);">社長・管理職が現場に立ち、スタッフ同士の中も良い人間関係。見学時に雰囲気を感じて応募する人が多い。</p>
-                    </div>
-                    <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border);">
+                    <div style="background: var(--co          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../../../index.html">ホーム</a></li>
+              <li><a href="../../../about/index.html">会社概要</a></li>
+              <li><a href="../../../model/index.html">理念とモデル</a></li>
+              <li><a href="../../../news/index.html">お知らせ</a></li>
+              <li><a href="../index.html" aria-current="page">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../../../solutions/index.html">悩み別解決策</a></li>
+              <li><a href="../../../pages/services/index.html">サービス一覧</a></li>
+              <li><a href="../../../cases/index.html">改善事例</a></li>
+              <li><a href="../../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../../family/index.html">ご家族の方へ</a></li>
+            </ul>
+          </div>
+ 
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../../../community/index.html">地域連携・活動</a></li>
+              <li><a href="../../../contact/index.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
+">
                         <div style="font-size: 2.5rem; margin-bottom: var(--space-sm);">&#x1F680;</div>
                         <h4 style="color: #1a4a2e; margin-bottom: var(--space-xs);">挑戦</h4>
                         <p class="text-muted" style="font-size: var(--font-size-sm);">毎週の研修・ケアマネ資格取得支援など、成長欲求に応える環境。</p>
