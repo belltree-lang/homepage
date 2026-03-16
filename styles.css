@@ -336,9 +336,9 @@ p:last-child { margin-bottom: 0; }
 
 .nav-dropdown {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
+  top: calc(100% + 20px);
+  left: 0;
+  transform: translateY(10px);
   background: var(--color-surface);
   border: 1px solid rgba(229, 224, 216, 0.6);
   box-shadow: var(--shadow-lg);
@@ -357,7 +357,7 @@ p:last-child { margin-bottom: 0; }
 .nav-list > li.has-dropdown:focus-within .nav-dropdown {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 .nav-dropdown-group {
