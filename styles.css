@@ -177,6 +177,7 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   height: 80px;
   overflow: visible !important;
+  position: relative; /* Fixed anchor for full-width dropdowns */
 }
 
 .site-logo {
@@ -237,7 +238,7 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 1024px) {
   .site-nav {
     display: block;
-    position: relative; /* Anchor for mega menu dropdowns */
+    /* position: relative;  Removed: Dropdowns now anchor to .header-inner */
   }
 }
 
