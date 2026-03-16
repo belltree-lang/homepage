@@ -179,10 +179,12 @@ p:last-child { margin-bottom: 0; }
 .header-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 80px;
+  align-items: center; /* Keeps Logo and CTA centered */
+  min-height: 80px;
+  height: auto; /* Allow growth if content expands */
+  padding: 12px 0; /* Vertical breathing room for dual rows */
   overflow: visible !important;
-  position: relative; /* Fixed anchor for full-width dropdowns */
+  position: relative; /* Anchor for mega menu dropdowns */
 }
 
 .site-logo {
@@ -197,7 +199,9 @@ p:last-child { margin-bottom: 0; }
 .site-nav-group {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-end;
+  gap: 4px; /* Space between utility and main rows */
   margin-left: auto;
   margin-right: var(--space-xl);
   overflow: visible !important;
@@ -341,9 +345,9 @@ p:last-child { margin-bottom: 0; }
 
 .nav-dropdown {
   position: absolute;
-  top: 100%; /* Position directly below the main nav row */
+  top: 100%; /* Position exactly below the header container */
   left: 0;
-  width: 100%; /* Spans the full width of .site-nav */
+  width: 100%; /* Spans the full width of .header-inner */
   transform: translateY(10px);
   background: var(--color-surface);
   border: 1px solid rgba(229, 224, 216, 0.6);
