@@ -347,7 +347,7 @@ p:last-child { margin-bottom: 0; }
   visibility: hidden;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   min-width: 540px;
-  z-index: 1100; /* Higher than site-header */
+  z-index: 1100; /* Higher than site-header and content */
 }
 
 .nav-list > li.has-dropdown:hover .nav-dropdown,
