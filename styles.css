@@ -167,7 +167,7 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid rgba(229, 224, 216, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: visible; /* Fix desktop dropdown clipping */
+  overflow: visible; /* Ensure dropdowns are not clipped */
 }
 
 .header-inner {
@@ -347,7 +347,7 @@ p:last-child { margin-bottom: 0; }
   visibility: hidden;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   min-width: 540px;
-  z-index: 1100;
+  z-index: 1100; /* Higher than site-header */
 }
 
 .nav-list > li.has-dropdown:hover .nav-dropdown,
@@ -518,6 +518,13 @@ p:last-child { margin-bottom: 0; }
   margin-top: var(--space-2xl);
   padding-top: var(--space-2xl);
   border-top: 2px solid var(--color-background-alt);
+}
+
+.mobile-menu-footer a {
+  font-size: 16px;
+  padding: 10px 0;
+  display: block;
+  line-height: 1.6;
 }
 
 .mobile-menu-cta {
