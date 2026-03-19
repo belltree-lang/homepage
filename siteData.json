@@ -25,6 +25,12 @@
       "summary": "相続、後見、死後事務など人生後半に必要な法務支援。"
     },
     {
+      "slug": "shukatsu",
+      "title": "終活支援",
+      "path": "/services/shukatsu",
+      "summary": "相続、遺言、後見など、人生後半の安心を支える法務・実務サポート。"
+    },
+    {
       "slug": "community",
       "title": "地域コミュニティ支援",
       "path": "/services/community",
