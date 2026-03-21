@@ -1,22 +1,6 @@
 /**
  * Google Apps Script Web App for BellTree Forms
  * Handles 7 different form types, writes to appropriate sheets, and sends auto-replies.
- * 
- * SETUP INSTRUCTIONS:
- * 1. Create a new Google Spreadsheet.
- * 2. Create the following 7 sheet tabs EXACTLY:
- *    - inquiries
- *    - recruit_applications
- *    - fitness_trials
- *    - acupuncture_consultations
- *    - daycare_consultations
- *    - legal_consultations
- *    - partner_inquiries
- * 3. Go to Extensions -> Apps Script.
- * 4. Paste this code.
- * 5. Update the SPREADSHEET_ID below.
- * 6. Deploy -> New Deployment -> Web App (Execute as: Me, Who has access: Anyone).
- * 7. Copy the Web App URL and update BELLTREE_FORM_CONFIG in assets/js/form-handler.js.
  */
 
 const CONFIG = {
@@ -27,7 +11,58 @@ const CONFIG = {
   COMPANY_ADDRESS: "東京都八王子市下柚木3-7-2-401"
 };
 
-// ... (FORM_MAP remains same)
+// Form mappings to their specific settings
+const FORM_MAP = {
+  "inquiries": {
+    sheetName: "inquiries",
+    prefix: "INQ",
+    subject: "【株式会社べるつりー】お問い合わせを受け付けました",
+    senderName: "株式会社べるつりー",
+    columns: ["氏名", "メールアドレス", "電話番号", "会社名・団体名", "お問い合わせ種別", "お問い合わせ内容"]
+  },
+  "recruit_applications": {
+    sheetName: "recruit_applications",
+    prefix: "REC",
+    subject: "【株式会社べるつりー 採用窓口】ご応募を受け付けました",
+    senderName: "株式会社べるつりー 採用窓口",
+    columns: ["氏名", "ふりがな", "メールアドレス", "電話番号", "年齢", "希望職種", "勤務希望条件", "応募動機・自由記述", "保有資格", "現在の勤務状況", "見学希望の有無"]
+  },
+  "fitness_trials": {
+    sheetName: "fitness_trials",
+    prefix: "FIT",
+    subject: "【べるフィット】見学・体験のお申し込みを受け付けました",
+    senderName: "べるフィット",
+    columns: ["氏名", "メールアドレス", "電話番号", "希望内容", "希望日時", "年齢層", "健康上の配慮事項", "備考"]
+  },
+  "acupuncture_consultations": {
+    sheetName: "acupuncture_consultations",
+    prefix: "ACU",
+    subject: "【べるつりー鍼灸マッサージ院】ご相談を受け付けました",
+    senderName: "べるつりー鍼灸マッサージ院",
+    columns: ["氏名", "メールアドレス", "電話番号", "ご本人との関係", "主な相談内容", "お悩みの部位・箇所", "訪問希望地域", "介護認定の有無", "医師・ケアマネの関与有無", "希望連絡方法", "備考"]
+  },
+  "daycare_consultations": {
+    sheetName: "daycare_consultations",
+    prefix: "DAY",
+    subject: "【べるフィット】通所リハ・介護相談を受け付けました",
+    senderName: "べるフィット",
+    columns: ["氏名", "メールアドレス", "電話番号", "ご本人との関係", "現在の困りごと", "利用希望者の年齢層", "要支援・要介護認定の有無", "ケアマネ有無", "見学希望日時", "備考"]
+  },
+  "legal_consultations": {
+    sheetName: "legal_consultations",
+    prefix: "LEG",
+    subject: "【べるリーガル行政書士事務所】ご相談を受け付けました",
+    senderName: "べるリーガル行政書士事務所",
+    columns: ["氏名", "メールアドレス", "電話番号", "相談種別", "相談内容", "年齢層", "面談希望方法", "希望日時", "備考"]
+  },
+  "partner_inquiries": {
+    sheetName: "partner_inquiries",
+    prefix: "PAR",
+    subject: "【株式会社べるつりー 地域連携窓口】お問い合わせを受け付けました",
+    senderName: "株式会社べるつりー 地域連携窓口",
+    columns: ["氏名", "所属先", "メールアドレス", "電話番号", "問い合わせ種別", "問い合わせ内容", "備考"]
+  }
+};
 
 /**
  * Handles GET requests (for testing and verification)
@@ -50,6 +85,9 @@ function doGet(e) {
   }
 }
 
+/**
+ * Handles POST requests from the website forms
+ */
 function doPost(e) {
   console.log("doPost triggered");
   if (!e || !e.postData || !e.postData.contents) {
@@ -86,7 +124,7 @@ function doPost(e) {
     const sequenceObj = Utilities.formatString("%04d", lastRow); 
     const recordId = `${settings.prefix}-${dateStr}-${sequenceObj}`;
     
-    // Prepare standard specific row data
+    // Prepare standard Lead columns
     let rowData = [
       timestamp, 
       formType, 
@@ -97,15 +135,16 @@ function doPost(e) {
       ""
     ];
     
+    // Form Specific Columns
     settings.columns.forEach(col => {
       const val = data[col] || data[getEnglishKey(col)] || "";
       rowData.push(val);
     });
     
-    const privacyAgreement = data.privacy_agreement ? "同意済" : "未同意'; // Corrected basic logic
+    const privacyAgreement = data.privacy_agreement ? "同意済" : "未同意";
     rowData.push(privacyAgreement);
-    rowData.push("未送信"); // Auto-reply status pos
-    rowData.push("未送信"); // Admin notify status pos
+    rowData.push("未送信"); // Auto-reply status placeholder
+    rowData.push("未送信"); // Admin notify status placeholder
     
     // Append to sheet
     console.log("Appending row to sheet: " + settings.sheetName);
@@ -172,7 +211,7 @@ function doPost(e) {
       }
     }
     
-    // Update statuses
+    // Update statuses in the sheet
     const statusStartCol = 7 + settings.columns.length + 1;
     sheet.getRange(newRowIndex, statusStartCol + 1).setValue(autoReplyStatus);
     sheet.getRange(newRowIndex, statusStartCol + 2).setValue(adminNotifyStatus);
@@ -183,49 +222,6 @@ function doPost(e) {
       
   } catch (err) {
     console.error("Fatal Error in doPost: " + err);
-    return ContentService.createTextOutput(JSON.stringify({"status": "error", "message": err.toString()}))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
-        extraText = "書類提出や見学調整が必要な場合は、改めてご案内いたします。\n";
-        } else if (formType === "partner_inquiries") {
-          extraText = "内容を確認のうえ、担当者よりご連絡いたします。\n";
-        }
-        
-        const autoReplyBody = `${data.name || data["氏名"] || ""} 様\n\n`
-          + `送信が完了しました。\n`
-          + extraText + `\n`
-          + `このメールは自動返信です。本メールに心当たりがない場合は破棄してください。\n\n`
-          + `------------------------\n`
-          + `${CONFIG.COMPANY_NAME}\n`
-          + `${CONFIG.COMPANY_ADDRESS}\n`
-          + `メール：${CONFIG.ADMIN_EMAIL}\n`
-          + `電話：${CONFIG.COMPANY_PHONE}\n`
-          + `受付時間：9:00〜18:00\n`
-          + `------------------------`;
-
-        MailApp.sendEmail({
-          to: userEmail,
-          subject: settings.subject,
-          body: autoReplyBody,
-          name: settings.senderName
-        });
-        autoReplyStatus = "送信済";
-      } catch(err) {
-        console.error("User Email Error: " + err);
-      }
-    }
-    
-    // Update statuses
-    // Assuming col lengths: 7 (fixed lead) + columns.length + 1 (privacy) + 2 (statuses)
-    const statusStartCol = 7 + settings.columns.length + 1;
-    sheet.getRange(newRowIndex, statusStartCol + 1).setValue(autoReplyStatus);
-    sheet.getRange(newRowIndex, statusStartCol + 2).setValue(adminNotifyStatus);
-    
-    return ContentService.createTextOutput(JSON.stringify({"status": "success", "id": recordId}))
-      .setMimeType(ContentService.MimeType.JSON);
-      
-  } catch (err) {
     return ContentService.createTextOutput(JSON.stringify({"status": "error", "message": err.toString()}))
       .setMimeType(ContentService.MimeType.JSON);
   }
