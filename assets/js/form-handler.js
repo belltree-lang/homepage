@@ -5,7 +5,7 @@
 
 const BELLTREE_FORM_CONFIG = {
   // Configurable placeholder for the Google Apps Script Web App URL
-  gasEndpoint: "https://script.google.com/macros/s/AKfycbx_PLACEHOLDER/exec",
+  gasEndpoint: "https://script.google.com/macros/s/AKfycbxGscrnn3F6USh7baej3inWP0WYREab4DrU3779tfn1TVYH3QRYj7McYLraF7QPDHAAtg/exec",
   adminEmail: "belltree@belltree1102.com"
 };
 
