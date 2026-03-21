@@ -453,21 +453,89 @@
       </section>
 
       <!-- SECTION 8: Contact for Collaboration -->
-      <section class="section-spacing">
-        <div class="container">
-          <div class="grid grid-2" style="gap: var(--space-xl);">
-            <div class="card bg-soft p-2xl text-center">
-              <span class="eyebrow">For Professionals</span>
-              <h3 style="margin: var(--space-md) 0;">医療・介護関係者の皆さまへ</h3>
-              <p class="text-sm text-muted mb-xl">ご紹介や連携に関するお問い合わせ、法人提携のご相談はこちらから承ります。</p>
-              <a href="../contact/" class="btn btn-primary">連携・ご紹介窓口へ</a>
-            </div>
-            <div class="card bg-soft p-2xl text-center">
-              <span class="eyebrow">For Residents</span>
-              <h3 style="margin: var(--space-md) 0;">地域活動への参加・ご相談</h3>
-              <p class="text-sm text-muted mb-xl">イベントへの参加希望や、地域での活動依頼、活動内容の詳細についてはこちらから。</p>
-              <a href="../contact/" class="btn btn-secondary">活動・参加のお問い合わせ</a>
-            </div>
+      <section id="partner-form" class="section-spacing" style="background: var(--color-surface); padding: var(--space-2xl) 0;">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">Contact</span>
+            <h2>地域連携・法人のお問い合わせ</h2>
+            <p class="text-muted text-sm mt-md">
+              医療機関や介護事業所様からのご紹介、各種連携、または地域にお住まいの方からのコミュニティ活動に関するご相談はこちらから承ります。
+            </p>
+          </div>
+
+          <div class="contact-form-section" style="background: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: var(--space-xl); color: var(--color-text); box-shadow: var(--shadow-sm);">
+            <form action="#" method="post" data-form-type="partner_inquiries" data-redirect-url="./thanks/index.html" style="text-align: left;">
+              <div style="display:none;">
+                <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+              </div>
+
+              <div class="grid grid-2" style="gap: var(--space-md);">
+                <div class="form-group">
+                  <label for="part_company" style="color: var(--color-text);">法人名 / 団体名 / 屋号 <span style="color: var(--color-accent);">必須</span></label>
+                  <input type="text" id="part_company" name="法人名_屋号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                </div>
+                <div class="form-group">
+                  <label for="part_dept" style="color: var(--color-text);">部署・役職 <span style="color: #888;">任意</span></label>
+                  <input type="text" id="part_dept" name="部署_役職" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                </div>
+              </div>
+
+              <div class="grid grid-2" style="gap: var(--space-md);">
+                <div class="form-group">
+                  <label for="part_name" style="color: var(--color-text);">ご担当者名 <span style="color: var(--color-accent);">必須</span></label>
+                  <input type="text" id="part_name" name="担当者名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                </div>
+                <div class="form-group">
+                  <label for="part_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                  <input type="tel" id="part_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="part_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+                <input type="email" id="part_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+
+              <div class="form-group">
+                <label for="part_type" style="color: var(--color-text);">お問い合わせ種別 <span style="color: var(--color-accent);">必須</span></label>
+                <select id="part_type" name="問い合わせ種別" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option value="ご利用者の紹介・相談">ご利用者のご紹介・ご相談（医療・介護福祉関係の方）</option>
+                  <option value="事業提携・連携の提案">事業提携・連携のご提案</option>
+                  <option value="地域活動への参加・依頼">地域活動（セミナー等）への参加・依頼</option>
+                  <option value="取材・広報">取材・広報に関するお問い合わせ</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="part_content" style="color: var(--color-text);">お問い合わせ内容 <span style="color: var(--color-accent);">必須</span></label>
+                <textarea id="part_content" name="問い合わせ内容" class="form-control" placeholder="対象者の状況や、提携の提案内容、セミナーのご希望など詳細をご記入ください" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 120px;" required></textarea>
+              </div>
+
+              <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
+
+              <div class="form-group">
+                <label for="part_url" style="color: var(--color-text);">貴社WEBサイトURL <span style="color: #888;">任意</span></label>
+                <input type="url" id="part_url" name="URL" class="form-control" placeholder="https://" style="background:#fff; border:1px solid #ccc; color:#333;">
+              </div>
+
+              <div class="form-group">
+                <label for="part_memo" style="color: var(--color-text);">備考 <span style="color: #888;">任意</span></label>
+                <textarea id="part_memo" name="備考" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 60px;"></textarea>
+              </div>
+
+              <div class="form-privacy" style="margin-top: var(--space-xl); margin-bottom: var(--space-lg); padding: var(--space-md); background: #f9f9f9; border-radius: 8px;">
+                <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--color-text);">
+                   <input type="checkbox" name="privacy_agreement" required>
+                   <span><a href="../privacy-policy/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">プライバシーポリシー</a>に同意のうえ送信します</span>
+                </label>
+              </div>
+
+              <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary" style="min-width: 280px; font-weight: bold;">送信する</button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -550,5 +618,6 @@
         });
       });
     </script>
+    <script src="../assets/js/form-handler.js"></script>
   </body>
 </html>

@@ -301,17 +301,107 @@
         </div>
       </section>
 
-      <section class="section-spacing container">
-        <div class="consultation-banner">
-          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">ご相談案内</p>
-          <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">「まだ早いかも」という段階からご相談ください</h2>
-          <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
-            介護保険の活用方法やご家族の負担整理、今後の支援導線まで含めて一緒に整理します。遠方にお住まいのご家族からのご相談も歓迎です。
+      <!-- 通所リハ・介護 相談フォーム -->
+      <section id="consultation-form" class="section-spacing container" style="margin-bottom: var(--space-2xl);">
+        <div class="contact-form-section" style="background: var(--color-surface); border-radius: 8px; padding: var(--space-xl); color: var(--color-text);">
+          <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-text);">通所支援・介護のご相談</h3>
+          <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-xl);">
+            介護保険の活用方法やご家族の負担整理、今後の支援導線まで含めて一緒に整理します。<br/>
+            遠方にお住まいのご家族からのご相談も歓迎です。
           </p>
-          <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
-             <a href="../../../contact/" class="btn btn-primary" style="background-color: var(--color-surface); color: var(--color-primary);">相談窓口へ</a>
-             <a href="../../" class="btn btn-secondary" style="border-color: var(--color-surface); color: var(--color-surface);">サービス一覧に戻る</a>
-          </div>
+
+          <form action="#" method="post" data-form-type="daycare_consultations" data-redirect-url="./thanks/index.html" style="text-align: left;">
+            <div style="display:none;">
+              <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+            </div>
+
+            <div class="form-group">
+              <label for="day_relation" style="color: var(--color-text);">ご本人との関係 <span style="color: var(--color-accent);">必須</span></label>
+              <select id="day_relation" name="ご本人との関係" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="ご本人">ご本人</option>
+                <option value="ご家族">ご家族</option>
+                <option value="ケアマネジャー・医療従事者">ケアマネジャー・医療従事者等</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="day_name" style="color: var(--color-text);">氏名（相談者） <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="day_name" name="氏名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+              <div class="form-group">
+                <label for="day_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="tel" id="day_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="day_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+              <input type="email" id="day_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            </div>
+
+            <div class="form-group">
+              <label for="day_trouble" style="color: var(--color-text);">現在の困りごと <span style="color: var(--color-accent);">必須</span></label>
+              <textarea id="day_trouble" name="現在の困りごと" class="form-control" placeholder="例：日中の居場所がなく困っている、歩行が不安定になってきた等" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 80px;" required></textarea>
+            </div>
+
+            <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="day_age" style="color: var(--color-text);">利用希望者の年齢層 <span style="color: #888;">任意</span></label>
+                <select id="day_age" name="利用希望者の年齢層" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="〜60代">〜60代</option>
+                  <option value="70代">70代</option>
+                  <option value="80代">80代</option>
+                  <option value="90代以上">90代以上</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="day_care" style="color: var(--color-text);">要支援・要介護認定の有無 <span style="color: #888;">任意</span></label>
+                <select id="day_care" name="要支援・要介護認定の有無" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="要支援・要介護認定あり">要支援・要介護認定あり</option>
+                  <option value="申請中">申請中</option>
+                  <option value="認定なし・わからない">認定なし・わからない</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="day_cm" style="color: var(--color-text);">ケアマネージャーの有無 <span style="color: #888;">任意</span></label>
+                <select id="day_cm" name="ケアマネ有無" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="担当ケアマネがいる">担当ケアマネがいる</option>
+                  <option value="いない（または事業所を変えたい）">いない（または事業所を探している）</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="day_visit" style="color: var(--color-text);">見学希望日時 <span style="color: #888;">任意</span></label>
+                <input type="text" id="day_visit" name="見学希望日時" class="form-control" placeholder="例：来週火曜日の午後" style="background:#fff; border:1px solid #ccc; color:#333;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="day_memo" style="color: var(--color-text);">備考・その他ご質問 <span style="color: #888;">任意</span></label>
+              <textarea id="day_memo" name="備考" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 60px;"></textarea>
+            </div>
+
+            <div class="form-privacy" style="margin-top: var(--space-xl); margin-bottom: var(--space-lg); padding: var(--space-md); background: #f9f9f9; border-radius: 8px;">
+              <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--color-text);">
+                 <input type="checkbox" name="privacy_agreement" required>
+                 <span><a href="../../../privacy-policy/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">プライバシーポリシー</a>に同意のうえ送信します</span>
+              </label>
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px; font-weight: bold;">送信する</button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -410,6 +500,7 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
       <span>会員様はこちら (予約・利用)</span>
     </a>
+    <script src="../../../assets/js/form-handler.js"></script>
   </body>
 </html>
 

@@ -299,17 +299,99 @@
         </div>
       </section>
 
-      <section class="section-spacing container">
-        <div class="consultation-banner">
-          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">ご相談案内</p>
-          <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">終活の進め方についてもご相談いただけます</h2>
-          <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
-            相続や後見の準備が必要かどうか、生活支援を含めた全体的な状況をお伺いしながら整理します。
+      <!-- 終活・行政書士 相談フォーム -->
+      <section id="consultation-form" class="section-spacing container" style="margin-bottom: var(--space-2xl);">
+        <div class="contact-form-section" style="background: var(--color-surface); border-radius: 8px; padding: var(--space-xl); color: var(--color-text);">
+          <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-text);">終活・行政書士へのご相談</h3>
+          <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-xl);">
+            相続や後見の準備が必要かどうか、生活支援を含めた全体的な状況をお伺いしながら整理します。<br/>
+            内容を確認のうえ、担当者よりご連絡いたします。
           </p>
-          <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
-             <a href="../../../contact/" class="btn btn-primary" style="background-color: var(--color-surface); color: var(--color-primary);">相談窓口へ</a>
-             <a href="../../" class="btn btn-secondary" style="border-color: var(--color-surface); color: var(--color-surface);">サービス一覧に戻る</a>
-          </div>
+
+          <form action="#" method="post" data-form-type="legal_consultations" data-redirect-url="./thanks/index.html" style="text-align: left;">
+            <div style="display:none;">
+              <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="leg_name" style="color: var(--color-text);">氏名（相談者） <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="leg_name" name="氏名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+              <div class="form-group">
+                <label for="leg_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="tel" id="leg_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="leg_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+              <input type="email" id="leg_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="leg_type" style="color: var(--color-text);">相談種別 <span style="color: var(--color-accent);">必須</span></label>
+                <select id="leg_type" name="相談種別" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option value="終活全般・生前整理">終活全般・生前整理</option>
+                  <option value="遺言書の作成">遺言書の作成</option>
+                  <option value="成年後見制度の利用">成年後見制度の利用</option>
+                  <option value="死後事務委任・身元保証">死後事務委任・身元保証</option>
+                  <option value="その他">その他（内容欄にご記載ください）</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="leg_meet" style="color: var(--color-text);">面談希望方法 <span style="color: var(--color-accent);">必須</span></label>
+                <select id="leg_meet" name="面談希望方法" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option value="当施設への来所">当施設（八王子）への来所</option>
+                  <option value="ご自宅への訪問">ご自宅への訪問</option>
+                  <option value="オンライン・電話">オンライン（Zoom等）または電話</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="leg_content" style="color: var(--color-text);">相談内容 <span style="color: var(--color-accent);">必須</span></label>
+              <textarea id="leg_content" name="相談内容" class="form-control" placeholder="例：将来に備えて遺言書を作成したい、身寄りがなく死後の手続きが不安など" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 80px;" required></textarea>
+            </div>
+
+            <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="leg_age" style="color: var(--color-text);">年齢層 <span style="color: #888;">任意</span></label>
+                <select id="leg_age" name="年齢層" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="〜50代">〜50代</option>
+                  <option value="60代">60代</option>
+                  <option value="70代">70代</option>
+                  <option value="80代以上">80代以上</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="leg_date" style="color: var(--color-text);">希望日時 <span style="color: #888;">任意</span></label>
+                <input type="text" id="leg_date" name="希望日時" class="form-control" placeholder="例：平日午後希望、来週水曜など" style="background:#fff; border:1px solid #ccc; color:#333;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="leg_memo" style="color: var(--color-text);">備考 <span style="color: #888;">任意</span></label>
+              <textarea id="leg_memo" name="備考" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 60px;"></textarea>
+            </div>
+
+            <div class="form-privacy" style="margin-top: var(--space-xl); margin-bottom: var(--space-lg); padding: var(--space-md); background: #f9f9f9; border-radius: 8px;">
+              <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--color-text);">
+                 <input type="checkbox" name="privacy_agreement" required>
+                 <span><a href="../../../privacy-policy/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">プライバシーポリシー</a>に同意のうえ送信します</span>
+              </label>
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px; font-weight: bold;">送信する</button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -408,6 +490,7 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
       <span>会員様はこちら (予約・利用)</span>
     </a>
+    <script src="../../../assets/js/form-handler.js"></script>
   </body>
 </html>
 

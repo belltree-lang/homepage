@@ -310,17 +310,119 @@
         </div>
       </section>
 
-      <section class="section-spacing container">
-        <div class="consultation-banner">
-          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">ご相談案内</p>
-          <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">運動習慣づくりについてご相談ください</h2>
-          <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
-            現在の身体状況や生活リズムを踏まえて、無理なくスタートできるご提案をおこないます。見学についてもお気軽にお問い合わせください。
-          </p>
-          <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
-             <a href="../../../contact/" class="btn btn-primary" style="background-color: var(--color-surface); color: var(--color-primary);">体験・見学を申し込む</a>
-             <a href="../../" class="btn btn-secondary" style="border-color: var(--color-surface); color: var(--color-surface);">サービス一覧に戻る</a>
+      <!-- Technogym App Guidance -->
+      <section id="app-guide" class="section-spacing container" style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: var(--space-xl); margin-bottom: var(--space-2xl);">
+        <div style="text-align: center; margin-bottom: var(--space-lg);">
+          <span class="eyebrow">Member Support</span>
+          <h2 style="color: var(--color-surface);">運動記録サポートアプリ</h2>
+          <p style="color: rgba(255,255,255,0.8); margin-top: var(--space-md);">テクノジムアプリ（mywellness）を使用することで、運動記録とマシンが連動し、日々のトレーニング効果を可視化できます。</p>
+        </div>
+        
+        <div class="grid grid-3" style="gap: var(--space-md); margin-bottom: var(--space-xl);">
+          <div style="background: rgba(0,0,0,0.2); padding: var(--space-lg); border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--color-primary); font-weight: bold; margin-bottom: var(--space-sm);">1</div>
+            <h4 style="color: var(--color-surface); margin-bottom: var(--space-xs);">インストール</h4>
+            <p style="font-size: var(--font-size-sm); color: rgba(255,255,255,0.7);">専用アプリをスマートフォンにダウンロードします。</p>
           </div>
+          <div style="background: rgba(0,0,0,0.2); padding: var(--space-lg); border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--color-primary); font-weight: bold; margin-bottom: var(--space-sm);">2</div>
+            <h4 style="color: var(--color-surface); margin-bottom: var(--space-xs);">ログイン</h4>
+            <p style="font-size: var(--font-size-sm); color: rgba(255,255,255,0.7);">施設で発行されたアカウントでログインします。</p>
+          </div>
+          <div style="background: rgba(0,0,0,0.2); padding: var(--space-lg); border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--color-primary); font-weight: bold; margin-bottom: var(--space-sm);">3</div>
+            <h4 style="color: var(--color-surface); margin-bottom: var(--space-xs);">マシン連動</h4>
+            <p style="font-size: var(--font-size-sm); color: rgba(255,255,255,0.7);">QRを読み込み、記録を開始します。</p>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="https://tgapp-link.mywellness.com/beef5be28" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background-color: var(--color-primary); color: var(--color-surface); padding: 12px 32px; border-radius: 30px;">アプリのダウンロードはこちら</a>
+        </div>
+      </section>
+
+      <!-- 見学・体験申込フォーム -->
+      <section id="trial-form" class="section-spacing container" style="margin-bottom: var(--space-2xl);">
+        <div class="contact-form-section" style="background: var(--color-surface); border-radius: 8px; padding: var(--space-xl); color: var(--color-text);">
+          <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-text);">見学・体験のお申し込み</h3>
+          <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-xl);">
+            不安な点や気になることがございましたら、まずは見学や体験でお確かめください。<br/>
+            内容を確認のうえ、担当者より日程調整のご連絡をいたします。
+          </p>
+
+          <form action="#" method="post" data-form-type="fitness_trials" data-redirect-url="./thanks/index.html" style="text-align: left;">
+            <div style="display:none;">
+              <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="fit_name" style="color: var(--color-text);">氏名 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="fit_name" name="氏名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+              <div class="form-group">
+                <label for="fit_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="tel" id="fit_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fit_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+              <input type="email" id="fit_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="fit_req" style="color: var(--color-text);">希望内容 <span style="color: var(--color-accent);">必須</span></label>
+                <select id="fit_req" name="希望内容" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option value="見学">施設の見学</option>
+                  <option value="体験">マシンの体験</option>
+                  <option value="入会手続き">入会手続き（事前説明）</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fit_date" style="color: var(--color-text);">希望日時 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="fit_date" name="希望日時" class="form-control" placeholder="例：来週水曜日の午後" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="fit_age" style="color: var(--color-text);">年齢層 <span style="color: #888;">任意</span></label>
+                <select id="fit_age" name="年齢層" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="〜30代">〜30代</option>
+                  <option value="40代">40代</option>
+                  <option value="50代">50代</option>
+                  <option value="60代">60代</option>
+                  <option value="70代以上">70代以上</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fit_health" style="color: var(--color-text);">健康上の配慮事項 <span style="color: #888;">任意</span></label>
+                <input type="text" id="fit_health" name="健康上の配慮事項" class="form-control" placeholder="例：膝に痛みがある、血圧が高い等" style="background:#fff; border:1px solid #ccc; color:#333;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fit_memo" style="color: var(--color-text);">備考・ご質問 <span style="color: #888;">任意</span></label>
+              <textarea id="fit_memo" name="備考" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 80px;"></textarea>
+            </div>
+
+            <div class="form-privacy" style="margin-top: var(--space-xl); margin-bottom: var(--space-lg); padding: var(--space-md); background: #f9f9f9; border-radius: 8px;">
+              <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--color-text);">
+                 <input type="checkbox" name="privacy_agreement" required>
+                 <span><a href="../../../privacy-policy/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">プライバシーポリシー</a>および<a href="../../../terms-of-service/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">施設利用規約</a>に同意のうえ送信します</span>
+              </label>
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px; font-weight: bold;">送信する</button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -420,6 +522,7 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
       <span>会員様はこちら (予約・利用)</span>
     </a>
+    <script src="../../../assets/js/form-handler.js"></script>
   </body>
 </html>
 

@@ -1030,11 +1030,101 @@
               見学だけでも歓迎です。現場の雰囲気・患者様との関わり方を実際に見てから判断してください。「話を聞いてみたい」という一歩が、キャリアを変えるきっかけになることがあります。</p>
           </div>
         </div>
-        <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
-          <a href="../../contact/" class="btn btn-primary" id="cta-contact"
-            style="background-color: var(--color-surface); color: var(--color-primary); font-weight: var(--font-weight-bold);">見学・カジュアル面談を申し込む</a>
-          <a href="#jobs" class="btn btn-secondary"
-            style="border-color: rgba(255,255,255,0.4); color: var(--color-surface);">募集職種を見る</a>
+        <!-- 採用専用フォーム -->
+        <div class="contact-form-section" style="margin-top: var(--space-2xl); background: var(--color-surface); border-radius: 8px; padding: var(--space-xl); color: var(--color-text);">
+          <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-text);">採用・見学 エントリーフォーム</h3>
+          <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-xl);">内容を確認のうえ、通常2営業日以内を目安にご連絡いたします。<br/>履歴書等の資料提出が必要な場合は、こちらから改めてご案内いたします。</p>
+
+          <form action="#" method="post" data-form-type="recruit_applications" data-redirect-url="./thanks/index.html" style="text-align: left;">
+            <div style="display:none;">
+              <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="req_name" style="color: var(--color-text);">氏名 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="req_name" name="氏名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+              <div class="form-group">
+                <label for="req_kana" style="color: var(--color-text);">ふりがな <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="req_kana" name="ふりがな" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="req_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+                <input type="email" id="req_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+              <div class="form-group">
+                <label for="req_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="tel" id="req_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="req_age" style="color: var(--color-text);">年齢 <span style="color: var(--color-accent);">必須</span></label>
+              <input type="number" id="req_age" name="年齢" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            </div>
+
+            <div class="form-group">
+              <label for="req_job" style="color: var(--color-text);">希望職種 <span style="color: var(--color-accent);">必須</span></label>
+              <select id="req_job" name="希望職種" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="理学療法士・作業療法士">理学療法士・作業療法士</option>
+                <option value="鍼灸師・マッサージ師">鍼灸師・マッサージ師</option>
+                <option value="ケアマネジャー">ケアマネジャー</option>
+                <option value="介護職員">介護職員</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="req_conditions" style="color: var(--color-text);">勤務希望条件（正社員/パート/週何日等） <span style="color: var(--color-accent);">必須</span></label>
+              <input type="text" id="req_conditions" name="勤務希望条件" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            </div>
+
+            <div class="form-group">
+              <label for="req_motivation" style="color: var(--color-text);">応募動機・自由記述 <span style="color: var(--color-accent);">必須</span></label>
+              <textarea id="req_motivation" name="応募動機・自由記述" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 100px;" required></textarea>
+            </div>
+
+            <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
+
+            <div class="form-group">
+              <label for="req_quals" style="color: var(--color-text);">保有資格 <span style="color: #888;">任意</span></label>
+              <input type="text" id="req_quals" name="保有資格" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+            </div>
+
+            <div class="form-group">
+              <label for="req_status" style="color: var(--color-text);">現在の勤務状況 <span style="color: #888;">任意</span></label>
+              <select id="req_status" name="現在の勤務状況" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                <option value="" selected>選択してください</option>
+                <option value="在職中">在職中</option>
+                <option value="離職中">離職中</option>
+                <option value="在学中">在学中</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label style="color: var(--color-text);">見学希望の有無 <span style="color: #888;">任意</span></label>
+              <div style="display: flex; gap: var(--space-md);">
+                <label style="color: var(--color-text);"><input type="radio" name="見学希望の有無" value="希望する"> 希望する</label>
+                <label style="color: var(--color-text);"><input type="radio" name="見学希望の有無" value="希望しない"> 希望しない</label>
+              </div>
+            </div>
+
+            <div class="form-privacy" style="margin-top: var(--space-xl); margin-bottom: var(--space-lg); padding: var(--space-md); background: #f9f9f9; border-radius: 8px;">
+              <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--color-text);">
+                 <input type="checkbox" name="privacy_agreement" required>
+                 <span><a href="../../privacy-policy/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">プライバシーポリシー</a>に同意のうえ送信します</span>
+              </label>
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px; font-weight: bold;">送信する</button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -1120,5 +1210,6 @@
         });
       });
     </script>
+    <script src="../../assets/js/form-handler.js"></script>
   </body>
 </html>
