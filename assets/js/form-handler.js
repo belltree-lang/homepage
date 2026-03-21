@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
       dataPayload.formType = form.getAttribute('data-form-type');
 
       try {
+        console.log('Form submission started. Payload:', dataPayload);
+        console.log('Endpoint:', BELLTREE_FORM_CONFIG.gasEndpoint);
+
         // We use text/plain to avoid CORS preflight issues with GAS
         const response = await fetch(BELLTREE_FORM_CONFIG.gasEndpoint, {
           method: 'POST',
@@ -63,8 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(dataPayload)
         });
         
+        console.log('Fetch completed. Response status (opaque):', response.status);
+        
         // no-cors returns opaque response, assume success if no network error
         const redirectUrl = form.getAttribute('data-redirect-url') || './thanks/index.html';
+        console.log('Redirecting to:', redirectUrl);
         window.location.href = redirectUrl;
 
       } catch (err) {
