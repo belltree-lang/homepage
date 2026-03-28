@@ -1455,3 +1455,251 @@ textarea.form-control {
   color: var(--color-accent);
 }
 
+/* ============================================
+   リーフ（通所リハ）空き状況セクション
+   ============================================ */
+
+/* .leaf-vacancy-section は bg-alt + section-spacing のユーティリティを使用 */
+
+.leaf-vacancy-title {
+  font-size: var(--font-size-heading-md);
+  color: var(--color-primary);
+  line-height: 1.5;
+  letter-spacing: var(--letter-spacing-heading);
+  margin-bottom: var(--space-lg);
+}
+
+.leaf-vacancy-desc {
+  max-width: 680px;
+  margin: 0 auto var(--space-2xl);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-loose);
+  font-size: var(--font-size-body);
+}
+
+/* 各部の時間帯グリッド */
+.vacancy-time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 600px) {
+  .vacancy-time-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.vacancy-time-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+}
+
+.vacancy-time-num {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+
+.vacancy-time-range {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* 空き状況テーブルラッパー（スマホ横スクロール対応） */
+.vacancy-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* テーブル本体 */
+.vacancy-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  font-size: var(--font-size-sm);
+}
+
+.vacancy-table thead th {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.vacancy-th-time {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-regular);
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.vacancy-table tbody th[scope="row"] {
+  background-color: var(--color-background-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.vacancy-table tbody td {
+  padding: var(--space-sm);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+/* 空き状況バッジ */
+.vacancy-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* ステータス別スタイル（くすみトーン，色のみに依存しない） */
+[data-status="available"] .vacancy-badge,
+.vacancy-legend-item[data-status="available"] {
+  background-color: #E8F4EE;
+  color: #2D6A48;
+  border: 1px solid #B5D9C5;
+}
+
+[data-status="few"] .vacancy-badge,
+.vacancy-legend-item[data-status="few"] {
+  background-color: #FBF3E0;
+  color: #7A5C00;
+  border: 1px solid #E0C96A;
+}
+
+[data-status="full"] .vacancy-badge,
+.vacancy-legend-item[data-status="full"] {
+  background-color: #F5E8E8;
+  color: #8B3A3A;
+  border: 1px solid #D9B5B5;
+}
+
+[data-status="ask"] .vacancy-badge,
+.vacancy-legend-item[data-status="ask"] {
+  background-color: #F0EEF0;
+  color: #5A5560;
+  border: 1px solid #C8C4CC;
+}
+
+/* テーブル行ホバー */
+.vacancy-table tbody tr:hover td,
+.vacancy-table tbody tr:hover th {
+  background-color: rgba(26, 54, 93, 0.03);
+}
+
+/* 凡例 */
+.vacancy-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin: var(--space-md) 0 0;
+}
+
+.vacancy-legend-item {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+/* 注意書き */
+.vacancy-notice {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: var(--space-xl) auto var(--space-lg);
+  max-width: 680px;
+  line-height: var(--line-height-base);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-border-strong);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  text-align: left;
+}
+
+/* 導線ボタングループ */
+.vacancy-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-xl);
+}
+
+.vacancy-cta-group .btn {
+  white-space: normal;
+  text-align: center;
+}
+
+/* スマホ対応 */
+@media (max-width: 767px) {
+  .leaf-vacancy-title {
+    font-size: var(--font-size-heading-sm);
+  }
+
+  .leaf-vacancy-desc {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .vacancy-notice {
+    font-size: 0.85rem;
+  }
+
+  .vacancy-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vacancy-cta-group .btn {
+    width: 100%;
+  }
+}
+
+/* show-sp: スマホのみ表示する要素 */
+.show-sp {
+  display: none;
+}
+@media (max-width: 600px) {
+  .show-sp {
+    display: block;
+  }
+}
+
+
