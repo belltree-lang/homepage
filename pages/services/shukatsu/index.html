@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../../styles.css" />
   </head>
   <body>
+  <!-- === HEADER_START === -->
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
@@ -22,6 +23,7 @@
             <ul class="utility-list">
               <li><a href="../../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
               <li><a href="../../../pages/recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
             </ul>
           </nav>
 
@@ -52,18 +54,19 @@
                     <p class="nav-dropdown-title">介護・終活</p>
                     <ul>
                       <li><a href="../../../solutions/home-care-start/index.html">介護の始め方</a></li>
-                      <li><a href="../../../pages/services/shukatsu/index.html">終活の準備</a></li>
+                      <li><a href="../../../solutions/end-of-life-preparation/index.html">終活の準備</a></li>
                     </ul>
                   </div>
                 </div>
               </li>
               <li class="has-dropdown">
-                <a href="../../../pages/services/index.html" aria-current="page">サービス一覧</a>
+                <a href="../../../pages/services/index.html">サービス一覧</a>
                 <div class="nav-dropdown">
                   <div class="nav-dropdown-group">
                     <p class="nav-dropdown-title">健康・運動</p>
                     <ul>
                       <li><a href="../../../pages/services/fitness/index.html">べるフィット</a></li>
+                      <li><a href="../../../pages/services/leaf/index.html">リーフ（通所リハ）</a></li>
                     </ul>
                   </div>
                   <div class="nav-dropdown-group">
@@ -104,23 +107,12 @@
     </div>
   </header>
 
-  <!-- Breadcrumbs -->
-  <nav class="breadcrumb-nav" aria-label="現在位置">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li><a href="../../../index.html">ホーム</a></li>
-        <li><a href="../../../pages/services/index.html">サービス一覧</a></li>
-        <li aria-current="page">終活支援</li>
-      </ol>
-    </div>
-  </nav>
-
   <!-- Mobile Menu Drawer -->
   <div id="mobile-menu" class="mobile-menu-overlay">
     <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
     <ul class="mobile-nav-list">
       <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
-      <li><a href="../../recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
+      <li><a href="../../../pages/recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
       <li><a href="../../../index.html">ホーム</a></li>
       <li>
         <button class="mobile-dropdown-toggle">お悩み別解決策</button>
@@ -145,7 +137,7 @@
             <p class="mobile-dropdown-title">介護・終活</p>
             <ul class="mobile-dropdown-links">
               <li><a href="../../../solutions/home-care-start/index.html">介護の始め方</a></li>
-              <li><a href="../../../pages/services/shukatsu/index.html">終活の準備</a></li>
+              <li><a href="../../../solutions/end-of-life-preparation/index.html">終活の準備</a></li>
             </ul>
           </div>
         </div>
@@ -157,6 +149,7 @@
             <p class="mobile-dropdown-title">健康・運動</p>
             <ul class="mobile-dropdown-links">
               <li><a href="../../../pages/services/fitness/index.html">べるフィット</a></li>
+              <li><a href="../../../pages/services/leaf/index.html">リーフ（通所リハ）</a></li>
             </ul>
           </div>
           <div class="mobile-dropdown-group">
@@ -192,6 +185,21 @@
       </ul>
     </div>
   </div>
+<!-- === HEADER_END === -->
+
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../../../index.html">ホーム</a></li>
+        <li><a href="../../../pages/services/index.html">サービス一覧</a></li>
+        <li aria-current="page">終活支援</li>
+      </ol>
+    </div>
+  </nav>
+
+  
 
     <main id="main-content">
       <section class="section-spacing bg-soft">
@@ -334,6 +342,7 @@
       </section>
     </main>
 
+    <!-- === FOOTER_START === -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-grid">
@@ -369,6 +378,8 @@
             <ul>
               <li><a href="../../../community/index.html">地域連携・活動</a></li>
               <li><a href="../../../contact/index.html">お問い合わせ</a></li>
+              <li><a href="../../../privacy-policy/index.html">個人情報保護方針</a></li>
+              <li><a href="../../../terms-of-service/index.html">利用規約</a></li>
             </ul>
           </div>
         </div>
@@ -377,6 +388,8 @@
         </div>
       </div>
     </footer>
+<!-- === FOOTER_END === -->
+
     <script>
       // Mobile Menu Toggle logic
       const menuToggle = document.querySelector('.menu-toggle');

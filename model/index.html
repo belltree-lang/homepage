@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+  <!-- === HEADER_START === -->
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
@@ -22,6 +23,7 @@
             <ul class="utility-list">
               <li><a href="../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
               <li><a href="../pages/recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
             </ul>
           </nav>
 
@@ -64,6 +66,7 @@
                     <p class="nav-dropdown-title">健康・運動</p>
                     <ul>
                       <li><a href="../pages/services/fitness/index.html">べるフィット</a></li>
+                      <li><a href="../pages/services/leaf/index.html">リーフ（通所リハ）</a></li>
                     </ul>
                   </div>
                   <div class="nav-dropdown-group">
@@ -103,21 +106,13 @@
       </div>
     </div>
   </header>
-  
-  <!-- Breadcrumbs -->
-  <nav class="breadcrumb-nav" aria-label="現在位置">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li><a href="../index.html">ホーム</a></li>
-        <li aria-current="page">理念とモデル</li>
-      </ol>
-    </div>
-  </nav>
 
   <!-- Mobile Menu Drawer -->
   <div id="mobile-menu" class="mobile-menu-overlay">
     <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
     <ul class="mobile-nav-list">
+      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
+      <li><a href="../pages/recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
       <li><a href="../index.html">ホーム</a></li>
       <li>
         <button class="mobile-dropdown-toggle">お悩み別解決策</button>
@@ -154,6 +149,7 @@
             <p class="mobile-dropdown-title">健康・運動</p>
             <ul class="mobile-dropdown-links">
               <li><a href="../pages/services/fitness/index.html">べるフィット</a></li>
+              <li><a href="../pages/services/leaf/index.html">リーフ（通所リハ）</a></li>
             </ul>
           </div>
           <div class="mobile-dropdown-group">
@@ -180,6 +176,7 @@
       <li><a href="../team/index.html">スタッフ紹介</a></li>
       <li><a href="../about/index.html">会社概要</a></li>
     </ul>
+
     <div class="mobile-menu-footer">
       <a href="../contact/index.html" class="nav-cta mobile-menu-cta">ご相談窓口</a>
       <ul class="mobile-utility-list">
@@ -188,6 +185,20 @@
       </ul>
     </div>
   </div>
+<!-- === HEADER_END === -->
+
+  
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../index.html">ホーム</a></li>
+        <li aria-current="page">理念とモデル</li>
+      </ol>
+    </div>
+  </nav>
+
+  
 
     <main id="main-content">
       <section class="section-spacing bg-soft">
@@ -274,6 +285,7 @@
       </section>
     </main>
 
+    <!-- === FOOTER_START === -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-grid">
@@ -281,36 +293,46 @@
             <div class="footer-logo">BellTree</div>
             <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
           </div>
+          
           <div class="footer-nav">
             <h3>企業情報</h3>
             <ul>
               <li><a href="../index.html">ホーム</a></li>
               <li><a href="../about/index.html">会社概要</a></li>
-              <li><a href="./index.html" aria-current="page">理念とモデル</a></li>
+              <li><a href="../model/index.html">理念とモデル</a></li>
               <li><a href="../news/index.html">お知らせ</a></li>
               <li><a href="../pages/recruit/index.html">採用情報</a></li>
-              <li><a href="../contact/index.html">お問い合わせ</a></li>
             </ul>
           </div>
           
           <div class="footer-nav">
-            <h3>サービス・地域連携</h3>
+            <h3>解決策と事例</h3>
             <ul>
               <li><a href="../solutions/index.html">悩み別解決策</a></li>
               <li><a href="../pages/services/index.html">サービス一覧</a></li>
               <li><a href="../cases/index.html">改善事例</a></li>
               <li><a href="../team/index.html">スタッフ紹介</a></li>
-              <li><a href="../community/index.html">地域連携・活動</a></li>
               <li><a href="../family/index.html">ご家族の方へ</a></li>
             </ul>
           </div>
 
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../community/index.html">地域連携・活動</a></li>
+              <li><a href="../contact/index.html">お問い合わせ</a></li>
+              <li><a href="../privacy-policy/index.html">個人情報保護方針</a></li>
+              <li><a href="../terms-of-service/index.html">利用規約</a></li>
+            </ul>
+          </div>
         </div>
         <div class="footer-bottom">
           <p>&copy; BellTree Inc. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
+<!-- === FOOTER_END === -->
+
     <script>
       // Mobile Menu Toggle logic
       const menuToggle = document.querySelector('.menu-toggle');
