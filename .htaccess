@@ -1,20 +1,15 @@
-# 301 Redirect for folder refactor
-Redirect 301 /solutions/end-of-life-preparation/ /services/shukatsu/
+# BellTree Maintenance Mode
+# To disable maintenance mode:
+# Comment out or remove the rewrite rules below
 
 RewriteEngine On
 
-# Allow access if query string contains preview=true
-RewriteCond %{QUERY_STRING} preview=true [OR]
-RewriteCond %{QUERY_STRING} preview=true$ [OR]
-RewriteCond %{QUERY_STRING} ^preview=true
-RewriteRule ^ - [L]
-
 # Avoid infinite loops and allow assets to load
 RewriteCond %{REQUEST_URI} !/maintenance\.html$
-RewriteCond %{REQUEST_URI} !/assets/
-RewriteCond %{REQUEST_URI} !/images/
-RewriteCond %{REQUEST_URI} !/fonts/
-RewriteCond %{REQUEST_URI} !/styles\.css$
+RewriteCond %{REQUEST_URI} !assets/
+RewriteCond %{REQUEST_URI} !images/
+RewriteCond %{REQUEST_URI} !fonts/
+RewriteCond %{REQUEST_URI} !styles\.css$
 
 # Redirect all other traffic to maintenance.html
 RewriteRule ^.*$ maintenance.html [R=302,L]
