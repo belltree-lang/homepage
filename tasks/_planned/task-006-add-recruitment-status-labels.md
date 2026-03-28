@@ -7,7 +7,7 @@ Show active recruitment status and roles on the recruitment top page.
 The recruitment page lacks live-status indicators, forcing candidates to read deeply to know if their role is currently hiring.
 
 ## Target Files
-- `pages/recruit/index.html`
+- `recruit/index.html`
 
 ## Implementation
 - Add "Now Hiring" (募集中) labels or status tags to role cards.

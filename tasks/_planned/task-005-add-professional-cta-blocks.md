@@ -7,9 +7,9 @@ Add "For Medical & Care Professionals" CTA blocks to all service-specific pages.
 Professionals (Doctors, Care Managers) who land on service pages lack a direct, localized call-to-action for coordination/referral.
 
 ## Target Files
-- `pages/services/acupuncture/index.html`
-- `pages/services/home-care/index.html`
-- `pages/services/fitness/index.html`
+- `services/acupuncture/index.html`
+- `services/home-care/index.html`
+- `services/fitness/index.html`
 
 ## Implementation
 - Design and insert a CTA block specifically for professional collaboration at the bottom of service pages.

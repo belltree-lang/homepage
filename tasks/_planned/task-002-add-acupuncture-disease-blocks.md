@@ -7,7 +7,7 @@ Implement Local SEO-focused content and condition blocks for the Visiting Acupun
 The current acupuncture service page is generic and doesn't target local-intent keywords (南大沢, 町田, etc.) or specific long-tail condition queries, which is critical for attracting the right users in the service area.
 
 ## Target Files
-- `pages/services/acupuncture/index.html` (Main landing page)
+- `services/acupuncture/index.html` (Main landing page)
 - `solutions/stroke/index.html` [NEW]
 - `solutions/parkinson/index.html` [NEW]
 - `solutions/lower-back-pain/index.html` [MODIFY]

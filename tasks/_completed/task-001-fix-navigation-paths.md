@@ -12,7 +12,7 @@ Links to `/community/index.html` and other shared pages use inconsistent relativ
 ## Implementation
 - Normalize all header and footer links.
 - Use a standardized relative path approach based on directory depth.
-- Specifically fix the `/community/` link in `/pages/services/` index and sub-pages.
+- Specifically fix the `/community/` link in `/services/` index and sub-pages.
 
 ## Acceptance Criteria
 - [ ] No 404 errors when navigating from any page to any other page linked in header/footer.
