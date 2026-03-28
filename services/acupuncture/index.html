@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>訪問鍼灸マッサージ (在宅支援) | 株式会社べるつりー</title>
+    <meta name="description" content="訪問鍼灸マッサージは、通院が難しい方に向けた在宅での継続的な身体ケアです。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+  <!-- === HEADER_START === -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="site-logo" href="../../index.html">BellTree</a>
+
+        <div class="site-nav-group">
+          <!-- Desktop Utility Nav -->
+          <nav class="utility-nav" aria-label="補助ナビゲーション">
+            <ul class="utility-list">
+              <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+              <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Desktop Main Nav -->
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <ul class="nav-list">
+              <li><a href="../../index.html">ホーム</a></li>
+              <li class="has-dropdown">
+                <a href="../../solutions/index.html">お悩み別解決策</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">身体の悩み</p>
+                    <ul>
+                      <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+                      <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+                      <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+                      <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">生活機能・予防</p>
+                    <ul>
+                      <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+                      <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護・終活</p>
+                    <ul>
+                      <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+                      <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown">
+                <a href="../../services/index.html">サービス一覧</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">健康・運動</p>
+                    <ul>
+                      <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+                      <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">訪問施術</p>
+                    <ul>
+                      <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護支援</p>
+                    <ul>
+                      <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">法務支援</p>
+                    <ul>
+                      <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-cta">
+          <a class="nav-cta" href="../../contact/index.html">ご相談窓口</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          メニュー
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    <ul class="mobile-nav-list">
+      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
+      <li><a href="../../recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
+      <li><a href="../../index.html">ホーム</a></li>
+      <li>
+        <button class="mobile-dropdown-toggle">お悩み別解決策</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">身体の悩み</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+              <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+              <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+              <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">生活機能・予防</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+              <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護・終活</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+              <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="mobile-dropdown-toggle">サービス一覧</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">健康・運動</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+              <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">訪問施術</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">法務支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="../../cases/index.html">改善事例</a></li>
+      <li><a href="../../team/index.html">スタッフ紹介</a></li>
+      <li><a href="../../about/index.html">会社概要</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <a href="../../contact/index.html" class="nav-cta mobile-menu-cta">ご相談窓口</a>
+      <ul class="mobile-utility-list">
+        <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+        <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- === HEADER_END === -->
+
+
+
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../services/index.html">サービス一覧</a></li>
+        <li aria-current="page">訪問鍼灸マッサージ</li>
+      </ol>
+    </div>
+  </nav>
+
+  
+
+    <main id="main-content">
+      <section class="section-spacing bg-soft">
+        <div class="container editorial-split">
+          <div>
+            <span class="eyebrow">Service 02: Home Visit</span>
+            <h1 style="margin-bottom: var(--space-lg);">南大沢・町田の訪問鍼灸マッサージ</h1>
+            <p class="text-lead text-muted">通院が難しい方に向けて、南大沢、町田、八王子、日野などのエリアで、国家資格者による訪問鍼灸マッサージをご自宅へお届けします。</p>
+          </div>
+          <div class="editorial-image">
+             <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem;">[Acupuncture / Home Visit Photo]</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container container-narrow">
+        <nav class="service-stepper" aria-label="支援ステップ">
+          <a href="../fitness/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🏃</span>
+            <span>① 運動習慣</span>
+          </a>
+          <a href="../acupuncture/" class="service-stepper-item active">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🏠</span>
+            <span>② 訪問施術</span>
+          </a>
+          <a href="../home-care/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🤝</span>
+            <span>③ 介護連携</span>
+          </a>
+          <a href="../legal/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">⚖️</span>
+            <span>④ 終活・法務</span>
+          </a>
+        </nav>
+      </div>
+
+      <section class="section-spacing container-narrow" style="margin: 0 auto;">
+         <div class="section-header text-center">
+            <span class="eyebrow">Target</span>
+            <h2>こんなお悩みから始められます</h2>
+         </div>
+         <div class="grid grid-2 mt-2xl">
+            <div class="card">
+               <h4 style="margin-bottom: var(--space-sm);">これまで通り通院ができない</h4>
+               <p class="text-muted text-sm mb-0">足腰の痛みや移動の負担から、外へ出ることが難しくなった方のケアを継続します。</p>
+            </div>
+            <div class="card">
+               <h4 style="margin-bottom: var(--space-sm);">自宅の生活環境でケアを受けたい</h4>
+               <p class="text-muted text-sm mb-0">生活空間の中で施術を行うことで、ご自宅での生活適応を支援します。</p>
+            </div>
+         </div>
+      </section>
+
+      <section class="section-spacing bg-white">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">Conditions</span>
+            <h2>訪問鍼灸マッサージで対応している主な症状</h2>
+            <p class="text-muted mt-md">南大沢・町田・八王子などの各エリアで、以下の症状でお困りの方にご利用いただいています。</p>
+          </div>
+          
+          <div class="grid grid-2 mt-2xl">
+            <!-- 腰痛 -->
+            <div class="card">
+               <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">腰痛</h3>
+               <p class="text-muted text-sm mb-lg">
+                 南大沢・町田エリアで、慢性的な腰痛により外出が困難な方へ。訪問鍼灸マッサージにより痛みを和らげ、自宅での生活を支える施術を行っています。
+               </p>
+               <a href="../../solutions/lower-back-pain/index.html" class="text-accent font-weight-bold text-sm">→ 詳細を見る</a>
+            </div>
+            
+            <!-- 膝痛 -->
+            <div class="card">
+               <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">膝痛</h3>
+               <p class="text-muted text-sm mb-lg">
+                 町田エリアで階段の上り下りや歩行に不安がある方。訪問マッサージと鍼灸で膝周りの緊張を解き、再び「歩ける喜び」をサポートします。
+               </p>
+               <a href="../../solutions/knee-pain/index.html" class="text-accent font-weight-bold text-sm">→ 詳細を見る</a>
+            </div>
+            
+            <!-- 脳梗塞後遺症 -->
+            <div class="card">
+               <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">脳梗塞後遺症</h3>
+               <p class="text-muted text-sm mb-lg">
+                 八王子や町田で麻痺や関節の固縮にお悩みの方へ。リハビリと並行し、訪問鍼灸マッサージで身体の柔軟性を維持し、日常生活の質を高めます。
+               </p>
+               <a href="../../solutions/stroke/index.html" class="text-accent font-weight-bold text-sm">→ 詳細を見る</a>
+            </div>
+            
+            <!-- パーキンソン病 -->
+            <div class="card">
+               <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">パーキンソン病</h3>
+               <p class="text-muted text-sm mb-lg">
+                 日野・南大沢エリアでのパーキンソン病ケア。特有のすくみ足や固縮を、専門的な訪問マッサージと鍼灸で和らげ、安全な在宅生活を共に築きます。
+               </p>
+               <a href="../../solutions/parkinson/index.html" class="text-accent font-weight-bold text-sm">→ 詳細を見る</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-spacing bg-alt">
+        <div class="container">
+          <div class="editorial-split reverse">
+            <div>
+              <span class="eyebrow">Connection</span>
+              <h2>介護連携へのスムーズな橋渡し</h2>
+              <p class="text-muted">
+                訪問支援を行っている間に、介護保険証が必要になるタイミングや、生活環境の見直しが必要になるタイミングが訪れることがあります。
+                私たちは単に施術をするだけでなく、社内のケアマネジャーと連携し、必要な制度の活用へと自然に繋げることができます。
+              </p>
+              <div class="mt-xl">
+                 <a href="../home-care/" style="color: var(--color-accent); font-weight: var(--font-weight-medium);">居宅介護支援（次のステップ）について見る &rarr;</a>
+              </div>
+            </div>
+            <div class="editorial-image">
+               <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem;">[Staff consulting with family at home]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-narrow">
+        <div class="professional-cta">
+          <h3 class="professional-cta__title">医療・介護関係者の皆様へ</h3>
+          <p class="professional-cta__text">
+            ご利用者様のご紹介や、医師への同意書依頼に関する連携体制について柔軟に対応しております。訪問施術の導入検討や報告体制の確認など、お気軽にお問い合わせください。
+          </p>
+          <a href="../../community/index.html" class="professional-cta__link">地域連携・専門職向けページを見る &rarr;</a>
+        </div>
+      </section>
+
+      <!-- Contextual Sub-navigation -->
+      <section class="section-spacing container">
+        <div class="sub-nav-block">
+          <h3 class="sub-nav-title">関連するサービス・解決策</h3>
+          <div class="sub-nav-grid">
+            <a href="fitness/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🏃</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">べるフィット</span>
+                <span class="sub-nav-desc">予防・運動支援</span>
+              </div>
+            </a>
+            <a href="home-care/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🤝</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">居宅介護支援</span>
+                <span class="sub-nav-desc">介護・相談窓口</span>
+              </div>
+            </a>
+            <a href="../../solutions/knee-pain/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🦵</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">膝の悩み</span>
+                <span class="sub-nav-desc">痛み・歩行不安</span>
+              </div>
+            </a>
+            <a href="../../solutions/stroke/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🧠</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">脳卒中</span>
+                <span class="sub-nav-desc">麻痺・リハビリ</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 訪問鍼灸マッサージ 相談フォーム -->
+      <section id="consultation-form" class="section-spacing container" style="margin-bottom: var(--space-2xl);">
+        <div class="contact-form-section" style="background: var(--color-surface); border-radius: 8px; padding: var(--space-xl); color: var(--color-text);">
+          <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-text);">訪問施術・マッサージのご相談</h3>
+          <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-xl);">
+            ご本人だけでなく、通院の付き添いが難しくなってきたご家族からのご相談も承ります。<br/>
+            身体状態や生活環境を踏まえて訪問利用のイメージをご案内いたします。
+          </p>
+
+          <form action="#" method="post" data-form-type="acupuncture_consultations" data-redirect-url="./thanks/index.html" style="text-align: left;">
+            <div style="display:none;">
+              <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+            </div>
+
+            <div class="form-group">
+              <label for="acu_relation" style="color: var(--color-text);">ご本人との関係 <span style="color: var(--color-accent);">必須</span></label>
+              <select id="acu_relation" name="ご本人との関係" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="ご本人">ご本人</option>
+                <option value="ご家族">ご家族</option>
+                <option value="ケアマネジャー・医療従事者">ケアマネジャー・医療従事者等</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="acu_name" style="color: var(--color-text);">氏名（相談者） <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="acu_name" name="氏名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+              <div class="form-group">
+                <label for="acu_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="tel" id="acu_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="acu_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+              <input type="email" id="acu_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            </div>
+
+            <div class="form-group">
+              <label for="acu_main" style="color: var(--color-text);">主な相談内容 <span style="color: var(--color-accent);">必須</span></label>
+              <textarea id="acu_main" name="主な相談内容" class="form-control" placeholder="例：足腰が弱り通院が難しくなったため、訪問でのマッサージをお願いしたい" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 80px;" required></textarea>
+            </div>
+
+            <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="acu_pain" style="color: var(--color-text);">お悩みの部位・箇所 <span style="color: #888;">任意</span></label>
+                <input type="text" id="acu_pain" name="お悩みの部位・箇所" class="form-control" placeholder="例：腰、右肩、足全体など" style="background:#fff; border:1px solid #ccc; color:#333;">
+              </div>
+              <div class="form-group">
+                <label for="acu_area" style="color: var(--color-text);">訪問希望地域 <span style="color: #888;">任意</span></label>
+                <input type="text" id="acu_area" name="訪問希望地域" class="form-control" placeholder="例：八王子市下柚木" style="background:#fff; border:1px solid #ccc; color:#333;">
+              </div>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="acu_care" style="color: var(--color-text);">介護認定の有無 <span style="color: #888;">任意</span></label>
+                <select id="acu_care" name="介護認定の有無" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="認定あり（要支援・要介護）">認定あり（要支援・要介護）</option>
+                  <option value="申請中">申請中</option>
+                  <option value="認定なし">認定なし・わからない</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="acu_med" style="color: var(--color-text);">医師・ケアマネの関与有無 <span style="color: #888;">任意</span></label>
+                <select id="acu_med" name="医師・ケアマネの関与有無" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="関与あり（主治医/ケアマネあり）">関与あり（主治医/ケアマネあり）</option>
+                  <option value="関与なし">関与なし</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="acu_contact" style="color: var(--color-text);">希望連絡方法 <span style="color: #888;">任意</span></label>
+              <select id="acu_contact" name="希望連絡方法" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                <option value="" selected>選択してください</option>
+                <option value="電話">電話優先</option>
+                <option value="メール">メール優先</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="acu_memo" style="color: var(--color-text);">備考 <span style="color: #888;">任意</span></label>
+              <textarea id="acu_memo" name="備考" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 60px;"></textarea>
+            </div>
+
+            <div class="form-privacy" style="margin-top: var(--space-xl); margin-bottom: var(--space-lg); padding: var(--space-md); background: #f9f9f9; border-radius: 8px;">
+              <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--color-text);">
+                 <input type="checkbox" name="privacy_agreement" required>
+                 <span><a href="../../privacy-policy/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">プライバシーポリシー</a>に同意のうえ送信します</span>
+              </label>
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px; font-weight: bold;">送信する</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- === FOOTER_START === -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../../index.html">ホーム</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+              <li><a href="../../model/index.html">理念とモデル</a></li>
+              <li><a href="../../news/index.html">お知らせ</a></li>
+              <li><a href="../../recruit/index.html">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../../solutions/index.html">悩み別解決策</a></li>
+              <li><a href="../../services/index.html">サービス一覧</a></li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../family/index.html">ご家族の方へ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../../community/index.html">地域連携・活動</a></li>
+              <li><a href="../../contact/index.html">お問い合わせ</a></li>
+              <li><a href="../../privacy-policy/index.html">個人情報保護方針</a></li>
+              <li><a href="../../terms-of-service/index.html">利用規約</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+<!-- === FOOTER_END === -->
+
+
+
+    <div class="fab-container">
+      <div class="fab-label">ご相談はこちら</div>
+      <a href="../../contact/" class="fab-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span>相談窓口</span>
+      </a>
+    </div>
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        mobileClose.addEventListener('click', closeMenu);
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
+    <a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="member-sticky-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>会員様はこちら (予約・利用)</span>
+    </a>
+    <script src="../../assets/js/form-handler.js"></script>
+  </body>
+</html>
+
+

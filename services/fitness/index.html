@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>べるフィット (運動支援) | 株式会社べるつりー</title>
+    <meta name="description" content="べるフィットは人生後半のための運動習慣づくりを支えるメディカルフィットネスです。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+  <!-- === HEADER_START === -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="site-logo" href="../../index.html">BellTree</a>
+
+        <div class="site-nav-group">
+          <!-- Desktop Utility Nav -->
+          <nav class="utility-nav" aria-label="補助ナビゲーション">
+            <ul class="utility-list">
+              <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+              <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Desktop Main Nav -->
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <ul class="nav-list">
+              <li><a href="../../index.html">ホーム</a></li>
+              <li class="has-dropdown">
+                <a href="../../solutions/index.html">お悩み別解決策</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">身体の悩み</p>
+                    <ul>
+                      <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+                      <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+                      <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+                      <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">生活機能・予防</p>
+                    <ul>
+                      <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+                      <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護・終活</p>
+                    <ul>
+                      <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+                      <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown">
+                <a href="../../services/index.html">サービス一覧</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">健康・運動</p>
+                    <ul>
+                      <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+                      <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">訪問施術</p>
+                    <ul>
+                      <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護支援</p>
+                    <ul>
+                      <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">法務支援</p>
+                    <ul>
+                      <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-cta">
+          <a class="nav-cta" href="../../contact/index.html">ご相談窓口</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          メニュー
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    <ul class="mobile-nav-list">
+      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
+      <li><a href="../../recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
+      <li><a href="../../index.html">ホーム</a></li>
+      <li>
+        <button class="mobile-dropdown-toggle">お悩み別解決策</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">身体の悩み</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+              <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+              <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+              <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">生活機能・予防</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+              <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護・終活</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+              <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="mobile-dropdown-toggle">サービス一覧</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">健康・運動</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+              <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">訪問施術</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">法務支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="../../cases/index.html">改善事例</a></li>
+      <li><a href="../../team/index.html">スタッフ紹介</a></li>
+      <li><a href="../../about/index.html">会社概要</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <a href="../../contact/index.html" class="nav-cta mobile-menu-cta">ご相談窓口</a>
+      <ul class="mobile-utility-list">
+        <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+        <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- === HEADER_END === -->
+
+
+
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../services/index.html">サービス一覧</a></li>
+        <li aria-current="page">べるフィット</li>
+      </ol>
+    </div>
+  </nav>
+
+  
+
+    <main id="main-content">
+      <section class="section-spacing bg-soft">
+        <div class="container editorial-split">
+          <div>
+            <span class="eyebrow">Service 01: Fitness</span>
+            <h1 style="margin-bottom: var(--space-lg);">自分の脚で、<br/>ずっと歩き続けるために。</h1>
+            <p class="text-lead text-muted">元気な今を支える運動習慣づくりの入口として、無理なく継続しやすいメディカルフィットネス「べるフィット」を提供しています。</p>
+          </div>
+          <div class="editorial-image">
+             <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem;">[Fitness Facility / Activity]</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container container-narrow">
+        <nav class="service-stepper" aria-label="支援ステップ">
+          <a href="../fitness/" class="service-stepper-item active">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🏃</span>
+            <span>① 運動習慣</span>
+          </a>
+          <a href="../acupuncture/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🏠</span>
+            <span>② 訪問施術</span>
+          </a>
+          <a href="../home-care/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🤝</span>
+            <span>③ 介護連携</span>
+          </a>
+          <a href="../legal/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">⚖️</span>
+            <span>④ 終活・法務</span>
+          </a>
+        </nav>
+      </div>
+
+      <section class="section-spacing container-narrow" style="margin: 0 auto;">
+         <div class="section-header text-center">
+            <span class="eyebrow">Target</span>
+            <h2>こんなお悩みから始められます</h2>
+         </div>
+         <div class="grid grid-2 mt-2xl">
+            <div class="card">
+               <h4 style="margin-bottom: var(--space-sm);">体力の衰えを感じる</h4>
+               <p class="text-muted text-sm mb-0">最近つまずきやすくなった、階段が辛いなど、些細な変化を感じ始めた方の身体づくりを支えます。</p>
+            </div>
+            <div class="card">
+               <h4 style="margin-bottom: var(--space-sm);">運動が長続きしない</h4>
+               <p class="text-muted text-sm mb-0">激しいトレーニングではなく、医療的な視点に基づいた「続く習慣」をご提案します。</p>
+            </div>
+         </div>
+      </section>
+
+      <section class="section-spacing bg-alt">
+        <div class="container">
+          <div class="editorial-split reverse">
+            <div>
+              <span class="eyebrow">Connection</span>
+              <h2>将来的にも支援が途切れない安心</h2>
+              <p class="text-muted">
+                べるフィットは単なるスポーツジムではありません。べるつりーの総合支援への入り口です。
+                もし将来、通うことが難しくなっても、訪問鍼灸マッサージや介護連携といった次のサポートへスムーズに移行できます。
+                健康な時から信頼関係を築くことで、いざという時の不安を軽減します。
+              </p>
+              <div class="mt-xl">
+                 <a href="../acupuncture/" style="color: var(--color-accent); font-weight: var(--font-weight-medium);">訪問支援（次のステップ）について見る &rarr;</a>
+              </div>
+            </div>
+            <div class="editorial-image">
+               <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem;">[Staff with Client]</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- App Integration Section -->
+      <section class="section-spacing container">
+        <div class="app-integration-box">
+          <div class="section-header text-center">
+            <span class="eyebrow">Smart Training</span>
+            <h2>テクノジムアプリで運動をもっとスマートに</h2>
+            <p class="text-muted mt-md">テクノジムアプリを使用することで、運動記録とマシンが連動し、日々の成果を可視化できます。</p>
+          </div>
+          
+          <div class="step-indicator-grid">
+            <div class="step-item">
+              <div class="step-item-num">1</div>
+              <span class="step-item-label">アプリをインストール</span>
+              <p class="text-xs text-muted">お持ちのスマホにアプリをダウンロードしてください。</p>
+            </div>
+            <div class="step-item">
+              <div class="step-item-num">2</div>
+              <span class="step-item-label">ログイン</span>
+              <p class="text-xs text-muted">アカウントを作成し、ログインをおこないます。</p>
+            </div>
+            <div class="step-item">
+              <div class="step-item-num">3</div>
+              <span class="step-item-label">マシンと連動</span>
+              <p class="text-xs text-muted">施設のQRコードをスキャンして運動を開始します。</p>
+            </div>
+          </div>
+
+          <div class="app-download-actions">
+            <a href="https://tgapp-link.mywellness.com/beef5be28" class="btn btn-primary" target="_blank" rel="noopener">アプリをダウンロードする</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contextual Sub-navigation -->
+      <section class="section-spacing container">
+        <div class="sub-nav-block">
+          <h3 class="sub-nav-title">関連するサービス・解決策</h3>
+          <div class="sub-nav-grid">
+            <a href="acupuncture/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🏠</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">訪問鍼灸マッサージ</span>
+                <span class="sub-nav-desc">在宅での身体ケア</span>
+              </div>
+            </a>
+            <a href="home-care/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🤝</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">居宅介護支援</span>
+                <span class="sub-nav-desc">介護・相談窓口</span>
+              </div>
+            </a>
+            <a href="../../solutions/frailty/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">🍃</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">フレイル</span>
+                <span class="sub-nav-desc">虚弱・活力低下</span>
+              </div>
+            </a>
+            <a href="../../solutions/fall-risk/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">⚠️</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">転倒リスク</span>
+                <span class="sub-nav-desc">つまづき・筋力低下</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technogym App Guidance -->
+      <section id="app-guide" class="section-spacing container" style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: var(--space-xl); margin-bottom: var(--space-2xl);">
+        <div style="text-align: center; margin-bottom: var(--space-lg);">
+          <span class="eyebrow">Member Support</span>
+          <h2 style="color: var(--color-surface);">運動記録サポートアプリ</h2>
+          <p style="color: rgba(255,255,255,0.8); margin-top: var(--space-md);">テクノジムアプリ（mywellness）を使用することで、運動記録とマシンが連動し、日々のトレーニング効果を可視化できます。</p>
+        </div>
+        
+        <div class="grid grid-3" style="gap: var(--space-md); margin-bottom: var(--space-xl);">
+          <div style="background: rgba(0,0,0,0.2); padding: var(--space-lg); border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--color-primary); font-weight: bold; margin-bottom: var(--space-sm);">1</div>
+            <h4 style="color: var(--color-surface); margin-bottom: var(--space-xs);">インストール</h4>
+            <p style="font-size: var(--font-size-sm); color: rgba(255,255,255,0.7);">専用アプリをスマートフォンにダウンロードします。</p>
+          </div>
+          <div style="background: rgba(0,0,0,0.2); padding: var(--space-lg); border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--color-primary); font-weight: bold; margin-bottom: var(--space-sm);">2</div>
+            <h4 style="color: var(--color-surface); margin-bottom: var(--space-xs);">ログイン</h4>
+            <p style="font-size: var(--font-size-sm); color: rgba(255,255,255,0.7);">施設で発行されたアカウントでログインします。</p>
+          </div>
+          <div style="background: rgba(0,0,0,0.2); padding: var(--space-lg); border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; color: var(--color-primary); font-weight: bold; margin-bottom: var(--space-sm);">3</div>
+            <h4 style="color: var(--color-surface); margin-bottom: var(--space-xs);">マシン連動</h4>
+            <p style="font-size: var(--font-size-sm); color: rgba(255,255,255,0.7);">QRを読み込み、記録を開始します。</p>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="https://tgapp-link.mywellness.com/beef5be28" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background-color: var(--color-primary); color: var(--color-surface); padding: 12px 32px; border-radius: 30px;">アプリのダウンロードはこちら</a>
+        </div>
+      </section>
+
+      <!-- 見学・体験申込フォーム -->
+      <section id="trial-form" class="section-spacing container" style="margin-bottom: var(--space-2xl);">
+        <div class="contact-form-section" style="background: var(--color-surface); border-radius: 8px; padding: var(--space-xl); color: var(--color-text);">
+          <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-text);">見学・体験のお申し込み</h3>
+          <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-xl);">
+            不安な点や気になることがございましたら、まずは見学や体験でお確かめください。<br/>
+            内容を確認のうえ、担当者より日程調整のご連絡をいたします。
+          </p>
+
+          <form action="#" method="post" data-form-type="fitness_trials" data-redirect-url="./thanks/index.html" style="text-align: left;">
+            <div style="display:none;">
+              <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="fit_name" style="color: var(--color-text);">氏名 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="fit_name" name="氏名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+              <div class="form-group">
+                <label for="fit_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="tel" id="fit_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fit_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+              <input type="email" id="fit_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="fit_req" style="color: var(--color-text);">希望内容 <span style="color: var(--color-accent);">必須</span></label>
+                <select id="fit_req" name="希望内容" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option value="見学">施設の見学</option>
+                  <option value="体験">マシンの体験</option>
+                  <option value="入会手続き">入会手続き（事前説明）</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fit_date" style="color: var(--color-text);">希望日時 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="fit_date" name="希望日時" class="form-control" placeholder="例：来週水曜日の午後" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              </div>
+            </div>
+
+            <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="fit_age" style="color: var(--color-text);">年齢層 <span style="color: #888;">任意</span></label>
+                <select id="fit_age" name="年齢層" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;">
+                  <option value="" selected>選択してください</option>
+                  <option value="〜30代">〜30代</option>
+                  <option value="40代">40代</option>
+                  <option value="50代">50代</option>
+                  <option value="60代">60代</option>
+                  <option value="70代以上">70代以上</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fit_health" style="color: var(--color-text);">健康上の配慮事項 <span style="color: #888;">任意</span></label>
+                <input type="text" id="fit_health" name="健康上の配慮事項" class="form-control" placeholder="例：膝に痛みがある、血圧が高い等" style="background:#fff; border:1px solid #ccc; color:#333;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fit_memo" style="color: var(--color-text);">備考・ご質問 <span style="color: #888;">任意</span></label>
+              <textarea id="fit_memo" name="備考" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 80px;"></textarea>
+            </div>
+
+            <div class="form-privacy" style="margin-top: var(--space-xl); margin-bottom: var(--space-lg); padding: var(--space-md); background: #f9f9f9; border-radius: 8px;">
+              <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--color-text);">
+                 <input type="checkbox" name="privacy_agreement" required>
+                 <span><a href="../../privacy-policy/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">プライバシーポリシー</a>および<a href="../../terms-of-service/index.html" target="_blank" style="text-decoration: underline; color: var(--color-primary);">施設利用規約</a>に同意のうえ送信します</span>
+              </label>
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px; font-weight: bold;">送信する</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- === FOOTER_START === -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../../index.html">ホーム</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+              <li><a href="../../model/index.html">理念とモデル</a></li>
+              <li><a href="../../news/index.html">お知らせ</a></li>
+              <li><a href="../../recruit/index.html">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../../solutions/index.html">悩み別解決策</a></li>
+              <li><a href="../../services/index.html">サービス一覧</a></li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../family/index.html">ご家族の方へ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../../community/index.html">地域連携・活動</a></li>
+              <li><a href="../../contact/index.html">お問い合わせ</a></li>
+              <li><a href="../../privacy-policy/index.html">個人情報保護方針</a></li>
+              <li><a href="../../terms-of-service/index.html">利用規約</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+<!-- === FOOTER_END === -->
+
+
+
+    <div class="fab-container">
+      <div class="fab-label">ご相談はこちら</div>
+      <a href="../../contact/" class="fab-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span>相談窓口</span>
+      </a>
+    </div>
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        mobileClose.addEventListener('click', closeMenu);
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
+    <a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="member-sticky-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>会員様はこちら (予約・利用)</span>
+    </a>
+    <script src="../../assets/js/form-handler.js"></script>
+  </body>
+</html>
+
+
