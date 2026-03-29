@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>体力の衰え（フレイル）でお悩みの方へ | 株式会社べるつりー</title>
+    <meta name="description" content="最近つまずきやすくなった、元気がなくなった等、フレイル（虚弱）対策の運動習慣をご提案します。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+  <!-- === HEADER_START === -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="site-logo" href="../../index.html">BellTree</a>
+
+        <div class="site-nav-group">
+          <!-- Desktop Utility Nav -->
+          <nav class="utility-nav" aria-label="補助ナビゲーション">
+            <ul class="utility-list">
+              <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+              <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Desktop Main Nav -->
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <ul class="nav-list">
+              <li><a href="../../index.html">ホーム</a></li>
+              <li class="has-dropdown">
+                <a href="../../solutions/index.html">お悩み別解決策</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">身体の悩み</p>
+                    <ul>
+                      <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+                      <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+                      <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+                      <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">生活機能・予防</p>
+                    <ul>
+                      <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+                      <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護・終活</p>
+                    <ul>
+                      <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+                      <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown">
+                <a href="../../services/index.html">サービス一覧</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">健康・運動</p>
+                    <ul>
+                      <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+                      <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">訪問施術</p>
+                    <ul>
+                      <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護支援</p>
+                    <ul>
+                      <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">法務支援</p>
+                    <ul>
+                      <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-cta">
+          <a class="nav-cta" href="../../contact/index.html">ご相談窓口</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          メニュー
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    <ul class="mobile-nav-list">
+      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
+      <li><a href="../../recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
+      <li><a href="../../index.html">ホーム</a></li>
+      <li>
+        <button class="mobile-dropdown-toggle">お悩み別解決策</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">身体の悩み</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+              <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+              <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+              <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">生活機能・予防</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+              <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護・終活</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+              <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="mobile-dropdown-toggle">サービス一覧</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">健康・運動</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+              <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">訪問施術</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">法務支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="../../cases/index.html">改善事例</a></li>
+      <li><a href="../../team/index.html">スタッフ紹介</a></li>
+      <li><a href="../../about/index.html">会社概要</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <a href="../../contact/index.html" class="nav-cta mobile-menu-cta">ご相談窓口</a>
+      <ul class="mobile-utility-list">
+        <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+        <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- === HEADER_END === -->
+
+
+
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../solutions/index.html">お悩み別解決策</a></li>
+        <li aria-current="page">フレイル</li>
+      </ol>
+    </div>
+  </nav>
+
+  
+
+    <main id="main-content">
+      <section class="section-spacing bg-soft">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">Solutions: Frailty</span>
+            <h1>疲れやすい・元気がでない（フレイル）</h1>
+            <p class="text-lead text-muted mt-lg">
+              以前より体力が落ちた、何となくやる気が起きない。年齢のせいと諦める前に、心身の「虚弱（フレイル）」をチェックしてみませんか？
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-spacing">
+        <div class="container container-narrow">
+          <div class="card bg-soft p-xl mb-2xl">
+            <h2 style="font-size: 1.5rem; margin-bottom: var(--space-md);">このようなお悩みはありませんか？</h2>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>以前に比べて、歩く速度が遅くなったと感じる</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>これまでは楽しめていた趣味や外出が、少し億劫になった</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>半年間で2~3kg以上の体重減少があった（意図せず）</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>ペットボトルのキャップが開けにくくなるなど、握力の低下を感じる</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mb-3xl">
+            <h2 style="margin-bottom: var(--space-lg);">なぜ「フレイル」が重要なのでしょうか？</h2>
+            <p class="text-muted">
+              フレイルとは、健康な状態と要介護状態の「中間」の時期を指します。多くの人が「歳だから仕方ない」と見過ごしがちですが、実はこの時期に適切な栄養と運動、そして社会とのつながりを持つことで、健康な状態に引き返せることが分かっています。
+            </p>
+            <div class="card mt-xl" style="border-left: 4px solid var(--color-accent);">
+              <h4 style="margin-bottom: var(--space-sm);">放置するリスク</h4>
+              <p class="text-sm text-muted mb-0">
+                フレイルを放置すると、インフルエンザなどの感染症重症化や、転倒による骨折のリスクが急激に高まります。気づかないうちに心身の機能が低下し、数年以内に要介護状態になる可能性も高くなります。
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-3xl">
+             <h2 style="margin-bottom: var(--space-lg);">べるつりーの統合サポート</h2>
+             <p class="text-muted mb-xl">身体のケアだけでなく、心と生活のサイクルを整えるアプローチで「元気」を取り戻します。</p>
+             
+             <div class="grid grid-3" style="gap: var(--space-lg);">
+                <div class="card height-full">
+                   <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏃</div>
+                   <h4 style="margin-bottom: var(--space-md);">全身の底上げ<br/>(べるフィット)</h4>
+                   <p class="text-sm text-muted">全身の血流を促進する低負荷運動で、疲れにくい身体へ。姿勢が整うことで呼吸も深くなり、活力が高まります。</p>
+                </div>
+                <div class="card height-full">
+                   <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏠</div>
+                   <h4 style="margin-bottom: var(--space-md);">自律神経の調整<br/>(訪問施術)</h4>
+                   <p class="text-sm text-muted">鍼灸やマッサージで睡眠の質や食欲を改善。内側から「動きたくなる身体」へのコンディションを整えます。</p>
+                </div>
+                <div class="card height-full">
+                   <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🤝</div>
+                   <h4 style="margin-bottom: var(--space-md);">地域とのつながり<br/>(コミュニティ)</h4>
+                   <p class="text-sm text-muted">地域の居場所づくりやイベントを通じ、社会との接点を維持。孤立を防ぐことが、心の健康を支える最大の予防策です。</p>
+                </div>
+             </div>
+          </div>
+
+          <div class="bg-alt p-xl border-radius-md mb-3xl">
+             <h3 style="margin-bottom: var(--space-lg); text-align: center;">解決のイメージ</h3>
+             <div class="editorial-split" style="align-items: center;">
+                <div>
+                   <p style="font-weight: var(--font-weight-bold); margin-bottom: var(--space-sm);">80代・男性の事例</p>
+                   <p class="text-muted text-sm">
+                      食が細くなり閉じこもりがちだった方が、地域の「セミナー」をきっかけに相談。最初は週1回の訪問マッサージで全身をほぐし、徐々に体力をつけて現在は「べるフィット」で同世代の方との交流を楽しみながら運動を継続されています。
+                   </p>
+                </div>
+                <div style="background: var(--color-border); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                   <span class="text-muted">地域交流風景（イメージ）</span>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-spacing container" style="padding-bottom: 0;">
+        <div class="mb-4xl">
+          <div class="card bg-alt p-xl" style="border-top: 4px solid var(--color-primary);">
+            <h2 style="margin-bottom: var(--space-md);">フレイルへの、べるつりーのアプローチ</h2>
+            <p class="text-muted mb-lg">
+              体力の衰えや「何となくやる気が起きない」といった状態（フレイル）でお悩みの方へ。<br/>
+              べるつりーでは、心身の両面から活力を取り戻すサポートを行います。まずは<strong>「訪問鍼灸マッサージ」</strong>で自律神経を整え、睡眠の質や食欲を改善して「動きたくなる身体」へとコンディションを整えます。その後、<strong>「べるフィット」</strong>や<strong>「リーフ」</strong>での低負荷運動へとつなげ、全身の血流を促進し疲れにくい身体を作ることで、再び「自分らしい生活」を楽しめるよう支援します。
+            </p>
+            
+            <h4 style="margin-bottom: var(--space-sm);">関連する解決策（サービスの詳細）を見る</h4>
+            <div class="grid grid-2 mb-xl">
+              <a href="../../services/acupuncture/index.html" class="card card-hover" style="border-color: var(--color-border-strong); text-decoration: none; color: inherit;">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">🏠</div>
+                <h5 style="margin-bottom: 4px;">訪問鍼灸マッサージ</h5>
+                <p class="text-sm text-muted mb-0">ご自宅に伺い、自律神経の調整や内面からの全身コンディショニングを行います。</p>
+              </a>
+              <a href="../../services/fitness/index.html" class="card card-hover" style="border-color: var(--color-border-strong); text-decoration: none; color: inherit;">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">🏃</div>
+                <h5 style="margin-bottom: 4px;">べるフィット / リーフ</h5>
+                <p class="text-sm text-muted mb-0">無理のない低負荷運動で、疲れにくい身体と活力を養います。</p>
+              </a>
+            </div>
+
+            <div style="text-align: center; border-top: 1px solid var(--color-border); padding-top: var(--space-lg);">
+               <p class="text-sm text-muted mb-md">現在の状態に合わせた最適なステップをご提案します。本格的な介護が必要になる前に、まずは無料相談へお進みください。</p>
+               <a href="../../contact/index.html" class="btn btn-primary" style="min-width: 280px;">ご相談窓口へ進む</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contextual Sub-navigation -->
+      <section class="section-spacing container">
+        <div class="sub-nav-block">
+          <h3 class="sub-nav-title">関連する他の機能</h3>
+          <div class="sub-nav-grid">
+            <a href="../fall-risk/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">⚠️</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">転倒リスク</span>
+                <span class="sub-nav-desc">ふらつき改善と予防</span>
+              </div>
+            </a>
+            <a href="../../cases/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">📋</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">改善事例</span>
+                <span class="sub-nav-desc">サポート実績を見る</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- === FOOTER_START === -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../../index.html">ホーム</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+              <li><a href="../../model/index.html">理念とモデル</a></li>
+              <li><a href="../../news/index.html">お知らせ</a></li>
+              <li><a href="../../recruit/index.html">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../../solutions/index.html">悩み別解決策</a></li>
+              <li><a href="../../services/index.html">サービス一覧</a></li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../family/index.html">ご家族の方へ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../../community/index.html">地域連携・活動</a></li>
+              <li><a href="../../contact/index.html">お問い合わせ</a></li>
+              <li><a href="../../privacy-policy/index.html">個人情報保護方針</a></li>
+              <li><a href="../../terms-of-service/index.html">利用規約</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+<!-- === FOOTER_END === -->
+
+
+
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
+    <a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="member-sticky-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>会員様はこちら (予約・利用)</span>
+    </a>
+  </body>
+</html>

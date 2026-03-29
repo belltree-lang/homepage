@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ご相談窓口 | 株式会社べるつりー</title>
+    <meta name="description" content="株式会社べるつりーのご相談窓口です。サービス選び、将来準備などお気軽にご相談ください。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+  <!-- === HEADER_START === -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="site-logo" href="../index.html">BellTree</a>
+
+        <div class="site-nav-group">
+          <!-- Desktop Utility Nav -->
+          <nav class="utility-nav" aria-label="補助ナビゲーション">
+            <ul class="utility-list">
+              <li><a href="../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+              <li><a href="../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Desktop Main Nav -->
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <ul class="nav-list">
+              <li><a href="../index.html">ホーム</a></li>
+              <li class="has-dropdown">
+                <a href="../solutions/index.html">お悩み別解決策</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">身体の悩み</p>
+                    <ul>
+                      <li><a href="../solutions/stroke/index.html">脳卒中</a></li>
+                      <li><a href="../solutions/knee-pain/index.html">膝痛</a></li>
+                      <li><a href="../solutions/parkinson/index.html">パーキンソン病</a></li>
+                      <li><a href="../solutions/lower-back-pain/index.html">腰痛</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">生活機能・予防</p>
+                    <ul>
+                      <li><a href="../solutions/fall-risk/index.html">転倒リスク</a></li>
+                      <li><a href="../solutions/frailty/index.html">フレイル</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護・終活</p>
+                    <ul>
+                      <li><a href="../solutions/home-care-start/index.html">介護の始め方</a></li>
+                      <li><a href="../services/shukatsu/index.html">終活の準備</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown">
+                <a href="../services/index.html">サービス一覧</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">健康・運動</p>
+                    <ul>
+                      <li><a href="../services/fitness/index.html">べるフィット</a></li>
+                      <li><a href="../services/leaf/index.html">リーフ（通所リハ）</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">訪問施術</p>
+                    <ul>
+                      <li><a href="../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護支援</p>
+                    <ul>
+                      <li><a href="../services/home-care/index.html">居宅介護支援</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">法務支援</p>
+                    <ul>
+                      <li><a href="../services/legal/index.html">行政書士・終活支援</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="../cases/index.html">改善事例</a></li>
+              <li><a href="../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../about/index.html">会社概要</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-cta">
+          <a class="nav-cta" href="../contact/index.html">ご相談窓口</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          メニュー
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    <ul class="mobile-nav-list">
+      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
+      <li><a href="../recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
+      <li><a href="../index.html">ホーム</a></li>
+      <li>
+        <button class="mobile-dropdown-toggle">お悩み別解決策</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">身体の悩み</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../solutions/stroke/index.html">脳卒中</a></li>
+              <li><a href="../solutions/knee-pain/index.html">膝痛</a></li>
+              <li><a href="../solutions/parkinson/index.html">パーキンソン病</a></li>
+              <li><a href="../solutions/lower-back-pain/index.html">腰痛</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">生活機能・予防</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../solutions/fall-risk/index.html">転倒リスク</a></li>
+              <li><a href="../solutions/frailty/index.html">フレイル</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護・終活</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../solutions/home-care-start/index.html">介護の始め方</a></li>
+              <li><a href="../services/shukatsu/index.html">終活の準備</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="mobile-dropdown-toggle">サービス一覧</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">健康・運動</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../services/fitness/index.html">べるフィット</a></li>
+              <li><a href="../services/leaf/index.html">リーフ（通所リハ）</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">訪問施術</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../services/home-care/index.html">居宅介護支援</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">法務支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../services/legal/index.html">行政書士・終活支援</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="../cases/index.html">改善事例</a></li>
+      <li><a href="../team/index.html">スタッフ紹介</a></li>
+      <li><a href="../about/index.html">会社概要</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <a href="../contact/index.html" class="nav-cta mobile-menu-cta">ご相談窓口</a>
+      <ul class="mobile-utility-list">
+        <li><a href="../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+        <li><a href="../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- === HEADER_END === -->
+
+
+
+  
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../index.html">ホーム</a></li>
+        <li aria-current="page">ご相談窓口</li>
+      </ol>
+    </div>
+  </nav>
+
+  
+
+    <main id="main-content">
+      <section class="section-spacing bg-soft">
+        <div class="container">
+          <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <span class="eyebrow" style="margin-bottom: var(--space-md);">Contact</span>
+            <h1 style="margin-bottom: var(--space-lg);">ご相談窓口</h1>
+            <p class="text-lead text-muted">
+              「何から相談すればいいか分からない」という状態でも構いません。<br/>目的の窓口をお選びいただくか、フォームよりお気軽にご連絡ください。
+            </p>
+          </div>
+
+          <!-- Inquiry Branching Section -->
+          <div class="contact-branch-grid">
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏠</div>
+                <h3>訪問施術</h3>
+                <p>訪問鍼灸マッサージの無料体験、医療保険の利用、ご家族・ケアマネジャー様からのご相談はこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
+
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">📋</div>
+                <h3>居宅介護支援</h3>
+                <p>ケアプランの作成依頼、介護保険の手続き、在宅での生活支援体制に関するご相談はこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
+
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏃</div>
+                <h3>べるフィット</h3>
+                <p>フィットネス施設の見学予約、運動プログラムの内容、利用料金に関するお問い合わせはこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
+
+            <div class="card branch-card">
+              <div>
+                <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🤝</div>
+                <h3>採用情報</h3>
+                <p>求人への応募、施設見学の希望、採用条件やキャリアに関するご質問・ご相談はこちら。</p>
+              </div>
+              <a href="#contact-form" class="btn btn-secondary btn-sm" style="padding: 0.6rem 1rem;">この件で相談する</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-form" class="section-spacing container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Inquiry Form</span>
+          <h2>お問い合わせフォーム</h2>
+          <p class="text-muted mt-md">以下のフォームに必要事項をご記入ください。通常2営業日以内に担当者よりご連絡いたします。</p>
+        </div>
+
+        <div class="contact-form-section">
+          <form action="#" method="post" data-form-type="inquiries" data-redirect-url="./thanks/index.html">
+            <!-- Basic Honeypot to prevent simple bots -->
+            <div style="display:none;">
+              <label>Leave this empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry_type">お問い合わせ種別 <span style="color: var(--color-accent);">必須</span></label>
+              <select id="inquiry_type" name="お問い合わせ種別" class="form-control" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="訪問施術について">訪問施術について</option>
+                <option value="居宅介護支援について">居宅介護支援について</option>
+                <option value="べるフィット（運動）について">べるフィット（運動）について</option>
+                <option value="採用について">採用について</option>
+                <option value="その他">その他のお問い合わせ</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="company">会社名・団体名 <span style="color: rgba(255,255,255,0.5);">任意</span></label>
+              <input type="text" id="company" name="会社名・団体名" class="form-control" placeholder="例：株式会社べるつりー">
+            </div>
+
+            <div class="grid grid-2" style="gap: var(--space-md);">
+              <div class="form-group">
+                <label for="name">氏名 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="text" id="name" name="氏名" class="form-control" placeholder="例：山田 太郎" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">電話番号 <span style="color: var(--color-accent);">必須</span></label>
+                <input type="tel" id="phone" name="電話番号" class="form-control" placeholder="000-0000-0000" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
+              <input type="email" id="email" name="メールアドレス" class="form-control" placeholder="example@mail.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">お問い合わせ内容 <span style="color: var(--color-accent);">必須</span></label>
+              <textarea id="message" name="お問い合わせ内容" class="form-control" placeholder="ご質問やご相談内容を詳しくご記入ください。" required></textarea>
+            </div>
+
+            <p style="font-size: var(--font-size-sm); color: rgba(255,255,255,0.7); margin-bottom: var(--space-md);">
+              お問い合わせ内容を確認のうえ、通常2営業日以内を目安にご連絡いたします。<br/>
+              お急ぎの方はお電話（042-682-2839）にてご連絡ください。
+            </p>
+
+            <div class="form-privacy" style="margin-bottom: var(--space-lg);">
+              <label class="form-privacy-check" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                 <input type="checkbox" name="privacy_agreement" required>
+                 <span><a href="../privacy-policy/index.html" target="_blank" style="text-decoration: underline;">プライバシーポリシー</a>に同意のうえ送信します</span>
+              </label>
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-primary" style="min-width: 280px;">送信する</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section-spacing bg-alt">
+        <div class="container-narrow" style="margin: 0 auto;">
+          <div class="section-header text-center">
+            <span class="eyebrow">Direct Contact</span>
+            <h2>お急ぎの方はお電話で</h2>
+            <p class="text-muted mt-md">代表番号におかけいただければ、各担当へお繋ぎいたします。</p>
+          </div>
+          
+          <div class="card" style="text-align: center; padding: var(--space-xl); border-color: var(--color-primary);">
+             <div style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--space-sm);">☎️</div>
+             <h3 style="margin-bottom: var(--space-xs);">042-000-0000</h3>
+             <p class="text-muted text-sm">受付時間：平日 9:00 - 18:00</p>
+             <a href="tel:042-000-0000" class="btn btn-secondary mt-md">お電話をかける</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- === FOOTER_START === -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../index.html">ホーム</a></li>
+              <li><a href="../about/index.html">会社概要</a></li>
+              <li><a href="../model/index.html">理念とモデル</a></li>
+              <li><a href="../news/index.html">お知らせ</a></li>
+              <li><a href="../recruit/index.html">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../solutions/index.html">悩み別解決策</a></li>
+              <li><a href="../services/index.html">サービス一覧</a></li>
+              <li><a href="../cases/index.html">改善事例</a></li>
+              <li><a href="../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../family/index.html">ご家族の方へ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../community/index.html">地域連携・活動</a></li>
+              <li><a href="../contact/index.html">お問い合わせ</a></li>
+              <li><a href="../privacy-policy/index.html">個人情報保護方針</a></li>
+              <li><a href="../terms-of-service/index.html">利用規約</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+<!-- === FOOTER_END === -->
+
+
+
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
+    <a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="member-sticky-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>会員様はこちら (予約・利用)</span>
+    </a>
+    <script src="../assets/js/form-handler.js"></script>
+  </body>
+</html>
+

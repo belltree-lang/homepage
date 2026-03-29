@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>介護の始め方でお悩みの方へ | 株式会社べるつりー</title>
+    <meta name="description" content="介護保険の申請から、ご家族の負担軽減、生活設計まで、ケアマネジャーが親身にサポートします。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+  <!-- === HEADER_START === -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="site-logo" href="../../index.html">BellTree</a>
+
+        <div class="site-nav-group">
+          <!-- Desktop Utility Nav -->
+          <nav class="utility-nav" aria-label="補助ナビゲーション">
+            <ul class="utility-list">
+              <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+              <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Desktop Main Nav -->
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <ul class="nav-list">
+              <li><a href="../../index.html">ホーム</a></li>
+              <li class="has-dropdown">
+                <a href="../../solutions/index.html">お悩み別解決策</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">身体の悩み</p>
+                    <ul>
+                      <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+                      <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+                      <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+                      <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">生活機能・予防</p>
+                    <ul>
+                      <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+                      <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護・終活</p>
+                    <ul>
+                      <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+                      <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="has-dropdown">
+                <a href="../../services/index.html">サービス一覧</a>
+                <div class="nav-dropdown">
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">健康・運動</p>
+                    <ul>
+                      <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+                      <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">訪問施術</p>
+                    <ul>
+                      <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">介護支援</p>
+                    <ul>
+                      <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+                    </ul>
+                  </div>
+                  <div class="nav-dropdown-group">
+                    <p class="nav-dropdown-title">法務支援</p>
+                    <ul>
+                      <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-cta">
+          <a class="nav-cta" href="../../contact/index.html">ご相談窓口</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          メニュー
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
+    <ul class="mobile-nav-list">
+      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
+      <li><a href="../../recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
+      <li><a href="../../index.html">ホーム</a></li>
+      <li>
+        <button class="mobile-dropdown-toggle">お悩み別解決策</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">身体の悩み</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/stroke/index.html">脳卒中</a></li>
+              <li><a href="../../solutions/knee-pain/index.html">膝痛</a></li>
+              <li><a href="../../solutions/parkinson/index.html">パーキンソン病</a></li>
+              <li><a href="../../solutions/lower-back-pain/index.html">腰痛</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">生活機能・予防</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/fall-risk/index.html">転倒リスク</a></li>
+              <li><a href="../../solutions/frailty/index.html">フレイル</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護・終活</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../solutions/home-care-start/index.html">介護の始め方</a></li>
+              <li><a href="../../services/shukatsu/index.html">終活の準備</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button class="mobile-dropdown-toggle">サービス一覧</button>
+        <div class="mobile-dropdown-content">
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">健康・運動</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/fitness/index.html">べるフィット</a></li>
+              <li><a href="../../services/leaf/index.html">リーフ（通所リハ）</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">訪問施術</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/acupuncture/index.html">訪問鍼灸マッサージ</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">介護支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+            </ul>
+          </div>
+          <div class="mobile-dropdown-group">
+            <p class="mobile-dropdown-title">法務支援</p>
+            <ul class="mobile-dropdown-links">
+              <li><a href="../../services/legal/index.html">行政書士・終活支援</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="../../cases/index.html">改善事例</a></li>
+      <li><a href="../../team/index.html">スタッフ紹介</a></li>
+      <li><a href="../../about/index.html">会社概要</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <a href="../../contact/index.html" class="nav-cta mobile-menu-cta">ご相談窓口</a>
+      <ul class="mobile-utility-list">
+        <li><a href="../../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
+        <li><a href="../../recruit/index.html" class="utility-link recruit">採用情報</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- === HEADER_END === -->
+
+
+
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="現在位置">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../solutions/index.html">お悩み別解決策</a></li>
+        <li aria-current="page">介護の始め方</li>
+      </ol>
+    </div>
+  </nav>
+
+  
+
+    <main id="main-content">
+      <section class="section-spacing bg-soft">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">Solutions: Home Care Start</span>
+            <h1>介護の始め方がわからない・家族の負担</h1>
+            <p class="text-lead text-muted mt-lg">
+              親の様子が少し変わった、でも何から始めればいい？ 介護の「入り口」で立ち止まっているご家族の不安に、専門家が寄り添います。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-spacing">
+        <div class="container container-narrow">
+          <div class="card bg-soft p-xl mb-2xl">
+            <h2 style="font-size: 1.5rem; margin-bottom: var(--space-md);">このようなことはありませんか？</h2>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>最近、親が同じことを何度も聞くようになったり、忘れ物が増えた</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>実家の掃除が行き届いていない、冷蔵庫の管理ができていない</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>介護保険の申請をしたいが、手続きが複雑でよくわからない</div>
+              </li>
+              <li class="feature-list-item">
+                <div class="feature-list-icon">✓</div>
+                <div>仕事と介護の両立に限界を感じ始めている</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mb-3xl">
+            <h2 style="margin-bottom: var(--space-lg);">「まだ早い」と思っている間に。</h2>
+            <p class="text-muted">
+              介護は、ある日突然始まります。しかし、本格的なトラブルが起きてから動くのでは、ご本人もご家族も疲弊してしまいます。「少し気になる」という今の段階から、制度の仕組みを知り、外部のサポートを検討しておくことが、心の余裕に繋がります。
+            </p>
+            <div class="card mt-xl" style="border-left: 4px solid var(--color-accent);">
+              <h4 style="margin-bottom: var(--space-sm);">べるつりーの役割</h4>
+              <p class="text-sm text-muted mb-0">
+                私たちは、行政の窓口や病院のソーシャルワーカーとはまた違う立場から、お一人おひとりの「暮らし」に密着したアドバイスを行います。まだ介護認定を受けていない方の相談も、広く承っております。
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-3xl">
+             <h2 style="margin-bottom: var(--space-lg);">べるつりーの統合サポート</h2>
+             <p class="text-muted mb-xl">点在する課題を整理し、チームで「暮らしの再設計」をお手伝いします。</p>
+             
+             <div class="grid grid-3" style="gap: var(--space-lg);">
+                <div class="card height-full">
+                   <div style="font-size: 2rem; margin-bottom: var(--space-sm);">📝</div>
+                   <h4 style="margin-bottom: var(--space-md);">ケアマネジメント<br/>(制度活用)</h4>
+                   <p class="text-sm text-muted">複雑な介護保険制度の活用を分かりやすく解説。最適なケアプランを作成し、各サービスとの調整を一手に引き受けます。</p>
+                </div>
+                <div class="card height-full">
+                   <div style="font-size: 2rem; margin-bottom: var(--space-sm);">🏠</div>
+                   <h4 style="margin-bottom: var(--space-md);">在宅ケアの実施<br/>(訪問施術)</h4>
+                   <p class="text-sm text-muted">介護を導入する前段階として、訪問マッサージ等で専門家が定例的に訪問。ご本人の変化をいち早く察知する目となり、安心を届けます。</p>
+                </div>
+                <div class="card height-full">
+                   <div style="font-size: 2rem; margin-bottom: var(--space-sm);">⚖️</div>
+                   <h4 style="margin-bottom: var(--space-md);">将来の法務調整<br/>(べるリーガル)</h4>
+                   <p class="text-sm text-muted">財産管理や成年後見など、介護が進むにつれて生じる法的な懸念を、専門の行政書士が早期にクリアにします。</p>
+                </div>
+             </div>
+          </div>
+
+          <div class="bg-alt p-xl border-radius-md mb-3xl">
+             <h3 style="margin-bottom: var(--space-lg); text-align: center;">解決のイメージ</h3>
+             <div class="editorial-split" style="align-items: center;">
+                <div>
+                   <p style="font-weight: var(--font-weight-bold); margin-bottom: var(--space-sm);">遠方にお住まいのご家族の事例</p>
+                   <p class="text-muted text-sm">
+                      離れて暮らす親の物忘れが心配でご相談。弊社の「訪問マッサージ」を導入することで、週2回の安否確認が可能に。その後、状態に合わせて社内の「ケアマネジャー」と連携し、介護認定の申請からデイサービスの利用開始までスムーズに進行。仕事との両立も続けられています。
+                   </p>
+                </div>
+                <div style="background: var(--color-border); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                   <span class="text-muted">家族相談風景（イメージ）</span>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-spacing container" style="padding-bottom: 0;">
+        <div class="mb-4xl">
+          <div class="card bg-alt p-xl" style="border-top: 4px solid var(--color-primary);">
+            <h2 style="margin-bottom: var(--space-md);">介護の負担と不安に対する、べるつりーのアプローチ</h2>
+            <p class="text-muted mb-lg">
+              「親の様子が少し変わったけれど、何から始めればいいか分からない」とお悩みのご家族へ。<br/>
+              べるつりーでは、まず<strong>「居宅介護支援」</strong>のケアマネジャーが窓口となり、複雑な介護保険の申請から最適なサービス選びまでを一手に引き受けます。また、介護認定を受ける前や初期段階であっても、<strong>「訪問鍼灸マッサージ」</strong>を利用することで定期的に専門職がご自宅に伺い、ご本人のわずかな変化を見逃さない「見守りの目」としてご家族の精神的負担を軽減します。
+            </p>
+            
+            <h4 style="margin-bottom: var(--space-sm);">関連する解決策（サービスの詳細）を見る</h4>
+            <div class="grid grid-2 mb-xl">
+              <a href="../../services/home-care/index.html" class="card card-hover" style="border-color: var(--color-border-strong); text-decoration: none; color: inherit;">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">🤝</div>
+                <h5 style="margin-bottom: 4px;">居宅介護支援（ケアマネ）</h5>
+                <p class="text-sm text-muted mb-0">介護の「入り口」からご家族に寄り添い、負担を減らすケアプランを作成します。</p>
+              </a>
+              <a href="../../services/acupuncture/index.html" class="card card-hover" style="border-color: var(--color-border-strong); text-decoration: none; color: inherit;">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">🏠</div>
+                <h5 style="margin-bottom: 4px;">訪問鍼灸マッサージ</h5>
+                <p class="text-sm text-muted mb-0">定期的な身体ケアを通じて、離れて暮らす親の「安否確認・見守り」としても機能します。</p>
+              </a>
+            </div>
+
+            <div style="text-align: center; border-top: 1px solid var(--color-border); padding-top: var(--space-lg);">
+               <p class="text-sm text-muted mb-md">一人で抱え込まず、まずはご家族の状況をお聞かせください。どんな小さな不安でも結構です。</p>
+               <a href="../../contact/" class="btn btn-primary" style="min-width: 280px;">ご家族向け相談窓口へ進む</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contextual Sub-navigation -->
+      <section class="section-spacing container">
+        <div class="sub-nav-block">
+          <h3 class="sub-nav-title">関連する他の機能</h3>
+          <div class="sub-nav-grid">
+            <a href="../end-of-life-preparation/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">⚖️</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">終活の準備</span>
+                <span class="sub-nav-desc">将来の財産管理・後見</span>
+              </div>
+            </a>
+            <a href="../../cases/index.html" class="sub-nav-item">
+              <span class="sub-nav-icon">📋</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">改善事例</span>
+                <span class="sub-nav-desc">サポート実績を見る</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- === FOOTER_START === -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">BellTree</div>
+            <p style="opacity: 0.8; line-height: 1.6;">株式会社べるつりー<br/>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>企業情報</h3>
+            <ul>
+              <li><a href="../../index.html">ホーム</a></li>
+              <li><a href="../../about/index.html">会社概要</a></li>
+              <li><a href="../../model/index.html">理念とモデル</a></li>
+              <li><a href="../../news/index.html">お知らせ</a></li>
+              <li><a href="../../recruit/index.html">採用情報</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav">
+            <h3>解決策と事例</h3>
+            <ul>
+              <li><a href="../../solutions/index.html">悩み別解決策</a></li>
+              <li><a href="../../services/index.html">サービス一覧</a></li>
+              <li><a href="../../cases/index.html">改善事例</a></li>
+              <li><a href="../../team/index.html">スタッフ紹介</a></li>
+              <li><a href="../../family/index.html">ご家族の方へ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav">
+            <h3>地域・お問い合わせ</h3>
+            <ul>
+              <li><a href="../../community/index.html">地域連携・活動</a></li>
+              <li><a href="../../contact/index.html">お問い合わせ</a></li>
+              <li><a href="../../privacy-policy/index.html">個人情報保護方針</a></li>
+              <li><a href="../../terms-of-service/index.html">利用規約</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; BellTree Inc. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+<!-- === FOOTER_END === -->
+
+
+
+    <script>
+      // Mobile Menu Toggle logic
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileClose = document.querySelector('.mobile-close');
+      const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+          menuToggle.setAttribute('aria-expanded', 'true');
+        });
+
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        if (mobileClose) {
+          mobileClose.addEventListener('click', closeMenu);
+        }
+        
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Mobile Dropdown logic
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          toggle.classList.toggle('is-active');
+          content.classList.toggle('is-active');
+        });
+      });
+    </script>
+    <a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="member-sticky-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <span>会員様はこちら (予約・利用)</span>
+    </a>
+  </body>
+</html>

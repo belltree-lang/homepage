@@ -1,11 +1,11 @@
-name: Deploy to Lolipop
+name: Deploy to Staging (/test/)
 
 on:
   workflow_dispatch:
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  staging-deploy:
+    name: 🎉 Deploy to /test/
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
@@ -13,13 +13,14 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: 📂 Sync files
+      - name: 📂 Sync files to staging
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
+          server-dir: test/
           exclude: |
             **/.git*
             **/.git*/**
@@ -31,3 +32,4 @@ jobs:
             scripts/**
             docs/**
             *.md
+            lolipop_staging/**

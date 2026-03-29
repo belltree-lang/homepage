@@ -1,0 +1,13 @@
+<svg width="220" height="72" viewBox="0 0 220 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="72" rx="18" fill="#FFFFFF"/>
+  <rect x="18" y="18" width="36" height="36" rx="12" fill="#2C3E50" fill-opacity="0.08"/>
+  <path d="M28 31.5H44V34.3H37.8V49H34.2V34.3H28V31.5Z" fill="#2C3E50"/>
+  <path d="M68.4 46V31.5H80.8V34.6H71.9V37.2H80V40.1H71.9V46H68.4Z" fill="#1F4E79"/>
+  <path d="M83.9 46V31.5H87.5V46H83.9Z" fill="#1F4E79"/>
+  <path d="M90.8 46V31.5H94.4L101.6 40.9V31.5H105.1V46H101.8L94.3 36.2V46H90.8Z" fill="#1F4E79"/>
+  <path d="M108.6 46V31.5H121.2V34.6H112.1V37.1H120.5V40H112.1V42.9H121.4V46H108.6Z" fill="#1F4E79"/>
+  <path d="M123.2 31.5H139.1V34.3H132.9V46H129.3V34.3H123.2V31.5Z" fill="#2C3E50"/>
+  <path d="M141.1 46V31.5H144.7V46H141.1Z" fill="#2C3E50"/>
+  <path d="M147.9 46V31.5H151.5L156.3 39.2L161.2 31.5H164.6V46H161.2V37.2L157.1 43.6H155.4L151.4 37.2V46H147.9Z" fill="#2C3E50"/>
+  <path d="M167.5 31.5H171.4L176 38.3L180.5 31.5H184.4L177.8 41V46H174.2V41L167.5 31.5Z" fill="#2C3E50"/>
+</svg>
