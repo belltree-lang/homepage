@@ -31,3 +31,4 @@ jobs:
             scripts/**
             docs/**
             *.md
+            lolipop_staging/**

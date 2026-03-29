@@ -8,14 +8,16 @@ on:
 
 jobs:
   staging-deploy:
-    name: 🚀 Deploy to /test/
+    name: 🎉 Deploy to /test/
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: 🚚 Get latest code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
-      - name: Sync files to staging
+      - name: 📂 Sync files to staging
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -31,6 +33,7 @@ jobs:
             governance/**
             tasks/**
             reports/**
+            scripts/**
             docs/**
             *.md
             lolipop_staging/**
