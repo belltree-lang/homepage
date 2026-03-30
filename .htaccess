@@ -4,8 +4,9 @@
 
 RewriteEngine On
 
-# Avoid infinite loops and allow assets to load
+# Avoid infinite loops and allow assets to load, and exclude /test/
 RewriteCond %{REQUEST_URI} !/maintenance\.html$
+RewriteCond %{REQUEST_URI} !^/test/
 RewriteCond %{REQUEST_URI} !assets/
 RewriteCond %{REQUEST_URI} !images/
 RewriteCond %{REQUEST_URI} !fonts/
