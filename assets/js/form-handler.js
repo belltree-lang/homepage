@@ -49,18 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const formData = new FormData(form);
-      const dataPayload = Object.fromEntries(formData.entries());
-      dataPayload.formType = form.getAttribute('data-form-type');
+      formData.append('formType', form.getAttribute('data-form-type'));
+      const urlEncodedData = new URLSearchParams(formData).toString();
 
       try {
-        // We use text/plain to avoid CORS preflight issues with GAS
+        // Use application/x-www-form-urlencoded to integrate with GAS doPost parameters natively
         const response = await fetch(BELLTREE_FORM_CONFIG.gasEndpoint, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'text/plain'
+            'Content-Type': 'application/x-www-form-urlencoded'
           },
-          body: JSON.stringify(dataPayload)
+          body: urlEncodedData
         });
         
         // no-cors returns opaque response, assume success if no network error
