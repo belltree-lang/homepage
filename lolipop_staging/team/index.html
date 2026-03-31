@@ -63,6 +63,70 @@
         line-height: var(--line-height-base);
         margin-bottom: 0;
       }
+      /* Representative Section Styles */
+      .representative-container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: var(--space-2xl);
+        padding: var(--space-xl);
+      }
+      .representative-img-wrapper {
+        flex: 0 0 200px;
+        text-align: center;
+      }
+      .representative-img {
+        width: 180px;
+        height: 180px;
+        background: var(--color-border-strong);
+        border-radius: var(--radius-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--color-surface);
+      }
+      .representative-content {
+        flex: 1;
+      }
+      .representative-label {
+        display: inline-block;
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-accent);
+        letter-spacing: 0.1em;
+        margin-bottom: var(--space-xs);
+        text-transform: uppercase;
+      }
+      .representative-name {
+        font-size: 2rem;
+        margin-bottom: var(--space-xs);
+      }
+      .representative-title {
+        font-size: var(--font-size-sm);
+        color: var(--color-primary);
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-lg);
+      }
+      .representative-message {
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-relaxed);
+        color: var(--color-text-muted);
+      }
+      @media (max-width: 767px) {
+        .representative-container {
+          flex-direction: column;
+          text-align: center;
+          gap: var(--space-xl);
+        }
+        .representative-img-wrapper {
+          flex: 0 0 auto;
+        }
+        .representative-img {
+          margin: 0 auto;
+        }
+      }
     </style>
   </head>
   <body>
@@ -78,7 +142,7 @@
             <ul class="utility-list">
               <li><a href="../community/index.html" class="utility-link">医療・介護関係者の皆様へ</a></li>
               <li><a href="../recruit/index.html" class="utility-link recruit">採用情報</a></li>
-              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">会員様ページ</a></li>
+              <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="utility-link header-utility-action">べるフィット会員様ページ</a></li>
             </ul>
           </nav>
 
@@ -166,7 +230,6 @@
   <div id="mobile-menu" class="mobile-menu-overlay">
     <button class="mobile-close" aria-label="メニューを閉じる">&times;</button>
     <ul class="mobile-nav-list">
-      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" style="color: var(--color-accent); font-weight: bold;">会員様ページ (予約・利用)</a></li>
       <li><a href="../recruit/index.html" style="color: var(--color-accent);">採用情報</a></li>
       <li><a href="../index.html">ホーム</a></li>
       <li>
@@ -230,6 +293,7 @@
       <li><a href="../cases/index.html">改善事例</a></li>
       <li><a href="../team/index.html">スタッフ紹介</a></li>
       <li><a href="../about/index.html">会社概要</a></li>
+      <li><a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/">べるフィット会員様ページ</a></li>
     </ul>
 
     <div class="mobile-menu-footer">
@@ -270,18 +334,29 @@
         </div>
       </section>
 
+      <section class="section-spacing bg-alt">
+        <div class="container">
+          <div class="representative-container">
+            <div class="representative-img-wrapper">
+              <div class="representative-img">👤</div>
+            </div>
+            <div class="representative-content">
+              <span class="representative-label">Message from Representative</span>
+              <h2 class="representative-name">鈴木 俊平</h2>
+              <p class="representative-title">代表取締役 / 行政書士 / 健康運動指導士</p>
+              <div class="representative-message">
+                <p>運動・医療・介護、そして終活の分野が分断されている現状を変えたい。そんな想いから「べるつりー」は始まりました。私たちが提供したいのは「点」のサービスではなく、状態が変わっても途切れることのない「一本の線の支援」です。地域の皆様にとっての「第二の家族」のような存在として、専門性と温かさを両立し、人生の後半戦を共にあゆむパートナーであり続けたいと考えています。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section-spacing">
         <div class="container">
           <h2 class="text-center mb-3xl">多職種の専門家が、あなたの生活をチームで支えます</h2>
           <div class="staff-grid">
-            <!-- Row 1 -->
-            <div class="card staff-card text-center">
-               <div class="staff-profile-img">👤</div>
-               <h3 class="staff-name">鈴木 俊平</h3>
-               <p class="staff-title">代表取締役 / 行政書士 / フィットネストレーナー</p>
-               <p class="staff-intro">運動・医療・介護の分野が分断されている現状を変えたいという想いから、BellTreeの取り組みをスタートしました。地域で最後まで自分らしく生活できる仕組みづくりを目指し、運動支援・医療連携・介護支援・終活サポートまで一体的に取り組んでいます。</p>
-            </div>
-
+            <!-- Row 1: 鍼灸マッサージ部門 -->
             <div class="card staff-card text-center">
                <div class="staff-profile-img">👤</div>
                <h3 class="staff-name">丸山 裕久</h3>
@@ -291,12 +366,19 @@
 
             <div class="card staff-card text-center">
                <div class="staff-profile-img">👤</div>
+               <h3 class="staff-name">柳内 克尚</h3>
+               <p class="staff-title">鍼灸マッサージ師 / 町田・多摩エリア副院長</p>
+               <p class="staff-intro">接客業などの経験も活かし、「一人ひとりの心に寄り添う」ことを大切にしています。不調や不安を和らげ、日々の生活が前向きになるよう、誠実な施術と丁寧な対話を重ねて参ります。</p>
+            </div>
+
+            <div class="card staff-card text-center">
+               <div class="staff-profile-img">👤</div>
                <h3 class="staff-name">菅原 直志</h3>
                <p class="staff-title">鍼灸師 / 八王子・日野エリア副院長</p>
                <p class="staff-intro">痛みの改善だけでなく、その原因となる身体の使い方や筋力バランスにも注目し、施術と運動指導を組み合わせたサポートを行っています。</p>
             </div>
 
-            <!-- Row 2 -->
+            <!-- Row 2: 鍼灸・フィットネス部門 -->
             <div class="card staff-card text-center">
                <div class="staff-profile-img">👤</div>
                <h3 class="staff-name">中澤 仁</h3>
@@ -313,12 +395,19 @@
 
             <div class="card staff-card text-center">
                <div class="staff-profile-img">👤</div>
+               <h3 class="staff-name">山本 誠一</h3>
+               <p class="staff-title">べるフィット施設長</p>
+               <p class="staff-intro">会員様が「ここに来ると自然と元気が出る」と感じていただける場所づくりを心がけています。「今の一歩先」へ踏み出す皆様を一番近くで伴走し応援します。</p>
+            </div>
+
+            <!-- Row 3: ケアマネ・フィットネス部門 -->
+            <div class="card staff-card text-center">
+               <div class="staff-profile-img">👤</div>
                <h3 class="staff-name">熊倉 篤史</h3>
                <p class="staff-title">主任介護支援専門員 / べるつりー居宅主任ケアマネジャー</p>
                <p class="staff-intro">ご本人やご家族の想いを整理しながら、制度や地域資源をつなぐケアマネジメントを行っています。</p>
             </div>
 
-            <!-- Row 3 -->
             <div class="card staff-card text-center">
                <div class="staff-profile-img">👤</div>
                <h3 class="staff-name">三好 裕美</h3>
@@ -396,6 +485,13 @@
 
 
 
+    <div class="fab-container">
+      <div class="fab-label">ご相談はこちら</div>
+      <a href="../contact/" class="fab-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        <span>相談窓口</span>
+      </a>
+    </div>
     <script>
       // Mobile Menu Toggle logic
       const menuToggle = document.querySelector('.menu-toggle');
@@ -435,9 +531,6 @@
         });
       });
     </script>
-    <a href="https://bellmfit.hacomono.jp/reserve/schedule/1/7/" class="member-sticky-cta">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-      <span>会員様はこちら (予約・利用)</span>
-    </a>
+
   </body>
 </html>
