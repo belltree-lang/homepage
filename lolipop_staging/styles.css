@@ -863,6 +863,15 @@ p:last-child { margin-bottom: 0; }
   box-shadow: var(--shadow-md);
 }
 
+/* Card alignment for grids (ensures same height and flex push for bottom elements) */
+.card-stack {
+  display: flex;
+  flex-direction: column;
+}
+.card-stack > p:last-child {
+  margin-top: auto;
+}
+
 .editorial-split {
   display: grid;
   grid-template-columns: 1fr;
@@ -1119,6 +1128,67 @@ p:last-child { margin-bottom: 0; }
 .text-sm     { font-size: var(--font-size-sm); }
 .text-xs     { font-size: 0.75rem; }
 .text-accent { color: var(--color-accent); }
+.text-muted-relaxed { opacity: 0.8; line-height: 1.6; }
+
+/* Utility — Layout */
+.grid-gap-md { gap: var(--space-md); }
+.grid-gap-lg { gap: var(--space-lg); }
+.grid-gap-xl { gap: var(--space-xl); }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+
+
+/* Card & Section Variants */
+.app-guide-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.app-guide-item {
+  background: rgba(0, 0, 0, 0.2);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.app-guide-num {
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-form-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  color: var(--color-text);
+}
+
+.form-input-field {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.form-privacy-notice {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: #f9f9f9;
+  border-radius: var(--radius-md);
+}
+
+.editorial-img-focus {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+}
 
 /* Floating Action Button (FAB) */
 .fab-container {
@@ -1136,6 +1206,14 @@ p:last-child { margin-bottom: 0; }
   .fab-container {
     bottom: var(--space-md);
     right: var(--space-md);
+  }
+}
+@media (max-width: 599px) {
+  .fab-label {
+    display: none;
+  }
+  .fab-button span {
+    display: none;
   }
 }
 @keyframes pulse-ring {
