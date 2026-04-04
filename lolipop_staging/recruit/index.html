@@ -1015,9 +1015,7 @@
     <!-- CTA -->
     <section id="apply" class="section-spacing container">
       <div class="cta-section">
-        <span
-          style="display: block; font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.65);">Apply
-          / Contact</span>
+        <span class="eyebrow">APPLY / CONTACT</span>
         <h2 style="margin-bottom: var(--space-md);">「話だけ聞きたい」で<br />まったく構いません。</h2>
         <p
           style="color: rgba(255,255,255,0.8); max-width: 520px; margin: 0 auto var(--space-xl); font-size: var(--font-size-lead); line-height: var(--line-height-loose);">
@@ -1043,45 +1041,45 @@
           </div>
         </div>
         <!-- 採用専用フォーム -->
-        <div class="contact-form-section" style="margin-top: var(--space-2xl); background: var(--color-surface); border-radius: 8px; padding: var(--space-xl); color: var(--color-text);">
-          <h3 style="text-align: center; margin-bottom: var(--space-lg); color: var(--color-text);">採用・見学 エントリーフォーム</h3>
-          <p style="text-align: center; font-size: var(--font-size-sm); color: var(--color-text-light); margin-bottom: var(--space-xl);">内容を確認のうえ、通常2営業日以内を目安にご連絡いたします。<br/>履歴書等の資料提出が必要な場合は、こちらから改めてご案内いたします。</p>
+        <div class="contact-form-card">
+          <h3 class="text-center mb-lg">採用・見学 エントリーフォーム</h3>
+          <p class="text-center text-sm mb-xl" style="color: var(--color-text-light);">内容を確認のうえ、通常2営業日以内を目安にご連絡いたします。<br/>履歴書等の資料提出が必要な場合は、こちらから改めてご案内いたします。</p>
 
-          <form action="#" method="post" data-form-type="recruit_applications" data-redirect-url="./thanks/index.html" style="text-align: left;">
+          <form action="#" method="post" data-form-type="recruit_applications" data-redirect-url="./thanks/index.html" class="text-left">
             <div style="display:none;">
               <label>Leave empty: <input type="text" name="url_website_hp" tabindex="-1"></label>
             </div>
 
-            <div class="grid grid-2" style="gap: var(--space-md);">
+             <div class="grid grid-2 grid-gap-md">
               <div class="form-group">
-                <label for="req_name" style="color: var(--color-text);">氏名 <span style="color: var(--color-accent);">必須</span></label>
-                <input type="text" id="req_name" name="氏名" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                <label for="req_name">氏名 <span class="text-accent">必須</span></label>
+                <input type="text" id="req_name" name="氏名" class="form-control" required>
               </div>
               <div class="form-group">
-                <label for="req_kana" style="color: var(--color-text);">ふりがな <span style="color: var(--color-accent);">必須</span></label>
-                <input type="text" id="req_kana" name="ふりがな" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
-              </div>
-            </div>
-
-            <div class="grid grid-2" style="gap: var(--space-md);">
-              <div class="form-group">
-                <label for="req_email" style="color: var(--color-text);">メールアドレス <span style="color: var(--color-accent);">必須</span></label>
-                <input type="email" id="req_email" name="メールアドレス" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
-              </div>
-              <div class="form-group">
-                <label for="req_phone" style="color: var(--color-text);">電話番号 <span style="color: var(--color-accent);">必須</span></label>
-                <input type="tel" id="req_phone" name="電話番号" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+                <label for="req_kana">ふりがな <span class="text-accent">必須</span></label>
+                <input type="text" id="req_kana" name="ふりがな" class="form-control" required>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="req_age" style="color: var(--color-text);">年齢 <span style="color: var(--color-accent);">必須</span></label>
-              <input type="number" id="req_age" name="年齢" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+            <div class="grid grid-2 grid-gap-md">
+              <div class="form-group">
+                <label for="req_email">メールアドレス <span class="text-accent">必須</span></label>
+                <input type="email" id="req_email" name="メールアドレス" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="req_phone">電話番号 <span class="text-accent">必須</span></label>
+                <input type="tel" id="req_phone" name="電話番号" class="form-control" required>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="req_job" style="color: var(--color-text);">希望職種 <span style="color: var(--color-accent);">必須</span></label>
-              <select id="req_job" name="希望職種" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              <label for="req_age">年齢 <span class="text-accent">必須</span></label>
+              <input type="number" id="req_age" name="年齢" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="req_job">希望職種 <span class="text-accent">必須</span></label>
+              <select id="req_job" name="希望職種" class="form-control" required>
                 <option value="" disabled selected>選択してください</option>
                 <option value="理学療法士・作業療法士">理学療法士・作業療法士</option>
                 <option value="鍼灸師・マッサージ師">鍼灸師・マッサージ師</option>
@@ -1092,13 +1090,13 @@
             </div>
 
             <div class="form-group">
-              <label for="req_conditions" style="color: var(--color-text);">勤務希望条件（正社員/パート/週何日等） <span style="color: var(--color-accent);">必須</span></label>
-              <input type="text" id="req_conditions" name="勤務希望条件" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333;" required>
+              <label for="req_conditions">勤務希望条件（正社員/パート/週何日等） <span class="text-accent">必須</span></label>
+              <input type="text" id="req_conditions" name="勤務希望条件" class="form-control" required>
             </div>
 
             <div class="form-group">
-              <label for="req_motivation" style="color: var(--color-text);">応募動機・自由記述 <span style="color: var(--color-accent);">必須</span></label>
-              <textarea id="req_motivation" name="応募動機・自由記述" class="form-control" style="background:#fff; border:1px solid #ccc; color:#333; min-height: 100px;" required></textarea>
+              <label for="req_motivation">応募動機・自由記述 <span class="text-accent">必須</span></label>
+              <textarea id="req_motivation" name="応募動機・自由記述" class="form-control" style="min-height: 100px;" required></textarea>
             </div>
 
             <hr style="margin: var(--space-lg) 0; border: none; border-top: 1px solid #eee;">
