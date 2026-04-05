@@ -595,7 +595,15 @@ p:last-child { margin-bottom: 0; }
 /* Breadcrumbs */
 .breadcrumb-nav {
   padding: var(--space-md) 0;
-  background-color: var(--color-background-alt);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-background-soft);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 767px) {
+  .breadcrumb-nav {
+    margin-bottom: var(--space-sm);
+  }
 }
 
 .breadcrumb-list {
@@ -639,12 +647,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .sub-nav-title {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
   color: var(--color-accent);
   margin-bottom: var(--space-lg);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   display: block;
 }
 
@@ -826,17 +830,21 @@ p:last-child { margin-bottom: 0; }
 }
 
 .section-header .eyebrow {
-  color: var(--color-accent);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-sm);
-  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.12rem;
   text-transform: uppercase;
-  margin-bottom: var(--space-xs);
+  color: var(--color-accent);
   display: block;
+  margin-bottom: 0.5rem;
 }
 
 .section-header h2 {
-  margin-bottom: var(--space-md);
+  margin-bottom: 0.75rem;
 }
 
 /* Cards & Editorial Blocks */
@@ -1492,6 +1500,18 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: var(--space-lg);
 }
 
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-narrow {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .contact-form-section {
   max-width: 700px;
   margin: 0 auto;
@@ -1922,5 +1942,20 @@ textarea.form-control {
   .hero-section h1,
   .editorial-split h1 {
     font-size: 2rem !important;
+  }
+}
+
+/* Form Density & Spacing Optimization for Mobile */
+@media (max-width: 480px) {
+  .contact-form-card {
+    padding: var(--space-md);
+  }
+
+  .section-spacing {
+    padding: var(--space-xl) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--space-xl);
   }
 }
