@@ -857,6 +857,16 @@ p:last-child { margin-bottom: 0; }
   border: 1px solid var(--color-border);
 }
 
+/* Mobile: reduce card inner padding to relieve cramped density */
+@media (max-width: 767px) {
+  .card {
+    padding: var(--space-lg); /* 3rem → 2rem */
+  }
+  .branch-card {
+    padding: var(--space-lg); /* branch-card overrides .card so needs explicit mobile value */
+  }
+}
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
@@ -974,11 +984,6 @@ p:last-child { margin-bottom: 0; }
 }
 .ecosystem-node-link:hover {
   border-bottom-color: var(--color-accent);
-}
-
-/* Hero-to-support bridge: subtle top border on the support model section */
-.section-bridge-top {
-  border-top: 3px solid var(--color-accent);
 }
 
 /* Consultation Banner */
@@ -1546,8 +1551,27 @@ p:last-child { margin-bottom: 0; }
   border: 1px solid var(--color-border);
 }
 
+/* Mobile: reduce form section inner padding (note: older .contact-form-card rule was mismatched) */
+@media (max-width: 767px) {
+  .contact-form-section {
+    padding: var(--space-xl); /* 4.5rem → 3rem */
+    border-radius: var(--radius-md);
+  }
+}
+@media (max-width: 480px) {
+  .contact-form-section {
+    padding: var(--space-lg); /* 3rem → 2rem at narrow screens */
+  }
+}
+
 .form-group {
   margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 767px) {
+  .form-group {
+    margin-bottom: var(--space-md); /* 2rem → 1.5rem on mobile */
+  }
 }
 
 .form-group label {
@@ -1966,6 +1990,29 @@ textarea.form-control {
   .hero-section h1,
   .editorial-split h1 {
     font-size: 2rem !important;
+  }
+}
+
+/* Services: hierarchy-container — class-based responsive gap control */
+/* (replaces inline style="gap: var(--space-4xl)" in services/index.html) */
+.hierarchy-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl); /* 8rem on desktop/tablet */
+}
+@media (max-width: 767px) {
+  .hierarchy-container {
+    gap: var(--space-xl); /* 8rem → 3rem: removes excessive vertical whitespace on mobile */
+  }
+}
+
+/* Contact shortcut strip: stack vertically on small screens */
+@media (max-width: 599px) {
+  .contact-shortcut {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    text-align: center;
   }
 }
 
