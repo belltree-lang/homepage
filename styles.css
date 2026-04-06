@@ -1959,3 +1959,88 @@ textarea.form-control {
     margin-bottom: var(--space-xl);
   }
 }
+
+/* === Service Card Utilities === */
+
+/* Tagline: italic italicized target-user hint below card title */
+.card-tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+/* Supplement: short descriptive text inside card, flex-grows to push footer down */
+.card-supplement {
+  color: var(--color-text-muted);
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Outline button variant: small, left-aligned, used as card footer CTA */
+.btn-outline-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  background: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-top: auto;
+  align-self: flex-start;
+  cursor: pointer;
+}
+.btn-outline-sm:hover {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+}
+
+/* Solo card: wraps a single card to center it and cap its width */
+.card-solo {
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* Contact quick-access shortcut strip */
+.contact-shortcut {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.875rem;
+}
+.contact-shortcut__link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.contact-shortcut__link:hover {
+  color: var(--color-accent);
+}
+.contact-shortcut__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.contact-shortcut__pill:hover {
+  border-color: var(--color-primary);
+  background: var(--color-background-alt);
+}
