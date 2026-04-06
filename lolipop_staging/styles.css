@@ -932,6 +932,20 @@ p:last-child { margin-bottom: 0; }
   position: relative;
 }
 
+/* Mobile: reduce vertical weight of 4 stacked nodes */
+@media (max-width: 767px) {
+  .ecosystem-flow {
+    gap: var(--space-md); /* 3rem → 1.5rem between nodes */
+  }
+  .ecosystem-node {
+    padding: var(--space-md) var(--space-lg); /* top/bottom tighter; keep left/right readable */
+    border-radius: var(--radius-md);
+  }
+  .ecosystem-node-link {
+    padding-top: var(--space-sm); /* 1.5rem → 1rem: link sits closer to body text */
+  }
+}
+
 @media (min-width: 768px) {
   .ecosystem-flow {
     flex-direction: row;
@@ -953,6 +967,31 @@ p:last-child { margin-bottom: 0; }
     border-bottom: 2px solid var(--color-border-strong);
     transform: translateY(-50%) rotate(-45deg);
     z-index: 10;
+  }
+}
+
+/* Direct Contact phone cards: mobile-specific overrides
+   (inline style on these cards overrides .card mobile rule; use explicit class) */
+.contact-phone-card {
+  text-align: center;
+  border-color: var(--color-primary);
+}
+@media (max-width: 767px) {
+  .contact-phone-card {
+    padding: var(--space-sm) var(--space-md); /* tighter than default card on mobile */
+  }
+  .contact-phone-number {
+    font-size: 1.35rem; /* 1.6rem → 1.35rem: still readable but less heavyweight */
+  }
+  .contact-phone-grid {
+    gap: var(--space-sm); /* var(--space-md) → var(--space-sm) between phone cards */
+  }
+}
+
+/* Form: collapse grid-2 to single column on mobile for name/phone pair */
+@media (max-width: 767px) {
+  .grid-2-mobile-stack {
+    grid-template-columns: 1fr;
   }
 }
 
