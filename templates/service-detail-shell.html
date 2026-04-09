@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[サービス名] | 株式会社べるつりー</title>
+    <meta name="description" content="[サービスの概要・説明文を記載します。SEOに利用されます。]" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <!-- 開発時は本番のヘッダーをここに展開します -->
+    <!-- === HEADER_START === -->
+    <!-- === HEADER_END === -->
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb-nav" aria-label="現在位置">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          <li><a href="../../index.html">ホーム</a></li>
+          <li><a href="../index.html">サービス一覧</a></li>
+          <li aria-current="page">[サービス名]</li>
+        </ol>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <!-- 1. Hero Section -->
+      <section class="section-spacing bg-soft">
+        <div class="container editorial-split">
+          <div>
+            <!-- eyebrow 例: SERVICE 01 | FITNESS -->
+            <span class="eyebrow">[SERVICE CATEGORY] | [SERVICE TYPE]</span>
+            <h1 style="margin-bottom: var(--space-lg);">[サービスタイトル/見出し]</h1>
+            <p class="text-lead text-muted">
+              [このサービスが提供する中核的な価値、対象となる方、提供エリアなどのリード文を記載します。読みやすく、安心感のあるトーンで。]
+            </p>
+          </div>
+          <div class="editorial-image">
+             <!-- 画像プレースホルダー -->
+             <div style="width: 100%; height: 100%; min-height: 400px; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem; border-radius: var(--radius-md);">
+               [Service Hero Image]
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Support Stepper (途切れない支援構造の明示) -->
+      <div class="container container-narrow">
+        <nav class="service-stepper" aria-label="支援ステップ">
+          <!-- TODO: 該当するステップに `class="... active"` を付与すること -->
+          <a href="../fitness/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🏃</span>
+            <span>① 運動習慣</span>
+          </a>
+          <a href="../acupuncture/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🏠</span>
+            <span>② 訪問施術</span>
+          </a>
+          <a href="../home-care/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">🤝</span>
+            <span>③ 介護連携</span>
+          </a>
+          <a href="../legal/" class="service-stepper-item">
+            <span style="font-size: 1.2rem; margin-bottom: 2px;">⚖️</span>
+            <span>④ 終活・法務</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- 3. Target User / Needs (お悩み・対象) -->
+      <section class="section-spacing container-narrow" style="margin: 0 auto;">
+         <div class="section-header text-center">
+            <span class="eyebrow">TARGET</span>
+            <h2>こんなお悩みから始められます</h2>
+         </div>
+         <div class="grid grid-2 mt-2xl">
+            <!-- パターンA -->
+            <div class="card">
+               <h4 style="margin-bottom: var(--space-sm);">[お悩み例 1]</h4>
+               <p class="text-muted text-sm mb-0">[お悩みに寄り添い、サービスがどう助けになるかの簡単な説明。]</p>
+            </div>
+            <!-- パターンB -->
+            <div class="card">
+               <h4 style="margin-bottom: var(--space-sm);">[お悩み例 2]</h4>
+               <p class="text-muted text-sm mb-0">[説明文]</p>
+            </div>
+         </div>
+      </section>
+
+      <!-- 4. Detail Sections (サービス詳細・対応症状など) -->
+      <section class="section-spacing bg-white">
+        <div class="container container-narrow">
+          <div class="section-header text-center">
+            <span class="eyebrow">DETAILS</span>
+            <h2>[サービスの詳細や特徴]</h2>
+            <p class="text-muted">[概要説明]</p>
+          </div>
+          
+          <div class="grid grid-2 mt-2xl">
+             <!-- 具体的な内容 -->
+             <div class="card">
+                <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">[特徴・機能 1]</h3>
+                <p class="text-muted text-sm mb-lg">[テキスト]</p>
+             </div>
+             <div class="card">
+                <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">[特徴・機能 2]</h3>
+                <p class="text-muted text-sm mb-lg">[テキスト]</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Integration / Trust (次のフェーズへの連携・安心感) -->
+      <section class="section-spacing bg-alt">
+        <div class="container">
+          <div class="editorial-split reverse">
+            <div>
+              <span class="eyebrow">CONNECTION</span>
+              <h2>[次のステップへの橋渡し]</h2>
+              <p class="text-muted">
+                [このサービス単体で終わらず、社内の他専門家（ケアマネ等）とどう繋がるかの安心感を伝えます。]
+              </p>
+              <div class="mt-xl">
+                 <a href="[次ステップURL]" style="color: var(--color-accent); font-weight: var(--font-weight-medium);">[次ステップのサービス名]について見る &rarr;</a>
+              </div>
+            </div>
+            <div class="editorial-image">
+               <div style="width: 100%; height: 100%; min-height: 300px; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem; border-radius: var(--radius-md);">
+                 [Connection Image]
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Professional CTA (医療職・介護職向け) -->
+      <!-- ※一般向けサービスで不要であれば削除可能 -->
+      <section class="container-narrow">
+        <div class="professional-cta">
+          <h3 class="professional-cta__title">医療・介護関係者の皆様へ</h3>
+          <p class="professional-cta__text">
+            ご利用者様のご紹介や連携体制について柔軟に対応しております。導入検討や報告体制の確認など、お気軽にお問い合わせください。
+          </p>
+          <a href="../../community/index.html" class="professional-cta__link">地域連携・専門職向けページを見る &rarr;</a>
+        </div>
+      </section>
+
+      <!-- 7. Contextual Sub-Nav (他の悩みやサービスへの回遊) -->
+      <section class="section-spacing container">
+        <div class="sub-nav-block">
+          <h3 class="sub-nav-title">関連するサービス・解決策</h3>
+          <div class="sub-nav-grid">
+            <a href="../fitness/" class="sub-nav-item">
+              <span class="sub-nav-icon">🏃</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">べるフィット</span>
+                <span class="sub-nav-desc">予防・運動支援</span>
+              </div>
+            </a>
+            <a href="../home-care/" class="sub-nav-item">
+              <span class="sub-nav-icon">🤝</span>
+              <div class="sub-nav-content">
+                <span class="sub-nav-label">居宅介護支援</span>
+                <span class="sub-nav-desc">介護・相談窓口</span>
+              </div>
+            </a>
+            <!-- 必要に応じて他の導線を配置 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Service-Specific Form (このサービス専用の問い合わせ導線) -->
+      <section id="consultation-form" class="section-spacing container" style="margin-bottom: var(--space-2xl);">
+        <div class="contact-form-section" style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-xl); border: 1px solid var(--color-border);">
+           <div class="text-center">
+             <h2 style="margin-bottom: var(--space-sm);">[サービス名] のご相談・お問い合わせ</h2>
+             <p class="text-muted" style="margin-bottom: var(--space-xl);">[フォームの案内文など]</p>
+             
+             <!-- 実際のフォームをここに実装、または共通の問い合わせフォームへのボタンを設置 -->
+             <a href="../../contact/index.html" class="btn btn-primary">共通のお問い合わせフォームへ進む</a>
+           </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 開発時は本番のフッターをここに展開します -->
+    <!-- === FOOTER_START === -->
+    <!-- === FOOTER_END === -->
+    
+    <script src="../../assets/js/form-handler.js"></script>
+  </body>
+</html>
