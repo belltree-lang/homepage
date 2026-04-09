@@ -30,8 +30,4 @@ Tasks may run in parallel only if file scopes do not conflict.
 
 ## Current Active Set
 
-- `task-007-services-index-page-shell.md`
-- `task-008-card-component-variants.md`
-- `task-009-cta-system-standardization.md`
-- `task-010-trust-block-system.md`
 

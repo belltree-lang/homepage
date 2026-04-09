@@ -17,21 +17,21 @@ Repository entry point for human and AI contributors.
 ## Task Operating System
 
 Executable tasks may exist only in:
-
-- `tasks/_active`
-- `tasks/_planned`
-- `tasks/_blocked`
-- `tasks/_completed`
-- `tasks/_superseded`
+- `tasks/_active`: Execute tasks only from here.
+- `tasks/_planned`: Treat as queued work.
+- `tasks/_blocked`: Move tasks here if blocked by dependencies.
+- `tasks/_completed`: Move finished tasks here.
+- `tasks/_superseded`: Treat as archived obsolete work.
 
 Category folders under `tasks/00-*` through `tasks/90-*` are archive-only and are not executable sources.
 
 ## Working Rules
 
 - Read the active task file before implementation.
+- Read `templates/TASK_TEMPLATE.md` before writing or normalizing new tasks.
 - Modify only the files listed in the task scope unless the user explicitly expands scope.
-- Do not introduce frameworks, build tooling, or backend dependencies.
-- Keep the repository deployable as plain static files.
+- Do not introduce frameworks, build tooling, Webpack, Vite, Tailwind, or backend dependencies.
+- Keep the repository deployable as plain static files. Use `assets/css/variables.css` and `assets/css/style.css`.
 - Use the task lifecycle defined in `governance/TASK_STATUS.md`.
 
 ## Verification Rules
