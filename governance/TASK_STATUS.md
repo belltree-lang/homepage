@@ -30,5 +30,4 @@ Tasks may run in parallel only if file scopes do not conflict.
 
 ## Current Active Set
 
-- `task-017-seo-improvements.md`
 
