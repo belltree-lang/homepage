@@ -30,4 +30,5 @@ Tasks may run in parallel only if file scopes do not conflict.
 
 ## Current Active Set
 
+- `task-014-grid-system-cleanup.md`
 
