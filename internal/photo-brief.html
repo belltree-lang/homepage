@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>べるフィット｜HP写真撮影ブリーフ（施設スタッフ版）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", sans-serif;
+    background: #FCFCFA;
+    color: #2C2C2C;
+    padding: 40px 20px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+  .page-header {
+    max-width: 900px;
+    margin: 0 auto 48px;
+    border-left: 6px solid #1A365D;
+    padding-left: 20px;
+  }
+  .page-header h1 { font-size: 26px; margin-bottom: 6px; color: #1A365D; letter-spacing: 0.05em; }
+  .page-header p { color: #666666; font-size: 14px; }
+  .page-header .meta {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666666;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .page-header .meta span::before {
+    content: "◆ ";
+    color: #C27A65;
+  }
+
+  .section-title {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #1A365D;
+    padding-left: 4px;
+  }
+
+  .grid {
+    max-width: 900px;
+    margin: 0 auto 56px;
+    display: grid;
+    gap: 20px;
+  }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-1 { grid-template-columns: 1fr; }
+
+  @media (max-width: 680px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.04);
+    border: 1px solid #E5E0D8;
+  }
+
+  /* 優先度バッジ */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .badge-s1 { background: rgba(194, 122, 101, 0.15); color: #A86550; }
+  .badge-s2 { background: rgba(26, 54, 93, 0.10); color: #1A365D; }
+  .badge-s3 { background: rgba(44, 44, 44, 0.08); color: #666666; }
+
+  /* 画像プレースホルダー */
+  .photo-box {
+    position: relative;
+    background: #F4EFEB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .photo-box.landscape { aspect-ratio: 4/3; }
+  .photo-box.wide      { aspect-ratio: 16/9; }
+
+  /* 構図ガイド線（三分割） */
+  .guide {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .guide::before, .guide::after {
+    content: "";
+    position: absolute;
+    background: rgba(26, 54, 93, 0.18);
+  }
+  .guide-thirds::before {
+    left: 33.3%; top: 0; width: 1px; height: 100%;
+    box-shadow: 33.3% 0 0 rgba(26, 54, 93, 0.18);
+  }
+  .guide-thirds::after {
+    top: 33.3%; left: 0; height: 1px; width: 100%;
+    box-shadow: 0 33.3% 0 rgba(26, 54, 93, 0.18);
+  }
+
+  /* 人物シルエット */
+  .scene {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    opacity: 0.35;
+    padding-bottom: 8px;
+  }
+  .silhouette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .sil-head {
+    width: 32px; height: 32px;
+    background: #8A7E72;
+    border-radius: 50%;
+  }
+  .sil-body {
+    width: 46px; height: 56px;
+    background: #8A7E72;
+    border-radius: 8px 8px 0 0;
+  }
+  .sil-small .sil-head { width: 22px; height: 22px; }
+  .sil-small .sil-body { width: 32px; height: 40px; }
+  .sil-seated .sil-body { width: 46px; height: 40px; border-radius: 8px; }
+
+  /* 機材シルエット（マシン・マット） */
+  .equipment {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    opacity: 0.28;
+  }
+  .machine { width: 60px; height: 48px; background: #8A7E72; border-radius: 4px; }
+  .machine-tall { width: 36px; height: 72px; background: #8A7E72; border-radius: 4px 4px 0 0; }
+  .mat { width: 72px; height: 8px; background: #8A7E72; border-radius: 4px; margin-bottom: 2px; }
+  .tablet { width: 26px; height: 36px; background: #8A7E72; border-radius: 3px; transform: rotate(-12deg); }
+
+  .photo-label {
+    position: absolute;
+    bottom: 10px; left: 0; right: 0;
+    text-align: center;
+    font-size: 11px;
+    color: #1A365D;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 4px 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .ratio-tag {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: #1A365D;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 9999px;
+    letter-spacing: 0.08em;
+  }
+
+  /* カード本文 */
+  .card-body { padding: 18px 20px 22px; }
+  .card-num {
+    font-size: 11px; font-weight: 700; color: #C27A65;
+    letter-spacing: 0.12em; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; color: #1A365D; }
+  .card-usage {
+    font-size: 12px; color: #4a4540;
+    background: #F9F8F6; border-radius: 8px;
+    padding: 8px 12px; margin-bottom: 12px;
+    border-left: 3px solid #C27A65;
+  }
+  .card-usage .label { font-weight: 700; margin-bottom: 2px; display: block; color: #1A365D; }
+  .point-list { list-style: none; margin-top: 10px; }
+  .point-list li {
+    font-size: 12px; color: #2C2C2C;
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.65;
+  }
+  .point-list li::before {
+    content: "▸";
+    position: absolute; left: 0;
+    color: #C27A65;
+    font-weight: 700;
+  }
+
+  .ng-list {
+    list-style: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #E5E0D8;
+  }
+  .ng-list .ng-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A86550;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .ng-list li {
+    font-size: 12px; color: #666666;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .ng-list li::before {
+    content: "×";
+    position: absolute; left: 0;
+    color: #A86550;
+    font-weight: 700;
+  }
+
+  hr.divider {
+    max-width: 900px; margin: 0 auto 32px;
+    border: none; border-top: 1px solid #E5E0D8;
+  }
+
+  .note-box {
+    max-width: 900px; margin: 0 auto 24px;
+    background: #F9F8F6; border-radius: 16px;
+    padding: 22px 26px; border-left: 5px solid #1A365D;
+  }
+  .note-box h3 { font-size: 14px; margin-bottom: 14px; color: #1A365D; letter-spacing: 0.05em; }
+  .note-box ul { list-style: none; }
+  .note-box ul li {
+    font-size: 13px; color: #2C2C2C; padding: 5px 0 5px 20px; position: relative; line-height: 1.7;
+  }
+  .note-box ul li::before { content: "✓"; position: absolute; left: 0; color: #C27A65; font-weight: 700; }
+
+  .flow-box {
+    max-width: 900px; margin: 0 auto 24px;
+    background: rgba(194, 122, 101, 0.07); border-radius: 16px;
+    padding: 22px 26px; border-left: 5px solid #C27A65;
+  }
+  .flow-box h3 { font-size: 14px; margin-bottom: 14px; color: #A86550; letter-spacing: 0.05em; }
+  .flow-steps {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .flow-step {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 13px; color: #2C2C2C; line-height: 1.6;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    background: #C27A65; color: #FFFFFF;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+  }
+
+  .footer-note {
+    max-width: 900px; margin: 40px auto 0;
+    text-align: center;
+    font-size: 11px;
+    color: #666666;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>べるフィット｜HP写真撮影ブリーフ（施設スタッフ版）</h1>
+  <p>スマホ撮影で6スロットを仕上げる、現場スタッフ向けの撮影資料</p>
+  <div class="meta">
+    <span>対象サイト：べるつりーコーポレートHP</span>
+    <span>作成：2026.04.16</span>
+    <span>撮影主体：施設スタッフ</span>
+  </div>
+</div>
+
+<!-- ======== 最優先（本体） ======== -->
+<div class="section-title">🔴 最優先 ― べるフィット本体（services/fitness/）</div>
+
+<div class="grid grid-2">
+
+  <!-- Slot 05: 本体ヒーロー -->
+  <div class="card">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="equipment" style="gap:20px;">
+        <div class="machine-tall"></div>
+        <div class="silhouette sil-small"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="machine"></div>
+        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">空間全体・スタッフ1+利用者2</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot 05 <span class="badge badge-s1">🔴最優先</span></div>
+      <div class="card-title">べるフィット本体<br>施設利用シーン（ヒーロー）</div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/fitness/index.html トップ
+      </div>
+      <ul class="point-list">
+        <li>横位置4:3、空間全体が見えるワイド</li>
+        <li>有酸素マシン・ストレッチマット・スタッフ巡回が同じ画面に</li>
+        <li>利用者は65〜80歳。ポロシャツのスタッフが画面奥から手前へ歩く雰囲気</li>
+        <li>午後の自然光＋天井LEDミックス。明るく清潔感</li>
+        <li>スマホを胸の高さで構える（低すぎると天井ばかり映る）</li>
+        <li>3〜5枚撮って、一番「通いやすそう」な1枚を選ぶ</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>狭く見える寄り構図／逆光で顔が黒つぶれ／鏡に撮影者が映り込む</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slot 06: 本体中間 -->
+  <div class="card">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="scene" style="gap:8px;">
+        <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette" style="margin-bottom:-8px;"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">スタッフが膝をついて伴走</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot 06 <span class="badge badge-s1">🔴最優先</span></div>
+      <div class="card-title">本体スタッフと利用者の<br>サポート場面（中間）</div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/fitness/index.html 中段
+      </div>
+      <ul class="point-list">
+        <li>スタッフが利用者の横に膝をつき、同じ目線で会話</li>
+        <li>マシンのシート・フォームを一緒に確認している瞬間</li>
+        <li>中距離、二人が同じ高さに収まる構図</li>
+        <li>利用者は70代男性が自然。表情は穏やかな集中</li>
+        <li>背景はシンプルに。人物の輪郭がはっきり出る光で</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>スタッフが立ったまま見下ろす構図／営業スマイル／背景ごちゃつき</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======== 高優先（夜間） ======== -->
+<div class="section-title">🟡 高優先 ― べるフィット夜間（services/fitness/night/）</div>
+
+<div class="grid grid-2">
+
+  <!-- Slot 07: 夜間ヒーロー -->
+  <div class="card">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="equipment" style="gap:24px;">
+        <div class="machine-tall"></div>
+        <div class="silhouette sil-small"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">夕景・働く世代2名・奥行き</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot 07 <span class="badge badge-s2">🟡高優先</span></div>
+      <div class="card-title">夜間・週末の<br>落ち着いた利用シーン（ヒーロー）</div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/fitness/night/index.html トップ
+      </div>
+      <ul class="point-list">
+        <li>撮影時間は日没後〜閉館前（窓の外がほんのり暗い時間帯）</li>
+        <li>40〜60代の利用者2名。1人はトレッドミル、1人はケトルベル or ストレッチ</li>
+        <li>暖色ダウンライト中心。白色光オフが理想（難しければ調整不要）</li>
+        <li>横位置4:3、奥行きを意識（手前の機材越しに奥の利用者が見える）</li>
+        <li>撮影時のフラッシュは絶対オフ</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>暗すぎて何の施設か分からない／窓が真っ黒／フラッシュ焚き</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slot 08: 夜間中間 -->
+  <div class="card">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="scene" style="gap:12px;">
+        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="tablet" style="margin-bottom:24px;"></div>
+        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">タブレットで動作説明するツーショット</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot 08 <span class="badge badge-s2">🟡高優先</span></div>
+      <div class="card-title">夜間の個別指導<br>（タブレット説明）</div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/fitness/night/index.html 中段
+      </div>
+      <ul class="point-list">
+        <li>スタッフがタブレットで動作動画を見せながら説明する瞬間</li>
+        <li>横からの2ショット、中距離。タブレット画面は主役ではなく「見せている行為」が主役</li>
+        <li>利用者は50代前後の男性。仕事帰り想定のシンプルな服装でOK</li>
+        <li>暖色ダウンライト、穏やかな集中の表情</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>タブレット画面が白飛び／スタッフだけが語りかけて利用者が映らない構図</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======== 中優先（シード） ======== -->
+<div class="section-title">🟢 中優先 ― シード・女性限定（services/fitness/seed/）</div>
+
+<div class="grid grid-2">
+
+  <!-- Slot 09: シードヒーロー -->
+  <div class="card">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="scene" style="gap:18px;">
+        <div class="mat" style="margin-bottom:-2px;"></div>
+        <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">女性2〜3名・マットストレッチ</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot 09 <span class="badge badge-s3">🟢中優先</span></div>
+      <div class="card-title">シード（女性限定）<br>安心の空間（ヒーロー）</div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/fitness/seed/index.html トップ
+      </div>
+      <ul class="point-list">
+        <li>40〜60代の女性2〜3名がマットでストレッチ</li>
+        <li>パステル・木目トーンの空間が伝わる広めの画角</li>
+        <li>自然光中心、やわらかい印象</li>
+        <li>リラックスした表情。互いに少し視線を交わす程度でOK</li>
+        <li>横位置4:3、広めに撮って後でトリミングできるように</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>硬い整列／鏡張り一面で撮影者が映る／無機質なジム感が出る</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slot 10: シード中間 -->
+  <div class="card">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="scene" style="gap:14px;">
+        <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">女性スタッフ×女性利用者・対話</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot 10 <span class="badge badge-s3">🟢中優先</span></div>
+      <div class="card-title">シード<br>女性スタッフ×女性利用者（中間）</div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/fitness/seed/index.html 中段
+      </div>
+      <ul class="point-list">
+        <li>女性スタッフ（30代想定）と女性利用者（50代前後）が向かい合って座る</li>
+        <li>二人の斜めツーショット、中距離</li>
+        <li>お茶やパンフレットがテーブルにあってもOK（過度な演出は不要）</li>
+        <li>窓光メインのやわらかい光</li>
+        <li>笑顔は自然に。作り込まず、会話が進んでいる途中の瞬間を狙う</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>カメラ目線で並ぶ記念写真風／背景に営業資料やPCが強く映り込む</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ======== 撮影共通ルール ======== -->
+<div class="note-box">
+  <h3>📋 撮影共通ルール（スマホ撮影・全スロット共通）</h3>
+  <ul>
+    <li>色調：暖色寄り・自然光が理想。HPのアイボリー＋スレート基調に合わせる</li>
+    <li>構図：縦位置ではなく<strong>横位置4:3</strong>を基本（HPに入るサイズ）</li>
+    <li>ピント：被写体の顔にタップしてピント固定。手前の床や機材にピントが抜けないように</li>
+    <li>明るさ：シャッター前に画面を長押し→明るさスライダーで軽く調整（白飛びさせない）</li>
+    <li>撮影枚数：1スロットにつき3〜5枚。表情のブレ・目つむり対策</li>
+    <li>フラッシュ：常にオフ（夜間含む）</li>
+    <li>縦横：HDR/ライブフォトはオフでよい。通常モードで十分</li>
+    <li>加工：撮って出しで納品。色補正・リサイズはマーケ室で実施</li>
+  </ul>
+</div>
+
+<!-- ======== 同意と声かけ ======== -->
+<div class="note-box" style="border-left-color:#C27A65;">
+  <h3>🤝 被写体への声かけ（同意取得済みでも毎回1回）</h3>
+  <ul>
+    <li>シャッター前に「今から1枚撮らせてください」と必ず声をかける</li>
+    <li>違和感・渋さがあればその場で中止。押し通さない</li>
+    <li>撮影後に「ありがとうございました、後で確認用にお見せします」と伝える</li>
+    <li>本人が削除を希望した1枚はその場で削除</li>
+    <li>服装・髪型が気になるようなら、整える時間を取ってから撮り直す</li>
+  </ul>
+</div>
+
+<!-- ======== 納品フロー ======== -->
+<div class="flow-box">
+  <h3>📤 撮影後のフロー</h3>
+  <div class="flow-steps">
+    <div class="flow-step"><div class="step-num">1</div><div>スマホ内でSlot別にアルバム分け（例：Slot05-本体ヒーロー）</div></div>
+    <div class="flow-step"><div class="step-num">2</div><div>各Slotにつき「これが一番良い」と思う2〜3枚を選抜</div></div>
+    <div class="flow-step"><div class="step-num">3</div><div>Google Drive指定フォルダへアップ（パスはマーケ室から別途連絡）</div></div>
+    <div class="flow-step"><div class="step-num">4</div><div>Google Chatで「Slot 0X 撮影完了」と一報</div></div>
+    <div class="flow-step"><div class="step-num">5</div><div>マーケ室で色補正・リサイズ → HP反映</div></div>
+  </div>
+</div>
+
+<!-- ======== スケジュール ======== -->
+<div class="note-box" style="border-left-color:#1A365D;">
+  <h3>📅 撮影日の決め方</h3>
+  <ul>
+    <li>撮影日は<strong>各施設のスタッフ判断で設定</strong>してOK（営業の邪魔にならない時間帯で）</li>
+    <li>4/21のべるフィット会議までに着手できるものから順次</li>
+    <li>全6スロット完了の目安は来月末（2026-05末）を仮置き</li>
+    <li>撮影前に迷ったら、このブリーフをもう一度眺めるか、マーケ室へ一声</li>
+  </ul>
+</div>
+
+<div class="footer-note">
+  べるつりーHD ／ マーケティング室 ／ 2026-04-16
+</div>
+
+</body>
+</html>
