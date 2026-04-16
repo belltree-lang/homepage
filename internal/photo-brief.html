@@ -35,24 +35,44 @@
     color: #C27A65;
   }
 
+  /* 3業態の色定義 */
+  .theme-night  { --theme: #1A365D; --theme-light: rgba(26, 54, 93, 0.10); --theme-soft: rgba(26, 54, 93, 0.06); }
+  .theme-seed   { --theme: #E83E8C; --theme-light: rgba(232, 62, 140, 0.12); --theme-soft: rgba(232, 62, 140, 0.06); }
+  .theme-leaf   { --theme: #28A745; --theme-light: rgba(40, 167, 69, 0.12); --theme-soft: rgba(40, 167, 69, 0.06); }
+
   .section-title {
     max-width: 900px;
     margin: 0 auto 20px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.15em;
-    color: #1A365D;
+    letter-spacing: 0.12em;
     padding-left: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .tag {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 9999px;
+    font-size: 11px;
+    color: #fff;
+    letter-spacing: 0.08em;
+  }
+  .section-title .sub {
+    color: #666666;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
   }
 
   .grid {
     max-width: 900px;
-    margin: 0 auto 56px;
+    margin: 0 auto 48px;
     display: grid;
     gap: 20px;
   }
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
-  .grid-1 { grid-template-columns: 1fr; }
 
   @media (max-width: 680px) {
     .grid-2 { grid-template-columns: 1fr; }
@@ -62,22 +82,10 @@
     background: #FFFFFF;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.04);
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.05);
     border: 1px solid #E5E0D8;
+    border-top: 4px solid var(--theme, #1A365D);
   }
-
-  /* 優先度バッジ */
-  .badge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 9999px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-  }
-  .badge-s1 { background: rgba(194, 122, 101, 0.15); color: #A86550; }
-  .badge-s2 { background: rgba(26, 54, 93, 0.10); color: #1A365D; }
-  .badge-s3 { background: rgba(44, 44, 44, 0.08); color: #666666; }
 
   /* 画像プレースホルダー */
   .photo-box {
@@ -89,7 +97,6 @@
     overflow: hidden;
   }
   .photo-box.landscape { aspect-ratio: 4/3; }
-  .photo-box.wide      { aspect-ratio: 16/9; }
 
   /* 構図ガイド線（三分割） */
   .guide {
@@ -115,58 +122,103 @@
   .scene {
     display: flex;
     align-items: flex-end;
-    gap: 16px;
+    gap: 14px;
     opacity: 0.35;
     padding-bottom: 8px;
+    max-width: 75%;
   }
   .silhouette {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
   }
   .sil-head {
-    width: 32px; height: 32px;
+    width: 28px; height: 28px;
     background: #8A7E72;
     border-radius: 50%;
   }
   .sil-body {
-    width: 46px; height: 56px;
+    width: 42px; height: 52px;
     background: #8A7E72;
     border-radius: 8px 8px 0 0;
   }
-  .sil-small .sil-head { width: 22px; height: 22px; }
-  .sil-small .sil-body { width: 32px; height: 40px; }
-  .sil-seated .sil-body { width: 46px; height: 40px; border-radius: 8px; }
+  .sil-small .sil-head { width: 20px; height: 20px; }
+  .sil-small .sil-body { width: 28px; height: 36px; }
+  .sil-seated .sil-body { width: 42px; height: 32px; border-radius: 6px; }
 
-  /* 機材シルエット（マシン・マット） */
-  .equipment {
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-    opacity: 0.28;
+  /* 機材シルエット（筋力マシン系） */
+  .strength-machine {
+    width: 54px; height: 54px;
+    background: #8A7E72;
+    border-radius: 6px;
+    opacity: 0.3;
+    position: relative;
   }
-  .machine { width: 60px; height: 48px; background: #8A7E72; border-radius: 4px; }
-  .machine-tall { width: 36px; height: 72px; background: #8A7E72; border-radius: 4px 4px 0 0; }
-  .mat { width: 72px; height: 8px; background: #8A7E72; border-radius: 4px; margin-bottom: 2px; }
-  .tablet { width: 26px; height: 36px; background: #8A7E72; border-radius: 3px; transform: rotate(-12deg); }
+  .strength-machine::after {
+    content: ""; position: absolute;
+    top: -14px; left: 50%; transform: translateX(-50%);
+    width: 20px; height: 14px;
+    background: #8A7E72; border-radius: 3px 3px 0 0;
+  }
+
+  /* TRX（吊り下げベルト） */
+  .trx {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 2px;
+    opacity: 0.3;
+  }
+  .trx-anchor { width: 28px; height: 5px; background: #8A7E72; border-radius: 2px; }
+  .trx-strap { width: 3px; height: 58px; background: #8A7E72; }
+
+  /* ストレッチマット・ボール */
+  .mat-scene {
+    display: flex; align-items: flex-end;
+    gap: 8px; opacity: 0.3;
+  }
+  .stretch-mat { width: 72px; height: 8px; background: #8A7E72; border-radius: 4px; }
+  .stretch-ball { width: 32px; height: 32px; background: #8A7E72; border-radius: 50%; }
+
+  /* タブレット・スマホ */
+  .tablet {
+    width: 20px; height: 28px;
+    background: #8A7E72;
+    border-radius: 3px;
+    opacity: 0.3;
+    margin-bottom: 32px;
+  }
+
+  /* お茶・カップ */
+  .teacup {
+    width: 20px; height: 14px;
+    background: #8A7E72;
+    border-radius: 2px 2px 10px 10px;
+    opacity: 0.3;
+    margin-bottom: 10px;
+  }
+
+  /* セラピスト支え */
+  .support-scene {
+    display: flex; align-items: flex-end;
+    gap: 6px; opacity: 0.35;
+  }
 
   .photo-label {
     position: absolute;
     bottom: 10px; left: 0; right: 0;
     text-align: center;
     font-size: 11px;
-    color: #1A365D;
+    color: var(--theme, #1A365D);
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.78);
     padding: 4px 8px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
   }
 
   .ratio-tag {
     position: absolute;
     top: 10px; right: 10px;
-    background: #1A365D;
+    background: var(--theme, #1A365D);
     color: #FFFFFF;
     font-size: 10px;
     font-weight: 700;
@@ -178,18 +230,45 @@
   /* カード本文 */
   .card-body { padding: 18px 20px 22px; }
   .card-num {
-    font-size: 11px; font-weight: 700; color: #C27A65;
-    letter-spacing: 0.12em; margin-bottom: 8px;
-    display: flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700;
+    color: var(--theme, #1A365D);
+    letter-spacing: 0.12em; margin-bottom: 6px;
   }
-  .card-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; color: #1A365D; }
+  .card-title {
+    font-size: 16px; font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #1A365D;
+  }
+
+  .card-chips {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 12px;
+  }
+  .chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--theme-light);
+    color: var(--theme);
+    letter-spacing: 0.02em;
+  }
+  .chip-gray {
+    background: rgba(44, 44, 44, 0.06);
+    color: #666666;
+  }
+
   .card-usage {
     font-size: 12px; color: #4a4540;
-    background: #F9F8F6; border-radius: 8px;
+    background: var(--theme-soft);
+    border-radius: 8px;
     padding: 8px 12px; margin-bottom: 12px;
-    border-left: 3px solid #C27A65;
+    border-left: 3px solid var(--theme, #C27A65);
   }
-  .card-usage .label { font-weight: 700; margin-bottom: 2px; display: block; color: #1A365D; }
+  .card-usage .label { font-weight: 700; margin-bottom: 2px; display: block; color: var(--theme, #1A365D); }
+
   .point-list { list-style: none; margin-top: 10px; }
   .point-list li {
     font-size: 12px; color: #2C2C2C;
@@ -200,7 +279,7 @@
   .point-list li::before {
     content: "▸";
     position: absolute; left: 0;
-    color: #C27A65;
+    color: var(--theme, #C27A65);
     font-weight: 700;
   }
 
@@ -253,9 +332,7 @@
     padding: 22px 26px; border-left: 5px solid #C27A65;
   }
   .flow-box h3 { font-size: 14px; margin-bottom: 14px; color: #A86550; letter-spacing: 0.05em; }
-  .flow-steps {
-    display: flex; flex-direction: column; gap: 10px;
-  }
+  .flow-steps { display: flex; flex-direction: column; gap: 10px; }
   .flow-step {
     display: flex; align-items: flex-start; gap: 12px;
     font-size: 13px; color: #2C2C2C; line-height: 1.6;
@@ -268,6 +345,18 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 11px; font-weight: 700;
   }
+
+  .equipment-note {
+    max-width: 900px; margin: 0 auto 24px;
+    background: rgba(232, 62, 140, 0.06);
+    border-radius: 12px;
+    padding: 18px 22px;
+    border-left: 4px solid #E83E8C;
+    font-size: 12px;
+    color: #2C2C2C;
+    line-height: 1.7;
+  }
+  .equipment-note strong { color: #1A365D; }
 
   .footer-note {
     max-width: 900px; margin: 40px auto 0;
@@ -282,226 +371,290 @@
 
 <div class="page-header">
   <h1>べるフィット｜HP写真撮影ブリーフ（施設スタッフ版）</h1>
-  <p>スマホ撮影で6スロットを仕上げる、現場スタッフ向けの撮影資料</p>
+  <p>スマホ撮影で3業態6スロットを仕上げる、現場スタッフ向けの撮影資料</p>
   <div class="meta">
-    <span>対象サイト：べるつりーコーポレートHP</span>
+    <span>対象サイト：bellmfit.com（べるフィット）</span>
     <span>作成：2026.04.16</span>
+    <span>版：v2</span>
     <span>撮影主体：施設スタッフ</span>
   </div>
 </div>
 
-<!-- ======== 最優先（本体） ======== -->
-<div class="section-title">🔴 最優先 ― べるフィット本体（services/fitness/）</div>
+<!-- 機材の前提 -->
+<div class="equipment-note">
+  <strong>📌 撮影前提（機材まわり）:</strong>
+  施設内に<strong>カーディオ系（トレッドミル・バイク等）はありません</strong>。被写体は
+  <strong>テクノジム筋力マシン</strong>・<strong>TRX（吊り下げ式）</strong>・<strong>ストレッチマット／ボール／チューブ</strong>・<strong>徒手サポート</strong> が中心です。
+  「走る」「漕ぐ」動作は描写しないでください。
+</div>
 
-<div class="grid grid-2">
+<!-- ======== Night ======== -->
+<div class="section-title theme-night" style="color:#1A365D;">
+  <span class="tag" style="background:#1A365D;">NIGHT</span>
+  夜間・週末利用（自費・自分のペース）
+  <span class="sub">services/fitness/night/</span>
+</div>
 
-  <!-- Slot 05: 本体ヒーロー -->
-  <div class="card">
+<div class="grid grid-2 theme-night">
+
+  <!-- N1: ナイト ヒーロー -->
+  <div class="card theme-night">
     <div class="photo-box landscape">
       <div class="ratio-tag">4:3 横</div>
       <div class="guide guide-thirds"></div>
-      <div class="equipment" style="gap:20px;">
-        <div class="machine-tall"></div>
-        <div class="silhouette sil-small"><div class="sil-head"></div><div class="sil-body"></div></div>
-        <div class="machine"></div>
-        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
+      <div class="scene" style="gap:16px;">
+        <div class="strength-machine"></div>
+        <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="tablet"></div>
       </div>
-      <div class="photo-label">空間全体・スタッフ1+利用者2</div>
+      <div class="photo-label">筋力マシン利用 × アプリ連動</div>
     </div>
     <div class="card-body">
-      <div class="card-num">Slot 05 <span class="badge badge-s1">🔴最優先</span></div>
-      <div class="card-title">べるフィット本体<br>施設利用シーン（ヒーロー）</div>
+      <div class="card-num">Slot N1 ／ Night ヒーロー</div>
+      <div class="card-title">自分のペースで、<br>無理なく続く運動習慣</div>
+      <div class="card-chips">
+        <span class="chip">自費</span>
+        <span class="chip chip-gray">フレイル予防</span>
+        <span class="chip chip-gray">転倒リスク</span>
+      </div>
       <div class="card-usage">
         <span class="label">使用ページ</span>
-        services/fitness/index.html トップ
+        services/fitness/night/index.html トップヒーロー
       </div>
       <ul class="point-list">
-        <li>横位置4:3、空間全体が見えるワイド</li>
-        <li>有酸素マシン・ストレッチマット・スタッフ巡回が同じ画面に</li>
-        <li>利用者は65〜80歳。ポロシャツのスタッフが画面奥から手前へ歩く雰囲気</li>
-        <li>午後の自然光＋天井LEDミックス。明るく清潔感</li>
-        <li>スマホを胸の高さで構える（低すぎると天井ばかり映る）</li>
-        <li>3〜5枚撮って、一番「通いやすそう」な1枚を選ぶ</li>
+        <li>夕方〜夜の時間帯、40〜60代の利用者がテクノジム筋力マシンを利用</li>
+        <li>スマホ or タブレット画面をマシンにかざす／操作している一瞬が◎（アプリ連動訴求）</li>
+        <li>横位置4:3、奥行きを感じさせる広めの画角</li>
+        <li>暖色のダウンライト中心。窓の外が薄暗い時間帯だとなお良し</li>
+        <li>表情は「黙々と集中」ではなく、穏やかな真剣さ</li>
+        <li>3〜5枚撮って一番自然な瞬間を選ぶ</li>
       </ul>
       <ul class="ng-list">
         <div class="ng-label">NG</div>
-        <li>狭く見える寄り構図／逆光で顔が黒つぶれ／鏡に撮影者が映り込む</li>
+        <li>ランニングマシン・バイクなどのカーディオ描写</li>
+        <li>ボディビル調のポージング／汗だくで激しい運動</li>
+        <li>画面が真っ黒で何の施設か分からない暗さ</li>
+        <li>フラッシュ使用（雰囲気が飛びます）</li>
       </ul>
     </div>
   </div>
 
-  <!-- Slot 06: 本体中間 -->
-  <div class="card">
+  <!-- N2: ナイト 中間 -->
+  <div class="card theme-night">
     <div class="photo-box landscape">
       <div class="ratio-tag">4:3 横</div>
       <div class="guide guide-thirds"></div>
       <div class="scene" style="gap:8px;">
         <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
-        <div class="silhouette" style="margin-bottom:-8px;"><div class="sil-head"></div><div class="sil-body"></div></div>
-      </div>
-      <div class="photo-label">スタッフが膝をついて伴走</div>
-    </div>
-    <div class="card-body">
-      <div class="card-num">Slot 06 <span class="badge badge-s1">🔴最優先</span></div>
-      <div class="card-title">本体スタッフと利用者の<br>サポート場面（中間）</div>
-      <div class="card-usage">
-        <span class="label">使用ページ</span>
-        services/fitness/index.html 中段
-      </div>
-      <ul class="point-list">
-        <li>スタッフが利用者の横に膝をつき、同じ目線で会話</li>
-        <li>マシンのシート・フォームを一緒に確認している瞬間</li>
-        <li>中距離、二人が同じ高さに収まる構図</li>
-        <li>利用者は70代男性が自然。表情は穏やかな集中</li>
-        <li>背景はシンプルに。人物の輪郭がはっきり出る光で</li>
-      </ul>
-      <ul class="ng-list">
-        <div class="ng-label">NG</div>
-        <li>スタッフが立ったまま見下ろす構図／営業スマイル／背景ごちゃつき</li>
-      </ul>
-    </div>
-  </div>
-
-</div>
-
-<!-- ======== 高優先（夜間） ======== -->
-<div class="section-title">🟡 高優先 ― べるフィット夜間（services/fitness/night/）</div>
-
-<div class="grid grid-2">
-
-  <!-- Slot 07: 夜間ヒーロー -->
-  <div class="card">
-    <div class="photo-box landscape">
-      <div class="ratio-tag">4:3 横</div>
-      <div class="guide guide-thirds"></div>
-      <div class="equipment" style="gap:24px;">
-        <div class="machine-tall"></div>
-        <div class="silhouette sil-small"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="strength-machine" style="margin-bottom:8px;"></div>
         <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
       </div>
-      <div class="photo-label">夕景・働く世代2名・奥行き</div>
+      <div class="photo-label">スタッフがマシン操作を説明</div>
     </div>
     <div class="card-body">
-      <div class="card-num">Slot 07 <span class="badge badge-s2">🟡高優先</span></div>
-      <div class="card-title">夜間・週末の<br>落ち着いた利用シーン（ヒーロー）</div>
-      <div class="card-usage">
-        <span class="label">使用ページ</span>
-        services/fitness/night/index.html トップ
+      <div class="card-num">Slot N2 ／ Night 中間</div>
+      <div class="card-title">スタッフの個別サポート<br>（フォーム・マシン操作）</div>
+      <div class="card-chips">
+        <span class="chip">自費</span>
+        <span class="chip chip-gray">続ける習慣</span>
       </div>
-      <ul class="point-list">
-        <li>撮影時間は日没後〜閉館前（窓の外がほんのり暗い時間帯）</li>
-        <li>40〜60代の利用者2名。1人はトレッドミル、1人はケトルベル or ストレッチ</li>
-        <li>暖色ダウンライト中心。白色光オフが理想（難しければ調整不要）</li>
-        <li>横位置4:3、奥行きを意識（手前の機材越しに奥の利用者が見える）</li>
-        <li>撮影時のフラッシュは絶対オフ</li>
-      </ul>
-      <ul class="ng-list">
-        <div class="ng-label">NG</div>
-        <li>暗すぎて何の施設か分からない／窓が真っ黒／フラッシュ焚き</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Slot 08: 夜間中間 -->
-  <div class="card">
-    <div class="photo-box landscape">
-      <div class="ratio-tag">4:3 横</div>
-      <div class="guide guide-thirds"></div>
-      <div class="scene" style="gap:12px;">
-        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
-        <div class="tablet" style="margin-bottom:24px;"></div>
-        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
-      </div>
-      <div class="photo-label">タブレットで動作説明するツーショット</div>
-    </div>
-    <div class="card-body">
-      <div class="card-num">Slot 08 <span class="badge badge-s2">🟡高優先</span></div>
-      <div class="card-title">夜間の個別指導<br>（タブレット説明）</div>
       <div class="card-usage">
         <span class="label">使用ページ</span>
         services/fitness/night/index.html 中段
       </div>
       <ul class="point-list">
-        <li>スタッフがタブレットで動作動画を見せながら説明する瞬間</li>
-        <li>横からの2ショット、中距離。タブレット画面は主役ではなく「見せている行為」が主役</li>
-        <li>利用者は50代前後の男性。仕事帰り想定のシンプルな服装でOK</li>
-        <li>暖色ダウンライト、穏やかな集中の表情</li>
+        <li>スタッフが利用者の横で画面やマシンを指差して説明</li>
+        <li>中距離、二人が同じ目線（スタッフは立ったり屈んだり）</li>
+        <li>利用者はシニアでも40〜60代でも可（ナイトの典型層）</li>
+        <li>「教えてもらって安心している」表情を狙う</li>
       </ul>
       <ul class="ng-list">
         <div class="ng-label">NG</div>
-        <li>タブレット画面が白飛び／スタッフだけが語りかけて利用者が映らない構図</li>
+        <li>スタッフが立ったまま上から指導している構図</li>
+        <li>営業スマイル／手本を示すだけで利用者が映らない構図</li>
       </ul>
     </div>
   </div>
 
 </div>
 
-<!-- ======== 中優先（シード） ======== -->
-<div class="section-title">🟢 中優先 ― シード・女性限定（services/fitness/seed/）</div>
+<!-- ======== Seed ======== -->
+<div class="section-title theme-seed" style="color:#C2185B;">
+  <span class="tag" style="background:#E83E8C;">SEED</span>
+  女性向けプログラム・シード（自費・コミュニティ型）
+  <span class="sub">services/fitness/seed/</span>
+</div>
 
-<div class="grid grid-2">
+<div class="grid grid-2 theme-seed">
 
-  <!-- Slot 09: シードヒーロー -->
-  <div class="card">
+  <!-- S1: シード ヒーロー -->
+  <div class="card theme-seed">
     <div class="photo-box landscape">
       <div class="ratio-tag">4:3 横</div>
       <div class="guide guide-thirds"></div>
-      <div class="scene" style="gap:18px;">
-        <div class="mat" style="margin-bottom:-2px;"></div>
+      <div class="scene" style="gap:8px; max-width:85%;">
+        <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
         <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
         <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
       </div>
-      <div class="photo-label">女性2〜3名・マットストレッチ</div>
+      <div class="photo-label">女性3名・輪になって会話</div>
     </div>
     <div class="card-body">
-      <div class="card-num">Slot 09 <span class="badge badge-s3">🟢中優先</span></div>
-      <div class="card-title">シード（女性限定）<br>安心の空間（ヒーロー）</div>
+      <div class="card-num">Slot S1 ／ Seed ヒーロー</div>
+      <div class="card-title">安心できる空間で、<br>心と身体の健康維持</div>
+      <div class="card-chips">
+        <span class="chip">自費</span>
+        <span class="chip chip-gray">コミュニティ</span>
+        <span class="chip chip-gray">女性限定</span>
+      </div>
       <div class="card-usage">
         <span class="label">使用ページ</span>
-        services/fitness/seed/index.html トップ
+        services/fitness/seed/index.html トップヒーロー
       </div>
       <ul class="point-list">
-        <li>40〜60代の女性2〜3名がマットでストレッチ</li>
-        <li>パステル・木目トーンの空間が伝わる広めの画角</li>
-        <li>自然光中心、やわらかい印象</li>
-        <li>リラックスした表情。互いに少し視線を交わす程度でOK</li>
-        <li>横位置4:3、広めに撮って後でトリミングできるように</li>
+        <li>女性3〜4名（50〜70代中心）が輪になって、運動の合間に会話している瞬間</li>
+        <li>ストレッチマット・チューブ・ボールなどの道具があってもOK</li>
+        <li>激しい運動中ではなく「ふれあいの居場所」感を優先</li>
+        <li>日中の時間帯、自然光中心のやわらかい光</li>
+        <li>笑顔は自然体。作り笑いは避ける</li>
+        <li>横位置4:3、広めに撮って後でトリミング可能に</li>
       </ul>
       <ul class="ng-list">
         <div class="ng-label">NG</div>
-        <li>硬い整列／鏡張り一面で撮影者が映る／無機質なジム感が出る</li>
+        <li>ひとりで黙々とヨガ／整列してカメラ目線の記念写真風</li>
+        <li>若い20〜30代女性のフィットネスモデル的雰囲気</li>
+        <li>背景に男性が映り込む</li>
       </ul>
     </div>
   </div>
 
-  <!-- Slot 10: シード中間 -->
-  <div class="card">
+  <!-- S2: シード 中間 -->
+  <div class="card theme-seed">
     <div class="photo-box landscape">
       <div class="ratio-tag">4:3 横</div>
       <div class="guide guide-thirds"></div>
       <div class="scene" style="gap:14px;">
         <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="teacup"></div>
         <div class="silhouette sil-seated"><div class="sil-head"></div><div class="sil-body"></div></div>
       </div>
-      <div class="photo-label">女性スタッフ×女性利用者・対話</div>
+      <div class="photo-label">運動後の談笑・ふれあい</div>
     </div>
     <div class="card-body">
-      <div class="card-num">Slot 10 <span class="badge badge-s3">🟢中優先</span></div>
-      <div class="card-title">シード<br>女性スタッフ×女性利用者（中間）</div>
+      <div class="card-num">Slot S2 ／ Seed 中間</div>
+      <div class="card-title">ふれあいの居場所として<br>（運動後の談笑）</div>
+      <div class="card-chips">
+        <span class="chip">自費</span>
+        <span class="chip chip-gray">居場所</span>
+      </div>
       <div class="card-usage">
         <span class="label">使用ページ</span>
         services/fitness/seed/index.html 中段
       </div>
       <ul class="point-list">
-        <li>女性スタッフ（30代想定）と女性利用者（50代前後）が向かい合って座る</li>
-        <li>二人の斜めツーショット、中距離</li>
-        <li>お茶やパンフレットがテーブルにあってもOK（過度な演出は不要）</li>
+        <li>女性スタッフと利用者、または利用者同士がお茶を飲みながら談笑</li>
+        <li>テーブル越しの斜めツーショット or 3人の談笑</li>
         <li>窓光メインのやわらかい光</li>
-        <li>笑顔は自然に。作り込まず、会話が進んでいる途中の瞬間を狙う</li>
+        <li>「運動の合間にちょっと話す」日常の瞬間を狙う</li>
+        <li>カウンセリング室ではなく、開かれたスペースで</li>
       </ul>
       <ul class="ng-list">
         <div class="ng-label">NG</div>
-        <li>カメラ目線で並ぶ記念写真風／背景に営業資料やPCが強く映り込む</li>
+        <li>堅苦しい面談風／真剣な相談の構図</li>
+        <li>カメラ目線で並ぶ記念写真</li>
+        <li>背景にPC・営業資料が強く映り込む</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======== Leaf ======== -->
+<div class="section-title theme-leaf" style="color:#1E7E34;">
+  <span class="tag" style="background:#28A745;">LEAF</span>
+  通所リハビリ・リーフ（介護保険・専門リハ）
+  <span class="sub">services/leaf/</span>
+</div>
+
+<div class="grid grid-2 theme-leaf">
+
+  <!-- L1: リーフ ヒーロー -->
+  <div class="card theme-leaf">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="support-scene">
+        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette sil-small" style="margin-bottom:8px;"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">セラピストが1対1で伴走</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot L1 ／ Leaf ヒーロー</div>
+      <div class="card-title">「また行きたい」と<br>思えるリハビリ</div>
+      <div class="card-chips">
+        <span class="chip">介護保険</span>
+        <span class="chip chip-gray">退院後継続</span>
+        <span class="chip chip-gray">専門職</span>
+      </div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/leaf/index.html トップヒーロー
+      </div>
+      <ul class="point-list">
+        <li>セラピスト（専門職）が70〜80代利用者に1対1でサポート</li>
+        <li>立ち上がり／椅子からの姿勢保持／バランスボールを使った運動 など</li>
+        <li>スタッフが利用者の腰や肩をそっと支えている場面が◎</li>
+        <li>昼間の自然光、明るく開放的に</li>
+        <li>表情は「安心して任せている」「できた」を狙う</li>
+        <li>横位置4:3、二人が画面に収まる中距離</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>病院っぽい無機質な白い空間感</li>
+        <li>カーディオマシン／自走式バイク等の描写</li>
+        <li>利用者が辛そう・苦しそうに見える構図</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- L2: リーフ 中間 -->
+  <div class="card theme-leaf">
+    <div class="photo-box landscape">
+      <div class="ratio-tag">4:3 横</div>
+      <div class="guide guide-thirds"></div>
+      <div class="scene" style="gap:12px; max-width:85%;">
+        <div class="silhouette sil-seated sil-small"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette sil-seated sil-small"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette sil-seated sil-small"><div class="sil-head"></div><div class="sil-body"></div></div>
+        <div class="silhouette"><div class="sil-head"></div><div class="sil-body"></div></div>
+      </div>
+      <div class="photo-label">集団体操・社会参加の場</div>
+    </div>
+    <div class="card-body">
+      <div class="card-num">Slot L2 ／ Leaf 中間</div>
+      <div class="card-title">通所を通じた社会参加<br>（集団体操 or 交流）</div>
+      <div class="card-chips">
+        <span class="chip">介護保険</span>
+        <span class="chip chip-gray">社会参加</span>
+        <span class="chip chip-gray">交流</span>
+      </div>
+      <div class="card-usage">
+        <span class="label">使用ページ</span>
+        services/leaf/index.html 中段
+      </div>
+      <ul class="point-list">
+        <li>利用者3〜4名が椅子に座って集団体操している一コマ</li>
+        <li>前でスタッフが手本を見せている</li>
+        <li>または、体操後に利用者同士が会話している和やかな場面</li>
+        <li>「一人じゃない」「外出が楽しい」感を優先</li>
+        <li>明るい室内、窓光メイン</li>
+      </ul>
+      <ul class="ng-list">
+        <div class="ng-label">NG</div>
+        <li>機械的な一斉動作／軍隊的に整列した構図</li>
+        <li>利用者の表情が無表情・疲れた様子</li>
+        <li>病院/医療施設と見分けがつかない描写</li>
       </ul>
     </div>
   </div>
@@ -514,18 +667,18 @@
 <div class="note-box">
   <h3>📋 撮影共通ルール（スマホ撮影・全スロット共通）</h3>
   <ul>
-    <li>色調：暖色寄り・自然光が理想。HPのアイボリー＋スレート基調に合わせる</li>
-    <li>構図：縦位置ではなく<strong>横位置4:3</strong>を基本（HPに入るサイズ）</li>
-    <li>ピント：被写体の顔にタップしてピント固定。手前の床や機材にピントが抜けないように</li>
+    <li>色調：暖色寄り・自然光が理想。HPの落ち着いたトーンに合わせる</li>
+    <li>構図：<strong>横位置4:3</strong>を基本（HPに入るサイズ）</li>
+    <li>ピント：被写体の顔にタップしてピント固定</li>
     <li>明るさ：シャッター前に画面を長押し→明るさスライダーで軽く調整（白飛びさせない）</li>
     <li>撮影枚数：1スロットにつき3〜5枚。表情のブレ・目つむり対策</li>
     <li>フラッシュ：常にオフ（夜間含む）</li>
-    <li>縦横：HDR/ライブフォトはオフでよい。通常モードで十分</li>
+    <li>HDR／ライブフォトはオフでOK。通常モードで十分</li>
     <li>加工：撮って出しで納品。色補正・リサイズはマーケ室で実施</li>
   </ul>
 </div>
 
-<!-- ======== 同意と声かけ ======== -->
+<!-- ======== 被写体への声かけ ======== -->
 <div class="note-box" style="border-left-color:#C27A65;">
   <h3>🤝 被写体への声かけ（同意取得済みでも毎回1回）</h3>
   <ul>
@@ -541,10 +694,10 @@
 <div class="flow-box">
   <h3>📤 撮影後のフロー</h3>
   <div class="flow-steps">
-    <div class="flow-step"><div class="step-num">1</div><div>スマホ内でSlot別にアルバム分け（例：Slot05-本体ヒーロー）</div></div>
+    <div class="flow-step"><div class="step-num">1</div><div>スマホ内でSlot別にアルバム分け（例：N1-ナイトヒーロー、S1-シードヒーロー）</div></div>
     <div class="flow-step"><div class="step-num">2</div><div>各Slotにつき「これが一番良い」と思う2〜3枚を選抜</div></div>
     <div class="flow-step"><div class="step-num">3</div><div>Google Drive指定フォルダへアップ（パスはマーケ室から別途連絡）</div></div>
-    <div class="flow-step"><div class="step-num">4</div><div>Google Chatで「Slot 0X 撮影完了」と一報</div></div>
+    <div class="flow-step"><div class="step-num">4</div><div>Google Chatで「Slot XX 撮影完了」と一報</div></div>
     <div class="flow-step"><div class="step-num">5</div><div>マーケ室で色補正・リサイズ → HP反映</div></div>
   </div>
 </div>
@@ -554,14 +707,16 @@
   <h3>📅 撮影日の決め方</h3>
   <ul>
     <li>撮影日は<strong>各施設のスタッフ判断で設定</strong>してOK（営業の邪魔にならない時間帯で）</li>
-    <li>4/21のべるフィット会議までに着手できるものから順次</li>
+    <li>ナイトは実際の夜間時間帯（17時以降）で撮るのが自然</li>
+    <li>シードは日中の女性限定枠の時間帯に合わせる</li>
+    <li>リーフは午前または午後の部の合間に</li>
     <li>全6スロット完了の目安は来月末（2026-05末）を仮置き</li>
     <li>撮影前に迷ったら、このブリーフをもう一度眺めるか、マーケ室へ一声</li>
   </ul>
 </div>
 
 <div class="footer-note">
-  べるつりーHD ／ マーケティング室 ／ 2026-04-16
+  べるつりーHD ／ マーケティング室 ／ 2026-04-16 ／ v2
 </div>
 
 </body>
