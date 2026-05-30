@@ -1364,32 +1364,40 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 2px;
   opacity: 0.9;
 }
-/* Header phone CTA variant (subtle, primary outlined) */
+/* Header phone CTA variant — compact outlined (PC ナビ崩れ対策) */
 .nav-cta--phone {
-  background-color: transparent;
-  color: var(--color-primary);
+  background-color: transparent !important;
+  color: var(--color-primary) !important;
   border: 1px solid var(--color-primary);
-  margin-right: var(--space-sm);
+  padding: 0.45rem 0.85rem !important;
+  font-size: 0.78rem !important;
+  font-weight: var(--font-weight-medium) !important;
   font-feature-settings: "tnum";
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   white-space: nowrap;
 }
 .nav-cta--phone:hover {
-  background-color: var(--color-primary);
-  color: var(--color-surface);
+  background-color: var(--color-primary) !important;
+  color: var(--color-surface) !important;
+  transform: none;
+  box-shadow: none;
 }
-@media (max-width: 1023px) {
-  .nav-cta--phone { display: none; }
+/* 1199px以下は header-cta から電話CTAを隠す（FAB と モバイルドロワーに電話あり） */
+@media (max-width: 1199px) {
+  .nav-cta--phone { display: none !important; }
+}
+/* 既存の .header-cta は display: block を保持。flex を上書きしないため統合のみ */
+@media (min-width: 600px) {
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
 }
 .mobile-menu-cta--phone {
   background-color: var(--color-primary) !important;
   color: var(--color-surface) !important;
   margin-bottom: var(--space-xs);
-}
-.header-cta {
-  display: flex;
-  align-items: center;
-  gap: 0;
 }
 
 /* Phone CTA variant (primary slate blue) */
