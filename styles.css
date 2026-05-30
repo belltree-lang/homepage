@@ -1364,6 +1364,75 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 2px;
   opacity: 0.9;
 }
+/* Header phone CTA variant (subtle, primary outlined) */
+.nav-cta--phone {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  margin-right: var(--space-sm);
+  font-feature-settings: "tnum";
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.nav-cta--phone:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+@media (max-width: 1023px) {
+  .nav-cta--phone { display: none; }
+}
+.mobile-menu-cta--phone {
+  background-color: var(--color-primary) !important;
+  color: var(--color-surface) !important;
+  margin-bottom: var(--space-xs);
+}
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Phone CTA variant (primary slate blue) */
+.fab-button--phone {
+  background-color: var(--color-primary);
+  animation: pulse-ring-primary 2.5s infinite;
+}
+.fab-button--phone:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-surface);
+}
+@keyframes pulse-ring-primary {
+  0% { box-shadow: 0 0 0 0 rgba(26, 54, 93, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(26, 54, 93, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(26, 54, 93, 0); }
+}
+/* Form CTA variant (terracotta accent, slightly de-emphasized vs phone) */
+.fab-button--form {
+  animation: none;
+  font-weight: var(--font-weight-medium);
+}
+/* Promise copy above buttons */
+.fab-promise {
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  line-height: 1.55;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  pointer-events: auto;
+  margin-bottom: 4px;
+  max-width: 240px;
+  text-align: right;
+  font-weight: var(--font-weight-regular);
+}
+@media (max-width: 767px) {
+  .fab-promise { max-width: 200px; font-size: 0.68rem; }
+}
+@media (max-width: 599px) {
+  .fab-promise { display: none; }
+}
 
 /* Service Stepper / Lifecycle Indicator */
 .service-stepper {
