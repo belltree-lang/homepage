@@ -2531,6 +2531,107 @@ textarea.form-control {
   color: var(--color-text-muted);
 }
 
+/* === Home Hero Stat Strip + NAP === */
+/* Critical eval Top#8 / Top#9 対応 */
+.home-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: var(--space-2xl) 0 var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.home-stat {
+  padding: var(--space-md) var(--space-sm);
+  border-right: 1px solid var(--color-border);
+  text-align: left;
+}
+.home-stat:last-child { border-right: none; }
+.home-stat__num {
+  font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-feature-settings: "tnum";
+}
+.home-stat__num .u { font-size: 0.7em; font-weight: 500; color: var(--color-text-muted); margin-left: 3px; letter-spacing: 0; }
+.home-stat__lab {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 6px;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 640px) {
+  .home-stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .home-stat:nth-child(2) { border-right: none; }
+  .home-stat:nth-child(1), .home-stat:nth-child(2) { border-bottom: 1px solid var(--color-border); }
+}
+
+/* NAP block (上部 brand snapshot) */
+.brand-snapshot {
+  background: var(--color-background-soft);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-sm) 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+.brand-snapshot__inner {
+  max-width: var(--container-base);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.brand-snapshot__tel {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  font-feature-settings: "tnum";
+  letter-spacing: 0.02em;
+}
+.brand-snapshot__tel:hover {
+  color: var(--color-primary-light);
+}
+.brand-snapshot__meta {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .brand-snapshot { font-size: 0.75rem; }
+  .brand-snapshot__inner { gap: var(--space-sm); }
+  .brand-snapshot__meta { gap: var(--space-sm); width: 100%; }
+}
+
+/* === Editorial Typography (Shippori Mincho B1 横展開) === */
+/* H1とエディトリアル見出し全般を明朝化。Consultation-First Premium を全ページに貫通させる */
+h1,
+.section-header h2,
+.h-mincho {
+  font-family: "Shippori Mincho B1", "Yu Mincho", "ヒラギノ明朝 ProN", serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  font-feature-settings: "palt";
+}
+.eyebrow {
+  letter-spacing: 0.16em;
+  font-feature-settings: "palt";
+}
+.text-lead {
+  letter-spacing: 0.02em;
+}
+/* テーブルや数字は引き続きsans + tnum */
+table, .num, .stat-value {
+  font-family: var(--font-family-base);
+  font-feature-settings: "tnum";
+}
+
 /* === Editorial Placeholder Plates === */
 /* 写真未調達期間の品の良い穴埋めパターン (Stripe Press / Editorial 系) */
 .plate {
