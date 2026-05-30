@@ -2461,3 +2461,69 @@ textarea.form-control {
   font-size: 0.75rem;
   color: var(--color-text-muted);
 }
+
+/* === Editorial Placeholder Plates === */
+/* 写真未調達期間の品の良い穴埋めパターン (Stripe Press / Editorial 系) */
+.plate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  background: var(--color-background-soft);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--color-text-muted);
+}
+.plate--hero { min-height: 360px; aspect-ratio: 4 / 3; }
+.plate--wide { min-height: 200px; aspect-ratio: 16 / 9; }
+.plate__index {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font-family: var(--font-family-base);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+.plate__index::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--color-border-strong);
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.plate__caption {
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 0 28px;
+  line-height: 1.7;
+  max-width: 80%;
+}
+.plate__caption::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--color-border-strong);
+  margin: 0 auto 16px;
+}
+.plate__caption-note {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+  margin-top: 8px;
+}
