@@ -85,6 +85,75 @@
       gtag('config', 'G-RQRJ45S3V3');
     </script>
     <!-- /Analytics Config -->
+
+    <!-- Schema.org JSON-LD: MedicalBusiness (訪問鍼灸マッサージ) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "@id": "https://bellmfit.com/services/acupuncture/#service",
+      "name": "べるつりー鍼灸マッサージ院 訪問施術",
+      "url": "https://bellmfit.com/services/acupuncture/",
+      "image": "https://bellmfit.com/assets/images/og-image.jpg",
+      "description": "通院が難しい方のご自宅へ、国家資格者が直接お伺いします。痛みを和らげるだけでなく、その先の生活全体に向き合う訪問鍼灸マッサージ＋リハビリのチーム。",
+      "telephone": "+81-42-682-2839",
+      "priceRange": "¥450 - ¥1,284",
+      "medicalSpecialty": ["Acupuncture", "PhysicalTherapy"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "下柚木3-7-2-401",
+        "addressLocality": "八王子市",
+        "addressRegion": "東京都",
+        "postalCode": "192-0375",
+        "addressCountry": "JP"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }],
+      "areaServed": [
+        {"@type": "City", "name": "八王子市"},
+        {"@type": "City", "name": "町田市"},
+        {"@type": "City", "name": "日野市"}
+      ],
+      "parentOrganization": {"@id": "https://bellmfit.com/#organization"},
+      "offers": [
+        {"@type": "Offer", "name": "医療保険 1割負担", "price": "450", "priceCurrency": "JPY", "description": "1回30分"},
+        {"@type": "Offer", "name": "医療保険 2割負担", "price": "867", "priceCurrency": "JPY", "description": "1回30分"},
+        {"@type": "Offer", "name": "医療保険 3割負担", "price": "1284", "priceCurrency": "JPY", "description": "1回30分"}
+      ]
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+            {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://bellmfit.com/index.html"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "サービス一覧",
+                  "item": "https://bellmfit.com/services/index.html"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "訪問鍼灸マッサージ",
+                  "item": "https://bellmfit.com/services/acupuncture/"
+            }
+      ]
+}
+    </script>
 </head>
   <body>
   <!-- === HEADER_START === -->

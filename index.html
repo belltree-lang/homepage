@@ -32,6 +32,54 @@
       gtag('config', 'G-RQRJ45S3V3');
     </script>
     <!-- /Analytics Config -->
+
+    <!-- Schema.org JSON-LD: Organization + LocalBusiness + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "Organization"],
+          "@id": "https://bellmfit.com/#organization",
+          "name": "株式会社べるつりー",
+          "alternateName": ["べるつりー", "BellTree"],
+          "url": "https://bellmfit.com/",
+          "logo": "https://bellmfit.com/assets/images/logo.png",
+          "image": "https://bellmfit.com/assets/images/og-image.jpg",
+          "description": "八王子・町田・日野で、運動・通所リハビリ・訪問鍼灸マッサージ・居宅介護支援・行政書士事務所を横断運営する医療介護グループ。",
+          "telephone": "+81-42-682-2839",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "下柚木3-7-2-401",
+            "addressLocality": "八王子市",
+            "addressRegion": "東京都",
+            "postalCode": "192-0375",
+            "addressCountry": "JP"
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }],
+          "areaServed": [
+            {"@type": "AdministrativeArea", "name": "八王子市"},
+            {"@type": "AdministrativeArea", "name": "町田市"},
+            {"@type": "AdministrativeArea", "name": "日野市"},
+            {"@type": "AdministrativeArea", "name": "南大沢"}
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bellmfit.com/#website",
+          "url": "https://bellmfit.com/",
+          "name": "株式会社べるつりー",
+          "publisher": {"@id": "https://bellmfit.com/#organization"},
+          "inLanguage": "ja"
+        }
+      ]
+    }
+    </script>
 </head>
   <body>
   <!-- === HEADER_START === -->
