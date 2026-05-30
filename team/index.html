@@ -54,6 +54,23 @@
         object-fit: cover;
         display: block;
       }
+      .staff-profile-img--pending {
+        background: var(--color-background-soft, #FCFCFA);
+        border: 1px dashed var(--color-border-strong);
+        flex-direction: column;
+        gap: 4px;
+        color: var(--color-text-muted);
+      }
+      .staff-profile-img--pending .icon {
+        font-size: 1.6rem;
+        opacity: 0.4;
+      }
+      .staff-profile-img--pending .pending-label {
+        font-size: 0.55rem;
+        letter-spacing: 0.18em;
+        text-align: center;
+        line-height: 1.4;
+      }
       .staff-name {
         font-size: var(--font-size-heading-sm);
         margin-bottom: var(--space-xs);
@@ -432,7 +449,7 @@
             </div>
 
             <div class="card staff-card text-center">
-               <div class="staff-profile-img"><span class="icon icon-user" aria-hidden="true"></span></div>
+               <div class="staff-profile-img staff-profile-img--pending" aria-label="写真準備中"><span class="icon icon-user" aria-hidden="true"></span><span class="pending-label">写真<br>準備中</span></div>
                <h3 class="staff-name">菅原 直志</h3>
                <p class="staff-title">鍼灸師 / 八王子・日野エリア副院長</p>
                <p class="staff-intro">痛みの改善だけでなく、その原因となる身体の使い方や筋力バランスにも注目し、施術と運動指導を組み合わせたサポートを行っています。</p>
@@ -440,7 +457,7 @@
 
             <!-- Row 2: 鍼灸・フィットネス部門 -->
             <div class="card staff-card text-center">
-               <div class="staff-profile-img"><span class="icon icon-user" aria-hidden="true"></span></div>
+               <div class="staff-profile-img staff-profile-img--pending" aria-label="写真準備中"><span class="icon icon-user" aria-hidden="true"></span><span class="pending-label">写真<br>準備中</span></div>
                <h3 class="staff-name">中澤 仁</h3>
                <p class="staff-title">鍼灸師 / 八王子・日野エリア副院長</p>
                <p class="staff-intro">西洋医学と東洋医学の双方の視点から身体の状態を捉え、生活に寄り添った施術を提供しています。</p>
