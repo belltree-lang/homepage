@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>fitness-main 比較モック</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--color-background, #FCFCFA); }
+    .comp-wrap { max-width: 1400px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .comp-head { margin-bottom: 2rem; }
+    .comp-head h1 { font-family: "Shippori Mincho B1", "Yu Mincho", serif; font-size: 2rem; margin: 0 0 0.5rem; }
+    .comp-head p { color: var(--color-text-muted, #6b7280); margin: 0; }
+    .comp-row { display: grid; gap: 2rem; margin: 3rem 0; }
+    @media (min-width: 1024px) { .comp-row { grid-template-columns: 1fr 1fr; } }
+    .comp-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); padding: 1.5rem; }
+    .comp-card h2 { font-family: "Shippori Mincho B1", serif; font-size: 1.25rem; margin: 0 0 1rem; letter-spacing: 0.02em; }
+    .comp-card .badge { display: inline-block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
+    .badge-ai { background: #1A365D; color: #fff; }
+    .badge-real { background: #C27A65; color: #fff; }
+    .comp-img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; background: #eee; }
+    .comp-meta { color: var(--color-text-muted, #6b7280); font-size: 0.88rem; margin-top: 1rem; line-height: 1.7; }
+    .comp-meta b { color: var(--color-text, #1f2937); }
+    .section-label { font-size: 0.85rem; letter-spacing: 0.1em; color: var(--color-text-muted, #6b7280); text-transform: uppercase; margin: 4rem 0 1rem; border-bottom: 1px solid var(--color-border, #e5e7eb); padding-bottom: 0.5rem; }
+    .mobile-row { max-width: 420px; margin: 2rem auto; }
+    .mobile-row .comp-card { margin-bottom: 2rem; }
+    .ctx-frame { background: #fff; border: 1px solid var(--color-border, #e5e7eb); padding: 2rem; margin: 1rem 0 2rem; }
+    .ctx-frame .editorial-image { margin: 0; }
+    .ctx-eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #C27A65; margin-bottom: 0.5rem; }
+    .ctx-h2 { font-family: "Shippori Mincho B1", serif; font-size: 1.6rem; margin: 0 0 0.75rem; }
+    .ctx-p { color: var(--color-text-muted, #6b7280); margin: 0 0 1.5rem; line-height: 1.8; }
+  </style>
+</head>
+<body>
+  <main class="comp-wrap">
+    <header class="comp-head">
+      <h1>fitness-main 比較モック</h1>
+      <p>services/fitness/index.html の hero plate に当てはめた場合の見え方。PC横並びとスマホ縦並びの両方で比較。</p>
+    </header>
+
+    <div class="section-label">PC幅 横並び比較（1024px 以上）</div>
+    <div class="comp-row">
+      <div class="comp-card">
+        <h2><span class="badge badge-ai">AI 生成</span>A. fitness-main.png</h2>
+        <img src="../images/photos/fitness-main.png" alt="AI" class="comp-img">
+        <div class="comp-meta">
+          <b>雰囲気</b>：静かなプライベートレッスン感 / TRX中心の構図<br>
+          <b>人物</b>：シニア女性3名＋スタッフ1名<br>
+          <b>強み</b>：ブランド世界観の整合 / 控えめで上品<br>
+          <b>弱み</b>：抽象的、AI感が残る
+        </div>
+      </div>
+      <div class="comp-card">
+        <h2><span class="badge badge-real">実写</span>B. fitness-main-real.jpg</h2>
+        <img src="../images/photos/fitness-main-real.jpg" alt="実写" class="comp-img">
+        <div class="comp-meta">
+          <b>雰囲気</b>：グループレッスンの活気・実在感<br>
+          <b>人物</b>：会員2名（背中向き）＋トレーナー1名（笑顔・指導中）<br>
+          <b>強み</b>：実在のスタッフ・実在の現場 / 競合との差別化<br>
+          <b>弱み</b>：縦長原寸を16:9にクロップする必要あり
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">実ページ風モック（services/fitness ヒーローの当てはめ）</div>
+
+    <div class="ctx-frame">
+      <div class="ctx-eyebrow">For Wellness / べるフィット</div>
+      <h3 class="ctx-h2">A. AI 生成バージョン</h3>
+      <p class="ctx-p">運動を「特別な時間」ではなく「日々の整え」として、無理なく続けられるべるフィット。少人数制で、お一人おひとりに合わせた組み立てをご提案します。</p>
+      <div class="editorial-image">
+        <img src="../images/photos/fitness-main.png" alt="AI" style="width:100%; aspect-ratio: 16/9; object-fit: cover; display:block;">
+      </div>
+    </div>
+
+    <div class="ctx-frame">
+      <div class="ctx-eyebrow">For Wellness / べるフィット</div>
+      <h3 class="ctx-h2">B. 実写バージョン</h3>
+      <p class="ctx-p">運動を「特別な時間」ではなく「日々の整え」として、無理なく続けられるべるフィット。少人数制で、お一人おひとりに合わせた組み立てをご提案します。</p>
+      <div class="editorial-image">
+        <img src="../images/photos/fitness-main-real.jpg" alt="実写" style="width:100%; aspect-ratio: 16/9; object-fit: cover; display:block;">
+      </div>
+    </div>
+
+    <div class="section-label">スマホ幅 縦並び（420px幅）</div>
+    <div class="mobile-row">
+      <div class="comp-card">
+        <h2><span class="badge badge-ai">AI 生成</span>A</h2>
+        <img src="../images/photos/fitness-main.png" alt="AI" class="comp-img">
+      </div>
+      <div class="comp-card">
+        <h2><span class="badge badge-real">実写</span>B</h2>
+        <img src="../images/photos/fitness-main-real.jpg" alt="実写" class="comp-img">
+      </div>
+    </div>
+
+    <div class="section-label">スマホ幅 縦並び（実写：オリジナル比率）</div>
+    <div class="mobile-row">
+      <div class="comp-card">
+        <h2><span class="badge badge-real">実写</span>B（クロップなし・縦長そのまま）</h2>
+        <img src="../images/photos/fitness-main-real.jpg" alt="実写 原寸" style="width:100%; height:auto; display:block;">
+        <div class="comp-meta">
+          スマホでは縦長のまま表示しても情報量が損なわれません。PCのみクロップ／スマホ縦長、という出し分けも可能です。
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

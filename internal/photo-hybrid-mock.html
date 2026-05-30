@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>#16 腰痛ハイブリッド — 融合デザイン案</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--color-background, #FCFCFA); font-family: "Noto Sans JP", sans-serif; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    h1 { font-family: "Shippori Mincho B1", serif; font-size: 2rem; margin-bottom: 0.5rem; }
+    .lead { color: #6b7280; margin-bottom: 3rem; }
+    .label { font-size: 0.85rem; letter-spacing: 0.12em; color: #6b7280; text-transform: uppercase; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; margin: 3rem 0 1.5rem; }
+    .variant-note { font-size: 0.85rem; color: #6b7280; margin-top: 0.75rem; line-height: 1.7; }
+
+    /* --- Base hybrid frame --- */
+    .hybrid { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #f5f5f4; }
+    .hybrid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* --- Variant A: 中央に⇔のみ --- */
+    .va .arrow {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(252, 252, 250, 0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: #1A365D; font-size: 2rem; font-weight: 300;
+    }
+
+    /* --- Variant B: ⇔ + 1行コピー --- */
+    .vb .center-bar {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(252, 252, 250, 0.96);
+      backdrop-filter: blur(8px);
+      padding: 0.9rem 1.8rem;
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.18);
+      display: flex; align-items: center; gap: 1rem;
+      font-family: "Shippori Mincho B1", serif;
+    }
+    .vb .center-bar .word { font-size: 1.4rem; color: #1A365D; letter-spacing: 0.04em; }
+    .vb .center-bar .arrow { font-size: 1.8rem; color: #C27A65; font-weight: 300; }
+
+    /* --- Variants C-1 / C-2 / C-3 共通 --- */
+    .vc1 .cs-frame, .vc2 .cs-frame, .vc3 .cs-frame {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 14%; min-width: 70px; height: 100%;
+      background: linear-gradient(180deg, rgba(252,252,250,0.0) 0%, rgba(252,252,250,0.93) 22%, rgba(252,252,250,0.93) 78%, rgba(252,252,250,0.0) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 8% 0;
+    }
+    .vc1 .cs-text, .vc2 .cs-text, .vc3 .cs-text {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 1.05rem; color: #1A365D;
+      writing-mode: vertical-rl; letter-spacing: 0.35em; line-height: 1.5;
+    }
+    /* Hairline + dot (C-2) */
+    .vc2 .cs-line, .vc3 .cs-line {
+      width: 1px; flex: 1; max-height: 80px;
+      background: linear-gradient(180deg, transparent, #C27A65 30%, #C27A65 70%, transparent);
+      margin: 0.8rem 0;
+    }
+    .vc2 .cs-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: #C27A65;
+    }
+    .vc2 .cs-text { padding: 0.6rem 0; }
+    /* Triangles (C-3) */
+    .vc3 .cs-tri-up {
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 7px solid #C27A65;
+    }
+    .vc3 .cs-tri-down {
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 7px solid #C27A65;
+    }
+    .vc3 .cs-text { padding: 0.6rem 0; }
+
+    /* --- Variant D: 上下ラベル + 中央⇔ --- */
+    .vd .top-label, .vd .bot-label {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      background: rgba(26, 54, 93, 0.92); color: #fff;
+      padding: 0.4rem 1.2rem; font-size: 0.78rem; letter-spacing: 0.16em;
+      font-weight: 500;
+    }
+    .vd .top-label { top: 1.5rem; }
+    .vd .bot-label { bottom: 1.5rem; }
+    .vd .center-circle {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 110px; height: 110px; border-radius: 50%;
+      background: rgba(252, 252, 250, 0.97);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.2rem;
+    }
+    .vd .center-circle .arrow { font-size: 2rem; color: #C27A65; font-weight: 300; line-height: 1; }
+    .vd .center-circle .small { font-family: "Shippori Mincho B1", serif; font-size: 0.7rem; color: #1A365D; letter-spacing: 0.1em; }
+
+    /* --- Variant E: フレーム外にラベルで挟む --- */
+    .ve-outer { display: grid; grid-template-columns: auto 1fr auto; gap: 1.2rem; align-items: center; }
+    .ve-side { font-family: "Shippori Mincho B1", serif; font-size: 1rem; color: #1A365D; letter-spacing: 0.16em; writing-mode: vertical-rl; }
+    .ve-side .eyebrow { color: #C27A65; font-size: 0.72rem; letter-spacing: 0.2em; margin-bottom: 0.5rem; display: block; }
+    @media (max-width: 768px) {
+      .ve-outer { grid-template-columns: 1fr; }
+      .ve-side { writing-mode: horizontal-tb; text-align: center; }
+    }
+
+    /* --- Variant F: 大きな⇔と長文コピー --- */
+    .vf-outer { position: relative; }
+    .vf-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(26,54,93,0.85) 80%);
+      padding: 2.5rem 2rem 1.5rem;
+      color: #fff;
+    }
+    .vf-overlay .head {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+    .vf-overlay .head .arrow { color: #F4A574; margin: 0 0.4rem; font-weight: 300; }
+    .vf-overlay .sub { font-size: 0.92rem; opacity: 0.92; line-height: 1.7; }
+
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>#16 腰痛ハイブリッド — 融合デザイン案</h1>
+    <p class="lead">既存の 16.png（split-screen 1枚）に <b>⇔ と短いコピー</b> を重ねて、運動×施術の相互補完を視覚化。6パターン提示。</p>
+
+    <div class="label">A — 中央に⇔のみ（最小限）</div>
+    <div class="hybrid va">
+      <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      <div class="arrow">⇔</div>
+    </div>
+    <p class="variant-note">最小限の介入。鍼灸 ⇔ 運動が「行き来する関係」と示唆。テキストなしで美しい。</p>
+
+    <div class="label">B — ⇔ + 1行コピー「整える ⇔ ほぐす」</div>
+    <div class="hybrid vb">
+      <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      <div class="center-bar">
+        <span class="word">整える</span>
+        <span class="arrow">⇔</span>
+        <span class="word">ほぐす</span>
+      </div>
+    </div>
+    <p class="variant-note">行為で対比。フィットネス側「整える」と鍼灸側「ほぐす」が中央の⇔で繋がる。最も読みやすい。</p>
+
+    <div class="label">C-1 — 縦書きテキストのみ（記号なし・最も上品）</div>
+    <div class="hybrid vc1">
+      <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      <div class="cs-frame">
+        <span class="cs-text">運動と施術のハイブリッド</span>
+      </div>
+    </div>
+    <p class="variant-note">記号一切なし。縦書きのテキストだけが中央に立つ。最も上品で Editorial。「⇔」のダサさを完全回避。</p>
+
+    <div class="label">C-2 — 縦書き + 細いヘアライン + 端に極小ドット（推奨）</div>
+    <div class="hybrid vc2">
+      <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      <div class="cs-frame">
+        <span class="cs-dot"></span>
+        <span class="cs-line"></span>
+        <span class="cs-text">運動と施術のハイブリッド</span>
+        <span class="cs-line"></span>
+        <span class="cs-dot"></span>
+      </div>
+    </div>
+    <p class="variant-note">上下に細いヘアライン（terracotta）＋ 端に小さなドット。「双方向に伸びる」を最小限の線で抽象化。⇔ のダサさを回避しつつ意味は伝わる。</p>
+
+    <div class="label">C-3 — 縦書き + 線端に極小三角（流れの方向感）</div>
+    <div class="hybrid vc3">
+      <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      <div class="cs-frame">
+        <span class="cs-tri-up"></span>
+        <span class="cs-line"></span>
+        <span class="cs-text">運動と施術のハイブリッド</span>
+        <span class="cs-line"></span>
+        <span class="cs-tri-down"></span>
+      </div>
+    </div>
+    <p class="variant-note">上下に小さな三角（外側に向く）。点よりも「両方向に流れる」感が明示的。ただし三角がやや具象的すぎる可能性も。</p>
+
+    <div class="label">D — 上下ラベル + 中央サークル</div>
+    <div class="hybrid vd">
+      <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      <div class="top-label">SHISETSU — 施設で整える</div>
+      <div class="center-circle">
+        <span class="arrow">⇔</span>
+        <span class="small">同じ担当者</span>
+      </div>
+      <div class="bot-label">JITAKU — 自宅でほぐす</div>
+    </div>
+    <p class="variant-note">上下ラベルで「施設」「自宅」を明示、中央サークルが「同じ担当者がつなぐ」と明示。情報量最大。</p>
+
+    <div class="label">E — フレーム外にラベルで挟む（縦書き）</div>
+    <div class="ve-outer">
+      <div class="ve-side"><span class="eyebrow">RIGHT</span>自宅で鍼灸<br>痛みを取る</div>
+      <div class="hybrid">
+        <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      </div>
+      <div class="ve-side"><span class="eyebrow">LEFT</span>施設で運動<br>からだを整える</div>
+    </div>
+    <p class="variant-note">写真は無加工、両サイドに縦書き和文ラベル。最もタイポグラフィックで Editorial。スマホでは横並びに自動切替。</p>
+
+    <div class="label">F — 下部に大きなコピー「鍛える ⇔ ほぐす」</div>
+    <div class="hybrid vf-outer">
+      <img src="../images/photos/lower-back-pain-hybrid.png" alt="">
+      <div class="vf-overlay">
+        <div class="head">鍛える<span class="arrow">⇔</span>ほぐす</div>
+        <div class="sub">施設で運動指導、自宅で鍼灸施術。同じ担当者が、からだの両側を支えます。</div>
+      </div>
+    </div>
+    <p class="variant-note">下部グラデオーバーレイにコピー全部のせ。LP のヒーロー素材として最強。</p>
+
+  </main>
+</body>
+</html>
