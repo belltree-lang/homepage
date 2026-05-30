@@ -7,8 +7,61 @@
     <meta name="description" content="訪問鍼灸マッサージは、通院が難しい方に向けた在宅での継続的な身体ケアです。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      /* === Acupuncture page editorial enhancements (Consultation-First Premium) === */
+      .acu-mincho { font-family: "Shippori Mincho B1", "Yu Mincho", serif; font-weight: 700; letter-spacing: 0.02em; }
+      .acu-hero-h1 { font-size: clamp(2.25rem, 5.5vw, 3.5rem); line-height: 1.35; font-feature-settings: "palt"; }
+      .acu-eyebrow-line { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; letter-spacing: 0.22em; color: var(--color-text-muted); text-transform: uppercase; }
+      .acu-eyebrow-line::before { content: ""; width: 32px; height: 1px; background: var(--color-accent); }
+
+      /* Stats grid — gentle reveal */
+      .acu-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-lg); margin: var(--space-2xl) 0; }
+      .acu-stat { padding: var(--space-md) 0; border-top: 1px solid var(--color-border); opacity: 0; transform: translateY(8px); animation: acuReveal 0.6s ease-out forwards; }
+      .acu-stat:nth-child(1) { animation-delay: 0.05s; }
+      .acu-stat:nth-child(2) { animation-delay: 0.15s; }
+      .acu-stat:nth-child(3) { animation-delay: 0.25s; }
+      .acu-stat:nth-child(4) { animation-delay: 0.35s; }
+      .acu-stat-num { font-family: "Shippori Mincho B1", serif; font-size: 2rem; font-weight: 700; line-height: 1; color: var(--color-primary); font-feature-settings: "tnum"; letter-spacing: -0.01em; }
+      .acu-stat-num .u { font-size: 0.9rem; font-weight: 500; color: var(--color-text-muted); margin-left: 4px; letter-spacing: 0; }
+      .acu-stat-lab { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 6px; letter-spacing: 0.06em; }
+      @keyframes acuReveal { to { opacity: 1; transform: translateY(0); } }
+      @media (prefers-reduced-motion: reduce) { .acu-stat { animation: none; opacity: 1; transform: none; } }
+      @media (max-width: 640px) { .acu-stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); } .acu-stat-num { font-size: 1.6rem; } }
+
+      /* CTA */
+      .acu-cta-row { display: flex; gap: var(--space-md); flex-wrap: wrap; align-items: center; }
+      .acu-cta-phone { display: inline-flex; align-items: baseline; gap: 8px; padding: 14px 28px; background: var(--color-primary); color: var(--color-surface); font-weight: 700; font-size: 1.15rem; border-radius: 4px; text-decoration: none; transition: background 200ms ease; letter-spacing: 0.02em; }
+      .acu-cta-phone:hover { background: var(--color-primary-light); color: var(--color-surface); }
+      .acu-cta-phone-prefix { font-size: 0.85rem; opacity: 0.85; font-weight: 500; }
+      .acu-cta-sub { display: inline-flex; align-items: center; padding: 14px 24px; border: 1px solid var(--color-border-strong); color: var(--color-text); font-weight: 500; border-radius: 4px; text-decoration: none; transition: all 200ms ease; }
+      .acu-cta-sub:hover { background: var(--color-background-alt); color: var(--color-text); }
+      .acu-cta-note { font-size: 0.85rem; color: var(--color-text-muted); margin-top: var(--space-sm); }
+
+      /* STORY — editorial */
+      .acu-story-card { background: var(--color-background); border: 1px solid var(--color-border); padding: clamp(var(--space-xl), 5vw, var(--space-2xl)); position: relative; }
+      .acu-story-card::before { content: """; position: absolute; top: -12px; left: 24px; font-family: "Shippori Mincho B1", serif; font-size: 6rem; line-height: 1; color: var(--color-accent); opacity: 0.4; font-weight: 800; }
+      .acu-story-lead { font-family: "Shippori Mincho B1", serif; font-size: clamp(1.15rem, 2.2vw, 1.4rem); font-weight: 500; line-height: 1.95; color: var(--color-text); letter-spacing: 0.04em; margin-bottom: var(--space-lg); }
+      .acu-story-body { line-height: 1.95; color: var(--color-text); margin-bottom: var(--space-lg); letter-spacing: 0.02em; }
+      .acu-story-body strong { color: var(--color-accent-hover); font-weight: 700; }
+      .acu-story-list { list-style: none; padding: 0; margin: 0 0 var(--space-lg) 0; }
+      .acu-story-list li { padding: 14px 0 14px 28px; border-bottom: 1px solid var(--color-border); position: relative; color: var(--color-text); line-height: 1.7; }
+      .acu-story-list li:last-child { border-bottom: none; }
+      .acu-story-list li::before { content: ""; position: absolute; left: 4px; top: 24px; width: 12px; height: 1px; background: var(--color-accent); }
+      .acu-story-close { font-family: "Shippori Mincho B1", serif; font-size: 1.1rem; line-height: 1.85; color: var(--color-text); margin: 0; letter-spacing: 0.04em; }
+      .acu-story-caption { font-size: 0.78rem; color: var(--color-text-muted); margin-top: var(--space-md); margin-bottom: 0; }
+
+      /* PRICING */
+      .acu-pricing-table { width: 100%; border-collapse: collapse; background: var(--color-surface); border: 1px solid var(--color-border); }
+      .acu-pricing-table tbody tr { border-bottom: 1px solid var(--color-border); }
+      .acu-pricing-table tbody tr:last-child { border-bottom: none; }
+      .acu-pricing-table td { padding: 16px 24px; vertical-align: middle; }
+      .acu-pricing-table td.label { color: var(--color-text); font-weight: 500; }
+      .acu-pricing-table td.price { text-align: right; font-family: "Shippori Mincho B1", serif; font-weight: 700; font-size: 1.25rem; color: var(--color-primary); font-feature-settings: "tnum"; letter-spacing: 0.02em; }
+      .acu-pricing-table td.price .yen { font-size: 0.85rem; font-weight: 500; color: var(--color-text-muted); margin-left: 2px; }
+      .acu-pricing-note { text-align: center; font-size: 0.9rem; color: var(--color-text-muted); margin-top: var(--space-md); padding: var(--space-md); background: var(--color-background-soft); border-left: 3px solid var(--color-accent); }
+    </style>
   
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/services/acupuncture/" />
@@ -233,37 +286,35 @@
       <section class="section-spacing bg-soft">
         <div class="container editorial-split">
           <div>
-            <span class="eyebrow">SERVICE 02 | HOME VISIT</span>
-            <h1 style="margin-bottom: var(--space-md); line-height: 1.3;">痛みを取る、その先まで。</h1>
-            <p style="font-size: 1.15rem; font-weight: 500; margin-bottom: var(--space-lg); color: var(--color-text);">八王子・町田・日野で、医療保険でうかがう訪問鍼灸マッサージ＋リハビリのチーム。</p>
-            <p class="text-lead text-muted">通院が難しくなった方のご自宅へ、国家資格者が直接お伺いします。痛みを和らげるだけでなく、その先の生活全体に向き合います。</p>
+            <span class="acu-eyebrow-line">Service 02 — Home Visit</span>
+            <h1 class="acu-mincho acu-hero-h1" style="margin: var(--space-md) 0 var(--space-md);">痛みを取る、<br>その先まで。</h1>
+            <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: var(--space-md); color: var(--color-text); line-height: 1.7;">八王子・町田・日野で、医療保険でうかがう訪問鍼灸マッサージ＋リハビリのチーム。</p>
+            <p class="text-muted" style="line-height: 1.85;">通院が難しくなった方のご自宅へ、国家資格者が直接お伺いします。痛みを和らげるだけでなく、その先の生活全体に向き合います。</p>
 
-            <!-- 実績バッジ -->
-            <div style="display: flex; gap: var(--space-xl); margin: var(--space-xl) 0; flex-wrap: wrap;">
-              <div>
-                <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); line-height: 1;">15<span style="font-size: 1rem; font-weight: 500;">年</span></div>
-                <div style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 4px;">地域で続けて</div>
+            <div class="acu-stats">
+              <div class="acu-stat">
+                <div class="acu-stat-num">15<span class="u">年</span></div>
+                <div class="acu-stat-lab">地域で続けて</div>
               </div>
-              <div>
-                <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); line-height: 1;">1,000<span style="font-size: 1rem; font-weight: 500;">人/月</span></div>
-                <div style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 4px;">のべ訪問実績</div>
+              <div class="acu-stat">
+                <div class="acu-stat-num">1,000<span class="u">人/月</span></div>
+                <div class="acu-stat-lab">のべ訪問実績</div>
               </div>
-              <div>
-                <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); line-height: 1;">3<span style="font-size: 1rem; font-weight: 500;">拠点</span></div>
-                <div style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 4px;">八王子・町田・日野</div>
+              <div class="acu-stat">
+                <div class="acu-stat-num">3<span class="u">拠点</span></div>
+                <div class="acu-stat-lab">八王子・町田・日野</div>
               </div>
-              <div>
-                <div style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); line-height: 1;">13<span style="font-size: 1rem; font-weight: 500;">名</span></div>
-                <div style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 4px;">国家資格スタッフ</div>
+              <div class="acu-stat">
+                <div class="acu-stat-num">13<span class="u">名</span></div>
+                <div class="acu-stat-lab">国家資格スタッフ</div>
               </div>
             </div>
 
-            <!-- CTA -->
-            <div style="display: flex; gap: var(--space-md); flex-wrap: wrap; align-items: center;">
-              <a href="tel:0426822839" class="btn btn-primary" style="font-size: 1.1rem; font-weight: 700; padding: 14px 28px;">☎ 042-682-2839</a>
-              <a href="#consultation-form" class="btn btn-secondary" style="padding: 14px 24px;">フォームで相談</a>
+            <div class="acu-cta-row">
+              <a href="tel:0426822839" class="acu-cta-phone"><span class="acu-cta-phone-prefix">お電話で</span>042-682-2839</a>
+              <a href="#consultation-form" class="acu-cta-sub">フォームで相談</a>
             </div>
-            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: var(--space-sm);">受付：平日 9:00〜18:00（日祝休）／所在地：八王子市下柚木3-7-2-401</p>
+            <p class="acu-cta-note">受付：平日 9:00〜18:00（日祝休）／所在地：八王子市下柚木3-7-2-401</p>
           </div>
           <div class="editorial-image">
              <div style="width: 100%; height: 100%; background: var(--color-border-strong); display: flex; align-items: center; justify-content: center; color: var(--color-surface); font-weight: var(--font-weight-bold); font-size: 1.5rem;">[施術風景・差し替え予定]</div>
@@ -292,37 +343,37 @@
         </nav>
       </div>
 
-      <!-- STORY: 85歳Mさんの伴走ストーリー -->
+      <!-- STORY: 85歳Mさんの伴走ストーリー（Editorial） -->
       <section class="section-spacing container-narrow" style="margin: 0 auto;">
         <div class="section-header text-center" style="margin-bottom: var(--space-xl);">
-          <span class="eyebrow">STORY</span>
-          <h2>痛みを取る、その先にあるもの</h2>
+          <span class="acu-eyebrow-line">Story — 85歳 Mさんの伴走</span>
+          <h2 class="acu-mincho" style="margin-top: var(--space-sm); font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.5;">痛みを取る、その先にあるもの</h2>
         </div>
-        <div class="card bg-soft p-xl" style="border-left: 4px solid var(--color-accent);">
-          <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: var(--space-md);">
+        <div class="acu-story-card">
+          <p class="acu-story-lead">
             85歳のMさん（仮名）。<br>
             いろいろ試しても変わらなかった、<br>
             長年悩まされていた腰の痛み。
           </p>
-          <p style="line-height: 1.9; margin-bottom: var(--space-md);">
+          <p class="acu-story-body">
             施術を続けるうち、痛みは和らぎ、外を歩けるようになりました。
           </p>
-          <p style="line-height: 1.9; margin-bottom: var(--space-lg);">
+          <p class="acu-story-body">
             そこから先、Mさんに必要だったのは、<br>
             <strong>痛みを取ることだけではありませんでした。</strong>
           </p>
-          <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-lg) 0;">
-            <li style="padding: 10px 0; border-bottom: 1px solid var(--color-border);">動ける身体を保つ筋力強化と歩行訓練</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid var(--color-border);">「また痛くなるのでは」という不安への対話</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid var(--color-border);">転倒したら誰にどう連絡するかの備え</li>
-            <li style="padding: 10px 0; border-bottom: 1px solid var(--color-border);">服薬の組み合わせについて、医師への相談を一緒に整理</li>
-            <li style="padding: 10px 0;">夜の眠り、食事、生活リズムのご相談</li>
+          <ul class="acu-story-list">
+            <li>動ける身体を保つ筋力強化と歩行訓練</li>
+            <li>「また痛くなるのでは」という不安への対話</li>
+            <li>転倒したら誰にどう連絡するかの備え</li>
+            <li>服薬の組み合わせについて、医師への相談を一緒に整理</li>
+            <li>夜の眠り、食事、生活リズムのご相談</li>
           </ul>
-          <p style="line-height: 1.9; font-weight: 500;">
+          <p class="acu-story-close">
             施術しながら、生活全体に向き合う。<br>
             これが、私たちが続けてきた30分の中身です。
           </p>
-          <p style="font-size: 0.8rem; color: var(--color-text-light); margin-top: var(--space-md); margin-bottom: 0;">※個別のご利用者様の体験の一例です。</p>
+          <p class="acu-story-caption">※個別のご利用者様の体験の一例です。</p>
         </div>
       </section>
 
@@ -432,42 +483,42 @@
         </div>
       </section>
 
-      <!-- PRICING: 料金表 -->
+      <!-- PRICING: 料金表（Editorial） -->
       <section class="section-spacing bg-soft">
         <div class="container container-narrow">
           <div class="section-header text-center">
-            <span class="eyebrow">PRICING</span>
-            <h2>料金（1回30分）</h2>
-            <p class="text-muted">医療保険適用。出張・交通費はすべて料金に含みます。</p>
+            <span class="acu-eyebrow-line">Pricing — 1回 30分</span>
+            <h2 class="acu-mincho" style="margin-top: var(--space-sm); font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.5;">料金は、透明に。</h2>
+            <p class="text-muted" style="margin-top: var(--space-md);">医療保険適用。出張・交通費はすべて料金に含みます。</p>
           </div>
 
-          <div class="card mt-2xl" style="padding: 0;">
-            <table style="width: 100%; border-collapse: collapse;">
+          <div style="margin-top: var(--space-2xl);">
+            <table class="acu-pricing-table">
               <tbody>
-                <tr style="border-bottom: 1px solid var(--color-border);">
-                  <td style="padding: 14px 20px;">医療保険 1割負担</td>
-                  <td style="padding: 14px 20px; text-align: right; font-weight: 700;">450円</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--color-border);">
-                  <td style="padding: 14px 20px;">医療保険 2割負担</td>
-                  <td style="padding: 14px 20px; text-align: right; font-weight: 700;">867円</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--color-border);">
-                  <td style="padding: 14px 20px;">医療保険 3割負担</td>
-                  <td style="padding: 14px 20px; text-align: right; font-weight: 700;">1,284円</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--color-border);">
-                  <td style="padding: 14px 20px;">生活保護</td>
-                  <td style="padding: 14px 20px; text-align: right; font-weight: 700;">無料</td>
+                <tr>
+                  <td class="label">医療保険 1割負担</td>
+                  <td class="price">450<span class="yen">円</span></td>
                 </tr>
                 <tr>
-                  <td style="padding: 14px 20px;">○障（重度心身障害者医療費助成）</td>
-                  <td style="padding: 14px 20px; text-align: right; font-weight: 700;">無料</td>
+                  <td class="label">医療保険 2割負担</td>
+                  <td class="price">867<span class="yen">円</span></td>
+                </tr>
+                <tr>
+                  <td class="label">医療保険 3割負担</td>
+                  <td class="price">1,284<span class="yen">円</span></td>
+                </tr>
+                <tr>
+                  <td class="label">生活保護</td>
+                  <td class="price">無料</td>
+                </tr>
+                <tr>
+                  <td class="label">○障（重度心身障害者医療費助成）</td>
+                  <td class="price">無料</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="text-sm text-muted mt-md" style="text-align: center;">医療保険適用には医師の同意書が必要です。同意書取得もこちらでサポートします。</p>
+          <p class="acu-pricing-note">医療保険適用には医師の同意書が必要です。<strong>同意書取得もこちらでサポート</strong>します。</p>
         </div>
       </section>
 
@@ -546,9 +597,9 @@
             </p>
           </div>
 
-          <div style="display: flex; gap: var(--space-md); flex-wrap: wrap; align-items: center; justify-content: center; margin-top: var(--space-2xl);">
-            <a href="tel:0426822839" class="btn btn-primary" style="font-size: 1.1rem; font-weight: 700; padding: 14px 28px;">☎ 042-682-2839</a>
-            <a href="../../community/index.html" class="btn btn-secondary" style="padding: 14px 24px;">地域連携・専門職向けページ</a>
+          <div class="acu-cta-row" style="justify-content: center; margin-top: var(--space-2xl);">
+            <a href="tel:0426822839" class="acu-cta-phone"><span class="acu-cta-phone-prefix">お電話で</span>042-682-2839</a>
+            <a href="../../community/index.html" class="acu-cta-sub">地域連携・専門職向けページ</a>
           </div>
         </div>
       </section>
