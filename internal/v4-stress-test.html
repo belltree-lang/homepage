@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>v4 ストレステスト — 3 ビューポート同時表示</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #1a1a1a;
+      color: #fff;
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      padding: 24px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+    }
+    .sub {
+      text-align: center;
+      color: #888;
+      margin-bottom: 32px;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+    .test-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 0.6fr;
+      gap: 20px;
+      max-width: 100%;
+      margin-bottom: 32px;
+    }
+    .viewport {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+    .viewport h3 {
+      background: #1A365D;
+      color: #fff;
+      margin: 0;
+      padding: 10px;
+      font-size: 12px;
+      text-align: center;
+      letter-spacing: 0.2em;
+      font-weight: 600;
+    }
+    .viewport h3 .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #C27A65;
+      margin-left: 8px;
+      font-size: 10px;
+    }
+    .viewport-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #FAF6EF;
+    }
+    .viewport-frame {
+      border: none;
+      display: block;
+      transform-origin: top left;
+    }
+    /* PC 1200px ×0.6 */
+    .vp-pc .viewport-frame { width: 1200px; height: 5400px; transform: scale(0.6); }
+    .vp-pc .viewport-wrap { width: 720px; height: 3240px; }
+    /* Tablet 768px ×0.45 */
+    .vp-tab .viewport-frame { width: 768px; height: 5800px; transform: scale(0.45); }
+    .vp-tab .viewport-wrap { width: 346px; height: 2610px; }
+    /* Mobile 375px ×0.45 */
+    .vp-mb .viewport-frame { width: 375px; height: 6800px; transform: scale(0.45); }
+    .vp-mb .viewport-wrap { width: 169px; height: 3060px; }
+
+    .diag {
+      background: #2a2a2a;
+      border-radius: 6px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .diag h2 {
+      margin: 0 0 16px;
+      color: #C27A65;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      font-size: 22px;
+    }
+    .diag-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 980px) { .diag-grid { grid-template-columns: 1fr; } }
+    .diag-card {
+      background: #1f1f1f;
+      padding: 18px;
+      border-left: 3px solid #C27A65;
+      border-radius: 4px;
+    }
+    .diag-card h3 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: #C27A65;
+      text-transform: uppercase;
+    }
+    .diag-card .severity {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+    .crit { background: #b03333; color: #fff; }
+    .warn { background: #c08838; color: #fff; }
+    .info { background: #4a7a4a; color: #fff; }
+    .diag-card ul { margin: 8px 0 0; padding-left: 18px; font-size: 13px; line-height: 1.8; color: #ccc; }
+    .diag-card li b { color: #fff; }
+    .verdict {
+      background: #3a2a28;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid #C27A65;
+      margin-top: 24px;
+    }
+    .verdict h2 {
+      margin: 0 0 12px;
+      color: #C27A65;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .verdict p { font-size: 14px; line-height: 1.9; color: #eee; }
+  </style>
+</head>
+<body>
+  <h1>v4 Stress Test</h1>
+  <p class="sub">PC 1200px / Tablet 768px / Mobile 375px を同時表示してレイアウト崩れを検証</p>
+
+  <div class="test-grid">
+    <div class="viewport vp-pc">
+      <h3>PC <span class="badge">1200px ×0.6</span></h3>
+      <div class="viewport-wrap"><iframe class="viewport-frame" src="./mockup-hero-rich-v4.html"></iframe></div>
+    </div>
+    <div class="viewport vp-tab">
+      <h3>Tablet <span class="badge">768px ×0.45</span></h3>
+      <div class="viewport-wrap"><iframe class="viewport-frame" src="./mockup-hero-rich-v4.html"></iframe></div>
+    </div>
+    <div class="viewport vp-mb">
+      <h3>Mobile <span class="badge">375px ×0.45</span></h3>
+      <div class="viewport-wrap"><iframe class="viewport-frame" src="./mockup-hero-rich-v4.html"></iframe></div>
+    </div>
+  </div>
+
+  <div class="diag">
+    <h2>診断結果（v4 を本番転用した場合の問題）</h2>
+
+    <div class="diag-grid">
+
+      <div class="diag-card">
+        <span class="severity crit">CRITICAL</span>
+        <h3>HERO の 3列固定グリッド</h3>
+        <ul>
+          <li><b>原因</b>: <code>grid-template-columns: 220px 1fr 240px</code></li>
+          <li><b>モバイル</b>: 横スクロール発生、縦書きラベルが折れる、写真が縮みすぎる</li>
+          <li><b>シニア</b>: 主見出し「人生の後半を…」が小さく可読性 NG</li>
+          <li><b>対処</b>: @media で 1column 化、装飾は非表示か再配置</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <span class="severity crit">CRITICAL</span>
+        <h3>SERVICES カードの装飾被り</h3>
+        <ul>
+          <li><b>原因</b>: 装飾を <code>position:absolute; bottom:-18px; right:-12px</code> で写真に重ねる</li>
+          <li><b>モバイル</b>: カード幅縮小で写真が小さくなり、装飾が写真の半分を覆う</li>
+          <li><b>シニア</b>: サービス名「訪問鍼灸マッサージ」が一部見えなくなる可能性</li>
+          <li><b>対処</b>: @media で装飾サイズを縮小、もしくは display:none</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <span class="severity crit">CRITICAL</span>
+        <h3>PULL QUOTE の巨大引用符</h3>
+        <ul>
+          <li><b>原因</b>: <code>font-size: 280px</code> 固定の ❝ ❞</li>
+          <li><b>モバイル</b>: 引用符が画面より大きくなり、引用テキストが完全に隠れる</li>
+          <li><b>対処</b>: clamp(80px, 24vw, 280px) でレスポンシブ化</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <span class="severity crit">CRITICAL</span>
+        <h3>MESSAGE / TIMELINE の固定 column</h3>
+        <ul>
+          <li><b>原因</b>: MESSAGE は <code>240px 1fr 80px</code>、TIMELINE は <code>repeat(5, 1fr)</code></li>
+          <li><b>モバイル</b>: 代表 portrait と本文が重なる、TIMELINE は 5列が極小に</li>
+          <li><b>対処</b>: @media で縦並びへ</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <span class="severity warn">WARNING</span>
+        <h3>FOOTER 4列固定</h3>
+        <ul>
+          <li><b>原因</b>: <code>1.4fr 1fr 1fr 1.6fr</code></li>
+          <li><b>モバイル</b>: 各列が極小、住所・電話番号が読めない</li>
+          <li><b>対処</b>: @media で 2列 or 1列に</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <span class="severity warn">WARNING</span>
+        <h3>パフォーマンス影響</h3>
+        <ul>
+          <li><b>装飾画像</b>: HERO + SERVICES + CASES + MESSAGE + COMMUNITY で約 12〜15 枚追加</li>
+          <li><b>容量</b>: 合計 1〜2MB の追加リソース、初回ロードに 1〜2 秒影響</li>
+          <li><b>シニア環境</b>: 低速回線で体感的に遅くなる</li>
+          <li><b>対処</b>: HERO 以外は loading=lazy、サムネ縮小（256×256 等）</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <span class="severity warn">WARNING</span>
+        <h3>既存スタイルとの衝突</h3>
+        <ul>
+          <li><b>原因</b>: v4 は HTML 内 &lt;style&gt;、本番は外部 styles.css</li>
+          <li><b>クラス名衝突</b>: <code>.service-rich</code> 等の汎用名は既存と被るリスク</li>
+          <li><b>対処</b>: <code>.v4-</code> プレフィックスで分離、もしくは規格 class を styles.css に追加</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <span class="severity info">NOTE</span>
+        <h3>シニア可読性</h3>
+        <ul>
+          <li><b>本文サイズ</b>: 15-16px 中心で OK だが、装飾が散らばると視線誘導が崩れる</li>
+          <li><b>明朝の小サイズ</b>: PULL QUOTE のキャプション 13px 明朝は読みにくい</li>
+          <li><b>対処</b>: 装飾は写真の角に限定し、本文周辺に置かない</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="verdict">
+    <h2>判定 — 本番転用は段階を踏むべき</h2>
+    <p>
+      v4 はあくまで <b>PC 幅前提の世界観確認用モック</b>。本番 <code>index.html</code> はレスポンシブが前提で、シニア層がモバイルから多くアクセスするため、以下の <b>Step 1</b>（装飾 CSS のレスポンシブコンポーネント化）を経ないと本番反映できません。具体的には <code>@media (max-width: 768px)</code> で装飾を縮小・非表示にする規格を styles.css に先に組み、その上で index.html に流し込むのが安全。
+    </p>
+  </div>
+</body>
+</html>

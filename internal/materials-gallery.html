@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>素材ギャラリー — 92 PNG 透過素材</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A365D;
+      --accent: #C27A65;
+      --paper: #FAF6EF;
+      --cream: #F5EFE0;
+      --text: #1F1F1F;
+      --muted: #6b7280;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: "Noto Sans JP", sans-serif;
+    }
+    header {
+      padding: 56px 32px 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header h1 {
+      font-family: "Shippori Mincho B1", serif;
+      color: var(--primary);
+      font-size: 36px;
+      margin: 0 0 8px;
+    }
+    header .sub {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 18px;
+      letter-spacing: 0.16em;
+    }
+    header .meta {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+    section h2 {
+      font-family: "Shippori Mincho B1", serif;
+      color: var(--primary);
+      font-size: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--accent);
+      margin: 48px 0 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    section h2 .roman {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 0.24em;
+    }
+    section h2 .count {
+      margin-left: auto;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid.l { grid-template-columns: repeat(3, 1fr); }
+    .grid.m { grid-template-columns: repeat(5, 1fr); }
+    .grid.s { grid-template-columns: repeat(12, 1fr); }
+    .cell {
+      background: #fff;
+      border: 1px solid #E5E0D8;
+      padding: 12px;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: all .2s;
+    }
+    .cell:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(26,54,93,.1);
+    }
+    .cell img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .cell .num {
+      position: absolute;
+      bottom: 4px;
+      right: 6px;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: 10px;
+      color: var(--muted);
+    }
+    /* checkered background to show transparency */
+    .cell.transparent {
+      background-color: #fff;
+      background-image:
+        linear-gradient(45deg, #f0eadf 25%, transparent 25%),
+        linear-gradient(-45deg, #f0eadf 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #f0eadf 75%),
+        linear-gradient(-45deg, transparent 75%, #f0eadf 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      font-family: "Shippori Mincho B1", serif;
+      margin-right: 8px;
+    }
+    .note {
+      background: #FFF8E7;
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      font-size: 13px;
+      color: #4a3e1f;
+      line-height: 1.8;
+      max-width: 1200px;
+      margin: 16px auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="sub">— Material Library v1</div>
+    <h1>透過素材ギャラリー</h1>
+    <div class="meta">2026-06-01 / 6 シート分割 → 92 個の透過 PNG。bellmfit.com v4 モックに統合予定。</div>
+  </header>
+
+  <div class="note">
+    白チェッカー背景は透過部分。素材の上に乗っているのが実画像。違和感がある（透過漏れ・縁にゴミ）箇所があったら教えてください、再切り抜きします。
+  </div>
+
+  <section>
+    <h2><span class="badge">L</span>暮らし小物 <span class="roman">— No. 05 Living Objects</span> <span class="count">6 items</span></h2>
+    <div class="grid l" id="living"></div>
+
+    <h2><span class="badge">L</span>べるフィット <span class="roman">— No. 08 Fitness</span> <span class="count">6 items</span></h2>
+    <div class="grid l" id="fitness"></div>
+
+    <h2><span class="badge">L</span>訪問施術 <span class="roman">— No. 09 Acupuncture</span> <span class="count">6 items</span></h2>
+    <div class="grid l" id="acupuncture"></div>
+
+    <h2><span class="badge">L</span>居宅介護 <span class="roman">— No. 10 Home Care</span> <span class="count">6 items</span></h2>
+    <div class="grid l" id="homecare"></div>
+
+    <h2><span class="badge">M</span>紙・文房具・エフェメラ <span class="roman">— No. 06 Paper Ephemera</span> <span class="count">20 items</span></h2>
+    <div class="grid m" id="paper"></div>
+
+    <h2><span class="badge">S</span>マーク・装飾印 <span class="roman">— No. 07 Marks & Stamps</span> <span class="count">48 items</span></h2>
+    <div class="grid s" id="marks"></div>
+  </section>
+
+  <script>
+    const groups = [
+      { id: 'living',      base: '../images/materials/decoration/L/',             prefix: 'living-l',      count: 6 },
+      { id: 'fitness',     base: '../images/materials/decoration/L/fitness/',     prefix: 'fitness-l',     count: 6 },
+      { id: 'acupuncture', base: '../images/materials/decoration/L/acupuncture/', prefix: 'acupuncture-l', count: 6 },
+      { id: 'homecare',    base: '../images/materials/decoration/L/homecare/',    prefix: 'homecare-l',    count: 6 },
+      { id: 'paper',       base: '../images/materials/decoration/M/',             prefix: 'paper-m',       count: 20 },
+      { id: 'marks',       base: '../images/materials/decoration/S/',             prefix: 'mark-s',        count: 48 },
+    ];
+    for (const g of groups) {
+      const wrap = document.getElementById(g.id);
+      for (let i = 1; i <= g.count; i++) {
+        const n = String(i).padStart(2, '0');
+        const div = document.createElement('div');
+        div.className = 'cell transparent';
+        div.innerHTML = `<img src="${g.base}${g.prefix}-${n}.png" alt="${g.prefix}-${n}"><span class="num">${n}</span>`;
+        wrap.appendChild(div);
+      }
+    }
+  </script>
+</body>
+</html>

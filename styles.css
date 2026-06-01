@@ -2819,3 +2819,104 @@ table, .num, .stat-value {
 .icon-mic { -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22currentColor%22%20stroke-width=%221.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M12%202a3%203%200%200%200-3%203v7a3%203%200%200%200%206%200V5a3%203%200%200%200-3-3Z%22/%3E%3Cpath%20d=%22M19%2010v2a7%207%200%200%201-14%200v-2%22/%3E%3Cline%20x1=%2212%22%20x2=%2212%22%20y1=%2219%22%20y2=%2222%22/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22currentColor%22%20stroke-width=%221.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M12%202a3%203%200%200%200-3%203v7a3%203%200%200%200%206%200V5a3%203%200%200%200-3-3Z%22/%3E%3Cpath%20d=%22M19%2010v2a7%207%200%200%201-14%200v-2%22/%3E%3Cline%20x1=%2212%22%20x2=%2212%22%20y1=%2219%22%20y2=%2222%22/%3E%3C/svg%3E"); }
 .icon-heart { -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22currentColor%22%20stroke-width=%221.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M19%2014c1.49-1.46%203-3.21%203-5.5A5.5%205.5%200%200%200%2016.5%203c-1.76%200-3%20.5-4.5%202-1.5-1.5-2.74-2-4.5-2A5.5%205.5%200%200%200%202%208.5c0%202.3%201.5%204.05%203%205.5l7%207Z%22/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22currentColor%22%20stroke-width=%221.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M19%2014c1.49-1.46%203-3.21%203-5.5A5.5%205.5%200%200%200%2016.5%203c-1.76%200-3%20.5-4.5%202-1.5-1.5-2.74-2-4.5-2A5.5%205.5%200%200%200%202%208.5c0%202.3%201.5%204.05%203%205.5l7%207Z%22/%3E%3C/svg%3E"); }
 .icon-yoga { -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22currentColor%22%20stroke-width=%221.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Ccircle%20cx=%2212%22%20cy=%225%22%20r=%222%22/%3E%3Cpath%20d=%22M12%2022V8%22/%3E%3Cpath%20d=%22M5%2012H2a10%2010%200%200%200%2020%200h-3%22/%3E%3Cpath%20d=%22M5%2012c0%202%202%204%204%204%22/%3E%3Cpath%20d=%22M19%2012c0%202-2%204-4%204%22/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22currentColor%22%20stroke-width=%221.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Ccircle%20cx=%2212%22%20cy=%225%22%20r=%222%22/%3E%3Cpath%20d=%22M12%2022V8%22/%3E%3Cpath%20d=%22M5%2012H2a10%2010%200%200%200%2020%200h-3%22/%3E%3Cpath%20d=%22M5%2012c0%202%202%204%204%204%22/%3E%3Cpath%20d=%22M19%2012c0%202-2%204-4%204%22/%3E%3C/svg%3E"); }
+
+/* =============================================================================
+   Editorial Decoration System v1 (2026-06-01)
+   素材ライブラリ（images/materials/）の透過 PNG をページに散らすための規格クラス
+   ----------------------------------------------------------------------------
+   使い方:
+     1. 装飾を置きたい親要素に .deco-anchor を付ける（position:relative になる）
+     2. その中に <img class="ed-deco ed-deco--<位置> ed-deco--<サイズ> ed-deco--<回転>"> を入れる
+   例: <div class="card deco-anchor">
+         <img src="..." class="ed-deco ed-deco--br ed-deco--sm ed-deco--rot-r3" alt="">
+       </div>
+
+   レスポンシブ規格（最重要）:
+     - PC (>=1024px): 規格通り
+     - タブレット (768-1023px): サイズ 70%, opacity 0.6
+     - モバイル (<768px): display:none で完全非表示（シニア向けに視界を整理）
+   ========================================================================== */
+
+/* 親要素（装飾の基準点） */
+.deco-anchor { position: relative; }
+.deco-anchor.deco-anchor--clip { overflow: hidden; }
+
+/* 基本装飾クラス */
+.ed-deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  display: block;
+  height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  opacity: 0.9;
+  transition: opacity 200ms ease-out;
+}
+
+/* 位置プリセット（写真の角に少し「乗る」配置） */
+.ed-deco--tr { top: -14px; right: -12px; }
+.ed-deco--br { bottom: -14px; right: -12px; }
+.ed-deco--bl { bottom: -14px; left: -12px; }
+.ed-deco--tl { top: -14px; left: -12px; }
+/* 親の中央寄り（写真の中に小物を置く感じ） */
+.ed-deco--inner-br { bottom: 8px; right: 8px; }
+.ed-deco--inner-bl { bottom: 8px; left: 8px; }
+/* 親の外側に大きくはみ出す（余白に散らす） */
+.ed-deco--out-tr { top: -40px; right: -40px; }
+.ed-deco--out-br { bottom: -40px; right: -40px; }
+.ed-deco--out-bl { bottom: -40px; left: -40px; }
+.ed-deco--out-tl { top: -40px; left: -40px; }
+
+/* サイズプリセット（width 指定。height は自動） */
+.ed-deco--xs { width: 48px; }
+.ed-deco--sm { width: 80px; }
+.ed-deco--md { width: 120px; }
+.ed-deco--lg { width: 160px; }
+.ed-deco--xl { width: 200px; }
+
+/* 回転プリセット（左 = counter-clockwise / 右 = clockwise） */
+.ed-deco--rot-l3 { transform: rotate(-3deg); }
+.ed-deco--rot-l6 { transform: rotate(-6deg); }
+.ed-deco--rot-l10 { transform: rotate(-10deg); }
+.ed-deco--rot-l15 { transform: rotate(-15deg); }
+.ed-deco--rot-r3 { transform: rotate(3deg); }
+.ed-deco--rot-r6 { transform: rotate(6deg); }
+.ed-deco--rot-r10 { transform: rotate(10deg); }
+.ed-deco--rot-r15 { transform: rotate(15deg); }
+
+/* 透明度プリセット */
+.ed-deco--soft { opacity: 0.6; }
+.ed-deco--norm { opacity: 0.85; }
+.ed-deco--full { opacity: 1; }
+
+/* z-index プリセット（写真の上 / 下） */
+.ed-deco--behind { z-index: 1; }
+.ed-deco--front { z-index: 5; }
+
+/* レスポンシブ規格（最重要） */
+@media (max-width: 1023px) {
+  /* タブレット: 装飾を控えめに */
+  .ed-deco {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0.5;
+  }
+  /* 回転を無効化して、scale だけで縮小 */
+  .ed-deco[class*="ed-deco--rot-"] {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 767px) {
+  /* モバイル: 装飾は完全に非表示。シニア層への可読性ダメージを避ける */
+  .ed-deco {
+    display: none !important;
+  }
+}
+
+/* オプション: ホバーで少し浮く（PC用、装飾感の強化） */
+@media (hover: hover) and (pointer: fine) {
+  .ed-deco--hover-lift:hover {
+    transform: translateY(-3px) scale(1.03);
+    opacity: 1;
+  }
+}
