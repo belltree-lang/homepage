@@ -1,0 +1,41 @@
+================================================================
+images2.0 プロンプト ─ 腰痛ページ用 症状イラスト L シート
+（2列 × 3行 = 6素材）
+2026-06-07 / material-pipeline L パーキンソン素材と同シリーズ
+================================================================
+
+【代表のステップ】
+1. 下のプロンプトを images2.0 にコピペ → 生成 → DL
+2. 「腰痛L来た」+ ダウンロードファイル名で Claude に伝える
+
+【Claude のステップ】
+- Raw を images/materials/decoration/L/_raw/lower-back-pain-objects-L-raw.png に保管
+- 2×3 等分割 → 中央 5-95% トリム → bbox 精密 → 純白透過 → 800×533 統一
+- images/materials/decoration/L/lower-back-pain/lower-back-pain-l-01.png 〜 -06.png に保存
+- 腰痛ページのお悩み4カードに反映 → push
+
+================================================================
+プロンプト
+================================================================
+
+A clean editorial product catalog sheet for design asset extraction.
+Pure solid white background, hex #FFFFFF, no gradient, no texture, no shadow.
+Each item delicate hand-drawn illustration, centered, no tilt, no labels.
+Style: refined editorial in the spirit of Kinfolk Magazine, Cereal, &Premium. NOT Japanese washi, NOT seasonal, NOT clinical.
+Drawing: thin terracotta outlines (#C27A65), soft watercolor wash on lower-back / hip pain areas in deeper terracotta. Closed-eye serene expressions.
+Palette: terracotta #C27A65, soft wash #E3A48F, slate blue #1A365D, warm off-white #FCFCFA. NO bright colors.
+Layout: 2 columns × 3 rows = 6 illustrations. Gutter ~25%, outer margin ~30%.
+
+Subject: scenes of elderly people experiencing lower back pain in their daily home life, calm editorial style matching the previous Parkinson's L sheet.
+
+Variations (6 total):
+1) 朝の起き上がり — An elderly person sitting on the edge of a futon in the morning, one hand pressing the lower back, body slightly twisted. Wash on the lumbar area. Closed eyes.
+2) 椅子から立つ — Side view of an elderly person rising from a wooden chair, one hand on the chair arm, one on the lower back. Wash on the lumbar. Closed eyes.
+3) 中腰の家事 — An elderly person leaning over a kitchen sink in mid-bend posture, one hand on the back. Faint wash on the lower spine. Closed eyes.
+4) 歩幅が狭い — Side view of an elderly person walking with short stride, indoor slippers, slightly stooped posture. Closed eyes, calm.
+5) 寄り添う背中 — Two figures sitting side by side on a sofa, one hand gently placed on the other's back as if soothing. Back view, no faces.
+6) 楽になる時間 — An empty rocking chair beside a window with soft light and a small cushion. Editorial still life suggesting relief, no human figure.
+
+Output canvas: 3072×2048 pixels (landscape).
+
+Constraints: No needles, no clinical equipment. No Japanese washi, no hanko, no seasonal motifs. No bright red. Calm closed-eye expressions throughout.

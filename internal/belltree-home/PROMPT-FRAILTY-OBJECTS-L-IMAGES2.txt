@@ -1,0 +1,41 @@
+================================================================
+images2.0 プロンプト ─ フレイルページ用 症状イラスト L シート
+（2列 × 3行 = 6素材）
+2026-06-07 / material-pipeline L パーキンソン素材と同シリーズ
+================================================================
+
+【代表のステップ】
+1. 下のプロンプトを images2.0 にコピペ → 生成 → DL
+2. 「フレイルL来た」+ ダウンロードファイル名で Claude に伝える
+
+【Claude のステップ】
+- Raw を images/materials/decoration/L/_raw/frailty-objects-L-raw.png に保管
+- 2×3 等分割 → 中央 5-95% トリム → bbox 精密 → 純白透過 → 800×533 統一
+- images/materials/decoration/L/frailty/frailty-l-01.png 〜 -06.png に保存
+- フレイルページのお悩み4カードに反映 → push
+
+================================================================
+プロンプト
+================================================================
+
+A clean editorial product catalog sheet for design asset extraction.
+Pure solid white background, hex #FFFFFF, no gradient, no texture, no shadow.
+Each item delicate hand-drawn illustration, centered, no tilt, no labels.
+Style: refined editorial in the spirit of Kinfolk Magazine, Cereal, &Premium. NOT Japanese washi, NOT seasonal, NOT clinical, NOT cartoonish.
+Drawing: thin terracotta outlines (#C27A65), soft watercolor wash on focus points. Closed-eye serene expressions, never distressed — frailty here is depicted as quiet fatigue, not despair.
+Palette: terracotta #C27A65, soft wash #E3A48F, slate blue #1A365D, warm off-white #FCFCFA. NO bright colors.
+Layout: 2 columns × 3 rows = 6 illustrations. Gutter ~25%, outer margin ~30%.
+
+Subject: scenes depicting the subtle signs of frailty in elderly home life, gentle editorial style matching the previous Parkinson's L sheet.
+
+Variations (6 total):
+1) 歩く速度の低下 — Side view of an elderly person walking slowly down a corridor with a cane, soft motion lines behind. Closed eyes, serene.
+2) 趣味から離れる — A small still life: a closed book and a folded pair of reading glasses on a side table beside an empty armchair. No human figure.
+3) 体重減少 — A simple bathroom scale on a wooden floor, with a single pair of slippers beside it. Editorial still life, no human figure.
+4) 握力の低下 — Close-up of an elderly hand trying to twist a bottle cap, the fingers slightly curled. Wash on the knuckles. No face.
+5) 共に歩く伴走 — Two figures walking side by side, one slightly older with a cane, the other a caregiver lightly supporting at the elbow. Both closed eyes, serene.
+6) 取り戻す活力 — A small still life: a steaming cup of warm tea, a fresh sprig of greenery, and morning light streaming in from a nearby window. Editorial still life, no human figure.
+
+Output canvas: 3072×2048 pixels (landscape).
+
+Constraints: No needles, no clinical equipment. No Japanese washi, no hanko, no seasonal motifs. No bright red. Quiet, calm expressions throughout.

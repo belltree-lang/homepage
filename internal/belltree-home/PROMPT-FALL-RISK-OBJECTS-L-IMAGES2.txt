@@ -1,0 +1,41 @@
+================================================================
+images2.0 プロンプト ─ 転倒リスクページ用 症状イラスト L シート
+（2列 × 3行 = 6素材）
+2026-06-07 / material-pipeline L パーキンソン素材と同シリーズ
+================================================================
+
+【代表のステップ】
+1. 下のプロンプトを images2.0 にコピペ → 生成 → DL
+2. 「転倒L来た」+ ダウンロードファイル名で Claude に伝える
+
+【Claude のステップ】
+- Raw を images/materials/decoration/L/_raw/fall-risk-objects-L-raw.png に保管
+- 2×3 等分割 → 中央 5-95% トリム → bbox 精密 → 純白透過 → 800×533 統一
+- images/materials/decoration/L/fall-risk/fall-risk-l-01.png 〜 -06.png に保存
+- 転倒リスクページのお悩み4カードに反映 → push
+
+================================================================
+プロンプト
+================================================================
+
+A clean editorial product catalog sheet for design asset extraction.
+Pure solid white background, hex #FFFFFF, no gradient, no texture, no shadow.
+Each item delicate hand-drawn illustration, centered, no tilt, no labels.
+Style: refined editorial in the spirit of Kinfolk Magazine, Cereal, &Premium. NOT Japanese washi, NOT seasonal, NOT clinical.
+Drawing: thin terracotta outlines (#C27A65), soft watercolor wash. Closed-eye serene expressions — fall risk depicted as careful daily concern, NEVER actually falling.
+Palette: terracotta #C27A65, soft wash #E3A48F, slate blue #1A365D, warm off-white #FCFCFA. NO bright colors.
+Layout: 2 columns × 3 rows = 6 illustrations. Gutter ~25%, outer margin ~30%.
+
+Subject: scenes about the subtle signs of fall risk in elderly home life, calm editorial style matching the previous Parkinson's L sheet.
+
+Variations (6 total):
+1) 小さな段差 — Close-up of a foot in slippers approaching a small wooden threshold, faint shadow on the threshold. No face. Editorial still life.
+2) すり足 — Side view of an elderly person walking slowly, feet very low to the floor (sliding step). Closed eyes, peaceful.
+3) ふらつき — Side view of an elderly person standing up from a chair, one hand on the chair arm, the other gently extended for balance. Closed eyes.
+4) 杖と手すり — A still life of a cane resting against a wall beside a wooden handrail. No human figure. Editorial composition.
+5) 寄り添う伴走 — Two figures walking through a corridor, one slightly stooped, the other supporting at the elbow. Both closed eyes.
+6) 安心の歩み — A pair of well-fitting walking shoes placed on a wooden floor beside a soft rug. Editorial still life suggesting safe daily steps. No human figure.
+
+Output canvas: 3072×2048 pixels (landscape).
+
+Constraints: No needles, no clinical equipment. No depictions of an actual fall — only subtle warning signs. No Japanese washi, no hanko, no seasonal motifs. No bright red.

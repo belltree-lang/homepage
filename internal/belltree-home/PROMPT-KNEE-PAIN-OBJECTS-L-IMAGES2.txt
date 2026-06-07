@@ -1,0 +1,41 @@
+================================================================
+images2.0 プロンプト ─ 膝痛ページ用 症状イラスト L シート
+（2列 × 3行 = 6素材）
+2026-06-07 / material-pipeline L パーキンソン素材と同シリーズ
+================================================================
+
+【代表のステップ】
+1. 下のプロンプトを images2.0 にコピペ → 生成 → DL
+2. 「膝痛L来た」+ ダウンロードファイル名で Claude に伝える
+
+【Claude のステップ】
+- Raw を images/materials/decoration/L/_raw/knee-pain-objects-L-raw.png に保管
+- 2×3 等分割 → 中央 5-95% トリム → bbox 精密 → 純白透過 → 800×533 統一
+- images/materials/decoration/L/knee-pain/knee-pain-l-01.png 〜 -06.png に保存
+- 膝痛ページのお悩み4カードに反映 → push
+
+================================================================
+プロンプト
+================================================================
+
+A clean editorial product catalog sheet for design asset extraction.
+Pure solid white background, hex #FFFFFF, no gradient, no texture, no shadow.
+Each item delicate hand-drawn illustration, centered in its grid cell, no tilt, no labels, no numbers.
+Style: refined editorial in the spirit of Kinfolk Magazine, Cereal, &Premium. NOT Japanese washi, NOT seasonal, NOT clinical, NOT cartoonish.
+Drawing: thin terracotta outlines (#C27A65), soft watercolor wash on key emotion points (joints, painful spots) in deeper terracotta, otherwise clean white. Closed-eye serene expressions.
+Palette: terracotta outline #C27A65, soft wash #E3A48F, slate blue accent #1A365D, warm off-white #FCFCFA. NO bright colors.
+Layout: 2 columns × 3 rows = 6 illustrations. Gutter ~25%, outer margin ~30%. Consistent scale and line weight.
+
+Subject: scenes of elderly people experiencing knee pain at home, in the same calm editorial style as the previous Parkinson's L sheet.
+
+Variations (6 total):
+1) 立ち上がりの痛み — An elderly person rising from a low chair, one hand pressing on the knee, body leaning forward. Wash highlight on the kneecap. Closed eyes, gentle.
+2) 階段の下り — Side view of an elderly person descending a few wooden stairs, one hand on the rail, the down-foot tentative. Wash on the leading knee. Closed eyes.
+3) 外出が億劫 — An elderly person sitting by a window, looking inward, slippers and a cardigan set aside. No outdoor scenery. Closed eyes, contemplative.
+4) 膝の腫れ — Close-up of a knee with a faint watercolor wash and a small folded towel placed on a low table beside it. No human figure.
+5) 共に歩く支え — Two figures walking arm-in-arm, side view, soft footsteps. Both closed eyes, serene.
+6) 取り戻す歩み — A pair of well-worn walking shoes placed neatly side by side on a wooden floor, with a single fresh leaf nearby. Editorial still life.
+
+Output canvas: 3072×2048 pixels (landscape). High resolution, crisp edges, suitable for transparent PNG cut-out.
+
+Constraints: No needles, no clinical equipment. No Japanese washi, no hanko, no seasonal motifs. No bright red. All figures closed eyes, calm.
