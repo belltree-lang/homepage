@@ -108,10 +108,57 @@
   .ph-clouds-2 { top: 70px; right: 8%; width: 110px; opacity: 0.45; }
 
   /* ===================== SECTION SHELL ===================== */
-  section { position: relative; }
+  section { position: relative; overflow: hidden; }
   .band-paper { background: var(--bt-bg-sunk); }
   .band-base { background: var(--bt-bg); }
   .sec-pad { padding: 80px 0; }
+
+  /* 各 band 共通：薄い watercolor wash */
+  .band-base::before, .band-paper::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  }
+  .band-base.wash-warm::before {
+    background:
+      radial-gradient(720px 360px at 85% 18%, rgba(217, 139, 111, 0.10) 0%, rgba(217, 139, 111, 0) 60%),
+      radial-gradient(540px 280px at 12% 78%, rgba(224, 168, 75, 0.07) 0%, rgba(224, 168, 75, 0) 60%);
+  }
+  .band-base.wash-sage::before {
+    background:
+      radial-gradient(680px 340px at 78% 20%, rgba(148, 171, 138, 0.10) 0%, rgba(148, 171, 138, 0) 60%),
+      radial-gradient(520px 260px at 14% 82%, rgba(148, 171, 138, 0.06) 0%, rgba(148, 171, 138, 0) 60%);
+  }
+  .band-paper.wash-cream::before {
+    background:
+      radial-gradient(740px 360px at 88% 22%, rgba(251, 231, 214, 0.55) 0%, rgba(251, 231, 214, 0) 60%),
+      radial-gradient(540px 260px at 8% 78%, rgba(244, 234, 216, 0.5) 0%, rgba(244, 234, 216, 0) 60%);
+  }
+  .band-paper.wash-peach::before {
+    background:
+      radial-gradient(760px 380px at 86% 18%, rgba(224, 165, 160, 0.12) 0%, rgba(224, 165, 160, 0) 60%),
+      radial-gradient(520px 260px at 10% 80%, rgba(217, 139, 111, 0.07) 0%, rgba(217, 139, 111, 0) 60%);
+  }
+  /* セクション内の中身は wash の上に */
+  section > .wrap { position: relative; z-index: 2; }
+
+  /* 装飾 img — pointer-events none で散らす */
+  .sec-deco { position: absolute; pointer-events: none; z-index: 1; opacity: 0.55; }
+  .sec-deco img { display: block; max-width: 100%; }
+  .d-cloud-tl { top: 24px; left: 4%; width: 110px; opacity: 0.4; }
+  .d-cloud-tr { top: 36px; right: 6%; width: 95px; opacity: 0.45; }
+  .d-cloud-br { bottom: 40px; right: 10%; width: 80px; opacity: 0.35; }
+  .d-leaf-bl { bottom: -20px; left: -30px; width: 180px; opacity: 0.45; transform: scaleX(-1); }
+  .d-leaf-br { bottom: -20px; right: -30px; width: 180px; opacity: 0.45; }
+  .d-leaf-tl { top: -16px; left: -22px; width: 130px; opacity: 0.35; transform: scaleX(-1) rotate(-12deg); }
+  .d-bird-1 { top: 60px; left: 32%; width: 56px; opacity: 0.5; }
+  .d-bird-2 { top: 80px; right: 28%; width: 50px; opacity: 0.45; transform: scaleX(-1); }
+  .d-dots { top: 50px; right: 4%; width: 80px; opacity: 0.55; }
+  .d-sun { top: 30px; right: 8%; width: 80px; opacity: 0.45; }
+
+  @media (max-width: 760px) {
+    .d-cloud-tl, .d-cloud-tr, .d-cloud-br { width: 70px; opacity: 0.3; }
+    .d-leaf-bl, .d-leaf-br { width: 120px; opacity: 0.35; }
+    .d-bird-1, .d-bird-2 { width: 40px; }
+  }
   .sec-head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
   .sec-head .script { font-size: 26px; display: block; margin-bottom: 8px; }
   .sec-head h2 {
@@ -342,7 +389,9 @@
 </section>
 
 <!-- ===================== よくあるお悩み ===================== -->
-<section class="band-base sec-pad">
+<section class="band-base wash-warm sec-pad">
+  <img class="sec-deco d-cloud-tl" src="../../decor/clouds.png" alt="" />
+  <img class="sec-deco d-leaf-br" src="../../decor/leaf-plant.png" alt="" />
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>よくあるお悩み</h2>
@@ -357,7 +406,10 @@
 </section>
 
 <!-- ===================== 訪問鍼灸マッサージでできること ===================== -->
-<section class="band-paper sec-pad">
+<section class="band-paper wash-cream sec-pad">
+  <img class="sec-deco d-cloud-tr" src="../../decor/clouds.png" alt="" />
+  <img class="sec-deco d-bird-1" src="../../decor/birds.png" alt="" />
+  <img class="sec-deco d-leaf-bl" src="../../decor/leaf-plant.png" alt="" />
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>訪問鍼灸マッサージでできること</h2>
@@ -377,7 +429,10 @@
 </section>
 
 <!-- ===================== このような方が対象です ===================== -->
-<section class="band-base sec-pad">
+<section class="band-base wash-sage sec-pad">
+  <img class="sec-deco d-leaf-tl" src="../../decor/leaf-plant.png" alt="" />
+  <img class="sec-deco d-bird-2" src="../../decor/birds.png" alt="" />
+  <img class="sec-deco d-dots" src="../../decor/dots-grid.png" alt="" />
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>このような方が対象です</h2>
@@ -392,7 +447,9 @@
 </section>
 
 <!-- ===================== べるつりーのサポート内容 ===================== -->
-<section class="band-paper sec-pad">
+<section class="band-paper wash-cream sec-pad">
+  <img class="sec-deco d-cloud-tl" src="../../decor/clouds.png" alt="" />
+  <img class="sec-deco d-leaf-br" src="../../decor/leaf-plant.png" alt="" />
   <div class="wrap">
     <div class="support-block reveal">
       <h2>べるつりーのサポート内容</h2>
@@ -414,7 +471,8 @@
 </section>
 
 <!-- ===================== 専門職向けCTA ===================== -->
-<section class="band-base sec-pad">
+<section class="band-base wash-warm sec-pad">
+  <img class="sec-deco d-cloud-br" src="../../decor/clouds.png" alt="" />
   <div class="wrap">
     <div class="pro-cta reveal">
       <h3>医療・介護関係者の皆様へ</h3>
@@ -425,7 +483,10 @@
 </section>
 
 <!-- ===================== アプローチ最終 ===================== -->
-<section class="band-paper sec-pad">
+<section class="band-paper wash-peach sec-pad">
+  <img class="sec-deco d-leaf-bl" src="../../decor/leaf-plant.png" alt="" />
+  <img class="sec-deco d-cloud-tr" src="../../decor/clouds.png" alt="" />
+  <img class="sec-deco d-bird-1" src="../../decor/birds.png" alt="" />
   <div class="wrap">
     <div class="approach-final reveal">
       <h2>パーキンソン病への、べるつりーのアプローチ</h2>
@@ -453,7 +514,9 @@
 </section>
 
 <!-- ===================== 関連する他の機能 ===================== -->
-<section class="band-base sec-pad">
+<section class="band-base wash-sage sec-pad">
+  <img class="sec-deco d-leaf-tl" src="../../decor/leaf-plant.png" alt="" />
+  <img class="sec-deco d-sun" src="../../decor/sun.png" alt="" />
   <div class="wrap">
     <div class="sub-nav reveal">
       <h3>関連する他の機能</h3>
