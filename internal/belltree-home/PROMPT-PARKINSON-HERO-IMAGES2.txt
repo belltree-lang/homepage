@@ -1,0 +1,38 @@
+A single photorealistic editorial documentary photograph (NOT illustration, NOT watercolor, NOT painted, NOT CGI-glossy) for a hero image at the top of a Japanese acupuncture clinic's solutions page for Parkinson's disease.
+
+Style: natural-light lifestyle / editorial documentary photography in the spirit of Kinfolk Magazine, Cereal Magazine, &Premium. Looks like an unstaged, real moment captured at a real visiting-acupuncturist session at a patient's home. Camera feel: full-frame, 50mm prime, f/2.5, soft natural daylight from a left window, gentle shallow depth-of-field on the needles. Subtle film grain, NOT crispy digital, NOT HDR, NOT Instagram-saturated.
+
+Color tone: muted warm natural palette — warm beige and cream linens, soft terracotta-tinted skin tone in daylight, aged wood, off-white walls. NO neon, NO oversaturation, NO bright primaries, NO white-balance shift toward cyan or magenta. Quiet, calm, editorial-magazine warmth.
+
+Subject (single photograph, real-looking people):
+A late-70s Japanese man with mild Parkinson's disease, seated on the edge of a low futon-style bed in a sunlit Japanese home (washitsu or modern living room with tatami / warm wood floor). He is wearing simple natural-fiber loungewear in cream or oat color — clean, lived-in, not pajamas, not hospital gowns. His hair is gray, his skin shows natural age (light spots, soft wrinkles) — realistic, dignified, not glamorized.
+
+A 訪問鍼灸師 (visiting acupuncturist), a focused Japanese professional in his late 30s or 40s, kneels or sits at the patient's side, mid-treatment. He is wearing plain modern medical scrubs — short-sleeve scrub top and matching pants — in a MUTED brand-aligned color (deep slate blue #1A365D, OR warm charcoal, OR soft sage gray). NOT bright surgical green, NOT hospital cyan, NOT pure white, NOT primary blue. The scrubs are clean and pressed but unbranded (no logos, no name tags, no embroidery). They signal "this is a medical professional treating a patient," not "wellness practitioner" and not "doctor in a white coat."
+
+KEY storytelling — what must read instantly in the photograph:
+1) Acupuncture needles — 3 to 5 actual fine stainless-steel acupuncture needles with small reddish-orange thread-bound bead-grips — are clearly placed on the patient's forearm or the back of his hand near the wrist. The practitioner's hand is precisely adjusting one of them with fingertip control. This must be unambiguously 鍼灸 (acupuncture), NOT massage, NOT comfort-care touch.
+2) The patient is NOT lying down, NOT being passively cared for. He sits upright with engaged posture and looks down at his own treated hand with quiet, serious determination — the look of "I want this hand to move again." Eyes open or softly downcast, fully present.
+3) The practitioner's expression and posture convey technical concentration, not gentle sympathy — slight forward lean, both hands controlled, looking at the needle insertion site, NOT smiling at the patient. He is a clinician doing his job, not a caregiver patting a shoulder.
+4) The two figures form a shared triangle of attention with the treated hand at its apex — patient face → practitioner face → hand-with-needles. They are partners working on the same problem.
+
+Background context (subtle, supporting the story, naturally placed):
+- A small low side-table holding a folded clean white towel, a small slim notebook with a pencil resting on it (the practitioner's treatment log), one plain ceramic cup
+- A small potted plant or single stem in a vase on a windowsill, soft daylight from the left
+- Plain linen curtain partly drawn, plain wall behind, no clutter
+
+Composition (this is critical — image is a website hero):
+- Landscape orientation, 16:10 ratio
+- The two figures and the treated hand placed in the LEFT 55-60% of the frame
+- The RIGHT 35-40% is intentionally empty — soft out-of-focus background, wall and light — so the website can overlay a Japanese headline and body copy there with full legibility
+- The needles and the practitioner's working hand are the sharpest focal point
+- Both faces are clearly recognizable in three-quarter view
+- NO text, NO captions, NO labels, NO logos, NO watermarks, NO subtitles, NO numbers, NO Japanese characters floating in the air
+
+What this photo must NOT communicate:
+- NOT "elderly person lying down being cared for"
+- NOT a passive nursing-home / care-facility atmosphere
+- NOT massage / spa / aromatherapy / wellness retreat
+- NOT clinical hospital interior / bright fluorescent ceiling / sterile white surfaces (the room is a private home, calm and warm)
+- NOT pity, NOT sentimentality — instead, dignified partnership in active treatment
+
+Output: 1600x1000 pixels, landscape, high resolution photograph, gentle film-like rendering, suitable for use as a web hero with text overlaid on the right side.
