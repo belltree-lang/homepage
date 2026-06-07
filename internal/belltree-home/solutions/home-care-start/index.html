@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>介護の始め方がわからない・家族の負担への相談｜株式会社べるつりー</title>
+<meta name="description" content="親の様子の変化が気になる、介護保険の申請がわからない、仕事と介護の両立に限界。居宅介護支援のケアマネジャーが入口からご相談を受けます。" />
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; }
+  .wrap { max-width: var(--bt-container); margin: 0 auto; padding: 0 var(--bt-gutter); }
+
+  .script {
+    font-family: 'Parisienne', cursive;
+    color: var(--bt-accent);
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  /* ===================== HEADER ===================== */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(252,252,250,0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--bt-line);
+  }
+  .header-inner { height: 64px; display: flex; align-items: center; gap: var(--bt-s-5); }
+  .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .brand img { width: 38px; height: 38px; }
+  .brand-name {
+    font-family: var(--bt-font-serif); font-weight: 600; font-size: 20px;
+    color: var(--bt-primary); letter-spacing: 0.01em; line-height: 1;
+    display: flex; align-items: baseline; gap: 7px; white-space: nowrap;
+  }
+  .brand-name .jp { font-size: 14px; color: var(--bt-ink-3); font-weight: 500; }
+  .brand-name .sep { color: var(--bt-line); font-weight: 300; }
+  .main-nav { display: flex; gap: 22px; margin-left: auto; }
+  .main-nav a {
+    font-size: 14px; font-weight: 500; color: var(--bt-ink-2); white-space: nowrap;
+    letter-spacing: 0.01em; transition: color var(--bt-dur) var(--bt-ease);
+  }
+  .main-nav a:hover { color: var(--bt-accent); }
+  .header-cta { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+  .header-phone {
+    display: flex; align-items: center; gap: 7px;
+    font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px;
+    color: var(--bt-primary); white-space: nowrap;
+  }
+  .header-phone svg { width: 17px; height: 17px; color: var(--bt-accent); }
+  .btn-sm {
+    display: inline-flex; align-items: center; justify-content: center; white-space: nowrap;
+    height: 40px; padding: 0 20px; border-radius: var(--bt-r-pill);
+    background: var(--bt-accent); color: #fff; font-weight: 600; font-size: 13px;
+    letter-spacing: 0.03em; border: 1px solid transparent;
+    transition: background var(--bt-dur) var(--bt-ease);
+  }
+  .btn-sm:hover { background: var(--bt-accent-hover); color: #fff; }
+
+  /* info-bar */
+  .info-bar { background: var(--bt-accent); color: #fff; }
+  .info-bar .wrap {
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    gap: 6px 18px; padding-top: 9px; padding-bottom: 9px;
+    font-size: 12.5px; font-weight: 500; letter-spacing: 0.03em;
+  }
+  .info-bar .wrap > span { white-space: nowrap; }
+  .info-bar .dot { opacity: 0.5; }
+
+  /* breadcrumb */
+  .breadcrumb { background: var(--bt-bg-sunk); border-bottom: 1px solid var(--bt-line-soft); }
+  .breadcrumb .wrap { display: flex; gap: 8px; padding: 12px 0; font-size: 12px; color: var(--bt-ink-3); flex-wrap: wrap; }
+  .breadcrumb a { color: var(--bt-ink-3); }
+  .breadcrumb a:hover { color: var(--bt-accent); }
+  .breadcrumb .sep { color: var(--bt-line); }
+  .breadcrumb [aria-current="page"] { color: var(--bt-primary); font-weight: 600; }
+
+  /* ===================== グローバル「紙」テクスチャ ===================== */
+  body {
+    background-color: #FAF4EA;
+    background-image:
+      radial-gradient(circle at 10% 8%, rgba(255,232,212,0.55) 0%, transparent 35%),
+      radial-gradient(circle at 92% 18%, rgba(255,225,210,0.40) 0%, transparent 40%),
+      radial-gradient(circle at 22% 88%, rgba(232,221,200,0.45) 0%, transparent 45%),
+      radial-gradient(circle at 88% 78%, rgba(255,232,217,0.35) 0%, transparent 38%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.45 0 0 0 0 0.3 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+  }
+
+  /* ===================== PAGE HERO（2カラム + 写真）===================== */
+  .page-hero {
+    position: relative; padding: 64px 0 56px;
+    background: transparent;
+  }
+  .page-hero .wrap { position: relative; z-index: 3; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .hero-text .eyebrow {
+    font-size: 12px; letter-spacing: 0.18em; color: var(--bt-ink-4);
+    font-weight: 600; display: block; margin-bottom: 18px; text-transform: uppercase;
+  }
+  .hero-text h1 {
+    font-family: var(--bt-font-serif); font-weight: 600;
+    font-size: clamp(28px, 3.8vw, 44px); line-height: 1.4; margin: 0 0 22px;
+    color: var(--bt-primary); letter-spacing: 0.02em;
+  }
+  .hero-text p.lead {
+    font-size: 16px; color: var(--bt-ink-2); line-height: 2; font-weight: 500; margin: 0;
+  }
+  .hero-photo {
+    position: relative;
+    aspect-ratio: 4/3; border-radius: 24px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(80,55,30,0.18), 0 6px 18px rgba(80,55,30,0.10);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-photo::after {
+    content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+    border-radius: 24px; pointer-events: none;
+  }
+  .hero-photo-blob {
+    position: absolute; z-index: -1; pointer-events: none;
+    width: 110%; height: 110%; top: -5%; left: -5%;
+    background: radial-gradient(circle, rgba(216,139,111,0.18) 0%, transparent 65%);
+    filter: blur(20px);
+  }
+
+  /* ===================== SECTION SHELL ===================== */
+  section { position: relative; }
+  .band-paper, .band-base { background: transparent; }
+  .sec-pad { padding: 72px 0; }
+
+  /* 装飾は基本的に使わない */
+  .sec-deco { display: none; }
+  .page-hero-deco { display: none; }
+  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+  .sec-head .script { font-size: 26px; display: block; margin-bottom: 8px; }
+  .sec-head h2 {
+    font-size: clamp(24px, 3vw, 32px); line-height: 1.4; color: var(--bt-primary);
+    margin: 0 0 16px;
+  }
+  .sec-head p { color: var(--bt-ink-3); font-size: 15px; line-height: 1.95; margin: 0; }
+
+  /* ===================== CONCERN CARDS（よくあるお悩み・症状イラスト中心）===================== */
+  .concern-grid-2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 1080px; margin: 0 auto; }
+  .concern-card-illust {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(80,55,30,0.08);
+    padding: 22px 18px 22px;
+    display: flex; flex-direction: column; align-items: center;
+    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease);
+  }
+  .concern-card-illust:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(80,55,30,0.12); }
+  .concern-card-illust .illust {
+    width: 100%; aspect-ratio: 3 / 2; margin-bottom: 14px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .concern-card-illust .illust::before {
+    content: ""; position: absolute; inset: -10%;
+    background: radial-gradient(circle, rgba(255,235,215,0.7) 0%, transparent 60%);
+    border-radius: 50%; z-index: 0;
+  }
+  .concern-card-illust .illust img { width: 100%; height: 100%; object-fit: contain; position: relative; z-index: 1; }
+  .concern-card-illust .label {
+    font-size: 11px; letter-spacing: 0.1em; color: var(--bt-accent);
+    font-weight: 700; margin-bottom: 6px; text-transform: uppercase;
+  }
+  .concern-card-illust p {
+    font-size: 13.5px; color: var(--bt-ink-1); line-height: 1.7; margin: 0;
+    text-align: center; font-weight: 500;
+  }
+  @media (max-width: 1000px) { .concern-grid-2 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .concern-grid-2 { grid-template-columns: 1fr; } }
+
+  /* ===================== APPROACH CARDS（できること）===================== */
+  .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 920px; margin: 0 auto; }
+  .approach-card {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(80,55,30,0.08);
+    padding: 28px 30px;
+  }
+  .approach-card h3 {
+    font-family: var(--bt-font-serif); font-weight: 600;
+    font-size: 18px; color: var(--bt-primary); margin: 0 0 10px;
+  }
+  .approach-card p { font-size: 14px; color: var(--bt-ink-3); line-height: 1.95; margin: 0; }
+
+  /* ===================== TARGET LIST（対象者）===================== */
+  .target-list { max-width: 720px; margin: 0 auto; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .target-list li {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(80,55,30,0.06);
+    padding: 16px 22px;
+    font-size: 15px; color: var(--bt-ink-1); line-height: 1.7;
+    display: flex; gap: 18px; align-items: center;
+  }
+  .target-list .target-icon {
+    flex-shrink: 0; width: 56px; height: 56px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .target-list .target-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* 見出しの脇に添える意味アイコン */
+  .h-accent {
+    display: inline-flex; align-items: center; gap: 16px;
+    width: 100%;
+  }
+  .h-accent .h-icon {
+    flex-shrink: 0; width: 44px; height: 44px; opacity: 0.85;
+  }
+  .h-accent .h-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .h-accent .h-text { flex: 1; }
+
+  /* セクション縁の意味アクセント */
+  .sec-corner {
+    position: absolute; pointer-events: none;
+    opacity: 0.4; z-index: 1;
+  }
+  .sec-corner img { width: 100%; height: 100%; object-fit: contain; }
+  .sc-tr { top: 32px; right: 5%; width: 90px; height: 90px; }
+  .sc-bl { bottom: 32px; left: 5%; width: 80px; height: 80px; }
+
+  /* ===================== SUPPORT BLOCK ===================== */
+  .support-block {
+    max-width: 920px; margin: 0 auto;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(80,55,30,0.10);
+    padding: 40px 44px;
+  }
+  .support-block h2 {
+    font-family: var(--bt-font-serif); font-weight: 600;
+    font-size: 22px; color: var(--bt-primary); margin: 0 0 18px;
+  }
+  .support-block > p { font-size: 14.5px; color: var(--bt-ink-3); line-height: 1.95; margin: 0 0 22px; }
+  .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .support-grid h4 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; color: var(--bt-primary); margin: 0 0 8px; }
+  .support-grid p { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.85; margin: 0 0 10px; }
+  .support-grid a { color: var(--bt-accent); font-size: 13px; font-weight: 600; }
+  .support-grid a:hover { text-decoration: underline; }
+
+  /* ===================== PROFESSIONAL CTA ===================== */
+  .pro-cta {
+    max-width: 920px; margin: 0 auto;
+    background: var(--bt-primary); color: #fff;
+    border-radius: var(--bt-r-xl); padding: 36px 40px;
+  }
+  .pro-cta h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 20px; margin: 0 0 14px; color: #fff; }
+  .pro-cta p { font-size: 14px; line-height: 1.95; color: rgba(255,255,255,0.85); margin: 0 0 18px; }
+  .pro-cta a {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--bt-group); font-weight: 600; font-size: 14px;
+    border-bottom: 1px solid var(--bt-group); padding-bottom: 2px;
+  }
+
+  /* ===================== APPROACH FINAL ===================== */
+  .approach-final {
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7) !important;
+    border: 1px solid rgba(255,255,255,0.85) !important;
+    max-width: 920px; margin: 0 auto;
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-xl); box-shadow: var(--bt-shadow-1);
+    border-top: 4px solid var(--bt-primary);
+    padding: 40px 44px;
+  }
+  .approach-final h2 {
+    font-family: var(--bt-font-serif); font-weight: 600;
+    font-size: 22px; color: var(--bt-primary); margin: 0 0 18px;
+  }
+  .approach-final > p {
+    font-size: 14.5px; color: var(--bt-ink-2); line-height: 2.05; margin: 0 0 26px;
+  }
+  .approach-final h4 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 15px; color: var(--bt-primary); margin: 0 0 14px; }
+  .related-services { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .related-card {
+    background: var(--bt-bg-sunk); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); padding: 20px 22px;
+    color: inherit; display: block;
+    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease);
+  }
+  .related-card:hover { transform: translateY(-2px); box-shadow: var(--bt-shadow-1); }
+  .related-card h5 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 15px; color: var(--bt-primary); margin: 0 0 6px; }
+  .related-card p { font-size: 12.5px; color: var(--bt-ink-3); line-height: 1.7; margin: 0; }
+  .approach-final-cta { text-align: center; border-top: 1px solid var(--bt-line); padding-top: 22px; }
+  .approach-final-cta p { font-size: 13px; color: var(--bt-ink-3); margin: 0 0 14px; }
+
+  /* ===================== SUB NAV ===================== */
+  .sub-nav { max-width: 920px; margin: 0 auto; padding-top: 12px; }
+  .sub-nav h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; color: var(--bt-primary); margin: 0 0 18px; text-align: center; }
+  .sub-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .sub-nav-item {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px; color: inherit;
+    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease);
+  }
+  .sub-nav-item:hover { transform: translateY(-2px); box-shadow: var(--bt-shadow-1); }
+  .sub-nav-label { display: block; font-weight: 600; font-size: 14px; color: var(--bt-primary); }
+  .sub-nav-desc { display: block; font-size: 12px; color: var(--bt-ink-3); margin-top: 2px; }
+
+  /* BTN */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    height: 50px; padding: 0 30px; border-radius: var(--bt-r-pill);
+    font-family: var(--bt-font-sans); font-weight: 600; font-size: 15px;
+    letter-spacing: 0.03em; border: 1.5px solid transparent;
+    transition: background var(--bt-dur) var(--bt-ease);
+  }
+  .btn--primary { background: var(--bt-accent); color: #fff; box-shadow: 0 2px 0 rgba(0,0,0,.04), 0 8px 18px rgba(194,122,101,.30); }
+  .btn--primary:hover { background: var(--bt-accent-hover); }
+
+  /* ===================== FOOTER ===================== */
+  .site-footer { background: #16202E; color: rgba(255,255,255,0.7); }
+  .footer-top { padding: 64px 0 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+  .f-brand img { width: 44px; height: 44px; margin-bottom: 16px; }
+  .f-brand .name { font-family: var(--bt-font-serif); font-size: 20px; color: #fff; margin-bottom: 14px; }
+  .f-brand p { font-size: 13px; line-height: 1.9; color: rgba(255,255,255,0.55); margin: 0 0 18px; max-width: 280px; }
+  .footer-col h5 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bt-group); margin: 0 0 18px; font-weight: 600; }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { font-size: 13.5px; color: rgba(255,255,255,0.68); transition: color var(--bt-dur) var(--bt-ease); }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1); padding: 22px 0;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    font-size: 12px; color: rgba(255,255,255,0.45);
+  }
+
+  .reveal { opacity: 1; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1000px) {
+    .main-nav, .header-phone { display: none; }
+    .header-inner { gap: 12px; }
+  }
+  @media (max-width: 760px) {
+    .concern-grid-2, .approach-grid, .support-grid, .related-services { grid-template-columns: 1fr; }
+    .sub-nav-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .support-block, .approach-final, .pro-cta { padding: 28px 24px; }
+    .sec-pad { padding: 60px 0; }
+  }
+  @media (max-width: 480px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .info-bar .wrap { font-size: 11px; gap: 6px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="べるつりーグループ">
+      <img src="../../assets/belltree-mark.svg" alt="" />
+      <span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="../../index.html">ホーム</a>
+      <a href="../../index.html#concerns">お悩み別解決策</a>
+      <a href="../../index.html#model">サービス一覧</a>
+      <a href="../../index.html#cases">改善事例</a>
+      <a href="../../about/index.html#team">スタッフ紹介</a>
+      <a href="../../about/index.html">会社概要</a>
+    </nav>
+    <div class="header-cta">
+      <span class="header-phone">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+        042-682-2839
+      </span>
+      <a class="btn-sm" href="#final">ご相談窓口</a>
+    </div>
+  </div>
+</header>
+
+<!-- info bar -->
+<div class="info-bar">
+  <div class="wrap">
+    <span><strong>株式会社べるつりー</strong></span>
+    <span class="dot">・</span>
+    <span>八王子・町田・日野</span>
+    <span class="dot">／</span>
+    <span>TEL 042-682-2839</span>
+    <span class="dot">／</span>
+    <span>平日 9:00〜18:00（日祝休）</span>
+  </div>
+</div>
+
+<!-- breadcrumb -->
+<nav class="breadcrumb" aria-label="現在位置">
+  <div class="wrap">
+    <a href="../../index.html">ホーム</a>
+    <span class="sep">／</span>
+    <a href="../../index.html#concerns">お悩み別解決策</a>
+    <span class="sep">／</span>
+    <span aria-current="page">介護の始め方</span>
+  </div>
+</nav>
+
+<!-- ===================== PAGE HERO（2カラム + 写真）===================== -->
+<section class="page-hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow">Solutions | Home Care Start</span>
+        <h1>介護の始め方がわからない・<br />家族の負担を抱えている方へ</h1>
+        <p class="lead">親の様子の変化が気になり始めた、保険の手続きが複雑、仕事との両立に限界。<br />居宅介護支援のケアマネジャーが、入口からご相談を受けます。</p>
+      </div>
+      <div class="hero-photo">
+        <span class="hero-photo-blob"></span>
+        <img src="../../../../images/photos/acupuncture-visit-hero.png" alt="ご自宅での訪問鍼灸マッサージの様子" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== よくあるお悩み ===================== -->
+<section class="band-base sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>よくあるお悩み</h2>
+    </div>
+    <div class="concern-grid-2 reveal">
+      <div class="concern-card-illust">
+        <div class="illust"><img src="../../decor/concern-01.png" alt="" /></div>
+        <span class="label">親の変化</span>
+        <p>親が同じことを何度も聞く、<br />忘れ物が増えてきた</p>
+      </div>
+      <div class="concern-card-illust">
+        <div class="illust"><img src="../../decor/concern-06.png" alt="" /></div>
+        <span class="label">実家の様子</span>
+        <p>実家の掃除が行き届かない、<br />冷蔵庫の管理ができていない</p>
+      </div>
+      <div class="concern-card-illust">
+        <div class="illust"><img src="../../decor/concern-06.png" alt="" /></div>
+        <span class="label">手続きの複雑さ</span>
+        <p>介護保険を申請したいが、<br />手続きが複雑でわからない</p>
+      </div>
+      <div class="concern-card-illust">
+        <div class="illust"><img src="../../decor/concern-05.png" alt="" /></div>
+        <span class="label">両立の限界</span>
+        <p>仕事と介護の両立に<br />限界を感じ始めている</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 訪問鍼灸マッサージでできること ===================== -->
+<section class="band-paper wash-cream sec-pad">
+  <img class="sec-deco d-cloud-tr" src="../../decor/clouds.png" alt="" />
+  <img class="sec-deco d-bird-1" src="../../decor/birds.png" alt="" />
+  <img class="sec-deco d-leaf-bl" src="../../decor/leaf-plant.png" alt="" />
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>訪問鍼灸マッサージでできること</h2>
+      <p>パーキンソン病のケアにおいて、訪問鍼灸マッサージは「症状の緩和」と「精神的な安心感」の両面からアプローチします。</p>
+    </div>
+    <div class="approach-grid reveal">
+      <div class="approach-card">
+        <h3>固縮・可動域の改善</h3>
+        <p>全身の筋肉の緊張を解き、関節が動かしやすくなるようアプローチ。日常生活動作の維持を目指します。</p>
+      </div>
+      <div class="approach-card">
+        <h3>自律神経・循環の調整</h3>
+        <p>鍼灸による刺激で血流を促し、特有の冷えや浮腫、便秘などの随伴症状にも対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== このような方が対象です ===================== -->
+<section class="band-base wash-sage sec-pad">
+  <img class="sec-deco d-leaf-tl" src="../../decor/leaf-plant.png" alt="" />
+  <img class="sec-deco d-bird-2" src="../../decor/birds.png" alt="" />
+  <img class="sec-deco d-dots" src="../../decor/dots-grid.png" alt="" />
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>このような方が対象です</h2>
+    </div>
+    <ul class="target-list reveal">
+      <li><span class="target-icon"><img src="../../../../images/materials/decoration/M/parkinson/parkinson-m-02.png" alt="" /></span><span>パーキンソン病または類縁疾患（神経難病）と診断された方</span></li>
+      <li><span class="target-icon"><img src="../../../../images/materials/decoration/M/parkinson/parkinson-m-01.png" alt="" /></span><span>通院によるリハビリが体力的に厳しいと感じている方</span></li>
+      <li><span class="target-icon"><img src="../../../../images/materials/decoration/M/parkinson/parkinson-m-11.png" alt="" /></span><span>公的な医療助成（難病医療費助成等）を受けられている方</span></li>
+      <li><span class="target-icon"><img src="../../../../images/materials/decoration/M/parkinson/parkinson-m-08.png" alt="" /></span><span>町田、八王子、日野、南大沢エリアにお住まいの方</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== べるつりーのサポート内容 ===================== -->
+<section class="band-paper wash-cream sec-pad">
+  <img class="sec-deco d-cloud-tl" src="../../decor/clouds.png" alt="" />
+  <img class="sec-deco d-leaf-br" src="../../decor/leaf-plant.png" alt="" />
+  <div class="wrap">
+    <div class="support-block reveal">
+      <h2 class="h-accent"><span class="h-icon"><img src="../../../../images/materials/decoration/M/parkinson/parkinson-m-16.png" alt="" /></span><span class="h-text">べるつりーのサポート内容</span></h2>
+      <p>パーキンソン病特有の「オン・オフ（動作の変化）」を理解し、お一人おひとりのタイミングに合わせたケアを行います。</p>
+      <div class="support-grid">
+        <div>
+          <h4>長期的な伴走</h4>
+          <p>状態の変化に合わせ、訪問マッサージだけでなく居宅介護支援等への繋ぎもスムーズに行います。</p>
+          <a href="../stroke/index.html">→ 脳梗塞後遺症の在宅サポートを見る</a>
+        </div>
+        <div>
+          <h4>生活全般のサポート</h4>
+          <p>国家資格者による「訪問鍼灸マッサージ」で、身体と心の負担を同時に軽減します。</p>
+          <a href="#">→ 訪問鍼灸マッサージの詳細を見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 専門職向けCTA ===================== -->
+<section class="band-base wash-warm sec-pad">
+  <img class="sec-deco d-cloud-br" src="../../decor/clouds.png" alt="" />
+  <div class="wrap">
+    <div class="pro-cta reveal">
+      <h3 class="h-accent" style="color:#fff"><span class="h-icon" style="filter:brightness(0) invert(1); opacity:0.7"><img src="../../../../images/materials/decoration/M/parkinson/parkinson-m-11.png" alt="" /></span><span class="h-text">医療・介護関係者の皆様へ</span></h3>
+      <p>パーキンソン病特有の症状（固縮や不随意運動など）に対する生活支援や、多職種によるチームケア体制を構築しています。</p>
+      <a href="#">専門職向け連携案内を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== アプローチ最終 ===================== -->
+<section class="band-paper wash-peach sec-pad">
+  <img class="sec-deco d-leaf-bl" src="../../decor/leaf-plant.png" alt="" />
+  <img class="sec-deco d-cloud-tr" src="../../decor/clouds.png" alt="" />
+  <img class="sec-deco d-bird-1" src="../../decor/birds.png" alt="" />
+  <div class="wrap">
+    <div class="approach-final reveal">
+      <h2 class="h-accent"><span class="h-icon"><img src="../../../../images/materials/decoration/M/parkinson/parkinson-m-20.png" alt="" /></span><span class="h-text">パーキンソン病への、べるつりーのアプローチ</span></h2>
+      <p>進行に伴うこわばり（固縮）や歩行のしづらさにお悩みの方へ。<br />
+      べるつりーではまず<strong>「訪問鍼灸マッサージ」</strong>を通じて、自律神経の調整や固縮の緩和を図り、少しでも動かしやすい状態を作ります。また、長期的な視点が欠かせない難病だからこそ、<strong>「居宅介護支援」</strong>のケアマネジャーとも連携し、進行度合いに合わせた無理のないサポート体制を一緒に構築します。</p>
+
+      <h4>関連する解決策（サービスの詳細）を見る</h4>
+      <div class="related-services">
+        <a href="#" class="related-card">
+          <h5>訪問鍼灸マッサージ</h5>
+          <p>ご自宅に伺い、筋肉の緊張緩和や自律神経の調整を行います。</p>
+        </a>
+        <a href="#" class="related-card">
+          <h5>居宅介護支援（ケアマネ）</h5>
+          <p>症状の変化を見据えた、長期的なケアプランを作成します。</p>
+        </a>
+      </div>
+
+      <div class="approach-final-cta">
+        <p>現在の状態に合わせた最適なサポートをご提案します。まずは無料体験・ご相談にお進みください。</p>
+        <a href="#final" class="btn btn--primary">相談窓口へ進む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 関連する他の機能 ===================== -->
+<section class="band-base wash-sage sec-pad">
+  <img class="sec-deco d-leaf-tl" src="../../decor/leaf-plant.png" alt="" />
+  <img class="sec-deco d-sun" src="../../decor/sun.png" alt="" />
+  <div class="wrap">
+    <div class="sub-nav reveal">
+      <h3>関連する他の機能</h3>
+      <div class="sub-nav-grid">
+        <a class="sub-nav-item" href="../stroke/index.html">
+          <div><span class="sub-nav-label">脳卒中</span><span class="sub-nav-desc">麻痺の在宅サポート</span></div>
+        </a>
+        <a class="sub-nav-item" href="../frailty/index.html">
+          <div><span class="sub-nav-label">フレイル</span><span class="sub-nav-desc">虚弱予防と対策</span></div>
+        </a>
+        <a class="sub-nav-item" href="../../index.html#cases">
+          <div><span class="sub-nav-label">改善事例</span><span class="sub-nav-desc">サポート実績を見る</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" id="final">
+  <div class="wrap footer-top">
+    <div class="f-brand">
+      <img src="../../assets/belltree-mark.svg" alt="" />
+      <div class="name">べるつりーグループ</div>
+      <p>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+    </div>
+    <div class="footer-col">
+      <h5>企業情報</h5>
+      <ul>
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../about/index.html">会社概要</a></li>
+        <li><a href="../../index.html#model">サポートモデル</a></li>
+        <li><a href="#">採用情報</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>解決策・事例</h5>
+      <ul>
+        <li><a href="../../index.html#concerns">お悩み別解決策</a></li>
+        <li><a href="../../index.html#model">サービス一覧</a></li>
+        <li><a href="../../index.html#cases">改善事例</a></li>
+        <li><a href="../../about/index.html#team">スタッフ紹介</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>お問い合わせ</h5>
+      <ul>
+        <li><a href="#">042-682-2839</a></li>
+        <li><a href="#">お問い合わせフォーム</a></li>
+        <li><a href="#">個人情報保護方針</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 株式会社べるつりー / Belltree Group</span>
+    <span style="color:var(--bt-group);font-weight:600;letter-spacing:0.04em">わたしたちは、一本の木。</span>
+  </div>
+</footer>
+
+</body>
+</html>
