@@ -1,0 +1,264 @@
+/* =========================================================
+   Belltree (べるつりー) — Colors & Type Tokens
+   Core metaphor: a tree. Trunk = group, leaves = services/people.
+   Tone: calm · trustworthy · warm.  (Consultation-First Premium)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---------- Core (幹 / Trunk) — immovable ---------- */
+  --bt-primary:         #1A365D; /* deep navy — trust */
+  --bt-primary-hover:   #14284A;
+  --bt-primary-soft:    #2C4973;
+  --bt-accent:          #C27A65; /* terracotta — CTA & warmth */
+  --bt-accent-hover:    #A8624E;
+  --bt-accent-soft:     #E8C9BF;
+
+  --bt-bg:              #FCFCFA; /* 生成り / off-white */
+  --bt-bg-sunk:         #F5F3EE; /* warm paper */
+  --bt-surface:         #FFFFFF;
+  --bt-surface-alt:     #F9F7F2;
+
+  /* ---------- Neutrals (ink) ---------- */
+  --bt-ink-1:           #1C1D1A; /* near-black body */
+  --bt-ink-2:           #3D3E3A;
+  --bt-ink-3:           #6B6C66; /* secondary copy */
+  --bt-ink-4:           #9B9A91; /* tertiary / captions */
+  --bt-line:            #E5E1D6; /* hairline / dividers */
+  --bt-line-soft:       #EDEAE0;
+
+  /* ---------- Parent brand (葉 / Group) ---------- */
+  /* 黄緑 — 若葉・成長. Use only for group-level lockups,
+     footers and cross-service nav. Not for single-service UI. */
+  --bt-group:           #9CBF4A;
+  --bt-group-deep:      #7DA033;
+  --bt-group-soft:      #D9E4BC;
+
+  /* ---------- Six service categories (accent only) ----------
+     Rule: NEVER paint large surfaces with these. Use on badges,
+     tabs, 4px bands, icons, index markers. Keep < 20% of a view.
+     One service color per context — never mix. */
+  --bt-svc-fit:         #E08A4A; /* べるフィット — 橙 */
+  --bt-svc-shinkyu:     #C4564E; /* 訪問鍼灸マッサージ — 赤 */
+  --bt-svc-kaigo:       #3F6B4F; /* 居宅介護支援 — 深緑 */
+  --bt-svc-community:   #4A9BA8; /* 地域コミュニティ — 青緑 */
+  --bt-svc-legal:       #2A4A7F; /* べるリーガル — 藍 */
+  --bt-svc-shukatsu:    #8B6AAB; /* 終活支援 — 紫 */
+
+  /* Tints for each service (14% over bg) — for soft fills in
+     <20% zones like badge backgrounds. */
+  --bt-svc-fit-soft:       #F7E4D4;
+  --bt-svc-shinkyu-soft:   #F1D4D1;
+  --bt-svc-kaigo-soft:     #D6E0D8;
+  --bt-svc-community-soft: #D4E6EA;
+  --bt-svc-legal-soft:     #D3DBE8;
+  --bt-svc-shukatsu-soft:  #E1D8EA;
+
+  /* ---------- Semantic ---------- */
+  --bt-success:         #3F6B4F;
+  --bt-warning:         #C48A2A;
+  --bt-danger:          #B4423B;
+  --bt-info:            #2A4A7F;
+
+  /* ---------- Typography stack ---------- */
+  --bt-font-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+                  "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --bt-font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho",
+                   "Noto Serif", Georgia, serif;
+  --bt-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale — editorial, generous */
+  --bt-fs-display:  clamp(44px, 6vw, 72px);
+  --bt-fs-h1:       clamp(34px, 4vw, 48px);
+  --bt-fs-h2:       clamp(26px, 3vw, 34px);
+  --bt-fs-h3:       22px;
+  --bt-fs-h4:       18px;
+  --bt-fs-body:     16px;
+  --bt-fs-body-lg:  17px;
+  --bt-fs-small:    14px;
+  --bt-fs-micro:    12px;
+
+  --bt-lh-tight:    1.28;
+  --bt-lh-normal:   1.6;
+  --bt-lh-body:     1.85;   /* 落ち着いた間 — minimum 1.8 for body */
+  --bt-ls-tight:    -0.01em;
+  --bt-ls-normal:    0.02em;
+  --bt-ls-body:      0.03em;  /* specified in brand rules */
+  --bt-ls-wide:      0.14em;  /* eyebrow / meta labels */
+
+  /* ---------- Spacing (8pt with editorial half-steps) ---------- */
+  --bt-s-0:  0;
+  --bt-s-1:  4px;
+  --bt-s-2:  8px;
+  --bt-s-3:  12px;
+  --bt-s-4:  16px;
+  --bt-s-5:  24px;
+  --bt-s-6:  32px;
+  --bt-s-7:  48px;
+  --bt-s-8:  64px;
+  --bt-s-9:  96px;
+  --bt-s-10: 128px;
+
+  /* ---------- Radii — soft rounded cards ---------- */
+  --bt-r-xs:  4px;
+  --bt-r-sm:  8px;
+  --bt-r-md:  12px;
+  --bt-r-lg:  16px;   /* card default */
+  --bt-r-xl:  24px;
+  --bt-r-pill: 999px; /* CTA */
+
+  /* ---------- Shadow — low, never harsh ---------- */
+  --bt-shadow-0: 0 0 0 1px rgba(28,29,26,0.04);
+  --bt-shadow-1: 0 1px 2px rgba(28,29,26,0.04),
+                 0 2px 6px rgba(28,29,26,0.04);
+  --bt-shadow-2: 0 4px 10px rgba(28,29,26,0.05),
+                 0 12px 28px rgba(28,29,26,0.06);
+  --bt-shadow-3: 0 12px 32px rgba(28,29,26,0.08),
+                 0 2px 6px rgba(28,29,26,0.04);
+  --bt-shadow-inset: inset 0 0 0 1px var(--bt-line);
+
+  /* ---------- Motion ---------- */
+  --bt-ease:       cubic-bezier(.22,.61,.36,1);
+  --bt-ease-in:    cubic-bezier(.55,.06,.68,.19);
+  --bt-dur-fast:   140ms;
+  --bt-dur:        220ms;
+  --bt-dur-slow:   360ms;
+
+  /* ---------- Layout ---------- */
+  --bt-container:  1160px;
+  --bt-gutter:     24px;
+}
+
+/* =========================================================
+   Semantic element defaults
+   ========================================================= */
+html, body {
+  background: var(--bt-bg);
+  color: var(--bt-ink-1);
+  font-family: var(--bt-font-sans);
+  font-size: var(--bt-fs-body);
+  line-height: var(--bt-lh-body);
+  letter-spacing: var(--bt-ls-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .bt-h1 {
+  font-family: var(--bt-font-serif);
+  font-weight: 600;
+  font-size: var(--bt-fs-h1);
+  line-height: var(--bt-lh-tight);
+  letter-spacing: var(--bt-ls-tight);
+  color: var(--bt-ink-1);
+  margin: 0 0 var(--bt-s-5);
+}
+h2, .bt-h2 {
+  font-family: var(--bt-font-serif);
+  font-weight: 600;
+  font-size: var(--bt-fs-h2);
+  line-height: var(--bt-lh-tight);
+  letter-spacing: var(--bt-ls-tight);
+  color: var(--bt-ink-1);
+  margin: 0 0 var(--bt-s-4);
+}
+h3, .bt-h3 {
+  font-family: var(--bt-font-sans);
+  font-weight: 600;
+  font-size: var(--bt-fs-h3);
+  line-height: 1.45;
+  letter-spacing: var(--bt-ls-normal);
+  margin: 0 0 var(--bt-s-3);
+}
+h4, .bt-h4 {
+  font-family: var(--bt-font-sans);
+  font-weight: 600;
+  font-size: var(--bt-fs-h4);
+  line-height: 1.5;
+  letter-spacing: var(--bt-ls-normal);
+  margin: 0 0 var(--bt-s-3);
+}
+p, .bt-body {
+  margin: 0 0 var(--bt-s-4);
+  line-height: var(--bt-lh-body);
+  letter-spacing: var(--bt-ls-body);
+  color: var(--bt-ink-2);
+  text-wrap: pretty;
+}
+small, .bt-small {
+  font-size: var(--bt-fs-small);
+  letter-spacing: var(--bt-ls-body);
+  color: var(--bt-ink-3);
+}
+.bt-display {
+  font-family: var(--bt-font-serif);
+  font-weight: 600;
+  font-size: var(--bt-fs-display);
+  line-height: 1.18;
+  letter-spacing: var(--bt-ls-tight);
+  color: var(--bt-ink-1);
+}
+.bt-eyebrow {
+  font-family: var(--bt-font-sans);
+  font-weight: 500;
+  font-size: var(--bt-fs-micro);
+  letter-spacing: var(--bt-ls-wide);
+  text-transform: uppercase;
+  color: var(--bt-ink-3);
+}
+.bt-meta {
+  font-family: var(--bt-font-sans);
+  font-weight: 500;
+  font-size: var(--bt-fs-small);
+  letter-spacing: var(--bt-ls-body);
+  color: var(--bt-ink-3);
+}
+a { color: var(--bt-primary); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--bt-accent); }
+hr { border: none; border-top: 1px solid var(--bt-line); margin: var(--bt-s-6) 0; }
+
+/* =========================================================
+   Core Buttons & Card
+   ========================================================= */
+.bt-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px;
+  height: 48px; padding: 0 28px;
+  border-radius: var(--bt-r-pill);
+  font-family: var(--bt-font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: var(--bt-ls-body);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--bt-dur) var(--bt-ease),
+              color var(--bt-dur) var(--bt-ease),
+              transform var(--bt-dur) var(--bt-ease),
+              box-shadow var(--bt-dur) var(--bt-ease);
+}
+.bt-btn--primary {
+  background: var(--bt-accent); color: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 6px 14px rgba(194,122,101,.28);
+}
+.bt-btn--primary:hover { background: var(--bt-accent-hover); }
+.bt-btn--primary:active { transform: translateY(1px); }
+
+.bt-btn--secondary {
+  background: transparent; color: var(--bt-primary);
+  border-color: var(--bt-primary);
+}
+.bt-btn--secondary:hover { background: var(--bt-primary); color: #fff; }
+
+.bt-btn--ghost {
+  background: transparent; color: var(--bt-ink-2);
+  border-color: var(--bt-line);
+}
+.bt-btn--ghost:hover { background: var(--bt-surface-alt); }
+
+.bt-card {
+  background: var(--bt-surface);
+  border: 1px solid var(--bt-line);
+  border-radius: var(--bt-r-lg);
+  box-shadow: var(--bt-shadow-1);
+  padding: var(--bt-s-6);
+}

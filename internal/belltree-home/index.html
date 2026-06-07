@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>べるつりーグループ｜運動・訪問・介護・終活のご相談窓口</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; }
+  .wrap { max-width: var(--bt-container); margin: 0 auto; padding: 0 var(--bt-gutter); }
+
+  .script {
+    font-family: 'Parisienne', cursive;
+    color: var(--bt-accent);
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  /* ===================== HEADER ===================== */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(252,252,250,0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--bt-line);
+  }
+  .header-inner {
+    height: 64px; display: flex; align-items: center; gap: var(--bt-s-5);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .brand img { width: 38px; height: 38px; }
+  .brand-name {
+    font-family: var(--bt-font-serif); font-weight: 600; font-size: 20px;
+    color: var(--bt-primary); letter-spacing: 0.01em; line-height: 1;
+    display: flex; align-items: baseline; gap: 7px; white-space: nowrap;
+  }
+  .brand-name .jp { font-size: 14px; color: var(--bt-ink-3); font-weight: 500; }
+  .brand-name .sep { color: var(--bt-line); font-weight: 300; }
+  .main-nav { display: flex; gap: 22px; margin-left: auto; }
+  .main-nav a {
+    font-size: 14px; font-weight: 500; color: var(--bt-ink-2); white-space: nowrap;
+    letter-spacing: 0.01em; transition: color var(--bt-dur) var(--bt-ease);
+  }
+  .main-nav a:hover { color: var(--bt-accent); }
+  .header-cta { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+  .header-phone {
+    display: flex; align-items: center; gap: 7px;
+    font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px;
+    color: var(--bt-primary); white-space: nowrap;
+  }
+  .header-phone svg { width: 17px; height: 17px; color: var(--bt-accent); }
+  .btn-sm {
+    display: inline-flex; align-items: center; justify-content: center; white-space: nowrap;
+    height: 40px; padding: 0 20px; border-radius: var(--bt-r-pill);
+    background: var(--bt-accent); color: #fff; font-weight: 600; font-size: 13px;
+    letter-spacing: 0.03em; border: 1px solid transparent;
+    transition: background var(--bt-dur) var(--bt-ease);
+  }
+  .btn-sm:hover { background: var(--bt-accent-hover); color: #fff; }
+  .nav-toggle { display: none; }
+
+  /* info bar */
+  .info-bar {
+    background: var(--bt-accent);
+    color: #fff;
+  }
+  .info-bar .wrap {
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    gap: 6px 18px; padding-top: 9px; padding-bottom: 9px;
+    font-size: 12.5px; font-weight: 500; letter-spacing: 0.03em;
+  }
+  .info-bar .wrap > span { white-space: nowrap; }
+  .info-bar .dot { opacity: 0.5; }
+  .info-bar strong { font-weight: 600; }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(1100px 520px at 78% 8%, #FBE7D6 0%, rgba(251,231,214,0) 58%),
+      linear-gradient(180deg, #FDF6EE 0%, #FCEFE2 55%, #FAEAD8 100%);
+  }
+  .hero-deco { position: absolute; pointer-events: none; z-index: 1; }
+  .hero-deco img { opacity: 0.95; }
+  .d-clouds-1 { top: 36px; left: 4%; width: 150px; opacity: 0.85; }
+  .d-clouds-2 { top: 96px; left: 30%; width: 110px; opacity: 0.6; }
+  .d-clouds-3 { top: 60px; right: 26%; width: 90px; opacity: 0.55; }
+  .d-sun { top: 46px; right: 9%; width: 96px; }
+  .d-birds { top: 120px; left: 52%; width: 78px; }
+  .d-dots { top: 130px; right: 4%; width: 84px; opacity: 0.8; }
+  .d-blob-peach { top: 60px; right: 3%; width: 460px; opacity: 0.7; z-index: 0; }
+  .d-blob-yellow { top: 250px; right: 24%; width: 200px; opacity: 0.4; z-index: 0; }
+  .d-leaf-plant { bottom: 90px; right: 5%; width: 230px; z-index: 1; }
+  .hero-meadow {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 190px; z-index: 2;
+    background: url('decor/meadow.png') repeat-x bottom center;
+    background-size: auto 190px;
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; z-index: 3; }
+  .hero-content { max-width: 600px; padding: 88px 0 220px; }
+  .hero-script { font-size: 38px; margin-bottom: 6px; display: inline-block; }
+  .hero-eyebrow { display: block; margin-bottom: 22px; }
+  .badge-pill {
+    display: inline-block; padding: 7px 18px; border-radius: var(--bt-r-pill);
+    background: var(--bt-accent); color: #fff; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.06em; margin-bottom: 26px;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 5.4vw, 60px); line-height: 1.32; margin: 0 0 26px;
+    color: var(--bt-primary); letter-spacing: 0.01em;
+  }
+  .hero h1 .u {
+    position: relative; white-space: nowrap;
+  }
+  .hero h1 .u::after {
+    content: ""; position: absolute; left: -2%; right: -2%; bottom: 2px; height: 10px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='12' viewBox='0 0 200 12'%3E%3Cpath d='M2 8 C 50 2 150 2 198 7' stroke='%23C27A65' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    z-index: -1;
+  }
+  .hero-lead {
+    font-size: 16.5px; color: var(--bt-ink-2); line-height: 2; max-width: 480px;
+    margin: 0 0 34px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    height: 52px; padding: 0 30px; border-radius: var(--bt-r-pill);
+    font-family: var(--bt-font-sans); font-weight: 600; font-size: 15px;
+    letter-spacing: 0.03em; border: 1.5px solid transparent; cursor: pointer;
+    transition: background var(--bt-dur) var(--bt-ease), color var(--bt-dur) var(--bt-ease),
+                transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease);
+  }
+  .btn { white-space: nowrap; }
+  .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .btn--primary {
+    background: var(--bt-accent); color: #fff;
+    box-shadow: 0 2px 0 rgba(0,0,0,.04), 0 8px 18px rgba(194,122,101,.30);
+  }
+  .btn--primary:hover { background: var(--bt-accent-hover); color: #fff; }
+  .btn--primary:active { transform: translateY(1px); box-shadow: none; }
+  .btn--secondary { background: rgba(252,252,250,.7); color: var(--bt-primary); border-color: var(--bt-primary); }
+  .btn--secondary:hover { background: var(--bt-primary); color: #fff; }
+  .btn--ghost { background: rgba(252,252,250,.7); color: var(--bt-ink-2); border-color: var(--bt-line); }
+  .btn--ghost:hover { background: #fff; border-color: var(--bt-ink-3); }
+  .btn--white { background: #fff; color: var(--bt-primary); border-color: #fff; }
+  .btn--white:hover { background: transparent; color: #fff; }
+  .btn--outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+  .btn--outline-white:hover { background: #fff; color: var(--bt-primary); border-color: #fff; }
+
+  /* ===================== STATS ===================== */
+  .stats-band { position: relative; z-index: 5; margin-top: -96px; }
+  .stats-card {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-xl); box-shadow: var(--bt-shadow-2);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    padding: 36px 20px;
+  }
+  .stat { text-align: center; position: relative; padding: 4px 12px; }
+  .stat + .stat::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 56px; background: var(--bt-line);
+  }
+  .stat-num {
+    font-family: var(--bt-font-serif); font-weight: 600; color: var(--bt-accent);
+    font-size: 46px; line-height: 1; letter-spacing: -0.01em;
+  }
+  .stat-num .unit { font-size: 18px; color: var(--bt-ink-2); margin-left: 3px; font-weight: 600; }
+  .stat-label { font-size: 13.5px; color: var(--bt-ink-3); margin-top: 12px; letter-spacing: 0.04em; }
+
+  /* ===================== SECTION SHELL ===================== */
+  section { position: relative; }
+  .band-paper { background: var(--bt-bg-sunk); }
+  .band-base { background: var(--bt-bg); }
+  .sec-pad { padding: 96px 0; }
+  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .sec-head .script { font-size: 30px; display: block; margin-bottom: 8px; }
+  .sec-head h2 {
+    font-size: clamp(28px, 3.4vw, 38px); line-height: 1.4; color: var(--bt-primary);
+    margin: 0 0 20px;
+  }
+  .sec-head p { color: var(--bt-ink-3); font-size: 15.5px; line-height: 1.95; margin: 0; }
+  .u-mark { position: relative; white-space: nowrap; }
+  .u-mark::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 8px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='10' viewBox='0 0 200 10'%3E%3Cpath d='M2 6 C 60 1 140 1 198 5' stroke='%23E0A24A' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  }
+
+  /* ===================== SUPPORT MODEL ===================== */
+  .model-grid {
+    display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px;
+  }
+  .svc-card {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1);
+    padding: 28px; display: flex; flex-direction: column;
+  }
+  .svc-card.span3 { grid-column: span 3; }
+  .svc-card.span6 { grid-column: span 6; }
+  .svc-card.feature { border-color: var(--bt-accent-soft); box-shadow: var(--bt-shadow-2); background: #FFFDFB; }
+  .svc-no {
+    font-family: var(--bt-font-serif); font-style: italic; font-weight: 600;
+    font-size: 15px; color: var(--bt-ink-4); margin-bottom: 14px; letter-spacing: 0.04em;
+  }
+  .svc-icon {
+    width: 52px; height: 52px; border-radius: 14px; display: flex;
+    align-items: center; justify-content: center; margin-bottom: 16px;
+    background: var(--bt-surface-alt);
+  }
+  .svc-icon img { width: 32px; height: 32px; }
+  .svc-card h3 { font-size: 19px; color: var(--bt-primary); margin: 0 0 4px; }
+  .svc-card .en { font-size: 11px; letter-spacing: 0.12em; color: var(--bt-ink-4); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .svc-card p { font-size: 14px; color: var(--bt-ink-3); line-height: 1.85; margin: 0; }
+  .feature-head { display: flex; align-items: flex-start; gap: 16px; }
+  .feature-head .txt { flex: 1; }
+  .feature-head h3 { font-size: 21px; }
+  .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+  .sub-card {
+    background: var(--bt-bg-sunk); border-radius: var(--bt-r-md); padding: 16px 14px;
+    text-align: center; border: 1px solid var(--bt-line-soft);
+  }
+  .sub-card .sub-ic { width: 30px; height: 30px; margin: 0 auto 10px; color: var(--bt-svc-fit); }
+  .sub-card .sub-ic svg { width: 100%; height: 100%; }
+  .sub-card .sub-t { font-size: 13.5px; font-weight: 600; color: var(--bt-ink-1); margin-bottom: 2px; }
+  .sub-card .sub-e { font-size: 10px; letter-spacing: 0.1em; color: var(--bt-ink-4); font-weight: 600; }
+
+  /* ===================== SUPPORT MODEL (compact) ===================== */
+  .svc-compact-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  }
+  .svc-compact {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1);
+    padding: 26px 20px 22px; display: flex; flex-direction: column;
+    text-align: left; color: inherit;
+    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease), border-color var(--bt-dur) var(--bt-ease);
+  }
+  .svc-compact:hover { transform: translateY(-3px); box-shadow: var(--bt-shadow-2); border-color: var(--bt-accent-soft); }
+  .svc-compact-ic {
+    width: 48px; height: 48px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+  }
+  .svc-compact-ic img { width: 28px; height: 28px; }
+  .svc-compact h3 { font-size: 16px; color: var(--bt-primary); margin: 0 0 4px; line-height: 1.4; font-weight: 600; }
+  .svc-compact-en { font-size: 10.5px; letter-spacing: 0.14em; color: var(--bt-ink-4); text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .svc-compact p { font-size: 13px; color: var(--bt-ink-3); line-height: 1.75; margin: 0 0 18px; flex-grow: 1; }
+  .svc-compact-link { font-size: 12.5px; color: var(--bt-accent); font-weight: 600; letter-spacing: 0.04em; }
+  .svc-compact:hover .svc-compact-link { text-decoration: underline; }
+  @media (max-width: 1000px) {
+    .svc-compact-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .svc-compact-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ===================== CONCERNS ===================== */
+  .concern-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  .concern-card {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1);
+    padding: 28px 24px; text-align: center; position: relative;
+    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease);
+  }
+  .concern-card:hover { transform: translateY(-3px); box-shadow: var(--bt-shadow-2); }
+  .concern-illust {
+    width: 124px; height: 124px; margin: 0 auto 18px; border-radius: 50%;
+    background: radial-gradient(circle at 50% 42%, #FCEFE2 0%, #F7F4ED 78%);
+    border: 1px solid var(--bt-line-soft);
+    display: flex; align-items: center; justify-content: center; position: relative;
+  }
+  .concern-illust img { width: 96px; height: 96px; object-fit: contain; }
+  .concern-mark {
+    position: absolute; top: 4px; right: 8px; width: 30px; height: 30px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: var(--bt-font-serif); font-weight: 700; font-size: 16px; color: #fff;
+    box-shadow: var(--bt-shadow-1);
+  }
+  .concern-mark.q { background: var(--bt-svc-fit); }
+  .concern-mark.e { background: var(--bt-accent); }
+  .concern-card h3 { font-size: 18px; color: var(--bt-primary); margin: 0 0 8px; }
+  .concern-card p { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.85; margin: 0; }
+  .center-cta { text-align: center; margin-top: 48px; }
+
+  /* ===================== TEAM ===================== */
+  .team-layout { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
+  .team-intro .script { font-size: 28px; display: block; margin-bottom: 8px; }
+  .team-intro h2 { font-size: clamp(26px, 3vw, 34px); color: var(--bt-primary); margin: 0 0 14px; line-height: 1.4; }
+  .team-intro > p { color: var(--bt-ink-3); font-size: 15px; line-height: 1.9; margin: 0 0 28px; }
+  .team-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .team-card {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1); padding: 18px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .team-card img { width: 56px; height: 56px; flex-shrink: 0; }
+  .team-card .t-t { font-size: 14.5px; font-weight: 600; color: var(--bt-primary); margin-bottom: 5px; }
+  .team-card .t-d { font-size: 12px; color: var(--bt-ink-3); line-height: 1.7; }
+  .points { display: flex; flex-direction: column; gap: 6px; }
+  .point { display: flex; gap: 16px; padding: 22px 4px; border-bottom: 1px solid var(--bt-line); }
+  .point:last-child { border-bottom: none; }
+  .point-ic {
+    width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+    background: var(--bt-accent-soft); color: var(--bt-accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .point-ic svg { width: 17px; height: 17px; }
+  .point h4 { font-size: 16px; color: var(--bt-primary); margin: 0 0 5px; }
+  .point p { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.85; margin: 0; }
+
+  /* ===================== TRUST ===================== */
+  .trust-layout { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 56px; align-items: center; }
+  .trust-intro .script { font-size: 28px; display: block; margin-bottom: 8px; }
+  .trust-intro h2 { font-size: clamp(26px, 3vw, 34px); color: var(--bt-primary); margin: 0 0 18px; line-height: 1.45; }
+  .trust-intro p { color: var(--bt-ink-2); font-size: 15px; line-height: 2; margin: 0; }
+  .trust-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .photo-card {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1); overflow: hidden;
+  }
+  .photo-card .ph {
+    height: 150px;
+    background: linear-gradient(170deg, #E4ECD9 0%, #C9DBB6 55%, #B7CE9E 100%);
+    position: relative;
+  }
+  .photo-card .ph image-slot { width: 100%; height: 100%; display: block; }
+  .photo-card .meta { padding: 16px 18px 20px; }
+  .photo-card .meta .tag {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--bt-svc-kaigo); background: var(--bt-svc-kaigo-soft);
+    padding: 3px 10px; border-radius: var(--bt-r-pill); margin-bottom: 10px;
+  }
+  .photo-card .meta h4 { font-size: 15px; color: var(--bt-primary); margin: 0 0 8px; line-height: 1.5; }
+  .photo-card .meta p { font-size: 12.5px; color: var(--bt-ink-3); line-height: 1.8; margin: 0; }
+  .trust-cta { margin-top: 26px; }
+
+  /* ===================== CASES ===================== */
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .case-card {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease);
+  }
+  .case-card:hover { transform: translateY(-4px); box-shadow: var(--bt-shadow-2); }
+  .case-photo {
+    height: 200px; overflow: hidden;
+    background: linear-gradient(170deg, #E4ECD9 0%, #C9DBB6 55%, #B7CE9E 100%);
+  }
+  .case-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .case-body { padding: 26px 28px; }
+  .case-profile {
+    font-size: 14px; font-weight: 600; color: var(--bt-accent);
+    letter-spacing: 0.04em; margin-bottom: 18px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--bt-line);
+  }
+  .case-steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .case-steps li { display: flex; gap: 14px; align-items: flex-start; }
+  .case-steps .step-num {
+    flex-shrink: 0; width: 30px; height: 30px;
+    border-radius: 50%; background: var(--bt-accent-soft); color: var(--bt-accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--bt-font-serif); font-weight: 700; font-size: 13px;
+  }
+  .case-steps .step-tag {
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--bt-svc-kaigo); background: var(--bt-svc-kaigo-soft);
+    padding: 2px 9px; border-radius: var(--bt-r-pill); margin-right: 8px;
+    text-transform: uppercase;
+  }
+  .case-steps li > div { font-size: 13.5px; color: var(--bt-ink-2); line-height: 1.75; }
+
+  /* ===================== TEAM STAFF PHOTO ===================== */
+  .team-card .staff-photo {
+    width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--bt-surface); box-shadow: 0 2px 6px rgba(80,55,30,0.10);
+  }
+
+  /* ===================== FAQ ===================== */
+  .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .faq-item {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-md); overflow: hidden;
+    transition: box-shadow var(--bt-dur) var(--bt-ease);
+  }
+  .faq-item[open] { box-shadow: var(--bt-shadow-1); border-color: var(--bt-accent-soft); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 20px 26px;
+    display: flex; gap: 14px; align-items: flex-start;
+    font-weight: 600; font-size: 15px; color: var(--bt-primary);
+    line-height: 1.6;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "＋"; margin-left: auto; flex-shrink: 0;
+    font-family: var(--bt-font-serif); font-weight: 400; color: var(--bt-accent);
+    font-size: 20px; transition: transform var(--bt-dur) var(--bt-ease);
+  }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-q-mark, .faq-a-mark {
+    flex-shrink: 0; font-family: var(--bt-font-serif); font-weight: 700;
+    color: var(--bt-accent); width: 22px;
+  }
+  .faq-a {
+    padding: 0 26px 22px 62px;
+    display: flex; gap: 14px; align-items: flex-start;
+    font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.95;
+  }
+  .faq-a-mark { color: var(--bt-svc-kaigo); }
+
+  /* ===================== FINAL CTA ===================== */
+  .final-cta {
+    background: var(--bt-primary); color: #fff; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .final-cta .fc-deco { position: absolute; pointer-events: none; opacity: 0.5; }
+  .fc-cloud-1 { top: 40px; left: 8%; width: 120px; filter: brightness(0) invert(1); opacity: 0.12; }
+  .fc-cloud-2 { bottom: 50px; right: 10%; width: 90px; filter: brightness(0) invert(1); opacity: 0.1; }
+  .fc-bird { top: 56px; right: 22%; width: 70px; filter: brightness(0) invert(1); opacity: 0.18; }
+  .final-cta .inner { position: relative; z-index: 2; padding: 88px 0; }
+  .final-cta .eyebrow {
+    font-size: 13px; letter-spacing: 0.14em; color: var(--bt-group-soft);
+    font-weight: 500; margin-bottom: 18px;
+  }
+  .final-cta h2 {
+    font-family: var(--bt-font-serif); font-weight: 600; color: #fff;
+    font-size: clamp(30px, 4vw, 46px); line-height: 1.4; margin: 0 0 20px; letter-spacing: 0.01em;
+  }
+  .final-cta .inner > p {
+    max-width: 620px; margin: 0 auto 36px; color: rgba(255,255,255,0.82);
+    font-size: 15px; line-height: 2;
+  }
+  .final-cta .hero-actions { justify-content: center; }
+
+  /* ===================== FOOTER ===================== */
+  .site-footer { background: #16202E; color: rgba(255,255,255,0.7); }
+  .footer-top { padding: 64px 0 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+  .f-brand img { width: 44px; height: 44px; margin-bottom: 16px; }
+  .f-brand .name { font-family: var(--bt-font-serif); font-size: 20px; color: #fff; margin-bottom: 14px; }
+  .f-brand p { font-size: 13px; line-height: 1.9; color: rgba(255,255,255,0.55); margin: 0 0 18px; max-width: 280px; }
+  .f-leaf-bar { display: flex; gap: 7px; }
+  .f-leaf-bar span { width: 22px; height: 5px; border-radius: 3px; }
+  .footer-col h5 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bt-group); margin: 0 0 18px; font-weight: 600; }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { font-size: 13.5px; color: rgba(255,255,255,0.68); transition: color var(--bt-dur) var(--bt-ease); }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1); padding: 22px 0;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    font-size: 12px; color: rgba(255,255,255,0.45);
+  }
+  .footer-bottom .grp { color: var(--bt-group); font-weight: 600; letter-spacing: 0.04em; }
+
+  /* ===================== NUMBERED BLOCK HEADER ===================== */
+  .block-head { text-align: center; max-width: 760px; margin: 0 auto 52px; }
+  .block-num {
+    font-family: var(--bt-font-serif); font-style: italic; font-weight: 600;
+    font-size: 19px; color: var(--bt-accent); display: block; margin-bottom: 12px; letter-spacing: 0.06em;
+  }
+  .block-head h3 {
+    font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(24px, 3vw, 32px);
+    color: var(--bt-primary); margin: 0 0 12px; line-height: 1.4;
+  }
+  .block-sub { color: var(--bt-ink-3); font-size: 15px; line-height: 1.9; margin: 0; }
+
+  /* ===================== AUTHORITY (rt) ===================== */
+  .auth-block { max-width: 920px; margin: 0 auto; }
+  .auth-block + .auth-block { margin-top: 56px; }
+  .auth-title { display: flex; align-items: center; gap: 14px; font-family: var(--bt-font-serif); font-weight: 600; font-size: 21px; color: var(--bt-primary); margin: 0 0 24px; }
+  .auth-title::before { content: ""; width: 28px; height: 2px; background: var(--bt-accent); border-radius: 2px; flex-shrink: 0; }
+  .reg-list { display: flex; flex-wrap: wrap; gap: 14px; }
+  .reg-item { flex: 1 1 158px; background: var(--bt-surface); border: 1px solid var(--bt-line); border-radius: var(--bt-r-md); padding: 16px 18px; box-shadow: var(--bt-shadow-0); }
+  .reg-item .pre { display: block; font-size: 11px; color: var(--bt-ink-4); letter-spacing: 0.03em; margin-bottom: 5px; line-height: 1.4; }
+  .reg-item .main { font-size: 14px; font-weight: 600; color: var(--bt-primary); line-height: 1.5; }
+
+  .cmp-wrap { background: var(--bt-surface); border: 1px solid var(--bt-line); border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1); overflow: hidden; }
+  .cmp-cap { font-size: 13px; color: var(--bt-ink-3); padding: 14px 20px; border-bottom: 1px solid var(--bt-line); background: var(--bt-surface-alt); letter-spacing: 0.03em; }
+  .cmp-scroll { overflow-x: auto; }
+  table.cmp { width: 100%; border-collapse: collapse; min-width: 600px; }
+  table.cmp th, table.cmp td { padding: 16px 18px; text-align: left; vertical-align: top; font-size: 13.5px; line-height: 1.7; }
+  table.cmp thead th { font-size: 12px; letter-spacing: 0.03em; color: var(--bt-ink-3); font-weight: 600; border-bottom: 1px solid var(--bt-line); background: var(--bt-surface-alt); }
+  table.cmp thead th.col-bt { color: var(--bt-accent); }
+  table.cmp tbody tr + tr td { border-top: 1px solid var(--bt-line-soft); }
+  table.cmp .col-item { font-weight: 600; color: var(--bt-primary); width: 24%; }
+  table.cmp .col-gen { color: var(--bt-ink-4); width: 36%; }
+  table.cmp .col-bt { color: var(--bt-ink-1); width: 40%; }
+  table.cmp .col-bt .ck { display: inline-flex; width: 17px; height: 17px; color: var(--bt-accent); vertical-align: -3px; margin-right: 7px; }
+  table.cmp .dash { color: var(--bt-ink-4); margin-right: 6px; }
+
+  .promise-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .promise-card { background: var(--bt-surface); border: 1px solid var(--bt-line); border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1); padding: 24px; }
+  .promise-card .pc-ic { width: 44px; height: 44px; border-radius: 12px; background: var(--bt-accent-soft); color: var(--bt-accent); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .promise-card .pc-ic svg { width: 24px; height: 24px; }
+  .promise-card h4 { font-size: 16px; color: var(--bt-primary); margin: 0 0 8px; }
+  .promise-card p { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.85; margin: 0; }
+
+  /* ===================== COVERAGE (rv-02) ===================== */
+  .area-map {
+    max-width: 980px; margin: 0 auto;
+    border-radius: var(--bt-r-xl); overflow: hidden;
+    border: 1px solid var(--bt-line); box-shadow: var(--bt-shadow-1);
+    background: var(--bt-surface);
+  }
+  #coverage-map { height: 520px; width: 100%; background: #FDF8F0; }
+  .map-cap { text-align: center; color: var(--bt-ink-3); font-size: 13.5px; margin: 22px 0 0; letter-spacing: 0.03em; line-height: 1.85; }
+  /* 拠点ピン（小型バッジ・住所詳細は popup） */
+  .pin-mini {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff; padding: 4px 11px 4px 8px; border-radius: 14px;
+    border: 1.5px solid var(--bt-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    font-family: var(--bt-font-sans); font-size: 11.5px; font-weight: 600;
+    color: var(--bt-primary); white-space: nowrap; cursor: pointer;
+  }
+  .pin-mini .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; background: var(--bt-primary); }
+  .pin-mini.honsha { border-color: var(--bt-primary); }
+  .pin-mini.honsha .dot { background: var(--bt-primary); }
+  .pin-mini.bellfit { border-color: var(--bt-svc-fit); }
+  .pin-mini.bellfit .dot { background: var(--bt-svc-fit); }
+  .pin-mini.minamiosawa { border-color: var(--bt-svc-kaigo); }
+  .pin-mini.minamiosawa .dot { background: var(--bt-svc-kaigo); }
+  /* 駅マーカー */
+  .station-mini {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.85); padding: 1px 7px 1px 5px;
+    border: 1px solid rgba(26,54,93,0.5); border-radius: 10px;
+    font-family: var(--bt-font-sans); font-size: 10.5px; font-weight: 500;
+    color: var(--bt-primary); white-space: nowrap;
+  }
+  .station-mini::before {
+    content: ""; width: 7px; height: 7px; border-radius: 2px;
+    background: var(--bt-primary); flex-shrink: 0;
+  }
+  /* popup の中身 */
+  .leaflet-popup-content { font-family: var(--bt-font-sans); font-size: 12.5px; line-height: 1.6; color: var(--bt-ink-2); margin: 10px 14px; }
+  .leaflet-popup-content strong { font-family: var(--bt-font-serif); font-size: 14px; color: var(--bt-primary); display: block; margin-bottom: 4px; }
+  .leaflet-popup-content .pop-addr { color: var(--bt-ink-3); font-size: 11.5px; }
+  .leaflet-popup-content .pop-role { color: var(--bt-ink-3); font-size: 11px; margin-top: 4px; display: block; }
+  .city-label {
+    font-family: var(--bt-font-serif); font-size: 13px; font-weight: 600;
+    color: var(--bt-primary); background: rgba(253,248,240,0.82);
+    padding: 2px 8px; border-radius: 4px; white-space: nowrap;
+    border: 1px solid rgba(26,54,93,0.25);
+  }
+  .leaflet-control-attribution { font-size: 10px; opacity: 0.6; }
+
+  /* ===================== VOICE (rw) ===================== */
+  .voice-block { max-width: 880px; margin: 0 auto; }
+  .voice-block + .voice-block { margin-top: 44px; }
+  .v-eyebrow { display: block; margin-bottom: 14px; }
+  .letter-card { background: var(--bt-surface); border: 1px solid var(--bt-line); border-radius: var(--bt-r-xl); box-shadow: var(--bt-shadow-1); padding: 40px 44px; }
+  .letter-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 24px; color: var(--bt-primary); margin: 0 0 22px; line-height: 1.4; }
+  .letter-card p { font-size: 14.5px; color: var(--bt-ink-2); line-height: 2.05; margin: 0 0 16px; }
+  .sign { display: flex; align-items: center; gap: 16px; margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--bt-line-soft); }
+  .sign img, .sign image-slot { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 1px solid var(--bt-line); flex-shrink: 0; display: block; }
+  .sign .s-label { font-size: 12px; color: var(--bt-ink-3); margin-bottom: 4px; letter-spacing: 0.04em; }
+  .sign .s-name { font-family: var(--bt-font-serif); font-weight: 600; font-size: 21px; color: var(--bt-primary); position: relative; display: inline-block; }
+  .sign .s-name::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 7px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='9' viewBox='0 0 120 9'%3E%3Cpath d='M2 6 C 35 1 85 1 118 5' stroke='%23C27A65' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%; }
+  .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .quote-card { background: var(--bt-surface); border: 1px solid var(--bt-line); border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1); padding: 26px 28px; }
+  .quote-card .qmark { font-family: var(--bt-font-serif); font-weight: 700; font-size: 52px; line-height: 0.6; color: var(--bt-accent-soft); display: block; height: 26px; }
+  .quote-card p { font-size: 14.5px; color: var(--bt-ink-1); line-height: 1.95; margin: 0 0 16px; }
+  .qbadge { font-size: 12px; color: var(--bt-ink-3); font-weight: 600; letter-spacing: 0.02em; }
+  .season-card { background: var(--bt-surface); border: 1px solid var(--bt-line); border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1); padding: 34px 36px; }
+  .season-card .s-date { font-size: 12px; letter-spacing: 0.08em; color: var(--bt-accent); font-weight: 600; margin-bottom: 8px; }
+  .season-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 22px; color: var(--bt-primary); margin: 0 0 18px; }
+  .season-card p { font-size: 14px; color: var(--bt-ink-2); line-height: 2; margin: 0 0 14px; }
+  .season-card p:last-child { margin-bottom: 0; }
+
+  /* new-section responsive */
+  @media (max-width: 760px) {
+    .promise-grid, .quote-grid { grid-template-columns: 1fr; }
+    #coverage-map { height: 440px; }
+    .letter-card { padding: 28px 24px; }
+    .season-card { padding: 26px 22px; }
+    .sign { flex-wrap: wrap; }
+  }
+  @media (max-width: 480px) {
+    .reg-item { flex-basis: 100%; }
+    #coverage-map { height: 360px; }
+  }
+
+  /* ===================== ABOUT BRIDGE CARD ===================== */
+  .about-bridge-card {
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
+    max-width: 1080px; margin: 0 auto;
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-xl); box-shadow: var(--bt-shadow-2);
+    padding: 56px 60px;
+  }
+  .abc-text h2 {
+    font-family: var(--bt-font-serif); font-weight: 600;
+    font-size: clamp(28px, 3.4vw, 38px); color: var(--bt-primary);
+    margin: 0 0 18px; line-height: 1.4;
+  }
+  .abc-text > p {
+    font-size: 15px; color: var(--bt-ink-2); line-height: 2; margin: 0 0 22px;
+  }
+  .abc-list {
+    list-style: none; padding: 0; margin: 0 0 28px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .abc-list li {
+    font-size: 14px; color: var(--bt-ink-2); line-height: 1.7;
+    padding-left: 22px; position: relative;
+  }
+  .abc-list li::before {
+    content: ""; position: absolute; left: 0; top: 9px;
+    width: 12px; height: 2px; background: var(--bt-accent); border-radius: 2px;
+  }
+  .abc-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .abc-visual {
+    display: flex; flex-direction: column; align-items: center; gap: 22px;
+    padding: 8px 0;
+  }
+  .abc-portrait {
+    width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--bt-surface); box-shadow: 0 6px 18px rgba(80,55,30,0.14);
+  }
+  .abc-quote {
+    background: var(--bt-surface-alt); border-radius: var(--bt-r-lg);
+    padding: 24px 28px; border: 1px solid var(--bt-line-soft);
+    position: relative;
+  }
+  .abc-qmark {
+    font-family: var(--bt-font-serif); font-weight: 700; font-size: 48px; line-height: 0.6;
+    color: var(--bt-accent-soft); display: block; height: 22px;
+  }
+  .abc-quote p {
+    font-size: 14px; color: var(--bt-ink-1); line-height: 1.95; margin: 0 0 12px;
+  }
+  .abc-qbadge {
+    font-size: 12px; color: var(--bt-ink-3); font-weight: 600; letter-spacing: 0.02em;
+  }
+  @media (max-width: 1000px) {
+    .about-bridge-card { grid-template-columns: 1fr; gap: 36px; padding: 40px 32px; }
+    .abc-visual { padding: 0; }
+  }
+  @media (max-width: 480px) {
+    .about-bridge-card { padding: 32px 22px; }
+    .abc-portrait { width: 100px; height: 100px; }
+  }
+
+  /* ===================== REVEAL =====================
+     Content is always visible — no opacity gating — so it renders reliably
+     in live view, static captures, PDF export and print. */
+  .reveal { opacity: 1; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1000px) {
+    .main-nav, .header-phone { display: none; }
+    .model-grid { grid-template-columns: repeat(6, 1fr); }
+    .svc-card.span3 { grid-column: span 3; }
+    .svc-card.span6 { grid-column: span 6; }
+    .team-layout, .trust-layout { grid-template-columns: 1fr; gap: 40px; }
+    .trust-photos { max-width: 560px; }
+  }
+  @media (max-width: 760px) {
+    .header-inner { gap: 12px; }
+    .stats-card { grid-template-columns: repeat(2, 1fr); gap: 28px 0; padding: 28px 16px; }
+    .stat:nth-child(3)::before, .stat + .stat::before { display: none; }
+    .stat:nth-child(even)::before { display: block; }
+    .model-grid { grid-template-columns: 1fr; }
+    .svc-card.span3, .svc-card.span6 { grid-column: span 1; }
+    .sub-grid { grid-template-columns: 1fr 1fr; }
+    .concern-grid { grid-template-columns: 1fr 1fr; }
+    .team-cards { grid-template-columns: 1fr; }
+    .trust-photos { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .hero-content { padding: 56px 0 180px; }
+    .sec-pad { padding: 68px 0; }
+    .d-leaf-plant, .d-blob-peach, .d-birds { display: none; }
+  }
+  @media (max-width: 480px) {
+    .concern-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .info-bar .wrap { font-size: 11px; gap: 6px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="べるつりーグループ">
+      <img src="assets/belltree-mark.svg" alt="" />
+      <span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="#top">ホーム</a>
+      <a href="#concerns">お悩み別解決策</a>
+      <a href="#model">サービス一覧</a>
+      <a href="#cases">改善事例</a>
+      <a href="about/index.html#team">スタッフ紹介</a>
+      <a href="about/index.html">会社概要</a>
+    </nav>
+    <div class="header-cta">
+      <span class="header-phone">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+        042-682-2839
+      </span>
+      <a class="btn-sm" href="#final">ご相談窓口</a>
+    </div>
+  </div>
+</header>
+
+<!-- info bar -->
+<div class="info-bar">
+  <div class="wrap">
+    <span><strong>株式会社べるつりー</strong></span>
+    <span class="dot">・</span>
+    <span>八王子・町田・日野</span>
+    <span class="dot">／</span>
+    <span>TEL 042-682-2839</span>
+    <span class="dot">／</span>
+    <span>平日 9:00〜18:00（日祝休）</span>
+    <span class="dot">・</span>
+    <span>八王子市下柚木 3-7-2-401</span>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <img class="hero-deco d-blob-peach" src="decor/blob-peach.png" alt="" />
+  <img class="hero-deco d-blob-yellow" src="decor/blob-yellow.png" alt="" />
+  <img class="hero-deco d-clouds-1" src="decor/clouds.png" alt="" />
+  <img class="hero-deco d-clouds-2" src="decor/clouds.png" alt="" />
+  <img class="hero-deco d-clouds-3" src="decor/clouds.png" alt="" />
+  <img class="hero-deco d-sun" src="decor/sun.png" alt="" />
+  <img class="hero-deco d-birds" src="decor/birds.png" alt="" />
+  <img class="hero-deco d-dots" src="decor/dots-grid.png" alt="" />
+  <img class="hero-deco d-leaf-plant" src="decor/leaf-plant.png" alt="" />
+  <div class="hero-meadow"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="script hero-script">welcome 〜</span>
+      <span class="bt-eyebrow hero-eyebrow">Your Consultation Hub</span>
+      <span class="badge-pill" style="letter-spacing: 1.8px">ご相談窓口｜運動・訪問・介護・終活</span>
+      <h1 style="width: 727px">人生の後半を、<br /><span class="u">もっと安心</span>できる時間に。</h1>
+      <p class="hero-lead" style="width: 480px; font-weight: 500; line-height: 2; letter-spacing: 0.5px">運動習慣づくりから、訪問支援、介護、終活準備まで——<br />かかりつけの窓口が変わらない支援体制で、あなたとご家族の暮らしに寄り添います。</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#final">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+          042-682-2839
+        </a>
+        <a class="btn btn--secondary" href="#final">フォームで相談</a>
+        <a class="btn btn--ghost" href="#model">支援の流れを見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<div class="stats-band">
+  <div class="wrap">
+    <div class="stats-card reveal">
+      <div class="stat">
+        <div class="stat-num">15<span class="unit">年</span></div>
+        <div class="stat-label">地域で支え続けて</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1,000<span class="unit">人/月</span></div>
+        <div class="stat-label">訪問鍼灸のべ実績</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3<span class="unit">拠点</span></div>
+        <div class="stat-label">八王子・町田・日野</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">13<span class="unit">名</span></div>
+        <div class="stat-label">国家資格スタッフ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SUPPORT MODEL (compact) ===================== -->
+<section class="band-paper sec-pad" id="model">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="script">Our Support Model</span>
+      <h2>人生の変化に合わせて、<br />支援が途切れない構造</h2>
+      <p>運動から介護までを個別のサービスとしてではなく、「一つの連続した支援」として提供します。状況が変わっても、ご相談の窓口はべるつりーのままです。</p>
+    </div>
+    <div class="svc-compact-grid reveal">
+      <a class="svc-compact" href="#">
+        <div class="svc-compact-ic" style="background:transparent; padding:0"><img src="assets/logo-bellfit.png" alt="べるフィット" style="width:48px;height:48px;object-fit:contain" /></div>
+        <h3>べるフィット</h3>
+        <div class="svc-compact-en">Fitness</div>
+        <p>元気なうちから、運動習慣をつくる。</p>
+        <span class="svc-compact-link">詳しく見る →</span>
+      </a>
+      <a class="svc-compact" href="#">
+        <div class="svc-compact-ic" style="background:var(--bt-svc-community-soft); color:var(--bt-svc-community)"><img src="assets/icons/service-community.svg" alt="" /></div>
+        <h3>保険が使えるジム</h3>
+        <div class="svc-compact-en">Medical Gym</div>
+        <p>介護保険で通える、運動とリハビリの場（通所リハビリ／リーフ）。</p>
+        <span class="svc-compact-link">詳しく見る →</span>
+      </a>
+      <a class="svc-compact" href="#">
+        <div class="svc-compact-ic" style="background:var(--bt-svc-shinkyu-soft); color:var(--bt-svc-shinkyu)"><img src="assets/icons/service-shinkyu.svg" alt="" /></div>
+        <h3>訪問鍼灸マッサージ</h3>
+        <div class="svc-compact-en">Home Visit</div>
+        <p>通えなくなっても、ご自宅で施術を。</p>
+        <span class="svc-compact-link">詳しく見る →</span>
+      </a>
+      <a class="svc-compact" href="#">
+        <div class="svc-compact-ic" style="background:var(--bt-svc-kaigo-soft); color:var(--bt-svc-kaigo)"><img src="assets/icons/service-kaigo.svg" alt="" /></div>
+        <h3>居宅介護支援</h3>
+        <div class="svc-compact-en">Care Management</div>
+        <p>制度活用と生活設計をケアマネが調整。</p>
+        <span class="svc-compact-link">詳しく見る →</span>
+      </a>
+      <a class="svc-compact" href="#">
+        <div class="svc-compact-ic" style="background:var(--bt-svc-legal-soft); color:var(--bt-svc-legal)"><img src="assets/icons/service-legal.svg" alt="" /></div>
+        <h3>行政書士・終活</h3>
+        <div class="svc-compact-en">Shukatsu</div>
+        <p>相続・後見の準備までを伴走する。</p>
+        <span class="svc-compact-link">詳しく見る →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONCERNS ===================== -->
+<section class="band-base sec-pad" id="concerns">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="script">Search by Concerns</span>
+      <h2><span class="u-mark">お悩み</span>から探す</h2>
+      <p>気になる症状やお困りごとから、わたしたちにできる支援をご覧いただけます。</p>
+    </div>
+    <div class="concern-grid reveal">
+      <article class="concern-card">
+        <div class="concern-illust"><img src="decor/concern-01.png" alt="" /><span class="concern-mark e">!</span></div>
+        <h3>脳卒中・後遺症</h3>
+        <p>麻痺や回復へ向けた、継続的なリハビリを希望される方へ。</p>
+      </article>
+      <article class="concern-card">
+        <div class="concern-illust"><img src="decor/concern-02.png" alt="" /><span class="concern-mark q">?</span></div>
+        <h3>パーキンソン病</h3>
+        <p>こわばりや歩行のしづらさを、和らげ・改善したい方へ。</p>
+      </article>
+      <article class="concern-card">
+        <div class="concern-illust"><img src="decor/concern-03.png" alt="" /><span class="concern-mark e">!</span></div>
+        <h3>膝・腰の痛み</h3>
+        <p>階段や立ち上がりが辛い、長引く痛みがある方へ。</p>
+      </article>
+      <article class="concern-card">
+        <div class="concern-illust"><img src="decor/concern-04.png" alt="" /><span class="concern-mark q">?</span></div>
+        <h3>歩行・ふらつき</h3>
+        <p>室内外での転倒の不安、つまずきが増えた方へ。</p>
+      </article>
+      <article class="concern-card">
+        <div class="concern-illust"><img src="decor/concern-05.png" alt="" /><span class="concern-mark e">!</span></div>
+        <h3>体力・活気の低下</h3>
+        <p>最近疲れやすい、外出が億劫になった方へ。</p>
+      </article>
+      <article class="concern-card">
+        <div class="concern-illust"><img src="decor/concern-06.png" alt="" /><span class="concern-mark q">?</span></div>
+        <h3>介護・生活相談</h3>
+        <p>介護保険の使い方、ご家族の負担を減らしたい方へ。</p>
+      </article>
+    </div>
+    <div class="center-cta reveal">
+      <a class="btn btn--secondary" href="#final">お悩み別解決策をすべて見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CASES ===================== -->
+<section class="band-paper sec-pad" id="cases">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="script">Case Studies</span>
+      <h2><span class="u-mark">支援の現場</span>から</h2>
+      <p>途切れない支援体制が、実際の暮らしをどう守るのかをご紹介します。</p>
+    </div>
+    <div class="case-grid reveal">
+      <article class="case-card">
+        <div class="case-photo"><img src="../../images/photos/cases-01-rehab.png" alt="" /></div>
+        <div class="case-body">
+          <div class="case-profile">町田市在住・70代男性の場合</div>
+          <ol class="case-steps">
+            <li><span class="step-num">01</span><div><span class="step-tag">運動</span>足腰の衰えを感じ、予防のために「べるフィット」に通い始める。</div></li>
+            <li><span class="step-num">02</span><div><span class="step-tag">転機</span>膝の痛みが強くなり、自力での通所が困難に。</div></li>
+            <li><span class="step-num">03</span><div><span class="step-tag">訪問</span>スムーズに「訪問鍼灸マッサージ」へ移行。</div></li>
+            <li><span class="step-num">04</span><div><span class="step-tag">継続</span>顔なじみのスタッフと共に、自宅生活を維持。</div></li>
+          </ol>
+        </div>
+      </article>
+      <article class="case-card">
+        <div class="case-photo"><img src="../../images/photos/cases-03-family.png" alt="" /></div>
+        <div class="case-body">
+          <div class="case-profile">80代女性のご家族の場合</div>
+          <ol class="case-steps">
+            <li><span class="step-num">01</span><div><span class="step-tag">相談</span>遠方のご家族から「一人暮らしの母が不安」と相談。</div></li>
+            <li><span class="step-num">02</span><div><span class="step-tag">介護</span>ケアマネジャーが入り、最適なケアプランを作成。</div></li>
+            <li><span class="step-num">03</span><div><span class="step-tag">終活</span>「行政書士」が介入し、将来への法的な備えを。</div></li>
+            <li><span class="step-num">04</span><div><span class="step-tag">安心</span>医療・介護・法務のチーム体制でご家族も安心。</div></li>
+          </ol>
+        </div>
+      </article>
+    </div>
+    <div class="center-cta reveal">
+      <a class="btn btn--secondary" href="#final">改善事例をすべて見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT BRIDGE ===================== -->
+<section class="band-base sec-pad" id="about-bridge" aria-labelledby="ab-title" style="border-top:1px solid var(--bt-line-soft)">
+  <div class="wrap">
+    <div class="about-bridge-card reveal">
+      <div class="abc-text">
+        <span class="bt-eyebrow" style="display:block; margin-bottom:10px">About Us</span>
+        <h2 id="ab-title">わたしたちのこと</h2>
+        <p>国家資格者によるチーム、所属団体、地域連携の実績、代表の言葉、現場の声まで——「べるつりーが選ばれている理由」をまとめてご覧いただけます。</p>
+        <ul class="abc-list">
+          <li>選ばれている理由（所属・比較・4つの約束）</li>
+          <li>スタッフ紹介（国家資格者チーム）</li>
+          <li>地域連携・社会活動</li>
+          <li>代表からのお手紙・現場の声</li>
+          <li>会社情報</li>
+        </ul>
+        <div class="abc-actions">
+          <a class="btn btn--primary" href="about/index.html">わたしたちのことを見る</a>
+          <a class="btn btn--ghost" href="about/index.html#team">スタッフ紹介へ</a>
+        </div>
+      </div>
+      <div class="abc-visual">
+        <img src="../../images/staff/representative-suzuki.jpg" alt="代表 鈴木 俊平" class="abc-portrait" />
+        <div class="abc-quote">
+          <span class="abc-qmark">&ldquo;</span>
+          <p>派手なことはできません。けれど、ご家族と支援者の皆さまの夜が、少しでも安らかになるように、線を細く長くつなぎ続けます。</p>
+          <span class="abc-qbadge">べるつりーグループ 代表 鈴木 俊平</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== rv-02 COVERAGE ===================== -->
+<section class="band-paper sec-pad" id="coverage" aria-labelledby="cov-title">
+  <div class="wrap">
+    <div class="block-head reveal">
+      <span class="block-num">02</span>
+      <h3 id="cov-title">対応エリアは、暮らしの圏内で</h3>
+      <p class="block-sub">町田を起点に、車で30分圏内を主な活動範囲としています。</p>
+    </div>
+    <figure class="reveal" style="margin:0">
+      <div class="area-map">
+        <div id="coverage-map" role="img" aria-label="べるつりーグループ 3拠点と訪問・営業範囲（東京西部・神奈川北部）"></div>
+      </div>
+      <figcaption class="map-cap">3拠点：八王子治療院（下柚木）／居宅介護支援事業所（南大沢）／べるフィット・町田治療院（町田）<br />訪問・営業範囲：八王子・立川・町田・日野・多摩・稲城・相模原を中心に車30分圏内</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="band-paper sec-pad" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:600px">
+      <span class="script">FAQ</span>
+      <h2>よくあるご質問</h2>
+      <p>ご相談前によくいただく疑問やご不安にお答えします。</p>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary><span class="faq-q-mark">Q.</span>まだどのサービスを使うか決まっていませんが相談していいですか？</summary>
+        <div class="faq-a"><span class="faq-a-mark">A.</span>はい、問題ありません。現在の状況をお伺いし、運動、訪問施術、介護、あるいはお住まいの地域の他のサービスの中から最適な選択肢を一緒に考えます。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q-mark">Q.</span>遠方に住んでいる家族ですが、親のことについて相談できますか？</summary>
+        <div class="faq-a"><span class="faq-a-mark">A.</span>もちろん可能です。ご家族からのご相談も多くいただいております。ご本人の状況に合わせて必要なサポートを設計いたします。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta" id="final">
+  <img class="fc-deco fc-cloud-1" src="decor/clouds.png" alt="" />
+  <img class="fc-deco fc-cloud-2" src="decor/clouds.png" alt="" />
+  <img class="fc-deco fc-bird" src="decor/birds.png" alt="" />
+  <div class="wrap">
+    <div class="inner reveal">
+      <div class="eyebrow">地域に根ざした支援について</div>
+      <h2>まずは、お気軽にご相談ください</h2>
+      <p>医療・運動・生活支援・終活準備まで——あなたのご相談を丁寧にお聞きし、暮らしに合った最適な支援をご案内します。何から相談すればよいか分からない、そんな段階でも問題ありません。</p>
+      <div class="hero-actions">
+        <a class="btn btn--white" href="#">お問い合わせフォームへ</a>
+        <a class="btn btn--outline-white" href="#model">サービス一覧を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" id="footer">
+  <div class="wrap footer-top">
+    <div class="f-brand">
+      <img src="assets/belltree-mark.svg" alt="" />
+      <div class="name">べるつりーグループ</div>
+      <p>一本の木のように。幹はグループ全体、葉はそれぞれの事業と、関わる人。八王子・町田・日野の「からだ」と「くらし」と「これから」に寄り添います。</p>
+      <div class="f-leaf-bar">
+        <span style="background:var(--bt-svc-fit)"></span>
+        <span style="background:var(--bt-svc-shinkyu)"></span>
+        <span style="background:var(--bt-svc-kaigo)"></span>
+        <span style="background:var(--bt-svc-community)"></span>
+        <span style="background:var(--bt-svc-legal)"></span>
+        <span style="background:var(--bt-svc-shukatsu)"></span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#model">訪問鍼灸マッサージ</a></li>
+        <li><a href="#model">べるフィット</a></li>
+        <li><a href="#model">居宅介護支援</a></li>
+        <li><a href="#model">行政書士・終活支援</a></li>
+        <li><a href="#model">地域連携・活動</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>About</h5>
+      <ul>
+        <li><a href="about/index.html">わたしたちのこと</a></li>
+        <li><a href="about/index.html#team">スタッフ紹介</a></li>
+        <li><a href="#concerns">お悩み別解決策</a></li>
+        <li><a href="#cases">改善事例</a></li>
+        <li><a href="about/index.html#company">会社情報</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#final">042-682-2839</a></li>
+        <li><a href="#final">お問い合わせフォーム</a></li>
+        <li><a href="#final">資料請求</a></li>
+      </ul>
+      <ul style="margin-top:16px; color:rgba(255,255,255,0.5)">
+        <li style="font-size:12.5px">平日 9:00〜18:00（日祝休）</li>
+        <li style="font-size:12.5px">八王子市下柚木 3-7-2-401</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 株式会社べるつりー / Belltree Group</span>
+    <span class="grp">わたしたちは、一本の木。</span>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+
+<!-- ===================== COVERAGE MAP (Leaflet) ===================== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof L === 'undefined') { console.warn('Leaflet not loaded'); return; }
+  const el = document.getElementById('coverage-map');
+  if (!el) return;
+
+  const map = L.map('coverage-map', {
+    zoomControl: true,
+    attributionControl: true,
+    scrollWheelZoom: false
+  });
+
+  // 9市町村と3拠点を全部収める bounds にフィット
+  map.fitBounds(L.latLngBounds([
+    [35.480, 139.180],
+    [35.730, 139.560]
+  ]), { padding: [20, 20] });
+
+  // Stamen Watercolor タイル（Cooper-Hewitt Smithsonian アーカイブ版）
+  L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg', {
+    minZoom: 1, maxZoom: 16,
+    attribution: '&copy; Stamen Design / OpenStreetMap / Smithsonian'
+  }).addTo(map);
+
+  // 対象市町村（円に被るエリア）— 各市に別の薄ブランド色
+  const targetCities = [
+    { code: '13/13201', name: '八王子市',      color: '#D88B6F', opacity: 0.78, label: [35.690, 139.290] },
+    { code: '13/13202', name: '立川市',        color: '#A8C5C5', opacity: 0.78, label: [35.704, 139.418] },
+    { code: '13/13209', name: '町田市',        color: '#D4A84B', opacity: 0.78, label: [35.520, 139.470] },
+    { code: '13/13212', name: '日野市',        color: '#94AB8A', opacity: 0.78, label: [35.668, 139.408] },
+    { code: '13/13224', name: '多摩市',        color: '#E0A5A0', opacity: 0.78, label: [35.638, 139.448] },
+    { code: '13/13225', name: '稲城市',        color: '#B5A8C8', opacity: 0.78, label: [35.638, 139.504] },
+    { code: '14/14151', name: '相模原市緑区',   color: '#7FA08A', opacity: 0.72, label: [35.600, 139.215] },
+    { code: '14/14152', name: '相模原市中央区', color: '#A8B8C0', opacity: 0.72, label: [35.582, 139.378] },
+    { code: '14/14153', name: '相模原市南区',   color: '#E5B8A0', opacity: 0.72, label: [35.520, 139.408] }
+  ];
+
+  targetCities.forEach(async (c) => {
+    try {
+      const url = `https://raw.githubusercontent.com/niiyz/JapanCityGeoJson/master/geojson/${c.code}.json`;
+      const res = await fetch(url);
+      const geo = await res.json();
+      L.geoJSON(geo, {
+        style: () => ({
+          color: '#1A365D', weight: 1.6, opacity: 0.7,
+          fillColor: c.color, fillOpacity: c.opacity
+        })
+      }).addTo(map);
+      L.marker(c.label, {
+        icon: L.divIcon({
+          className: '',
+          html: `<span class="city-label">${c.name}</span>`,
+          iconSize: [120, 22], iconAnchor: [60, 11]
+        }),
+        zIndexOffset: -1000,
+        interactive: false
+      }).addTo(map);
+    } catch (e) { console.error('city load', c.name, e); }
+  });
+
+  // 訪問・営業範囲の円（半径15km）
+  L.circle([35.6100, 139.4000], {
+    radius: 15000,
+    color: '#1A365D', weight: 4, opacity: 0.85,
+    fillColor: '#1A365D', fillOpacity: 0.02,
+    dashArray: '10 6'
+  }).addTo(map);
+
+  // 拠点ピン（小型バッジ・クリックで popup に住所詳細）
+  const makePin = (lat, lng, cls, name, addr, role) => {
+    const html = `<div class="pin-mini ${cls}"><span class="dot"></span>${name}</div>`;
+    const popup = `<strong>${name}</strong><span class="pop-addr">${addr}</span><span class="pop-role">${role}</span>`;
+    L.marker([lat, lng], {
+      icon: L.divIcon({ className: '', html, iconSize: [110, 24], iconAnchor: [55, 12] }),
+      zIndexOffset: 1000
+    }).bindPopup(popup).addTo(map);
+  };
+  makePin(35.6322, 139.3811, 'honsha',       '八王子治療院',             '八王子市下柚木 3-7-2-401',           '訪問鍼灸の運用拠点');
+  makePin(35.6080, 139.3795, 'minamiosawa',  '居宅介護支援事業所',       '八王子市南大沢 2-18-6（南大沢駅）', '居宅介護支援・鍼灸マッサージ院・行政書士');
+  makePin(35.5650, 139.4500, 'bellfit',      'べるフィット／町田治療院', '町田市木曽東 4-9-14 Mビル2階（町田駅）', 'フィットネス・通所リハ・治療');
+});
+</script>
+
+<!-- ===================== TWEAKS (logo) ===================== -->
+<div id="tweak-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "logo": "official",
+  "logoScale": 1.25
+}/*EDITMODE-END*/;
+
+// Original clean "tree of six services" line mark
+const LINE_MARK =
+  '<svg viewBox="0 0 48 48" width="34" height="34" fill="none" aria-hidden="true">' +
+  '<path d="M24 45 V31" stroke="#1A365D" stroke-width="2.6" stroke-linecap="round"/>' +
+  '<circle cx="24" cy="19" r="14" fill="#FFFFFF" stroke="#1A365D" stroke-width="2"/>' +
+  '<circle cx="18.5" cy="14.5" r="2.3" fill="#E08A4A"/>' +
+  '<circle cx="27" cy="12.5" r="2.3" fill="#C4564E"/>' +
+  '<circle cx="31.5" cy="19" r="2.3" fill="#3F6B4F"/>' +
+  '<circle cx="26" cy="24.5" r="2.3" fill="#4A9BA8"/>' +
+  '<circle cx="16.5" cy="21.5" r="2.3" fill="#2A4A7F"/>' +
+  '<circle cx="22" cy="18" r="2.3" fill="#8B6AAB"/>' +
+  '</svg>';
+
+function logoMarkup(type) {
+  switch (type) {
+    case 'official':
+      return '<img src="assets/belltree-logo-official.png" alt="べるつりーグループ" style="height:48px;width:auto;display:block" />';
+    case 'lockup':
+      return '<img src="assets/belltree-logo.svg" alt="べるつりーグループ" style="height:40px;width:auto;display:block" />';
+    case 'linemark':
+      return '<span style="display:flex;align-items:center">' + LINE_MARK + '</span>' +
+             '<span class="brand-name"><span class="jp" style="font-size:21px;color:var(--bt-primary);font-family:var(--bt-font-serif);font-weight:600;letter-spacing:0.02em">べるつりー</span></span>';
+    case 'wordmark':
+      return '<span class="brand-name"><span style="font-size:24px;color:var(--bt-primary);font-family:var(--bt-font-serif);font-weight:600;letter-spacing:0.05em">べるつりー</span></span>';
+    case 'mark-bi':
+    default:
+      return '<img src="assets/belltree-mark.svg" alt="" style="width:38px;height:38px" />' +
+             '<span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>';
+  }
+}
+
+function applyLogo(t) {
+  var brand = document.querySelector('.site-header .brand');
+  if (!brand) return;
+  brand.innerHTML = logoMarkup(t.logo);
+  brand.style.transform = 'scale(' + t.logoScale + ')';
+  brand.style.transformOrigin = 'left center';
+}
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(() => { applyLogo(t); }, [t.logo, t.logoScale]);
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="ヘッダーのロゴ" />
+      <TweakSelect label="ロゴの種類" value={t.logo}
+        options={[
+          { value: 'lockup',   label: '横ロックアップ（推奨）' },
+          { value: 'official', label: '公式カラーロゴ' },
+          { value: 'linemark', label: 'ラインマーク＋和文' },
+          { value: 'wordmark', label: '和文ワードマークのみ' },
+          { value: 'mark-bi',  label: 'ツリーマーク＋和欧文' },
+        ]}
+        onChange={(v) => setTweak('logo', v)} />
+      <TweakSlider label="ロゴサイズ" value={t.logoScale} min={0.85} max={1.3} step={0.05} unit="×"
+        onChange={(v) => setTweak('logoScale', v)} />
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweak-root')).render(<App />);
+</script>
+</body>
+</html>

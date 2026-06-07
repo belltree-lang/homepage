@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Belltree logo — a tree with multi-colored leaves and a black trunk">
+  <defs>
+    
+    <linearGradient id="btLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C4564E"></stop>
+      <stop offset="20%" stop-color="#E08A4A"></stop>
+      <stop offset="40%" stop-color="#E4C24A"></stop>
+      <stop offset="60%" stop-color="#9CBF4A"></stop>
+      <stop offset="80%" stop-color="#4A9BA8"></stop>
+      <stop offset="100%" stop-color="#8B6AAB"></stop>
+    </linearGradient>
+    <radialGradient id="btLeafGrad2" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#E4C24A"></stop>
+      <stop offset="40%" stop-color="#9CBF4A"></stop>
+      <stop offset="75%" stop-color="#4A9BA8"></stop>
+      <stop offset="100%" stop-color="#8B6AAB"></stop>
+    </radialGradient>
+  </defs>
+
+  
+  <g>
+    
+    <path fill="url(#btLeafGrad)" opacity="0.92" d="M160 14&#xA;             C 95 18  52 52  44 102&#xA;             C 40 126  50 150  70 160&#xA;             C 60 178  82 194 108 188&#xA;             C 122 200 152 200 160 186&#xA;             C 168 200 198 200 212 188&#xA;             C 238 194 260 178 250 160&#xA;             C 270 150 280 126 276 102&#xA;             C 268 52  225 18  160 14 Z"></path>
+    
+    <path fill="url(#btLeafGrad2)" opacity="0.85" d="M160 42&#xA;             C 120 44  90 70  86 106&#xA;             C 84 128  96 148  118 152&#xA;             C 130 162  154 162  160 152&#xA;             C 166 162  190 162  202 152&#xA;             C 224 148  236 128  234 106&#xA;             C 230 70   200 44   160 42 Z"></path>
+
+    
+    <circle cx="86" cy="100" r="14" fill="#C4564E" opacity="0.78"></circle>
+    <circle cx="110" cy="70" r="12" fill="#E08A4A" opacity="0.82"></circle>
+    <circle cx="150" cy="52" r="13" fill="#E4C24A" opacity="0.82"></circle>
+    <circle cx="190" cy="58" r="14" fill="#9CBF4A" opacity="0.85"></circle>
+    <circle cx="226" cy="88" r="13" fill="#4A9BA8" opacity="0.82"></circle>
+    <circle cx="244" cy="126" r="14" fill="#2A4A7F" opacity="0.72"></circle>
+    <circle cx="222" cy="162" r="13" fill="#8B6AAB" opacity="0.78"></circle>
+    <circle cx="180" cy="178" r="12" fill="#C27A65" opacity="0.8"></circle>
+    <circle cx="140" cy="180" r="11" fill="#3F6B4F" opacity="0.82"></circle>
+    <circle cx="96" cy="166" r="12" fill="#E08A4A" opacity="0.75"></circle>
+    <circle cx="68" cy="132" r="13" fill="#9CBF4A" opacity="0.8"></circle>
+  </g>
+
+  
+  <path fill="#1C1D1A" d="&#xA;    M 154 172&#xA;    C 153 180  150 188  146 198&#xA;    C 144 204  145 210  152 212&#xA;    L 168 212&#xA;    C 175 210  176 204  174 198&#xA;    C 170 188  167 180  166 172 Z"></path>
+  
+  <path stroke="#1C1D1A" stroke-width="2.4" stroke-linecap="round" fill="none" d="M152 212 C 144 214 136 214 128 210&#xA;           M168 212 C 176 214 184 214 192 210&#xA;           M160 213 L 160 216"></path>
+</svg>
