@@ -1,0 +1,79 @@
+================================================================
+images2.0 プロンプト ─ 脳梗塞後遺症ページ用 症状イラスト L シート
+（2列 × 3行 = 6素材）
+2026-06-07 / material-pipeline L パーキンソン素材と同シリーズ
+================================================================
+
+【お願いの前提】
+- 前回作っていただいた「パーキンソン病 L シート（ベッドで腕を上げる高齢者、
+  廊下で杖の高齢者、懐中時計とカプセル、家から病院への道、支える手、
+  在宅の花瓶と葉）」と完全に同じトーンで描いてください。
+- 配色・線の太さ・装飾の細部は images2.0 にお任せします。
+
+================================================================
+プロンプト（このまま images2.0 にコピペ）
+================================================================
+
+A clean editorial product catalog sheet for design asset extraction.
+Pure solid white background, hex #FFFFFF, absolutely no gradient, no texture, no shadow, no glow.
+Each item is a delicate hand-drawn illustration, centered in its grid cell, no tilt.
+Items evenly spaced, none overlapping, no labels, no numbers, no captions, no watermarks.
+
+Style: refined editorial hand-drawn illustration in the spirit of Kinfolk Magazine, Cereal, &Premium. NOT Japanese washi, NOT seasonal motifs, NOT clinical, NOT cartoonish. Western lifestyle editorial sensibility translated into a single warm line.
+Drawing technique: thin terracotta outlines (#C27A65), soft watercolor wash highlights on key emotion points in slightly deeper terracotta, otherwise clean white. Closed-eye serene expressions on all human figures — calm, never distressed.
+
+Muted warm color palette only:
+- terracotta outline (#C27A65)
+- soft terracotta wash (#E3A48F)
+- slate blue secondary accent (#1A365D)
+- warm off-white background (#FCFCFA)
+NO bright colors, NO saturated reds, NO pastels.
+
+Layout: 2 columns × 3 rows = 6 illustrations total.
+Equal generous spacing between items (gutter ~25% of item size).
+Outer margin ~30% of item size on all sides.
+Items must be visually consistent in scale, line weight, and overhead viewing angle.
+
+Subject of this sheet: post-stroke care scenes for patients in home-visit rehabilitation, illustrated in the same calm editorial style as the previous Parkinson's L sheet.
+
+Variations (one per cell, 6 total):
+
+1) REHAB GAP / リハビリ不足 — An elderly person sitting on a sofa at home with a folded cane and a closed exercise book on the cushion beside them. The body posture is slightly slumped, suggesting reduced activity. Faint watercolor wash on the shoulder joints to suggest stiffness. Closed eyes, peaceful expression.
+
+2) HEMIPLEGIA & RIGIDITY / 麻痺・固縮 — A close-up of an elderly person trying to fasten buttons on a shirt with one hand. The other hand rests on the lap, slightly contracted. The faint terracotta wash highlights the rigid hand. Side view, eyes closed, calm composure.
+
+3) HOME CARE WISH / 在宅でのケア希望 — A side view of an elderly person reclining on a futon at home, with a small bedside lamp glowing softly. A folded blanket and a small flower in a vase suggest a peaceful home environment. Closed eyes, serene rest.
+
+4) NO TRANSPORT BURDEN / 送迎の負担なく — A small house silhouette with warm light from the windows and a single chair visible inside through an open door. NO transport vehicles, NO outside scenery. Editorial still life suggesting "home is enough".
+
+5) CARE COORDINATION / 多職種の連携 — Two hands meeting gently over an open notebook with a few faint handwritten lines: one hand of an elderly patient, the other of a caregiver. NO faces, editorial close-up. Background entirely empty.
+
+6) REGAINING MOTION / 再び動ける希望 — A small potted plant with three young leaves and one new sprout reaching upward, placed beside a window with soft light. Editorial still life suggesting recovery and growth, no human figure.
+
+Output canvas: 3072×2048 pixels (landscape).
+High resolution, crisp edges, sharp focus on every item, suitable for cut-out into transparent PNG.
+
+Critical constraints:
+- No needles, no syringes, no IV drips, no wheelchairs, no clinical paraphernalia in the foreground.
+- No Japanese washi, no hanko, no seasonal motifs (sakura, plum, seigaiha).
+- No bright red, no saturated red — terracotta only.
+- All human figures have closed eyes and serene, calm expressions.
+- All line work is consistent thin terracotta outline matching the previous Parkinson's L sheet.
+
+================================================================
+Step 2: 代表側の作業
+================================================================
+
+1. 上のプロンプトを images2.0 にコピペ → 生成
+2. ダウンロード（ファイル名は自由）
+3. 「脳卒中L来た」と一声 + ファイル名
+
+================================================================
+Step 3-4: Claude が自動でやる
+================================================================
+
+- Raw を images/materials/decoration/L/_raw/stroke-objects-L-raw.png に保管
+- 2×3 等分割 → 中央 10-92% トリム → bbox 精密 → 純白透過 → 800×533 統一リサイズ
+- images/materials/decoration/L/stroke/stroke-l-01.png 〜 -06.png に保存
+- 脳卒中ページの「よくあるお悩み」4枚と「サポート」「アプローチ」セクションに反映
+- スクショ確認 → staging push
