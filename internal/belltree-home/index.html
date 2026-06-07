@@ -238,12 +238,18 @@
   }
   .svc-compact {
     background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-top: 3px solid var(--svc-color, var(--bt-accent));
     border-radius: var(--bt-r-lg); box-shadow: var(--bt-shadow-1);
-    padding: 26px 20px 22px; display: flex; flex-direction: column;
+    padding: 23px 20px 22px; display: flex; flex-direction: column;
     text-align: left; color: inherit;
-    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease), border-color var(--bt-dur) var(--bt-ease);
+    transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease);
   }
-  .svc-compact:hover { transform: translateY(-3px); box-shadow: var(--bt-shadow-2); border-color: var(--bt-accent-soft); }
+  .svc-compact:hover { transform: translateY(-3px); box-shadow: var(--bt-shadow-2); }
+  .svc-compact.c-fit       { --svc-color: var(--bt-svc-fit); }
+  .svc-compact.c-leaf      { --svc-color: var(--bt-svc-community); }
+  .svc-compact.c-shinkyu   { --svc-color: var(--bt-svc-shinkyu); }
+  .svc-compact.c-kaigo     { --svc-color: var(--bt-svc-kaigo); }
+  .svc-compact.c-legal     { --svc-color: var(--bt-svc-legal); }
   .svc-compact-ic {
     width: 48px; height: 48px; border-radius: 14px;
     display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
@@ -793,36 +799,36 @@
       <p>運動から介護までを個別のサービスとしてではなく、「一つの連続した支援」として提供します。状況が変わっても、ご相談の窓口はべるつりーのままです。</p>
     </div>
     <div class="svc-compact-grid reveal">
-      <a class="svc-compact" href="#">
+      <a class="svc-compact c-fit" href="#">
         <div class="svc-compact-ic" style="background:transparent; padding:0"><img src="assets/logo-bellfit.png" alt="べるフィット" style="width:48px;height:48px;object-fit:contain" /></div>
         <h3>べるフィット</h3>
         <div class="svc-compact-en">Fitness</div>
         <p>元気なうちから、運動習慣をつくる。</p>
         <span class="svc-compact-link">詳しく見る →</span>
       </a>
-      <a class="svc-compact" href="#">
+      <a class="svc-compact c-leaf" href="#">
         <div class="svc-compact-ic" style="background:var(--bt-svc-community-soft); color:var(--bt-svc-community)"><img src="assets/icons/service-community.svg" alt="" /></div>
         <h3>保険が使えるジム</h3>
         <div class="svc-compact-en">Medical Gym</div>
         <p>介護保険で通える、運動とリハビリの場（通所リハビリ／リーフ）。</p>
         <span class="svc-compact-link">詳しく見る →</span>
       </a>
-      <a class="svc-compact" href="#">
+      <a class="svc-compact c-shinkyu" href="#">
         <div class="svc-compact-ic" style="background:transparent; padding:0"><img src="assets/logo-shinkyu.png" alt="訪問鍼灸マッサージ" style="width:48px;height:48px;object-fit:contain" /></div>
         <h3>訪問鍼灸マッサージ</h3>
         <div class="svc-compact-en">Home Visit</div>
         <p>通えなくなっても、ご自宅で施術を。</p>
         <span class="svc-compact-link">詳しく見る →</span>
       </a>
-      <a class="svc-compact" href="#">
-        <div class="svc-compact-ic" style="background:var(--bt-svc-kaigo-soft); color:var(--bt-svc-kaigo)"><img src="assets/icons/service-kaigo.svg" alt="" /></div>
+      <a class="svc-compact c-kaigo" href="#">
+        <div class="svc-compact-ic" style="background:transparent; padding:0"><img src="assets/logo-kaigo.png" alt="居宅介護支援" style="width:48px;height:48px;object-fit:contain" /></div>
         <h3>居宅介護支援</h3>
         <div class="svc-compact-en">Care Management</div>
         <p>制度活用と生活設計をケアマネが調整。</p>
         <span class="svc-compact-link">詳しく見る →</span>
       </a>
-      <a class="svc-compact" href="#">
-        <div class="svc-compact-ic" style="background:var(--bt-svc-legal-soft); color:var(--bt-svc-legal)"><img src="assets/icons/service-legal.svg" alt="" /></div>
+      <a class="svc-compact c-legal" href="#">
+        <div class="svc-compact-ic" style="background:transparent; padding:0"><img src="assets/logo-legal.png" alt="行政書士・終活" style="width:48px;height:48px;object-fit:contain" /></div>
         <h3>行政書士・終活</h3>
         <div class="svc-compact-en">Shukatsu</div>
         <p>相続・後見の準備までを伴走する。</p>
