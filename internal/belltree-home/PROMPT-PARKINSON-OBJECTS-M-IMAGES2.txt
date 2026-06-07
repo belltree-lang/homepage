@@ -1,0 +1,94 @@
+================================================================
+images2.0 プロンプト ─ パーキンソン病ページ用 装飾小物 M シート
+（4列 × 5行 = 20素材）
+2026-06-07 / material-pipeline L パーキンソン素材と同シリーズ
+================================================================
+
+【お願いの前提】
+- 前回作っていただいた「パーキンソン病 L シート（朝のベッドの高齢者、
+  廊下で杖の高齢者、懐中時計とカプセル等の terracotta 線画 + 薄い
+  watercolor wash）」と完全に同じトーンで描いてください。
+- 配色・線の太さ・装飾の細部は images2.0 にお任せします。
+
+================================================================
+プロンプト（このまま images2.0 にコピペ）
+================================================================
+
+A clean editorial product catalog sheet for design asset extraction.
+Pure solid white background, hex #FFFFFF, absolutely no gradient, no texture, no shadow, no glow.
+Each item is a delicate hand-drawn illustration, centered in its grid cell, no tilt.
+Items evenly spaced, none overlapping, no labels, no numbers, no captions, no watermarks.
+
+Style: refined editorial hand-drawn illustration in the spirit of Kinfolk Magazine, Cereal, &Premium. NOT Japanese washi, NOT seasonal motifs, NOT clinical, NOT cartoonish. Western lifestyle editorial sensibility.
+Drawing technique: thin terracotta outlines (#C27A65), soft watercolor wash highlights in slightly deeper terracotta on small focal areas, otherwise clean white. Same line quality and color palette as the previous Parkinson's L sheet (elderly figures, pocket watch, house and hospital scene).
+
+Muted warm color palette only:
+- terracotta outline (#C27A65)
+- soft terracotta wash (#E3A48F)
+- slate blue secondary accent (#1A365D)
+- warm off-white background (#FCFCFA)
+NO bright colors, NO saturated reds, NO pastels.
+
+Layout: 4 columns × 5 rows = 20 illustrations total.
+Equal generous spacing between items (gutter ~20% of item size).
+Outer margin ~25% of item size on all sides.
+Items must be visually consistent in scale and line weight.
+Each illustration is a single object or small still life, no large scenes.
+
+Subject of this sheet: small editorial decoration objects related to home-visit care for Parkinson's disease patients — objects, fixtures, and small still lifes drawn from daily life, NOT clinical equipment.
+
+Variations (one per cell, 20 total):
+
+1) A wooden walking cane standing upright, slight watercolor wash on the curved handle.
+2) A small medicine bottle with rounded shoulders, one capsule resting beside it.
+3) A single oblong pill capsule lying on its side, viewed from above.
+4) A small breakfast tray with a teacup and a folded napkin.
+5) A simple wooden chair with a tall back, viewed from the front-side.
+6) A bedside table with a small reading lamp on top and one folded book.
+7) A window frame with two side curtains gently parted, soft light suggestion in the middle.
+8) A small house silhouette with a pointed roof, one door, one window.
+9) A small clinic building with a single cross over the entrance, two windows.
+10) A curved path drawn with small dashed dots, leading from lower-left to upper-right.
+11) An open notebook with a few faint handwritten lines and a fountain pen beside it.
+12) A monthly calendar sheet showing a 5×7 grid with a single circled day.
+13) A single leaf with visible veins, gently curved as if floating.
+14) A soft cloud silhouette, plump and rounded.
+15) A small sun with short rays, warm and modest.
+16) An open hand, palm up, in a gesture of support.
+17) A pair of indoor slippers placed neatly side by side, viewed from above.
+18) A small heart, hand-drawn with a single slightly imperfect line.
+19) A slightly opened door with warm light spilling out from inside.
+20) A small potted plant with three leaves in a clay pot.
+
+Output canvas: 3072×3072 pixels.
+High resolution, crisp edges, sharp focus on every item, suitable for cut-out into transparent PNG.
+
+Critical constraints:
+- No needles, no syringes, no IV drips, no oxygen masks, no clinical paraphernalia.
+- No Japanese washi, no hanko, no seasonal motifs (sakura, plum, seigaiha).
+- No bright red, no saturated red — terracotta only.
+- No human faces in this sheet (the hand in cell 16 is a hand only).
+- All line work is consistent thin terracotta outline matching the previous L sheet.
+
+================================================================
+Step 2: 代表側の作業
+================================================================
+
+1. 上のプロンプトを images2.0 にコピペ → 生成
+2. ダウンロード（ファイル名は自由）
+3. 「M来た」と一声 + ファイル名を教えてください
+
+================================================================
+Step 3-4: Claude が自動でやる
+================================================================
+
+- Raw を images/materials/decoration/M/_raw/parkinson-objects-M-raw.png に保管
+- 4×5 等分割 → 各セル中央 10%〜92% トリミング → bbox 精密クロップ → 純白透過 → 500×500 統一リサイズ
+- images/materials/decoration/M/parkinson/parkinson-m-01.png 〜 -20.png に保存
+- パーキンソン病ページの「対象者」「サポート」「専門職CTA」「関連機能」セクションに装飾として散らす
+- スクショ確認 → staging push
+
+================================================================
+ダウンロード名: parkinson-objects-M.png（任意）
+保存先: C:\Users\sss_1\Downloads\
+================================================================
