@@ -10,7 +10,7 @@ from PIL import Image, ImageChops
 ROOT = Path(r"C:\Users\sss_1\OneDrive\ドキュメント\GitHub\homepage - コピー")
 TW, TH = 800, 533
 COLS, ROWS = 2, 3
-INNER_LO, INNER_HI = 0.05, 0.95
+INNER_LO, INNER_HI = 0.0, 1.0
 WHITE_THRESHOLD = 240
 PAD = 20
 SCALE = 0.92
