@@ -343,6 +343,45 @@
     font-size: 12px; color: rgba(255,255,255,0.45);
   }
 
+  /* ===================== PHOTO MOMENT（訪問のひとこま・写真帯）===================== */
+  .photo-moment {
+    position: relative; border-radius: 24px; overflow: hidden;
+    max-width: 1080px; margin: 0 auto;
+    box-shadow: 0 24px 60px rgba(80,55,30,0.16), 0 6px 18px rgba(80,55,30,0.10);
+  }
+  .photo-moment > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .photo-moment::after {
+    content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+    border-radius: 24px; pointer-events: none;
+  }
+  .pm-text {
+    position: absolute; top: 50%; transform: translateY(-50%); right: 4.5%; width: 36%;
+    background: rgba(252,252,250,0.82);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(80,55,30,0.10);
+    padding: 24px 26px;
+  }
+  .pm-text .pm-eyebrow {
+    display: block; font-size: 12px; letter-spacing: 0.16em;
+    color: var(--bt-accent); font-weight: 700; margin-bottom: 14px;
+  }
+  .pm-text p {
+    font-family: var(--bt-font-serif); font-weight: 600;
+    font-size: clamp(15px, 1.55vw, 19px); line-height: 2.05;
+    color: var(--bt-primary); margin: 0;
+  }
+  @media (max-width: 760px) {
+    .pm-text {
+      position: static; transform: none; width: auto;
+      padding: 18px 20px 22px;
+      background: rgba(255,255,255,0.85);
+      border: none; border-radius: 0; box-shadow: none;
+    }
+  }
+
   .reveal { opacity: 1; }
 
   /* ===================== RESPONSIVE ===================== */
@@ -462,6 +501,19 @@
   </div>
 </section>
 
+<!-- ===================== 訪問のひとこま（施術計画） ===================== -->
+<section class="band-paper sec-pad">
+  <div class="wrap">
+    <figure class="photo-moment reveal">
+      <img src="../../../../images/photos/universal/care-planning.png" alt="お薬手帳を確認しながら施術計画を立てる訪問鍼灸師" loading="lazy" />
+      <figcaption class="pm-text">
+        <span class="pm-eyebrow">初回の問診から</span>
+        <p>お薬手帳とこれまでの経過を確認し、お一人おひとりに合わせた施術計画を立てるところから始めます。</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ===================== 訪問鍼灸マッサージでできること ===================== -->
 <section class="band-paper wash-cream sec-pad">
   <img class="sec-deco d-cloud-tr" src="../../decor/clouds.png" alt="" />
@@ -527,6 +579,19 @@
   </div>
 </section>
 
+<!-- ===================== 訪問のひとこま（施術記録の共有） ===================== -->
+<section class="band-paper sec-pad">
+  <div class="wrap">
+    <figure class="photo-moment reveal">
+      <img src="../../../../images/photos/universal/post-treatment-debrief.png" alt="施術後に利用者様と施術記録を一緒に確認する様子" loading="lazy" />
+      <figcaption class="pm-text">
+        <span class="pm-eyebrow">施術記録の共有</span>
+        <p>施術のたびに身体の変化を記録し、ご本人・ご家族・担当のケアマネジャーと共有します。</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ===================== 専門職向けCTA ===================== -->
 <section class="band-base wash-warm sec-pad">
   <img class="sec-deco d-cloud-br" src="../../decor/clouds.png" alt="" />
@@ -536,6 +601,19 @@
       <p>介護の入口段階から、本人・ご家族・関係機関を橋渡しする多職種連携の体制をご案内しています。</p>
       <a href="#">専門職向け連携案内を見る →</a>
     </div>
+  </div>
+</section>
+
+<!-- ===================== 訪問のひとこま（訪問開始） ===================== -->
+<section class="band-paper sec-pad">
+  <div class="wrap">
+    <figure class="photo-moment reveal">
+      <img src="../../../../images/photos/universal/visit-beginning.png" alt="訪問鍼灸師が玄関先で訪問鞄を開く様子" loading="lazy" />
+      <figcaption class="pm-text">
+        <span class="pm-eyebrow">ご自宅へ伺います</span>
+        <p>特別な準備はいりません。国家資格者が道具一式を持って、玄関先までお伺いします。</p>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
