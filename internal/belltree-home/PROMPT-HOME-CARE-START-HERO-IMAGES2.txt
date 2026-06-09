@@ -1,0 +1,61 @@
+A single photorealistic editorial documentary photograph (NOT illustration, NOT watercolor, NOT painted, NOT CGI-glossy) for a hero image at the top of a Japanese long-term-care-support (居宅介護支援) clinic's solutions page for "how to start home care" (介護の始め方).
+
+IMPORTANT — this page is DIFFERENT from the other six solutions pages on this site:
+- The other six are about 訪問鍼灸 (visiting acupuncture / massage / rehab) — practitioners in scrubs, hands-on treatment moments.
+- THIS page is about 居宅介護支援 (long-term-care coordination) — the central professional is a CARE MANAGER (ケアマネジャー), NOT an acupuncturist. The captured moment is an INTAKE CONSULTATION at the family's home: the care manager is sitting down with the adult-child caregiver and the elderly parent for the first time, to listen to their situation and start mapping out a care plan.
+
+The hero photo MUST show three people in a calm conversation: the elderly parent, the adult-child family caregiver, and the care manager listening and taking notes. The mood is "we finally have someone to help us figure this out" — a beginning, not a treatment.
+
+Style: natural-light lifestyle / editorial documentary photography in the spirit of Kinfolk Magazine, Cereal Magazine, &Premium. Looks like an unstaged real moment captured during a first home-care intake consultation. Camera feel: full-frame, 50mm prime, f/2.8, BRIGHT AIRY natural daylight from a large window flooding the dining/living area, gentle shallow depth-of-field. Subtle film grain. NOT crispy digital, NOT HDR, NOT Instagram-saturated.
+
+Mood: composed professional intake meeting with quiet hope and relief. The overall tone reads "this is the moment when the burden starts to lift — a calm professional is here to help" — NOT somber, NOT dim, NOT heavy. The room is bathed in soft bright daylight; shadows are gentle and warm.
+
+Color tone: warm bright natural palette — softly luminous off-white and cream linens, warm peach-tinted skin lit from a bright window, warm wood with sunlight on it, soft cream walls. Slightly golden late-morning light. NO neon, NO oversaturation, NO bright primaries, NO cyan/magenta color cast, NO dim shadows, NO heavy contrast.
+
+Subject (single photograph, THREE real-looking people seated together):
+
+(1) THE ELDERLY PARENT — an early-80s Japanese woman, the person who will eventually be receiving care, seated at a warm wooden dining table or low living-room table. She is composed and dignified, hair silvery-gray neatly kept (a soft short bob or low chignon), skin shows natural age. She wears soft natural-fiber loungewear in cream or warm beige (a comfortable cardigan over a plain top). Her hands rest folded on the table. She does NOT look dreamily toward the window. She is not gazing into the distance. She looks naturally downward at her own folded hands or softly toward the care manager's notebook, as if quietly noticing her own situation being heard. Her expression is calm, grounded, and mildly focused — present in her body, not sentimental or advertising-like. NOT distressed, NOT confused-looking, NOT helpless.
+
+(2) THE ADULT-CHILD FAMILY CAREGIVER — a mid-50s Japanese woman, the elderly parent's daughter, seated beside her mother at the same table. She wears simple modern everyday clothing (a soft sweater or a clean blouse in muted color — soft sage, warm gray, dusty terracotta). Hair shoulder-length, naturally dark with some gray. She leans slightly forward, hands relaxed on the table or gently clasped, attention on the care manager but with quiet shoulders — visibly more at ease than she has been in weeks. Her expression is calm, composed, and quietly relieved — NOT crying, NOT exaggerated relief, just the subtle "finally, someone is listening" softening of someone who has been carrying a lot alone.
+
+(3) THE CARE MANAGER (ケアマネジャー) — a Japanese woman in her EARLY FORTIES, the visiting professional. She is the one DOING THE WORK in this captured moment. She sits across the table from the mother and daughter. She is NOT in medical scrubs — care managers in Japan dress in calm office-casual: a soft modern blouse or a fine knit cardigan in a neutral muted color (warm beige, soft slate, cream), simple straight pants, no jewelry. She has a small lanyard or ID holder visible around her neck (a quiet signal of her professional role). Hair shoulder-length, tied back neatly. In front of her on the table: an open A4 spiral notebook or a thin care-plan binder, a pen in her hand mid-note-taking, possibly a small tablet or care-needs assessment sheet. Her posture: leaned slightly forward, attentive, looking down at her notes while she writes — capturing what she just heard from the family. Her expression is calm, professional, and warm — NOT performing sympathy, just present and listening.
+
+CRITICAL — the literal action of this photo is a HOME-CARE INTAKE CONSULTATION IN PROGRESS. The care manager is mid-note-taking; the daughter is mid-explaining; the mother is mid-listening. No hugs, no hand-holding, no tearful moments. This is a calm professional first meeting at a family's dining table.
+
+KEY storytelling — what must read instantly:
+1) Three people seated around a warm wooden table in a sunlit Japanese home. Two on one side (mother and daughter), one across (the care manager with notebook and pen).
+2) The care manager is actively engaged: notebook open, pen in hand, leaning slightly forward, looking down at her notes — she is doing real intake work, not just smiling at the family.
+3) The family (mother and daughter) read as "two generations who have been managing a lot, and are now talking to someone who can help."
+4) The visible objects on the table — open notebook with handwritten notes, pen, possibly a glass of tea or simple ceramic cups, perhaps a care-needs assessment form — quietly establish "this is professional consultation, not a casual visit."
+
+EXPLICITLY EXCLUDED (do NOT generate any of these):
+- Care manager in medical scrubs (she is in office-casual, NOT a clinician outfit)
+- Acupuncture needles, treatment tools, hands-on medical work of any kind
+- Hugs or hand-clasps between any of the three
+- Tearful or visibly emotional moment
+- Only two people in the frame — must be three
+- The elderly mother lying down or being physically cared for
+- A laptop or modern office computer dominating the table (this is a home, not an office)
+
+Background context (subtle, supporting the story, naturally placed):
+- Soft daylight through a curtained window behind or to one side
+- A small potted plant or single stem in a slim vase on the windowsill or sideboard
+- Plain wall behind, warm wood tones, no clutter
+- Optionally, a family photo frame on a sideboard in the background (a faint visual reminder that this is a family's home)
+
+Composition (image is a website hero):
+- Landscape orientation, 16:10 ratio
+- The three figures and the table placed in the LEFT 55-60% of the frame
+- The RIGHT 35-40% intentionally empty — softly luminous out-of-focus background, sunlit wall — for Japanese headline text overlay
+- The care manager's hands with pen and notebook are a clear secondary focal point
+- All three faces clearly visible in three-quarter view (no one's face is hidden)
+- NO text, NO captions, NO labels, NO logos, NO watermarks, NO subtitles, NO numbers, NO Japanese characters floating in the air
+
+What this photo must NOT communicate:
+- NOT a medical / acupuncture treatment scene (this page is care coordination, not treatment)
+- NOT a passive nursing-home visit
+- NOT a sad / pitying portrayal of an elderly parent
+- NOT a corporate office consultation
+- NOT somber, NOT sad, NOT dim mood — emotional tone is QUIET RELIEF: the family is finally being heard, the care manager is calmly starting to help
+
+Output: 1600x1000 pixels, landscape, high-resolution photograph, gentle film-like rendering, suitable for use as a web hero with text overlaid on the right side.
