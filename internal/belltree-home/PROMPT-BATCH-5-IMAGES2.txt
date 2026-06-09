@@ -1,0 +1,64 @@
+============================================================
+CRITICAL OUTPUT INSTRUCTION — read this FIRST
+============================================================
+
+This prompt requests FIVE (5) DISTINCT, SEPARATE PHOTOGRAPHS, to be delivered as FIVE INDEPENDENT IMAGE FILES.
+
+DO NOT compose multiple scenes into a single grid, mosaic, collage, contact sheet, montage, or numbered layout.
+DO NOT add scene number labels (1, 2, 3, 4, 5), arrows, callouts, or any text annotations on the images.
+DO NOT shrink each scene into a thumbnail tile within one larger canvas.
+
+Each of the 5 photographs is an INDEPENDENT 1600x1000 landscape image, fully resolved at full resolution, ready to use as a standalone web asset on a Japanese healthcare website. They share a consistent visual style (described below) so that all 5 feel like they came from the same photo shoot, but they MUST be delivered as 5 separate images, never combined.
+
+If your system can only return one image per generation, return them one at a time as separate generations — do not combine them into a single sheet for convenience. Single-image-grid output is NOT acceptable for this request.
+
+============================================================
+COMMON STYLE / MOOD / COLOR — applies to ALL 5 photographs
+============================================================
+
+Style: natural-light lifestyle / editorial documentary photography in the spirit of Kinfolk Magazine, Cereal Magazine, &Premium. Looks like unstaged real moments at a Japanese 訪問鍼灸 (visiting acupuncture) home-care session. Camera feel: full-frame, 50mm prime, f/2.8, BRIGHT AIRY natural daylight from a large window, gentle shallow depth-of-field, subtle film grain. NOT crispy digital, NOT HDR, NOT Instagram-saturated, NOT illustrated, NOT painted.
+
+Mood: serious treatment with quiet optimism — "this is helping, the body is responding." NOT somber, NOT dim, NOT heavy. Rooms are bathed in soft bright daylight; shadows gentle and warm.
+
+Color tone: warm bright natural palette — softly luminous off-white and cream linens, warm peach-tinted skin in window light, warm wood with sunlight on it, soft cream walls. Slightly golden late-morning light. NO neon, NO oversaturation, NO bright primaries, NO cyan/magenta color cast.
+
+Practitioner attire (when a practitioner appears): plain modern medical scrubs — short-sleeve scrub top and matching pants — in deep slate blue (#1A365D), warm charcoal, or soft sage gray. Scrubs clean, pressed, unbranded.
+
+Universal exclusions: NO text, NO captions, NO labels, NO logos, NO watermarks, NO subtitles, NO numbers anywhere in the image. NO clinical hospital interiors. NO pajamas, NO hospital gowns. NO spa / aromatherapy / wellness retreat framing. NO scene-number annotations (no "1", "2", "3" badges).
+
+============================================================
+THE 5 PHOTOGRAPHS — each is its own independent image
+============================================================
+
+[Photograph 1 — Parkinson medication management still life]
+A top-down flat-lay shot on a warm wooden side-table beside soft daylight. NO PEOPLE in this image. Arranged calmly and editorially on the table:
+- A pale-blue お薬手帳 medication notebook (passport-sized Japanese health booklet), open to a page with faint handwritten visit notes (no AI-generated readable text)
+- 2-3 small white-with-blue-stripe Japanese pharmacy prescription medication packets, neatly placed
+- A slim treatment log notebook with a wooden pencil resting on it
+- A small open acupuncture kit with sterile needles in sleeves, organized neatly
+- One plain ceramic cup
+- A small folded clean white towel
+Composition: editorial flat lay, 1600x1000 landscape, top-down view, soft natural daylight from the left, gentle warm shadows. Right 35-40% of frame intentionally empty (slight wood grain) for Japanese text overlay. The image reads as "professional Japanese acupuncturist's intake setup combined with the patient's medication record" — calm, clinical, considered.
+
+[Photograph 2 — Mobility aids still life: cane, four-prong cane, folded wheelchair]
+A wide still-life shot in a sunlit Japanese living room (warm wood floor, soft cream walls). NO PEOPLE in this image. Subjects:
+- A standard wooden cane leaning against a sturdy wooden chair on the left
+- A four-prong rehab cane standing beside it
+- A folded simple home-use wheelchair (light frame, neutral fabric, NOT a bulky hospital chair) softly out-of-focus in the middle background
+- A small low side-table in the foreground holds a folded white towel and a slim notebook
+Composition: 1600x1000 landscape, eye-level perspective, focal plane on the canes in the foreground, the wheelchair gently soft in the bokeh. Soft natural daylight from the right window. Right 35-40% of frame is the sunlit wall (text-overlay-ready). The image reads as "the everyday mobility supports in a stroke-survivor's home" — dignified, calm, lived-in.
+
+[Photograph 3 — Practitioner's hands reviewing intake notes (mid-distance)]
+A mid-distance shot inside a sunlit Japanese living room. A 訪問鍼灸師 (Japanese man, late 30s, slate-blue or charcoal scrubs) sits at a low side-table, mid-planning his treatment for today. His LEFT hand holds open a pale-blue お薬手帳 medication notebook; his RIGHT hand holds a thin wooden pencil over a treatment plan worksheet (faint pre-printed care plan grid, no AI-generated readable text). On the table beside him: an open acupuncture kit with sterile needles in sleeves, a single ceramic cup, a folded white towel. He looks downward at his work, concentrated, expression professional. Hair short clean-cut, no jewelry. Soft natural daylight from the left, warm wood, cream wall. NO PATIENT in this image — practitioner-only, capturing the "professional preparation" beat. Composition: 1600x1000 landscape, practitioner and table in the LEFT 55-60% of frame, RIGHT 35-40% intentionally empty (soft wall and light) for text overlay.
+
+[Photograph 4 — Visit beginning: practitioner opens his bag at the genkan]
+A wide shot at the patient's home entrance (genkan, 玄関). A Japanese 訪問鍼灸師 (male clinician in his 30s-40s, slate-blue or charcoal scrubs) has just arrived and kneels on the polished wooden step, opening his visit bag. The bag is a tan or charcoal canvas-leather messenger-style bag, open on the floor; visible inside are neatly organized acupuncture kits in sleeves, a small towel roll, a slim notebook, a sealed plastic packet of cotton wipes. He looks downward at the bag, focused on his setup. Soft daylight enters from the front door behind him. The genkan is warm wood with a simple linen curtain in the background and one pair of the patient's slippers placed neatly on the step above. NO PATIENT visible in this frame. Composition: 1600x1000 landscape, practitioner and bag in the LEFT 55-60% of frame, RIGHT 35-40% intentionally empty (soft warm light) for text overlay. The image reads as the universal "house-call visit begins" moment, usable on any solutions page or the site's top.
+
+[Photograph 5 — Post-treatment debrief: practitioner and patient review notes together]
+A mid-distance shot inside a sunlit Japanese living room. A practitioner (Japanese man, 30s-40s, slate-blue or charcoal scrubs) sits at a low side-table beside an elderly patient (a Japanese woman in her late 70s, silver-gray hair neatly kept, soft natural-fiber cream cardigan over a plain top, dignified). Both lean slightly forward and look DOWN at an open treatment-log notebook on the table between them. The practitioner has a pencil in his hand, mid-explanation of the next visit's plan, pointing softly at a line in the notebook. The patient leans in attentively, taking in the explanation. NO eye contact between them — both eyes on the notebook. Calm professional debrief at the patient's home. The side table also holds a ceramic cup of tea and the small acupuncture kit (closed). Soft natural daylight from a window behind them. Composition: 1600x1000 landscape, two figures and table in the LEFT 55-60% of frame, RIGHT 35-40% intentionally empty (soft warm wall and light) for text overlay. The image reads as "the continuing care relationship" — usable on any solutions page or the site's top.
+
+============================================================
+FINAL OUTPUT REMINDER
+============================================================
+
+Deliver these as 5 INDEPENDENT images, NOT a grid, NOT a collage, NOT a contact sheet, NOT a numbered montage. Each image at 1600x1000, landscape, photorealistic, high-resolution, gentle film-like rendering, with NO embedded text or numbers anywhere in the image.
