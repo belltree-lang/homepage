@@ -1,44 +1,67 @@
-A single photorealistic editorial documentary photograph (NOT illustration, NOT watercolor, NOT painted, NOT CGI-glossy) for a hero image at the top of a Japanese acupuncture clinic's solutions page for Parkinson's disease.
+TEN distinct photorealistic editorial documentary photographs (NOT illustration, NOT watercolor, NOT painted, NOT CGI-glossy) for a Japanese acupuncture clinic's solutions page about Parkinson's disease (パーキンソン病) — plus reusable site-wide assets. Each scene is rendered as its own separate 1600x1000 landscape photograph. Do NOT combine multiple scenes into a single image.
 
-This page's stated focus is: muscle rigidity (固縮), freezing of gait (すくみ足), and joint range-of-motion. The hero photo MUST visually correspond to those symptoms — so the treatment modality shown here is functional rehabilitation work on the lower limb, NOT needles on the hand. Save the needle close-up for other pages.
+============================================================
+COMMON STYLE / MOOD / COLOR — applies to ALL 10 scenes
+============================================================
 
-Style: natural-light lifestyle / editorial documentary photography in the spirit of Kinfolk Magazine, Cereal Magazine, &Premium. Looks like an unstaged real moment captured at a visiting-acupuncturist session inside a patient's home. Camera feel: full-frame, 50mm prime, f/2.5, soft natural daylight from a left window, gentle shallow depth-of-field with the focal plane on the patient's lower leg and the practitioner's hands. Subtle film grain. NOT crispy digital, NOT HDR, NOT Instagram-saturated.
+Style: natural-light lifestyle / editorial documentary photography in the spirit of Kinfolk Magazine, Cereal Magazine, &Premium. Unstaged real moments. Camera feel: full-frame, 50mm prime, f/2.8, BRIGHT AIRY natural daylight from a large window, gentle shallow depth-of-field, subtle film grain. NOT crispy digital, NOT HDR, NOT Instagram-saturated.
 
-Color tone: muted warm natural palette — warm beige and cream linens, soft terracotta-tinted skin in daylight, aged wood, off-white walls. NO neon, NO oversaturation, NO bright primaries, NO cyan/magenta color cast.
+Mood: serious treatment with quiet optimism — "this is helping, the body is responding, daily life is becoming possible again." NOT somber, NOT dim, NOT heavy, NOT moody chiaroscuro. Rooms are bathed in soft bright daylight; shadows gentle and warm.
 
-Subject (single photograph, real-looking people):
-A late-70s Japanese man with mild-to-moderate Parkinson's disease, seated on the edge of a low futon-style bed or a sturdy wooden chair in a sunlit Japanese home (washitsu / warm-wood living room). He is wearing simple natural-fiber loungewear in cream or oat color, with one trouser leg gently rolled up to mid-shin to expose the calf and shin (clean, dignified, NOT undressed). Hair gray, skin shows natural age (mild spots, soft wrinkles) — realistic, dignified, NOT glamorized.
+Color tone: warm bright natural palette — softly luminous off-white and cream linens, warm peach-tinted skin in window light, warm wood with sunlight on it, soft cream walls. Slightly golden late-morning light. NO neon, NO oversaturation, NO bright primaries, NO cyan/magenta cast, NO dim shadows, NO heavy contrast.
 
-A 訪問鍼灸師 (visiting acupuncturist / rehabilitation therapist), a focused Japanese professional in his late 30s or 40s, kneels on the floor in front of the patient, mid-treatment. He is wearing plain modern medical scrubs — short-sleeve scrub top and matching pants — in a MUTED brand-aligned color (deep slate blue #1A365D, OR warm charcoal, OR soft sage gray). NOT bright surgical green, NOT hospital cyan, NOT pure white, NOT primary blue. Scrubs are clean and pressed, unbranded (no logos, no name tags).
+Gaze principle for ALL patient figures: The patient does NOT look dreamily toward the window. NOT gazing into the distance. Looks naturally downward toward the treated body part, as if quietly noticing the sensation. Expression calm, grounded, mildly focused — present in the body, NOT sentimental or advertising-like. A subtle sense of hope from concentration and bodily awareness, never from looking into the light. NOT distressed, NOT timid, NOT slumped.
 
-KEY storytelling — what must read instantly:
-1) Treatment shown is HANDS-ON FUNCTIONAL REHABILITATION on the lower leg. Choose ONE of these two clear actions (whichever reads best, both are correct for this page):
-   (a) The practitioner is gently performing assisted passive range-of-motion on the patient's right knee/ankle — one hand cupping the back of the calf, the other guiding the foot in a controlled slow dorsiflexion. The motion is unmistakable: a clinician carefully working a stiff joint, NOT a relaxing rub.
-   OR
-   (b) The practitioner is performing deep targeted myofascial massage on the patient's tight calf muscle (gastrocnemius / soleus) — both thumbs pressing precisely into the muscle belly, knuckles and forearms engaged. Technical, not soothing.
-2) The patient is sitting UPRIGHT with engaged posture and looks down at his own treated leg with quiet, focused determination — the look of "I want this leg to move again." Eyes open or softly downcast, fully present, NOT sleepy, NOT passive. Slight forward lean.
-3) The practitioner conveys serious technical concentration — looking at the leg, hands precise and controlled, NOT smiling sympathetically. He is a clinician doing rehabilitation, not a caregiver giving comfort.
-4) The two figures and the treated leg form a clear triangle of attention: patient face → practitioner face → calf/foot being worked on.
+Practitioner attire (rinkyū-shi / 鍼灸師, the visiting acupuncturist): plain modern medical scrubs — short-sleeve scrub top and matching pants — in a MUTED brand-aligned color (deep slate blue #1A365D, warm charcoal, or soft sage gray). NOT bright surgical green, NOT hospital cyan, NOT pure white, NOT primary blue. Scrubs clean, pressed, unbranded (no logos, no name tags).
 
-Background context (subtle, supporting the story, naturally placed) — this is what signals "this is a 鍼灸師, not a generic masseur":
-- A small low side-table next to them holding: a folded clean white towel, a slim notebook with a pencil (the treatment log), one plain ceramic cup, AND a small open kit visibly containing fine acupuncture needles in their sterile sleeves OR a small ceramic dish with rolled moxa (艾) cones. The acupuncture/moxa kit is clearly visible but NOT currently in use — it has already been used earlier or will be used later in the session. This quietly establishes "this practitioner is a licensed 鍼灸師 doing the full job, today's moment is hands-on rehab."
-- A wooden cane resting against the bed or chair (a quiet hint of mobility challenges) — NOT prominent, just present
-- A small potted plant on a windowsill, soft daylight from the left
-- Plain linen curtain partly drawn, warm wall behind, no clutter
+Universal exclusions (ALL scenes): NO text, NO captions, NO labels, NO logos, NO watermarks, NO subtitles, NO numbers, NO Japanese characters floating in the air. NO clinical hospital interiors. NO pajamas or hospital gowns. NO spa / aromatherapy / wellness retreat framing. NO hugs or hand-clasps unless the scene explicitly calls for it.
 
-Composition (image is a website hero):
-- Landscape orientation, 16:10 ratio
-- The two figures and the treated leg placed in the LEFT 55-60% of the frame
-- The RIGHT 35-40% intentionally empty — soft out-of-focus background, wall and light — for Japanese headline text overlay
-- The practitioner's working hands on the calf/ankle are the sharpest focal point
-- Both faces clearly visible in three-quarter view
-- NO text, NO captions, NO labels, NO logos, NO watermarks, NO subtitles, NO numbers, NO Japanese characters floating in the air
+============================================================
+SCENES 1-4 — PARKINSON HERO CANDIDATES (pick one for the page, the others archive)
+============================================================
+Recurring cast for scenes 1-7 (use the SAME two people throughout so the assets feel like one shoot):
+- Patient: LATE-70s Japanese man, gray hair, dignified, natural age (mild spots, soft wrinkles), soft natural-fiber loungewear in cream or oat color. Subtle Parkinson's anterior carriage (gently stooped shoulder line, NOT collapsed). His non-treated hand carries a faint pill-rolling rest posture (fingers slightly flexed, thumb pulled in toward palm) — subtle, NOT exaggerated tremor.
+- Practitioner: Japanese man, late 30s, short clean-cut black hair, no beard, no glasses, composed technically skilled clinician. In slate-blue / charcoal / sage scrubs.
 
-What this photo must NOT communicate:
-- NOT a person lying down being passively cared for
-- NOT a spa / aromatherapy / wellness retreat (the practitioner is in scrubs, the props say clinical)
-- NOT a hospital interior (the room is a private home, warm and lived-in)
-- NOT massage as comfort or pampering — the touch is technical and purposeful
-- NOT pity or fragility — dignified partnership in active rehabilitation
+[SCENE 1 — HERO Candidate A: Shoulder ROM mobilization]
+Setting: brightly-lit warm-wood washitsu or living room, patient seated upright on a sturdy wooden chair. Right sleeve rolled up to shoulder. Practitioner kneels at patient's right side, RIGHT hand cupping the back of the patient's shoulder (mobilizing the glenohumeral joint with controlled rotation), LEFT hand stabilizing the upper arm just above the elbow. Patient looks naturally downward at his treated shoulder. On the side table beside them: a pale-blue お薬手帳 (medication notebook, passport-sized booklet), 1-2 small unopened white/blue-stripe Japanese pharmacy prescription packets, a small water glass, folded white towel, slim notebook with pencil, small open acupuncture kit with sterile needles in sleeves. A wooden cane rests against the chair. Practitioner focused on the shoulder, NOT looking at patient's face. Right 35-40% of frame empty for text overlay.
 
-Output: 1600x1000 pixels, landscape, high-resolution photograph, gentle film-like rendering, suitable for use as a web hero with text overlaid on the right side.
+[SCENE 2 — HERO Candidate B: Lower-leg manual therapy]
+Same room. Patient seated on the edge of a low futon-style bed, right trouser leg rolled to mid-shin. Practitioner kneels on the floor, both hands engaged on the patient's right calf — RIGHT hand cupping the back of the calf, LEFT hand performing controlled deep myofascial thumb pressure into the gastrocnemius muscle belly. Patient looks naturally downward toward the treated leg, calm and concentrating on the sensation. Side table: お薬手帳 booklet, 1-2 prescription packets, water glass, folded towel, slim notebook, small open acupuncture kit. Cane against the bed. Right 35-40% empty for text.
+
+[SCENE 3 — HERO Candidate C: Sit-to-stand support]
+Same room. Patient mid-rise from a sturdy wooden chair — knees bent, weight shifting forward, cane in his left hand pressing into the floor, the moment of effort just before standing. Practitioner positioned close beside in a one-knee crouch, RIGHT hand supporting the patient's right forearm just below the elbow (functional spotter's grip), LEFT hand steadying the side of the patient's lower-back / hip. Patient looks naturally downward at his own feet, concentrating on his balance. Practitioner's eyes track the patient's trunk mechanics. Side table behind: お薬手帳 booklet, prescription packets, water glass, towel, notebook. Right 35-40% empty for text.
+
+[SCENE 4 — HERO Candidate D: Forearm acupuncture, close-up framing]
+Same room, slightly tighter framing. Patient seated upright on the chair, right sleeve rolled to elbow. Practitioner kneels at his right side; RIGHT hand delicately adjusting 3 fine stainless-steel acupuncture needles (small reddish-orange thread-bound bead-grips) already inserted along the patient's forearm at motor points; LEFT hand gently cupping the patient's hand from below — a hand that shows a very faint resting tremor signature in its slight finger flexion. Practitioner focused on the needles, NOT looking at the patient's face. Patient looks naturally downward at his own treated hand. Side table: お薬手帳 booklet, prescription packets, water glass, open acupuncture kit. Cane against the chair. Right 35-40% empty for text.
+
+============================================================
+SCENES 5-7 — PARKINSON PAGE SUPPORTING SHOTS (used within the page body, NOT as hero)
+============================================================
+
+[SCENE 5 — Still life: Parkinson's medication management]
+Top-down flat lay on a warm wooden side-table beside soft daylight. Arranged calmly and editorially: a pale-blue お薬手帳 medication notebook (open to a page with faint handwritten visit notes), 2-3 small white/blue-stripe Japanese pharmacy prescription packets, a thin treatment log notebook with a fountain pen resting on it, a small open acupuncture kit with sterile needles in sleeves, a single ceramic cup. The composition is calm and quiet, NOT cluttered. Soft natural shadows. Right 35-40% empty for text. NO people in this frame.
+
+[SCENE 6 — Close-up: pill-rolling rest hand + practitioner's supporting hand]
+Tight close-up at hand level, soft natural light from the side. Foreground: the patient's left hand resting on his thigh in a subtle Parkinson's pill-rolling rest posture (fingers gently flexed, thumb pulled in toward the palm). The practitioner's hand enters from the right side of frame, palm up, gently cupping the underside of the patient's wrist — a quietly supportive but technical hold, not a comforting grasp. Both hands sharply in focus; background softly out-of-focus warm wood and cream. NO needles in this frame — this is a portrait of the resting Parkinson's hand. Right 35-40% empty for text.
+
+[SCENE 7 — Post-treatment: patient standing with cane near a window]
+Same patient, same room. Treatment is over. Patient now stands upright by a sunlit window, his right hand gripping the wooden cane firmly, his weight balanced. He looks naturally downward at his own feet, quietly testing his own footing. The practitioner stands a step behind him, hands at his sides, ready but not touching — observing the patient's success. Patient's posture shows a small but visible improvement: shoulders slightly more open than scene 1. The acupuncture kit and お薬手帳 are visible on the side table in the background. Warm late-morning daylight floods the frame. Right 35-40% empty for text.
+
+============================================================
+SCENES 8-10 — SITE-WIDE REUSABLE ASSETS (usable on any solutions page or top-level page)
+============================================================
+
+[SCENE 8 — Visit beginning: practitioner opens his bag at the genkan]
+A Japanese 訪問鍼灸師 (any of the practitioners — a male Japanese clinician in his 30s-40s in slate-blue or charcoal scrubs) kneels at the patient's genkan (entry hall) after just arriving for the home visit. He has set his tan or charcoal canvas-leather visit bag on the polished wooden floor and is opening it — visible inside: neatly organized acupuncture kits in sleeves, a small towel roll, a slim notebook, a sealed plastic packet of cotton wipes. He looks downward at the bag, focused on his setup. Soft daylight from the front door behind him. The genkan is warm wood with simple linen curtain in the background. Right 35-40% empty for text. This shot is a UNIVERSAL "house-call rinkyū session begins" image.
+
+[SCENE 9 — Practitioner's hands reviewing intake notes]
+Mid-distance shot. Same practitioner seated at a low side-table in a sunlit Japanese living room, mid-planning his treatment for today. His left hand holds open a pale-blue お薬手帳 medication notebook; his right hand holds a thin pencil over a treatment plan worksheet (faint pre-printed care plan grid, no AI-generated readable text). On the table: open acupuncture kit with sterile needles, ceramic cup, folded white towel. He looks downward at his work, concentrated. Soft natural daylight, warm wood, cream wall. This shot reads as "professional intake / care planning at the patient's home." Right 35-40% empty for text. NO patient in this frame — practitioner-only.
+
+[SCENE 10 — Post-treatment debrief: practitioner and patient reviewing notes together]
+A practitioner (male Japanese clinician, 30s-40s, scrubs) sits at a side-table beside an elderly patient (gender-neutral — could read as either an older man or older woman, late 70s, soft natural-fiber loungewear). Both are looking down at an open treatment-log notebook on the table between them. The practitioner has a pencil in his hand, mid-explanation of the next visit's plan. The patient leans in slightly, attentive, taking in the explanation. No eye contact between them — both eyes on the notebook. Calm professional debrief at the patient's home. Side table also holds a ceramic cup of tea and the small acupuncture kit (closed). Right 35-40% empty for text. This shot is a UNIVERSAL "ongoing care relationship" image usable across multiple solutions pages.
+
+============================================================
+OUTPUT
+============================================================
+Render each of the 10 scenes as its OWN separate photograph at 1600x1000 pixels, landscape, high-resolution, gentle film-like rendering. Each scene is independently usable as a web hero or section image with text overlaid on the right side. Do NOT compose them into a single grid sheet — they are 10 distinct deliverables.
