@@ -1,0 +1,57 @@
+============================================================
+CRITICAL OUTPUT INSTRUCTION — read this FIRST
+============================================================
+
+This prompt requests SIX (6) DISTINCT, SEPARATE PHOTOGRAPHS, to be delivered as SIX INDEPENDENT IMAGE FILES, generated consecutively in this conversation (Photo 1, then Photo 2, ... then Photo 6).
+
+DO NOT compose multiple scenes into a single grid, mosaic, collage, contact sheet, or numbered layout.
+DO NOT stop after one photograph — keep generating until all 6 exist as 6 separate images.
+DO NOT wait for additional user confirmation between photographs; produce all 6 consecutively.
+If your system can only return one image per generation step, return them one at a time as 6 back-to-back generations.
+DO NOT add scene numbers, labels, captions, or any text annotations on the images.
+
+Each photograph is an INDEPENDENT 1600x1000 landscape image, fully resolved at full resolution, ready to use as a standalone web asset on a Japanese healthcare website. They share a consistent visual style (described below) so that all 6 feel like they came from the same photo shoot.
+
+============================================================
+COMMON STYLE / MOOD / COLOR — applies to ALL 6 photographs
+============================================================
+
+Style: natural-light lifestyle / editorial documentary photography in the spirit of Kinfolk Magazine, Cereal Magazine, &Premium. Looks like unstaged real moments in Japanese homes. Camera feel: full-frame, 50mm prime, f/2.8, BRIGHT AIRY natural daylight, gentle shallow depth-of-field, subtle film grain. NOT crispy digital, NOT HDR, NOT Instagram-saturated, NOT illustrated, NOT painted.
+
+Mood: Photos 1-5 each capture a small private moment of "this has quietly become harder" — but with DIGNITY and CALM, never despair, never misery, never dark drama. Rooms stay bathed in soft bright daylight. Photo 6 is warm and welcoming. Shadows gentle and warm throughout.
+
+Color tone: warm bright natural palette — softly luminous off-white and cream linens, warm peach-tinted skin in window light, warm wood with sunlight on it, soft cream walls. Slightly golden morning light. NO neon, NO oversaturation, NO bright primaries, NO cyan/magenta color cast.
+
+Gaze principle for ALL photographs: every person looks at the task, the body part, the floor ahead, or the other person — concentrated on their own moment. Nobody looks at the camera. No distant hopeful gazes into nothing.
+
+Universal exclusions: NO text, NO captions, NO labels, NO logos, NO watermarks anywhere in the image. NO clinical hospital interiors. NO pajamas, NO hospital gowns. NO tears, NO pained grimacing faces — difficulty is shown through posture and a paused motion, not facial agony.
+
+Composition rule for ALL photographs: main subjects in the LEFT 55-60% of the frame; the RIGHT 35-40% of the frame intentionally calm and empty (sunlit wall, soft light, wood grain) for Japanese text overlay.
+
+============================================================
+THE 6 PHOTOGRAPHS — each is its own independent image
+============================================================
+
+[Photograph 1 — Pausing with the trash bag (knee)]
+Outside a modest Japanese home entrance in soft morning light. An elderly Japanese woman (late 70s, cream cardigan, comfortable shoes) holds a small neatly-tied trash bag in one hand, her other hand resting on the gate post or door frame — pausing to gather herself before the short walk. Her gaze is down the path ahead. Posture composed, one knee slightly favored. The moment reads as "even taking out the trash now requires resolve." Quiet, dignified, gently lit.
+
+[Photograph 2 — Socks, with one hand on the wall (lower back)]
+A bright Japanese bedroom or living room, morning light. An elderly Japanese man (70s, plain comfortable indoor clothes — NOT pajamas) sits on the edge of a chair or bed, bending carefully forward to pull on a sock, one hand pressed against the wall beside him for support. His movement is slow and deliberate, head down, focused on the sock. The moment reads as "putting on socks now needs a wall." No grimace — just the careful choreography of a stiff back.
+
+[Photograph 3 — The lighter teacup (frailty)]
+A close, intimate shot at a low wooden table by a window. The thin, aged hands of an elderly Japanese woman cradle a small, lightweight ceramic teacup with BOTH hands, holding it carefully as if it were heavier than it looks. Soft steam rises. Focus tight on the hands and cup; her face soft-focus or out of frame. A small teapot nearby. The moment reads as "the teacups in this house have quietly been replaced with lighter ones."
+
+[Photograph 4 — The genkan step, newspaper in hand (fall risk)]
+A Japanese home entrance (genkan) in morning light. A low-angle close shot of an elderly person's feet in house slippers, one foot lifted mid-step onto the single wooden step up from the genkan floor, toes of the slipper close to the step edge. One hand visible lower in frame holding a folded newspaper; the other hand reaching toward the wall. No face. Warm wood grain, soft daylight from the open door behind. The moment reads as "the most dangerous step is the one crossed every morning."
+
+[Photograph 5 — Pausing at the refrigerator (starting home care)]
+A modest, tidy Japanese home kitchen in daylight — an older house's kitchen, slightly dated fixtures, lived-in but clean. A Japanese woman in her late 40s (simple blouse and cardigan — the visiting daughter) stands at the open refrigerator, holding a small food container she has just taken out, looking at it with a quiet, thoughtful pause — concern without alarm. The fridge interior is sparse. Her gaze is on the container. The moment reads as "she noticed something in her parents' kitchen that she can't unsee."
+
+[Photograph 6 — Welcomed at the door (visit greeting)]
+A Japanese home entrance (genkan) filled with soft daylight from the open front door. A male practitioner (Japanese, late 30s, slate-blue #1A365D plain unbranded medical scrubs, tan canvas-leather visit bag on his shoulder, bag closed) stands on the lower genkan floor giving a small polite bow of greeting. An elderly Japanese woman stands on the wooden step above, seen mostly from behind or at an angle (face barely visible), welcoming him in. Warm wood, a simple linen curtain, one pair of guest slippers placed neatly on the step. The moment reads as "a familiar, trusted visitor arriving."
+
+============================================================
+FINAL OUTPUT REMINDER
+============================================================
+
+Deliver these as 6 INDEPENDENT images, NOT a grid, NOT a collage, NOT a contact sheet. Each image at 1600x1000, landscape, photorealistic, high-resolution, gentle film-like rendering, with NO embedded text anywhere, main subjects on the LEFT and the RIGHT 35-40% calm and empty for text overlay.
