@@ -35,15 +35,17 @@
 |---|---|---|
 | パーキンソン病 | `images/materials/decoration/M/parkinson/parkinson-m-01〜20.png` | ✅ 対象者リスト4＋見出し3反映済 |
 
-### 未生成 L 素材（プロンプトは作成済）
+### 未生成 L 素材
 
-| ページ | プロンプトファイル | 期待保存先 |
-|---|---|---|
-| 膝痛 | `internal/belltree-home/PROMPT-KNEE-PAIN-OBJECTS-L-IMAGES2.txt` | `images/materials/decoration/L/knee-pain/knee-pain-l-01〜06.png` |
-| 腰痛 | `internal/belltree-home/PROMPT-LOWER-BACK-PAIN-OBJECTS-L-IMAGES2.txt` | `images/materials/decoration/L/lower-back-pain/lower-back-pain-l-01〜06.png` |
-| フレイル | `internal/belltree-home/PROMPT-FRAILTY-OBJECTS-L-IMAGES2.txt` | `images/materials/decoration/L/frailty/frailty-l-01〜06.png` |
-| 転倒リスク | `internal/belltree-home/PROMPT-FALL-RISK-OBJECTS-L-IMAGES2.txt` | `images/materials/decoration/L/fall-risk/fall-risk-l-01〜06.png` |
-| 介護の始め方 | `internal/belltree-home/PROMPT-HOME-CARE-START-OBJECTS-L-IMAGES2.txt` | `images/materials/decoration/L/home-care-start/home-care-start-l-01〜06.png` |
+**なし（2026-06-10 全7ページ完了）。**
+
+膝痛・腰痛・フレイル・転倒リスク・介護の始め方の5枚は、一括バッチプロンプト
+`internal/belltree-home/PROMPT-BATCH-5-LSHEETS-IMAGES2.txt`（5シート連続生成・写真トーン解除付き）で生成成功。
+分割は `internal/belltree-home/_scripts/split_lsheets_20260610.py`（コミット b12154c）。
+個別プロンプト5本（PROMPT-*-OBJECTS-L-IMAGES2.txt）は完了済みのため再投入不要。
+
+補足（2026-06-10）: 全7ページに images2.0 写真の「訪問のひとこま」帯3本も反映済み
+（`images/photos/section-shots/` + `universal/`、コミット 143739d）。
 
 ---
 
