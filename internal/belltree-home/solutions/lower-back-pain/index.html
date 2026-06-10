@@ -382,6 +382,32 @@
     }
   }
 
+  /* ===================== ILLUST MOMENT（ページ専用イラスト帯）===================== */
+  .illust-moment {
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px;
+    align-items: center; max-width: 1040px; margin: 0 auto;
+  }
+  .illust-moment .im-art { position: relative; }
+  .illust-moment .im-art::before {
+    content: ""; position: absolute; inset: -4% 6%;
+    background: radial-gradient(circle, rgba(255,235,215,0.75) 0%, transparent 62%);
+    border-radius: 50%;
+  }
+  .illust-moment .im-art img { position: relative; width: 100%; height: auto; }
+  .illust-moment .im-text .im-eyebrow {
+    display: block; font-size: 12px; letter-spacing: 0.16em;
+    color: var(--bt-accent); font-weight: 700; margin-bottom: 14px;
+  }
+  .illust-moment .im-text p {
+    font-family: var(--bt-font-serif); font-weight: 600;
+    font-size: clamp(15px, 1.55vw, 19px); line-height: 2.05;
+    color: var(--bt-primary); margin: 0;
+  }
+  @media (max-width: 760px) {
+    .illust-moment { grid-template-columns: 1fr; gap: 18px; }
+    .illust-moment .im-art { max-width: 420px; margin: 0 auto; }
+  }
+
   .reveal { opacity: 1; }
 
   /* ===================== RESPONSIVE ===================== */
@@ -501,14 +527,14 @@
   </div>
 </section>
 
-<!-- ===================== 訪問のひとこま（施術計画） ===================== -->
+<!-- ===================== 訪問のひとこま（訪問開始） ===================== -->
 <section class="band-paper sec-pad">
   <div class="wrap">
     <figure class="photo-moment reveal">
-      <img src="../../../../images/photos/universal/care-planning.png" alt="お薬手帳を確認しながら施術計画を立てる訪問鍼灸師" loading="lazy" />
+      <img src="../../../../images/photos/universal/visit-beginning.png" alt="訪問鍼灸師が玄関先で訪問鞄を開く様子" loading="lazy" />
       <figcaption class="pm-text">
-        <span class="pm-eyebrow">初回の問診から</span>
-        <p>お薬手帳とこれまでの経過を確認し、お一人おひとりに合わせた施術計画を立てるところから始めます。</p>
+        <span class="pm-eyebrow">ご自宅で、そのまま</span>
+        <p>起き上がりや中腰がつらい毎日に。通う負担なく、ご自宅でそのまま施術を受けられます。</p>
       </figcaption>
     </figure>
   </div>
@@ -579,14 +605,14 @@
   </div>
 </section>
 
-<!-- ===================== 訪問のひとこま（施術記録の共有） ===================== -->
+<!-- ===================== 訪問のひとこま（施術計画） ===================== -->
 <section class="band-paper sec-pad">
   <div class="wrap">
     <figure class="photo-moment reveal">
-      <img src="../../../../images/photos/universal/post-treatment-debrief.png" alt="施術後に利用者様と施術記録を一緒に確認する様子" loading="lazy" />
+      <img src="../../../../images/photos/universal/care-planning.png" alt="お薬手帳を確認しながら施術計画を立てる訪問鍼灸師" loading="lazy" />
       <figcaption class="pm-text">
-        <span class="pm-eyebrow">施術記録の共有</span>
-        <p>施術のたびに身体の変化を記録し、ご本人・ご家族・担当のケアマネジャーと共有します。</p>
+        <span class="pm-eyebrow">痛む動作から組み立てる</span>
+        <p>起き上がり・立ち上がり・中腰の家事。どの動作で痛むのかを確認しながら、施術の内容を組み立てます。</p>
       </figcaption>
     </figure>
   </div>
@@ -604,16 +630,16 @@
   </div>
 </section>
 
-<!-- ===================== 訪問のひとこま（訪問開始） ===================== -->
+<!-- ===================== 訪問のひとこま（目標） ===================== -->
 <section class="band-paper sec-pad">
   <div class="wrap">
-    <figure class="photo-moment reveal">
-      <img src="../../../../images/photos/universal/visit-beginning.png" alt="訪問鍼灸師が玄関先で訪問鞄を開く様子" loading="lazy" />
-      <figcaption class="pm-text">
-        <span class="pm-eyebrow">ご自宅へ伺います</span>
-        <p>特別な準備はいりません。国家資格者が道具一式を持って、玄関先までお伺いします。</p>
-      </figcaption>
-    </figure>
+    <div class="illust-moment reveal">
+      <div class="im-art"><img src="../../../../images/materials/decoration/L/lower-back-pain/lower-back-pain-l-06.png" alt="窓辺のロッキングチェアのイラスト" loading="lazy" /></div>
+      <div class="im-text">
+        <span class="im-eyebrow">楽な時間を、少しずつ長く</span>
+        <p>痛みに身構えずに座れる、眠れる。そうした時間を少しずつ増やしていくことを目指します。</p>
+      </div>
+    </div>
   </div>
 </section>
 
