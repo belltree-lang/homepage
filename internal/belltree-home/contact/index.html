@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ご相談・お問い合わせ｜株式会社べるつりー</title>
+<meta name="description" content="訪問鍼灸マッサージ・居宅介護支援・べるフィットのご相談窓口。初回60分の無料体験のお申し込みも承ります。八王子・南大沢・町田・日野・多摩。お電話（042-682-2839）またはフォームから。" />
+<link rel="canonical" href="https://belltree1102.com/contact/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ご相談・お問い合わせ｜株式会社べるつりー" />
+<meta property="og:description" content="訪問鍼灸マッサージ・居宅介護支援・べるフィットのご相談窓口。初回60分の無料体験のお申し込みも承ります。" />
+<meta property="og:url" content="https://belltree1102.com/contact/" />
+<meta property="og:site_name" content="株式会社べるつりー" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RQRJ45S3V3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RQRJ45S3V3');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; }
+  .wrap { max-width: var(--bt-container); margin: 0 auto; padding: 0 var(--bt-gutter); }
+
+  /* ===================== HEADER ===================== */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(252,252,250,0.82);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--bt-line);
+  }
+  .header-inner { height: 64px; display: flex; align-items: center; gap: var(--bt-s-5); }
+  .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .brand img { width: 38px; height: 38px; }
+  .brand-name {
+    font-family: var(--bt-font-serif); font-weight: 600; font-size: 20px;
+    color: var(--bt-primary); letter-spacing: 0.01em; line-height: 1;
+    display: flex; align-items: baseline; gap: 7px; white-space: nowrap;
+  }
+  .brand-name .jp { font-size: 14px; color: var(--bt-ink-3); font-weight: 500; }
+  .brand-name .sep { color: var(--bt-line); font-weight: 300; }
+  .main-nav { display: flex; gap: 22px; margin-left: auto; }
+  .main-nav a {
+    font-size: 14px; font-weight: 500; color: var(--bt-ink-2); white-space: nowrap;
+    letter-spacing: 0.01em; transition: color var(--bt-dur) var(--bt-ease);
+  }
+  .main-nav a:hover { color: var(--bt-accent); }
+  .header-cta { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+  .header-phone {
+    display: flex; align-items: center; gap: 7px;
+    font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px;
+    color: var(--bt-primary); white-space: nowrap;
+  }
+  .header-phone svg { width: 17px; height: 17px; color: var(--bt-accent); }
+  .btn-sm {
+    display: inline-flex; align-items: center; justify-content: center; white-space: nowrap;
+    height: 40px; padding: 0 20px; border-radius: var(--bt-r-pill);
+    background: var(--bt-accent); color: #fff; font-weight: 600; font-size: 13px;
+    letter-spacing: 0.03em; border: 1px solid transparent;
+    transition: background var(--bt-dur) var(--bt-ease);
+  }
+  .btn-sm:hover { background: var(--bt-accent-hover); color: #fff; }
+
+  /* info-bar */
+  .info-bar { background: var(--bt-accent); color: #fff; }
+  .info-bar .wrap {
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    gap: 6px 18px; padding-top: 9px; padding-bottom: 9px;
+    font-size: 12.5px; font-weight: 500; letter-spacing: 0.03em;
+  }
+  .info-bar .wrap > span { white-space: nowrap; }
+  .info-bar .dot { opacity: 0.5; }
+
+  /* breadcrumb */
+  .breadcrumb { background: var(--bt-bg-sunk); border-bottom: 1px solid var(--bt-line-soft); }
+  .breadcrumb .wrap { display: flex; gap: 8px; padding: 12px 0; font-size: 12px; color: var(--bt-ink-3); flex-wrap: wrap; }
+  .breadcrumb a { color: var(--bt-ink-3); }
+  .breadcrumb a:hover { color: var(--bt-accent); }
+  .breadcrumb .sep { color: var(--bt-line); }
+  .breadcrumb [aria-current="page"] { color: var(--bt-primary); font-weight: 600; }
+
+  /* paper texture */
+  body {
+    background-color: #FAF4EA;
+    background-image:
+      radial-gradient(circle at 10% 8%, rgba(255,232,212,0.55) 0%, transparent 35%),
+      radial-gradient(circle at 92% 18%, rgba(255,225,210,0.40) 0%, transparent 40%),
+      radial-gradient(circle at 22% 88%, rgba(232,221,200,0.45) 0%, transparent 45%),
+      radial-gradient(circle at 88% 78%, rgba(255,232,217,0.35) 0%, transparent 38%);
+    background-attachment: fixed;
+  }
+
+  section { position: relative; }
+  .sec-pad { padding: 64px 0; }
+  .sec-head { text-align: center; max-width: 760px; margin: 0 auto 40px; }
+  .sec-head .eyebrow { font-size: 12px; letter-spacing: 0.18em; color: var(--bt-ink-4); font-weight: 600; display: block; margin-bottom: 14px; text-transform: uppercase; }
+  .sec-head h1 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(26px, 3.4vw, 38px); line-height: 1.4; color: var(--bt-primary); margin: 0 0 18px; letter-spacing: 0.02em; }
+  .sec-head h2 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(22px, 3vw, 30px); line-height: 1.4; color: var(--bt-primary); margin: 0 0 14px; }
+  .sec-head p { color: var(--bt-ink-2); font-size: 15.5px; line-height: 2; margin: 0; }
+
+  /* quick contact strip */
+  .quick { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 22px; margin-top: 26px; }
+  .quick .tel-big {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--bt-font-serif); font-weight: 700; font-size: 26px; color: var(--bt-primary);
+  }
+  .quick .tel-big svg { width: 22px; height: 22px; color: var(--bt-accent); }
+  .quick .tel-note { font-size: 13px; color: var(--bt-ink-3); }
+
+  /* branch cards */
+  .branch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1040px; margin: 0 auto; }
+  .branch-card {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 18px; box-shadow: 0 10px 30px rgba(80,55,30,0.08);
+    padding: 24px 22px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .branch-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; color: var(--bt-primary); margin: 0; }
+  .branch-card p { font-size: 13px; color: var(--bt-ink-3); line-height: 1.8; margin: 0; flex: 1; }
+  .branch-card a { color: var(--bt-accent); font-size: 13px; font-weight: 700; }
+  .branch-card a:hover { text-decoration: underline; }
+  @media (max-width: 900px) { .branch-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .branch-grid { grid-template-columns: 1fr; } }
+
+  /* form */
+  .form-wrap {
+    max-width: 720px; margin: 0 auto;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 24px; box-shadow: 0 20px 50px rgba(80,55,30,0.10);
+    padding: 40px 44px;
+  }
+  .form-group { margin-bottom: 22px; }
+  .form-group > label { display: block; font-size: 14px; font-weight: 600; color: var(--bt-ink-1); margin-bottom: 8px; }
+  .req { color: var(--bt-accent); font-size: 11px; font-weight: 700; margin-left: 6px; }
+  .opt { color: var(--bt-ink-4); font-size: 11px; font-weight: 600; margin-left: 6px; }
+  .form-control {
+    width: 100%; height: 50px; padding: 0 16px;
+    font-family: var(--bt-font-sans); font-size: 15px; color: var(--bt-ink-1);
+    background: #fff; border: 1px solid var(--bt-line); border-radius: var(--bt-r-md);
+    transition: border-color var(--bt-dur) var(--bt-ease);
+  }
+  textarea.form-control { height: auto; min-height: 130px; padding: 14px 16px; line-height: 1.8; resize: vertical; }
+  .form-control:focus { outline: none; border-color: var(--bt-accent); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .two-col { grid-template-columns: 1fr; } }
+  .radio-set { display: flex; flex-wrap: wrap; gap: 10px; }
+  .radio-set label {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 16px; border: 1px solid var(--bt-line); border-radius: var(--bt-r-pill);
+    background: #fff; font-size: 13.5px; color: var(--bt-ink-2); cursor: pointer;
+    transition: border-color var(--bt-dur) var(--bt-ease), background var(--bt-dur) var(--bt-ease);
+  }
+  .radio-set label:hover { border-color: var(--bt-accent); }
+  .note { font-size: 13px; color: var(--bt-ink-3); line-height: 1.85; margin: 0 0 18px; }
+  .privacy-check { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--bt-ink-2); line-height: 1.7; margin-bottom: 24px; }
+  .privacy-check a { color: var(--bt-accent); text-decoration: underline; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    height: 52px; padding: 0 36px; border-radius: var(--bt-r-pill);
+    font-family: var(--bt-font-sans); font-weight: 600; font-size: 15px;
+    letter-spacing: 0.03em; border: 1.5px solid transparent; cursor: pointer;
+    transition: background var(--bt-dur) var(--bt-ease);
+  }
+  .btn--primary { background: var(--bt-accent); color: #fff; box-shadow: 0 2px 0 rgba(0,0,0,.04), 0 8px 18px rgba(194,122,101,.30); }
+  .btn--primary:hover { background: var(--bt-accent-hover); }
+  .form-submit { text-align: center; }
+
+  /* phone cards */
+  .phone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; margin: 0 auto; }
+  .phone-card {
+    background: var(--bt-surface); border: 1px solid var(--bt-line);
+    border-radius: var(--bt-r-lg); padding: 22px 24px; text-align: center;
+  }
+  .phone-card h3 { font-size: 15px; color: var(--bt-primary); margin: 0 0 6px; font-family: var(--bt-font-serif); font-weight: 600; }
+  .phone-card .num { font-family: var(--bt-font-serif); font-weight: 700; font-size: 22px; color: var(--bt-primary); margin-bottom: 4px; }
+  .phone-card .hours { font-size: 12.5px; color: var(--bt-ink-3); margin-bottom: 14px; }
+  .phone-card a.call { display: inline-flex; align-items: center; justify-content: center; height: 42px; padding: 0 22px; border-radius: var(--bt-r-pill); border: 1.5px solid var(--bt-primary); color: var(--bt-primary); font-size: 13.5px; font-weight: 600; }
+  .phone-card a.call:hover { background: var(--bt-primary); color: #fff; }
+  @media (max-width: 560px) { .phone-grid { grid-template-columns: 1fr; } }
+
+  /* footer */
+  .site-footer { background: #16202E; color: rgba(255,255,255,0.7); }
+  .footer-top { padding: 64px 0 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+  .f-brand img { width: 44px; height: 44px; margin-bottom: 16px; }
+  .f-brand .name { font-family: var(--bt-font-serif); font-size: 20px; color: #fff; margin-bottom: 14px; }
+  .f-brand p { font-size: 13px; line-height: 1.9; color: rgba(255,255,255,0.55); margin: 0 0 18px; max-width: 280px; }
+  .footer-col h5 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bt-group); margin: 0 0 18px; font-weight: 600; }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { font-size: 13.5px; color: rgba(255,255,255,0.68); transition: color var(--bt-dur) var(--bt-ease); }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1); padding: 22px 0;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    font-size: 12px; color: rgba(255,255,255,0.45);
+  }
+
+  @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } }
+  @media (max-width: 760px) { .footer-top { grid-template-columns: 1fr 1fr; } .form-wrap { padding: 30px 22px; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
+  @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="べるつりーグループ">
+      <img src="../assets/belltree-mark.svg" alt="" />
+      <span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="../index.html">ホーム</a>
+      <a href="../index.html#concerns">お悩み別解決策</a>
+      <a href="../index.html#model">サービス一覧</a>
+      <a href="../index.html#cases">改善事例</a>
+      <a href="../about/index.html">会社概要</a>
+    </nav>
+    <div class="header-cta">
+      <a class="header-phone" href="tel:0426822839" aria-label="電話 042-682-2839">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+        042-682-2839
+      </a>
+      <a class="btn-sm" href="#contact-form">フォームへ</a>
+    </div>
+  </div>
+</header>
+
+<!-- info bar -->
+<div class="info-bar">
+  <div class="wrap">
+    <span><strong>株式会社べるつりー</strong></span>
+    <span class="dot">・</span>
+    <span>八王子・南大沢・町田・日野・多摩</span>
+    <span class="dot">／</span>
+    <span>TEL 042-682-2839</span>
+    <span class="dot">／</span>
+    <span>平日 9:00〜18:00（日祝休）</span>
+  </div>
+</div>
+
+<!-- breadcrumb -->
+<nav class="breadcrumb" aria-label="現在位置">
+  <div class="wrap">
+    <a href="../index.html">ホーム</a>
+    <span class="sep">／</span>
+    <span aria-current="page">ご相談・お問い合わせ</span>
+  </div>
+</nav>
+
+<!-- ===================== 導入 ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Contact</span>
+      <h1>ご相談・お問い合わせ</h1>
+      <p>「何から相談すればいいか分からない」という状態のままで構いません。<br />
+      訪問鍼灸マッサージは、初回60分の体験を無料で受けていただけます。お電話か、下のフォームからお気軽にどうぞ。</p>
+      <div class="quick">
+        <a class="tel-big" href="tel:0426822839" aria-label="電話 042-682-2839">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+          042-682-2839
+        </a>
+        <span class="tel-note">平日 9:00〜18:00（日祝休）</span>
+      </div>
+    </div>
+
+    <div class="branch-grid">
+      <div class="branch-card">
+        <h3>訪問鍼灸マッサージ</h3>
+        <p>初回60分の無料体験、医療保険の利用、ご家族・ケアマネジャーからのご相談。</p>
+        <a href="#contact-form">このことで相談する →</a>
+      </div>
+      <div class="branch-card">
+        <h3>居宅介護支援</h3>
+        <p>介護の始め方、ケアプランの相談、在宅での生活の組み立て。相談は無料です。</p>
+        <a href="#contact-form">このことで相談する →</a>
+      </div>
+      <div class="branch-card">
+        <h3>べるフィット</h3>
+        <p>「保険が使えるジム」の見学・体験。ご本人の代わりにご家族からでも。</p>
+        <a href="#contact-form">このことで相談する →</a>
+      </div>
+      <div class="branch-card">
+        <h3>終活・相続のご相談</h3>
+        <p>遺言・相続・死後事務の準備。グループの行政書士事務所へおつなぎします。</p>
+        <a href="#contact-form">このことで相談する →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== フォーム ===================== -->
+<section id="contact-form" class="sec-pad" style="padding-top: 8px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Form</span>
+      <h2>お問い合わせフォーム</h2>
+      <p>いただいた内容を確認し、通常2営業日以内に担当者からご連絡します。</p>
+    </div>
+
+    <div class="form-wrap">
+      <form action="#" method="post" data-form-type="inquiries" data-redirect-url="thanks/index.html">
+        <!-- honeypot -->
+        <div style="position:absolute; left:-9999px;" aria-hidden="true">
+          <label>ここは入力しないでください <input type="text" name="url_website_hp" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiry_type">ご相談の種類<span class="req">必須</span></label>
+          <select id="inquiry_type" name="ご相談の種類" class="form-control" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="訪問鍼灸マッサージ（無料体験）">訪問鍼灸マッサージ（無料体験のお申し込み）</option>
+            <option value="居宅介護支援">居宅介護支援（介護の始め方・ケアプラン）</option>
+            <option value="べるフィット（見学・体験）">べるフィット（見学・体験）</option>
+            <option value="終活・相続のご相談">終活・相続のご相談</option>
+            <option value="採用について">採用について</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <div class="two-col">
+          <div class="form-group">
+            <label for="name">お名前<span class="req">必須</span></label>
+            <input type="text" id="name" name="お名前" class="form-control" placeholder="例：山田 花子" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">電話番号<span class="req">必須</span></label>
+            <input type="tel" id="phone" name="電話番号" class="form-control" placeholder="例：090-0000-0000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">メールアドレス<span class="opt">任意</span></label>
+          <input type="email" id="email" name="メールアドレス" class="form-control" placeholder="例：example@mail.com">
+        </div>
+
+        <div class="form-group">
+          <label for="message">ご相談内容<span class="req">必須</span></label>
+          <textarea id="message" name="ご相談内容" class="form-control" placeholder="どなたのこと（ご本人／ご家族）か、いまお困りのことなどを、分かる範囲でお書きください。" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>このサイトを何で知りましたか<span class="opt">任意</span></label>
+          <div class="radio-set">
+            <label><input type="radio" name="きっかけ" value="チラシ"> チラシ</label>
+            <label><input type="radio" name="きっかけ" value="ケアマネ・病院からの紹介"> ケアマネ・病院からの紹介</label>
+            <label><input type="radio" name="きっかけ" value="ネット検索"> ネット検索</label>
+            <label><input type="radio" name="きっかけ" value="ご家族・知人"> ご家族・知人</label>
+            <label><input type="radio" name="きっかけ" value="その他"> その他</label>
+          </div>
+        </div>
+
+        <p class="note">
+          お急ぎの方は、お電話（<a href="tel:0426822839" style="color:var(--bt-accent);font-weight:600;">042-682-2839</a>・平日 9:00〜18:00）でも承ります。
+        </p>
+
+        <label class="privacy-check">
+          <input type="checkbox" name="privacy_agreement" required>
+          <span><a href="../privacy-policy/index.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意のうえ送信します。健康に関する情報は、ご相談への対応のために利用します。</span>
+        </label>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn--primary" style="min-width: 260px;">送信する</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 電話窓口 ===================== -->
+<section class="sec-pad" style="padding-top: 8px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">By Phone</span>
+      <h2>お電話での窓口</h2>
+      <p>ご相談の内容に近い窓口へ、直接おかけいただけます。</p>
+    </div>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <h3>総合・訪問鍼灸マッサージ</h3>
+        <div class="num">042-682-2839</div>
+        <div class="hours">平日 9:00〜18:00</div>
+        <a class="call" href="tel:0426822839">電話をかける</a>
+      </div>
+      <div class="phone-card">
+        <h3>べるつりー居宅（ケアマネ）</h3>
+        <div class="num">080-7140-7664</div>
+        <div class="hours">平日 9:00〜18:00</div>
+        <a class="call" href="tel:08071407664">電話をかける</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" id="final">
+  <div class="wrap footer-top">
+    <div class="f-brand">
+      <img src="../assets/belltree-mark.svg" alt="" />
+      <div class="name">べるつりーグループ</div>
+      <p>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+    </div>
+    <div class="footer-col">
+      <h5>企業情報</h5>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../about/index.html">会社概要</a></li>
+        <li><a href="../index.html#model">サポートモデル</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>解決策・事例</h5>
+      <ul>
+        <li><a href="../index.html#concerns">お悩み別解決策</a></li>
+        <li><a href="../index.html#model">サービス一覧</a></li>
+        <li><a href="../index.html#cases">改善事例</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>お問い合わせ</h5>
+      <ul>
+        <li><a href="tel:0426822839">042-682-2839</a></li>
+        <li><a href="#contact-form">お問い合わせフォーム</a></li>
+        <li><a href="../privacy-policy/index.html">個人情報保護方針</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 株式会社べるつりー / Belltree Group</span>
+    <span style="color:var(--bt-group);font-weight:600;letter-spacing:0.04em">わたしたちは、一本の木。</span>
+  </div>
+</footer>
+
+<script src="../assets/js/form-handler.js"></script>
+<script>
+  // 計測: 電話タップ・フォーム送信を generate_lead として記録
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.gtag) gtag('event', 'generate_lead', { method: 'phone', page: 'contact' });
+    });
+  });
+  var f = document.querySelector('form[data-form-type]');
+  if (f) f.addEventListener('submit', function () {
+    if (window.gtag) gtag('event', 'generate_lead', { method: 'form', page: 'contact' });
+  });
+</script>
+</body>
+</html>
