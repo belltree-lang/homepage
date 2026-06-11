@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 BASE = Path(r"C:\Users\sss_1\OneDrive\ドキュメント\GitHub\homepage - コピー\internal\belltree-home\solutions")
-PHASE2 = False  # 新写真6枚の保存後に True にして再実行
+PHASE2 = True  # 2026-06-11 新写真6枚保存済み・第2弾実行
 
 def photo_band(label, src, alt, eyebrow, copy):
     return f'''<!-- ===================== 訪問のひとこま（{label}） ===================== -->
