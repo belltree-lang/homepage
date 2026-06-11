@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RQRJ45S3V3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RQRJ45S3V3');</script>
 <title>会社概要・わたしたちのこと｜株式会社べるつりー</title>
 <link rel="stylesheet" href="../colors_and_type.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -439,7 +442,7 @@
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
         042-682-2839
       </span>
-      <a class="btn-sm" href="#final">ご相談窓口</a>
+      <a class="btn-sm" href="../contact/index.html">ご相談窓口</a>
     </div>
   </div>
 </header>
@@ -826,7 +829,7 @@
       <h2>まずは、お気軽にご相談ください</h2>
       <p>医療・運動・生活支援・終活準備まで——あなたのご相談を丁寧にお聞きし、暮らしに合った最適な支援をご案内します。何から相談すればよいか分からない、そんな段階でも問題ありません。</p>
       <div class="hero-actions">
-        <a class="btn btn--white" href="#">お問い合わせフォームへ</a>
+        <a class="btn btn--white" href="../contact/index.html">お問い合わせフォームへ</a>
         <a class="btn btn--outline-white" href="../index.html#model">サービス一覧を見る</a>
       </div>
     </div>
@@ -872,9 +875,9 @@
     <div class="footer-col">
       <h5>Contact</h5>
       <ul>
-        <li><a href="#final">042-682-2839</a></li>
-        <li><a href="#final">お問い合わせフォーム</a></li>
-        <li><a href="#final">資料請求</a></li>
+        <li><a href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'footer'});}">042-682-2839</a></li>
+        <li><a href="../contact/index.html">お問い合わせフォーム</a></li>
+        <li><a href="../contact/index.html">資料請求</a></li>
       </ul>
       <ul style="margin-top:16px; color:rgba(255,255,255,0.5)">
         <li style="font-size:12.5px">平日 9:00〜18:00（日祝休）</li>
@@ -890,5 +893,19 @@
 
 <script src="../image-slot.js"></script>
 
+
+<!-- sticky phone CTA -->
+<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'fab'});}">
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+  <span class="fab-call-txt">電話で相談<small>042-682-2839</small></span>
+</a>
+<style>
+.fab-call{position:fixed;right:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;gap:10px;height:60px;padding:0 22px 0 19px;border-radius:40px;background:var(--bt-accent,#C27A65);color:#fff;box-shadow:0 12px 30px rgba(80,55,30,.30);text-decoration:none;font-family:var(--bt-font-sans,"Noto Sans JP",sans-serif);}
+.fab-call svg{width:25px;height:25px;flex:none;}
+.fab-call .fab-call-txt{display:flex;flex-direction:column;line-height:1.15;font-weight:700;font-size:15px;}
+.fab-call .fab-call-txt small{font-weight:600;font-size:11.5px;opacity:.9;letter-spacing:.2px;margin-top:1px;}
+.fab-call:hover{background:var(--bt-accent-hover,#A8634F);}
+@media(max-width:560px){.fab-call{right:12px;bottom:12px;height:54px;padding:0 18px 0 16px;gap:8px;}.fab-call svg{width:22px;height:22px;}.fab-call .fab-call-txt{font-size:13px;}.fab-call .fab-call-txt small{font-size:11px;}}
+</style>
 </body>
 </html>
