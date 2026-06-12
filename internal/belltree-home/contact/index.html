@@ -293,7 +293,7 @@
       </div>
       <div class="branch-card">
         <h3>終活・相続のご相談</h3>
-        <p>遺言・相続・死後事務の準備。グループの行政書士事務所へおつなぎします。</p>
+        <p>遺言・相続・死後事務の準備。グループの行政書士（べるリーガル・開業準備中）におつなぎします。</p>
         <a href="#contact-form">このことで相談する →</a>
       </div>
     </div>
@@ -455,5 +455,19 @@
     if (window.gtag) gtag('event', 'generate_lead', { method: 'form', page: 'contact' });
   });
 </script>
+
+<!-- sticky phone CTA -->
+<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'fab'});}">
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+  <span class="fab-call-txt">電話で相談<small>042-682-2839</small></span>
+</a>
+<style>
+.fab-call{position:fixed;right:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;gap:10px;height:60px;padding:0 22px 0 19px;border-radius:40px;background:var(--bt-accent,#C27A65);color:#fff;box-shadow:0 12px 30px rgba(80,55,30,.30);text-decoration:none;font-family:var(--bt-font-sans,"Noto Sans JP",sans-serif);}
+.fab-call svg{width:25px;height:25px;flex:none;}
+.fab-call .fab-call-txt{display:flex;flex-direction:column;line-height:1.15;font-weight:700;font-size:15px;}
+.fab-call .fab-call-txt small{font-weight:600;font-size:11.5px;opacity:.9;letter-spacing:.2px;margin-top:1px;}
+.fab-call:hover{background:var(--bt-accent-hover,#A8634F);}
+@media(max-width:560px){.fab-call{right:12px;bottom:12px;height:54px;padding:0 18px 0 16px;gap:8px;}.fab-call svg{width:22px;height:22px;}.fab-call .fab-call-txt{font-size:13px;}.fab-call .fab-call-txt small{font-size:11px;}}
+</style>
 </body>
 </html>
