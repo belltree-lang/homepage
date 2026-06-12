@@ -6,12 +6,12 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQRJ45S3V3"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RQRJ45S3V3');</script>
-<title>料金と保険（訪問鍼灸マッサージの費用）｜株式会社べるつりー</title>
-<meta name="description" content="訪問鍼灸マッサージの料金と保険のしくみ。医療保険（療養費）が使え、1割負担の方なら30分420円（出張費込み）が目安。医師の同意書のとり方、介護保険との関係、費用のよくある質問まで分かりやすくご説明します。初回60分無料体験。" />
-<link rel="canonical" href="https://belltree1102.com/services/fee-insurance/" />
-<meta property="og:title" content="料金と保険｜株式会社べるつりー" />
-<meta property="og:description" content="訪問鍼灸マッサージの費用と保険のしくみ。1割負担で30分420円（出張費込み）が目安。初回60分無料体験。" />
-<meta property="og:url" content="https://belltree1102.com/services/fee-insurance/" />
+<title>自費リハビリ（保険外メニュー・歩行改善）｜株式会社べるつりー</title>
+<meta name="description" content="保険の枠をこえて、目的に合わせて受けられる自費リハビリ。歩行改善プログラムや個別の運動指導を、ご自宅でもべるフィット（施設）でも。八王子・南大沢・町田・日野・多摩。初回60分無料体験。" />
+<link rel="canonical" href="https://belltree1102.com/services/self-rehab/" />
+<meta property="og:title" content="自費リハビリ（保険外メニュー）｜株式会社べるつりー" />
+<meta property="og:description" content="保険の枠をこえて、目的に合わせて受けられる自費リハビリ。歩行改善プログラムや個別の運動指導を、ご自宅でも施設でも。初回60分無料体験。" />
+<meta property="og:url" content="https://belltree1102.com/services/self-rehab/" />
 <meta property="og:site_name" content="株式会社べるつりー" />
 <meta property="og:type" content="website" />
 <link rel="stylesheet" href="../../colors_and_type.css" />
@@ -80,36 +80,37 @@
   .sec-head h2 { font-size: clamp(24px, 3vw, 32px); line-height: 1.4; color: var(--bt-primary); margin: 0 0 16px; }
   .sec-head p { color: var(--bt-ink-3); font-size: 15px; line-height: 1.95; margin: 0; }
 
-  /* 結論カード */
-  .answer-card { max-width: 760px; margin: 0 auto; text-align: center; background: rgba(255,255,255,0.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.85); border-radius: 24px; box-shadow: 0 20px 50px rgba(80,55,30,0.10); border-top: 4px solid var(--bt-accent); padding: 40px 44px; }
-  .answer-card .q { font-size: 14px; color: var(--bt-ink-3); margin: 0 0 16px; font-weight: 600; }
-  .answer-card .big { font-family: var(--bt-font-serif); font-weight: 700; color: var(--bt-primary); font-size: clamp(30px, 5vw, 46px); line-height: 1.25; margin: 0; }
-  .answer-card .big small { display: block; font-size: 15px; font-weight: 600; color: var(--bt-ink-2); margin-top: 10px; }
-  .answer-card .free { margin: 22px 0 0; font-size: 15px; color: var(--bt-ink-1); font-weight: 600; }
-  .answer-card .note { margin: 14px 0 0; font-size: 12.5px; color: var(--bt-ink-3); line-height: 1.8; }
+  /* APPROACH CARDS */
+  .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 920px; margin: 0 auto; }
+  .approach-card { background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 28px 30px; }
+  .approach-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px; color: var(--bt-primary); margin: 0 0 10px; }
+  .approach-card p { font-size: 14px; color: var(--bt-ink-3); line-height: 1.95; margin: 0; }
 
-  /* SUPPORT BLOCK（保険のしくみ） */
-  .support-block { max-width: 920px; margin: 0 auto; background: rgba(255,255,255,0.65); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.85); border-radius: 24px; box-shadow: 0 20px 50px rgba(80,55,30,0.10); padding: 40px 44px; }
-  .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .support-grid h4 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; color: var(--bt-primary); margin: 0 0 8px; }
-  .support-grid p { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.85; margin: 0; }
-  .note-line { font-size: 13px; color: var(--bt-ink-3); line-height: 1.9; margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--bt-line); }
+  /* TARGET LIST */
+  .target-list { max-width: 760px; margin: 0 auto; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .target-list li { background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.85); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); padding: 16px 22px; font-size: 15px; color: var(--bt-ink-1); line-height: 1.7; display: flex; gap: 18px; align-items: center; }
+  .badge-dot { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bt-accent); color: #fff; font-weight: 700; font-size: 15px; }
 
-  /* 料金テーブル */
-  .fee-table { max-width: 760px; margin: 0 auto; width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.7); border-radius: 16px; overflow: hidden; box-shadow: 0 12px 30px rgba(80,55,30,0.08); }
-  .fee-table th, .fee-table td { padding: 16px 22px; text-align: left; border-bottom: 1px solid var(--bt-line); font-size: 14.5px; line-height: 1.7; }
-  .fee-table th { background: var(--bt-bg-sunk); color: var(--bt-primary); font-weight: 600; width: 46%; }
-  .fee-table td { color: var(--bt-ink-2); }
-  .fee-table tr:last-child th, .fee-table tr:last-child td { border-bottom: none; }
-  .fee-table .accent td { color: var(--bt-accent); font-weight: 700; }
-  .fee-cap { max-width: 760px; margin: 14px auto 0; font-size: 12.5px; color: var(--bt-ink-3); line-height: 1.8; }
+  /* COMPARE（保険 vs 自費） */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 920px; margin: 0 auto; }
+  .compare-card { border-radius: 18px; padding: 28px 30px; }
+  .compare-card.ins { background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 10px 26px rgba(80,55,30,0.07); }
+  .compare-card.self { background: var(--bt-primary); color: #fff; box-shadow: 0 14px 34px rgba(26,54,93,0.28); }
+  .compare-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px; margin: 0 0 14px; }
+  .compare-card.ins h3 { color: var(--bt-primary); }
+  .compare-card.self h3 { color: #fff; }
+  .compare-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .compare-card li { font-size: 14px; line-height: 1.8; padding-left: 20px; position: relative; }
+  .compare-card.ins li { color: var(--bt-ink-2); }
+  .compare-card.self li { color: rgba(255,255,255,0.9); }
+  .compare-card li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--bt-accent); }
+  .compare-card.self li::before { background: var(--bt-group); }
 
-  /* 自費の案内 */
-  .jihi-card { max-width: 760px; margin: 0 auto; background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 10px 30px rgba(80,55,30,0.07); padding: 30px 34px; }
-  .jihi-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px; color: var(--bt-primary); margin: 0 0 12px; }
-  .jihi-card p { font-size: 14px; color: var(--bt-ink-2); line-height: 1.95; margin: 0; }
-  .jihi-card a.inline { color: var(--bt-accent); font-weight: 600; }
-  .jihi-card a.inline:hover { text-decoration: underline; }
+  /* 料金の考え方 */
+  .fee-note { max-width: 760px; margin: 0 auto; background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 32px 36px; text-align: center; }
+  .fee-note h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px; color: var(--bt-primary); margin: 0 0 12px; }
+  .fee-note p { font-size: 14.5px; color: var(--bt-ink-2); line-height: 1.95; margin: 0; }
+  .fee-note .free { display: inline-block; margin-top: 16px; font-weight: 700; color: var(--bt-accent); font-size: 16px; }
 
   /* PHOTO MOMENT */
   .photo-moment { position: relative; border-radius: 24px; overflow: hidden; max-width: 1080px; margin: 0 auto; box-shadow: 0 24px 60px rgba(80,55,30,0.16), 0 6px 18px rgba(80,55,30,0.10); }
@@ -120,16 +121,7 @@
   .pm-text p { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(15px, 1.55vw, 19px); line-height: 2.05; color: var(--bt-primary); margin: 0; }
   @media (max-width: 760px) { .pm-text { position: static; transform: none; width: auto; padding: 18px 20px 22px; background: rgba(255,255,255,0.85); border: none; border-radius: 0; box-shadow: none; } }
 
-  /* FAQ */
-  .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-  .faq-item { background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.85); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); overflow: hidden; }
-  .faq-item summary { list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 600; font-size: 15px; color: var(--bt-primary); display: flex; gap: 12px; align-items: flex-start; }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary .qm { color: var(--bt-accent); font-family: var(--bt-font-serif); font-weight: 700; flex-shrink: 0; font-size: 17px; }
-  .faq-item .faq-a { padding: 0 22px 20px 50px; font-size: 14px; color: var(--bt-ink-2); line-height: 1.95; }
-  .faq-item[open] summary { border-bottom: 1px solid var(--bt-line-soft); margin-bottom: 14px; }
-
-  /* APPROACH FINAL CTA */
+  /* APPROACH FINAL */
   .approach-final { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.85); max-width: 920px; margin: 0 auto; border-radius: var(--bt-r-xl); box-shadow: var(--bt-shadow-1); border-top: 4px solid var(--bt-primary); padding: 40px 44px; text-align: center; }
   .approach-final h2 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 22px; color: var(--bt-primary); margin: 0 0 16px; }
   .approach-final > p { font-size: 14.5px; color: var(--bt-ink-2); line-height: 2.05; margin: 0 0 26px; }
@@ -165,7 +157,7 @@
 
   /* RESPONSIVE */
   @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
-  @media (max-width: 760px) { .support-grid, .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .support-block, .approach-final, .answer-card, .jihi-card { padding: 28px 24px; } .sec-pad { padding: 60px 0; } .fee-table th { width: 42%; } .fee-table th, .fee-table td { padding: 14px 16px; font-size: 13.5px; } }
+  @media (max-width: 760px) { .approach-grid, .compare-grid, .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .approach-final, .fee-note { padding: 28px 24px; } .sec-pad { padding: 60px 0; } .modality-grid { grid-template-columns: 1fr !important; } }
   @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
 </style>
 </head>
@@ -216,7 +208,7 @@
     <span class="sep">／</span>
     <a href="../../index.html#model">サービス一覧</a>
     <span class="sep">／</span>
-    <span aria-current="page">料金と保険</span>
+    <span aria-current="page">自費リハビリ</span>
   </div>
 </nav>
 
@@ -225,79 +217,55 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-text">
-        <span class="eyebrow">Fee &amp; Insurance | 料金と保険</span>
-        <h1>費用のこと、<br />はっきりお伝えします。</h1>
-        <p class="lead">「結局いくらかかるのか分からない」——それが、訪問の施術をためらういちばんの理由だと思います。<br />べるつりーの訪問鍼灸マッサージは医療保険（療養費）が使え、1割負担の方ならマッサージ30分420円（出張費込み）が目安です。初回は60分の無料体験から始められます。</p>
+        <span class="eyebrow">Self-Pay Rehab | 自費リハビリ</span>
+        <h1>保険の枠をこえて、<br />もっと良くなりたい方へ。</h1>
+        <p class="lead">保険のリハビリには、回数や内容の決まりがあります。「もう少し歩けるようになりたい」「旅行に行ける体力を取り戻したい」——そんな目的に合わせて、自由に組み立てられるのが自費リハビリです。<br />ご自宅でも、べるフィット（施設）でも受けられます。</p>
       </div>
       <div class="hero-photo">
         <span class="hero-photo-blob"></span>
-        <img src="../../../../images/photos/universal/care-planning.png" alt="ご家族に費用や保険のしくみを説明している様子" />
+        <img src="../../../../images/photos/fall-risk-walking.png" alt="歩行の練習に取り組む利用者様と付き添う施術者の様子" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 結論先出し ===================== -->
-<section class="sec-pad">
-  <div class="wrap">
-    <div class="answer-card reveal">
-      <p class="q">いちばん多いご質問：「結局、いくらかかりますか？」</p>
-      <p class="big">30分 420円<small>訪問マッサージ・保険1割負担の方の目安／出張費込み</small></p>
-      <p class="free">初回の施術（約60分）は無料です。</p>
-      <p class="note">自己負担の額は、保険の負担割合（1割・2割・3割）や施術の内容によって変わります。はり・きゅうは施術する部位の数などで変わります。実際の額は、初回の無料体験のときに試算してお伝えします。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 保険のしくみ ===================== -->
+<!-- ===================== こんな方へ ===================== -->
 <section class="sec-pad">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>医療保険（療養費）が使えるしくみ</h2>
-      <p>訪問鍼灸マッサージは、医療保険（療養費）の対象になる場合があります。これは医療保険を使うしくみで、介護保険のケアプランの単位（デイサービスやヘルパーなど）はへりません。</p>
+      <h2>こんな方が利用されています</h2>
+      <p>保険のリハビリだけでは物足りない、もう一歩先を目指したい——そんな前向きな目的でご利用になる方が多くいらっしゃいます。</p>
     </div>
-    <div class="support-block reveal">
-      <div class="support-grid">
-        <div>
-          <h4>マッサージ</h4>
-          <p>麻痺や関節の動かしにくさ（拘縮）など、医療上マッサージが必要だと医師が認めた場合に、医師の同意書をもとに保険の対象になります。</p>
-        </div>
-        <div>
-          <h4>はり・きゅう</h4>
-          <p>慢性的な痛みなど（神経痛・リウマチ・頸腕症候群・五十肩・腰痛症・頸椎捻挫後遺症など）で、医師が同意した場合に保険の対象になります。</p>
-        </div>
+    <ul class="target-list reveal">
+      <li><span class="badge-dot">◯</span><span>保険のリハビリが終わったが、もっと身体を良くしていきたい方</span></li>
+      <li><span class="badge-dot">◯</span><span>退院後、もう少し歩けるように・転ばないようになりたい方</span></li>
+      <li><span class="badge-dot">◯</span><span>旅行や趣味、お孫さんとの外出のために体力を戻したい方</span></li>
+      <li><span class="badge-dot">◯</span><span>目的に合わせて、回数や内容を自由に決めて続けたい方</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 自費でできること ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>自費リハビリでできること</h2>
+      <p>お一人おひとりの「こうなりたい」に合わせて、国家資格を持つスタッフがメニューを組み立てます。</p>
+    </div>
+    <div class="approach-grid modality-grid reveal" style="grid-template-columns:repeat(3,1fr); max-width:1000px">
+      <div class="approach-card">
+        <h3>歩行改善プログラム</h3>
+        <p>歩く様子を記録して見える化し、つまずきやふらつきの出やすいところに合わせて運動を組み立てます。「家のなかで転ばずに動ける」を目標に続けます。</p>
       </div>
-      <p class="note-line">どちらも、保険を使うには医師の同意書が必要です。「お医者さんにどう頼めばいいか分からない」という方も多いので、用紙の準備からお渡しまでお手伝いします。</p>
+      <div class="approach-card">
+        <h3>個別の運動・リハビリ</h3>
+        <p>マンツーマンで、立つ・歩く・階段といった日常の動作を一つずつ取り戻していきます。体力づくりや筋力の維持にも対応します。</p>
+      </div>
+      <div class="approach-card">
+        <h3>訪問でも、施設でも</h3>
+        <p>ご自宅への訪問でも、べるフィット（施設）に通っていただく形でも受けられます。お身体やご都合に合わせて選べます。</p>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== 料金のめやす（表） ===================== -->
-<section class="sec-pad">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>料金のめやす</h2>
-      <p>訪問マッサージ（1回 約30分）を受けた場合の、自己負担のめやすです。</p>
-    </div>
-    <table class="fee-table reveal">
-      <tr class="accent">
-        <th>初回の無料体験（約60分）</th>
-        <td>0円</td>
-      </tr>
-      <tr>
-        <th>医療保険 1割負担の方</th>
-        <td>1回あたり 420円（出張費込み）</td>
-      </tr>
-      <tr>
-        <th>医療保険 2割・3割負担の方</th>
-        <td>負担割合に応じた額（初回にご説明します）</td>
-      </tr>
-      <tr>
-        <th>保険の対象外で受けたい方</th>
-        <td>自費メニュー（自費リハビリ）をご用意しています</td>
-      </tr>
-    </table>
-    <p class="fee-cap reveal">※ 上記はマッサージ30分の目安です。はり・きゅうや、施術する部位の数・時間によって変わります。出張費（交通費）は料金に含まれており、別途いただくことはありません。正確な額は初回の無料体験のときに試算してお伝えします。</p>
   </div>
 </section>
 
@@ -305,52 +273,52 @@
 <section class="sec-pad">
   <div class="wrap">
     <figure class="photo-moment reveal">
-      <img src="../../../../images/photos/acupuncture-care-coordination.png" alt="施術者がご家族・ケアマネジャーと費用や保険について確認している様子" loading="lazy" />
+      <img src="../../../../images/photos/community-aishin-fitness-test.jpg" alt="歩行や体力の状態を測定し、記録している様子" loading="lazy" />
       <figcaption class="pm-text">
-        <span class="pm-eyebrow">お金の話を、あいまいにしない</span>
-        <p>「いくらかかるか分からない」まま始めると、ご家族が不安になります。だからこそ初回に、回数と費用の見通しを数字でお伝えします。</p>
+        <span class="pm-eyebrow">歩き方を、見える化する</span>
+        <p>「最近よくつまずく」のは、どこに原因があるのか。歩く様子を記録して一緒に確かめると、何を練習すればよいかがはっきりします。</p>
       </figcaption>
     </figure>
   </div>
 </section>
 
-<!-- ===================== 保険の対象外（自費） ===================== -->
+<!-- ===================== 保険リハとの違い ===================== -->
 <section class="sec-pad">
   <div class="wrap">
-    <div class="jihi-card reveal">
-      <h3>保険の対象にならない場合</h3>
-      <p>保険の対象にならない症状や、保険の枠をこえてもっと受けたいという方には、自費のメニュー（自費リハビリ）をご用意しています。歩行の改善など、目的に合わせた内容を組み立てます。くわしくは<a class="inline" href="../self-rehab/index.html">自費リハビリのページ</a>をご覧ください。</p>
+    <div class="sec-head reveal">
+      <h2>保険のリハビリとの違い</h2>
+      <p>どちらが良い・悪いではなく、目的によって使い分けます。両方を組み合わせる方もいらっしゃいます。</p>
+    </div>
+    <div class="compare-grid reveal">
+      <div class="compare-card ins">
+        <h3>保険のリハビリ</h3>
+        <ul>
+          <li>医師の同意などの決まりにそって受ける</li>
+          <li>回数や時間に一定の枠がある</li>
+          <li>費用の負担は軽い（医療保険・療養費）</li>
+          <li>麻痺・痛み・拘縮などのケアが中心</li>
+        </ul>
+      </div>
+      <div class="compare-card self">
+        <h3>自費のリハビリ</h3>
+        <ul>
+          <li>目的に合わせて内容を自由に組める</li>
+          <li>回数や時間の枠にしばられない</li>
+          <li>費用は自己負担（内容により変わる）</li>
+          <li>歩行改善・体力づくりなど「もう一歩先」へ</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 費用のFAQ ===================== -->
+<!-- ===================== 料金の考え方 ===================== -->
 <section class="sec-pad">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>費用についてのよくあるご質問</h2>
-    </div>
-    <div class="faq-list reveal">
-      <details class="faq-item" open>
-        <summary><span class="qm">Q.</span><span>結局、月にいくらくらいかかりますか？</span></summary>
-        <div class="faq-a">回数によります。たとえばマッサージを週1回・保険1割でお受けの場合、1回420円なので月1,680円前後（420円×4回）が目安です。回数や施術内容、負担割合で変わるため、初回の無料体験のときに試算してお伝えします。</div>
-      </details>
-      <details class="faq-item">
-        <summary><span class="qm">Q.</span><span>「同意書」とは何ですか？取るのは大変ですか？</span></summary>
-        <div class="faq-a">かかりつけのお医者さんに「施術を受けてよい」と認めてもらう書類です。これがあると保険の対象になります。頼み方が分からなくても、用紙の準備からお医者さんへのお渡しまでお手伝いしますので、ご負担は少なく済みます。</div>
-      </details>
-      <details class="faq-item">
-        <summary><span class="qm">Q.</span><span>介護保険を使っていても受けられますか？</span></summary>
-        <div class="faq-a">はい。訪問鍼灸マッサージは医療保険を使うため、介護保険のケアプランの単位（デイサービスやヘルパーなど）はへりません。介護保険のサービスと並行して受けられます。</div>
-      </details>
-      <details class="faq-item">
-        <summary><span class="qm">Q.</span><span>交通費や出張費はかかりますか？</span></summary>
-        <div class="faq-a">いいえ。出張費（交通費）は料金に含まれています。あとから追加でいただくことはありません。</div>
-      </details>
-      <details class="faq-item">
-        <summary><span class="qm">Q.</span><span>体験だけして、断ってもいいですか？</span></summary>
-        <div class="faq-a">もちろんです。むりに契約をおすすめすることはありません。お身体に合うかどうか、ご家族と相談してから決めてください。</div>
-      </details>
+    <div class="fee-note reveal">
+      <h3>料金について</h3>
+      <p>自費リハビリの料金は、内容・時間・回数によって変わります。むりのない範囲で続けられるよう、目的に合わせてご提案します。くわしい料金は、初回の無料体験のときにわかりやすくご案内します。</p>
+      <span class="free">初回の体験（約60分）は無料です。</span>
     </div>
   </div>
 </section>
@@ -359,10 +327,10 @@
 <section class="sec-pad">
   <div class="wrap">
     <div class="approach-final reveal">
-      <h2>費用の見通しは、無料体験のときに</h2>
-      <p>「うちの場合はいくらになるのか」を、その場で数字にしてお伝えします。<br />まずはお気軽に、お電話かフォームでご連絡ください。むりな勧誘はいたしません。</p>
+      <h2>まずは、無料体験で目的を相談</h2>
+      <p>「どこまで良くなれるのか」「うちの親に合うのか」。気になることを、初回の無料体験のときに直接おたずねください。<br />国家資格を持つスタッフが、お身体を確かめながら、続け方と費用の見通しをお伝えします。</p>
       <div class="cta-row">
-        <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'fee-insurance'});}">
+        <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'self-rehab'});}">
           <svg viewBox="0 0 48 48" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
           042-682-2839
         </a>
@@ -379,13 +347,13 @@
       <h3>関連するご案内</h3>
       <div class="sub-nav-grid">
         <a class="sub-nav-item" href="../home-visit/index.html">
-          <div><span class="sub-nav-label">訪問鍼灸マッサージ</span><span class="sub-nav-desc">施術の内容を見る</span></div>
+          <div><span class="sub-nav-label">訪問鍼灸マッサージ</span><span class="sub-nav-desc">保険でのケアを見る</span></div>
+        </a>
+        <a class="sub-nav-item" href="../fee-insurance/index.html">
+          <div><span class="sub-nav-label">料金と保険</span><span class="sub-nav-desc">費用のことを見る</span></div>
         </a>
         <a class="sub-nav-item" href="../../index.html#concerns">
           <div><span class="sub-nav-label">お悩み別解決策</span><span class="sub-nav-desc">症状から探す</span></div>
-        </a>
-        <a class="sub-nav-item" href="../../about/index.html">
-          <div><span class="sub-nav-label">会社概要</span><span class="sub-nav-desc">わたしたちのこと</span></div>
         </a>
       </div>
     </div>
@@ -411,10 +379,10 @@
     <div class="footer-col">
       <h5>解決策・事例</h5>
       <ul>
-        <li><a href="../../index.html#concerns">お悩み別解決策</a></li>
         <li><a href="../home-visit/index.html">訪問鍼灸マッサージ</a></li>
+        <li><a href="../fee-insurance/index.html">料金と保険</a></li>
+        <li><a href="../../index.html#concerns">お悩み別解決策</a></li>
         <li><a href="../../index.html#cases">改善事例</a></li>
-        <li><a href="../../about/index.html#team">スタッフ紹介</a></li>
       </ul>
     </div>
     <div class="footer-col">
