@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RQRJ45S3V3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RQRJ45S3V3');</script>
+<title>べるフィット（運動習慣づくり・保険が使えるジム）｜株式会社べるつりー</title>
+<meta name="description" content="べるフィットは、元気なうちからの運動習慣づくりと、介護保険を使って通える「保険が使えるジム」。町田を拠点に、国家資格を持つスタッフが一人ひとりに合わせて運動とリハビリをサポートします。見学・体験のご相談を承ります。" />
+<link rel="canonical" href="https://belltree1102.com/services/bellfit/" />
+<meta property="og:title" content="べるフィット｜株式会社べるつりー" />
+<meta property="og:description" content="元気なうちからの運動習慣づくりと、介護保険を使って通える「保険が使えるジム」。町田を拠点に、専門スタッフが運動とリハビリをサポートします。" />
+<meta property="og:url" content="https://belltree1102.com/services/bellfit/" />
+<meta property="og:site_name" content="株式会社べるつりー" />
+<meta property="og:type" content="website" />
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; }
+  .wrap { max-width: var(--bt-container); margin: 0 auto; padding: 0 var(--bt-gutter); }
+
+  .script { font-family: 'Parisienne', cursive; color: var(--bt-accent); letter-spacing: 0.01em; line-height: 1; }
+
+  /* HEADER */
+  .site-header { position: sticky; top: 0; z-index: 100; background: rgba(252,252,250,0.82); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--bt-line); }
+  .header-inner { height: 64px; display: flex; align-items: center; gap: var(--bt-s-5); }
+  .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .brand img { width: 38px; height: 38px; }
+  .brand-name { font-family: var(--bt-font-serif); font-weight: 600; font-size: 20px; color: var(--bt-primary); letter-spacing: 0.01em; line-height: 1; display: flex; align-items: baseline; gap: 7px; white-space: nowrap; }
+  .brand-name .jp { font-size: 14px; color: var(--bt-ink-3); font-weight: 500; }
+  .brand-name .sep { color: var(--bt-line); font-weight: 300; }
+  .main-nav { display: flex; gap: 22px; margin-left: auto; }
+  .main-nav a { font-size: 14px; font-weight: 500; color: var(--bt-ink-2); white-space: nowrap; letter-spacing: 0.01em; transition: color var(--bt-dur) var(--bt-ease); }
+  .main-nav a:hover { color: var(--bt-accent); }
+  .header-cta { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+  .header-phone { display: flex; align-items: center; gap: 7px; font-family: var(--bt-font-serif); font-weight: 600; font-size: 18px; color: var(--bt-primary); white-space: nowrap; }
+  .header-phone svg { width: 17px; height: 17px; color: var(--bt-accent); }
+  .btn-sm { display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; height: 40px; padding: 0 20px; border-radius: var(--bt-r-pill); background: var(--bt-accent); color: #fff; font-weight: 600; font-size: 13px; letter-spacing: 0.03em; border: 1px solid transparent; transition: background var(--bt-dur) var(--bt-ease); }
+  .btn-sm:hover { background: var(--bt-accent-hover); color: #fff; }
+
+  /* info-bar */
+  .info-bar { background: var(--bt-accent); color: #fff; }
+  .info-bar .wrap { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 18px; padding-top: 9px; padding-bottom: 9px; font-size: 12.5px; font-weight: 500; letter-spacing: 0.03em; }
+  .info-bar .wrap > span { white-space: nowrap; }
+  .info-bar .dot { opacity: 0.5; }
+
+  /* breadcrumb */
+  .breadcrumb { background: var(--bt-bg-sunk); border-bottom: 1px solid var(--bt-line-soft); }
+  .breadcrumb .wrap { display: flex; gap: 8px; padding: 12px 0; font-size: 12px; color: var(--bt-ink-3); flex-wrap: wrap; }
+  .breadcrumb a { color: var(--bt-ink-3); }
+  .breadcrumb a:hover { color: var(--bt-accent); }
+  .breadcrumb .sep { color: var(--bt-line); }
+  .breadcrumb [aria-current="page"] { color: var(--bt-primary); font-weight: 600; }
+
+  /* 紙テクスチャ */
+  body { background-color: #FAF4EA; background-image: radial-gradient(circle at 10% 8%, rgba(255,232,212,0.55) 0%, transparent 35%), radial-gradient(circle at 92% 18%, rgba(255,225,210,0.40) 0%, transparent 40%), radial-gradient(circle at 22% 88%, rgba(232,221,200,0.45) 0%, transparent 45%), radial-gradient(circle at 88% 78%, rgba(255,232,217,0.35) 0%, transparent 38%); background-attachment: fixed; }
+
+  /* PAGE HERO */
+  .page-hero { position: relative; padding: 64px 0 56px; }
+  .page-hero .wrap { position: relative; z-index: 3; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .hero-text .eyebrow { font-size: 12px; letter-spacing: 0.18em; color: var(--bt-ink-4); font-weight: 600; display: block; margin-bottom: 18px; text-transform: uppercase; }
+  .hero-text h1 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(28px, 3.8vw, 44px); line-height: 1.4; margin: 0 0 22px; color: var(--bt-primary); letter-spacing: 0.02em; }
+  .hero-text p.lead { font-size: 16px; color: var(--bt-ink-2); line-height: 2; font-weight: 500; margin: 0; }
+  .hero-photo { position: relative; aspect-ratio: 4/3; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(80,55,30,0.18), 0 6px 18px rgba(80,55,30,0.10); }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-photo::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5); border-radius: 24px; pointer-events: none; }
+  .hero-photo-blob { position: absolute; z-index: -1; pointer-events: none; width: 110%; height: 110%; top: -5%; left: -5%; background: radial-gradient(circle, rgba(216,139,111,0.18) 0%, transparent 65%); filter: blur(20px); }
+
+  /* SECTION */
+  section { position: relative; }
+  .sec-pad { padding: 72px 0; }
+  .sec-head { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+  .sec-head h2 { font-size: clamp(24px, 3vw, 32px); line-height: 1.4; color: var(--bt-primary); margin: 0 0 16px; }
+  .sec-head p { color: var(--bt-ink-3); font-size: 15px; line-height: 1.95; margin: 0; }
+
+  /* 2つの通い方 */
+  .way-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 920px; margin: 0 auto; }
+  .way-card { background: rgba(255,255,255,0.68); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.85); border-radius: 20px; box-shadow: 0 14px 34px rgba(80,55,30,0.09); padding: 32px 34px; border-top: 4px solid var(--bt-accent); }
+  .way-card .tag { display: inline-block; font-size: 11.5px; letter-spacing: 0.08em; font-weight: 700; color: var(--bt-accent); margin-bottom: 12px; }
+  .way-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 20px; color: var(--bt-primary); margin: 0 0 12px; line-height: 1.4; }
+  .way-card p { font-size: 14px; color: var(--bt-ink-2); line-height: 1.95; margin: 0; }
+  .way-card .sub { font-size: 12.5px; color: var(--bt-ink-3); margin-top: 12px; line-height: 1.8; }
+
+  /* APPROACH CARDS */
+  .approach-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; max-width: 1000px; margin: 0 auto; }
+  .approach-card { background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 28px 30px; }
+  .approach-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 17px; color: var(--bt-primary); margin: 0 0 10px; }
+  .approach-card p { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.9; margin: 0; }
+
+  /* TARGET LIST */
+  .target-list { max-width: 760px; margin: 0 auto; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .target-list li { background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.85); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); padding: 16px 22px; font-size: 15px; color: var(--bt-ink-1); line-height: 1.7; display: flex; gap: 18px; align-items: center; }
+  .badge-dot { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bt-accent); color: #fff; font-weight: 700; font-size: 15px; }
+
+  /* 公式サイト誘導カード */
+  .official-card { max-width: 860px; margin: 0 auto; background: var(--bt-primary); color: #fff; border-radius: var(--bt-r-xl); box-shadow: 0 20px 50px rgba(26,54,93,0.28); padding: 44px 48px; text-align: center; }
+  .official-card h2 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(20px, 2.6vw, 26px); color: #fff; margin: 0 0 16px; }
+  .official-card p { font-size: 14.5px; color: rgba(255,255,255,0.88); line-height: 2; margin: 0 0 26px; }
+  .btn-official { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 32px; border-radius: var(--bt-r-pill); background: #fff; color: var(--bt-primary); font-weight: 700; font-size: 15px; }
+  .btn-official:hover { background: var(--bt-group); color: var(--bt-primary); }
+  .btn-official svg { width: 18px; height: 18px; }
+
+  /* PHOTO MOMENT */
+  .photo-moment { position: relative; border-radius: 24px; overflow: hidden; max-width: 1080px; margin: 0 auto; box-shadow: 0 24px 60px rgba(80,55,30,0.16), 0 6px 18px rgba(80,55,30,0.10); }
+  .photo-moment > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .photo-moment::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5); border-radius: 24px; pointer-events: none; }
+  .pm-text { position: absolute; top: 50%; transform: translateY(-50%); right: 4.5%; width: 36%; background: rgba(252,252,250,0.82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.85); border-radius: 16px; box-shadow: 0 10px 30px rgba(80,55,30,0.10); padding: 24px 26px; }
+  .pm-text .pm-eyebrow { display: block; font-size: 12px; letter-spacing: 0.16em; color: var(--bt-accent); font-weight: 700; margin-bottom: 14px; }
+  .pm-text p { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(15px, 1.55vw, 19px); line-height: 2.05; color: var(--bt-primary); margin: 0; }
+  @media (max-width: 760px) { .pm-text { position: static; transform: none; width: auto; padding: 18px 20px 22px; background: rgba(255,255,255,0.85); border: none; border-radius: 0; box-shadow: none; } }
+
+  /* APPROACH FINAL */
+  .approach-final { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.85); max-width: 920px; margin: 0 auto; border-radius: var(--bt-r-xl); box-shadow: var(--bt-shadow-1); border-top: 4px solid var(--bt-primary); padding: 40px 44px; text-align: center; }
+  .approach-final h2 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 22px; color: var(--bt-primary); margin: 0 0 16px; }
+  .approach-final > p { font-size: 14.5px; color: var(--bt-ink-2); line-height: 2.05; margin: 0 0 26px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 50px; padding: 0 30px; border-radius: var(--bt-r-pill); font-family: var(--bt-font-sans); font-weight: 600; font-size: 15px; letter-spacing: 0.03em; border: 1.5px solid transparent; transition: background var(--bt-dur) var(--bt-ease); }
+  .btn--primary { background: var(--bt-accent); color: #fff; box-shadow: 0 2px 0 rgba(0,0,0,.04), 0 8px 18px rgba(194,122,101,.30); }
+  .btn--primary:hover { background: var(--bt-accent-hover); }
+  .btn--ghost { background: transparent; color: var(--bt-primary); border-color: var(--bt-line); }
+  .btn--ghost:hover { background: var(--bt-bg-sunk); }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* SUB NAV */
+  .sub-nav { max-width: 920px; margin: 0 auto; padding-top: 12px; }
+  .sub-nav h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; color: var(--bt-primary); margin: 0 0 18px; text-align: center; }
+  .sub-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .sub-nav-item { background: var(--bt-surface); border: 1px solid var(--bt-line); border-radius: var(--bt-r-lg); padding: 18px 20px; display: flex; align-items: center; gap: 14px; color: inherit; transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease); }
+  .sub-nav-item:hover { transform: translateY(-2px); box-shadow: var(--bt-shadow-1); }
+  .sub-nav-label { display: block; font-weight: 600; font-size: 14px; color: var(--bt-primary); }
+  .sub-nav-desc { display: block; font-size: 12px; color: var(--bt-ink-3); margin-top: 2px; }
+
+  /* FOOTER */
+  .site-footer { background: #16202E; color: rgba(255,255,255,0.7); }
+  .footer-top { padding: 64px 0 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+  .f-brand img { width: 44px; height: 44px; margin-bottom: 16px; }
+  .f-brand .name { font-family: var(--bt-font-serif); font-size: 20px; color: #fff; margin-bottom: 14px; }
+  .f-brand p { font-size: 13px; line-height: 1.9; color: rgba(255,255,255,0.55); margin: 0 0 18px; max-width: 280px; }
+  .footer-col h5 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bt-group); margin: 0 0 18px; font-weight: 600; }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { font-size: 13.5px; color: rgba(255,255,255,0.68); transition: color var(--bt-dur) var(--bt-ease); }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 22px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.45); }
+
+  .reveal { opacity: 1; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
+  @media (max-width: 760px) { .way-grid, .approach-grid, .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .approach-final, .official-card { padding: 28px 24px; } .sec-pad { padding: 60px 0; } }
+  @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="べるつりーグループ">
+      <img src="../../assets/belltree-mark.svg" alt="" />
+      <span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="../../index.html">ホーム</a>
+      <a href="../../index.html#concerns">お悩み別解決策</a>
+      <a href="../../index.html#model">サービス一覧</a>
+      <a href="../../index.html#cases">改善事例</a>
+      <a href="../../about/index.html#team">スタッフ紹介</a>
+      <a href="../../about/index.html">会社概要</a>
+    </nav>
+    <div class="header-cta">
+      <span class="header-phone">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+        042-682-2839
+      </span>
+      <a class="btn-sm" href="../../contact/index.html">ご相談窓口</a>
+    </div>
+  </div>
+</header>
+
+<!-- info bar -->
+<div class="info-bar">
+  <div class="wrap">
+    <span><strong>べるフィット</strong></span>
+    <span class="dot">・</span>
+    <span>町田</span>
+    <span class="dot">／</span>
+    <span>運動習慣づくり・保険が使えるジム</span>
+    <span class="dot">／</span>
+    <span>平日 9:00〜18:00（日祝休）</span>
+  </div>
+</div>
+
+<!-- breadcrumb -->
+<nav class="breadcrumb" aria-label="現在位置">
+  <div class="wrap">
+    <a href="../../index.html">ホーム</a>
+    <span class="sep">／</span>
+    <a href="../../index.html#model">サービス一覧</a>
+    <span class="sep">／</span>
+    <span aria-current="page">べるフィット</span>
+  </div>
+</nav>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow">BellFit | 運動習慣づくり・保険が使えるジム</span>
+        <h1>元気なうちから、<br />運動習慣を。</h1>
+        <p class="lead">べるフィットは、まだ元気なうちからの運動習慣づくりと、介護保険を使って通える「保険が使えるジム」の、両方をそなえた運動の場です。<br />町田を拠点に、国家資格を持つスタッフが、一人ひとりのお身体に合わせて運動とリハビリをサポートします。</p>
+      </div>
+      <div class="hero-photo">
+        <span class="hero-photo-blob"></span>
+        <img src="../../../../images/photos/fitness-main-real.jpg" alt="べるフィットで運動に取り組む様子" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2つの通い方 ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>2つの通い方</h2>
+      <p>お身体の状態に合わせて、通い方を選べます。元気なうちからの予防にも、介護が必要になってからの運動にも対応します。</p>
+    </div>
+    <div class="way-grid reveal">
+      <div class="way-card">
+        <span class="tag">元気なうちから</span>
+        <h3>運動習慣づくり</h3>
+        <p>「歳を重ねても、自分の足で歩きたい」。そんな方が、衰えを防ぐために通うトレーニングの場です。早いうちから体を動かす習慣をつくります。</p>
+      </div>
+      <div class="way-card" id="hoken-gym">
+        <span class="tag">介護保険で通える</span>
+        <h3>保険が使えるジム</h3>
+        <p>要支援・要介護の認定を受けた方が、介護保険を使って通える運動とリハビリの場です。専門スタッフと一緒に、無理のない範囲で体を動かします。</p>
+        <p class="sub">※ 介護保険の通所サービスとしてご利用いただけます。ご利用にはケアプランへの位置づけが必要です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== こんな方へ ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>こんな方が通われています</h2>
+    </div>
+    <ul class="target-list reveal">
+      <li><span class="badge-dot">◯</span><span>まだ元気なうちから、運動の習慣をつくっておきたい方</span></li>
+      <li><span class="badge-dot">◯</span><span>要支援・要介護で、安心して運動できる場所がほしい方</span></li>
+      <li><span class="badge-dot">◯</span><span>退院後、体力や歩く力を取り戻したい方</span></li>
+      <li><span class="badge-dot">◯</span><span>一人での運動は不安、専門スタッフに見てほしい方</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== ひとこま ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <figure class="photo-moment reveal">
+      <img src="../../../../images/photos/frailty-community.jpg" alt="べるフィットで仲間と一緒に体を動かす様子" loading="lazy" />
+      <figcaption class="pm-text">
+        <span class="pm-eyebrow">一人より、続けられる</span>
+        <p>「家ではなかなか運動が続かない」。決まった日に通う場所があり、見てくれる人がいて、顔なじみができる。だから続きます。</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== 特徴 ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>べるフィットの特徴</h2>
+    </div>
+    <div class="approach-grid reveal">
+      <div class="approach-card">
+        <h3>専門スタッフが見る</h3>
+        <p>国家資格を持つスタッフが、お身体の状態を確かめながら、一人ひとりに合った運動を組み立てます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>無理のないペースで</h3>
+        <p>がんばりすぎず、続けられることを大切に。痛みや疲れの様子を見ながら進めます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>同じグループで安心</h3>
+        <p>訪問鍼灸マッサージや居宅介護支援とも、必要に応じて連携できる体制です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 公式サイトへ ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="official-card reveal">
+      <h2>料金・見学・アクセスは公式サイトで</h2>
+      <p>コース内容やご利用料金、施設の場所、見学・体験のお申し込みは、べるフィットの公式サイトでくわしくご案内しています。</p>
+      <a class="btn-official" href="https://bellmfit.com" target="_blank" rel="noopener" onclick="if(window.gtag){gtag('event','outbound_click',{target:'bellmfit',page:'bellfit'});}">
+        べるフィット公式サイトを見る
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 L17 7 M9 7 h8 v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 最終CTA ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="approach-final reveal">
+      <h2>見学・体験のご相談</h2>
+      <p>「うちの親にも通えるか」「介護保険で使えるのか」。気になることを、お気軽におたずねください。<br />お電話でもフォームでも承ります。べるつりーグループの窓口につながります。</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'bellfit'});}">
+          <svg viewBox="0 0 48 48" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+          042-682-2839
+        </a>
+        <a class="btn btn--ghost" href="../../contact/index.html">フォームで相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 関連 ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sub-nav reveal">
+      <h3>関連するご案内</h3>
+      <div class="sub-nav-grid">
+        <a class="sub-nav-item" href="../../solutions/frailty/index.html">
+          <div><span class="sub-nav-label">フレイル予防</span><span class="sub-nav-desc">体力・活気の低下に</span></div>
+        </a>
+        <a class="sub-nav-item" href="../../solutions/fall-risk/index.html">
+          <div><span class="sub-nav-label">歩行・ふらつき</span><span class="sub-nav-desc">転倒の不安に</span></div>
+        </a>
+        <a class="sub-nav-item" href="../self-rehab/index.html">
+          <div><span class="sub-nav-label">自費リハビリ</span><span class="sub-nav-desc">歩行改善・体力づくり</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" id="final">
+  <div class="wrap footer-top">
+    <div class="f-brand">
+      <img src="../../assets/belltree-mark.svg" alt="" />
+      <div class="name">べるつりーグループ</div>
+      <p>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+    </div>
+    <div class="footer-col">
+      <h5>企業情報</h5>
+      <ul>
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../about/index.html">会社概要</a></li>
+        <li><a href="../../index.html#model">サポートモデル</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>サービス</h5>
+      <ul>
+        <li><a href="../home-visit/index.html">訪問鍼灸マッサージ</a></li>
+        <li><a href="../home-care/index.html">居宅介護支援</a></li>
+        <li><a href="../self-rehab/index.html">自費リハビリ</a></li>
+        <li><a href="https://bellmfit.com" target="_blank" rel="noopener">べるフィット公式サイト</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>お問い合わせ</h5>
+      <ul>
+        <li><a href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'footer'});}">042-682-2839</a></li>
+        <li><a href="../../contact/index.html">お問い合わせフォーム</a></li>
+        <li><a href="../../privacy-policy/index.html">個人情報保護方針</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 株式会社べるつりー / Belltree Group</span>
+    <span style="color:var(--bt-group);font-weight:600;letter-spacing:0.04em">わたしたちは、一本の木。</span>
+  </div>
+</footer>
+
+<!-- sticky phone CTA -->
+<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'fab'});}">
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
+  <span class="fab-call-txt">電話で相談<small>042-682-2839</small></span>
+</a>
+<style>
+.fab-call{position:fixed;right:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;gap:10px;height:60px;padding:0 22px 0 19px;border-radius:40px;background:var(--bt-accent,#C27A65);color:#fff;box-shadow:0 12px 30px rgba(80,55,30,.30);text-decoration:none;font-family:var(--bt-font-sans,"Noto Sans JP",sans-serif);}
+.fab-call svg{width:25px;height:25px;flex:none;}
+.fab-call .fab-call-txt{display:flex;flex-direction:column;line-height:1.15;font-weight:700;font-size:15px;}
+.fab-call .fab-call-txt small{font-weight:600;font-size:11.5px;opacity:.9;letter-spacing:.2px;margin-top:1px;}
+.fab-call:hover{background:var(--bt-accent-hover,#A8634F);}
+@media(max-width:560px){.fab-call{right:12px;bottom:12px;height:54px;padding:0 18px 0 16px;gap:8px;}.fab-call svg{width:22px;height:22px;}.fab-call .fab-call-txt{font-size:13px;}.fab-call .fab-call-txt small{font-size:11px;}}
+</style>
+</body>
+</html>
