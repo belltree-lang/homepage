@@ -9,7 +9,7 @@ name: Deploy belltree1102.com (GitHub Pages)
 on:
   push:
     branches:
-      - staging
+      - main
     paths:
       - 'internal/belltree-home/**'
       - '.github/workflows/deploy-belltree-pages.yml'
