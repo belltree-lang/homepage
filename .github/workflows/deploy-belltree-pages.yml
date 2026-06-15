@@ -4,6 +4,7 @@ name: Deploy belltree1102.com (GitHub Pages)
 # 公開対象は internal/belltree-home/ の中身のみ（内部メモ .md/.py/PROMPT-*.txt/_scripts は除外）。
 # ※ DNS は eNom のまま。メール(MX/SPF/DKIM)には一切触れない運用。
 # re-run: Pages 有効化後の初回デプロイ（2026-06-15）
+# re-run2: 環境ブランチ制限解除後（2026-06-15）
 
 on:
   push:
