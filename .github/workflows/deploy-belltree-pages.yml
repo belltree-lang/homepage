@@ -1,0 +1,60 @@
+name: Deploy belltree1102.com (GitHub Pages)
+
+# belltree1102.com 法人コーポレートサイトを GitHub Pages で公開する。
+# 公開対象は internal/belltree-home/ の中身のみ（内部メモ .md/.py/PROMPT-*.txt/_scripts は除外）。
+# ※ DNS は eNom のまま。メール(MX/SPF/DKIM)には一切触れない運用。
+
+on:
+  push:
+    branches:
+      - staging
+    paths:
+      - 'internal/belltree-home/**'
+      - '.github/workflows/deploy-belltree-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: belltree-pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble publish directory
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          rsync -a \
+            --exclude='*.md' \
+            --exclude='*.py' \
+            --exclude='PROMPT-*.txt' \
+            --exclude='_scripts/' \
+            internal/belltree-home/ _site/
+          echo "---- published top-level ----"
+          ls -1 _site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
