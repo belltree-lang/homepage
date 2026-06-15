@@ -88,6 +88,29 @@
 4. サーチコンソール登録 → sitemap.xml 送信／GA4で generate_lead 受信確認
 5. 公開後: GBP（Googleビジネスプロフィール）に belltree1102.com を設定、チラシQRの次回刷から誘導
 
+### Phase 3 DNS 作業メモ（2026-06-13・eNom コンソール実査）
+
+belltree1102.com の DNS は **eNom（Google Workspace 管理画面経由で発行・NS=name-services.com）**で管理。Google Domains→Squarespaceではなく「2010年のGoogle Apps申込時にeNomで取ったドメイン」。**ネームサーバーは変えない**（=Google系レコードを温存）。Web用レコードだけ書き換える。
+
+**ホスティング決定（2026-06-15）＝GitHub Pages**（repo `belltree-lang/homepage` public）。ロリポップは不採用（Aレコード運用がサポート対象外＋IP不安定、NS変更はDNSレコード再作成でメール危険）。GitHub Pagesは apex の固定IPが公式提供＆eNom据え置きで安全。
+- 公開ワークフロー `.github/workflows/deploy-belltree-pages.yml`（**main ブランチ起動**。github-pages環境の許可ブランチがmainのみだったため、staging→Pagesは不可。`staging`=lolipop test/プレビュー、`main`=Pages本番 の二段構え。publishは staging→main の早送りで反映）
+- 確認用URL: https://belltree-lang.github.io/homepage/（2026-06-15 デプロイ成功・実物確認済）
+- 公開前のPages有効化＝代表が Settings→Pages→Source: GitHub Actions を手動ON（workflowトークンでは権限不足で不可だった）
+
+**変更対象（→ GitHub Pages へ）**
+- A `@` ×4（216.239.32/34/36/38.21＝Google転送）→ GitHub Pages 固定IP 185.199.108.153 / 109.153 / 110.153 / 111.153
+- CNAME `www`（ghs.google.com）→ belltree-lang.github.io
+- DNS反映後に repo へ CNAME ファイル（belltree1102.com）を追加→HTTPS自動発行（Let's Encrypt）
+
+**絶対に触らない（メール・Google）— ロールバック用に現状記録**
+- MX `@`: ASPMX.L.GOOGLE.COM(1) / ALT2(5) / ALT3(5) / ALT3(10) / ALT4 `*`(10)（＋空行2）※並びは雑だが現に稼働中。整えるなら公開後に別タスク
+- TXT `@`: `v=spf1 include:_spf.emfwd.name-services.com mx ?all`（SPF）
+- TXT `google._domainkey`: `v=DKIM1; ...`（DKIM・送信認証）
+- CNAME（Google）: calendar / docs / mail / sites / start / kutikomi → ghs.google.com
+- CNAME（eNomメール）: imap / pop / smtp → mail.belltree1102.com.cust.a.hostedemail.com、webmail → webmail.belltree1102.com.cust.a.hostedemail.com
+
+eNom DNSコンソールのログイン情報は `admin.google.com → ドメイン → belltree1102.com → 詳細なDNS設定` から都度取得。**生パスワードはメモリ・共有ファイルに保存しない**（governance準拠）。
+
 ## 5. 全体の流れ（5フェーズ）
 
 ```
