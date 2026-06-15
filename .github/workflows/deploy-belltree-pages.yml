@@ -3,6 +3,7 @@ name: Deploy belltree1102.com (GitHub Pages)
 # belltree1102.com 法人コーポレートサイトを GitHub Pages で公開する。
 # 公開対象は internal/belltree-home/ の中身のみ（内部メモ .md/.py/PROMPT-*.txt/_scripts は除外）。
 # ※ DNS は eNom のまま。メール(MX/SPF/DKIM)には一切触れない運用。
+# re-run: Pages 有効化後の初回デプロイ（2026-06-15）
 
 on:
   push:
