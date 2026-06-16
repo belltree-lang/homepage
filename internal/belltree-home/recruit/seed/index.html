@@ -6,17 +6,17 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQRJ45S3V3"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RQRJ45S3V3');</script>
-<title>採用情報｜株式会社べるつりー</title>
-<meta name="description" content="株式会社べるつりーの採用情報。鍼灸・あん摩マッサージ指圧師、フィットネストレーナー、運動サポーターを募集しています。見学・相談からどうぞ。" />
-<link rel="canonical" href="https://belltree1102.com/recruit/" />
-<meta property="og:title" content="採用情報｜株式会社べるつりー" />
-<meta property="og:description" content="鍼灸・あん摩マッサージ指圧師、フィットネストレーナー、運動サポーターを募集しています。見学・相談からどうぞ。" />
-<meta property="og:url" content="https://belltree1102.com/recruit/" />
+<title>運動サポーター（べるフィット シード）の募集｜株式会社べるつりー</title>
+<meta name="description" content="株式会社べるつりーが運営する女性向け運動プログラム「べるフィット シード」の運動サポーター募集。資格不要・未経験OK、パート・アルバイト歓迎。週1日3時間から働けます。見学・相談からどうぞ。" />
+<link rel="canonical" href="https://belltree1102.com/recruit/seed/" />
+<meta property="og:title" content="運動サポーター（べるフィット シード）の募集｜株式会社べるつりー" />
+<meta property="og:description" content="女性向け運動プログラム「シード」の運動サポーター募集。資格不要・未経験OK、パート・アルバイト歓迎。週1日3時間から。" />
+<meta property="og:url" content="https://belltree1102.com/recruit/seed/" />
 <meta property="og:site_name" content="株式会社べるつりー" />
-<meta property="og:type" content="website" />
 <meta property="og:image" content="https://belltree1102.com/assets/img/photos/universal/visit-greeting.png" />
 <meta property="og:locale" content="ja_JP" />
-<link rel="stylesheet" href="../colors_and_type.css" />
+<meta property="og:type" content="article" />
+<link rel="stylesheet" href="../../colors_and_type.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet" />
@@ -65,8 +65,10 @@
   .page-hero { position: relative; padding: 64px 0 56px; }
   .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
   .hero-text .eyebrow { font-size: 12px; letter-spacing: 0.18em; color: var(--bt-ink-4); font-weight: 600; display: block; margin-bottom: 18px; text-transform: uppercase; }
+  .job-tag { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 12px; border-radius: var(--bt-r-pill); background: var(--bt-accent); color: #fff; margin-bottom: 16px; }
   .hero-text h1 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(28px, 3.8vw, 42px); line-height: 1.45; margin: 0 0 22px; color: var(--bt-primary); letter-spacing: 0.02em; }
-  .hero-text p.lead { font-size: 15.5px; color: var(--bt-ink-2); line-height: 2; font-weight: 500; margin: 0; }
+  .hero-text p.lead { font-size: 15.5px; color: var(--bt-ink-2); line-height: 2; font-weight: 500; margin: 0 0 28px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
   .hero-photo { position: relative; aspect-ratio: 4/3; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(80,55,30,0.18), 0 6px 18px rgba(80,55,30,0.10); }
   .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .hero-photo::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5); border-radius: 24px; pointer-events: none; }
@@ -78,39 +80,37 @@
   .sec-head h2 { font-size: clamp(24px, 3vw, 32px); line-height: 1.4; color: var(--bt-primary); margin: 0 0 16px; }
   .sec-head p { color: var(--bt-ink-3); font-size: 15px; line-height: 1.95; margin: 0; }
 
-  /* 数字カード */
-  .num-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 880px; margin: 0 auto; }
-  .num-card { background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 30px 24px; text-align: center; }
-  .num-card .num { font-family: var(--bt-font-serif); font-weight: 700; font-size: 38px; color: var(--bt-primary); line-height: 1.2; }
-  .num-card .num small { font-size: 18px; font-weight: 600; }
-  .num-card .label { font-size: 14px; font-weight: 700; color: var(--bt-accent); margin-top: 8px; }
-  .num-card .sub { font-size: 12.5px; color: var(--bt-ink-3); margin-top: 6px; line-height: 1.7; }
+  /* バッジ列 */
+  .badge-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: -24px auto 0; max-width: 760px; }
+  .pill { background: rgba(194,122,101,0.12); color: var(--bt-accent); font-size: 13px; font-weight: 700; border-radius: var(--bt-r-pill); padding: 7px 16px; }
 
-  /* 職種カード */
-  .job-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1040px; margin: 0 auto; }
-  .job-card { background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 30px 28px; display: flex; flex-direction: column; color: inherit; transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease); }
-  .job-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(80,55,30,0.14); }
-  .job-status { align-self: flex-start; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 12px; border-radius: var(--bt-r-pill); margin-bottom: 16px; }
-  .job-status--hiring { background: rgba(194,122,101,0.14); color: var(--bt-accent); }
-  .job-status--priority { background: var(--bt-accent); color: #fff; }
-  .job-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 18.5px; color: var(--bt-primary); margin: 0 0 6px; line-height: 1.5; }
-  .job-card .job-place { font-size: 12.5px; color: var(--bt-ink-4); font-weight: 600; margin: 0 0 14px; }
-  .job-card p.job-desc { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.95; margin: 0 0 18px; flex: 1; }
-  .job-card .job-link { font-size: 13.5px; font-weight: 700; color: var(--bt-accent); }
-  .job-note { text-align: center; font-size: 12.5px; color: var(--bt-ink-4); margin: 22px auto 0; max-width: 760px; line-height: 1.9; }
+  /* リード強調 */
+  .lead-note { max-width: 760px; margin: 0 auto 44px; background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.85); border-radius: var(--bt-r-lg); box-shadow: 0 10px 26px rgba(80,55,30,0.07); padding: 26px 32px; text-align: center; }
+  .lead-note p { margin: 0; font-size: 16px; font-weight: 600; color: var(--bt-primary); line-height: 1.85; }
 
-  /* 働く環境カード */
+  /* 仕事内容カード */
   .approach-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; max-width: 1000px; margin: 0 auto; }
   .approach-card { background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 28px 30px; }
   .approach-card h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 17px; color: var(--bt-primary); margin: 0 0 10px; }
   .approach-card p { font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.9; margin: 0; }
 
-  /* 応募の流れ */
+  /* ステップ */
   .target-list { max-width: 760px; margin: 0 auto; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
   .target-list li { background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.85); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); padding: 16px 22px; font-size: 15px; color: var(--bt-ink-1); line-height: 1.7; display: flex; gap: 18px; align-items: center; }
   .step-badge { flex-shrink: 0; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bt-accent); color: #fff; font-family: var(--bt-font-serif); font-weight: 700; font-size: 20px; }
   .step-body .step-t { display: block; font-weight: 600; color: var(--bt-primary); font-size: 15.5px; margin-bottom: 2px; }
   .step-body .step-d { display: block; font-size: 13.5px; color: var(--bt-ink-3); line-height: 1.8; }
+
+  /* 募集要項テーブル */
+  .req-card { max-width: 880px; margin: 0 auto; background: rgba(255,255,255,0.78); border: 1px solid rgba(255,255,255,0.9); border-radius: var(--bt-r-xl); box-shadow: 0 14px 36px rgba(80,55,30,0.10); border-top: 4px solid var(--bt-accent); overflow: hidden; }
+  .req-card .req-head { padding: 26px 34px; border-bottom: 1px solid var(--bt-line-soft); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .req-card .req-head h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 20px; color: var(--bt-primary); margin: 0; }
+  .req-card .req-head .emp { font-size: 13px; font-weight: 700; color: var(--bt-accent); }
+  .req-row { display: grid; grid-template-columns: 160px 1fr; padding: 18px 34px; border-bottom: 1px solid var(--bt-line-soft); }
+  .req-row:last-child { border-bottom: none; }
+  .req-row .req-label { font-weight: 700; color: var(--bt-primary); font-size: 14px; }
+  .req-row .req-val { font-size: 14.5px; color: var(--bt-ink-2); line-height: 1.9; }
+  .req-row .req-val .note { display: block; font-size: 12.5px; color: var(--bt-ink-4); margin-top: 4px; line-height: 1.7; }
 
   /* FINAL */
   .approach-final { background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.85); max-width: 920px; margin: 0 auto; border-radius: var(--bt-r-xl); box-shadow: var(--bt-shadow-1); border-top: 4px solid var(--bt-primary); padding: 40px 44px; text-align: center; }
@@ -144,12 +144,9 @@
   .footer-col a:hover { color: #fff; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 22px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.45); }
 
-  .reveal { opacity: 1; }
-
   /* RESPONSIVE */
   @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
-  @media (max-width: 860px) { .num-grid, .job-grid { grid-template-columns: 1fr; max-width: 560px; } }
-  @media (max-width: 760px) { .approach-grid, .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .approach-final { padding: 28px 24px; } .sec-pad { padding: 56px 0; } }
+  @media (max-width: 760px) { .approach-grid, .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .approach-final { padding: 28px 24px; } .sec-pad { padding: 56px 0; } .req-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 22px; } .req-card .req-head { padding: 22px 22px; } }
   @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
 </style>
 <script type="application/ld+json">
@@ -168,6 +165,12 @@
       "position": 2,
       "name": "採用情報",
       "item": "https://belltree1102.com/recruit/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "運動サポーター（シード）",
+      "item": "https://belltree1102.com/recruit/seed/"
     }
   ]
 }
@@ -178,24 +181,24 @@
 <!-- ===================== HEADER ===================== -->
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="../index.html" aria-label="べるつりーグループ">
-      <img src="../assets/belltree-mark.svg" alt="" />
+    <a class="brand" href="../../index.html" aria-label="べるつりーグループ">
+      <img src="../../assets/belltree-mark.svg" alt="" />
       <span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>
     </a>
     <nav class="main-nav">
-      <a href="../index.html">ホーム</a>
-      <a href="../index.html#concerns">お悩み別解決策</a>
-      <a href="../index.html#model">サービス一覧</a>
-      <a href="../index.html#cases">改善事例</a>
-      <a href="../team/index.html">スタッフ紹介</a>
-      <a href="../about/index.html">会社概要</a>
+      <a href="../../index.html">ホーム</a>
+      <a href="../../index.html#concerns">お悩み別解決策</a>
+      <a href="../../index.html#model">サービス一覧</a>
+      <a href="../../index.html#cases">改善事例</a>
+      <a href="../../team/index.html">スタッフ紹介</a>
+      <a href="../../about/index.html">会社概要</a>
     </nav>
     <div class="header-cta">
       <span class="header-phone">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
         042-682-2839
       </span>
-      <a class="btn-sm" href="../contact/index.html">ご相談窓口</a>
+      <a class="btn-sm" href="../../contact/index.html">ご相談窓口</a>
     </div>
   </div>
 </header>
@@ -205,7 +208,7 @@
   <div class="wrap">
     <span><strong>株式会社べるつりー</strong></span>
     <span class="dot">・</span>
-    <span>八王子・南大沢・町田・日野・多摩</span>
+    <span>八王子・町田・日野・多摩</span>
     <span class="dot">／</span>
     <span>TEL 042-682-2839</span>
     <span class="dot">／</span>
@@ -216,9 +219,11 @@
 <!-- breadcrumb -->
 <nav class="breadcrumb" aria-label="現在位置">
   <div class="wrap">
-    <a href="../index.html">ホーム</a>
+    <a href="../../index.html">ホーム</a>
     <span class="sep">／</span>
-    <span aria-current="page">採用情報</span>
+    <a href="../index.html">採用情報</a>
+    <span class="sep">／</span>
+    <span aria-current="page">運動サポーター（シード）</span>
   </div>
 </nav>
 
@@ -227,132 +232,164 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-text">
-        <span class="eyebrow">Recruit | 採用情報</span>
-        <h1>地域の「これから」を、<br />多職種のチームで支える仕事。</h1>
-        <p class="lead">べるつりーは、訪問鍼灸マッサージ・フィットネス・居宅介護支援を一つのグループで運営する会社です。施術者・トレーナー・ケアマネジャーが職種の垣根を越えて、一人の方を長く支えます。その仲間を募集しています。</p>
+        <span class="eyebrow">Recruit | 運動サポーター（べるフィット シード）</span>
+        <span class="job-tag">優先採用・募集中</span>
+        <h1>資格も経験も不要。<br />会員さんと話して、笑顔をつくる仕事。</h1>
+        <p class="lead">「シード」は、女性向けの運動プログラムです。運動サポーターは、会員さんのそばで一緒に体を動かし、声をかけ、会話をする役割です。難しい技術より、「来てよかった」と思っていただける気づかいが活きます。週1日3時間から、ご都合に合わせて働けます。</p>
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="#requirements">募集要項を見る</a>
+          <a class="btn btn--ghost" href="../../contact/index.html">見学・相談する</a>
+        </div>
       </div>
       <div class="hero-photo">
-        <img src="../assets/img/photos/universal/post-treatment-debrief.png" alt="施術後にスタッフ同士で申し送りをしている様子" />
+        <img src="../../assets/img/photos/community-aishin-fitness-test.jpg" alt="運動プログラムで会員さんに寄り添う様子" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 数字 ===================== -->
-<section class="sec-pad" style="padding-top:24px">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>数字で見るべるつりー</h2>
-      <p>長く働ける環境には理由があります。</p>
-    </div>
-    <div class="num-grid reveal">
-      <div class="num-card">
-        <div class="num">0<small>人</small></div>
-        <div class="label">離職者数</div>
-        <div class="sub">創業15年、正社員の離職はありません</div>
-      </div>
-      <div class="num-card">
-        <div class="num">10.2<small>年</small></div>
-        <div class="label">平均勤続年数</div>
-        <div class="sub">業界平均を大きく上回ります</div>
-      </div>
-      <div class="num-card">
-        <div class="num">50<small>%</small></div>
-        <div class="label">紹介入社率</div>
-        <div class="sub">スタッフ自身が仲間を呼ぶ職場です</div>
-      </div>
-    </div>
+<!-- バッジ -->
+<div class="wrap">
+  <div class="badge-row">
+    <span class="pill">女性向けプログラム</span>
+    <span class="pill">未経験歓迎</span>
+    <span class="pill">パート・アルバイト歓迎</span>
+    <span class="pill">週1日3時間から</span>
   </div>
-</section>
+</div>
 
-<!-- ===================== 募集職種 ===================== -->
-<section class="sec-pad" id="jobs">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>募集職種</h2>
-      <p>くわしい募集要項は、職種ごとの案内ページをご覧ください。</p>
-    </div>
-    <div class="job-grid reveal">
-
-      <a class="job-card" href="acupuncture/index.html">
-        <span class="job-status job-status--hiring">募集中</span>
-        <h3>鍼灸・あん摩マッサージ指圧師<br />（正社員）</h3>
-        <p class="job-place">訪問鍼灸マッサージ／八王子・町田・日野・多摩</p>
-        <p class="job-desc">ご自宅や施設を訪問し、はり・きゅう・マッサージで痛みの緩和と機能の維持を支えます。1日7件以内・一人約30分の、余裕のある時間設計です。</p>
-        <span class="job-link">募集要項を見る →</span>
-      </a>
-
-      <a class="job-card" href="fitness/index.html">
-        <span class="job-status job-status--hiring">募集中</span>
-        <h3>フィットネストレーナー<br />（べるフィット）</h3>
-        <p class="job-place">運動施設べるフィット／町田</p>
-        <p class="job-desc">シニアの方が安心して通える運動施設で、運動指導とサポートを担当します。「ここに来ると元気が出る」と言っていただける場所づくりの担い手です。</p>
-        <span class="job-link">募集要項を見る →</span>
-      </a>
-
-      <a class="job-card" href="seed/index.html">
-        <span class="job-status job-status--priority">優先採用</span>
-        <h3>運動サポーター<br />（べるフィット シード）</h3>
-        <p class="job-place">女性向けプログラム シード／町田</p>
-        <p class="job-desc">女性向け運動プログラムのサポート役です。資格は問いません。身体を動かすことと、人と話すことが好きな方をお待ちしています。</p>
-        <span class="job-link">募集要項を見る →</span>
-      </a>
-
-    </div>
-    <p class="job-note">※ 各職種の募集要項は、職種名をクリックするとご覧いただけます。掲載のない職種についても、お気軽にお問い合わせください。</p>
-  </div>
-</section>
-
-<!-- ===================== 働く環境 ===================== -->
+<!-- ===================== シードとは ===================== -->
 <section class="sec-pad">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>べるつりーで働くということ</h2>
+    <div class="sec-head">
+      <h2>「シード」ってどんな場所？</h2>
+      <p>運動施設べるフィットの中にある、女性向けの運動プログラムです。50〜80代の女性会員が集う、地域の居場所のような場所です。</p>
     </div>
-    <div class="approach-grid reveal">
+    <div class="lead-note">
+      <p>「トレーナー」ではなく、会員さんの運動を支えるコミュニティスタッフです。<br />難しい専門技術は必要ありません。</p>
+    </div>
+    <div class="approach-grid">
       <div class="approach-card">
-        <h3>多職種がひとつのチーム</h3>
-        <p>施術者・トレーナー・ケアマネジャーが同じグループにいます。自分の専門の先で困っている方を、社内の別の専門職へつなげます。一人で抱え込まない働き方です。</p>
+        <h3>安心できる空間</h3>
+        <p>女性向けの落ち着いた空間で、出入り自由型でゆったり利用できます。常時10名前後の方が利用しています。</p>
       </div>
       <div class="approach-card">
-        <h3>一人の方と、長く付き合う</h3>
-        <p>その場かぎりの対応ではなく、同じ方を継続して担当します。「また歩けるようになった」「外に出られるようになった」——変化に立ち会えるのがこの仕事の手応えです。</p>
+        <h3>健康維持・フレイル予防</h3>
+        <p>軽い運動を習慣にして、健康を保ち、フレイル（心身の衰え）を予防することを目的としています。</p>
       </div>
       <div class="approach-card">
-        <h3>仲間が仲間を呼ぶ職場</h3>
-        <p>入社の半分はスタッフからの紹介です。働いている本人が「いい職場だ」と思っていなければ、こうはなりません。まずは見学で、雰囲気を確かめてください。</p>
+        <h3>地域の居場所</h3>
+        <p>運動だけでなく、会員さん同士の交流が生まれる場所でもあります。地域のコミュニティを育てる役割も担っています。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 応募の流れ ===================== -->
-<section class="sec-pad">
+<!-- ===================== 仕事内容 ===================== -->
+<section class="sec-pad" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>応募の流れ</h2>
-      <p>「まずは話を聞いてみたい」という段階で構いません。</p>
+    <div class="sec-head">
+      <h2>運動サポーターの仕事</h2>
+      <p>会員さんに寄り添い、安心できる居場所づくりを担います。マシンの知識などは、入社後の研修で覚えられます。</p>
     </div>
-    <ul class="target-list reveal">
-      <li><span class="step-badge">1</span><span class="step-body"><span class="step-t">お電話・フォームでご連絡</span><span class="step-d">お問い合わせフォームで「採用について」を選ぶか、お電話で「採用の件で」とお伝えください。</span></span></li>
-      <li><span class="step-badge">2</span><span class="step-body"><span class="step-t">見学・面談</span><span class="step-d">現場の見学と面談で、仕事内容・働き方・条件をすり合わせます。疑問はこの場ですべて聞いてください。</span></span></li>
-      <li><span class="step-badge">3</span><span class="step-body"><span class="step-t">入社</span><span class="step-d">入社日や勤務形態は、現職の引き継ぎなどご事情に合わせて調整します。</span></span></li>
+    <ul class="target-list">
+      <li><span class="step-badge">1</span><span class="step-body"><span class="step-t">運動サポート</span><span class="step-d">会員さんのそばで、マシンや体操を一緒に行います。難しい動作指導ではなく「隣にいること」が仕事です。</span></span></li>
+      <li><span class="step-badge">2</span><span class="step-body"><span class="step-t">声かけ</span><span class="step-d">「今日も来てよかった」と思っていただけるよう、運動への前向きな一言をかけます。</span></span></li>
+      <li><span class="step-badge">3</span><span class="step-body"><span class="step-t">会員さんとの会話</span><span class="step-d">天気の話でも、体調の話でも。お名前を覚えて、毎回話しかけてください。</span></span></li>
+      <li><span class="step-badge">4</span><span class="step-body"><span class="step-t">マシンのお手伝い</span><span class="step-d">機器の操作をサポートします。使い方は研修で覚えられます。</span></span></li>
+      <li><span class="step-badge">5</span><span class="step-body"><span class="step-t">受付・清掃</span><span class="step-d">来館受付やチェックイン対応、気持ちよく過ごせる施設環境の維持を行います。</span></span></li>
     </ul>
+  </div>
+</section>
+
+<!-- ===================== 1日の流れ ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>働き方・シフト</h2>
+      <p>シードの営業は 11:30〜13:30／16:30〜20:00。昼のみ・夕方のみなど、ご都合に合わせたシフト調整ができます（要相談）。</p>
+    </div>
+    <ul class="target-list">
+      <li><span class="step-badge">昼</span><span class="step-body"><span class="step-t">昼のセッション（11:30〜13:30）</span><span class="step-d">受付対応、会員さんとの会話・声かけ、運動サポート、清掃などを行います。</span></span></li>
+      <li><span class="step-badge">夕</span><span class="step-body"><span class="step-t">夕方〜夜のセッション（16:30〜20:00）</span><span class="step-d">仕事帰りの会員さんが多い時間帯です。活気ある会話でコミュニティを盛り上げます。</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== この仕事の魅力 ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>この仕事の魅力</h2>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <h3>地域の健康づくりに関われる</h3>
+        <p>地域の女性の健康と笑顔を、毎日直接支えることができます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>人との交流が多い</h3>
+        <p>会員さんとの会話が仕事の中心です。人と話すことが好きな方にぴったりです。</p>
+      </div>
+      <div class="approach-card">
+        <h3>未経験から始められる</h3>
+        <p>運動・接客の研修を一から行います。特別な資格は必要ありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 募集要項 ===================== -->
+<section class="sec-pad" id="requirements">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>募集要項</h2>
+    </div>
+    <div class="req-card">
+      <div class="req-head">
+        <h3>運動サポーター（コミュニティスタッフ）</h3>
+        <span class="emp">パート・アルバイト</span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">給与</span>
+        <span class="req-val">時給 1,263円〜</span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">勤務地</span>
+        <span class="req-val">運動施設べるフィット シード（町田）</span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">勤務時間</span>
+        <span class="req-val">週1日3時間から（シフト制）<span class="note">シードの営業時間は 11:30〜13:30／16:30〜20:00。昼のみ・夕方のみなど、ご都合に合わせて調整できます。</span></span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">雇用形態</span>
+        <span class="req-val">パート・アルバイト<span class="note">希望者には正社員登用制度があります。</span></span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">応募資格</span>
+        <span class="req-val">資格不要・未経験OK<span class="note">人と話すことが好きな方、明るく前向きな方、高齢の方と関わることが好きな方を歓迎します。30〜50代の方、学生の方も歓迎です。</span></span>
+      </div>
+      <div class="req-row">
+        <span class="req-label">選考の流れ</span>
+        <span class="req-val">お問い合わせ → 施設見学 → 面談 → 入社<span class="note">見学のみも歓迎です。応募・書類の提出は見学の後で大丈夫です。</span></span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===================== 最終CTA ===================== -->
 <section class="sec-pad">
   <div class="wrap">
-    <div class="approach-final reveal">
-      <h2>見学・ご相談はこちらから</h2>
-      <p>応募を決めていなくても大丈夫です。仕事の中身や職場の雰囲気など、気になることをお聞かせください。</p>
+    <div class="approach-final">
+      <h2>まずは施設の雰囲気を見に来てください</h2>
+      <p>週1日3時間から大丈夫です。応募を決めていなくても構いません。気になることがあれば、お気軽にお聞かせください。お電話の場合は「採用の件で」とお伝えください。</p>
       <div class="cta-row">
-        <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'recruit'});}">
+        <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'recruit-seed'});}">
           <svg viewBox="0 0 48 48" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
           042-682-2839
         </a>
-        <a class="btn btn--ghost" href="../contact/index.html">フォームで連絡する</a>
+        <a class="btn btn--ghost" href="../../contact/index.html">フォームで連絡する</a>
       </div>
     </div>
   </div>
@@ -361,17 +398,17 @@
 <!-- ===================== 関連 ===================== -->
 <section class="sec-pad" style="padding-top:0">
   <div class="wrap">
-    <div class="sub-nav reveal">
-      <h3>関連するご案内</h3>
+    <div class="sub-nav">
+      <h3>ほかの募集職種</h3>
       <div class="sub-nav-grid">
-        <a class="sub-nav-item" href="../team/index.html">
-          <div><span class="sub-nav-label">スタッフ紹介</span><span class="sub-nav-desc">一緒に働く仲間の顔ぶれ</span></div>
+        <a class="sub-nav-item" href="../acupuncture/index.html">
+          <div><span class="sub-nav-label">鍼灸・あん摩マッサージ指圧師</span><span class="sub-nav-desc">訪問施術／正社員</span></div>
         </a>
-        <a class="sub-nav-item" href="../about/index.html">
-          <div><span class="sub-nav-label">会社概要</span><span class="sub-nav-desc">べるつりーについて</span></div>
+        <a class="sub-nav-item" href="../fitness/index.html">
+          <div><span class="sub-nav-label">フィットネストレーナー</span><span class="sub-nav-desc">べるフィット／資格不要・未経験OK</span></div>
         </a>
-        <a class="sub-nav-item" href="../index.html#model">
-          <div><span class="sub-nav-label">サービス一覧</span><span class="sub-nav-desc">私たちの仕事の全体像</span></div>
+        <a class="sub-nav-item" href="../index.html">
+          <div><span class="sub-nav-label">採用情報トップ</span><span class="sub-nav-desc">べるつりーで働くこと</span></div>
         </a>
       </div>
     </div>
@@ -382,34 +419,34 @@
 <footer class="site-footer" id="final">
   <div class="wrap footer-top">
     <div class="f-brand">
-      <img src="../assets/belltree-mark.svg" alt="" />
+      <img src="../../assets/belltree-mark.svg" alt="" />
       <div class="name">べるつりーグループ</div>
       <p>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
     </div>
     <div class="footer-col">
       <h5>企業情報</h5>
       <ul>
-        <li><a href="../index.html">ホーム</a></li>
-        <li><a href="../about/index.html">会社概要</a></li>
-        <li><a href="../team/index.html">スタッフ紹介</a></li>
-        <li><a href="index.html">採用情報</a></li>
+        <li><a href="../../index.html">ホーム</a></li>
+        <li><a href="../../about/index.html">会社概要</a></li>
+        <li><a href="../../team/index.html">スタッフ紹介</a></li>
+        <li><a href="../index.html">採用情報</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>サービス</h5>
       <ul>
-        <li><a href="../services/home-visit/index.html">訪問鍼灸マッサージ</a></li>
-        <li><a href="../services/fee-insurance/index.html">料金と保険</a></li>
-        <li><a href="../services/home-care/index.html">居宅介護支援</a></li>
-        <li><a href="../services/bellfit/index.html">べるフィット</a></li>
+        <li><a href="../../services/home-visit/index.html">訪問鍼灸マッサージ</a></li>
+        <li><a href="../../services/fee-insurance/index.html">料金と保険</a></li>
+        <li><a href="../../services/home-care/index.html">居宅介護支援</a></li>
+        <li><a href="../../services/bellfit/index.html">べるフィット</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>お問い合わせ</h5>
       <ul>
         <li><a href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'footer'});}">042-682-2839</a></li>
-        <li><a href="../contact/index.html">お問い合わせフォーム</a></li>
-        <li><a href="../privacy-policy/index.html">個人情報保護方針</a></li>
+        <li><a href="../../contact/index.html">お問い合わせフォーム</a></li>
+        <li><a href="../../privacy-policy/index.html">個人情報保護方針</a></li>
       </ul>
     </div>
   </div>
@@ -420,7 +457,7 @@
 </footer>
 
 <!-- sticky phone CTA -->
-<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'fab'});}">
+<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'recruit-seed-fab'});}">
   <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
   <span class="fab-call-txt">電話で相談<small>042-682-2839</small></span>
 </a>
