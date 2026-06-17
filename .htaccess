@@ -1,16 +1,17 @@
-# BellTree Maintenance Mode
-# To disable maintenance mode:
-# Comment out or remove the rewrite rules below
-
 RewriteEngine On
 
-# Avoid infinite loops and allow assets to load, and exclude /test/
-RewriteCond %{REQUEST_URI} !/maintenance\.html$
-RewriteCond %{REQUEST_URI} !^/test/
-RewriteCond %{REQUEST_URI} !assets/
-RewriteCond %{REQUEST_URI} !images/
-RewriteCond %{REQUEST_URI} !fonts/
-RewriteCond %{REQUEST_URI} !styles\.css$
-
-# Redirect all other traffic to maintenance.html
-RewriteRule ^.*$ maintenance.html [R=302,L]
+# 旧グループページは belltree1102.com / bellregal.com へ恒久移転（301）
+RedirectMatch 301 ^/services/?$ https://belltree1102.com/
+Redirect 301 /services/acupuncture https://belltree1102.com/services/home-visit/
+Redirect 301 /services/home-care https://belltree1102.com/services/home-care/
+Redirect 301 /services/legal https://bellregal.com/
+Redirect 301 /services/shukatsu https://bellregal.com/services/shukatsu/
+Redirect 301 /about https://belltree1102.com/about/
+Redirect 301 /team https://belltree1102.com/team/
+RedirectMatch 301 ^/solutions(/.*)?$ https://belltree1102.com/solutions$1
+RedirectMatch 301 ^/recruit(/.*)?$ https://belltree1102.com/recruit$1
+Redirect 301 /family https://belltree1102.com/
+Redirect 301 /community https://belltree1102.com/pro/
+Redirect 301 /cases https://belltree1102.com/
+Redirect 301 /news https://belltree1102.com/
+Redirect 301 /model https://belltree1102.com/about/
