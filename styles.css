@@ -2920,3 +2920,177 @@ table, .num, .stat-value {
     opacity: 1;
   }
 }
+
+/* ===========================================================
+   Top page enhancements (2026-06 — existing tone preserved)
+   =========================================================== */
+
+/* Skip link — keyboard / screen-reader access to main content */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: var(--space-md);
+  z-index: var(--z-modal);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-body);
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: var(--space-md);
+  color: var(--color-surface);
+}
+
+/* Stronger focus ring (3px) for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible,
+.nav-cta:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Ensure tap targets reach 44px on touch devices */
+@media (max-width: 1023px) {
+  .nav-cta,
+  .fab-button,
+  .mobile-nav-list > li > a,
+  .mobile-menu-footer a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Photo bands — reuse existing radius/shadow language */
+.photo-band {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-top: var(--space-2xl);
+  aspect-ratio: 16 / 7;
+  background-color: var(--color-border);
+}
+.photo-band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 767px) {
+  .photo-band {
+    aspect-ratio: 4 / 3;
+    margin-top: var(--space-xl);
+  }
+}
+
+/* Staff cards — photo variant built on existing card language */
+.staff-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+@media (min-width: 768px) {
+  .staff-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.staff-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.staff-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.staff-card__photo {
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-border);
+}
+.staff-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.staff-card__body {
+  padding: var(--space-lg);
+}
+.staff-card__role {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+/* Member voice cards */
+.voice-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+@media (min-width: 768px) {
+  .voice-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.voice-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.voice-card__tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  background: rgba(194, 122, 101, 0.08);
+  border: 1px solid rgba(194, 122, 101, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.85rem;
+  margin-bottom: var(--space-md);
+}
+.voice-card__quote {
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-md);
+}
+.voice-card__person {
+  margin-top: auto;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Responsive Google Map embed */
+.map-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-top: var(--space-xl);
+}
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 767px) {
+  .map-embed { aspect-ratio: 4 / 3; }
+}
