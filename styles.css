@@ -238,7 +238,7 @@ p:last-child { margin-bottom: 0; }
   align-items: flex-end;
   gap: 4px; /* Space between utility and main rows */
   margin-left: auto;
-  margin-right: var(--space-xl);
+  margin-right: var(--space-md);
   overflow: visible !important;
 }
 
@@ -301,7 +301,7 @@ p:last-child { margin-bottom: 0; }
 
 .nav-list {
   display: flex;
-  gap: var(--space-xl);
+  gap: clamp(1rem, 1.8vw, var(--space-lg));
   list-style: none;
   padding: 0;
   margin: 0;
@@ -318,6 +318,7 @@ p:last-child { margin-bottom: 0; }
   transition: all 0.3s ease;
   display: block;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-list a::after {

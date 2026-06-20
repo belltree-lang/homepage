@@ -485,5 +485,84 @@
       });
     </script>
     <script src="../../assets/js/form-handler.js"></script>
+    <!-- リーフ空き状況：管理スプレッドシート（読み取り公開・個人情報なし）から自動反映 -->
+    <script>
+    (function () {
+      var CSV_URL = 'https://docs.google.com/spreadsheets/d/14G5dDBOsjlJ67zI2qxYuVSEF76TfS_E8m08UbbRHt4M/gviz/tq?tqx=out:csv&gid=814998394';
+      var STATUS = { '満員': 'full', '残りわずか': 'few', '空きあり': 'available', '要相談': 'ask' };
+      var DAYS = ['月曜', '火曜', '水曜', '木曜', '金曜'];
+      var PARTS = ['1部', '2部', '3部', '4部'];
+
+      function parseCSV(text) {
+        var rows = [], row = [], cur = '', i = 0, q = false, c;
+        while (i < text.length) {
+          c = text[i];
+          if (q) {
+            if (c === '"') { if (text[i + 1] === '"') { cur += '"'; i++; } else { q = false; } }
+            else { cur += c; }
+          } else {
+            if (c === '"') { q = true; }
+            else if (c === ',') { row.push(cur); cur = ''; }
+            else if (c === '\n') { row.push(cur); rows.push(row); row = []; cur = ''; }
+            else if (c !== '\r') { cur += c; }
+          }
+          i++;
+        }
+        if (cur !== '' || row.length) { row.push(cur); rows.push(row); }
+        return rows;
+      }
+      function idx(head, name) {
+        for (var k = 0; k < head.length; k++) { if ((head[k] || '').trim() === name) return k; }
+        return -1;
+      }
+
+      fetch(CSV_URL, { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('http'); return r.text(); })
+        .then(function (text) {
+          var rows = parseCSV(text);
+          if (!rows.length) throw new Error('empty');
+          var head = rows[0];
+          var cDay = idx(head, '曜日'), cSvc = idx(head, 'サービス'), cPart = idx(head, '部'),
+              cSt = idx(head, '表示状態'), cPub = idx(head, '公開'), cUpd = idx(head, '更新日時');
+          if (cDay < 0 || cPart < 0 || cSt < 0) throw new Error('cols');
+          var map = {}, latest = '';
+          for (var n = 1; n < rows.length; n++) {
+            var row = rows[n];
+            if (cSvc >= 0 && (row[cSvc] || '').trim() !== 'リーフ') continue;
+            if (cPub >= 0 && (row[cPub] || '').trim() !== '公開') continue;
+            var d = (row[cDay] || '').trim(), p = (row[cPart] || '').trim(), s = (row[cSt] || '').trim();
+            if (DAYS.indexOf(d) < 0) continue;
+            map[d] = map[d] || {};
+            map[d][p] = s;
+            if (cUpd >= 0 && (row[cUpd] || '').trim()) latest = (row[cUpd] || '').trim();
+          }
+          var trs = document.querySelectorAll('.vacancy-table tbody tr');
+          var applied = false;
+          trs.forEach(function (tr) {
+            var thEl = tr.querySelector('th');
+            if (!thEl) return;
+            var day = thEl.textContent.trim();
+            if (!map[day]) return;
+            var tds = tr.querySelectorAll('td');
+            PARTS.forEach(function (p, i2) {
+              var s = map[day][p];
+              if (s && tds[i2] && STATUS[s]) {
+                tds[i2].setAttribute('data-status', STATUS[s]);
+                var badge = tds[i2].querySelector('.vacancy-badge');
+                if (badge) badge.textContent = s;
+                applied = true;
+              }
+            });
+          });
+          if (applied) {
+            var note = document.querySelector('.vacancy-notice');
+            if (note) {
+              note.textContent = '※ 最新の空き状況を自動で反映しています' + (latest ? '（最終更新: ' + latest + '）' : '') + '。満員の枠も、体験・見学のご相談は承っています。お電話（042-682-2839）でもご確認いただけます。';
+            }
+          }
+        })
+        .catch(function () { /* 取得できない場合は表示済みの内容をそのまま残す（フォールバック） */ });
+    })();
+    </script>
   </body>
 </html>
