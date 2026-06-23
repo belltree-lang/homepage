@@ -19,8 +19,8 @@
   --font-size-lead: 1.125rem;
   --font-size-heading-sm: 1.25rem;
   --font-size-heading-md: 1.75rem;
-  --font-size-heading-lg: clamp(2rem, 4vw, 2.75rem);
-  --font-size-heading-xl: clamp(2.5rem, 5vw, 3.5rem);
+  --font-size-heading-lg: clamp(1.5rem, 4vw, 2.75rem);
+  --font-size-heading-xl: clamp(1.85rem, 5vw, 3.5rem);
   
   --font-weight-regular: 400;
   --font-weight-medium: 500;
