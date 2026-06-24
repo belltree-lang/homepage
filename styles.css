@@ -13,7 +13,7 @@
   --color-border: #E5E0D8;
   --color-border-strong: #C4BCB3;
 
-  --font-family-base: "Noto Sans JP", sans-serif;
+  --font-family-base: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
   --font-size-sm: 0.875rem;
   --font-size-body: 1rem;
   --font-size-lead: 1.125rem;
@@ -2633,10 +2633,10 @@ textarea.form-control {
 h1,
 .section-header h2,
 .h-mincho {
-  font-family: "Shippori Mincho B1", "Yu Mincho", "ヒラギノ明朝 ProN", serif;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
+  font-family: "Zen Kaku Gothic New", "Shippori Mincho B1", "Yu Mincho", "ヒラギノ明朝 ProN", serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
   font-feature-settings: "palt";
 }
 .eyebrow {
