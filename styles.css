@@ -852,7 +852,18 @@ p:last-child { margin-bottom: 0; }
 }
 
 .section-header .eyebrow {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-header .eyebrow::before,
+.section-header .eyebrow::after {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
 }
 
 .eyebrow {
