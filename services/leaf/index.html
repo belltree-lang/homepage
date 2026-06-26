@@ -9,7 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
-  
+
+    <!-- === リーフ 文字組み（ページ固有の大胆化。共通の明朝化は styles.css 側） === -->
+    <style>
+      .editorial-split h1 .hero-pre{ display:block; font-weight:700; font-size:1.5rem;
+        letter-spacing:.09em; color:var(--color-text); opacity:.9; margin-bottom:.75rem; }
+      .editorial-split h1 .hero-emph{ display:block; font-size:clamp(2.6rem,4vw,3.8rem);
+        line-height:1.2; letter-spacing:.06em; }
+      .editorial-split h1 .hero-emph .n{ color:var(--color-accent); }
+      .editorial-split .text-lead{ font-size:1.16rem !important; line-height:2.05 !important; max-width:32em; }
+
+      /* 「こんな方に」カード見出しを格上げ */
+      .grid-2 .card h4{ font-size:1.3rem !important; letter-spacing:.04em; }
+
+      /* 空き状況：部番号を明朝に */
+      .vacancy-time-num{ font-family:"Shippori Mincho B1", serif; }
+
+      /* ご利用の流れ：番号を大きな明朝・見出し格上げ */
+      .feature-list-icon{ font-family:"Shippori Mincho B1", serif !important; font-weight:700 !important;
+        font-size:2.9rem !important; line-height:1 !important; opacity:.5; }
+      .feature-list-item h4{ font-size:1.3rem !important; }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/services/leaf/" />
     <meta property="og:type" content="article" />
@@ -144,7 +165,7 @@
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">べるフィット｜保険が使えるジム（リーフ）</span>
-            <h1 style="margin-bottom: var(--space-lg);">保険が使えるジム、<br/>リーフ。</h1>
+            <h1 style="margin-bottom: var(--space-lg);"><span class="hero-pre">保険が使えるジム、</span><span class="hero-emph">リーフ<span class="n">。</span></span></h1>
             <p class="text-lead text-muted">リーフは、介護保険の総合事業を使って通える「保険が使えるジム」です。医療機関を退院した後も専門職のもとで運動を続けたい方や、身体機能の維持を図りたい方を支え、住み慣れた地域での生活を応援します。</p>
           </div>
           <div class="editorial-image">

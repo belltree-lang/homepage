@@ -9,7 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
-  
+
+    <!-- === べるフィットtop 文字組み（ページ固有の大胆化。共通の明朝化は styles.css 側） === -->
+    <style>
+      .editorial-split h1 .hero-pre{ display:block; font-weight:700; font-size:1.5rem;
+        letter-spacing:.09em; color:var(--color-text); opacity:.9; margin-bottom:.75rem; }
+      .editorial-split h1 .hero-emph{ display:block; font-size:clamp(2.5rem,3.7vw,3.5rem); line-height:1.22; }
+      .editorial-split h1 .hero-emph .n{ color:var(--color-accent); font-size:1.18em; padding:0 .03em; }
+      .editorial-split .text-lead{ font-size:1.16rem !important; line-height:2.05 !important; max-width:30em; }
+      .grid-3{ counter-reset:plan; }
+      .grid-3 > .card{ position:relative; overflow:hidden; }
+      .grid-3 > .card::after{ counter-increment:plan; content:"0" counter(plan);
+        position:absolute; top:.8rem; right:1.3rem; font-family:"Shippori Mincho B1",serif; font-weight:700;
+        font-size:2.7rem; line-height:1; color:var(--color-border-strong); opacity:.85; pointer-events:none; }
+      .grid-3 .card h3{ font-size:1.55rem !important; }
+      .feature-list-icon{ font-family:"Shippori Mincho B1",serif !important; font-weight:700 !important;
+        font-size:2.9rem !important; line-height:1 !important; opacity:.5; }
+      .feature-list-item h4{ font-size:1.3rem !important; }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/services/fitness/" />
     <meta property="og:type" content="article" />
@@ -143,7 +161,7 @@
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">べるフィット｜運動施設</span>
-            <h1 style="margin-bottom: var(--space-lg);">運動の習慣づくりを支える、<br/>3つの通い方。</h1>
+            <h1 style="margin-bottom: var(--space-lg);"><span class="hero-pre">運動の習慣づくりを支える、</span><span class="hero-emph"><span class="n">3</span>つの通い方。</span></h1>
             <p class="text-lead text-muted">べるフィットは、元気なうちからの運動習慣づくりを支える運動施設です。生活スタイルやお身体の状態に合わせて、無理なく続けられる通い方をお選びいただけます。</p>
           </div>
           <div class="editorial-image">

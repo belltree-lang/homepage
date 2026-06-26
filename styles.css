@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&display=swap');
+
 /* Reset & Foundation */
 :root {
   --color-primary: #1A365D;
@@ -136,6 +138,23 @@ p:last-child { margin-bottom: 0; }
 .text-muted { color: var(--color-text-muted); }
 .text-lead { font-size: var(--font-size-lead); line-height: var(--line-height-loose); }
 .text-center { text-align: center; }
+
+/* ===================================================================
+   タイポグラフィ強化（2026-06-25 全ページ一括適用）
+   見出しを明朝（Shippori Mincho B1）に・約物詰め・組みの微調整。
+   レイアウト・配色・文字サイズは変更しない（壊れ防止）。
+   =================================================================== */
+* { font-feature-settings: "palt" 1; }
+body { line-break: strict; }
+
+h1, h2, h3, h4, h5, h6 { font-family: "Shippori Mincho B1", serif; }
+h1, h2 { font-weight: 800; letter-spacing: 0.05em; line-height: 1.45; }
+h3 { font-weight: 700; letter-spacing: 0.04em; }
+h4, h5, h6 { font-weight: 700; letter-spacing: 0.04em; }
+
+p { text-wrap: pretty; }
+.text-lead { letter-spacing: 0.02em; text-wrap: pretty; }
+.eyebrow { letter-spacing: 0.18em; }
 
 /* Layout & Containers */
 .container {

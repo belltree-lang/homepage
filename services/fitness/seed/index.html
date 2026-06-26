@@ -9,7 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../../styles.css" />
-  
+
+    <!-- === シード 文字組み（ページ固有の大胆化。共通の明朝化は styles.css 側） === -->
+    <style>
+      .editorial-split h1{ font-size:clamp(2rem,3.2vw,2.95rem) !important; line-height:1.5 !important; letter-spacing:.05em !important; }
+      .editorial-split h1 .hl{ color:var(--color-accent); }
+      .editorial-split .text-lead{ font-size:1.13rem !important; line-height:2.05 !important; max-width:32em; }
+      .grid-2 .card h4{ font-size:1.25rem !important; letter-spacing:.04em; }
+      .app-guide-num{ font-family:"Shippori Mincho B1", serif; font-weight:800; font-size:2.4rem; line-height:1; }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/services/fitness/seed/" />
     <meta property="og:type" content="article" />
@@ -150,7 +159,7 @@
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">BELLFIT | SEED (WOMEN'S)</span>
-            <h1 style="margin-bottom: var(--space-lg);">安心できる空間で、<br/>心と身体の健康維持を。</h1>
+            <h1 style="margin-bottom: var(--space-lg);"><span class="hl">安心できる空間</span>で、<br/>心と身体の健康維持を。</h1>
             <p class="text-lead text-muted">日中の時間帯に女性限定枠（シード）を設け、同性同士で気兼ねなく運動や会話を楽しめる女性向けプログラムです。身体を動かす習慣づくりと、人とのふれあいの居場所として、無理なくお使いいただけます。</p>
           </div>
           <div class="editorial-image">

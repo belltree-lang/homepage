@@ -9,6 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
+
+    <!-- === お悩みページ 文字組み（ページ固有の大胆化。共通の明朝化は styles.css 側） === -->
+    <style>
+      .section-header h1{ font-size:clamp(1.9rem,3vw,2.7rem) !important; line-height:1.5 !important; letter-spacing:.04em !important; }
+      .section-header h1 .hl{ color:var(--color-accent); }
+      .section-header .text-lead{ font-size:1.13rem !important; line-height:2.0 !important; }
+    </style>
+
     <style>
       .expert-section {
         background: var(--color-background-alt);
@@ -319,7 +327,7 @@
         <div class="container container-narrow">
           <div class="section-header text-center">
             <span class="eyebrow">SOLUTIONS | KNEE PAIN</span>
-            <h1>南大沢・町田エリアで膝の痛みにお悩みの方へ</h1>
+            <h1>南大沢・町田エリアで<span class="hl">膝の痛み</span>にお悩みの方へ</h1>
             <p class="text-lead text-muted mt-lg">
               階段の昇降が辛い、歩くのが不安といったお悩みに。町田市・八王子市周辺のご自宅で受けられる訪問鍼灸マッサージをご提案します。
             </p>

@@ -9,7 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
-  
+
+    <!-- === お悩みページ 文字組み（ページ固有の大胆化。共通の明朝化は styles.css 側） === -->
+    <style>
+      .section-header h1{ font-size:clamp(1.9rem,3vw,2.7rem) !important; line-height:1.5 !important; letter-spacing:.04em !important; }
+      .section-header h1 .hl{ color:var(--color-accent); }
+      .section-header .text-lead{ font-size:1.13rem !important; line-height:2.0 !important; }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/solutions/parkinson/" />
     <meta property="og:type" content="article" />
@@ -264,7 +271,7 @@
         <div class="container container-narrow">
           <div class="section-header text-center">
             <span class="eyebrow">SOLUTIONS | PARKINSON'S CARE</span>
-            <h1>パーキンソン病の方に向けた訪問鍼灸マッサージ</h1>
+            <h1><span class="hl">パーキンソン病</span>の方に向けた訪問鍼灸マッサージ</h1>
             <p class="text-lead text-muted mt-lg">
               町田・八王子エリアで、進行に伴うお身体の不自由さに不安を感じている方へ。
             </p>

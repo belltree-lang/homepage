@@ -9,7 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../../styles.css" />
-  
+
+    <!-- === ナイト 文字組み（ページ固有の大胆化。共通の明朝化は styles.css 側） === -->
+    <style>
+      .editorial-split h1{ font-size:clamp(2rem,3.2vw,2.95rem) !important; line-height:1.5 !important; letter-spacing:.05em !important; }
+      .editorial-split h1 .hl{ color:var(--color-accent); }
+      .editorial-split .text-lead{ font-size:1.13rem !important; line-height:2.05 !important; max-width:32em; }
+      .grid-2 .card h4{ font-size:1.25rem !important; letter-spacing:.04em; }
+      .app-guide-num{ font-family:"Shippori Mincho B1", serif; font-weight:800; font-size:2.4rem; line-height:1; }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/services/fitness/night/" />
     <meta property="og:type" content="article" />
@@ -150,7 +159,7 @@
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">BELLFIT | NIGHT & WEEKEND</span>
-            <h1 style="margin-bottom: var(--space-lg);">自分のペースで、<br/>無理なく続く運動習慣を。</h1>
+            <h1 style="margin-bottom: var(--space-lg);"><span class="hl">自分のペース</span>で、<br/>無理なく続く運動習慣を。</h1>
             <p class="text-lead text-muted">日中は仕事などで通えない方や、ご自身のペースでトレーニングに集中したい方向けに、平日の夜間帯や週末を通した自由利用プラン（ナイト会員枠）を提供しています。</p>
           </div>
           <div class="editorial-image">
