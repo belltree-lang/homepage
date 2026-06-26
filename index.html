@@ -22,6 +22,110 @@
       .grid-2 .card h4{ font-size:1.25rem !important; letter-spacing:.04em; }
     </style>
 
+    <!-- ============================================================
+         モック再現 装飾レイヤー（images2.0 完成モックに忠実）
+         このブロックのみで完結。styles.css は触らない。
+         ============================================================ -->
+    <style>
+      /* --- 罫線アイブロウ（旧 ::before/::after の横線）を打ち消す --- */
+      .section-header .eyebrow::before,
+      .section-header .eyebrow::after{ content:none !important; }
+      .section-header .eyebrow{ display:block !important; gap:0 !important; }
+
+      /* --- 背景の温度感（モックのクリーム／ピーチ寄りへ）--- */
+      body{ background-color:#FBF7F2; }
+      .bg-soft{ background-color:#FBF6F1 !important; }
+      .bg-alt{ background-color:#F7EDE6 !important; }
+
+      /* セクションを装飾の基準に。装飾は後ろ・前面はコンテンツ */
+      .sec-deco, .hero-deco{ position:relative; overflow:hidden; }
+      .sec-deco > .container,
+      .hero-deco > .container{ position:relative; z-index:2; }
+      .sec-deco > img,
+      .hero-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+
+      /* =========== ヒーロー装飾 =========== */
+      .hero-deco__wash{ top:-6%; right:-4%; width:min(46vw,560px); opacity:.55;
+        filter:saturate(.95); }
+      .hero-deco__glow{ top:6%; right:8%; width:min(30vw,360px); opacity:.45; }
+      .hero-deco__leaf{ top:-8px; left:-6px; width:min(19vw,200px); opacity:.92;
+        transform:rotate(-4deg); }
+      .hero-deco__euca{ top:-6px; right:-6px; width:min(19vw,210px); opacity:.9;
+        transform:scaleX(-1); }
+      /* ヒーロー写真の角丸を少し増やして温かく */
+      .hero-deco .editorial-image{ border-radius:22px; }
+
+      /* =========== セクション見出しの水彩区切り =========== */
+      .sec-vine{ display:block; width:160px; max-width:50%; height:auto;
+        margin:0 auto .9rem; opacity:.8; }
+      .sec-dots{ display:block; width:120px; height:auto; margin:0 auto .9rem;
+        opacity:.85; }
+
+      /* =========== セクション隅の装飾 =========== */
+      .sec-deco__corner{ width:min(18vw,180px); opacity:.6; }
+      .sec-deco__corner--tl{ top:0; left:0; }
+      .sec-deco__corner--tr{ top:0; right:0; transform:scaleX(-1); }
+      .sec-deco__corner--bl{ bottom:0; left:0; transform:scaleY(-1); }
+      .sec-deco__corner--br{ bottom:0; right:0; transform:scale(-1,-1); }
+
+      .sec-deco__wash{ width:min(34vw,420px); opacity:.5; filter:saturate(.9); }
+      .sec-deco__wash--tl{ top:-8%; left:-6%; }
+      .sec-deco__wash--tr{ top:-8%; right:-6%; }
+      .sec-deco__wash--bl{ bottom:-8%; left:-6%; }
+      .sec-deco__wash--br{ bottom:-8%; right:-6%; }
+
+      .sec-deco__sprig{ width:min(11vw,120px); opacity:.7; }
+      .sec-deco__sprig--tr{ top:18px; right:24px; transform:rotate(8deg); }
+      .sec-deco__sprig--tl{ top:18px; left:24px; transform:scaleX(-1) rotate(8deg); }
+
+      .sec-deco__flower{ width:min(12vw,130px); opacity:.78; }
+      .sec-deco__flower--tr{ top:14px; right:28px; transform:rotate(6deg); }
+
+      .sec-deco__wave{ position:absolute; top:0; left:50%; transform:translateX(-50%);
+        width:min(70vw,720px); opacity:.5; }
+
+      /* =========== 通い方カード：テラコッタ丸番号バッジ =========== */
+      .way-card__num{ position:absolute; top:12px; left:12px; z-index:2;
+        width:40px; height:40px; border-radius:50%;
+        display:flex; align-items:center; justify-content:center;
+        background:var(--color-accent); color:#fff;
+        font-family:"Shippori Mincho B1", serif; font-weight:700; font-size:1.05rem;
+        letter-spacing:.02em; box-shadow:0 2px 6px rgba(150,80,60,.28); }
+
+      /* =========== 続けられる理由：水彩円アイコン =========== */
+      .feature-list--watercolor .feature-list-item{ align-items:center; gap:var(--space-md); }
+      .feature-list-icon--wc{ flex:0 0 auto; width:68px; height:68px; margin-top:0; }
+      .feature-list-icon--wc img{ width:100%; height:100%; object-fit:contain;
+        display:block; }
+
+      /* =========== CTA帯：やわらかいピーチ帯 =========== */
+      .consultation-banner--peach{
+        background:linear-gradient(135deg,#F6C9AE 0%,#F2B79A 50%,#EBA886 100%) !important;
+        position:relative; }
+      .consultation-banner--peach::before{ display:none; }
+      .consultation-banner--peach h2,
+      .consultation-banner--peach p{ color:#5a3a2c !important; }
+      .consultation-banner--peach .btn-primary{
+        background:#fff !important; color:#C27A65 !important; }
+      .consultation-banner--peach .btn-secondary{
+        border-color:#fff !important; color:#fff !important; }
+      .cta-deco{ position:absolute; pointer-events:none; z-index:1; opacity:.8; }
+      .cta-deco__flower{ width:96px; top:-8px; left:18px; transform:rotate(-8deg); }
+      .cta-deco__sprig{ width:80px; bottom:-6px; right:22px; transform:scaleX(-1) rotate(6deg); }
+
+      /* =========== モバイル：装飾を間引く／はみ出し防止 =========== */
+      @media (max-width:767px){
+        .hero-deco__leaf, .hero-deco__euca, .hero-deco__glow,
+        .sec-deco__corner, .sec-deco__sprig, .sec-deco__flower,
+        .sec-deco__wave, .cta-deco{ display:none; }
+        .hero-deco__wash{ width:70vw; opacity:.4; }
+        .sec-deco__wash{ width:55vw; opacity:.4; }
+        .sec-vine{ width:130px; }
+        .way-card__num{ width:34px; height:34px; font-size:.95rem; }
+        .feature-list-icon--wc{ width:56px; height:56px; }
+      }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/" />
     <meta property="og:type" content="website" />
@@ -171,7 +275,11 @@
 
     <main id="main-content">
       <!-- Hero Section -->
-      <section class="section-spacing section-spacing-lg bg-soft">
+      <section class="section-spacing section-spacing-lg bg-soft hero-deco">
+        <img src="images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="hero-deco__wash" />
+        <img src="images/materials/homepage/hp-glow.png" alt="" aria-hidden="true" class="hero-deco__glow" />
+        <img src="images/materials/homepage/hp-leaf-cluster.png" alt="" aria-hidden="true" class="hero-deco__leaf" />
+        <img src="images/materials/homepage/hp-eucalyptus.png" alt="" aria-hidden="true" class="hero-deco__euca" />
         <div class="container">
           <div class="editorial-split">
             <div>
@@ -194,9 +302,12 @@
       </section>
 
       <!-- 2つの通い方 -->
-      <section id="two-ways" class="section-spacing bg-alt">
+      <section id="two-ways" class="section-spacing bg-alt sec-deco">
+        <img src="images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--tl" />
+        <img src="images/materials/homepage/hp-wash-sage.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--br" />
         <div class="container">
           <div class="section-header text-center">
+            <img src="images/materials/homepage/hp-vine-divider.png" alt="" aria-hidden="true" class="sec-vine" />
             <span class="eyebrow">3つの通い方</span>
             <h2>生活リズムに合わせて選べる、<br/>3つの通い方</h2>
             <p class="text-muted" style="max-width: 640px; margin: 0 auto;">
@@ -205,36 +316,39 @@
           </div>
 
           <div class="grid grid-3 grid-gap-lg mt-2xl">
-            <a href="services/fitness/night/index.html" class="card card-hover" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;">
-              <div style="aspect-ratio: 4 / 3; background-color: var(--color-border);">
+            <a href="services/fitness/night/index.html" class="card card-hover way-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;">
+              <div style="aspect-ratio: 4 / 3; background-color: var(--color-border); position: relative;">
+                <span class="way-card__num">01</span>
                 <img src="images/photos/fitness-night.png" alt="夜間・週末に運動するナイト会員の利用イメージ" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
               </div>
               <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex: 1;">
-                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-primary); font-weight: bold;"><span class="icon icon-dumbbell" aria-hidden="true" style="margin-right:7px"></span>ナイト会員</div>
+                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-primary); font-weight: bold;">ナイト会員</div>
                 <h3 style="margin-bottom: var(--space-sm);">夜間・週末に通う</h3>
                 <p class="text-muted text-sm mb-md">平日の夜間帯や週末に通える自由利用プランです。仕事や家事で日中が難しい方も、忙しい毎日のなかで運動の習慣を続けられます。</p>
                 <span style="margin-top: auto; color: var(--color-accent); font-weight: var(--font-weight-medium);">夜間・週末利用について見る &rarr;</span>
               </div>
             </a>
 
-            <a href="services/fitness/seed/index.html" class="card card-hover" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;">
-              <div style="aspect-ratio: 4 / 3; background-color: var(--color-border);">
+            <a href="services/fitness/seed/index.html" class="card card-hover way-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;">
+              <div style="aspect-ratio: 4 / 3; background-color: var(--color-border); position: relative;">
+                <span class="way-card__num">02</span>
                 <img src="images/photos/fitness-seed.png" alt="女性同士で運動と会話を楽しむシードの利用イメージ" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
               </div>
               <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex: 1;">
-                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-primary); font-weight: bold;"><span class="icon icon-sprout" aria-hidden="true" style="margin-right:7px"></span>シード</div>
+                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-primary); font-weight: bold;">シード</div>
                 <h3 style="margin-bottom: var(--space-sm);">女性向けプログラム</h3>
                 <p class="text-muted text-sm mb-md">同性同士で気兼ねなく、運動と会話を楽しめる女性向けプログラムです。はじめての方も、安心できる空間で続けられます。</p>
                 <span style="margin-top: auto; color: var(--color-accent); font-weight: var(--font-weight-medium);">シードについて見る &rarr;</span>
               </div>
             </a>
 
-            <a href="services/leaf/index.html" class="card card-hover" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;">
-              <div style="aspect-ratio: 4 / 3; background-color: var(--color-border);">
+            <a href="services/leaf/index.html" class="card card-hover way-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;">
+              <div style="aspect-ratio: 4 / 3; background-color: var(--color-border); position: relative;">
+                <span class="way-card__num">03</span>
                 <img src="images/photos/cases-01-rehab.png" alt="施設内でスタッフの支えを受けながら歩行運動をするご利用者" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" />
               </div>
               <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex: 1;">
-                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: #1f7a35; font-weight: bold;"><span class="icon icon-leaf" aria-hidden="true" style="margin-right:7px"></span>保険が使えるジム（リーフ）</div>
+                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: #1f7a35; font-weight: bold;">保険が使えるジム（リーフ）</div>
                 <h3 style="margin-bottom: var(--space-sm);">介護保険で通う</h3>
                 <p class="text-muted text-sm mb-md">介護保険の総合事業を使って通える「保険が使えるジム」です。退院後も専門職のもとで運動を続けたい方や、身体機能の維持を図りたい方を支えます。</p>
                 <span style="margin-top: auto; color: var(--color-accent); font-weight: var(--font-weight-medium);">保険が使えるジムについて見る &rarr;</span>
@@ -245,8 +359,10 @@
       </section>
 
       <!-- 1日の流れ（4部制） -->
-      <section class="section-spacing container">
+      <section class="section-spacing container sec-deco">
+        <img src="images/materials/homepage/hp-sprig.png" alt="" aria-hidden="true" class="sec-deco__sprig sec-deco__sprig--tr" />
         <div class="section-header text-center">
+          <img src="images/materials/homepage/hp-vine-divider.png" alt="" aria-hidden="true" class="sec-vine" />
           <span class="eyebrow">1日の流れ</span>
           <h2>日中の流れ（4部制）</h2>
           <p class="text-muted" style="max-width: 640px; margin: 0 auto;">
@@ -280,30 +396,33 @@
       </section>
 
       <!-- 特徴 -->
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft sec-deco">
+        <img src="images/materials/homepage/hp-wave-divider.png" alt="" aria-hidden="true" class="sec-deco__wave" />
+        <img src="images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--tl" />
+        <img src="images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--br" />
         <div class="container container-narrow">
           <div class="section-header text-center">
             <span class="eyebrow">べるフィットの特徴</span>
             <h2>はじめての方も、<br/>安心して続けられる理由</h2>
           </div>
 
-          <ul class="feature-list mt-2xl">
+          <ul class="feature-list feature-list--watercolor mt-2xl">
             <li class="feature-list-item">
-              <div class="feature-list-icon"><span class="icon icon-shield" aria-hidden="true"></span></div>
+              <div class="feature-list-icon feature-list-icon--wc"><img src="images/materials/homepage/hp-icon-heart.png" alt="" aria-hidden="true" /></div>
               <div>
                 <h4 style="margin-bottom: 4px;">国家資格を持つスタッフ</h4>
                 <p class="text-muted" style="font-size: var(--font-size-sm);">健康運動指導士や鍼灸マッサージ師など、専門職が安全で無理のない運動をご案内します。</p>
               </div>
             </li>
             <li class="feature-list-item">
-              <div class="feature-list-icon"><span class="icon icon-home" aria-hidden="true"></span></div>
+              <div class="feature-list-icon feature-list-icon--wc"><img src="images/materials/homepage/hp-icon-people.png" alt="" aria-hidden="true" /></div>
               <div>
                 <h4 style="margin-bottom: 4px;">送迎があるから通いやすい</h4>
                 <p class="text-muted" style="font-size: var(--font-size-sm);">送迎を含めて1回90分。ご自宅までの送り迎えがあるので、通うこと自体に不安がある方も続けられます。</p>
               </div>
             </li>
             <li class="feature-list-item">
-              <div class="feature-list-icon"><span class="icon icon-users" aria-hidden="true"></span></div>
+              <div class="feature-list-icon feature-list-icon--wc"><img src="images/materials/homepage/hp-icon-leaf.png" alt="" aria-hidden="true" /></div>
               <div>
                 <h4 style="margin-bottom: 4px;">少人数で、一人ひとりに合わせて</h4>
                 <p class="text-muted" style="font-size: var(--font-size-sm);">少人数で運動を行うため、体力やお身体の状態に合わせて無理なく進められます。同じ顔ぶれで通ううちに、自然と交流も生まれます。</p>
@@ -314,8 +433,10 @@
       </section>
 
       <!-- スタッフ紹介 -->
-      <section class="section-spacing container">
+      <section class="section-spacing container sec-deco">
+        <img src="images/materials/homepage/hp-sprig.png" alt="" aria-hidden="true" class="sec-deco__sprig sec-deco__sprig--tl" />
         <div class="section-header text-center">
+          <img src="images/materials/homepage/hp-dots-divider.png" alt="" aria-hidden="true" class="sec-dots" />
           <span class="eyebrow">スタッフ</span>
           <h2>べるフィットを支える<br/>スタッフをご紹介します</h2>
           <p class="text-muted" style="max-width: 640px; margin: 0 auto;">
@@ -362,7 +483,8 @@
       </section>
 
       <!-- 料金・体験 -->
-      <section id="trial" class="section-spacing container">
+      <section id="trial" class="section-spacing container sec-deco">
+        <img src="images/materials/homepage/hp-flower.png" alt="" aria-hidden="true" class="sec-deco__flower sec-deco__flower--tr" />
         <div class="section-header text-center">
           <span class="eyebrow">料金・体験</span>
           <h2>まずは見学・体験から</h2>
@@ -385,9 +507,12 @@
       </section>
 
       <!-- 会員の声 -->
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft sec-deco">
+        <img src="images/materials/homepage/hp-wash-sage.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--tr" />
+        <img src="images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--bl" />
         <div class="container">
           <div class="section-header text-center">
+            <img src="images/materials/homepage/hp-vine-divider.png" alt="" aria-hidden="true" class="sec-vine" />
             <span class="eyebrow">会員の声</span>
             <h2>通っている方の声</h2>
             <p class="text-muted" style="max-width: 640px; margin: 0 auto;">
@@ -420,7 +545,9 @@
       </section>
 
       <!-- アクセス -->
-      <section class="section-spacing bg-alt">
+      <section class="section-spacing bg-alt sec-deco">
+        <img src="images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--tr" />
+        <img src="images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--bl" />
         <div class="container container-narrow">
           <div class="section-header text-center">
             <span class="eyebrow">アクセス</span>
@@ -448,8 +575,10 @@
       </section>
 
       <!-- よくある質問 -->
-      <section class="section-spacing container">
+      <section class="section-spacing container sec-deco">
+        <img src="images/materials/homepage/hp-sprig.png" alt="" aria-hidden="true" class="sec-deco__sprig sec-deco__sprig--tr" />
         <div class="section-header text-center">
+          <img src="images/materials/homepage/hp-dots-divider.png" alt="" aria-hidden="true" class="sec-dots" />
           <span class="eyebrow">よくある質問</span>
           <h2>よくあるご質問</h2>
           <p class="text-muted" style="max-width: 640px; margin: 0 auto;">
@@ -503,7 +632,9 @@
 
       <!-- CTA バナー -->
       <section class="section-spacing container">
-        <div class="consultation-banner">
+        <div class="consultation-banner consultation-banner--peach">
+          <img src="images/materials/homepage/hp-flower.png" alt="" aria-hidden="true" class="cta-deco cta-deco__flower" />
+          <img src="images/materials/homepage/hp-sprig.png" alt="" aria-hidden="true" class="cta-deco cta-deco__sprig" />
           <p class="mb-sm" style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; color: rgba(255,255,255,0.8);">体験・見学のご案内</p>
           <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">まずはお気軽にお問い合わせください</h2>
           <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
