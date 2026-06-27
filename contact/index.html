@@ -9,7 +9,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
-  
+
+    <style>
+      /* === 水彩装飾（本番トップ・運動施設と同一言語）=== */
+      /* 背景の温度感（クリーム／ピーチ寄り） */
+      body{ background-color:#FBF7F2; }
+      .bg-soft{ background-color:#FBF6F1 !important; }
+      .bg-alt{ background-color:#F7EDE6 !important; }
+
+      /* 装飾は後ろ・前面はコンテンツ */
+      .sec-deco, .hero-deco{ position:relative; overflow:hidden; }
+      .sec-deco > .container,
+      .hero-deco > .container,
+      .sec-deco > .section-header,
+      .sec-deco > .contact-form-section{ position:relative; z-index:2; }
+      .sec-deco > img,
+      .hero-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+
+      /* ① ヒーロー：ブランドの空気（トップと同一の作り） */
+      .hero-deco__wash{ top:-4%; right:-4%; width:min(50vw,600px); opacity:.5; filter:saturate(.95); }
+      .hero-deco__glow{ top:5%; right:7%; width:min(28vw,340px); opacity:.4; }
+      .hero-deco__leaf{ top:-6px; left:-4px; width:150px; opacity:.9; transform:rotate(-4deg); }
+      .hero-deco__euca{ top:-4px; right:-4px; width:150px; opacity:.85; transform:scaleX(-1); }
+
+      /* ② 分岐カード節：対角バランスの葉（隅・1個だけ） */
+      .sec-deco__corner{ width:min(17vw,170px); opacity:.5; }
+      .sec-deco__corner--br{ bottom:0; right:0; transform:scale(-1,-1); }
+
+      /* ③ フォーム本体：相談・申込の入口（扉）＋背面の温かい水彩 */
+      .sec-deco__wash{ width:min(30vw,360px); filter:saturate(.9); }
+      .sec-deco__wash--form{ top:-6%; right:-4%; opacity:.35; }
+      .form-door-head{ display:flex; align-items:center; justify-content:center; gap:.7rem; }
+      .form-door{ width:84px; height:auto; opacity:.9; flex:0 0 auto; }
+
+      /* モバイル：隅装飾を間引く／はみ出し防止 */
+      @media (max-width:767px){
+        .hero-deco__leaf, .hero-deco__euca, .hero-deco__glow,
+        .sec-deco__corner{ display:none; }
+        .hero-deco__wash{ width:66vw; opacity:.4; }
+        .sec-deco__wash{ width:52vw; opacity:.35; }
+        .form-door{ width:60px; }
+      }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/contact/" />
     <meta property="og:type" content="article" />
@@ -135,7 +177,12 @@
   
 
     <main id="main-content">
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft hero-deco">
+        <img src="../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="hero-deco__wash" />
+        <img src="../images/materials/homepage/hp-glow.png" alt="" aria-hidden="true" class="hero-deco__glow" />
+        <img src="../images/materials/homepage/hp-leaf-cluster.png" alt="" aria-hidden="true" class="hero-deco__leaf" />
+        <img src="../images/materials/homepage/hp-eucalyptus.png" alt="" aria-hidden="true" class="hero-deco__euca" />
+        <img src="../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--br" />
         <div class="container">
           <div class="section-header text-center container-narrow">
             <span class="eyebrow">Contact</span>
@@ -174,10 +221,11 @@
         </div>
       </section>
 
-      <section id="contact-form" class="section-spacing container">
+      <section id="contact-form" class="section-spacing container sec-deco">
+        <img src="../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--form" />
         <div class="section-header text-center">
           <span class="eyebrow">CONSULTATION</span>
-          <h2>お問い合わせフォーム</h2>
+          <h2 class="form-door-head"><img src="../images/materials/subpages/sp-door.png" alt="" aria-hidden="true" class="form-door" />お問い合わせフォーム</h2>
           <p class="text-muted mt-md">以下のフォームに必要事項をご記入ください。通常2営業日以内に担当者よりご連絡いたします。</p>
         </div>
 

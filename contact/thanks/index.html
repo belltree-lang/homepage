@@ -9,7 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
-  
+
+    <style>
+      /* === 水彩装飾（本番トップと同一言語・送信完了の温かい余韻）=== */
+      body{ background-color:#FBF7F2; }
+      .hero-deco{ position:relative; overflow:hidden; }
+      .hero-deco > .container{ position:relative; z-index:2; }
+      .hero-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+      .hero-deco__wash{ top:-4%; right:-4%; width:min(48vw,560px); opacity:.5; filter:saturate(.95); }
+      .hero-deco__glow{ top:4%; right:8%; width:min(28vw,340px); opacity:.4; }
+      .hero-deco__leaf{ top:-6px; left:-4px; width:150px; opacity:.9; transform:rotate(-4deg); }
+      .hero-deco__sprig{ bottom:14px; right:22px; width:104px; opacity:.7; transform:scaleX(-1) rotate(8deg); }
+      @media (max-width:767px){
+        .hero-deco__leaf, .hero-deco__glow, .hero-deco__sprig{ display:none; }
+        .hero-deco__wash{ width:66vw; opacity:.4; }
+      }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/contact/thanks/" />
     <meta property="og:type" content="article" />
@@ -88,7 +104,11 @@
 
 
 
-    <main id="main-content" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: var(--space-2xl) 0;">
+    <main id="main-content" class="hero-deco" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: var(--space-2xl) 0;">
+      <img src="../../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="hero-deco__wash" />
+      <img src="../../images/materials/homepage/hp-glow.png" alt="" aria-hidden="true" class="hero-deco__glow" />
+      <img src="../../images/materials/homepage/hp-leaf-cluster.png" alt="" aria-hidden="true" class="hero-deco__leaf" />
+      <img src="../../images/materials/homepage/hp-sprig.png" alt="" aria-hidden="true" class="hero-deco__sprig" />
       <div class="container container-narrow" style="text-align: center;">
         <div style="font-size: 4rem; color: var(--color-primary); margin-bottom: var(--space-md);">✓</div>
         <h1 style="margin-bottom: var(--space-md);">送信が完了しました。</h1>
