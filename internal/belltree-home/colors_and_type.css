@@ -164,6 +164,7 @@ h2, .bt-h2 {
   letter-spacing: var(--bt-ls-tight);
   color: var(--bt-ink-1);
   margin: 0 0 var(--bt-s-4);
+  text-wrap: balance;             /* 見出しの泣き別れ防止 — 2行時に行を均等割り */
 }
 h3, .bt-h3 {
   font-family: var(--bt-font-sans);
@@ -200,6 +201,7 @@ small, .bt-small {
   line-height: 1.18;
   letter-spacing: var(--bt-ls-tight);
   color: var(--bt-ink-1);
+  text-wrap: balance;             /* 見出しの泣き別れ防止 — 2行時に行を均等割り */
 }
 .bt-eyebrow {
   font-family: var(--bt-font-sans);
