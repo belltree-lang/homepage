@@ -124,6 +124,61 @@
         .way-card__num{ width:34px; height:34px; font-size:.95rem; }
         .feature-list-icon--wc{ width:56px; height:56px; }
       }
+
+      /* =========== グループ相関図（コーポレート lp-diagram 流用） =========== */
+      .bt-corr{
+        --bt-primary:#1A365D;
+        --bt-accent:#C27A65;
+        --bt-ink-2:#3D3E3A;
+        --bt-ink-4:#9B9A91;
+        --bt-svc-fit:#E08A4A;
+        --bt-svc-shinkyu:#C4564E;
+        --bt-svc-kaigo:#3F6B4F;
+        --bt-svc-legal:#2A4A7F;
+        --bt-font-serif:"Shippori Mincho B1","Noto Serif JP","Yu Mincho",serif;
+        margin-top:var(--space-2xl);
+      }
+      .bt-corr .lp-diagram{ position:relative; width:100%; max-width:840px;
+        margin:0 auto; aspect-ratio:1000 / 640; }
+      .bt-corr .lp-lines{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+      .bt-corr .node{
+        position:absolute; transform:translate(-50%,-50%);
+        width:clamp(94px,13.5vw,150px); aspect-ratio:1; border-radius:50%;
+        background:rgba(255,255,255,0.82); border:2px solid var(--c);
+        box-shadow:0 7px 18px rgba(28,29,26,0.07);
+        display:flex; flex-direction:column; align-items:center; justify-content:center;
+      }
+      .bt-corr .node .node-ic{ width:38%; height:auto; color:var(--c); margin-bottom:3px; }
+      .bt-corr .node .node-ic svg{ width:100%; height:100%; display:block; }
+      .bt-corr .node .node-name{ font-family:var(--bt-font-serif); font-weight:600;
+        font-size:clamp(12.5px,1.5vw,17px); color:var(--bt-primary); line-height:1.2; }
+      .bt-corr .node .node-role{ font-size:clamp(9.5px,1.05vw,12px); color:var(--c);
+        letter-spacing:0.22em; margin-top:4px; padding-left:0.22em; }
+      .bt-corr .node-center{
+        width:clamp(132px,19vw,208px); border-color:var(--bt-primary);
+        background:rgba(255,255,255,0.88); box-shadow:0 10px 26px rgba(28,29,26,0.09);
+      }
+      .bt-corr .node-center::before{ content:""; position:absolute; inset:9px;
+        border-radius:50%; border:1.5px dotted var(--bt-accent); opacity:0.55; }
+      .bt-corr .node-center .nc-1{ font-family:var(--bt-font-serif); font-weight:600;
+        color:var(--bt-primary); font-size:clamp(15px,2vw,22px); line-height:1.25; }
+      .bt-corr .node-center .nc-2{ font-family:var(--bt-font-serif); font-weight:600;
+        color:var(--bt-primary); font-size:clamp(24px,3.4vw,40px); line-height:1.15; }
+      .bt-corr .lp-cap{
+        text-align:center; margin:26px auto 0; max-width:100%;
+        font-family:var(--bt-font-serif); color:var(--bt-ink-2);
+        font-size:clamp(13px,1.6vw,17px); letter-spacing:0.05em;
+        display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:14px;
+      }
+      .bt-corr .lp-cap img{ width:30px; opacity:0.85; flex:0 0 auto; }
+      .bt-corr .lp-cap img.flip{ transform:scaleX(-1); }
+      @media (max-width:760px){
+        .bt-corr .node .node-role{ letter-spacing:0.12em; }
+        .bt-corr .lp-diagram{ aspect-ratio:1000 / 720; max-width:330px; }
+        .bt-corr .node{ width:clamp(72px,21vw,88px); }
+        .bt-corr .node-center{ width:clamp(104px,30vw,124px); }
+        .bt-corr .lp-cap{ font-size:13px; gap:9px; }
+      }
     </style>
 
     <!-- SEO & OGP Config -->
@@ -641,11 +696,65 @@
             <h2>運動のその先も、同じグループで。</h2>
             <p class="text-muted">べるフィットは、訪問鍼灸・居宅介護支援・通所介護・行政書士（べるリーガル）を営む「べるつりーグループ」の一員です。運動で元気をつくり、からだのケアや介護が必要になっても、暮らしや終活のご相談まで——状態が変わっても関係が切れず、同じグループが続けて支えます。</p>
           </div>
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-md); margin-top:var(--space-2xl);">
-            <div class="card text-center" style="flex:1 1 170px; max-width:230px;"><strong>運動</strong><p class="text-muted text-sm" style="margin:.3rem 0 0;">べるフィット</p></div>
-            <div class="card text-center" style="flex:1 1 170px; max-width:230px;"><strong>からだのケア</strong><p class="text-muted text-sm" style="margin:.3rem 0 0;">訪問鍼灸・マッサージ</p></div>
-            <div class="card text-center" style="flex:1 1 170px; max-width:230px;"><strong>介護</strong><p class="text-muted text-sm" style="margin:.3rem 0 0;">居宅介護支援・通所介護</p></div>
-            <div class="card text-center" style="flex:1 1 170px; max-width:230px;"><strong>暮らし・終活</strong><p class="text-muted text-sm" style="margin:.3rem 0 0;">べるリーガル<br><span style="font-size:.82em;">（行政書士・2026年7月開業予定）</span></p></div>
+          <div class="bt-corr">
+            <div class="lp-diagram" role="img" aria-label="あなたの暮らしを中心に、五つの専門がつながる相関図">
+              <svg class="lp-lines" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <ellipse cx="500" cy="315" rx="352" ry="242" fill="none" stroke="var(--bt-ink-4)" stroke-width="1.6" stroke-dasharray="2 12" stroke-linecap="round" opacity="0.6" />
+                <g stroke-width="2" stroke-linecap="round">
+                  <line x1="500" y1="339" x2="500" y2="83"  stroke="var(--bt-svc-fit)" opacity="0.5" />
+                  <line x1="500" y1="339" x2="840" y2="269" stroke="var(--bt-svc-shinkyu)" opacity="0.5" />
+                  <line x1="500" y1="339" x2="710" y2="544" stroke="var(--bt-svc-kaigo)" opacity="0.5" />
+                  <line x1="500" y1="339" x2="290" y2="544" stroke="var(--bt-accent)" opacity="0.5" />
+                  <line x1="500" y1="339" x2="160" y2="269" stroke="var(--bt-svc-legal)" opacity="0.5" />
+                </g>
+                <g fill="var(--bt-accent)" opacity="0.5">
+                  <circle cx="318" cy="150" r="3" /><circle cx="332" cy="160" r="2.4" /><circle cx="328" cy="143" r="2" />
+                </g>
+                <g fill="var(--bt-svc-fit)" opacity="0.5">
+                  <circle cx="690" cy="150" r="3" /><circle cx="704" cy="160" r="2.4" />
+                </g>
+                <g fill="var(--bt-svc-shinkyu)" opacity="0.45">
+                  <circle cx="500" cy="566" r="3" /><circle cx="486" cy="560" r="2.2" /><circle cx="514" cy="560" r="2.2" />
+                </g>
+              </svg>
+
+              <div class="node node-center" style="left:50%; top:53%">
+                <span class="nc-1">あなたの</span>
+                <span class="nc-2">暮らし</span>
+              </div>
+
+              <div class="node" style="left:50%; top:13%; --c: var(--bt-svc-fit)">
+                <span class="node-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="17" width="7" height="14" rx="2.5"/><rect x="13" y="20" width="4" height="8" rx="1.5"/><line x1="17" y1="24" x2="31" y2="24"/><rect x="31" y="20" width="4" height="8" rx="1.5"/><rect x="35" y="17" width="7" height="14" rx="2.5"/></svg></span>
+                <span class="node-name">べるフィット</span>
+                <span class="node-role">運動</span>
+              </div>
+
+              <div class="node" style="left:84%; top:42%; --c: var(--bt-svc-shinkyu)">
+                <span class="node-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14.5" cy="11.5" r="1.8"/><line x1="15.6" y1="13" x2="27" y2="32"/><circle cx="21" cy="10.5" r="1.8"/><line x1="22" y1="12" x2="30" y2="30"/><path d="M34 15 l1.4 3.1 3.1 1.4 -3.1 1.4 -1.4 3.1 -1.4 -3.1 -3.1 -1.4 3.1 -1.4 z" fill="currentColor" stroke="none" opacity="0.75"/></svg></span>
+                <span class="node-name">訪問鍼灸</span>
+                <span class="node-role">施術</span>
+              </div>
+
+              <div class="node" style="left:71%; top:85%; --c: var(--bt-svc-kaigo)">
+                <span class="node-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 24 L 21 13 L 34 24"/><path d="M11 22 V 39 H 31 V 22"/><rect x="17" y="29" width="8" height="10"/><path d="M40 39 V 31 M40 31 C 37 31 36 28 38 27 C 38 24 42 24 42 27 C 44 28 43 31 40 31 Z"/></svg></span>
+                <span class="node-name">居宅介護</span>
+                <span class="node-role">調整</span>
+              </div>
+
+              <div class="node" style="left:29%; top:85%; --c: var(--bt-accent)">
+                <span class="node-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="11" r="3.2"/><path d="M22 14 L20 24"/><path d="M20 24 L17 36"/><path d="M20 24 L26 30 L25 37"/><path d="M21 19 L29 22"/><line x1="30" y1="20" x2="32" y2="38"/><path d="M13 38 H 35"/></svg></span>
+                <span class="node-name">保険が使える<br />ジム</span>
+                <span class="node-role">機能</span>
+              </div>
+
+              <div class="node" style="left:16%; top:42%; --c: var(--bt-svc-legal)">
+                <span class="node-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18 C 13 15 19 16 23 19 V 38 C 19 35 13 34 8 37 Z"/><path d="M23 19 C 27 16.5 31 16 35 17"/><path d="M23 19 V 38 C 27 35 31 34.5 35 35.5"/><path d="M40 10 C 34 14 32 20 34 25 L 30 29"/><path d="M34 25 L 39 24"/></svg></span>
+                <span class="node-name">終活</span>
+                <span class="node-role">法務</span>
+              </div>
+            </div>
+
+            <p class="lp-cap"><img src="images/materials/homepage/hp-sprig.png" class="flip" alt="" />一本の電話で、必要な専門に橋渡しします。<img src="images/materials/homepage/hp-sprig.png" alt="" /></p>
           </div>
           <div class="text-center" style="margin-top:var(--space-2xl);">
             <a href="https://belltree1102.com/" target="_blank" rel="noopener" class="btn btn-secondary">べるつりーグループのサイトで詳しく見る</a>
