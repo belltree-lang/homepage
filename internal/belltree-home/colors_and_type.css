@@ -142,6 +142,8 @@ html, body {
   letter-spacing: var(--bt-ls-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "palt";  /* 約物詰め — 句読点・カッコの余分な隙間を詰める（全要素に継承） */
+  line-break: strict;             /* 禁則処理 — 行頭に小書き仮名・約物が来ないよう改行位置を整える */
 }
 
 h1, .bt-h1 {
@@ -152,6 +154,7 @@ h1, .bt-h1 {
   letter-spacing: var(--bt-ls-tight);
   color: var(--bt-ink-1);
   margin: 0 0 var(--bt-s-5);
+  text-wrap: balance;             /* 見出しの泣き別れ防止 — 2行時に行を均等割り */
 }
 h2, .bt-h2 {
   font-family: var(--bt-font-serif);
