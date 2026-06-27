@@ -136,6 +136,43 @@
   @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } }
   @media (max-width: 760px) { .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .approach-final { padding: 28px 24px; } .sec-pad { padding: 56px 0; } }
   @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
+
+/* === モバイル：ハンバーガー・ドロワー＋スマホ調整（2026-06-27 追加） === */
+.nav-toggle {
+  display: none; width: 44px; height: 44px; flex-shrink: 0;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  padding: 0; border: 1px solid var(--bt-line); border-radius: 10px;
+  background: rgba(255,255,255,0.7); cursor: pointer;
+}
+.nav-toggle span {
+  display: block; width: 20px; height: 2px; border-radius: 2px; background: var(--bt-primary);
+  transition: transform var(--bt-dur) var(--bt-ease), opacity var(--bt-dur) var(--bt-ease);
+}
+body.drawer-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.drawer-open .nav-toggle span:nth-child(2) { opacity: 0; }
+body.drawer-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-drawer {
+  position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 99;
+  background: rgba(252,252,250,0.98); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  transform: translateX(100%); transition: transform var(--bt-dur-slow) var(--bt-ease);
+  overflow-y: auto; visibility: hidden;
+}
+body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
+.nav-drawer-inner { display: flex; flex-direction: column; padding: 20px 24px 40px; }
+.nav-drawer-inner a {
+  font-size: 16px; font-weight: 600; color: var(--bt-ink-1);
+  padding: 17px 6px; border-bottom: 1px solid var(--bt-line-soft); white-space: nowrap;
+}
+.nav-drawer-inner a:hover { color: var(--bt-accent); }
+@media (max-width: 1000px) { .nav-toggle { display: flex; } }
+@media (max-width: 480px) {
+  .header-inner { gap: 10px; }
+  .brand-name { font-size: 17px; }
+  .brand-name .jp { font-size: 12px; }
+  .header-cta { gap: 10px; }
+  .btn-sm { height: 38px; padding: 0 15px; font-size: 12px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -181,9 +218,13 @@
         042-682-2839
       </span>
       <a class="btn-sm" href="../contact/index.html">ご相談窓口</a>
+          <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-drawer">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true"></div>
 
 <!-- info bar -->
 <div class="info-bar">
@@ -407,5 +448,23 @@
 .fab-call:hover{background:var(--bt-accent-hover,#A8634F);}
 @media(max-width:560px){.fab-call{right:12px;bottom:12px;height:54px;padding:0 18px 0 16px;gap:8px;}.fab-call svg{width:22px;height:22px;}.fab-call .fab-call-txt{font-size:13px;}.fab-call .fab-call-txt small{font-size:11px;}}
 </style>
+<script>
+/* モバイル ハンバーガー・ドロワー：既存 .main-nav を複製して中身を生成 */
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('nav-drawer');
+  var nav = document.querySelector('.main-nav');
+  if (!btn || !drawer) return;
+  if (!nav) { btn.style.display = 'none'; return; } drawer.innerHTML = '<nav class="nav-drawer-inner">' + nav.innerHTML + '</nav>';
+  function setOpen(o){
+    document.body.classList.toggle('drawer-open', o);
+    btn.setAttribute('aria-expanded', o ? 'true' : 'false');
+    drawer.setAttribute('aria-hidden', o ? 'false' : 'true');
+  }
+  btn.addEventListener('click', function(){ setOpen(!document.body.classList.contains('drawer-open')); });
+  drawer.addEventListener('click', function(e){ if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setOpen(false); });
+})();
+</script>
 </body>
 </html>
