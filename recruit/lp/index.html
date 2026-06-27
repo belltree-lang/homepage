@@ -140,6 +140,8 @@
       gtag('js', new Date());
 
       gtag('config', 'G-4TCBEE6Y54');
+      // GA4 conversion: 予約(hacomono)/電話(tel:) クリック計測
+      document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||typeof gtag!=='function')return;var h=a.getAttribute('href')||'';if(h.indexOf('hacomono.jp')>-1){gtag('event','reservation_click',{link_url:h});}else if(h.indexOf('tel:')===0){gtag('event','phone_click',{link_url:h});}});
     </script>
     <!-- /Analytics Config -->
 </head>

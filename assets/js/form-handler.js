@@ -64,6 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         // no-cors returns opaque response, assume success if no network error
+        // GA4 conversion: フォーム送信をリードとして計測（sendBeaconで遷移後も送信される）
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { form_type: form.getAttribute('data-form-type') || 'inquiries' });
+        }
         const redirectUrl = form.getAttribute('data-redirect-url') || './thanks/index.html';
         window.location.href = redirectUrl;
 
