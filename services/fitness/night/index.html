@@ -19,6 +19,66 @@
       .app-guide-num{ font-family:"Shippori Mincho B1", serif; font-weight:800; font-size:2.4rem; line-height:1; }
     </style>
 
+    <!-- ============================================================
+         モック装飾レイヤー（本番トップ index.html と同じデザイン言語）
+         意味駆動配置：各装飾は「その場所の意味」を1語で言えるものだけを置く。
+         本番 night/index.html・styles.css は触らない。相対パスは ../../../（3階層下）。
+         ============================================================ -->
+    <style>
+      /* 罫線アイブロウ（::before/::after の横線）を打ち消す */
+      .section-header .eyebrow::before,
+      .section-header .eyebrow::after{ content:none !important; }
+      .section-header .eyebrow{ display:block !important; gap:0 !important; }
+
+      /* 背景の温度感（クリーム／ピーチ寄りへ） */
+      body{ background-color:#FBF7F2; }
+      .bg-soft{ background-color:#FBF6F1 !important; }
+      .bg-alt{ background-color:#F7EDE6 !important; }
+
+      /* 装飾は後ろ・前面はコンテンツ */
+      .sec-deco, .hero-deco{ position:relative; overflow:hidden; }
+      .sec-deco > .container,
+      .hero-deco > .container,
+      .sec-deco > .contact-form-card{ position:relative; z-index:2; }
+      .sec-deco > img,
+      .hero-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+
+      /* ① ヒーロー：夜＋ブランドの空気 */
+      .hero-deco__wash{ top:-4%; right:-4%; width:min(50vw,600px); opacity:.45; filter:saturate(.95); } /* 温かさ */
+      .hero-deco__glow{ top:6%; right:11%; width:min(26vw,320px); opacity:.4; }                          /* 光 */
+      .hero-deco__leaf{ top:-6px; left:-4px; width:150px; opacity:.9; transform:rotate(-4deg); }         /* ブランド */
+      .hero-deco__moon{ top:1%; right:3%; width:120px; height:auto; opacity:.92; }                         /* 夜 */
+      .hero-deco__stars{ top:4%; right:14%; width:84px; height:auto; opacity:.8; }                         /* 夜 */
+      .hero-deco .editorial-image{ border-radius:22px; }
+
+      /* ② CONNECTION：継続の道のり（つるの区切り）＋空気 */
+      .sec-vine{ display:block; width:160px; max-width:50%; height:auto; opacity:.8; }
+      .sec-vine--left{ margin:0 0 1rem; }
+      .sec-deco__corner{ width:min(17vw,170px); opacity:.5; }
+      .sec-deco__corner--br{ bottom:0; right:0; transform:scale(-1,-1); }
+
+      /* ③ MEMBER SUPPORT：記録アプリ（見出し脇のスマホ） */
+      .app-phone-head{ display:flex; align-items:center; justify-content:center; gap:.7rem; }
+      .app-phone{ width:80px; height:auto; flex:0 0 auto; }
+
+      /* ④ フォーム：入会の入口（扉）＋背面の温かいピーチ */
+      .sec-deco__wash{ width:min(30vw,360px); filter:saturate(.9); }
+      .sec-deco__wash--form{ top:-6%; right:-4%; opacity:.35; }
+      .form-door-head{ display:flex; align-items:center; justify-content:center; gap:.7rem; }
+      .form-door{ width:84px; height:auto; opacity:.9; flex:0 0 auto; }
+
+      /* モバイル：隅装飾を間引く／はみ出し防止 */
+      @media (max-width:767px){
+        .hero-deco__leaf, .hero-deco__glow, .hero-deco__stars, .hero-deco__moon,
+        .sec-deco__corner{ display:none; }
+        .hero-deco__wash{ width:66vw; opacity:.4; }
+        .sec-deco__wash{ width:52vw; opacity:.35; }
+        .sec-vine{ width:130px; }
+        .app-phone{ width:60px; }
+        .form-door{ width:60px; }
+      }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/services/fitness/night/" />
     <meta property="og:type" content="article" />
@@ -155,7 +215,12 @@
   
 
     <main id="main-content">
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft hero-deco">
+        <img src="../../../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="hero-deco__wash" />
+        <img src="../../../images/materials/homepage/hp-glow.png" alt="" aria-hidden="true" class="hero-deco__glow" />
+        <img src="../../../images/materials/homepage/hp-leaf-cluster.png" alt="" aria-hidden="true" class="hero-deco__leaf" />
+        <img src="../../../images/materials/subpages/sp-moon.png" alt="" aria-hidden="true" class="hero-deco__moon" />
+        <img src="../../../images/materials/subpages/sp-stars.png" alt="" aria-hidden="true" class="hero-deco__stars" />
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">BELLFIT | NIGHT & WEEKEND</span>
@@ -202,11 +267,13 @@
          </div>
       </section>
 
-      <section class="section-spacing bg-alt">
+      <section class="section-spacing bg-alt sec-deco">
+        <img src="../../../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--br" />
         <div class="container">
           <div class="editorial-split reverse">
             <div>
               <span class="eyebrow">CONNECTION</span>
+              <img src="../../../images/materials/homepage/hp-vine-divider.png" alt="" aria-hidden="true" class="sec-vine sec-vine--left" />
               <h2>運動の習慣を、無理なく続ける</h2>
               <p class="text-muted">
                 べるフィットの夜間・週末利用は、忙しい日々のなかでも運動の習慣を続けたい方のための通い方です。
@@ -265,7 +332,7 @@
       <section id="app-guide" class="section-spacing container app-guide-card">
         <div class="text-center mb-lg">
           <span class="eyebrow">MEMBER SUPPORT</span>
-          <h2 style="color: var(--color-surface);">運動記録サポートアプリ</h2>
+          <div class="app-phone-head"><img src="../../../images/materials/subpages/sp-phone.png" alt="" aria-hidden="true" class="app-phone" /><h2 style="color: var(--color-surface);">運動記録サポートアプリ</h2></div>
           <p style="color: rgba(255,255,255,0.8);" class="mt-md">テクノジムアプリ（mywellness）を使用することで、運動記録とマシンが連動し、日々のトレーニング効果を可視化できます。</p>
         </div>
         
@@ -293,9 +360,10 @@
       </section>
 
       <!-- 見学・体験申込フォーム -->
-      <section id="trial-form" class="section-spacing container mb-2xl">
+      <section id="trial-form" class="section-spacing container mb-2xl sec-deco">
+        <img src="../../../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--form" />
         <div class="contact-form-card shadow-sm">
-          <h3 class="text-center mb-lg">見学・体験のお申し込み</h3>
+          <h3 class="text-center mb-lg form-door-head"><img src="../../../images/materials/subpages/sp-door.png" alt="" aria-hidden="true" class="form-door" />見学・体験のお申し込み</h3>
           <p class="text-center text-sm mb-xl" style="color: var(--color-text-light);">
             不安な点や気になることがございましたら、まずは見学や体験でお確かめください。<br/>
             内容を確認のうえ、担当者より日程調整のご連絡をいたします。

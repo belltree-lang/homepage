@@ -31,6 +31,88 @@
       .feature-list-item h4{ font-size:1.3rem !important; }
     </style>
 
+    <!-- ============================================================
+         モック装飾レイヤー（本番トップ index.html ＋ 運動施設と同じデザイン言語）
+         意味駆動配置：各装飾は「その場所の意味」で説明できるものだけを置く。
+         styles.css・本番 index.html は触らない。相対パスは ../../ 。
+         ============================================================ -->
+    <style>
+      /* --- 罫線アイブロウ（::before/::after の横線）を打ち消す --- */
+      .section-header .eyebrow::before,
+      .section-header .eyebrow::after{ content:none !important; }
+      .section-header .eyebrow{ display:block !important; gap:0 !important; }
+
+      /* --- 背景の温度感（クリーム／ピーチ寄りへ）--- */
+      body{ background-color:#FBF7F2; }
+      .bg-soft{ background-color:#FBF6F1 !important; }
+      .bg-alt{ background-color:#F7EDE6 !important; }
+
+      /* 装飾は後ろ・前面はコンテンツ */
+      .sec-deco, .hero-deco{ position:relative; overflow:hidden; }
+      .sec-deco > .container,
+      .hero-deco > .container,
+      .sec-deco > .section-header,
+      .sec-deco > .grid,
+      .sec-deco > .feature-list{ position:relative; z-index:2; }
+      .sec-deco > img,
+      .hero-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+
+      /* ① ヒーロー：リーフ＝葉が主役。ブランドの空気で包む */
+      .hero-deco__wash{ top:-4%; right:-4%; width:min(50vw,600px); opacity:.5; filter:saturate(.95); }
+      .hero-deco__glow{ top:6%; right:9%; width:min(28vw,340px); opacity:.42; }
+      .hero-deco__leaf{ top:-6px; left:-4px; width:150px; opacity:.9; transform:rotate(-4deg); }
+      .hero-deco__bigleaf{ top:50%; right:-2%; width:min(20vw,220px); opacity:.85;
+        transform:translateY(-50%) rotate(6deg); }
+      .hero-deco .editorial-image{ border-radius:22px; }
+
+      /* ② SERVICE OVERVIEW：利用者像＝歩行・移動に不安がある方 */
+      .sec-deco__walk{ top:14px; left:20px; width:min(13vw,124px); opacity:.85; }
+      .sec-deco__corner{ width:min(16vw,160px); opacity:.5; }
+      .sec-deco__corner--br{ bottom:0; right:0; transform:scale(-1,-1); }
+
+      /* ③ ご利用までの流れ：道のり（つるの区切り＋テラコッタ円のステップ番号） */
+      .sec-vine{ display:block; width:160px; max-width:50%; height:auto; margin:0 auto .9rem; opacity:.8; }
+      .sec-deco__wash{ width:min(30vw,360px); filter:saturate(.9); }
+      .sec-deco__wash--tr{ top:-8%; right:-5%; opacity:.4; }
+      .step-deco .feature-list-item{ align-items:center; }
+      .step-deco .feature-list-icon{ flex:0 0 auto; width:64px; height:64px;
+        display:flex; align-items:center; justify-content:center; border-radius:50%;
+        font-family:"Shippori Mincho B1",serif !important; font-weight:700 !important;
+        background:radial-gradient(circle at 32% 28%, #F7D9C4, #EFB89B);
+        color:#fff !important; font-size:1.95rem !important; opacity:1 !important;
+        box-shadow:0 3px 8px rgba(150,80,60,.24); margin-top:0; }
+
+      /* ④ べるフィットの通い方：行き先ごとのテーマ円アイコン（線アイコンを置換＝二重マークにしない） */
+      .sub-nav-icon--wc{ width:54px; height:54px; display:inline-flex;
+        align-items:center; justify-content:center; }
+      .sub-nav-icon--wc img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+      /* ⑤ CTA：本番トップの閉じCTAと同じ温かいピーチ帯（135degグラデ・濃茶文字・白ボタン） */
+      .consultation-banner--peach{
+        background:linear-gradient(135deg,#F6C9AE 0%,#F2B79A 50%,#EBA886 100%) !important;
+        position:relative; overflow:hidden; }
+      .consultation-banner--peach::before{ display:none !important; }
+      .consultation-banner--peach h2,
+      .consultation-banner--peach p{ color:#5a3a2c !important; }
+      .consultation-banner--peach .btn-primary{
+        background:#fff !important; color:#C27A65 !important; border-color:#fff !important; }
+      .consultation-banner--peach .btn-secondary{
+        background:transparent !important; border-color:#5a3a2c !important; color:#5a3a2c !important; }
+      .consultation-banner--peach .cta-corner{ position:absolute; right:0; bottom:0;
+        width:min(15vw,140px); opacity:.5; pointer-events:none; user-select:none; z-index:0; }
+      .consultation-banner--peach > :not(.cta-corner){ position:relative; z-index:1; }
+
+      /* モバイル：隅装飾を間引く／はみ出し防止 */
+      @media (max-width:767px){
+        .hero-deco__leaf, .hero-deco__bigleaf, .hero-deco__glow,
+        .sec-deco__corner, .sec-deco__walk, .cta-corner{ display:none; }
+        .hero-deco__wash{ width:66vw; opacity:.4; }
+        .sec-deco__wash{ width:52vw; opacity:.35; }
+        .sec-vine{ width:130px; }
+        .step-deco .feature-list-icon{ width:54px; height:54px; font-size:1.6rem !important; }
+      }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/services/leaf/" />
     <meta property="og:type" content="article" />
@@ -161,7 +243,11 @@
 
     <main id="main-content">
       <!-- ページヒーロー -->
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft hero-deco">
+        <img src="../../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="hero-deco__wash" />
+        <img src="../../images/materials/homepage/hp-glow.png" alt="" aria-hidden="true" class="hero-deco__glow" />
+        <img src="../../images/materials/homepage/hp-leaf-cluster.png" alt="" aria-hidden="true" class="hero-deco__leaf" />
+        <img src="../../images/materials/subpages/sp-leaf-big.png" alt="" aria-hidden="true" class="hero-deco__bigleaf" />
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">べるフィット｜保険が使えるジム（リーフ）</span>
@@ -175,7 +261,9 @@
       </section>
 
       <!-- サービス概要 -->
-      <section class="section-spacing container-narrow" style="margin: 0 auto;">
+      <section class="section-spacing container-narrow sec-deco" style="margin: 0 auto;">
+        <img src="../../images/materials/subpages/sp-walking.png" alt="" aria-hidden="true" class="sec-deco__walk" />
+        <img src="../../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--br" />
         <div class="section-header text-center">
           <span class="eyebrow">SERVICE OVERVIEW</span>
           <h2>こんな方にご利用いただいています</h2>
@@ -322,8 +410,9 @@
       </section>
 
       <!-- ご利用までの流れ -->
-      <section class="section-spacing container container-narrow">
+      <section class="section-spacing container container-narrow sec-deco step-deco">
         <div class="section-header text-center">
+          <img src="../../images/materials/homepage/hp-vine-divider.png" alt="" aria-hidden="true" class="sec-vine" />
           <span class="eyebrow">ご利用までの流れ</span>
           <h2>見学から、通い始めるまで</h2>
           <p class="text-muted" style="max-width: 600px; margin: 0 auto;">日中は4部制で、送迎を含めて1回90分（運動は約60分）です。ご家族やケアマネジャーの方からのご相談も受け付けています。</p>
@@ -393,16 +482,17 @@
 
       <!-- CTA バナー -->
       <section class="section-spacing container">
-        <div class="consultation-banner">
-          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">ご相談案内</p>
-          <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">まずはお気軽にご相談ください</h2>
-          <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
+        <div class="consultation-banner consultation-banner--peach">
+          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm);">ご相談案内</p>
+          <h2 style="margin-bottom: var(--space-lg);">まずはお気軽にご相談ください</h2>
+          <p style="max-width: 600px; margin: 0 auto var(--space-xl);">
             見学・体験利用のご相談を随時受け付けております。ご家族やケアマネジャーの方からのご相談も歓迎します。どの曜日・時間帯が適切か分からない場合も、担当者が丁寧にご案内いたします。
           </p>
           <div style="display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;">
-            <a href="../../contact/index.html" class="btn btn-primary" style="background-color: var(--color-surface); color: var(--color-primary);">お問い合わせへ</a>
-            <a href="tel:0426822839" class="btn btn-secondary" style="border-color: var(--color-surface); color: var(--color-surface);">☎ 042-682-2839</a>
+            <a href="../../contact/index.html" class="btn btn-primary">お問い合わせへ</a>
+            <a href="tel:0426822839" class="btn btn-secondary">☎ 042-682-2839</a>
           </div>
+          <img src="../../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="cta-corner" />
         </div>
       </section>
     </main>

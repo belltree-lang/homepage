@@ -10,6 +10,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
 
+    <!-- ============================================================
+         モック装飾レイヤー（本番トップ index.html・運動施設と同じデザイン言語）
+         意味駆動配置：各装飾は「その場所の意味」で説明できるものだけを置く。
+         styles.css・本番 price/index.html は触らない。相対パスは ../ 。
+         ============================================================ -->
+    <style>
+      /* --- 罫線アイブロウ（::before/::after の横線）を打ち消す --- */
+      .section-header .eyebrow::before,
+      .section-header .eyebrow::after{ content:none !important; }
+      .section-header .eyebrow{ display:block !important; gap:0 !important; }
+
+      /* --- 背景の温度感（クリーム／ピーチ寄りへ）--- */
+      body{ background-color:#FBF7F2; }
+      .bg-soft{ background-color:#FBF6F1 !important; }
+      .bg-alt{ background-color:#F7EDE6 !important; }
+
+      /* 装飾は後ろ・前面はコンテンツ */
+      .sec-deco, .hero-deco{ position:relative; overflow:hidden; }
+      .sec-deco > .container,
+      .hero-deco > .container,
+      .sec-deco > .section-header,
+      .sec-deco > .consultation-banner,
+      .sec-deco > .mt-2xl,
+      .sec-deco > p{ position:relative; z-index:2; }
+      .sec-deco > img,
+      .hero-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+
+      /* ① ヒーロー：ブランドの空気（トップ・運動施設と同一の作り） */
+      .hero-deco__wash{ top:-4%; right:-4%; width:min(50vw,600px); opacity:.5; filter:saturate(.95); }
+      .hero-deco__glow{ top:5%; right:7%; width:min(28vw,340px); opacity:.4; }
+      .hero-deco__leaf{ top:-6px; left:-4px; width:150px; opacity:.9; transform:rotate(-4deg); }
+      .hero-deco__euca{ top:-4px; right:-4px; width:150px; opacity:.85; transform:scaleX(-1); }
+      .hero-deco .editorial-image{ border-radius:22px; }
+
+      /* ② PRICE：各プランの種別を表すテーマ円アイコン（シード=芽／ナイト=月／リーフ=葉） */
+      .plan-icon{ width:56px; height:56px; margin:0 0 var(--space-sm); }
+      .plan-icon img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+      /* ③ STEP：入会までの道のり（つるの区切り＋テラコッタ円のステップ番号） */
+      .sec-vine{ display:block; width:160px; max-width:50%; height:auto; margin:0 auto .9rem; opacity:.8; }
+      .step-deco .feature-list-item{ align-items:center; }
+      .step-deco .feature-list-icon{ flex:0 0 auto; width:64px; height:64px;
+        display:flex; align-items:center; justify-content:center; border-radius:50%;
+        background:radial-gradient(circle at 32% 28%, #F7D9C4, #EFB89B);
+        color:#fff !important; font-family:"Shippori Mincho B1",serif; font-weight:700;
+        font-size:1.95rem !important; line-height:1 !important; opacity:1 !important;
+        box-shadow:0 3px 8px rgba(150,80,60,.24); margin-top:0; }
+
+      /* ④ 対角バランスの隅葉（入会金・オプション／Q&A の角に最小限） */
+      .sec-deco__corner{ width:min(16vw,160px); opacity:.5; }
+      .sec-deco__corner--bl{ bottom:0; left:0; transform:scaleY(-1); }
+      .sec-deco__corner--tr{ top:0; right:0; transform:scaleX(-1); }
+
+      /* ⑤ CTA：トップの閉じCTAと同じ温かいピーチ帯（入会への入口） */
+      .consultation-banner--peach{ background:linear-gradient(135deg,#F6C9AE 0%,#F2B79A 50%,#EBA886 100%) !important;
+        position:relative; overflow:hidden; }
+      .consultation-banner--peach::before{ display:none !important; }
+      .consultation-banner--peach h2,
+      .consultation-banner--peach p{ color:#5a3a2c !important; }
+      .consultation-banner--peach .btn-primary{ background:#fff !important; color:#C27A65 !important; }
+      .consultation-banner--peach .btn-secondary{ border-color:#5a3a2c !important; color:#5a3a2c !important; }
+      .consultation-banner--peach > :not(.cta-corner){ position:relative; z-index:1; }
+      .cta-corner{ position:absolute; right:0; bottom:0; width:min(30vw,190px); opacity:.5;
+        pointer-events:none; z-index:0; }
+
+      /* モバイル：隅装飾を間引く／はみ出し防止 */
+      @media (max-width:767px){
+        .hero-deco__leaf, .hero-deco__euca, .hero-deco__glow,
+        .sec-deco__corner, .cta-corner{ display:none; }
+        .hero-deco__wash{ width:66vw; opacity:.4; }
+        .sec-vine{ width:130px; }
+        .plan-icon{ width:48px; height:48px; }
+        .step-deco .feature-list-icon{ width:54px; height:54px; font-size:1.6rem !important; }
+      }
+    </style>
+
     <!-- SEO & OGP Config -->
     <link rel="canonical" href="https://bellmfit.com/price/" />
     <meta property="og:type" content="article" />
@@ -133,7 +209,11 @@
 
     <main id="main-content">
       <!-- ページヒーロー -->
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft hero-deco">
+        <img src="../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="hero-deco__wash" />
+        <img src="../images/materials/homepage/hp-glow.png" alt="" aria-hidden="true" class="hero-deco__glow" />
+        <img src="../images/materials/homepage/hp-leaf-cluster.png" alt="" aria-hidden="true" class="hero-deco__leaf" />
+        <img src="../images/materials/homepage/hp-eucalyptus.png" alt="" aria-hidden="true" class="hero-deco__euca" />
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">べるフィット｜料金・体験のご案内</span>
@@ -161,6 +241,7 @@
         <div class="grid grid-3 mt-2xl">
           <!-- シード -->
           <div class="card">
+            <div class="plan-icon"><img src="../images/materials/subpages/sp-icon-sprout.png" alt="" aria-hidden="true" /></div>
             <span class="eyebrow">SEED ｜ 日中・女性向け</span>
             <h3 style="margin: var(--space-xs) 0 var(--space-sm);">シード会員</h3>
             <p class="text-muted text-sm">日中の女性限定枠。同性同士で気兼ねなく、運動も会話も楽しめる通い方です。</p>
@@ -173,6 +254,7 @@
 
           <!-- ナイト -->
           <div class="card">
+            <div class="plan-icon"><img src="../images/materials/subpages/sp-icon-moon.png" alt="" aria-hidden="true" /></div>
             <span class="eyebrow">NIGHT ｜ 夜間・週末</span>
             <h3 style="margin: var(--space-xs) 0 var(--space-sm);">ナイト会員</h3>
             <p class="text-muted text-sm">平日の夜間帯・週末に自由に通えるプラン。お仕事などで日中に通いにくい方に。</p>
@@ -184,6 +266,7 @@
 
           <!-- リーフ -->
           <div class="card">
+            <div class="plan-icon"><img src="../images/materials/homepage/hp-icon-leaf.png" alt="" aria-hidden="true" /></div>
             <span class="eyebrow">LEAF ｜ 保険が使えるジム</span>
             <h3 style="margin: var(--space-xs) 0 var(--space-sm);">リーフ</h3>
             <p class="text-muted text-sm">介護保険の総合事業を使って通えるジム。退院後も運動を続けたい方、身体機能を維持したい方に。</p>
@@ -200,7 +283,8 @@
       </section>
 
       <!-- その他の費用 -->
-      <section class="section-spacing bg-alt">
+      <section class="section-spacing bg-alt sec-deco">
+        <img src="../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--bl" />
         <div class="container container-narrow" style="margin: 0 auto;">
           <div class="section-header text-center">
             <span class="eyebrow">OTHER FEES</span>
@@ -226,8 +310,9 @@
       </section>
 
       <!-- 入会までの流れ（会員獲得導線） -->
-      <section class="section-spacing container container-narrow">
+      <section class="section-spacing container container-narrow step-deco">
         <div class="section-header text-center">
+          <img src="../images/materials/homepage/hp-vine-divider.png" alt="" aria-hidden="true" class="sec-vine" />
           <span class="eyebrow">STEP</span>
           <h2>入会までの3ステップ</h2>
           <p class="text-muted" style="max-width: 600px; margin: 0 auto;">まずは無料体験から。ご本人だけでなく、ご家族やケアマネジャーの方からのご相談も歓迎します。</p>
@@ -264,7 +349,8 @@
       </section>
 
       <!-- 料金Q&A -->
-      <section class="section-spacing container container-narrow">
+      <section class="section-spacing container container-narrow sec-deco">
+        <img src="../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--tr" />
         <div class="section-header text-center">
           <span class="eyebrow">Q&amp;A</span>
           <h2>料金についてよくあるご質問</h2>
@@ -331,10 +417,11 @@
       </section>
 
       <!-- CTA バナー -->
-      <section class="section-spacing container">
-        <div class="consultation-banner">
-          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm); color: rgba(255,255,255,0.8);">ご相談案内</p>
-          <h2 style="color: var(--color-surface); margin-bottom: var(--space-lg);">まずは無料体験から</h2>
+      <section class="section-spacing container sec-deco">
+        <div class="consultation-banner consultation-banner--peach">
+          <img src="../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="cta-corner" />
+          <p style="font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; margin-bottom: var(--space-sm);">ご相談案内</p>
+          <h2 style="margin: 0 0 var(--space-lg);">まずは無料体験から</h2>
           <p style="max-width: 600px; margin: 0 auto var(--space-xl); color: rgba(255,255,255,0.9);">
             見学・無料体験のご相談を随時受け付けております。ご家族やケアマネジャーの方からのご相談も歓迎します。どの通い方が合うか分からない場合も、担当者が丁寧にご案内いたします。
           </p>
