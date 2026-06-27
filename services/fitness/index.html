@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -17,15 +17,79 @@
       .editorial-split h1 .hero-emph{ display:block; font-size:clamp(2.5rem,3.7vw,3.5rem); line-height:1.22; }
       .editorial-split h1 .hero-emph .n{ color:var(--color-accent); font-size:1.18em; padding:0 .03em; }
       .editorial-split .text-lead{ font-size:1.16rem !important; line-height:2.05 !important; max-width:30em; }
-      .grid-3{ counter-reset:plan; }
-      .grid-3 > .card{ position:relative; overflow:hidden; }
-      .grid-3 > .card::after{ counter-increment:plan; content:"0" counter(plan);
-        position:absolute; top:.8rem; right:1.3rem; font-family:"Shippori Mincho B1",serif; font-weight:700;
-        font-size:2.7rem; line-height:1; color:var(--color-border-strong); opacity:.85; pointer-events:none; }
+      .grid-3 > .card{ position:relative; }
       .grid-3 .card h3{ font-size:1.55rem !important; }
       .feature-list-icon{ font-family:"Shippori Mincho B1",serif !important; font-weight:700 !important;
         font-size:2.9rem !important; line-height:1 !important; opacity:.5; }
       .feature-list-item h4{ font-size:1.3rem !important; }
+    </style>
+
+    <!-- ============================================================
+         モック装飾レイヤー（本番トップ index.html と同じデザイン言語）
+         意味駆動配置：各装飾は「その場所の意味」で説明できるものだけを置く。
+         styles.css・本番index.html は触らない。相対パスは ../../ 。
+         ============================================================ -->
+    <style>
+      /* --- 罫線アイブロウ（::before/::after の横線）を打ち消す --- */
+      .section-header .eyebrow::before,
+      .section-header .eyebrow::after{ content:none !important; }
+      .section-header .eyebrow{ display:block !important; gap:0 !important; }
+
+      /* --- 背景の温度感（クリーム／ピーチ寄りへ）--- */
+      body{ background-color:#FBF7F2; }
+      .bg-soft{ background-color:#FBF6F1 !important; }
+      .bg-alt{ background-color:#F7EDE6 !important; }
+
+      /* 装飾は後ろ・前面はコンテンツ */
+      .sec-deco, .hero-deco{ position:relative; overflow:hidden; }
+      .sec-deco > .container,
+      .hero-deco > .container,
+      .sec-deco > .section-header,
+      .sec-deco > .grid,
+      .sec-deco > .contact-form-card{ position:relative; z-index:2; }
+      .sec-deco > img,
+      .hero-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+
+      /* ① ヒーロー：ブランドの空気（トップと同一の作り） */
+      .hero-deco__wash{ top:-4%; right:-4%; width:min(50vw,600px); opacity:.5; filter:saturate(.95); }
+      .hero-deco__glow{ top:5%; right:7%; width:min(28vw,340px); opacity:.4; }
+      .hero-deco__leaf{ top:-6px; left:-4px; width:150px; opacity:.9; transform:rotate(-4deg); }
+      .hero-deco__euca{ top:-4px; right:-4px; width:150px; opacity:.85; transform:scaleX(-1); }
+      .hero-deco .editorial-image{ border-radius:22px; }
+
+      /* ② PLANS：各プランの種別を表すテーマ円アイコン＋対角バランスの葉 */
+      .plan-icon{ width:60px; height:60px; margin:0 0 var(--space-md); }
+      .plan-icon img{ width:100%; height:100%; object-fit:contain; display:block; }
+      .sec-deco__corner{ width:min(17vw,170px); opacity:.55; }
+      .sec-deco__corner--bl{ bottom:0; left:0; transform:scaleY(-1); }
+
+      /* ③ 申込の流れ：道のり（つるの区切り＋テラコッタ円のステップ番号） */
+      .sec-vine{ display:block; width:160px; max-width:50%; height:auto; margin:0 auto .9rem; opacity:.8; }
+      .sec-deco__wash{ width:min(30vw,360px); filter:saturate(.9); }
+      .sec-deco__wash--tr{ top:-8%; right:-5%; opacity:.4; }
+      .step-deco .feature-list-item{ align-items:center; }
+      .step-deco .feature-list-icon{ flex:0 0 auto; width:64px; height:64px;
+        display:flex; align-items:center; justify-content:center; border-radius:50%;
+        background:radial-gradient(circle at 32% 28%, #F7D9C4, #EFB89B);
+        color:#fff !important; font-size:1.95rem !important; opacity:1 !important;
+        box-shadow:0 3px 8px rgba(150,80,60,.24); margin-top:0; }
+
+      /* ④ フォーム：通い始める入口（扉＝入会の入口） */
+      .sec-deco__wash--form{ top:-6%; right:-4%; opacity:.35; }
+      .form-door-head{ display:flex; align-items:center; justify-content:center; gap:.7rem; }
+      .form-door{ width:84px; height:auto; opacity:.9; flex:0 0 auto; }
+
+      /* モバイル：隅装飾を間引く／はみ出し防止 */
+      @media (max-width:767px){
+        .hero-deco__leaf, .hero-deco__euca, .hero-deco__glow,
+        .sec-deco__corner{ display:none; }
+        .hero-deco__wash{ width:66vw; opacity:.4; }
+        .sec-deco__wash{ width:52vw; opacity:.35; }
+        .sec-vine{ width:130px; }
+        .plan-icon{ width:52px; height:52px; }
+        .form-door{ width:60px; }
+        .step-deco .feature-list-icon{ width:54px; height:54px; font-size:1.6rem !important; }
+      }
     </style>
 
     <!-- SEO & OGP Config -->
@@ -144,6 +208,7 @@
 
 
 
+
   <!-- Breadcrumbs -->
   <nav class="breadcrumb-nav" aria-label="現在位置">
     <div class="container">
@@ -154,10 +219,14 @@
     </div>
   </nav>
 
-  
+
 
     <main id="main-content">
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft hero-deco">
+        <img src="../../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="hero-deco__wash" />
+        <img src="../../images/materials/homepage/hp-glow.png" alt="" aria-hidden="true" class="hero-deco__glow" />
+        <img src="../../images/materials/homepage/hp-leaf-cluster.png" alt="" aria-hidden="true" class="hero-deco__leaf" />
+        <img src="../../images/materials/homepage/hp-eucalyptus.png" alt="" aria-hidden="true" class="hero-deco__euca" />
         <div class="container editorial-split">
           <div>
             <span class="eyebrow">べるフィット｜運動施設</span>
@@ -170,13 +239,15 @@
         </div>
       </section>
 
-      <section class="section-spacing container" style="margin: 0 auto;">
+      <section class="section-spacing container sec-deco" style="margin: 0 auto;">
+         <img src="../../images/materials/homepage/hp-corner-leaf.png" alt="" aria-hidden="true" class="sec-deco__corner sec-deco__corner--bl" />
          <div class="section-header text-center">
             <span class="eyebrow">PLANS</span>
             <h2>あなたに合った通い方</h2>
          </div>
          <div class="grid grid-3 mt-2xl">
             <a href="night/index.html" class="card" style="text-decoration: none; color: inherit; transition: transform 0.2s; display: block;">
+               <div class="plan-icon"><img src="../../images/materials/subpages/sp-icon-moon.png" alt="" aria-hidden="true" /></div>
                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-primary); font-weight: bold;">自分のペースで運動</div>
                <h3 style="margin-bottom: var(--space-xs); font-size: 1.25rem;">夜間・週末利用</h3>
                <div style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: var(--space-md);">べるフィット（ナイト会員）</div>
@@ -187,6 +258,7 @@
                </ul>
             </a>
             <a href="seed/index.html" class="card" style="text-decoration: none; color: inherit; transition: transform 0.2s; display: block;">
+               <div class="plan-icon"><img src="../../images/materials/subpages/sp-icon-sprout.png" alt="" aria-hidden="true" /></div>
                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: #c43d7a; font-weight: bold;">女性限定</div>
                <h3 style="margin-bottom: var(--space-xs); font-size: 1.25rem;">女性向けプログラム</h3>
                <div style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: var(--space-md);">べるフィット（シード）</div>
@@ -197,6 +269,7 @@
                </ul>
             </a>
             <a href="../leaf/index.html" class="card" style="text-decoration: none; color: inherit; transition: transform 0.2s; display: block;">
+               <div class="plan-icon"><img src="../../images/materials/homepage/hp-icon-leaf.png" alt="" aria-hidden="true" /></div>
                <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: #1f7a35; font-weight: bold;">介護保険の総合事業</div>
                <h3 style="margin-bottom: var(--space-xs); font-size: 1.25rem;">保険が使えるジム</h3>
                <div style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: var(--space-md);">べるフィット（リーフ）</div>
@@ -210,9 +283,11 @@
       </section>
 
       <!-- 申込の流れ -->
-      <section class="section-spacing bg-soft">
+      <section class="section-spacing bg-soft sec-deco step-deco">
+        <img src="../../images/materials/homepage/hp-wash-sage.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--tr" />
         <div class="container container-narrow">
           <div class="section-header text-center">
+            <img src="../../images/materials/homepage/hp-vine-divider.png" alt="" aria-hidden="true" class="sec-vine" />
             <span class="eyebrow">申込の流れ</span>
             <h2>見学・体験から、通い始めるまで</h2>
             <p class="text-muted" style="max-width: 600px; margin: 0 auto;">どの通い方が合うか分からない段階でも構いません。まずはお気軽にご連絡ください。</p>
@@ -249,9 +324,10 @@
       </section>
 
       <!-- 見学・体験申込フォーム -->
-      <section id="trial-form" class="section-spacing container mb-2xl">
+      <section id="trial-form" class="section-spacing container mb-2xl sec-deco">
+        <img src="../../images/materials/homepage/hp-wash-peach.png" alt="" aria-hidden="true" class="sec-deco__wash sec-deco__wash--form" />
         <div class="contact-form-card shadow-sm">
-          <h3 class="text-center mb-lg">見学・体験のお申し込み</h3>
+          <h3 class="text-center mb-lg form-door-head"><img src="../../images/materials/subpages/sp-door.png" alt="" aria-hidden="true" class="form-door" />見学・体験のお申し込み</h3>
           <p class="text-center text-sm mb-xl" style="color: var(--color-text-light);">
             不安な点や気になることがございましたら、まずは見学や体験でお確かめください。<br/>
             内容を確認のうえ、担当者より日程調整のご連絡をいたします。
@@ -414,7 +490,7 @@
         };
 
         mobileClose.addEventListener('click', closeMenu);
-        
+
         // Close on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', closeMenu);
