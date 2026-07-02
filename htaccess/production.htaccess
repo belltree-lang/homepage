@@ -1,0 +1,9 @@
+# BellTree production .htaccess
+# 公開後の本番ルール（メンテモード解除後）
+#
+# 切替手順は htaccess/README.md を参照。
+
+RewriteEngine On
+
+# 301 Redirect: 旧パス保護（過去にディレクトリ改名）
+Redirect 301 /solutions/end-of-life-preparation/ /services/shukatsu/

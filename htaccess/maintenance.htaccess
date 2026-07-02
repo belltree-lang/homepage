@@ -1,0 +1,20 @@
+# BellTree Maintenance Mode (preview抜け道なし)
+# 全アクセスを maintenance.html へ302リダイレクト
+#
+# このファイルはルート `.htaccess` の参照コピー。
+# ルート `.htaccess` を更新する場合はこのファイルも同じ内容で更新する。
+#
+# 切替手順は htaccess/README.md を参照。
+
+RewriteEngine On
+
+# Avoid infinite loops and allow assets to load, and exclude /test/
+RewriteCond %{REQUEST_URI} !/maintenance\.html$
+RewriteCond %{REQUEST_URI} !^/test/
+RewriteCond %{REQUEST_URI} !assets/
+RewriteCond %{REQUEST_URI} !images/
+RewriteCond %{REQUEST_URI} !fonts/
+RewriteCond %{REQUEST_URI} !styles\.css$
+
+# Redirect all other traffic to maintenance.html
+RewriteRule ^.*$ maintenance.html [R=302,L]

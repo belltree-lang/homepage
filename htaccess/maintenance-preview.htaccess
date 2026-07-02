@@ -1,0 +1,27 @@
+# BellTree Maintenance Mode (preview抜け道つき)
+# 通常アクセスは maintenance.html へ302、`?preview=true` 付きは素通し。
+# 公開直前のテストフェーズで利用する版。
+#
+# 旧 `-suzuki.htaccess` の内容を引き継ぎ、301を統合した形。
+# 切替手順は htaccess/README.md を参照。
+
+# 301 Redirect: 旧パス保護（過去にディレクトリ改名）
+Redirect 301 /solutions/end-of-life-preparation/ /services/shukatsu/
+
+RewriteEngine On
+
+# Allow access if query string contains preview=true
+RewriteCond %{QUERY_STRING} preview=true [OR]
+RewriteCond %{QUERY_STRING} preview=true$ [OR]
+RewriteCond %{QUERY_STRING} ^preview=true
+RewriteRule ^ - [L]
+
+# Avoid infinite loops and allow assets to load
+RewriteCond %{REQUEST_URI} !/maintenance\.html$
+RewriteCond %{REQUEST_URI} !/assets/
+RewriteCond %{REQUEST_URI} !/images/
+RewriteCond %{REQUEST_URI} !/fonts/
+RewriteCond %{REQUEST_URI} !/styles\.css$
+
+# Redirect all other traffic to maintenance.html
+RewriteRule ^.*$ maintenance.html [R=302,L]
