@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>装飾の入れ方 3候補 比較</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400&family=Shippori+Mincho+B1:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #1a1a1a; color: #fff; font-family: "Noto Sans JP", sans-serif; padding: 24px; }
+    .head { max-width: 1400px; margin: 0 auto 32px; text-align: center; }
+    .head h1 { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 400; font-size: 28px; margin: 0 0 8px; letter-spacing: 0.08em; }
+    .head .sub { color: #888; font-size: 13px; letter-spacing: 0.06em; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; max-width: 100%; }
+    @media (max-width: 1200px) { .grid { grid-template-columns: 1fr; } }
+    .vp { background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    .vp-head { background: linear-gradient(90deg, #1A365D, #2D4A73); color: #fff; padding: 14px 16px; }
+    .vp-head .label { display: inline-block; padding: 2px 10px; background: #C27A65; border-radius: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; margin-bottom: 6px; }
+    .vp-head h3 { margin: 0; font-family: "Shippori Mincho B1", serif; font-size: 17px; }
+    .vp-head .desc { margin-top: 6px; font-size: 12px; color: rgba(255,255,255,0.78); line-height: 1.7; }
+    .frame-wrap { background: #FAF6EF; overflow: hidden; position: relative; }
+    .vp-frame { border: none; width: 1280px; height: 6800px; transform-origin: top left; transform: scale(0.36); display: block; }
+    .frame-wrap { width: 460px; height: 2450px; }
+    .open { text-align: center; padding: 12px; background: #fafafa; }
+    .open a { font-size: 12px; color: #1A365D; text-decoration: none; letter-spacing: 0.1em; border-bottom: 1px solid #C27A65; padding-bottom: 2px; }
+
+    .legend { max-width: 1400px; margin: 32px auto; background: #2a2a2a; padding: 24px; border-radius: 6px; }
+    .legend h2 { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 400; color: #C27A65; margin: 0 0 14px; }
+    .legend-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 1024px) { .legend-grid { grid-template-columns: 1fr; } }
+    .legend-card { background: #1f1f1f; padding: 16px; border-left: 3px solid #C27A65; border-radius: 4px; font-size: 13px; line-height: 1.85; }
+    .legend-card h4 { margin: 0 0 8px; color: #C27A65; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .legend-card b { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <h1>3 Candidates Comparison</h1>
+    <p class="sub">本番 index.html に素材を活かす 3パターン — 控えめ / HERO 編集風 / セクション区切り</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="vp">
+      <div class="vp-head">
+        <span class="label">CANDIDATE A</span>
+        <h3>控えめ装飾</h3>
+        <div class="desc">レイアウト維持、HERO 写真の右下にドライ植物 xs (opacity 0.6)。ほぼ気づかないレベル。</div>
+      </div>
+      <div class="frame-wrap"><iframe class="vp-frame" src="./mockup-A-subtle.html"></iframe></div>
+      <div class="open"><a href="./mockup-A-subtle.html" target="_blank">A を新タブで開く →</a></div>
+    </div>
+
+    <div class="vp">
+      <div class="vp-head">
+        <span class="label">CANDIDATE B</span>
+        <h3>HERO 編集雑誌風</h3>
+        <div class="desc">HERO だけ v3/v4 路線：縦書きラベル・編集番号 No.001・写真フレーム・テープ・手書き丸印 (15 YEARS)・観葉植物・ティーカップ。</div>
+      </div>
+      <div class="frame-wrap"><iframe class="vp-frame" src="./mockup-B-editorial-hero.html"></iframe></div>
+      <div class="open"><a href="./mockup-B-editorial-hero.html" target="_blank">B を新タブで開く →</a></div>
+    </div>
+
+    <div class="vp">
+      <div class="vp-head">
+        <span class="label">CANDIDATE C</span>
+        <h3>セクション区切り装飾</h3>
+        <div class="desc">セクション間に hairline + 装飾アクセント。HERO/Integrated 間にドライ植物、Integrated/Team 間にティーカップ。本文には一切被らない。</div>
+      </div>
+      <div class="frame-wrap"><iframe class="vp-frame" src="./mockup-C-section-break.html"></iframe></div>
+      <div class="open"><a href="./mockup-C-section-break.html" target="_blank">C を新タブで開く →</a></div>
+    </div>
+
+  </div>
+
+  <div class="legend">
+    <h2>判断軸</h2>
+    <div class="legend-grid">
+      <div class="legend-card">
+        <h4>A — 控えめ</h4>
+        <ul>
+          <li><b>強み</b>: 既存トーンを壊さない / 既存ユーザーが違和感を感じない</li>
+          <li><b>弱み</b>: 装飾の存在感が弱く、「素材作った意味あった？」になりがち</li>
+          <li><b>適</b>: 「とりあえず安全側で」</li>
+        </ul>
+      </div>
+      <div class="legend-card">
+        <h4>B — HERO 編集風</h4>
+        <ul>
+          <li><b>強み</b>: HERO の世界観が一気に上がる / 雑誌として読みたくなる</li>
+          <li><b>弱み</b>: 本番の他セクションとトーンが乖離 / 「HERO だけ突き抜ける」違和感</li>
+          <li><b>適</b>: HERO を強化したい / 段階的に全体を雑誌化していく前提</li>
+        </ul>
+      </div>
+      <div class="legend-card">
+        <h4>C — セクション区切り</h4>
+        <ul>
+          <li><b>強み</b>: 本文・写真に被らない / セクション境界の「呼吸」になる / 装飾が機能する</li>
+          <li><b>弱み</b>: 効果が控えめ / 装飾が「飾り」止まりになる可能性</li>
+          <li><b>適</b>: 安全性と装飾効果のバランス重視 / 本番現状を尊重</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

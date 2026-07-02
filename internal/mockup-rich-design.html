@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>共通素材リッチ化 モックアップ</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* =========================================================
+       Page shell — mockup header / nav / footer
+       ========================================================= */
+    :root {
+      --color-primary: #1A365D;
+      --color-accent: #C27A65;
+      --color-background: #FCFCFA;
+      --color-background-soft: #F5F0E8;
+      --color-border: #E5E0D8;
+      --color-border-strong: #C9C3B6;
+      --color-text: #1F1F1F;
+      --color-muted: #6b7280;
+      --font-mincho: "Shippori Mincho B1", "Yu Mincho", "YuMincho", serif;
+      --font-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--color-background-soft, #FCFCFA);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+
+    /* ---------- Sticky Wayfinding Nav ---------- */
+    .mock-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252, 252, 250, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .mock-nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .mock-nav-brand {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.16em;
+      color: var(--color-primary);
+    }
+    .mock-nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .mock-nav-links a {
+      display: inline-block;
+      font-family: var(--font-mincho);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--color-primary);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      transition: all 200ms ease-out;
+    }
+    .mock-nav-links a:hover {
+      color: var(--color-accent);
+      border-color: var(--color-border);
+      background: var(--color-background);
+    }
+    .mock-nav-step {
+      font-family: var(--font-mincho);
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    /* ---------- Page Header ---------- */
+    .mock-header {
+      background: var(--color-background);
+      padding: 80px 24px 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .mock-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .mock-header-tag {
+      font-family: var(--font-mincho);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      margin: 0 0 20px;
+    }
+    .mock-header h1 {
+      font-family: var(--font-mincho);
+      font-weight: 700;
+      font-size: clamp(1.85rem, 3.6vw, 2.6rem);
+      letter-spacing: 0.06em;
+      color: var(--color-primary);
+      line-height: 1.5;
+      margin: 0 0 24px;
+    }
+    .mock-header-lead {
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: var(--color-muted);
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- Main + section spacing ---------- */
+    main.mock-main {
+      display: block;
+    }
+    main.mock-main > section {
+      margin-bottom: 6rem;
+    }
+    main.mock-main > section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---------- Footer ---------- */
+    .mock-footer {
+      background: var(--color-background);
+      border-top: 1px solid var(--color-border);
+      padding: 32px 24px;
+      text-align: center;
+      font-family: var(--font-mincho);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: var(--color-muted);
+    }
+
+    @media (max-width: 768px) {
+      .mock-header { padding: 56px 20px 48px; }
+      .mock-nav-inner { padding: 12px 20px; }
+      .mock-nav-brand { font-size: 0.78rem; }
+      .mock-nav-links a { font-size: 0.72rem; padding: 5px 10px; letter-spacing: 0.1em; }
+      main.mock-main > section { margin-bottom: 4rem; }
+    }
+
+    /* =========================================================
+       [A] #rich-content — Editorial Rich Content Section
+       ========================================================= */
+    .rc-section {
+      background: #FCFCFA;
+      color: #1F1F1F;
+      padding: 5rem 1.5rem;
+      font-family: "Noto Sans JP", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .rc-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .rc-block { margin-bottom: 6rem; }
+    .rc-block:last-child { margin-bottom: 0; }
+
+    .rc-block-head { text-align: center; margin-bottom: 3.5rem; }
+    .rc-eyebrow {
+      display: inline-block;
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      color: #C27A65;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      position: relative;
+      padding: 0 1.5rem;
+    }
+    .rc-eyebrow::before,
+    .rc-eyebrow::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 1.5rem;
+      height: 1px;
+      background: #C27A65;
+      opacity: 0.6;
+    }
+    .rc-eyebrow::before { right: 100%; }
+    .rc-eyebrow::after  { left: 100%; }
+
+    .rc-block-title {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #1A365D;
+      line-height: 1.5;
+      margin: 0 0 0.75rem;
+      letter-spacing: 0.04em;
+    }
+    .rc-block-lead {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* Stats Mosaic */
+    .rc-mosaic {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 0;
+      background: #FCFCFA;
+      border: 1px solid #E5E0D8;
+      overflow: hidden;
+    }
+    .rc-mosaic-cell {
+      position: relative;
+      padding: 3rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+    .rc-cell-1 {
+      grid-column: 1; grid-row: 1;
+      background: #FCFCFA;
+      border-right: 1px solid #E5E0D8;
+      border-bottom: 1px solid #E5E0D8;
+      padding: 4rem 3rem 3.5rem;
+      min-height: 280px;
+    }
+    .rc-cell-2 {
+      grid-column: 2; grid-row: 1;
+      background: #F5F0E8;
+      border-bottom: 1px solid #E5E0D8;
+      padding: 4rem 3rem 3.5rem;
+      min-height: 280px;
+    }
+    .rc-cell-3 {
+      grid-column: 1; grid-row: 2;
+      background: #F5F0E8;
+      border-right: 1px solid #E5E0D8;
+    }
+    .rc-cell-4 {
+      grid-column: 2; grid-row: 2;
+      background: #FCFCFA;
+    }
+    .rc-stat { text-align: center; position: relative; z-index: 2; }
+    .rc-stat-num {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 700;
+      color: #1A365D;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .rc-stat-xl { font-size: clamp(3.5rem, 7vw, 5rem); }
+    .rc-stat-lg { font-size: clamp(2.75rem, 5vw, 3.5rem); font-weight: 500; }
+    .rc-stat-unit {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: 0.4em;
+      font-weight: 500;
+      color: #C27A65;
+      margin-left: 0.25em;
+      letter-spacing: 0.08em;
+    }
+    .rc-stat-caption {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #6b7280;
+      line-height: 1.8;
+      letter-spacing: 0.08em;
+    }
+    .rc-hairline {
+      position: absolute;
+      background: #C27A65;
+      opacity: 0.35;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .rc-hairline-h, .rc-hairline-v { display: none; }
+    .rc-hairline-dot {
+      position: absolute;
+      width: 7px; height: 7px;
+      background: #C27A65;
+      border-radius: 50%;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .rc-hairline-dot-center {
+      top: 50%;
+      left: 58.33%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 4px #FCFCFA;
+    }
+
+    /* Timeline */
+    .rc-timeline {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 720px;
+      position: relative;
+    }
+    .rc-tl-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 2rem;
+      padding-bottom: 3rem;
+      position: relative;
+    }
+    .rc-tl-item-last { padding-bottom: 0; }
+    .rc-tl-marker {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+    .rc-tl-marker::before {
+      content: "";
+      position: absolute;
+      top: 1.5rem;
+      bottom: -0.5rem;
+      left: 50%;
+      width: 1px;
+      background: #C9C3B6;
+      transform: translateX(-50%);
+    }
+    .rc-tl-item-last .rc-tl-marker::before { display: none; }
+    .rc-tl-dot {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      background: #FCFCFA;
+      border: 1.5px solid #C27A65;
+      position: relative;
+      z-index: 2;
+      margin-top: 0.4rem;
+      transition: all 220ms ease-out;
+    }
+    .rc-tl-item:hover .rc-tl-dot {
+      background: #C27A65;
+      transform: scale(1.15);
+    }
+    .rc-tl-content { padding-bottom: 0.5rem; }
+    .rc-tl-index {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #C27A65;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+    }
+    .rc-tl-title {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1A365D;
+      line-height: 1.5;
+      margin: 0 0 0.75rem;
+      letter-spacing: 0.04em;
+    }
+    .rc-tl-desc {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #6b7280;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    /* Pull Quote */
+    .rc-quote {
+      background: #F5F0E8;
+      padding: 4.5rem 2rem;
+      position: relative;
+      border-top: 1px solid #E5E0D8;
+      border-bottom: 1px solid #E5E0D8;
+      margin-left: calc(-1 * max(0px, (100vw - 1100px) / 2 - 1.5rem));
+      margin-right: calc(-1 * max(0px, (100vw - 1100px) / 2 - 1.5rem));
+    }
+    .rc-quote-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .rc-quote-glyph {
+      width: 56px;
+      height: auto;
+      color: #C27A65;
+      opacity: 0.85;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+    .rc-quote-text {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+      font-weight: 500;
+      line-height: 1.9;
+      color: #1A365D;
+      letter-spacing: 0.06em;
+      margin: 0 0 2.5rem;
+      text-align: center;
+    }
+    .rc-quote-cite {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+    .rc-quote-line {
+      width: 40px; height: 1px;
+      background: #C27A65;
+      display: inline-block;
+    }
+    .rc-quote-meta {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #6b7280;
+      letter-spacing: 0.16em;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .rc-mosaic-cell,
+      .rc-tl-item,
+      .rc-quote-inner > * {
+        animation: rc-fade-up 600ms ease-out both;
+      }
+      .rc-cell-2 { animation-delay: 80ms; }
+      .rc-cell-3 { animation-delay: 160ms; }
+      .rc-cell-4 { animation-delay: 240ms; }
+      .rc-tl-item:nth-child(2) { animation-delay: 100ms; }
+      .rc-tl-item:nth-child(3) { animation-delay: 200ms; }
+      .rc-tl-item:nth-child(4) { animation-delay: 300ms; }
+      .rc-tl-item:nth-child(5) { animation-delay: 400ms; }
+    }
+    @keyframes rc-fade-up {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .rc-section { padding: 3.5rem 1.25rem; }
+      .rc-block { margin-bottom: 4.5rem; }
+      .rc-block-head { margin-bottom: 2.5rem; }
+      .rc-mosaic {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+      }
+      .rc-cell-1, .rc-cell-2, .rc-cell-3, .rc-cell-4 {
+        grid-column: 1;
+        border-right: none;
+        border-bottom: 1px solid #E5E0D8;
+        padding: 2.5rem 1.5rem;
+        min-height: auto;
+      }
+      .rc-cell-1 { grid-row: 1; }
+      .rc-cell-2 { grid-row: 2; }
+      .rc-cell-3 { grid-row: 3; }
+      .rc-cell-4 { grid-row: 4; border-bottom: none; }
+      .rc-hairline-dot-center { display: none; }
+      .rc-tl-item {
+        grid-template-columns: 32px 1fr;
+        gap: 1.25rem;
+        padding-bottom: 2.25rem;
+      }
+      .rc-tl-title { font-size: 1.15rem; }
+      .rc-quote {
+        padding: 3rem 1.25rem;
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+      }
+      .rc-br-pc { display: none; }
+      .rc-quote-glyph { width: 44px; margin-bottom: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .rc-eyebrow { font-size: 0.7rem; }
+      .rc-eyebrow::before, .rc-eyebrow::after { width: 1rem; }
+      .rc-stat-caption { font-size: 0.78rem; }
+      .rc-tl-desc { font-size: 0.88rem; }
+    }
+
+    /* =========================================================
+       [B] #rich-trust — Trust & Authority Section
+       ========================================================= */
+    .rt-section {
+      --rt-primary: #1A365D;
+      --rt-accent: #C27A65;
+      --rt-bg: #FCFCFA;
+      --rt-bg-soft: #F5F0E8;
+      --rt-border: #E5E0D8;
+      --rt-border-strong: #C9C3B6;
+      --rt-text: #1F1F1F;
+      --rt-muted: #6b7280;
+      --rt-mincho: "Shippori Mincho B1", "Yu Mincho", "YuMincho", serif;
+      --rt-sans: "Noto Sans JP", system-ui, sans-serif;
+
+      background: var(--rt-bg);
+      color: var(--rt-text);
+      font-family: var(--rt-sans);
+      padding: 96px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .rt-container { max-width: 1120px; margin: 0 auto; }
+
+    .rt-header { text-align: center; margin-bottom: 64px; }
+    .rt-eyebrow {
+      font-family: var(--rt-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rt-accent);
+      margin: 0 0 16px;
+    }
+    .rt-heading {
+      font-family: var(--rt-mincho);
+      font-weight: 700;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      letter-spacing: 0.04em;
+      color: var(--rt-primary);
+      margin: 0 0 16px;
+      line-height: 1.4;
+    }
+    .rt-lede {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--rt-muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .rt-block { margin-top: 96px; }
+    .rt-block:first-of-type { margin-top: 64px; }
+    .rt-block-title {
+      font-family: var(--rt-mincho);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: var(--rt-primary);
+      text-align: center;
+      margin: 0 0 48px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    .rt-block-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 24px; height: 1px;
+      background: var(--rt-accent);
+    }
+
+    /* Credential Strip */
+    .rt-credential-strip {
+      list-style: none;
+      margin: 0;
+      padding: 32px 24px;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 0;
+      border-top: 1px solid var(--rt-border);
+      border-bottom: 1px solid var(--rt-border);
+      background: var(--rt-bg);
+    }
+    .rt-credential {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8px 16px;
+      position: relative;
+      transition: transform 200ms ease-out;
+    }
+    .rt-credential + .rt-credential::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 12px; bottom: 12px;
+      width: 1px;
+      background: var(--rt-border);
+    }
+    .rt-credential:hover { transform: translateY(-2px); }
+    .rt-credential-pre {
+      font-family: var(--rt-mincho);
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--rt-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .rt-credential-name {
+      font-family: var(--rt-mincho);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      color: var(--rt-primary);
+      line-height: 1.5;
+      display: block;
+    }
+
+    /* Comparison Table */
+    .rt-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--rt-border);
+      border-radius: 4px;
+      background: var(--rt-bg);
+    }
+    .rt-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 640px;
+    }
+    .rt-table-caption {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+    .rt-th {
+      font-family: var(--rt-mincho);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-align: left;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--rt-border-strong);
+      background: var(--rt-bg-soft);
+    }
+    .rt-th--label { width: 22%; color: var(--rt-text); }
+    .rt-th--muted { width: 38%; color: var(--rt-muted); font-weight: 500; }
+    .rt-th--accent {
+      width: 40%;
+      color: var(--rt-primary);
+      background: #FFF;
+      border-bottom-color: var(--rt-accent);
+      border-bottom-width: 2px;
+    }
+    .rt-table tbody tr { border-bottom: 1px solid var(--rt-border); }
+    .rt-table tbody tr:last-child { border-bottom: none; }
+    .rt-row-label {
+      font-family: var(--rt-mincho);
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: var(--rt-text);
+      padding: 22px 24px;
+      text-align: left;
+      vertical-align: top;
+      letter-spacing: 0.04em;
+      background: var(--rt-bg-soft);
+    }
+    .rt-cell {
+      padding: 22px 24px;
+      vertical-align: top;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+    .rt-cell--muted { color: var(--rt-muted); font-weight: 400; }
+    .rt-dash {
+      display: inline-block;
+      color: var(--rt-border-strong);
+      margin-right: 10px;
+      letter-spacing: 0;
+    }
+    .rt-cell--accent {
+      color: var(--rt-text);
+      font-weight: 500;
+      background: #FFF;
+    }
+    .rt-check {
+      color: var(--rt-accent);
+      margin-right: 10px;
+      vertical-align: -3px;
+      flex-shrink: 0;
+    }
+
+    /* Feature Grid */
+    .rt-feature-grid {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rt-border);
+      border: 1px solid var(--rt-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .rt-feature {
+      background: var(--rt-bg);
+      padding: 40px 32px;
+      transition: background 200ms ease-out;
+    }
+    .rt-feature:hover { background: var(--rt-bg-soft); }
+    .rt-feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; height: 44px;
+      border: 1px solid var(--rt-border-strong);
+      border-radius: 2px;
+      color: var(--rt-accent);
+      margin-bottom: 20px;
+      background: var(--rt-bg);
+    }
+    .rt-feature-title {
+      font-family: var(--rt-mincho);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      color: var(--rt-primary);
+      margin: 0 0 12px;
+      line-height: 1.5;
+    }
+    .rt-feature-desc {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--rt-muted);
+      margin: 0;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .rt-block,
+      .rt-header {
+        animation: rtFadeUp 600ms ease-out both;
+      }
+      .rt-block--compare { animation-delay: 80ms; }
+      .rt-block--features { animation-delay: 160ms; }
+    }
+    @keyframes rtFadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .rt-section { padding: 64px 20px; }
+      .rt-block { margin-top: 72px; }
+      .rt-credential-strip { flex-direction: column; padding: 8px 16px; }
+      .rt-credential {
+        padding: 20px 8px;
+        border-bottom: 1px solid var(--rt-border);
+      }
+      .rt-credential:last-child { border-bottom: none; }
+      .rt-credential + .rt-credential::before { display: none; }
+      .rt-feature-grid { grid-template-columns: 1fr; }
+      .rt-feature { padding: 32px 24px; }
+      .rt-table { font-size: 0.88rem; }
+      .rt-th, .rt-cell, .rt-row-label { padding: 16px; }
+    }
+    @media (max-width: 480px) {
+      .rt-heading { font-size: 1.5rem; }
+      .rt-lede { font-size: 0.9rem; }
+    }
+
+    /* =========================================================
+       [C] #rich-visual — Service Landscape Section
+       ========================================================= */
+    .rv-section {
+      background: #FCFCFA;
+      color: #1F1F1F;
+      padding: 96px 0;
+      font-family: "Noto Sans JP", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .rv-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .rv-header {
+      max-width: 760px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+    .rv-eyebrow {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: .78rem;
+      letter-spacing: .32em;
+      color: #C27A65;
+      text-transform: uppercase;
+      margin: 0 0 16px;
+    }
+    .rv-heading {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 700;
+      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+      line-height: 1.55;
+      letter-spacing: .04em;
+      color: #1A365D;
+      margin: 0 0 24px;
+    }
+    .rv-lede {
+      font-size: .95rem;
+      line-height: 2;
+      color: #1F1F1F;
+      margin: 0;
+    }
+    .rv-br-mobile { display: none; }
+
+    .rv-block {
+      background: #FCFCFA;
+      border: 1px solid #E5E0D8;
+      border-radius: 8px;
+      padding: 48px;
+      margin-bottom: 48px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
+    .rv-block:last-child { margin-bottom: 0; }
+
+    .rv-block-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 24px;
+      row-gap: 8px;
+      align-items: baseline;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #E5E0D8;
+    }
+    .rv-block-num {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #C27A65;
+      letter-spacing: .18em;
+      grid-row: 1 / span 2;
+      align-self: center;
+      padding-right: 16px;
+      border-right: 1px solid #E5E0D8;
+    }
+    .rv-block-title {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: .04em;
+      color: #1A365D;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .rv-block-sub {
+      font-size: .88rem;
+      color: #6b7280;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* Constellation */
+    .rv-constellation {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .rv-svg {
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      display: block;
+    }
+    .rv-svg-core-label {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 700;
+      font-size: 13px;
+      fill: #1A365D;
+      letter-spacing: .08em;
+    }
+    .rv-svg-node-label {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 700;
+      font-size: 12.5px;
+      fill: #1A365D;
+      letter-spacing: .06em;
+    }
+    .rv-svg-node-sub {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 500;
+      font-size: 9.5px;
+      fill: #C27A65;
+      letter-spacing: .24em;
+    }
+    .rv-figcap {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: .86rem;
+      color: #6b7280;
+      letter-spacing: .12em;
+      margin: 0;
+      text-align: center;
+      padding-top: 8px;
+      border-top: 1px dotted #C9C3B6;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    /* Coverage Map */
+    .rv-map { margin: 0; }
+    .rv-map-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #F5F0E8 0%, #EDE6D8 100%);
+      border: 1px dashed #C9C3B6;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .rv-map-frame::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(201,195,182,.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(201,195,182,.18) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .rv-map-note {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      color: #C9C3B6;
+      background: rgba(252, 252, 250, .6);
+      padding: 6px 14px;
+      border: 1px dashed #C9C3B6;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .rv-pin {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transform: translate(-50%, -100%);
+      z-index: 2;
+    }
+    .rv-pin-icon {
+      width: 14px; height: 18px;
+      filter: drop-shadow(0 2px 3px rgba(26, 54, 93, .18));
+      flex-shrink: 0;
+    }
+    .rv-pin-icon--lg { width: 18px; height: 22px; }
+    .rv-pin-label {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 700;
+      font-size: .85rem;
+      color: #1A365D;
+      letter-spacing: .1em;
+      background: #FCFCFA;
+      padding: 3px 10px;
+      border: 1px solid #E5E0D8;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .rv-pin-label--anchor {
+      background: #1A365D;
+      color: #FCFCFA;
+      border-color: #1A365D;
+    }
+    .rv-pin-label small {
+      font-size: .7rem;
+      letter-spacing: .08em;
+      font-weight: 500;
+      opacity: .85;
+      margin-left: 2px;
+    }
+    .rv-pin--hachioji    { top: 24%; left: 22%; }
+    .rv-pin--hino        { top: 22%; left: 74%; }
+    .rv-pin--tama        { top: 52%; left: 18%; }
+    .rv-pin--machida     { top: 60%; left: 50%; }
+    .rv-pin--minamiosawa { top: 80%; left: 78%; }
+    .rv-figcap--map {
+      margin-top: 24px;
+      border-top: none;
+      border-bottom: 1px dotted #C9C3B6;
+      padding: 0 0 8px;
+      max-width: 100%;
+    }
+
+    /* Video Showcase */
+    .rv-video { margin: 0; }
+    .rv-video-main {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      isolation: isolate;
+    }
+    .rv-video-bg {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 600ms ease-out;
+    }
+    .rv-video-main:hover .rv-video-bg { transform: scale(1.03); }
+    .rv-video-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(26,54,93,0) 0%,
+        rgba(26,54,93,0) 45%,
+        rgba(26,54,93,.6) 100%);
+    }
+    .rv-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: #FCFCFA;
+      border: 1.5px solid #C27A65;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .18);
+      transition: transform 250ms ease-out, box-shadow 250ms ease-out;
+    }
+    .rv-play::after {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(252, 252, 250, .5);
+    }
+    .rv-video-main:hover .rv-play {
+      transform: translate(-50%, -50%) scale(1.06);
+      box-shadow: 0 6px 28px rgba(0, 0, 0, .24);
+    }
+    .rv-play-tri { width: 22px; height: 22px; margin-left: 2px; }
+    .rv-video-caption {
+      position: absolute;
+      left: 32px; bottom: 28px;
+      color: #FCFCFA;
+      max-width: 80%;
+    }
+    .rv-video-tag {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: .7rem;
+      letter-spacing: .32em;
+      color: #C27A65;
+      margin: 0 0 8px;
+    }
+    .rv-video-title {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      letter-spacing: .06em;
+      margin: 0;
+      color: #FCFCFA;
+    }
+    .rv-thumbs {
+      list-style: none;
+      margin: 24px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .rv-thumb { margin: 0; }
+    .rv-thumb-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-size: cover;
+      background-position: center;
+      border-radius: 2px;
+      border: 1px solid #E5E0D8;
+      transition: opacity 200ms ease-out;
+    }
+    .rv-thumb-img:hover { opacity: .88; }
+    .rv-thumb-cap {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      font-size: .82rem;
+      letter-spacing: .08em;
+      color: #1F1F1F;
+      margin: 12px 0 0;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .rv-section { padding: 64px 0; }
+      .rv-container { padding: 0 20px; }
+      .rv-br-mobile { display: block; }
+      .rv-block { padding: 32px 24px; margin-bottom: 32px; }
+      .rv-block-head {
+        grid-template-columns: 1fr;
+        margin-bottom: 32px;
+      }
+      .rv-block-num {
+        grid-row: auto;
+        border-right: none;
+        border-bottom: 1px solid #E5E0D8;
+        padding: 0 0 8px;
+        margin-bottom: 4px;
+      }
+      .rv-block-title { font-size: 1.25rem; }
+      .rv-pin-label { font-size: .72rem; padding: 2px 7px; }
+      .rv-pin--hachioji    { top: 22%; left: 24%; }
+      .rv-pin--hino        { top: 22%; left: 72%; }
+      .rv-pin--tama        { top: 54%; left: 20%; }
+      .rv-pin--machida     { top: 60%; left: 50%; }
+      .rv-pin--minamiosawa { top: 82%; left: 74%; }
+      .rv-video-caption { left: 20px; bottom: 18px; }
+      .rv-video-title { font-size: 1.05rem; }
+      .rv-video-tag { font-size: .62rem; }
+      .rv-play { width: 52px; height: 52px; }
+      .rv-play-tri { width: 18px; height: 18px; }
+      .rv-thumbs { grid-template-columns: 1fr; gap: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rv-video-bg,
+      .rv-play,
+      .rv-thumb-img { transition: none; }
+    }
+
+    /* =========================================================
+       [D] #rich-voice — Warmth & Voice Section
+       ========================================================= */
+    #rich-voice.rw-section {
+      --rw-primary: #1A365D;
+      --rw-accent: #C27A65;
+      --rw-bg: #FCFCFA;
+      --rw-bg-soft: #F5F0E8;
+      --rw-border: #E5E0D8;
+      --rw-border-strong: #C9C3B6;
+      --rw-text: #1F1F1F;
+      --rw-muted: #6b7280;
+      --rw-mincho: "Shippori Mincho B1", "Yu Mincho", "YuMincho", serif;
+      --rw-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", sans-serif;
+
+      background-color: var(--rw-bg);
+      color: var(--rw-text);
+      font-family: var(--rw-sans);
+      padding: 96px 24px;
+      position: relative;
+    }
+    #rich-voice .rw-container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    #rich-voice .rw-section-head {
+      text-align: center;
+      margin-bottom: 64px;
+      padding: 0 8px;
+    }
+    #rich-voice .rw-eyebrow {
+      font-family: var(--rw-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rw-accent);
+      margin: 0 0 16px;
+      line-height: 1;
+    }
+    #rich-voice .rw-eyebrow--small {
+      font-size: 0.66rem;
+      margin-bottom: 12px;
+    }
+    #rich-voice .rw-section-title {
+      font-family: var(--rw-mincho);
+      font-weight: 700;
+      font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+      color: var(--rw-primary);
+      letter-spacing: 0.04em;
+      line-height: 1.45;
+      margin: 0 0 20px;
+    }
+    #rich-voice .rw-section-lede {
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: var(--rw-muted);
+      max-width: 640px;
+      margin: 0 auto;
+      letter-spacing: 0.03em;
+    }
+
+    /* Letter */
+    #rich-voice .rw-letter {
+      position: relative;
+      margin-bottom: 80px;
+      border: 1px solid var(--rw-border);
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: var(--rw-bg);
+      background-image:
+        repeating-linear-gradient(0deg,
+          rgba(26, 54, 93, 0.018) 0px,
+          rgba(26, 54, 93, 0.018) 1px,
+          transparent 1px,
+          transparent 28px),
+        repeating-linear-gradient(90deg,
+          rgba(194, 122, 101, 0.014) 0px,
+          rgba(194, 122, 101, 0.014) 1px,
+          transparent 1px,
+          transparent 6px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+    #rich-voice .rw-letter::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background-color: var(--rw-primary);
+    }
+    #rich-voice .rw-letter-inner {
+      position: relative;
+      padding: 48px clamp(24px, 5vw, 64px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "head portrait"
+        "body body"
+        "sign sign";
+      gap: 32px 24px;
+    }
+    #rich-voice .rw-letter-head { grid-area: head; }
+    #rich-voice .rw-letter-eyebrow {
+      font-family: var(--rw-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--rw-accent);
+      margin: 0 0 14px;
+      line-height: 1;
+    }
+    #rich-voice .rw-letter-title {
+      font-family: var(--rw-mincho);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+      color: var(--rw-primary);
+      letter-spacing: 0.05em;
+      line-height: 1.55;
+      margin: 0;
+    }
+    #rich-voice .rw-letter-portrait {
+      grid-area: portrait;
+      margin: 0;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--rw-border-strong);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      background-color: var(--rw-bg-soft);
+      flex-shrink: 0;
+    }
+    #rich-voice .rw-letter-portrait img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    #rich-voice .rw-letter-body {
+      grid-area: body;
+      font-family: var(--rw-mincho);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.3rem;
+      line-height: 2.05;
+      letter-spacing: 0.045em;
+      color: var(--rw-primary);
+      max-width: 64ch;
+    }
+    #rich-voice .rw-letter-body p { margin: 0 0 20px; }
+    #rich-voice .rw-letter-body p:last-child { margin-bottom: 0; }
+    #rich-voice .rw-letter-sign {
+      grid-area: sign;
+      text-align: right;
+      margin-top: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rw-border);
+    }
+    #rich-voice .rw-sign-label {
+      display: block;
+      font-family: var(--rw-sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      color: var(--rw-muted);
+      margin-bottom: 10px;
+    }
+    #rich-voice .rw-sign-name {
+      display: inline-block;
+      font-family: var(--rw-mincho);
+      font-weight: 500;
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--rw-primary);
+      letter-spacing: 0.18em;
+      padding-bottom: 6px;
+      position: relative;
+    }
+    #rich-voice .rw-sign-name::after {
+      content: "";
+      position: absolute;
+      left: 4%; right: -2%; bottom: 0;
+      height: 2px;
+      background-image: linear-gradient(90deg,
+        transparent 0%,
+        var(--rw-accent) 12%,
+        var(--rw-accent) 88%,
+        transparent 100%);
+      border-radius: 2px;
+      transform: rotate(-1.2deg);
+      opacity: 0.78;
+    }
+
+    /* Voices */
+    #rich-voice .rw-voices { margin-bottom: 80px; }
+    #rich-voice .rw-voices-head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    #rich-voice .rw-voices-title {
+      font-family: var(--rw-mincho);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 2.2vw, 1.6rem);
+      color: var(--rw-primary);
+      letter-spacing: 0.08em;
+      margin: 0;
+      line-height: 1.5;
+    }
+    #rich-voice .rw-voices-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    #rich-voice .rw-quote {
+      position: relative;
+      margin: 0;
+      padding: 36px 32px 28px 36px;
+      background-color: var(--rw-bg);
+      border: 1px solid var(--rw-border);
+      border-left: 3px solid var(--rw-accent);
+      border-radius: 2px;
+      transition: transform 220ms ease-out, box-shadow 220ms ease-out;
+    }
+    #rich-voice .rw-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+    #rich-voice .rw-quote-glyph {
+      position: absolute;
+      top: 8px; left: 24px;
+      font-family: var(--rw-mincho);
+      font-size: 3.6rem;
+      line-height: 1;
+      color: var(--rw-accent);
+      opacity: 0.18;
+      pointer-events: none;
+      user-select: none;
+    }
+    #rich-voice .rw-quote-body {
+      font-family: var(--rw-mincho);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.1rem;
+      line-height: 1.95;
+      letter-spacing: 0.04em;
+      color: var(--rw-primary);
+      margin: 0 0 24px;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    #rich-voice .rw-quote-foot {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rw-border);
+      font-family: var(--rw-sans);
+    }
+    #rich-voice .rw-quote-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--rw-text);
+      letter-spacing: 0.08em;
+    }
+    #rich-voice .rw-quote-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--rw-muted);
+      padding: 4px 10px;
+      background-color: var(--rw-bg-soft);
+      border: 1px solid var(--rw-border);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    /* Seasonal */
+    #rich-voice .rw-season {
+      position: relative;
+      border-radius: 4px;
+      border: 1px solid var(--rw-border);
+      overflow: hidden;
+      background-color: var(--rw-bg-soft);
+      background-image:
+        repeating-linear-gradient(45deg,
+          rgba(194, 122, 101, 0.025) 0px,
+          rgba(194, 122, 101, 0.025) 2px,
+          transparent 2px,
+          transparent 9px),
+        repeating-linear-gradient(-45deg,
+          rgba(26, 54, 93, 0.018) 0px,
+          rgba(26, 54, 93, 0.018) 1px,
+          transparent 1px,
+          transparent 14px),
+        repeating-linear-gradient(0deg,
+          rgba(0, 0, 0, 0.008) 0px,
+          rgba(0, 0, 0, 0.008) 1px,
+          transparent 1px,
+          transparent 32px);
+    }
+    #rich-voice .rw-season-inner {
+      padding: 48px clamp(24px, 5vw, 64px);
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    #rich-voice .rw-season-head {
+      border-right: 1px solid var(--rw-border-strong);
+      padding-right: 32px;
+    }
+    #rich-voice .rw-season-title {
+      font-family: var(--rw-mincho);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--rw-primary);
+      letter-spacing: 0.12em;
+      line-height: 1.55;
+      margin: 0 0 16px;
+      writing-mode: horizontal-tb;
+    }
+    #rich-voice .rw-season-date {
+      font-family: var(--rw-mincho);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--rw-accent);
+      letter-spacing: 0.16em;
+      margin: 0;
+      padding-top: 12px;
+      border-top: 1px solid var(--rw-border-strong);
+      width: fit-content;
+    }
+    #rich-voice .rw-season-body {
+      font-family: var(--rw-sans);
+      font-size: 0.95rem;
+      line-height: 2.05;
+      color: var(--rw-text);
+      letter-spacing: 0.05em;
+    }
+    #rich-voice .rw-season-body p { margin: 0 0 20px; }
+    #rich-voice .rw-season-body p:last-child { margin-bottom: 0; }
+    #rich-voice .rw-season-lead {
+      display: inline-block;
+      font-family: var(--rw-mincho);
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--rw-primary);
+      letter-spacing: 0.08em;
+      margin-right: 4px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      #rich-voice .rw-letter,
+      #rich-voice .rw-quote,
+      #rich-voice .rw-season {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: rw-reveal 320ms ease-out forwards;
+      }
+      #rich-voice .rw-letter { animation-delay: 60ms; }
+      #rich-voice .rw-voices-grid .rw-quote:nth-child(1) { animation-delay: 140ms; }
+      #rich-voice .rw-voices-grid .rw-quote:nth-child(2) { animation-delay: 200ms; }
+      #rich-voice .rw-season { animation-delay: 260ms; }
+    }
+    @keyframes rw-reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      #rich-voice.rw-section { padding: 64px 20px; }
+      #rich-voice .rw-section-head { margin-bottom: 48px; }
+      #rich-voice .rw-letter-inner {
+        padding: 36px 24px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "portrait"
+          "head"
+          "body"
+          "sign";
+        gap: 20px;
+      }
+      #rich-voice .rw-letter-portrait {
+        width: 72px; height: 72px;
+        margin: 0 auto;
+      }
+      #rich-voice .rw-letter-head { text-align: center; }
+      #rich-voice .rw-letter-body { font-size: 1.15rem; line-height: 1.95; }
+      #rich-voice .rw-voices-grid { grid-template-columns: 1fr; gap: 16px; }
+      #rich-voice .rw-quote { padding: 32px 24px 24px 28px; }
+      #rich-voice .rw-quote-body { font-size: 1.02rem; }
+      #rich-voice .rw-season-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 36px 24px;
+      }
+      #rich-voice .rw-season-head {
+        border-right: none;
+        border-bottom: 1px solid var(--rw-border-strong);
+        padding-right: 0;
+        padding-bottom: 20px;
+      }
+      #rich-voice .rw-season-title { font-size: 1.35rem; }
+    }
+    @media (max-width: 480px) {
+      #rich-voice .rw-section-title { font-size: 1.5rem; }
+      #rich-voice .rw-letter-title { font-size: 1.2rem; }
+      #rich-voice .rw-letter-body { font-size: 1.05rem; letter-spacing: 0.03em; }
+      #rich-voice .rw-sign-name { font-size: 1.4rem; }
+      #rich-voice .rw-quote-foot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Wayfinding Nav -->
+  <nav class="mock-nav" aria-label="セクションナビゲーション">
+    <div class="mock-nav-inner">
+      <span class="mock-nav-brand">共通素材リッチ化 モックアップ</span>
+      <ul class="mock-nav-links">
+        <li><a href="#rich-content"><span class="mock-nav-step">A</span>編集デザイン</a></li>
+        <li><a href="#rich-trust"><span class="mock-nav-step">B</span>信頼の根拠</a></li>
+        <li><a href="#rich-visual"><span class="mock-nav-step">C</span>サービス全体像</a></li>
+        <li><a href="#rich-voice"><span class="mock-nav-step">D</span>手紙と声</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="mock-header">
+    <div class="mock-header-inner">
+      <p class="mock-header-tag">Mockup Preview</p>
+      <h1>共通素材リッチ化 モックアップ</h1>
+      <p class="mock-header-lead">このページは bellmfit.com の共通素材リッチ化プロトタイプです。スクロールで各セクションを確認してください。本番反映前のテスト版です。</p>
+    </div>
+  </header>
+
+  <main class="mock-main">
+
+    <!-- [A] rich-content -->
+    <section id="rich-content" class="rc-section">
+      <div class="rc-inner">
+
+        <!-- 1. STATS MOSAIC -->
+        <div class="rc-block rc-stats">
+          <header class="rc-block-head">
+            <span class="rc-eyebrow">Our Numbers</span>
+            <h2 class="rc-block-title">数字で見る、わたしたちの歩み</h2>
+          </header>
+
+          <div class="rc-mosaic">
+            <div class="rc-mosaic-cell rc-cell-1">
+              <div class="rc-stat">
+                <div class="rc-stat-num rc-stat-xl">15<span class="rc-stat-unit">年</span></div>
+                <div class="rc-stat-caption">町田・南大沢で<br>続けてきた地域密着</div>
+              </div>
+            </div>
+            <div class="rc-mosaic-cell rc-cell-2">
+              <div class="rc-stat">
+                <div class="rc-stat-num rc-stat-xl">1,000<span class="rc-stat-unit">人</span></div>
+                <div class="rc-stat-caption">これまでお手伝いした<br>ご高齢のお身体</div>
+              </div>
+            </div>
+            <div class="rc-mosaic-cell rc-cell-3">
+              <div class="rc-stat">
+                <div class="rc-stat-num rc-stat-lg">13<span class="rc-stat-unit">名</span></div>
+                <div class="rc-stat-caption">訪問担当の<br>鍼灸マッサージ師</div>
+              </div>
+            </div>
+            <div class="rc-mosaic-cell rc-cell-4">
+              <div class="rc-stat">
+                <div class="rc-stat-num rc-stat-lg">3<span class="rc-stat-unit">拠点</span></div>
+                <div class="rc-stat-caption">町田・南大沢・<br>多摩平からお伺い</div>
+              </div>
+            </div>
+            <span class="rc-hairline rc-hairline-h"></span>
+            <span class="rc-hairline rc-hairline-v"></span>
+            <span class="rc-hairline-dot rc-hairline-dot-center"></span>
+          </div>
+        </div>
+
+        <!-- 2. EDITORIAL TIMELINE -->
+        <div class="rc-block rc-timeline-block">
+          <header class="rc-block-head">
+            <span class="rc-eyebrow">Our Process</span>
+            <h2 class="rc-block-title">ご相談から、ご家族との共有まで</h2>
+            <p class="rc-block-lead">はじめてのご利用でも、ひとつひとつ手順を踏んで進めていきます。</p>
+          </header>
+
+          <ol class="rc-timeline">
+            <li class="rc-tl-item">
+              <div class="rc-tl-marker"><span class="rc-tl-dot"></span></div>
+              <div class="rc-tl-content">
+                <div class="rc-tl-index">01</div>
+                <h3 class="rc-tl-title">ご相談</h3>
+                <p class="rc-tl-desc">お電話またはケアマネさん経由で、お身体の状態とご希望を伺います。費用や保険の使い方もこの段階で丁寧にご説明します。</p>
+              </div>
+            </li>
+            <li class="rc-tl-item">
+              <div class="rc-tl-marker"><span class="rc-tl-dot"></span></div>
+              <div class="rc-tl-content">
+                <div class="rc-tl-index">02</div>
+                <h3 class="rc-tl-title">初回ご訪問</h3>
+                <p class="rc-tl-desc">担当の鍼灸師がご自宅にお伺いします。生活環境を拝見しながら、痛みの場所やご不安を直接伺います。</p>
+              </div>
+            </li>
+            <li class="rc-tl-item">
+              <div class="rc-tl-marker"><span class="rc-tl-dot"></span></div>
+              <div class="rc-tl-content">
+                <div class="rc-tl-index">03</div>
+                <h3 class="rc-tl-title">状態の見立て</h3>
+                <p class="rc-tl-desc">鍼・お灸・マッサージのどれをどう組み合わせるか、無理のない頻度はどのくらいか、ご本人と一緒に決めていきます。</p>
+              </div>
+            </li>
+            <li class="rc-tl-item">
+              <div class="rc-tl-marker"><span class="rc-tl-dot"></span></div>
+              <div class="rc-tl-content">
+                <div class="rc-tl-index">04</div>
+                <h3 class="rc-tl-title">継続施術</h3>
+                <p class="rc-tl-desc">同じ担当者が、決まった曜日・時間にお伺いします。お体の小さな変化も覚えながら、その日の状態に合わせて施術します。</p>
+              </div>
+            </li>
+            <li class="rc-tl-item rc-tl-item-last">
+              <div class="rc-tl-marker"><span class="rc-tl-dot"></span></div>
+              <div class="rc-tl-content">
+                <div class="rc-tl-index">05</div>
+                <h3 class="rc-tl-title">ご家族・ケアマネと共有</h3>
+                <p class="rc-tl-desc">月に一度、お体の様子を文書にまとめてご家族とケアマネさんにお渡しします。離れて暮らすご家族にも安心が届きます。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- 3. EDITORIAL PULL QUOTE -->
+        <figure class="rc-block rc-quote">
+          <div class="rc-quote-inner">
+            <svg class="rc-quote-glyph" viewBox="0 0 80 60" aria-hidden="true">
+              <path d="M0,60 L0,30 C0,13 13,0 30,0 L30,12 C20,12 12,20 12,30 L24,30 L24,60 Z M44,60 L44,30 C44,13 57,0 74,0 L74,12 C64,12 56,20 56,30 L68,30 L68,60 Z" fill="currentColor"/>
+            </svg>
+            <blockquote class="rc-quote-text">
+              毎週来てくれる先生が、家族のように<br class="rc-br-pc">私の体のことを覚えていてくれる。<br>それが何より安心です。
+            </blockquote>
+            <figcaption class="rc-quote-cite">
+              <span class="rc-quote-line"></span>
+              <span class="rc-quote-meta">80代女性 ／ 訪問鍼灸 5年</span>
+            </figcaption>
+          </div>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- [B] rich-trust -->
+    <section id="rich-trust" class="rt-section" aria-labelledby="rt-heading">
+      <div class="rt-container">
+
+        <header class="rt-header">
+          <p class="rt-eyebrow">Trust &amp; Authority</p>
+          <h2 id="rt-heading" class="rt-heading">選ばれている、理由がある。</h2>
+          <p class="rt-lede">国家資格者の専門性と、地域に根ざした多職種連携。ご相談前に、私たちの立ち位置をお伝えします。</p>
+        </header>
+
+        <!-- 1. Credentials -->
+        <div class="rt-block rt-block--credentials" aria-labelledby="rt-credentials-title">
+          <h3 id="rt-credentials-title" class="rt-block-title">所属・登録</h3>
+          <ul class="rt-credential-strip" role="list">
+            <li class="rt-credential">
+              <span class="rt-credential-pre">公益社団法人</span>
+              <span class="rt-credential-name">日本鍼灸師会</span>
+            </li>
+            <li class="rt-credential">
+              <span class="rt-credential-pre">健康・体力づくり事業財団</span>
+              <span class="rt-credential-name">健康運動指導士</span>
+            </li>
+            <li class="rt-credential">
+              <span class="rt-credential-pre">東京都</span>
+              <span class="rt-credential-name">行政書士会</span>
+            </li>
+            <li class="rt-credential">
+              <span class="rt-credential-pre">一般社団法人</span>
+              <span class="rt-credential-name">全国訪問看護事業協会</span>
+            </li>
+            <li class="rt-credential">
+              <span class="rt-credential-pre">日本</span>
+              <span class="rt-credential-name">介護支援専門員協議会</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2. Comparison Table -->
+        <div class="rt-block rt-block--compare" aria-labelledby="rt-compare-title">
+          <h3 id="rt-compare-title" class="rt-block-title">比べてみてください</h3>
+          <div class="rt-table-wrap">
+            <table class="rt-table">
+              <caption class="rt-table-caption">一般的な訪問鍼灸との違い</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="rt-th rt-th--label">項目</th>
+                  <th scope="col" class="rt-th rt-th--muted">一般的な訪問鍼灸</th>
+                  <th scope="col" class="rt-th rt-th--accent">べるつりーの訪問鍼灸</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="rt-row-label">担当者の継続性</th>
+                  <td class="rt-cell rt-cell--muted"><span class="rt-dash" aria-hidden="true">—</span>担当が交代することがある</td>
+                  <td class="rt-cell rt-cell--accent">
+                    <svg class="rt-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+                    同じ施術者が継続して伺います
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="rt-row-label">ご家族・ケアマネへの報告書</th>
+                  <td class="rt-cell rt-cell--muted"><span class="rt-dash" aria-hidden="true">—</span>口頭のみ、または不定期</td>
+                  <td class="rt-cell rt-cell--accent">
+                    <svg class="rt-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+                    月次で書面、状態変化はその都度
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="rt-row-label">多職種連携</th>
+                  <td class="rt-cell rt-cell--muted"><span class="rt-dash" aria-hidden="true">—</span>鍼灸単独で完結しがち</td>
+                  <td class="rt-cell rt-cell--accent">
+                    <svg class="rt-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+                    ケアマネ・訪看・主治医と連携
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="rt-row-label">運動・終活との接続</th>
+                  <td class="rt-cell rt-cell--muted"><span class="rt-dash" aria-hidden="true">—</span>施術のみで完結</td>
+                  <td class="rt-cell rt-cell--accent">
+                    <svg class="rt-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+                    運動指導・終活相談までワンストップ
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="rt-row-label">緊急時の対応</th>
+                  <td class="rt-cell rt-cell--muted"><span class="rt-dash" aria-hidden="true">—</span>留守番電話のみのことも</td>
+                  <td class="rt-cell rt-cell--accent">
+                    <svg class="rt-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+                    平日日中はスタッフが直接対応
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. Feature Grid -->
+        <div class="rt-block rt-block--features" aria-labelledby="rt-features-title">
+          <h3 id="rt-features-title" class="rt-block-title">べるつりーの4つの約束</h3>
+          <ul class="rt-feature-grid" role="list">
+
+            <li class="rt-feature">
+              <span class="rt-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.4 8.4-8 9.5C7.4 20.4 4 16.5 4 12V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+              </span>
+              <h4 class="rt-feature-title">国家資格者のみが施術</h4>
+              <p class="rt-feature-desc">はり師・きゅう師・あん摩マッサージ指圧師の有資格者だけが伺います。学生・無資格者は同行しません。</p>
+            </li>
+
+            <li class="rt-feature">
+              <span class="rt-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <h4 class="rt-feature-title">1日7件以内・じっくり30分</h4>
+              <p class="rt-feature-desc">分刻みの巡回はしません。一人ひとりに約30分、移動と準備を含めて余裕のある時間設計です。</p>
+            </li>
+
+            <li class="rt-feature">
+              <span class="rt-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 16h5"/></svg>
+              </span>
+              <h4 class="rt-feature-title">ケアマネへの月次報告書</h4>
+              <p class="rt-feature-desc">施術内容と状態の推移を毎月書面でお届けします。担当ケアマネとの情報共有を欠かしません。</p>
+            </li>
+
+            <li class="rt-feature">
+              <span class="rt-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8" r="2.5"/><circle cx="17" cy="8" r="2.5"/><path d="M3 20c0-2.8 2-5 4-5s4 2.2 4 5"/><path d="M13 20c0-2.8 2-5 4-5s4 2.2 4 5"/></svg>
+              </span>
+              <h4 class="rt-feature-title">運動・終活までワンストップ</h4>
+              <p class="rt-feature-desc">健康運動指導士による体操、行政書士による終活相談まで。施術の枠を越えてご家族を支えます。</p>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- [C] rich-visual -->
+    <section id="rich-visual" class="rv-section" aria-labelledby="rv-heading">
+      <div class="rv-container">
+
+        <header class="rv-header">
+          <p class="rv-eyebrow">Service Landscape</p>
+          <h2 id="rv-heading" class="rv-heading">
+            ひとつの暮らしを、<br class="rv-br-mobile">五つの専門が支える
+          </h2>
+          <p class="rv-lede">
+            運動・施術・調整・機能・法務。ばらばらに見える支援を、ひとつの動線として束ねています。<br>
+            町田を起点に、八王子から南大沢まで、暮らしの圏内で完結する設計です。
+          </p>
+        </header>
+
+        <!-- 1. Constellation -->
+        <article class="rv-block rv-block--constellation" aria-labelledby="rv-block1-title">
+          <div class="rv-block-head">
+            <span class="rv-block-num">01</span>
+            <h3 id="rv-block1-title" class="rv-block-title">五つの専門が、ひとつにつながる</h3>
+            <p class="rv-block-sub">中心には、いつもあなたの暮らしがあります。</p>
+          </div>
+
+          <figure class="rv-constellation">
+            <svg class="rv-svg" viewBox="0 0 600 400" role="img" aria-label="5つのサービスが中心の暮らしを取り囲む関係図">
+              <defs>
+                <radialGradient id="rv-core-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FCFCFA"/>
+                  <stop offset="100%" stop-color="#F5F0E8"/>
+                </radialGradient>
+                <pattern id="rv-dotline" x="0" y="0" width="6" height="1" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="0.5" r="0.6" fill="#C9C3B6"/>
+                </pattern>
+              </defs>
+
+              <g class="rv-svg-ring" stroke="#C9C3B6" stroke-width="1" stroke-dasharray="2 4" fill="none">
+                <path d="M 300 70  Q 480 90  510 200"/>
+                <path d="M 510 200 Q 470 330  340 340"/>
+                <path d="M 340 340 Q 200 360  120 270"/>
+                <path d="M 120 270 Q 90 130   230 80"/>
+                <path d="M 230 80  Q 270 60   300 70"/>
+              </g>
+
+              <g class="rv-svg-spokes" stroke="#C27A65" stroke-width="1" fill="none" opacity="0.7">
+                <line x1="300" y1="200" x2="300" y2="85"/>
+                <line x1="300" y1="200" x2="495" y2="200"/>
+                <line x1="300" y1="200" x2="340" y2="325"/>
+                <line x1="300" y1="200" x2="135" y2="265"/>
+                <line x1="300" y1="200" x2="230" y2="95"/>
+              </g>
+
+              <g class="rv-svg-core">
+                <circle cx="300" cy="200" r="46" fill="url(#rv-core-grad)" stroke="#1A365D" stroke-width="1.2"/>
+                <circle cx="300" cy="200" r="46" fill="none" stroke="#C27A65" stroke-width="0.6" stroke-dasharray="1 3"/>
+                <text x="300" y="196" text-anchor="middle" class="rv-svg-core-label">あなたの</text>
+                <text x="300" y="214" text-anchor="middle" class="rv-svg-core-label">暮らし</text>
+              </g>
+
+              <g class="rv-svg-node">
+                <circle cx="300" cy="70" r="32" fill="#FCFCFA" stroke="#1A365D" stroke-width="1.2"/>
+                <text x="300" y="68" text-anchor="middle" class="rv-svg-node-label">べるフィット</text>
+                <text x="300" y="84" text-anchor="middle" class="rv-svg-node-sub">運動</text>
+              </g>
+              <g class="rv-svg-node">
+                <circle cx="510" cy="200" r="32" fill="#FCFCFA" stroke="#1A365D" stroke-width="1.2"/>
+                <text x="510" y="198" text-anchor="middle" class="rv-svg-node-label">訪問鍼灸</text>
+                <text x="510" y="214" text-anchor="middle" class="rv-svg-node-sub">施術</text>
+              </g>
+              <g class="rv-svg-node">
+                <circle cx="340" cy="340" r="32" fill="#FCFCFA" stroke="#1A365D" stroke-width="1.2"/>
+                <text x="340" y="338" text-anchor="middle" class="rv-svg-node-label">居宅介護</text>
+                <text x="340" y="354" text-anchor="middle" class="rv-svg-node-sub">調整</text>
+              </g>
+              <g class="rv-svg-node">
+                <circle cx="120" cy="270" r="32" fill="#FCFCFA" stroke="#1A365D" stroke-width="1.2"/>
+                <text x="120" y="268" text-anchor="middle" class="rv-svg-node-label">通所リハ</text>
+                <text x="120" y="284" text-anchor="middle" class="rv-svg-node-sub">機能</text>
+              </g>
+              <g class="rv-svg-node">
+                <circle cx="215" cy="85" r="32" fill="#FCFCFA" stroke="#1A365D" stroke-width="1.2"/>
+                <text x="215" y="83" text-anchor="middle" class="rv-svg-node-label">終活</text>
+                <text x="215" y="99" text-anchor="middle" class="rv-svg-node-sub">法務</text>
+              </g>
+            </svg>
+
+            <figcaption class="rv-figcap">
+              一本の電話で、必要な専門に橋渡しします。
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- 2. Coverage Map -->
+        <article class="rv-block rv-block--map" aria-labelledby="rv-block2-title">
+          <div class="rv-block-head">
+            <span class="rv-block-num">02</span>
+            <h3 id="rv-block2-title" class="rv-block-title">対応エリアは、暮らしの圏内で</h3>
+            <p class="rv-block-sub">町田を起点に、車で30分圏内を主な活動範囲としています。</p>
+          </div>
+
+          <figure class="rv-map">
+            <div class="rv-map-frame" role="img" aria-label="町田・八王子・日野・多摩・南大沢の対応エリア地図">
+              <span class="rv-map-note">実際の地図はここに埋め込み（Google Maps）</span>
+
+              <span class="rv-pin rv-pin--hachioji">
+                <svg class="rv-pin-icon" viewBox="0 0 16 20" aria-hidden="true">
+                  <path d="M8 0 C3.6 0 0 3.4 0 7.6 C0 13.3 8 20 8 20 C8 20 16 13.3 16 7.6 C16 3.4 12.4 0 8 0 Z" fill="#C27A65"/>
+                  <circle cx="8" cy="7.6" r="2.6" fill="#FCFCFA"/>
+                </svg>
+                <span class="rv-pin-label">八王子</span>
+              </span>
+
+              <span class="rv-pin rv-pin--hino">
+                <svg class="rv-pin-icon" viewBox="0 0 16 20" aria-hidden="true">
+                  <path d="M8 0 C3.6 0 0 3.4 0 7.6 C0 13.3 8 20 8 20 C8 20 16 13.3 16 7.6 C16 3.4 12.4 0 8 0 Z" fill="#C27A65"/>
+                  <circle cx="8" cy="7.6" r="2.6" fill="#FCFCFA"/>
+                </svg>
+                <span class="rv-pin-label">日野</span>
+              </span>
+
+              <span class="rv-pin rv-pin--tama">
+                <svg class="rv-pin-icon" viewBox="0 0 16 20" aria-hidden="true">
+                  <path d="M8 0 C3.6 0 0 3.4 0 7.6 C0 13.3 8 20 8 20 C8 20 16 13.3 16 7.6 C16 3.4 12.4 0 8 0 Z" fill="#C27A65"/>
+                  <circle cx="8" cy="7.6" r="2.6" fill="#FCFCFA"/>
+                </svg>
+                <span class="rv-pin-label">多摩</span>
+              </span>
+
+              <span class="rv-pin rv-pin--machida">
+                <svg class="rv-pin-icon rv-pin-icon--lg" viewBox="0 0 16 20" aria-hidden="true">
+                  <path d="M8 0 C3.6 0 0 3.4 0 7.6 C0 13.3 8 20 8 20 C8 20 16 13.3 16 7.6 C16 3.4 12.4 0 8 0 Z" fill="#C27A65"/>
+                  <circle cx="8" cy="7.6" r="2.6" fill="#FCFCFA"/>
+                </svg>
+                <span class="rv-pin-label rv-pin-label--anchor">町田<small>（拠点）</small></span>
+              </span>
+
+              <span class="rv-pin rv-pin--minamiosawa">
+                <svg class="rv-pin-icon" viewBox="0 0 16 20" aria-hidden="true">
+                  <path d="M8 0 C3.6 0 0 3.4 0 7.6 C0 13.3 8 20 8 20 C8 20 16 13.3 16 7.6 C16 3.4 12.4 0 8 0 Z" fill="#C27A65"/>
+                  <circle cx="8" cy="7.6" r="2.6" fill="#FCFCFA"/>
+                </svg>
+                <span class="rv-pin-label">南大沢</span>
+              </span>
+            </div>
+            <figcaption class="rv-figcap rv-figcap--map">
+              対応エリア — 町田・八王子・日野・多摩・南大沢
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- 3. Editorial Video Showcase -->
+        <article class="rv-block rv-block--video" aria-labelledby="rv-block3-title">
+          <div class="rv-block-head">
+            <span class="rv-block-num">03</span>
+            <h3 id="rv-block3-title" class="rv-block-title">現場の空気を、30秒で</h3>
+            <p class="rv-block-sub">資料ではわからないこと。表情と手の動きを、そのままお届けします。</p>
+          </div>
+
+          <figure class="rv-video">
+            <a href="#video-modal" class="rv-video-main" aria-label="施術風景の動画を再生">
+              <div class="rv-video-bg" style="background-image:url('../images/photos/acupuncture-visit-hero.png');"></div>
+              <div class="rv-video-overlay"></div>
+
+              <span class="rv-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="rv-play-tri">
+                  <polygon points="9,7 9,17 17,12" fill="#C27A65"/>
+                </svg>
+              </span>
+
+              <div class="rv-video-caption">
+                <p class="rv-video-tag">SHORT FILM / 0:30</p>
+                <h4 class="rv-video-title">現場の30秒 — 施術風景とスタッフの声</h4>
+              </div>
+            </a>
+
+            <ul class="rv-thumbs" role="list">
+              <li class="rv-thumb">
+                <div class="rv-thumb-img" style="background-image:url('../images/photos/cases-01-rehab.png');"></div>
+                <p class="rv-thumb-cap">通所リハの一日</p>
+              </li>
+              <li class="rv-thumb">
+                <div class="rv-thumb-img" style="background-image:url('../images/photos/fitness-main-real.jpg');"></div>
+                <p class="rv-thumb-cap">べるフィット朝のクラス</p>
+              </li>
+              <li class="rv-thumb">
+                <div class="rv-thumb-img" style="background-image:url('../images/photos/shukatsu-consultation.png');"></div>
+                <p class="rv-thumb-cap">終活の相談室にて</p>
+              </li>
+            </ul>
+          </figure>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- [D] rich-voice -->
+    <section id="rich-voice" class="rw-section" aria-labelledby="rw-section-title">
+      <div class="rw-container">
+
+        <header class="rw-section-head">
+          <p class="rw-eyebrow">Warmth &amp; Voice</p>
+          <h2 id="rw-section-title" class="rw-section-title">人の手で、線をつなぐ。</h2>
+          <p class="rw-section-lede">数字や仕組みの前に、まず人がいます。代表の言葉、現場の声、季節の便り。私たちの温度が伝わる三つの便りを、ここに置いておきます。</p>
+        </header>
+
+        <!-- 1. Letter -->
+        <article class="rw-letter" aria-labelledby="rw-letter-title">
+          <div class="rw-letter-inner">
+            <div class="rw-letter-head">
+              <p class="rw-letter-eyebrow">代表からのお手紙</p>
+              <h3 id="rw-letter-title" class="rw-letter-title">支援が途切れない、一本の線。</h3>
+            </div>
+            <figure class="rw-letter-portrait">
+              <img src="../images/staff/representative-suzuki.jpg" alt="代表 鈴木俊平" loading="lazy" width="80" height="80">
+            </figure>
+
+            <div class="rw-letter-body">
+              <p>父の在宅療養を家族で支えた半年間、いちばん心細かったのは、医療と介護と家族の間に小さな段差がいくつもあったことでした。誰かが悪いわけではなく、ただ「線」が途切れていたのです。</p>
+              <p>私たちが訪問鍼灸・居宅介護支援・行政書士業務を一つのグループで持っているのは、その小さな段差を、現場で静かに埋めていくためです。報告書一枚、電話一本、申し送り一行を、丁寧に。</p>
+              <p>派手なことはできません。けれど、ご家族と支援者の皆さまの夜が、少しでも安らかになるように、線を細く長くつなぎ続けます。どうぞ、よろしくお願いいたします。</p>
+            </div>
+
+            <div class="rw-letter-sign">
+              <span class="rw-sign-label">べるつりーグループ 代表</span>
+              <span class="rw-sign-name">鈴木 俊平</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Voices -->
+        <div class="rw-voices" aria-labelledby="rw-voices-title">
+          <header class="rw-voices-head">
+            <p class="rw-eyebrow rw-eyebrow--small">Voices from Care Managers</p>
+            <h3 id="rw-voices-title" class="rw-voices-title">現場の声</h3>
+          </header>
+
+          <div class="rw-voices-grid">
+
+            <figure class="rw-quote">
+              <span class="rw-quote-glyph" aria-hidden="true">&#8220;</span>
+              <blockquote class="rw-quote-body">
+                報告書をいつも丁寧に書いてくれるので、ケアプランの会議で根拠を持って提案できます。
+              </blockquote>
+              <figcaption class="rw-quote-foot">
+                <span class="rw-quote-name">Sさん</span>
+                <span class="rw-quote-badge">町田 居宅</span>
+              </figcaption>
+            </figure>
+
+            <figure class="rw-quote">
+              <span class="rw-quote-glyph" aria-hidden="true">&#8220;</span>
+              <blockquote class="rw-quote-body">
+                施術師さんが運動も介護も繋いでくれるので、私たちが患者様の全体像を把握しやすい。
+              </blockquote>
+              <figcaption class="rw-quote-foot">
+                <span class="rw-quote-name">Hさん</span>
+                <span class="rw-quote-badge">南大沢 地域包括</span>
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <!-- 3. Seasonal Letter -->
+        <aside class="rw-season" aria-labelledby="rw-season-title">
+          <div class="rw-season-inner">
+            <header class="rw-season-head">
+              <p class="rw-eyebrow rw-eyebrow--small">Seasonal Letter</p>
+              <h3 id="rw-season-title" class="rw-season-title">季節のごあいさつ</h3>
+              <p class="rw-season-date">2026年 春</p>
+            </header>
+
+            <div class="rw-season-body">
+              <p><span class="rw-season-lead">春のフレイル予防について。</span>冬のあいだに固まった身体は、春先にこそ少しずつほぐしていく時期です。日常の歩きやすさや食欲のもどりを目安に、無理のない範囲で身体を動かす習慣を、ご家族と一緒に整えていきましょう。</p>
+              <p><span class="rw-season-lead">春先の不眠ケアについて。</span>気温差や日照時間の変化で、寝つきが浅くなる方が増える時期です。就寝前の足元の冷えや肩まわりの張りに、訪問でのケアが効くことがあります。気になる方はお気軽にご相談ください。</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mock-footer">
+    © 株式会社べるつりー / モックアップ 2026-05-31
+  </footer>
+
+</body>
+</html>

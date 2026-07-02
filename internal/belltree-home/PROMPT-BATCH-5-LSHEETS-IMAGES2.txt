@@ -1,0 +1,116 @@
+============================================================
+CRITICAL OUTPUT INSTRUCTION — read this FIRST
+============================================================
+
+This prompt requests FIVE (5) DISTINCT, SEPARATE IMAGES, to be delivered as FIVE INDEPENDENT IMAGE FILES, generated consecutively in this conversation (Sheet 1, then Sheet 2, then Sheet 3, then Sheet 4, then Sheet 5).
+
+Each image is ONE complete "illustration catalog sheet": a 2-column x 3-row grid containing 6 hand-drawn illustrations on a pure solid white background.
+
+DO NOT combine two or more sheets into a single image.
+DO NOT stop after one sheet — keep generating until all 5 sheets exist as 5 separate images.
+DO NOT wait for additional user confirmation between sheets; produce all 5 consecutively in this conversation.
+If your system can only output one image per generation step, output them as 5 back-to-back generations, one sheet per generation, until all 5 are delivered.
+DO NOT add sheet numbers, titles, labels, captions, watermarks, or any text anywhere inside the images.
+
+============================================================
+STYLE RESET — this overrides any earlier style in this chat
+============================================================
+
+IGNORE any photographic or photorealistic style used earlier in this conversation.
+These 5 sheets are NOT photographs, NOT flat-lay product photography, NOT 3D renders, NOT realistic still life.
+
+Every cell is a delicate HAND-DRAWN line illustration:
+- Thin terracotta outlines, hex #C27A65, consistent line weight throughout
+- Soft watercolor wash accents only on key emotional points (painful joints, focus objects) in deeper terracotta #E3A48F
+- Slate blue #1A365D allowed only as a tiny accent
+- Pure solid white background, hex #FFFFFF — no gradient, no texture, no shadow, no paper grain
+- Style spirit: refined editorial illustration for Kinfolk Magazine, Cereal, &Premium
+- NOT Japanese washi, NOT seasonal motifs, NOT clinical, NOT cartoonish
+- All human figures have closed-eye serene expressions, calm and dignified
+- No needles, no clinical equipment, no bright red, no bright colors
+
+Grid specification for EVERY sheet:
+- 2 columns x 3 rows = 6 illustrations per sheet
+- Each illustration centered in its own grid cell, no tilt, none overlapping
+- Equal generous spacing: gutter ~25% of cell size, outer margin ~30% on all sides
+- Consistent scale and line weight across all 6 cells and across all 5 sheets
+- Output canvas per sheet: 3072x2048 pixels (landscape)
+- High resolution, crisp edges, suitable for cut-out into transparent PNG
+
+============================================================
+SHEET 1 of 5 — Knee pain in elderly home life
+============================================================
+
+Subject: scenes of elderly people experiencing knee pain at home, calm editorial style.
+
+Variations (6 cells):
+1) An elderly person rising from a low chair, one hand pressing on the knee, body leaning forward. Wash highlight on the kneecap. Closed eyes, gentle.
+2) Side view of an elderly person descending a few wooden stairs, one hand on the rail, the down-foot tentative. Wash on the leading knee. Closed eyes.
+3) An elderly person sitting by a window, looking inward, slippers and a cardigan set aside. No outdoor scenery. Closed eyes, contemplative.
+4) Close-up of a knee with a faint watercolor wash and a small folded towel placed on a low table beside it. No human figure.
+5) Two figures walking arm-in-arm, side view, soft footsteps. Both closed eyes, serene.
+6) A pair of well-worn walking shoes placed neatly side by side on a wooden floor, with a single fresh leaf nearby. Editorial still life.
+
+============================================================
+SHEET 2 of 5 — Lower back pain in elderly home life
+============================================================
+
+Subject: scenes of elderly people experiencing lower back pain in their daily home life.
+
+Variations (6 cells):
+1) An elderly person sitting on the edge of a futon in the morning, one hand pressing the lower back, body slightly twisted. Wash on the lumbar area. Closed eyes.
+2) Side view of an elderly person rising from a wooden chair, one hand on the chair arm, one on the lower back. Wash on the lumbar. Closed eyes.
+3) An elderly person leaning over a kitchen sink in mid-bend posture, one hand on the back. Faint wash on the lower spine. Closed eyes.
+4) Side view of an elderly person walking with short stride, indoor slippers, slightly stooped posture. Closed eyes, calm.
+5) Two figures sitting side by side on a sofa, one hand gently placed on the other's back as if soothing. Back view, no faces.
+6) An empty rocking chair beside a window with soft light and a small cushion. Editorial still life suggesting relief, no human figure.
+
+============================================================
+SHEET 3 of 5 — Subtle signs of frailty in elderly home life
+============================================================
+
+Subject: scenes depicting the subtle signs of frailty in elderly home life — frailty depicted as quiet fatigue, never despair.
+
+Variations (6 cells):
+1) Side view of an elderly person walking slowly down a corridor with a cane, soft motion lines behind. Closed eyes, serene.
+2) A small still life: a closed book and a folded pair of reading glasses on a side table beside an empty armchair. No human figure.
+3) A simple bathroom scale on a wooden floor, with a single pair of slippers beside it. Editorial still life, no human figure.
+4) Close-up of an elderly hand trying to twist a bottle cap, the fingers slightly curled. Wash on the knuckles. No face.
+5) Two figures walking side by side, one slightly older with a cane, the other a caregiver lightly supporting at the elbow. Both closed eyes, serene.
+6) A small still life: a steaming cup of warm tea, a fresh sprig of greenery, and morning light from a nearby window. No human figure.
+
+============================================================
+SHEET 4 of 5 — Subtle signs of fall risk in elderly home life
+============================================================
+
+Subject: scenes about the subtle signs of fall risk in elderly home life — careful daily concern, NEVER an actual fall.
+
+Variations (6 cells):
+1) Close-up of a foot in slippers approaching a small wooden threshold, faint shadow on the threshold. No face. Editorial still life.
+2) Side view of an elderly person walking slowly, feet very low to the floor (sliding step). Closed eyes, peaceful.
+3) Side view of an elderly person standing up from a chair, one hand on the chair arm, the other gently extended for balance. Closed eyes.
+4) A still life of a cane resting against a wall beside a wooden handrail. No human figure. Editorial composition.
+5) Two figures walking through a corridor, one slightly stooped, the other supporting at the elbow. Both closed eyes.
+6) A pair of well-fitting walking shoes placed on a wooden floor beside a soft rug. Editorial still life suggesting safe daily steps. No human figure.
+
+============================================================
+SHEET 5 of 5 — Adult children beginning to consider home care
+============================================================
+
+Subject: scenes about adult children noticing changes in their elderly parents and beginning to consider home care — gentle concern, not crisis.
+
+Variations (6 cells):
+1) An adult child sitting across a low table from an elderly parent, both with closed eyes, the parent looking pensive. No conversation bubble.
+2) A still life: an empty kitchen counter with a half-filled mug and a stack of unopened mail. Editorial composition, no human figure.
+3) Close-up of two hands resting on top of a thick stack of paperwork and an open notebook with handwritten lines. No face.
+4) An adult holding a phone in one hand and a coffee cup in the other, with a calendar visible in the background. No face. Side view.
+5) Two figures sitting at a low table, one taking notes in a notebook, the other gesturing gently. Both closed eyes, calm — a peaceful consultation.
+6) A small still life: a single pair of outdoor shoes by a softly opened door, with warm light coming through. Suggesting "the first step", no human figure.
+
+============================================================
+FINAL OUTPUT REMINDER
+============================================================
+
+Deliver FIVE separate images, one per sheet, in order (Sheet 1 to Sheet 5), generated consecutively without waiting for further input.
+Each image: one 2x3 illustration grid, 3072x2048 landscape, pure white background, hand-drawn terracotta line illustration style as specified above.
+NOT photographs. No text, no numbers, no labels anywhere inside the images.

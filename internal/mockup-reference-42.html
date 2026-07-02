@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社べるつりー — モック確定版 (リファレンス画像)</title>
+<style>
+  :root {
+    --slate: #2C4A6B;
+    --terracotta: #D88B6F;
+    --line: rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", -apple-system, sans-serif;
+    background: #F5F1E8;
+    color: var(--slate);
+    line-height: 1.7;
+  }
+  header.page {
+    background: #FFFEF9; padding: 24px 0; border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  header.page h1 {
+    margin: 0 0 6px; font-size: 22px; letter-spacing: 0.04em;
+    font-family: "Shippori Mincho B1", serif;
+  }
+  header.page p { margin: 0; color: #666; font-size: 13px; }
+
+  .container {
+    max-width: 1320px; margin: 32px auto; padding: 0 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  @media (max-width: 1100px) { .container { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: #FFFEF9; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(60,40,20,0.10);
+  }
+  .panel .head {
+    background: linear-gradient(90deg, var(--slate), #1F3550);
+    color: #fff; padding: 16px 20px;
+  }
+  .panel .head .badge {
+    display: inline-block; padding: 3px 12px; background: var(--terracotta);
+    border-radius: 2px; font-size: 11px; letter-spacing: 0.18em;
+    margin-bottom: 6px; font-weight: 700;
+  }
+  .panel .head h2 {
+    margin: 0; font-family: "Shippori Mincho B1", serif;
+    font-size: 18px; font-weight: 600;
+  }
+  .panel .head .desc {
+    margin-top: 6px; font-size: 12px; color: rgba(255,255,255,0.78); line-height: 1.7;
+  }
+  .panel .body { padding: 24px; max-height: 70vh; overflow-y: auto; }
+  .panel .body.full { padding: 0; max-height: 70vh; }
+  .panel img.ref { width: 100%; height: auto; display: block; }
+
+  iframe.live {
+    width: 100%; height: 70vh; border: 0; display: block;
+  }
+
+  .note {
+    max-width: 1320px; margin: 16px auto; padding: 14px 24px;
+    background: #FFF7E6; border: 1px dashed #E5C46A; border-radius: 8px;
+    font-size: 13px; color: #7A5A00; line-height: 1.9;
+  }
+  .note b { color: #4B3800; }
+
+  .actions { text-align: center; padding: 20px; }
+  .actions a {
+    display: inline-block; padding: 10px 20px; margin: 0 6px;
+    background: var(--slate); color: #fff; text-decoration: none;
+    border-radius: 999px; font-size: 13px; letter-spacing: 0.08em;
+  }
+  .actions a.alt { background: var(--terracotta); }
+  .actions a:hover { opacity: 0.85; }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <h1>モック方向性 確定版（リファレンス画像）</h1>
+  <p>左：images2.0 出力のオリジナル42.png ─ 右：私が組んだ v2 実HTML</p>
+</header>
+
+<div class="note">
+  <b>運用方針：</b>このページの左パネル＝最終的なデザイン方向性のリファレンス（=ゴール）。右パネル＝現状の実装（差分を埋める対象）。
+  v2 実HTML を 左の世界観に寄せて段階的に改修していきます。差異の指摘は左右を比較しながら。
+</div>
+
+<div class="container">
+
+  <div class="panel">
+    <div class="head">
+      <span class="badge">REFERENCE v4</span>
+      <h2>最新方向性モック v4（2026-06-02 19:59・images2.0 出力）</h2>
+      <div class="desc">HERO草原が豊かに／blob+葉枝完成度UP／全セクション仕上がり。これが現行ゴール。</div>
+    </div>
+    <div class="body full">
+      <img class="ref" src="assets/mockup-reference-v4.png" alt="v4 reference">
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="head">
+      <span class="badge" style="background:#7C9075;">CURRENT v2</span>
+      <h2>現状の実HTML（mockup-corporate-entry-v2-with-materials.html）</h2>
+      <div class="desc">左に寄せる対象。リンクは動く。</div>
+    </div>
+    <div class="body full">
+      <iframe class="live" src="mockup-corporate-entry-v2-with-materials.html"></iframe>
+    </div>
+  </div>
+
+</div>
+
+<div class="actions">
+  <a href="assets/mockup-reference-42.png" target="_blank">リファレンス画像を新タブで開く</a>
+  <a href="mockup-corporate-entry-v2-with-materials.html" target="_blank" class="alt">実HTML を新タブで開く</a>
+</div>
+
+</body>
+</html>

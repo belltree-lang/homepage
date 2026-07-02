@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社べるつりー — デザイン全面刷新モック v2（文言保持）</title>
+<base href="../">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Soft background palette per section */
+    --bg-base: #FDF8F0;       /* warm cream base for whole body */
+    --bg-pink: #FDE9E0;       /* HERO section */
+    --bg-mint: #E2EFE0;       /* 5 entries */
+    --bg-cream: #FAF3DC;      /* concerns */
+    --bg-sky:  #E2EAF2;       /* team */
+    --bg-lavender: #ECE2EE;   /* trust */
+    --bg-peach: #FBE5D6;      /* community */
+
+    --slate: #2C4A6B;
+    --slate-soft: #5A7090;
+    --terracotta: #D88B6F;
+    --terracotta-deep: #B8674B;
+    --sage: #94AB8A;
+    --sage-deep: #6E8865;
+    --mustard: #D4A84B;
+    --rose: #E0A5A0;
+    --cream: #F5EFE0;
+    --paper: #FFFEF9;
+    --ink: #2D2D2D;
+    --ink-soft: #555;
+    --ink-mute: #888;
+    --line: rgba(120,90,60,0.15);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+    color: var(--ink);
+    background: var(--bg-base);
+    line-height: 2;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; position: relative; }
+  .min-jp { font-family: "Shippori Mincho B1", serif; }
+  .klee { font-family: "Klee One", serif; }
+  .caveat { font-family: "Caveat", cursive; }
+  .en { font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.16em; }
+  a { color: inherit; }
+
+  /* Eyebrow style */
+  .eyebrow {
+    font-family: "Caveat", cursive;
+    color: var(--terracotta-deep); font-size: 26px; letter-spacing: 0.02em;
+    display: inline-block; margin-bottom: 8px; transform: rotate(-2deg);
+  }
+  .eyebrow-en {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--terracotta); font-size: 14px; letter-spacing: 0.32em;
+    display: block; margin-bottom: 20px; text-transform: uppercase;
+  }
+
+  /* Section heading */
+  h2 {
+    font-family: "Shippori Mincho B1", serif; font-weight: 600;
+    font-size: 42px; line-height: 1.7; color: var(--slate);
+    margin: 0 0 28px; letter-spacing: 0.04em;
+  }
+  h2 .wave-under {
+    background-image: linear-gradient(transparent 75%, var(--mustard) 75%, var(--mustard) 88%, transparent 88%);
+    padding: 0 6px;
+  }
+  h4 {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    font-size: 20px; color: var(--slate); margin: 0 0 14px;
+    line-height: 1.6;
+  }
+
+  /* ====== mockup memo ====== */
+  .naming-note {
+    background: #FFF7E6; border: 2px dashed #E5C46A; padding: 14px 24px;
+    margin: 14px auto; max-width: 1180px; border-radius: 10px;
+    font-size: 12.5px; color: #7A5A00; line-height: 1.85;
+  }
+
+  /* ====== HEADER ====== */
+  header.site {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,248,240,0.95); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.site .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+  }
+  .brand-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand-mark .logo-circle {
+    width: 44px; height: 44px;
+    background: var(--terracotta); color: var(--paper);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Klee One", serif; font-weight: 600; font-size: 18px;
+    box-shadow: 0 4px 10px rgba(216,139,111,0.3);
+  }
+  .brand-mark .name {
+    font-family: "Klee One", serif; font-weight: 600;
+    font-size: 22px; color: var(--slate);
+  }
+  .brand-mark .name small {
+    display: block;
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 11px; color: var(--terracotta); letter-spacing: 0.2em;
+    margin-top: -4px;
+  }
+  nav.primary ul {
+    display: flex; gap: 28px; list-style: none; padding: 0; margin: 0;
+    font-size: 14px; font-family: "Klee One", serif;
+  }
+  nav.primary a {
+    color: var(--slate); text-decoration: none; padding: 6px 0;
+    position: relative;
+  }
+  nav.primary a:hover { color: var(--terracotta); }
+  .header-cta {
+    display: flex; gap: 10px; align-items: center;
+  }
+  .header-cta .tel {
+    font-family: "Klee One", serif; color: var(--slate); font-weight: 600;
+    text-decoration: none; font-size: 14px;
+  }
+  .header-cta .btn-cta {
+    padding: 12px 22px; background: var(--terracotta); color: var(--paper);
+    text-decoration: none; font-size: 13px; font-family: "Klee One", serif; font-weight: 600;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(216,139,111,0.35);
+    transition: 0.2s;
+  }
+  .header-cta .btn-cta:hover { transform: translateY(-2px); }
+
+  /* ====== Brand Snapshot ====== */
+  .brand-snapshot-bar {
+    background: var(--terracotta);
+    color: var(--paper);
+    padding: 10px 0;
+    font-size: 12.5px;
+    font-family: "Klee One", serif;
+  }
+  .brand-snapshot-bar .row {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+  }
+  .brand-snapshot-bar a { color: var(--paper); text-decoration: none; font-weight: 600; }
+
+  /* ====== HERO ====== */
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(circle at 90% 10%, var(--bg-peach) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, var(--bg-mint) 0%, transparent 40%),
+      var(--bg-pink);
+    padding: 120px 0 200px;
+    overflow: hidden;
+  }
+  /* Hero clouds & decorations */
+  .hero-cloud-1 { position: absolute; top: 60px; left: 4%; width: 220px; opacity: 0.8; }
+  .hero-cloud-2 { position: absolute; top: 180px; right: 6%; width: 170px; opacity: 0.7; }
+  .hero-cloud-3 { position: absolute; bottom: 80px; right: 30%; width: 130px; opacity: 0.6; }
+  .hero-leaf-1  { position: absolute; top: 90px; right: 30%; width: 80px; transform: rotate(20deg); opacity: 0.8; }
+  .hero-leaf-2  { position: absolute; bottom: 40px; left: 8%; width: 110px; transform: rotate(-15deg); opacity: 0.85; }
+  .hero-sun     { position: absolute; top: 40px; right: 18%; width: 110px; opacity: 0.85; }
+  .hero-bird-1  { position: absolute; top: 200px; left: 35%; width: 60px; opacity: 0.9; }
+  .hero-grass   { position: absolute; bottom: 0; left: 0; right: 0; width: 100%; height: 80px; }
+
+  .hero-grid {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; align-items: center;
+  }
+  .hero-text { position: relative; }
+  .hero-text .caveat-mark {
+    position: absolute; top: -40px; left: -10px;
+    font-family: "Caveat", cursive; color: var(--terracotta-deep);
+    font-size: 36px; transform: rotate(-6deg);
+  }
+  .hero h1 {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    font-size: 60px; line-height: 1.55; letter-spacing: 0.04em;
+    color: var(--slate); margin: 0 0 36px;
+    position: relative;
+  }
+  .hero h1 .underline {
+    background-image: linear-gradient(transparent 70%, rgba(216,139,111,0.4) 70%);
+    padding: 0 4px;
+  }
+  .hero .lead {
+    font-size: 17px; color: var(--ink-soft); margin: 0 0 40px;
+    line-height: 2.2; max-width: 540px;
+    font-family: "Klee One", serif;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 16px 28px;
+    text-decoration: none; font-size: 14px;
+    border-radius: 999px;
+    transition: 0.2s; border: 2px solid transparent;
+    font-family: "Klee One", serif; font-weight: 600;
+  }
+  .btn-primary {
+    background: var(--terracotta); color: var(--paper);
+    box-shadow: 0 6px 16px rgba(216,139,111,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-3px); background: var(--terracotta-deep); }
+  .btn-secondary {
+    background: var(--paper); color: var(--slate);
+    border-color: var(--slate);
+  }
+  .btn-secondary:hover { background: var(--slate); color: var(--paper); }
+
+  /* hero visual area */
+  .hero-visual {
+    position: relative; aspect-ratio: 1/1; max-width: 480px; margin: 0 auto;
+  }
+  .hero-blob {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%);
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    animation: blob 18s ease-in-out infinite;
+  }
+  @keyframes blob {
+    0%, 100% { border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+    50% { border-radius: 45% 55% 40% 60% / 60% 45% 55% 40%; }
+  }
+  .hero-visual-deco {
+    position: absolute; pointer-events: none;
+  }
+  .hv-1 { top: -10px; right: -10px; width: 120px; }
+  .hv-2 { bottom: -20px; left: -20px; width: 150px; }
+  .hv-3 { top: 30%; right: -40px; width: 90px; }
+
+  /* Stat Strip — like washi tape */
+  .stat-strip {
+    position: relative; z-index: 3;
+    margin: -100px auto 0;
+    max-width: 1080px;
+    background: var(--paper);
+    border-radius: 24px;
+    padding: 36px 40px;
+    box-shadow: 0 24px 60px rgba(60,40,20,0.10);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .stat-strip::before {
+    content: ""; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    width: 90px; height: 26px;
+    background: var(--mustard);
+    border-radius: 4px;
+    opacity: 0.7;
+    transform: translateX(-50%) rotate(-3deg);
+  }
+  .stat { text-align: center; position: relative; }
+  .stat:not(:last-child)::after {
+    content: ""; position: absolute; right: -12px; top: 20%; height: 60%; width: 1px;
+    background: var(--line);
+  }
+  .stat .num {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    font-size: 44px; color: var(--terracotta); line-height: 1; letter-spacing: 0.02em;
+  }
+  .stat .num .u { font-size: 16px; color: var(--slate); margin-left: 4px; }
+  .stat .lab {
+    font-size: 13px; color: var(--slate); margin-top: 14px;
+    font-family: "Klee One", serif; font-weight: 600;
+  }
+
+  /* ====== 5入口セクション ====== */
+  .entries {
+    background: var(--bg-mint);
+    padding: 180px 0 140px;
+    position: relative;
+    overflow: hidden;
+  }
+  .entries::before {
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1150,15 1200,30 L1200,0 L0,0 Z' fill='%23FDE9E0'/%3E%3C/svg%3E") repeat-x;
+    background-size: 1200px 60px;
+  }
+  .entries-deco-1 { position: absolute; top: 90px; left: 4%; width: 130px; opacity: 0.7; }
+  .entries-deco-2 { position: absolute; top: 200px; right: 4%; width: 100px; opacity: 0.65; }
+  .entries-deco-3 { position: absolute; bottom: 100px; left: 8%; width: 80px; opacity: 0.7; transform: rotate(15deg); }
+  .entries-deco-4 { position: absolute; bottom: 180px; right: 8%; width: 110px; opacity: 0.6; }
+
+  .sec-head { text-align: center; margin-bottom: 80px; max-width: 720px; margin-left: auto; margin-right: auto; position: relative; }
+  .sec-head p {
+    color: var(--ink-soft); font-size: 16px; line-height: 2.1;
+    margin-top: 12px; font-family: "Klee One", serif;
+  }
+  .sec-head .head-deco-left, .sec-head .head-deco-right {
+    position: absolute; top: 0; width: 50px; opacity: 0.7;
+  }
+  .sec-head .head-deco-left { left: -10px; transform: rotate(-15deg); }
+  .sec-head .head-deco-right { right: -10px; transform: rotate(15deg); }
+
+  .entries-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px;
+  }
+  .entry-card {
+    position: relative;
+    background: var(--paper);
+    border-radius: 24px;
+    padding: 40px 32px 32px;
+    text-decoration: none;
+    color: inherit;
+    display: flex; flex-direction: column;
+    min-height: 360px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 2px solid transparent;
+  }
+  .entry-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--terracotta);
+    box-shadow: 0 20px 40px rgba(60,40,20,0.12);
+  }
+  .entry-card.span2 { grid-column: span 2; }
+  .entry-card.span3 { grid-column: span 3; }
+  .entry-card .corner-deco {
+    position: absolute; top: 12px; right: 12px; width: 56px; height: 56px; opacity: 0.5;
+  }
+  .entry-card .num-badge {
+    position: absolute; top: 24px; left: 30px;
+    font-family: "Caveat", cursive; font-size: 28px; color: var(--terracotta);
+    transform: rotate(-6deg);
+  }
+  .entry-card .icon-wrap {
+    width: 80px; height: 80px;
+    background: var(--bg-pink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 32px 0 22px;
+  }
+  .entry-card.c-mint .icon-wrap { background: var(--bg-mint); }
+  .entry-card.c-cream .icon-wrap { background: var(--bg-cream); }
+  .entry-card.c-sky .icon-wrap { background: var(--bg-sky); }
+  .entry-card.c-lavender .icon-wrap { background: var(--bg-lavender); }
+  .entry-card .icon-wrap svg { width: 40px; height: 40px; color: var(--terracotta-deep); }
+  .entry-card h4 { font-size: 22px; margin: 0 0 6px; }
+  .entry-card .romaji {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--terracotta); font-size: 11.5px; letter-spacing: 0.24em;
+    display: block; margin-bottom: 16px;
+  }
+  .entry-card p {
+    font-size: 14.5px; color: var(--ink-soft); line-height: 2.05;
+    margin: 0; flex-grow: 1;
+    font-family: "Klee One", serif;
+  }
+  .entry-card .cta-link {
+    margin-top: 26px;
+    font-size: 13px; color: var(--terracotta-deep); font-weight: 600;
+    font-family: "Klee One", serif;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .entry-card .cta-link::after { content: "→"; font-size: 16px; transition: 0.2s; }
+  .entry-card:hover .cta-link::after { transform: translateX(6px); }
+
+  /* featured (bellfit) */
+  .entry-card.featured {
+    background: linear-gradient(135deg, var(--paper) 0%, #FFFBE8 100%);
+    border-color: var(--mustard);
+  }
+  .entry-card.featured .sub-list {
+    margin-top: 18px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    padding-top: 18px; border-top: 2px dashed var(--line);
+  }
+  .entry-card.featured .sub-list .sub {
+    text-align: center;
+    padding: 12px 6px; background: var(--paper); border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(60,40,20,0.06);
+  }
+  .entry-card.featured .sub-list .sub b {
+    display: block;
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    color: var(--slate); font-size: 13.5px; margin-bottom: 2px;
+  }
+  .entry-card.featured .sub-list .sub span {
+    color: var(--terracotta); font-size: 11px;
+    font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.16em;
+  }
+
+  /* ====== お悩みから探す ====== */
+  .concerns {
+    background: var(--bg-cream);
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .concerns::before {
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1150,15 1200,30 L1200,0 L0,0 Z' fill='%23E2EFE0'/%3E%3C/svg%3E") repeat-x;
+  }
+  .concerns-deco-1 { position: absolute; top: 80px; right: 5%; width: 110px; opacity: 0.6; }
+  .concerns-deco-2 { position: absolute; bottom: 100px; left: 5%; width: 90px; opacity: 0.7; transform: rotate(-20deg); }
+
+  .concerns-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    margin-top: 56px;
+  }
+  .concern-card {
+    background: var(--paper);
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-decoration: none; color: inherit;
+    transition: 0.3s;
+    display: block;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .concern-card:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(60,40,20,0.10);
+  }
+  .concern-card .corner-mark {
+    position: absolute; top: 14px; right: 14px;
+    font-family: "Caveat", cursive; color: var(--mustard);
+    font-size: 24px; transform: rotate(8deg);
+  }
+  .concern-card h4 { font-size: 18px; margin: 0 0 8px; }
+  .concern-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.95; font-family: "Klee One", serif; }
+  .center-cta { text-align: center; margin-top: 56px; }
+
+  /* ====== Professional Team ====== */
+  .team-section {
+    background: var(--bg-sky);
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .team-section::before {
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1150,15 1200,30 L1200,0 L0,0 Z' fill='%23FAF3DC'/%3E%3C/svg%3E") repeat-x;
+  }
+  .team-deco-1 { position: absolute; top: 100px; left: 6%; width: 90px; opacity: 0.6; }
+  .team-deco-2 { position: absolute; bottom: 100px; right: 6%; width: 130px; opacity: 0.55; }
+
+  .team-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    margin-top: 56px;
+  }
+  .team-card {
+    background: var(--paper);
+    border-radius: 20px;
+    padding: 36px 24px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .team-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(60,40,20,0.08); }
+  .team-card .icon-circle {
+    width: 96px; height: 96px;
+    background: linear-gradient(135deg, var(--bg-pink), var(--bg-peach));
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .team-card .icon-circle::after {
+    content: ""; position: absolute; inset: -6px;
+    border: 2px dashed var(--rose); border-radius: 50%; opacity: 0.5;
+  }
+  .team-card .icon-circle svg { width: 44px; height: 44px; color: var(--terracotta-deep); }
+  .team-card h4 { font-size: 17px; margin: 0 0 10px; }
+  .team-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.95; margin: 0; font-family: "Klee One", serif; }
+
+  /* ====== Trust ====== */
+  .trust {
+    background: var(--bg-lavender);
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .trust::before {
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1150,15 1200,30 L1200,0 L0,0 Z' fill='%23E2EAF2'/%3E%3C/svg%3E") repeat-x;
+  }
+  .trust-deco-1 { position: absolute; top: 100px; right: 5%; width: 100px; opacity: 0.6; }
+  .trust-deco-2 { position: absolute; bottom: 60px; left: 4%; width: 130px; opacity: 0.55; }
+
+  .trust-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center;
+  }
+  .trust .lead-text { color: var(--ink-soft); font-family: "Klee One", serif; line-height: 2.1; font-size: 15px; }
+  .trust-list { list-style: none; padding: 0; margin: 36px 0 0; }
+  .trust-list li {
+    display: flex; gap: 20px;
+    padding: 22px 28px;
+    background: var(--paper);
+    border-radius: 20px;
+    margin-bottom: 14px;
+    border: 2px solid transparent;
+    transition: 0.2s;
+  }
+  .trust-list li:hover { border-color: var(--rose); }
+  .trust-list .check {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: var(--terracotta);
+    color: var(--paper);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700;
+    box-shadow: 0 3px 8px rgba(216,139,111,0.4);
+  }
+  .trust-list h4 { font-size: 16px; margin: 0 0 4px; }
+  .trust-list p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.85; font-family: "Klee One", serif; }
+
+  /* ====== Community ====== */
+  .community-sec {
+    background: var(--bg-peach);
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .community-sec::before {
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1150,15 1200,30 L1200,0 L0,0 Z' fill='%23ECE2EE'/%3E%3C/svg%3E") repeat-x;
+  }
+  .community-deco-1 { position: absolute; top: 80px; left: 5%; width: 110px; opacity: 0.6; }
+  .community-deco-2 { position: absolute; bottom: 120px; right: 6%; width: 90px; opacity: 0.7; }
+
+  .community-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    margin-top: 56px;
+  }
+  .community-card {
+    background: var(--paper);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .community-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(60,40,20,0.10); }
+  .community-card .img {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%);
+    position: relative;
+  }
+  .community-card .img::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, transparent 50%);
+  }
+  .community-card .body { padding: 32px; }
+  .community-card h4 { font-size: 18px; margin: 0 0 12px; }
+  .community-card p { font-size: 14px; color: var(--ink-soft); line-height: 2; margin: 0; font-family: "Klee One", serif; }
+
+  /* ====== Consultation banner ====== */
+  .consult-section {
+    background: var(--bg-base);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .consult-section::before {
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1150,15 1200,30 L1200,0 L0,0 Z' fill='%23FBE5D6'/%3E%3C/svg%3E") repeat-x;
+  }
+  .consult-banner {
+    max-width: 1080px; margin: 0 auto;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(216,139,111,0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(148,171,138,0.3) 0%, transparent 50%),
+      linear-gradient(135deg, var(--slate) 0%, #1F3550 100%);
+    border-radius: 32px;
+    padding: 90px 60px;
+    text-align: center;
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .consult-banner .deco-cloud-w {
+    position: absolute; top: 30px; left: 30px; width: 150px; opacity: 0.5;
+  }
+  .consult-banner .deco-cloud-w2 {
+    position: absolute; bottom: 30px; right: 40px; width: 130px; opacity: 0.4;
+  }
+  .consult-banner .deco-bird {
+    position: absolute; top: 60px; right: 25%; width: 60px; opacity: 0.7;
+  }
+  .consult-banner .eyebrow { color: #FAE4DA; }
+  .consult-banner h2 {
+    color: var(--paper);
+    font-size: 38px;
+    margin: 0 0 28px;
+  }
+  .consult-banner p {
+    color: rgba(255,255,255,0.9); font-size: 15.5px; max-width: 620px; margin: 0 auto 36px;
+    line-height: 2.2; font-family: "Klee One", serif;
+  }
+  .consult-banner .actions {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  }
+  .consult-banner .btn-primary { background: var(--terracotta); color: var(--paper); }
+  .consult-banner .btn-secondary {
+    background: rgba(255,255,255,0.1); color: var(--paper); border-color: var(--paper);
+  }
+  .consult-banner .btn-secondary:hover { background: var(--paper); color: var(--slate); }
+
+  /* ====== Footer ====== */
+  footer.site {
+    background: var(--sage-deep);
+    color: rgba(255,255,255,0.9);
+    padding: 80px 0 36px;
+    font-size: 13px;
+    position: relative;
+    overflow: hidden;
+  }
+  footer.site::before {
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1150,15 1200,30 L1200,0 L0,0 Z' fill='%23FDF8F0'/%3E%3C/svg%3E") repeat-x;
+  }
+  footer.site .row {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
+    margin-bottom: 40px;
+  }
+  footer.site h4 {
+    font-family: "Klee One", serif;
+    color: var(--mustard); font-size: 14px; margin: 0 0 18px;
+  }
+  footer.site ul { list-style: none; padding: 0; margin: 0; line-height: 2.4; }
+  footer.site a { color: rgba(255,255,255,0.85); text-decoration: none; font-family: "Klee One", serif; }
+  footer.site a:hover { color: var(--mustard); }
+  footer.site .footer-brand p { color: rgba(255,255,255,0.7); font-size: 12.5px; line-height: 1.95; margin: 16px 0 0; font-family: "Klee One", serif; }
+  footer.site .copyright {
+    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;
+    font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.5);
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .hero h1 { font-size: 38px; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); padding: 28px 24px; }
+    .stat .num { font-size: 32px; }
+    .entries-grid { grid-template-columns: 1fr; }
+    .entry-card.span2, .entry-card.span3 { grid-column: span 1; }
+    .concerns-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: 1fr; gap: 40px; }
+    .community-grid { grid-template-columns: 1fr; }
+    .consult-banner { padding: 60px 28px; border-radius: 20px; }
+    .consult-banner h2 { font-size: 26px; }
+    footer.site .row { grid-template-columns: 1fr 1fr; }
+    nav.primary ul { display: none; }
+    .header-cta .tel { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="naming-note">
+  <b>デザイン全面刷新モック v2（既存サイト index.html の文言は完全に保持）。</b>
+  本文・見出し・ボタンは1文字も変更していません。背景色をセクションごとに変え（pink→mint→cream→sky→lavender→peach）、雲・葉・小鳥・草・太陽のイラストを各所に配置、丸み・手書きフォント・波形セクション区切りで「ボタニスト／たい在宅／西宮Psy」路線のポップさに振りました。
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site">
+  <div class="container">
+    <div class="row">
+      <a class="brand-mark" href="index.html" style="text-decoration:none;">
+        <div class="logo-circle">べ</div>
+        <div class="name">BellTree<small>べるつりー</small></div>
+      </a>
+      <nav class="primary">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="solutions/index.html">お悩み別解決策</a></li>
+          <li><a href="services/index.html">サービス一覧</a></li>
+          <li><a href="cases/index.html">改善事例</a></li>
+          <li><a href="team/index.html">スタッフ紹介</a></li>
+          <li><a href="about/index.html">会社概要</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:0426822839" class="tel">☎ 042-682-2839</a>
+        <a href="contact/index.html" class="btn-cta">ご相談窓口</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Brand Snapshot bar ===== -->
+<div class="brand-snapshot-bar">
+  <div class="container">
+    <div class="row">
+      <div><b>株式会社べるつりー</b> ・ 八王子・町田・日野</div>
+      <div>
+        <a href="tel:0426822839">☎ 042-682-2839</a> ・ 平日 9:00〜18:00（日祝休） ・ 八王子市下柚木3-7-2-401
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <!-- decoration SVGs -->
+  <svg class="hero-cloud-1" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9" stroke="#E5C8B8" stroke-width="1.5"/>
+  </svg>
+  <svg class="hero-cloud-2" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9" stroke="#E5C8B8" stroke-width="1.5"/>
+  </svg>
+  <svg class="hero-cloud-3" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9" stroke="#E5C8B8" stroke-width="1.5"/>
+  </svg>
+  <svg class="hero-sun" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="32" fill="#FBD876"/>
+    <g stroke="#FBD876" stroke-width="3" stroke-linecap="round">
+      <line x1="60" y1="8" x2="60" y2="20"/>
+      <line x1="60" y1="100" x2="60" y2="112"/>
+      <line x1="8" y1="60" x2="20" y2="60"/>
+      <line x1="100" y1="60" x2="112" y2="60"/>
+      <line x1="22" y1="22" x2="32" y2="32"/>
+      <line x1="88" y1="88" x2="98" y2="98"/>
+      <line x1="98" y1="22" x2="88" y2="32"/>
+      <line x1="32" y1="88" x2="22" y2="98"/>
+    </g>
+  </svg>
+  <svg class="hero-leaf-1" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50,8 C70,40 78,90 68,135 C63,150 55,158 50,158 C45,158 37,150 32,135 C22,90 30,40 50,8 Z" fill="#94AB8A"/>
+    <path d="M50,8 L50,158" stroke="#6E8865" stroke-width="1.5" fill="none"/>
+  </svg>
+  <svg class="hero-leaf-2" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50,8 C70,40 78,90 68,135 C63,150 55,158 50,158 C45,158 37,150 32,135 C22,90 30,40 50,8 Z" fill="#B5C9AC"/>
+    <path d="M50,8 L50,158" stroke="#7C9075" stroke-width="1.5" fill="none"/>
+  </svg>
+  <svg class="hero-bird-1" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5,25 Q15,8 28,20 Q40,8 55,25" stroke="#2C4A6B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>
+  <svg class="hero-grass" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,80 L0,55 Q30,30 60,55 Q90,25 120,55 Q150,32 180,55 Q210,28 240,55 Q270,30 300,55 Q330,22 360,55 Q390,35 420,55 Q450,28 480,55 Q510,30 540,55 Q570,25 600,55 Q630,30 660,55 Q690,28 720,55 Q750,32 780,55 Q810,25 840,55 Q870,30 900,55 Q930,28 960,55 Q990,32 1020,55 Q1050,25 1080,55 Q1110,30 1140,55 Q1170,28 1200,55 L1200,80 Z" fill="#94AB8A" opacity="0.6"/>
+    <path d="M0,80 L0,65 Q40,45 80,65 Q120,40 160,65 Q200,45 240,65 Q280,42 320,65 Q360,48 400,65 Q440,42 480,65 Q520,45 560,65 Q600,42 640,65 Q680,48 720,65 Q760,42 800,65 Q840,45 880,65 Q920,42 960,65 Q1000,48 1040,65 Q1080,42 1120,65 Q1160,45 1200,65 L1200,80 Z" fill="#7C9075"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="caveat-mark">welcome ⌄</span>
+        <span class="eyebrow-en">YOUR CONSULTATION HUB</span>
+        <span class="eyebrow">ご相談窓口｜運動・訪問・介護・終活</span>
+        <h1>人生の後半を、<br><span class="underline">もっと安心できる時間</span>に。</h1>
+        <p class="lead">
+          運動習慣づくりから、訪問支援、介護、終活準備まで——かかりつけの窓口が変わらない支援体制で、あなたとご家族の生活に寄り添います。
+        </p>
+        <div class="hero-actions">
+          <a href="tel:0426822839" class="btn btn-primary">☎ 042-682-2839</a>
+          <a href="contact/index.html" class="btn btn-secondary">フォームで相談</a>
+          <a href="#entries" class="btn btn-secondary">支援の流れを見る</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <svg class="hero-visual-deco hv-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#D88B6F" stroke-width="3" stroke-dasharray="6,8"/>
+        </svg>
+        <svg class="hero-visual-deco hv-2" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#FBD876">
+            <circle cx="20" cy="60" r="6"/>
+            <circle cx="40" cy="40" r="5"/>
+            <circle cx="60" cy="60" r="7"/>
+            <circle cx="80" cy="35" r="5"/>
+            <circle cx="100" cy="60" r="6"/>
+            <circle cx="35" cy="85" r="5"/>
+            <circle cx="75" cy="90" r="6"/>
+          </g>
+        </svg>
+        <svg class="hero-visual-deco hv-3" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40,10 C55,30 60,60 55,75 C52,78 48,78 45,75 C40,60 30,55 25,40 C30,25 35,15 40,10 Z" fill="#FFFEF9" stroke="#94AB8A" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stat Strip ===== -->
+<div class="container">
+  <div class="stat-strip">
+    <div class="stat">
+      <div class="num">15<span class="u">年</span></div>
+      <div class="lab">地域で続けて</div>
+    </div>
+    <div class="stat">
+      <div class="num">1,000<span class="u">人/月</span></div>
+      <div class="lab">訪問鍼灸のべ実績</div>
+    </div>
+    <div class="stat">
+      <div class="num">3<span class="u">拠点</span></div>
+      <div class="lab">八王子・町田・日野</div>
+    </div>
+    <div class="stat">
+      <div class="num">13<span class="u">名</span></div>
+      <div class="lab">国家資格スタッフ</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 5入口セクション ===== -->
+<section class="entries" id="entries">
+  <svg class="entries-deco-1" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9"/>
+  </svg>
+  <svg class="entries-deco-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50,10 C70,30 75,60 65,85 C60,93 52,95 50,95 C48,95 40,93 35,85 C25,60 30,30 50,10 Z" fill="#7C9075" opacity="0.6"/>
+  </svg>
+  <svg class="entries-deco-3" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#D88B6F"><circle cx="20" cy="20" r="4"/><circle cx="40" cy="20" r="4"/><circle cx="60" cy="20" r="4"/><circle cx="20" cy="40" r="4"/><circle cx="40" cy="40" r="4"/><circle cx="60" cy="40" r="4"/><circle cx="20" cy="60" r="4"/><circle cx="40" cy="60" r="4"/><circle cx="60" cy="60" r="4"/></g>
+  </svg>
+  <svg class="entries-deco-4" viewBox="0 0 110 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,40 Q30,15 55,30 Q80,15 100,40" stroke="#2C4A6B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <div class="container">
+    <div class="sec-head">
+      <svg class="head-deco-left" viewBox="0 0 50 80" xmlns="http://www.w3.org/2000/svg"><path d="M25,5 C35,20 38,45 33,68 C30,75 27,77 25,77 C23,77 20,75 17,68 C12,45 15,20 25,5 Z" fill="#94AB8A"/></svg>
+      <svg class="head-deco-right" viewBox="0 0 50 80" xmlns="http://www.w3.org/2000/svg"><path d="M25,5 C35,20 38,45 33,68 C30,75 27,77 25,77 C23,77 20,75 17,68 C12,45 15,20 25,5 Z" fill="#94AB8A"/></svg>
+      <span class="eyebrow-en">Our Support Model</span>
+      <h2>人生の変化に合わせて、<br>支援が<span class="wave-under">途切れない構造</span></h2>
+      <p>運動から介護までを個別のサービスとしてではなく、「一つの連続した支援」として提供します。状態が変わっても、ご相談窓口はべるつりーのままです。</p>
+    </div>
+
+    <div class="entries-grid">
+      <a class="entry-card span2" href="services/acupuncture/index.html">
+        <div class="num-badge">No.1</div>
+        <svg class="corner-deco" viewBox="0 0 60 60"><path d="M30,8 C42,20 44,40 38,52 C35,56 32,57 30,57 C28,57 25,56 22,52 C16,40 18,20 30,8 Z" fill="#94AB8A"/></svg>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M8 24 L24 8" stroke-linecap="round"/>
+            <circle cx="8" cy="24" r="2.5"/><circle cx="24" cy="8" r="2.5"/>
+            <path d="M14 14 L18 18" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>訪問鍼灸マッサージ</h4>
+        <span class="romaji">HOME VISIT THERAPY</span>
+        <p>通えなくなっても、自宅で身体のケアを継続的に行います。</p>
+        <span class="cta-link">訪問支援を見る</span>
+      </a>
+
+      <a class="entry-card featured span3" href="services/fitness/index.html">
+        <div class="num-badge">No.2</div>
+        <svg class="corner-deco" viewBox="0 0 60 60"><circle cx="30" cy="30" r="22" fill="none" stroke="#D4A84B" stroke-width="3" stroke-dasharray="4,5"/></svg>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="16" cy="16" r="11"/>
+            <path d="M16 7 L16 16 L23 19" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>べるフィット</h4>
+        <span class="romaji">FITNESS &amp; DAY SERVICE</span>
+        <p>べるフィットを入口に、元気な身体づくりを継続します。</p>
+        <div class="sub-list">
+          <div class="sub"><b>女性向けプログラム</b><span>SEED</span></div>
+          <div class="sub"><b>通所リハビリ</b><span>LEAF</span></div>
+          <div class="sub"><b>夜間・週末利用</b><span>NIGHT</span></div>
+        </div>
+        <span class="cta-link">べるフィットを見る</span>
+      </a>
+
+      <a class="entry-card c-cream span2" href="services/home-care/index.html">
+        <div class="num-badge">No.3</div>
+        <svg class="corner-deco" viewBox="0 0 60 60"><path d="M10,50 Q20,20 30,40 Q40,15 50,50 Z" fill="#94AB8A"/></svg>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 14 L16 6 L26 14 L26 26 L6 26 Z"/>
+            <path d="M14 26 L14 18 L18 18 L18 26"/>
+          </svg>
+        </div>
+        <h4>居宅介護支援</h4>
+        <span class="romaji">CARE MANAGEMENT</span>
+        <p>介護制度の活用と生活設計をケアマネジャーが専門的に支えます。</p>
+        <span class="cta-link">居宅介護支援を見る</span>
+      </a>
+
+      <a class="entry-card c-sky span2" href="services/legal/index.html">
+        <div class="num-badge">No.4</div>
+        <svg class="corner-deco" viewBox="0 0 60 60"><path d="M15,45 Q30,5 45,45" stroke="#2C4A6B" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="7" y="5" width="18" height="22" rx="1"/>
+            <path d="M11 11 L21 11 M11 15 L21 15 M11 19 L17 19"/>
+          </svg>
+        </div>
+        <h4>行政書士・終活支援</h4>
+        <span class="romaji">SHUKATSU &amp; LEGAL</span>
+        <p>相続や後見の準備まで見通して、行政書士が伴走します。</p>
+        <span class="cta-link">行政書士支援を見る</span>
+      </a>
+
+      <a class="entry-card c-lavender span2" href="community/index.html">
+        <div class="num-badge">No.5</div>
+        <svg class="corner-deco" viewBox="0 0 60 60"><circle cx="20" cy="25" r="8" fill="#D88B6F"/><circle cx="40" cy="30" r="6" fill="#94AB8A"/></svg>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="22" cy="14" r="3"/>
+            <path d="M6 26 C6 22 9 19 13 19 C16 19 18 21 19 23"/>
+            <path d="M19 26 C19 23 21 21 23 21 C25 21 26 22 26 24"/>
+          </svg>
+        </div>
+        <h4>地域連携・活動</h4>
+        <span class="romaji">COMMUNITY</span>
+        <p>医療や介護の枠を超え、町田や南大沢の地域に根ざした健康づくりと居場所づくりに取り組んでいます。</p>
+        <span class="cta-link">地域活動を見る</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お悩みから探す ===== -->
+<section class="concerns">
+  <svg class="concerns-deco-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="#D88B6F" stroke-width="3" stroke-dasharray="5,6"/></svg>
+  <svg class="concerns-deco-2" viewBox="0 0 100 80"><path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9"/></svg>
+
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow-en">Search by Concerns</span>
+      <h2>お悩みから<span class="wave-under">探す</span></h2>
+      <p>いま感じているお悩みに近い項目を選んで、詳しい情報と相談の導線を確認ください。</p>
+    </div>
+    <div class="concerns-grid">
+      <a href="solutions/stroke/index.html" class="concern-card">
+        <span class="corner-mark">!</span>
+        <h4>脳卒中・後遺症</h4>
+        <p>麻痺や固縮への継続的なリハビリを希望される方へ。</p>
+      </a>
+      <a href="solutions/parkinson/index.html" class="concern-card">
+        <span class="corner-mark">?</span>
+        <h4>パーキンソン病</h4>
+        <p>こわばりや歩行のしづらさを維持・改善したい方へ。</p>
+      </a>
+      <a href="solutions/knee-pain/index.html" class="concern-card">
+        <span class="corner-mark">!</span>
+        <h4>膝・腰の痛み</h4>
+        <p>階段、立ち上がりが辛い、長引く痛みがある方へ。</p>
+      </a>
+      <a href="solutions/fall-risk/index.html" class="concern-card">
+        <span class="corner-mark">?</span>
+        <h4>歩行・ふらつき</h4>
+        <p>室内外での転倒不安、つまずきが増えた方へ。</p>
+      </a>
+      <a href="solutions/frailty/index.html" class="concern-card">
+        <span class="corner-mark">!</span>
+        <h4>体力・活気の低下</h4>
+        <p>最近疲れやすい、外出が億劫になった方へ。</p>
+      </a>
+      <a href="solutions/home-care-start/index.html" class="concern-card">
+        <span class="corner-mark">?</span>
+        <h4>介護・生活相談</h4>
+        <p>介護保険の使い方、ご家族の負担を減らしたい方へ。</p>
+      </a>
+    </div>
+    <div class="center-cta">
+      <a href="solutions/index.html" class="btn btn-secondary">お悩み別解決策をすべて見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Professional Team ===== -->
+<section class="team-section">
+  <svg class="team-deco-1" viewBox="0 0 80 80"><circle cx="40" cy="40" r="30" fill="#FBD876" opacity="0.4"/></svg>
+  <svg class="team-deco-2" viewBox="0 0 100 100"><path d="M50,10 C70,30 75,60 65,85 C60,93 52,95 50,95 C48,95 40,93 35,85 C25,60 30,30 50,10 Z" fill="#94AB8A" opacity="0.5"/></svg>
+
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow-en">Professional Team</span>
+      <h2>専門家による<span class="wave-under">チーム支援</span></h2>
+      <p>国家資格・専門資格を持つスタッフがチームで支援します。</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="icon-circle"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 22 L10 14 L16 18 L22 8 L28 16" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>健康運動指導士</h4>
+        <p>安全で効果的な運動プログラムを計画・指導します。</p>
+      </div>
+      <div class="team-card">
+        <div class="icon-circle"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 4 L10 14 Q10 22 16 22 Q22 22 22 14 L22 4"/><circle cx="22" cy="26" r="3"/></svg></div>
+        <h4>鍼灸マッサージ師</h4>
+        <p>国家資格に基づき、ご自宅での痛みの緩和や機能回復を担います。</p>
+      </div>
+      <div class="team-card">
+        <div class="icon-circle"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18 L10 14 L14 18 L18 14 L24 16 L28 14" stroke-linecap="round"/></svg></div>
+        <h4>ケアマネジャー</h4>
+        <p>介護保険制度の活用と、最適な生活設計を共に整理します。</p>
+      </div>
+      <div class="team-card">
+        <div class="icon-circle"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="6" width="20" height="22" rx="1"/><path d="M10 12 L22 12 M10 16 L22 16 M10 20 L18 20"/></svg></div>
+        <h4>行政書士</h4>
+        <p>成年後見や相続など、見落としがちな将来の法務手続きを支えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust ===== -->
+<section class="trust">
+  <svg class="trust-deco-1" viewBox="0 0 100 80"><path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9"/></svg>
+  <svg class="trust-deco-2" viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="#94AB8A" stroke-width="3" stroke-dasharray="6,8"/></svg>
+
+  <div class="container">
+    <div class="trust-grid">
+      <div>
+        <span class="eyebrow-en">Trust &amp; Credibility</span>
+        <h2>地域と医療が連携する<br><span class="wave-under">安心の支援体制</span></h2>
+        <p class="lead-text">
+          2011年の創業以来、町田市・南大沢エリアを中心に地域密着の「継続支援」を提供してきました。確かな資格と医療機関・地域包括支援センターとの連携がご家族の安心を支えます。
+        </p>
+      </div>
+      <ul class="trust-list">
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h4>国家資格者による専門チーム</h4>
+            <p>鍼灸マッサージ師、ケアマネジャー、行政書士、健康運動指導士など、各分野のプロフェッショナルが在籍しています。</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h4>豊富な現場経験</h4>
+            <p>累計16,000回以上の施術実績と、日々260名以上の方と向き合う確かな臨床・現場経験があります。</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h4>地域との連携体制</h4>
+            <p>町田市周辺の病院、クリニック、地域包括支援センターと密接に連携し、必要な制度への橋渡しを行います。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Community ===== -->
+<section class="community-sec">
+  <svg class="community-deco-1" viewBox="0 0 100 80"><path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9"/></svg>
+  <svg class="community-deco-2" viewBox="0 0 80 80"><circle cx="40" cy="40" r="25" fill="#94AB8A" opacity="0.5"/></svg>
+
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow-en">Community &amp; Local Engagement</span>
+      <h2>地域密着の<span class="wave-under">コミュニティ活動</span></h2>
+      <p>べるつりーは、医療や介護の枠を超え、町田や南大沢の地域に根ざした健康づくりと居場所づくりに取り組んでいます。</p>
+    </div>
+    <div class="community-grid">
+      <div class="community-card">
+        <div class="img"></div>
+        <div class="body">
+          <h4>地域の健康増進（セミナー・運動教室）</h4>
+          <p>SOFTエクササイズプログラムや健康セミナーを通じ、地域の皆さまが安全に参加できる運動の機会を提供しています。</p>
+        </div>
+      </div>
+      <div class="community-card">
+        <div class="img"></div>
+        <div class="body">
+          <h4>フレイル予防活動</h4>
+          <p>介護施設等と連携した「健康倶楽部」での下肢筋力トレーニングなど、転倒防止と自立支援の取り組みを継続しています。</p>
+        </div>
+      </div>
+    </div>
+    <div class="center-cta">
+      <a href="services/community/index.html" class="btn btn-primary">地域活動の詳細・パートナー協働を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Consultation banner ===== -->
+<section class="consult-section">
+  <div class="container">
+    <div class="consult-banner">
+      <svg class="deco-cloud-w" viewBox="0 0 200 80"><path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9"/></svg>
+      <svg class="deco-cloud-w2" viewBox="0 0 200 80"><path d="M30,55 C10,55 5,38 25,36 C28,18 55,15 65,30 C75,15 100,18 105,35 C125,30 135,52 115,58 C110,65 40,65 30,55 Z" fill="#FFFEF9"/></svg>
+      <svg class="deco-bird" viewBox="0 0 60 40"><path d="M5,25 Q15,8 28,20 Q40,8 55,25" stroke="#FFFEF9" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span class="eyebrow">地域に根ざした支援について</span>
+      <h2 style="color:#FFFEF9;">まずはお気軽に<span class="wave-under" style="background-image: linear-gradient(transparent 75%, #D88B6F 75%, #D88B6F 88%, transparent 88%);">ご相談ください</span></h2>
+      <p>
+        医療、運動、生活支援、終活支援までを横断して、あなたの現在地に合った相談先をご案内します。何から相談すればよいか分からない段階でも問題ありません。
+      </p>
+      <div class="actions">
+        <a href="contact/index.html" class="btn btn-primary">お問い合わせフォームへ</a>
+        <a href="services/index.html" class="btn btn-secondary">サービス一覧を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="container">
+    <div class="row">
+      <div class="footer-brand">
+        <div class="brand-mark">
+          <div class="logo-circle" style="background:var(--mustard);">べ</div>
+          <div class="name" style="color: var(--paper);">BellTree<small style="color:var(--mustard);">べるつりー</small></div>
+        </div>
+        <p>株式会社べるつりー<br>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+      </div>
+      <div>
+        <h4>企業情報</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about/index.html">会社概要</a></li>
+          <li><a href="model/index.html">理念とモデル</a></li>
+          <li><a href="news/index.html">お知らせ</a></li>
+          <li><a href="recruit/index.html">採用情報</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>解決策と事例</h4>
+        <ul>
+          <li><a href="solutions/index.html">悩み別解決策</a></li>
+          <li><a href="services/index.html">サービス一覧</a></li>
+          <li><a href="cases/index.html">改善事例</a></li>
+          <li><a href="team/index.html">スタッフ紹介</a></li>
+          <li><a href="family/index.html">ご家族の方へ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>地域・お問い合わせ</h4>
+        <ul>
+          <li><a href="community/index.html">地域連携・活動</a></li>
+          <li><a href="contact/index.html">お問い合わせ</a></li>
+          <li><a href="privacy-policy/index.html">個人情報保護方針</a></li>
+          <li><a href="terms-of-service/index.html">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; BellTree Inc. All Rights Reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社べるつりー — モック v2 素材組み込み版（既存文言保持）</title>
+<base href="../">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #FDF8F0;
+    --slate: #2C4A6B;
+    --slate-soft: #5A7090;
+    --terracotta: #D88B6F;
+    --terracotta-deep: #B8674B;
+    --sage: #94AB8A;
+    --sage-deep: #6E8865;
+    --mustard: #D4A84B;
+    --rose: #E0A5A0;
+    --cream: #F5EFE0;
+    --paper: #FFFEF9;
+    --ink: #2D2D2D;
+    --ink-soft: #555;
+    --ink-mute: #888;
+    --line: rgba(120,90,60,0.15);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+    color: var(--ink);
+    background: var(--bg-base);
+    line-height: 2.1;
+    font-size: 15.5px;
+    letter-spacing: 0.03em;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; position: relative; }
+  h2 {
+    font-family: "Shippori Mincho B1", serif; font-weight: 600;
+    font-size: 42px; line-height: 1.7; color: var(--slate);
+    margin: 0 0 28px; letter-spacing: 0.04em;
+  }
+  h2 .wave-under {
+    background-image: linear-gradient(transparent 75%, var(--mustard) 75%, var(--mustard) 88%, transparent 88%);
+    padding: 0 6px;
+  }
+  h4 {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    font-size: 20px; color: var(--slate); margin: 0 0 14px;
+  }
+  .eyebrow {
+    font-family: "Caveat", cursive;
+    color: var(--terracotta-deep); font-size: 26px;
+    display: inline-block; margin-bottom: 8px; transform: rotate(-2deg);
+  }
+  .eyebrow-en {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--terracotta); font-size: 14px; letter-spacing: 0.32em;
+    display: block; margin-bottom: 20px; text-transform: uppercase;
+  }
+  img { display: block; }
+
+  /* ===== mockup note ===== */
+  .naming-note {
+    background: #FFF7E6; border: 2px dashed #E5C46A; padding: 14px 24px;
+    margin: 14px auto; max-width: 1180px; border-radius: 10px;
+    font-size: 12.5px; color: #7A5A00;
+  }
+
+  /* ===== HEADER ===== */
+  header.site {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,248,240,0.95); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.site .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+  }
+  .brand-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand-mark .logo-circle {
+    width: 44px; height: 44px; background: var(--terracotta); color: var(--paper);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Klee One", serif; font-weight: 600; font-size: 18px;
+    box-shadow: 0 4px 10px rgba(216,139,111,0.3);
+  }
+  .brand-mark .name {
+    font-family: "Klee One", serif; font-weight: 600;
+    font-size: 22px; color: var(--slate);
+  }
+  .brand-mark .name small {
+    display: block;
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 11px; color: var(--terracotta); letter-spacing: 0.2em;
+    margin-top: -4px;
+  }
+  nav.primary ul {
+    display: flex; gap: 28px; list-style: none; padding: 0; margin: 0;
+    font-size: 14px; font-family: "Klee One", serif;
+  }
+  nav.primary a { color: var(--slate); text-decoration: none; padding: 6px 0; }
+  nav.primary a:hover { color: var(--terracotta); }
+  .header-cta { display: flex; gap: 10px; align-items: center; }
+  .header-cta .tel {
+    font-family: "Klee One", serif; color: var(--slate); font-weight: 600;
+    text-decoration: none; font-size: 14px;
+  }
+  .header-cta .btn-cta {
+    padding: 12px 22px; background: var(--terracotta); color: var(--paper);
+    text-decoration: none; font-size: 13px; font-family: "Klee One", serif; font-weight: 600;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(216,139,111,0.35);
+  }
+
+  /* ===== Brand Snapshot bar ===== */
+  .brand-snapshot-bar {
+    background: var(--terracotta);
+    color: var(--paper); padding: 10px 0;
+    font-size: 12.5px; font-family: "Klee One", serif;
+  }
+  .brand-snapshot-bar .row {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+  }
+  .brand-snapshot-bar a { color: var(--paper); text-decoration: none; font-weight: 600; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    background-color: #FDE9E0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero-bg-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+  }
+  .hero-content {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+  }
+  .hero-content .container {
+    width: 100%;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  /* hide all old layered decoration — now the background image has it all */
+  .hero-meadow, .hero-meadow-haze, .hero-meadow-dense, .hero-meadow-flowers,
+  .hero-meadow-branch, .hero-meadow-tufts,
+  .hero-abstract-circle, .hero-abstract-dots, .hero-abstract-rings, .hero-abstract-arc,
+  .hero-cloud-1, .hero-cloud-2, .hero-cloud-3,
+  .hero-leaf-2, .hero-leaf-3,
+  .hero-sun, .hero-bird-1, .hero-bird-2, .hero-bird-3,
+  .hero-grass,
+  .hero-visual { display: none; }
+  /* hide the LEGACY container that lives outside hero-content */
+  .hero > .container { display: none; }
+  /* text on the left — typography first */
+  .hero-grid {
+    display: block;
+    width: 58%;
+    max-width: 620px;
+    margin: 0;
+    padding: 0;
+  }
+  .hero-text { position: relative; }
+  .hero-text .caveat-mark {
+    position: static;
+    display: block;
+    margin: 0 0 6px;
+    font-size: 26px; transform: none;
+    font-family: "Caveat", cursive; color: var(--terracotta-deep);
+  }
+  .hero-text .eyebrow-en {
+    margin: 0 0 14px; font-size: 12px;
+    display: block;
+  }
+  .hero-text .eyebrow {
+    font-size: 14px; padding: 7px 16px;
+    background: var(--terracotta); color: var(--paper);
+    border-radius: 4px; margin: 0 0 28px;
+    transform: none; display: inline-block;
+    font-family: "Klee One", serif; font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+  .hero h1 {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    font-size: 38px; line-height: 1.55;
+    margin: 0 0 22px; letter-spacing: 0.04em;
+    color: var(--slate);
+    white-space: nowrap;
+  }
+  .hero h1 .underline {
+    background-image: linear-gradient(transparent 72%, rgba(216,139,111,0.5) 72%);
+    padding: 0 4px;
+  }
+  .hero .lead {
+    font-family: "Klee One", serif;
+    font-size: 15px; line-height: 2.15;
+    margin: 0 0 32px; max-width: 480px;
+    color: var(--ink-soft);
+  }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .hero-actions .btn { padding: 13px 24px; font-size: 13px; }
+  /* hero decorative material PNGs */
+  .hero-cloud-1 { position: absolute; top: 50px; left: 4%; width: 200px; opacity: 0.95; z-index: 2; }
+  .hero-cloud-2 { position: absolute; top: 90px; left: 30%; width: 110px; opacity: 0.9; z-index: 2; }
+  .hero-cloud-3 { position: absolute; top: 140px; right: 35%; width: 80px; opacity: 0.85; z-index: 2; }
+  .hero-leaf-2  { position: absolute; bottom: 140px; left: 4%; width: 130px; transform: rotate(-15deg); opacity: 0.85; z-index: 2; }
+  .hero-leaf-3  { position: absolute; bottom: 100px; right: 5%; width: 90px; transform: rotate(20deg); opacity: 0.7; z-index: 2; }
+  .hero-sun     { position: absolute; top: 40px; right: 18%; width: 140px; opacity: 0.95; z-index: 2; }
+  .hero-bird-1  { position: absolute; top: 180px; left: 38%; width: 70px; opacity: 0.9; z-index: 2; }
+  .hero-bird-2  { position: absolute; top: 100px; right: 28%; width: 50px; opacity: 0.85; z-index: 2; }
+  .hero-bird-3  { position: absolute; top: 220px; right: 40%; width: 45px; opacity: 0.8; z-index: 2; }
+
+  /* Meadow layered — gradient + haze + dense + flowers + branch + tufts */
+  .hero-meadow {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 420px; z-index: 0;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(220,228,210,0.10) 20%,
+      rgba(197,216,181,0.20) 45%,
+      rgba(178,201,168,0.35) 70%,
+      rgba(148,171,138,0.45) 100%);
+    pointer-events: none;
+  }
+  .hero-meadow-haze {
+    position: absolute; bottom: 260px; left: 0; right: 0;
+    width: 100%; height: 160px;
+    object-fit: cover; object-position: center top;
+    z-index: 1; opacity: 0.45;
+  }
+  .hero-meadow-dense {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    width: 100%; height: 300px;
+    object-fit: cover; object-position: center bottom;
+    z-index: 2; opacity: 1;
+  }
+  .hero-meadow-flowers {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    width: 100%; height: 240px;
+    object-fit: cover; object-position: center bottom;
+    z-index: 3; opacity: 0.85;
+  }
+  .hero-meadow-branch {
+    position: absolute; bottom: 0; left: 3%;
+    width: 360px; height: auto;
+    z-index: 4; opacity: 1;
+  }
+  .hero-meadow-tufts {
+    position: absolute; bottom: 0; right: 4%;
+    width: 320px; height: auto;
+    z-index: 4; opacity: 0.95;
+  }
+  /* abstract shapes scattered */
+  .hero-abstract-circle {
+    position: absolute; top: 18%; right: 6%;
+    width: 380px; opacity: 0.55;
+    z-index: 1;
+  }
+  .hero-abstract-dots {
+    position: absolute; bottom: 48%; right: 30%;
+    width: 110px; opacity: 0.7;
+    z-index: 1;
+  }
+  .hero-abstract-rings {
+    position: absolute; top: 22%; left: 24%;
+    width: 110px; opacity: 0.45;
+    z-index: 1;
+  }
+  .hero-abstract-arc {
+    position: absolute; top: 14%; right: 14%;
+    width: 240px; opacity: 0.5;
+    z-index: 1;
+  }
+
+  .hero-grid {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; align-items: center;
+  }
+  .hero-text { position: relative; }
+  .hero-text .caveat-mark {
+    position: absolute; top: -40px; left: -10px;
+    font-family: "Caveat", cursive; color: var(--terracotta-deep);
+    font-size: 36px; transform: rotate(-6deg);
+  }
+  .hero h1 {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    font-size: 52px; line-height: 1.55; letter-spacing: 0.04em;
+    color: var(--slate); margin: 0 0 32px;
+  }
+  .hero h1 .underline {
+    background-image: linear-gradient(transparent 70%, rgba(216,139,111,0.4) 70%);
+    padding: 0 4px;
+  }
+  .hero .lead {
+    font-size: 17px; color: var(--ink-soft); margin: 0 0 40px;
+    line-height: 2.2; max-width: 540px;
+    font-family: "Klee One", serif;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 16px 28px;
+    text-decoration: none; font-size: 14px;
+    border-radius: 999px;
+    transition: 0.2s; border: 2px solid transparent;
+    font-family: "Klee One", serif; font-weight: 600;
+  }
+  .btn-primary {
+    background: var(--terracotta); color: var(--paper);
+    box-shadow: 0 6px 16px rgba(216,139,111,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-3px); background: var(--terracotta-deep); }
+  .btn-secondary {
+    background: var(--paper); color: var(--slate);
+    border-color: var(--slate);
+  }
+  .btn-secondary:hover { background: var(--slate); color: var(--paper); }
+
+  /* hero visual: use blob material — larger to match reference */
+  .hero-visual {
+    position: relative; aspect-ratio: 1/1; max-width: 620px; margin: 0 auto;
+  }
+  .hero-blob {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-blob img { width: 100%; height: 100%; object-fit: contain; }
+  .hv-leaf { position: absolute; pointer-events: none; }
+  .hv-leaf-tr { top: -20px; right: -20px; width: 140px; transform: rotate(20deg); }
+  .hv-leaf-bl { bottom: -10px; left: -20px; width: 160px; transform: rotate(-12deg); }
+  .hv-cloud-side { position: absolute; bottom: 10%; right: -40px; width: 110px; opacity: 0.9; }
+
+  /* Stat strip */
+  .stat-strip {
+    position: relative; z-index: 3;
+    margin: -100px auto 0;
+    max-width: 1080px;
+    background: var(--paper);
+    border-radius: 24px;
+    padding: 36px 40px;
+    box-shadow: 0 24px 60px rgba(60,40,20,0.10);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .stat-strip::before {
+    content: ""; position: absolute; top: -14px; left: 50%;
+    width: 90px; height: 26px;
+    background: var(--mustard);
+    border-radius: 4px;
+    opacity: 0.7;
+    transform: translateX(-50%) rotate(-3deg);
+  }
+  .stat { text-align: center; position: relative; }
+  .stat:not(:last-child)::after {
+    content: ""; position: absolute; right: -12px; top: 20%; height: 60%; width: 1px;
+    background: var(--line);
+  }
+  .stat .num {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    font-size: 44px; color: var(--terracotta); line-height: 1;
+  }
+  .stat .num .u { font-size: 16px; color: var(--slate); margin-left: 4px; }
+  .stat .lab {
+    font-size: 13px; color: var(--slate); margin-top: 14px;
+    font-family: "Klee One", serif; font-weight: 600;
+  }
+
+  /* ===== 5入口セクション ===== */
+  .entries {
+    background-color: #FAF5EB;  /* soft warm cream — connects with HERO peach */
+    background-image: none;
+    padding: 130px 0 110px;
+    position: relative; overflow: hidden;
+  }
+  /* leaves growing from left & right edges */
+  .entries-leaf-side-l {
+    position: absolute; top: 60px; left: -40px;
+    width: 240px; opacity: 0.65; transform: rotate(-15deg);
+    z-index: 0;
+  }
+  .entries-leaf-side-r {
+    position: absolute; bottom: 80px; right: -40px;
+    width: 220px; opacity: 0.60; transform: rotate(20deg) scaleX(-1);
+    z-index: 0;
+  }
+  .entries-cloud-1 { position: absolute; top: 50px; left: 18%; width: 90px; opacity: 0.7; z-index: 0; }
+  .entries-leaf-1  { display: none; }
+  .entries-bird    { display: none; }
+
+  .sec-head {
+    text-align: center; margin-bottom: 80px; max-width: 720px;
+    margin-left: auto; margin-right: auto; position: relative;
+  }
+  .sec-head p {
+    color: var(--ink-soft); font-size: 16px; line-height: 2.1;
+    margin-top: 12px; font-family: "Klee One", serif;
+  }
+  .sec-head .head-deco-left, .sec-head .head-deco-right {
+    position: absolute; top: 0; width: 60px; opacity: 0.85;
+  }
+  .sec-head .head-deco-left { left: -10px; transform: rotate(-15deg); }
+  .sec-head .head-deco-right { right: -10px; transform: rotate(15deg) scaleX(-1); }
+
+  .entries-grid {
+    display: flex; flex-wrap: wrap; gap: 28px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1080px; margin: 0 auto;
+    position: relative;
+  }
+  .entry-card { position: relative; z-index: 1; }
+  /* explicit flow connector elements between cards */
+  .flow-connector {
+    display: flex; align-items: center; justify-content: center;
+    flex: 0 0 28px;
+    align-self: center;
+    position: relative;
+    z-index: 0;
+  }
+  .flow-connector::before {
+    content: "";
+    width: 100%; height: 0;
+    border-top: 2.5px dashed rgba(216,139,111,0.7);
+  }
+  /* big S-shaped arc between No.3 and No.4 (SVG path) */
+  .flow-curve {
+    flex: 0 0 100%;
+    height: 70px;
+    position: relative;
+    margin: 0;
+    pointer-events: none;
+  }
+  .flow-curve svg {
+    width: 100%; height: 100%; display: block;
+  }
+  .entry-card {
+    position: relative;
+    background: var(--paper);
+    border-radius: 18px;
+    padding: 26px 22px 22px;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; align-items: center;
+    transition: transform 0.35s cubic-bezier(.2,.7,.3,1), box-shadow 0.35s, border-color 0.35s;
+    border: 1px solid rgba(150,120,80,0.10);
+    box-shadow: 0 4px 14px rgba(80,55,30,0.05);
+  }
+  .entry-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(216,139,111,0.30);
+    box-shadow: 0 18px 36px rgba(80,55,30,0.10);
+  }
+  .entry-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--terracotta);
+    box-shadow: 0 20px 40px rgba(60,40,20,0.12);
+  }
+  .entry-card.span2, .entry-card.span3 {
+    flex: 0 0 calc((100% - 168px) / 3);
+    width: calc((100% - 168px) / 3);
+    grid-column: auto;
+  }
+  /* v5 simplification: hide No-badge, corner-deco, romaji, CTA-link */
+  .entry-card .num-badge,
+  .entry-card .corner-deco,
+  .entry-card .romaji,
+  .entry-card .cta-link { display: none; }
+
+  .entry-card .icon-wrap {
+    width: 92px; height: 92px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 2px auto 10px;
+    transition: transform 0.4s ease;
+  }
+  .entry-card:hover .icon-wrap { transform: scale(1.05); }
+  .entry-card .icon-wrap img { width: 100%; height: 100%; object-fit: contain; }
+  .entry-card .icon-wrap svg { width: 28px; height: 28px; color: var(--terracotta-deep); }
+  .entry-card h4 {
+    font-size: 17.5px; margin: 0 0 10px; text-align: center;
+    letter-spacing: 0.05em;
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    color: var(--slate);
+  }
+  .entry-card p {
+    text-align: center; font-size: 12.5px; line-height: 1.9;
+    color: var(--ink-soft); margin: 0;
+    font-family: "Klee One", serif;
+    max-width: 220px;
+  }
+
+  .entry-card.featured {
+    background: linear-gradient(165deg, #FFFEF9 0%, #FAF5E4 100%);
+    border-color: rgba(212,168,75,0.45);
+    box-shadow: 0 8px 22px rgba(170,130,50,0.10);
+  }
+  .entry-card.featured:hover {
+    border-color: rgba(212,168,75,0.7);
+    box-shadow: 0 22px 40px rgba(170,130,50,0.18);
+  }
+  .entry-card.featured h4 { color: var(--terracotta-deep); }
+  .entry-card.featured .sub-list {
+    margin-top: 16px; width: 100%;
+    display: flex; gap: 8px; justify-content: center;
+    padding-top: 16px; border-top: 1px dashed var(--line);
+    flex-wrap: wrap;
+  }
+  .entry-card.featured .sub-list .sub {
+    text-align: center;
+    padding: 8px 14px;
+    background: rgba(212,168,75,0.10);
+    border: 1px solid rgba(212,168,75,0.30);
+    border-radius: 999px;
+    font-size: 11.5px;
+  }
+  .entry-card.featured .sub-list .sub b {
+    font-family: "Shippori Mincho B1", serif; font-weight: 700;
+    color: var(--slate); font-size: 12.5px;
+  }
+  .entry-card.featured .sub-list .sub span { display: none; }
+
+  /* ===== お悩みから探す ===== */
+  .concerns {
+    background-color: #FAF3DC; /* cream fallback */
+    background-image: url('images/materials/backgrounds/soft/soft-bg-03.png');
+    background-size: cover; background-position: center;
+    padding: 130px 0;
+    position: relative; overflow: hidden;
+  }
+  .concerns-leaf-1 { position: absolute; top: 90px; right: 5%; width: 100px; opacity: 0.8; transform: rotate(-20deg); }
+  .concerns-cloud-1 { position: absolute; bottom: 100px; left: 5%; width: 130px; opacity: 0.85; }
+
+  .concerns-grid {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    justify-content: center;
+    margin-top: 56px;
+  }
+  .concern-card { flex: 0 0 calc((100% - 54px) / 4); }
+  @media (max-width: 980px) { .concern-card { flex: 0 0 calc((100% - 18px) / 2); } }
+  .concern-card {
+    background: var(--paper);
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-decoration: none; color: inherit;
+    transition: 0.3s;
+    display: block; position: relative;
+    border: 2px solid transparent;
+  }
+  .concern-card:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(60,40,20,0.10);
+  }
+  .concern-card .corner-mark {
+    position: absolute; top: 16px; right: 16px;
+    width: 36px; height: auto; opacity: 0.85;
+  }
+  .concern-card .concern-illust {
+    width: 100%; aspect-ratio: 1/1;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 0 16px;
+  }
+  .concern-card .concern-illust img { max-width: 85%; max-height: 100%; object-fit: contain; }
+  .concern-card h4 { font-size: 17px; margin: 0 0 8px; text-align: center; }
+  .concern-card p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.95; font-family: "Klee One", serif; text-align: center; }
+  .center-cta { text-align: center; margin-top: 56px; }
+
+  /* ===== Professional Team ===== */
+  .team-section {
+    background-color: #E2EAF2; /* sky fallback */
+    background-image: url('images/materials/backgrounds/soft/soft-bg-04.png');
+    background-size: cover; background-position: center;
+    padding: 130px 0;
+    position: relative; overflow: hidden;
+  }
+  .team-sun { position: absolute; top: 90px; left: 6%; width: 100px; opacity: 0.8; }
+  .team-leaf { position: absolute; bottom: 100px; right: 6%; width: 130px; opacity: 0.7; transform: rotate(15deg); }
+
+  .team-layout {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px;
+    align-items: center; margin-top: 56px;
+  }
+  .team-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+  }
+  .team-features {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .team-features li {
+    display: flex; gap: 16px;
+    padding: 18px 22px;
+    background: var(--paper);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    border: 2px solid transparent;
+  }
+  .team-features .check {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    background: var(--terracotta);
+    color: var(--paper);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700;
+    box-shadow: 0 3px 8px rgba(216,139,111,0.4);
+  }
+  .team-features h4 { font-size: 15px; margin: 0 0 4px; }
+  .team-features p { font-size: 12.5px; color: var(--ink-soft); margin: 0; line-height: 1.85; font-family: "Klee One", serif; }
+  .team-card {
+    background: var(--paper);
+    border-radius: 20px;
+    padding: 36px 24px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .team-card .icon-circle {
+    width: 140px; height: 140px;
+    background: linear-gradient(135deg, #FDE9E0, #FBE5D6);
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    padding: 18px;
+  }
+  .team-card .icon-circle::after {
+    content: ""; position: absolute; inset: -6px;
+    border: 2px dashed var(--rose); border-radius: 50%; opacity: 0.5;
+  }
+  .team-card .icon-circle svg { width: 44px; height: 44px; color: var(--terracotta-deep); }
+  .team-card .icon-circle img { width: 100%; height: 100%; object-fit: contain; }
+  .team-card h4 { font-size: 17px; margin: 0 0 10px; }
+  .team-card p { font-size: 13px; color: var(--ink-soft); line-height: 1.95; margin: 0; font-family: "Klee One", serif; }
+
+  /* ===== Trust ===== */
+  .trust {
+    background-color: #ECE2EE; /* lavender fallback */
+    background-image: url('images/materials/backgrounds/soft/soft-bg-05.png');
+    background-size: cover; background-position: center;
+    padding: 130px 0;
+    position: relative; overflow: hidden;
+  }
+  .trust-cloud { position: absolute; top: 100px; right: 5%; width: 130px; opacity: 0.85; }
+  .trust-leaf  { position: absolute; bottom: 60px; left: 4%; width: 100px; opacity: 0.85; transform: rotate(-20deg); }
+
+  .trust-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center;
+  }
+  .trust-grid.trust-single {
+    grid-template-columns: 1fr;
+    max-width: 720px; margin: 0 auto; text-align: center;
+  }
+  .trust-grid.trust-single .lead-text { max-width: 580px; margin-left: auto; margin-right: auto; }
+  .trust .lead-text { color: var(--ink-soft); font-family: "Klee One", serif; line-height: 2.1; font-size: 15px; }
+  .trust-list { list-style: none; padding: 0; margin: 36px 0 0; }
+  .trust-list li {
+    display: flex; gap: 20px;
+    padding: 22px 28px;
+    background: var(--paper);
+    border-radius: 20px;
+    margin-bottom: 14px;
+    border: 2px solid transparent;
+  }
+  .trust-list .check {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: var(--terracotta);
+    color: var(--paper);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700;
+    box-shadow: 0 3px 8px rgba(216,139,111,0.4);
+  }
+  .trust-list h4 { font-size: 16px; margin: 0 0 4px; }
+  .trust-list p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.85; font-family: "Klee One", serif; }
+
+  /* ===== Community ===== */
+  .community-sec {
+    background-color: #FBE5D6; /* peach fallback */
+    background-image: url('images/materials/backgrounds/soft/soft-bg-06.png');
+    background-size: cover; background-position: center;
+    padding: 130px 0;
+    position: relative; overflow: hidden;
+  }
+  .community-cloud { position: absolute; top: 80px; left: 5%; width: 130px; opacity: 0.85; }
+  .community-grass {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 120px; opacity: 0.85; overflow: hidden;
+  }
+  .community-grass img {
+    width: 100%; height: 100%; display: block;
+    object-fit: cover; object-position: center bottom;
+  }
+
+  .community-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    margin-top: 56px;
+  }
+  .community-card {
+    background: var(--paper);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .community-card .img {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%);
+    position: relative;
+  }
+  .community-card .body { padding: 32px; }
+  .community-card h4 { font-size: 18px; margin: 0 0 12px; }
+  .community-card p { font-size: 14px; color: var(--ink-soft); line-height: 2; margin: 0; font-family: "Klee One", serif; }
+
+  /* ===== Consultation banner ===== */
+  .consult-section {
+    background: var(--bg-base);
+    padding: 120px 0;
+    position: relative; overflow: hidden;
+  }
+  .consult-banner {
+    max-width: 1080px; margin: 0 auto;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(216,139,111,0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(148,171,138,0.3) 0%, transparent 50%),
+      linear-gradient(135deg, var(--slate) 0%, #1F3550 100%);
+    border-radius: 32px;
+    padding: 90px 60px;
+    text-align: center;
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .consult-banner .deco-cloud-w {
+    position: absolute; top: 30px; left: 30px; width: 130px; opacity: 0.85;
+    filter: brightness(2);
+  }
+  .consult-banner .deco-cloud-w2 {
+    position: absolute; bottom: 30px; right: 40px; width: 110px; opacity: 0.7;
+    filter: brightness(2);
+  }
+  .consult-banner .deco-bird {
+    position: absolute; top: 60px; right: 25%; width: 60px; opacity: 0.85;
+    filter: brightness(2);
+  }
+  .consult-banner .eyebrow { color: #FAE4DA; }
+  .consult-banner h2 { color: var(--paper); font-size: 38px; margin: 0 0 28px; }
+  .consult-banner p {
+    color: rgba(255,255,255,0.9); font-size: 15.5px; max-width: 620px; margin: 0 auto 36px;
+    line-height: 2.2; font-family: "Klee One", serif;
+  }
+  .consult-banner .actions {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  }
+  .consult-banner .btn-primary { background: var(--terracotta); color: var(--paper); }
+  .consult-banner .btn-secondary {
+    background: rgba(255,255,255,0.1); color: var(--paper); border-color: var(--paper);
+  }
+
+  /* ===== Footer ===== */
+  footer.site {
+    background: var(--sage-deep);
+    color: rgba(255,255,255,0.9);
+    padding: 80px 0 36px;
+    font-size: 13px;
+  }
+  footer.site .row {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
+    margin-bottom: 40px;
+  }
+  footer.site h4 {
+    font-family: "Klee One", serif;
+    color: var(--mustard); font-size: 14px; margin: 0 0 18px;
+  }
+  footer.site ul { list-style: none; padding: 0; margin: 0; line-height: 2.4; }
+  footer.site a { color: rgba(255,255,255,0.85); text-decoration: none; font-family: "Klee One", serif; }
+  footer.site a:hover { color: var(--mustard); }
+  footer.site .footer-brand p {
+    color: rgba(255,255,255,0.7); font-size: 12.5px; line-height: 1.95; margin: 16px 0 0;
+    font-family: "Klee One", serif;
+  }
+  footer.site .copyright {
+    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;
+    font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.5);
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .hero h1 { font-size: 38px; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); padding: 28px 24px; }
+    .stat .num { font-size: 32px; }
+    .entries-grid { grid-template-columns: 1fr; }
+    .entry-card.span2, .entry-card.span3 { grid-column: span 1; }
+    .concerns-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: 1fr; gap: 40px; }
+    .community-grid { grid-template-columns: 1fr; }
+    .consult-banner { padding: 60px 28px; border-radius: 20px; }
+    .consult-banner h2 { font-size: 26px; }
+    footer.site .row { grid-template-columns: 1fr 1fr; }
+    nav.primary ul { display: none; }
+    .header-cta .tel { display: none; }
+    .hero-cloud-1, .hero-sun, .hero-bird-1 { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="naming-note">
+  <b>モック v2 素材組み込み版（既存サイト index.html の文言完全保持）</b>
+  各セクション背景＝soft-bg-XX.png ／ 装飾＝soft-l-XX.png / soft-m-XX.png に SVG から差し替え。
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site">
+  <div class="container">
+    <div class="row">
+      <a class="brand-mark" href="index.html">
+        <div class="logo-circle">べ</div>
+        <div class="name">BellTree<small>べるつりー</small></div>
+      </a>
+      <nav class="primary">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="solutions/index.html">お悩み別解決策</a></li>
+          <li><a href="services/index.html">サービス一覧</a></li>
+          <li><a href="cases/index.html">改善事例</a></li>
+          <li><a href="team/index.html">スタッフ紹介</a></li>
+          <li><a href="about/index.html">会社概要</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:0426822839" class="tel">☎ 042-682-2839</a>
+        <a href="contact/index.html" class="btn-cta">ご相談窓口</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Brand Snapshot bar ===== -->
+<div class="brand-snapshot-bar">
+  <div class="container">
+    <div class="row">
+      <div><b>株式会社べるつりー</b> ・ 八王子・町田・日野</div>
+      <div>
+        <a href="tel:0426822839">☎ 042-682-2839</a> ・ 平日 9:00〜18:00（日祝休） ・ 八王子市下柚木3-7-2-401
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <img class="hero-bg-img" src="images/materials/backgrounds/hero/hero-scene-full.png" alt="">
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="caveat-mark">welcome ⌄</span>
+          <span class="eyebrow-en">YOUR CONSULTATION HUB</span>
+          <span class="eyebrow">ご相談窓口｜運動・訪問・介護・終活</span>
+          <h1>人生の後半を、<br><span class="underline">もっと安心できる時間</span>に。</h1>
+          <p class="lead">運動習慣づくりから、訪問支援、介護、終活準備まで——かかりつけの窓口が変わらない支援体制で、あなたとご家族の生活に寄り添います。</p>
+          <div class="hero-actions">
+            <a href="tel:0426822839" class="btn btn-primary">☎ 042-682-2839</a>
+            <a href="contact/index.html" class="btn btn-secondary">フォームで相談</a>
+            <a href="#entries" class="btn btn-secondary">支援の流れを見る</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- LEGACY: hidden by CSS, kept for backward compatibility -->
+  <!-- meadow gradient layer -->
+  <div class="hero-meadow"></div>
+
+  <!-- clouds (3) -->
+  <img class="hero-cloud-1" src="images/materials/decoration/L/soft/soft-l-01.png" alt="">
+  <img class="hero-cloud-2" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+  <img class="hero-cloud-3" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+
+  <!-- leaves (2) -->
+  <img class="hero-leaf-2"  src="images/materials/decoration/L/soft/soft-l-02.png" alt="">
+  <img class="hero-leaf-3"  src="images/materials/decoration/L/soft/soft-l-02.png" alt="">
+
+  <!-- sun -->
+  <img class="hero-sun"     src="images/materials/decoration/L/soft/soft-l-03.png" alt="">
+
+  <!-- birds (3) -->
+  <img class="hero-bird-1"  src="images/materials/decoration/L/soft/soft-l-04.png" alt="">
+  <img class="hero-bird-2"  src="images/materials/decoration/M/soft/soft-m-16.png" alt="">
+  <img class="hero-bird-3"  src="images/materials/decoration/M/soft/soft-m-16.png" alt="">
+
+  <!-- meadow stack: back→front: gradient (in CSS) → haze → dense → flowers → branch/tufts -->
+  <img class="hero-meadow-haze" src="images/materials/decoration/L/soft-meadow/meadow-l-06.png" alt="">
+  <img class="hero-meadow-dense" src="images/materials/decoration/L/soft-meadow/meadow-l-01.png" alt="">
+  <img class="hero-meadow-flowers" src="images/materials/decoration/L/soft-meadow/meadow-l-05.png" alt="">
+  <img class="hero-meadow-branch" src="images/materials/decoration/L/soft-meadow/meadow-l-04.png" alt="">
+  <img class="hero-meadow-tufts" src="images/materials/decoration/L/soft-meadow/meadow-l-03.png" alt="">
+
+  <!-- abstract shapes around blob -->
+  <img class="hero-abstract-circle" src="images/materials/decoration/L/soft-abstract/abstract-l-01.png" alt="">
+  <img class="hero-abstract-dots" src="images/materials/decoration/L/soft-abstract/abstract-l-05.png" alt="">
+  <img class="hero-abstract-rings" src="images/materials/decoration/L/soft-abstract/abstract-l-06.png" alt="">
+  <img class="hero-abstract-arc" src="images/materials/decoration/L/soft-abstract/abstract-l-03.png" alt="">
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="caveat-mark">welcome ⌄</span>
+        <span class="eyebrow-en">YOUR CONSULTATION HUB</span>
+        <span class="eyebrow">ご相談窓口｜運動・訪問・介護・終活</span>
+        <h1>人生の後半を、<br><span class="underline">もっと安心できる時間</span>に。</h1>
+        <p class="lead">
+          運動習慣づくりから、訪問支援、介護、終活準備まで——かかりつけの窓口が変わらない支援体制で、あなたとご家族の生活に寄り添います。
+        </p>
+        <div class="hero-actions">
+          <a href="tel:0426822839" class="btn btn-primary">☎ 042-682-2839</a>
+          <a href="contact/index.html" class="btn btn-secondary">フォームで相談</a>
+          <a href="#entries" class="btn btn-secondary">支援の流れを見る</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob">
+          <img src="images/materials/decoration/L/soft/soft-l-06.png" alt="">
+        </div>
+        <img class="hv-leaf hv-leaf-tr" src="images/materials/decoration/L/soft/soft-l-02.png" alt="">
+        <img class="hv-cloud-side" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stat Strip ===== -->
+<div class="container">
+  <div class="stat-strip">
+    <div class="stat">
+      <div class="num">15<span class="u">年</span></div>
+      <div class="lab">地域で続けて</div>
+    </div>
+    <div class="stat">
+      <div class="num">1,000<span class="u">人/月</span></div>
+      <div class="lab">訪問鍼灸のべ実績</div>
+    </div>
+    <div class="stat">
+      <div class="num">3<span class="u">拠点</span></div>
+      <div class="lab">八王子・町田・日野</div>
+    </div>
+    <div class="stat">
+      <div class="num">13<span class="u">名</span></div>
+      <div class="lab">国家資格スタッフ</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 5入口セクション ===== -->
+<section class="entries" id="entries">
+  <img class="entries-cloud-1" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+  <img class="entries-leaf-side-l" src="images/materials/decoration/L/soft/soft-l-02.png" alt="">
+  <img class="entries-leaf-side-r" src="images/materials/decoration/L/soft/soft-l-02.png" alt="">
+  <img class="entries-leaf-1"  src="images/materials/decoration/M/soft/soft-m-13.png" alt="">
+  <img class="entries-bird"    src="images/materials/decoration/M/soft/soft-m-16.png" alt="">
+
+  <div class="container">
+    <div class="sec-head">
+      <img class="head-deco-left"  src="images/materials/decoration/M/soft/soft-m-13.png" alt="">
+      <img class="head-deco-right" src="images/materials/decoration/M/soft/soft-m-13.png" alt="">
+      <span class="eyebrow-en">Our Support Model</span>
+      <h2>人生の変化に合わせて、<br>支援が<span class="wave-under">途切れない構造</span></h2>
+      <p>運動から介護までを個別のサービスとしてではなく、「一つの連続した支援」として提供します。状態が変わっても、ご相談窓口はべるつりーのままです。</p>
+    </div>
+
+    <div class="entries-grid">
+      <a class="entry-card span2" href="services/acupuncture/index.html" data-pos="1">
+        <img class="num-badge" src="images/materials/decoration/M/soft/soft-m-01.png" alt="No.1">
+        <img class="corner-deco" src="images/materials/decoration/M/soft/soft-m-13.png" alt="">
+        <div class="icon-wrap">
+          <img src="images/materials/decoration/L/soft-icons/soft-icon-01.png" alt="">
+        </div>
+        <h4>訪問鍼灸マッサージ</h4>
+        <span class="romaji">HOME VISIT THERAPY</span>
+        <p>通えなくなっても、自宅で身体のケアを継続的に行います。</p>
+        <span class="cta-link">訪問支援を見る</span>
+      </a>
+
+      <div class="flow-connector"></div>
+
+      <a class="entry-card featured span3" href="services/fitness/index.html">
+        <img class="num-badge" src="images/materials/decoration/M/soft/soft-m-02.png" alt="No.2">
+        <img class="corner-deco" src="images/materials/decoration/M/soft/soft-m-09.png" alt="">
+        <div class="icon-wrap">
+          <img src="images/materials/decoration/L/soft-icons/soft-icon-02.png" alt="">
+        </div>
+        <h4>べるフィット</h4>
+        <span class="romaji">FITNESS &amp; DAY SERVICE</span>
+        <p>べるフィットを入口に、元気な身体づくりを継続します。</p>
+        <span class="cta-link">べるフィットを見る</span>
+      </a>
+
+      <div class="flow-connector"></div>
+
+      <a class="entry-card span2" href="services/home-care/index.html">
+        <img class="num-badge" src="images/materials/decoration/M/soft/soft-m-03.png" alt="No.3">
+        <img class="corner-deco" src="images/materials/decoration/M/soft/soft-m-13.png" alt="">
+        <div class="icon-wrap">
+          <img src="images/materials/decoration/L/soft-icons/soft-icon-03.png" alt="">
+        </div>
+        <h4>居宅介護支援</h4>
+        <span class="romaji">CARE MANAGEMENT</span>
+        <p>介護制度の活用と生活設計をケアマネジャーが専門的に支えます。</p>
+        <span class="cta-link">居宅介護支援を見る</span>
+      </a>
+
+      <div class="flow-curve">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 77 0 C 105 25 105 50 50 50 C -5 50 -5 75 34 100"
+                stroke="#D88B6F" stroke-width="2.5" stroke-dasharray="6,7"
+                fill="none" opacity="0.7" stroke-linecap="round"
+                vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+
+      <a class="entry-card span2" href="services/legal/index.html">
+        <img class="num-badge" src="images/materials/decoration/M/soft/soft-m-04.png" alt="No.4">
+        <img class="corner-deco" src="images/materials/decoration/M/soft/soft-m-19.png" alt="">
+        <div class="icon-wrap">
+          <img src="images/materials/decoration/L/soft-icons/soft-icon-04.png" alt="">
+        </div>
+        <h4>行政書士・終活支援</h4>
+        <span class="romaji">SHUKATSU &amp; LEGAL</span>
+        <p>相続や後見の準備まで見通して、行政書士が伴走します。</p>
+        <span class="cta-link">行政書士支援を見る</span>
+      </a>
+
+      <div class="flow-connector"></div>
+
+      <a class="entry-card span2" href="community/index.html">
+        <img class="num-badge" src="images/materials/decoration/M/soft/soft-m-05.png" alt="No.5">
+        <img class="corner-deco" src="images/materials/decoration/M/soft/soft-m-14.png" alt="">
+        <div class="icon-wrap">
+          <img src="images/materials/decoration/L/soft-icons/soft-icon-05.png" alt="">
+        </div>
+        <h4>地域連携・活動</h4>
+        <span class="romaji">COMMUNITY</span>
+        <p>医療や介護の枠を超え、町田や南大沢の地域に根ざした健康づくりと居場所づくりに取り組んでいます。</p>
+        <span class="cta-link">地域活動を見る</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お悩みから探す ===== -->
+<section class="concerns">
+  <img class="concerns-leaf-1" src="images/materials/decoration/M/soft/soft-m-13.png" alt="">
+  <img class="concerns-cloud-1" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow-en">Search by Concerns</span>
+      <h2>お悩みから<span class="wave-under">探す</span></h2>
+      <p>いま感じているお悩みに近い項目を選んで、詳しい情報と相談の導線を確認ください。</p>
+    </div>
+    <div class="concerns-grid">
+      <a href="solutions/stroke/index.html" class="concern-card">
+        <div class="concern-illust"><img src="images/materials/decoration/L/soft-concerns/soft-concern-01.png" alt=""></div>
+        <h4>脳卒中・後遺症</h4>
+        <p>麻痺や固縮への継続的なリハビリを希望される方へ。</p>
+      </a>
+      <a href="solutions/parkinson/index.html" class="concern-card">
+        <div class="concern-illust"><img src="images/materials/decoration/L/soft-concerns/soft-concern-02.png" alt=""></div>
+        <h4>パーキンソン病</h4>
+        <p>こわばりや歩行のしづらさを維持・改善したい方へ。</p>
+      </a>
+      <a href="solutions/knee-pain/index.html" class="concern-card">
+        <div class="concern-illust"><img src="images/materials/decoration/L/soft-concerns/soft-concern-03.png" alt=""></div>
+        <h4>膝・腰の痛み</h4>
+        <p>階段、立ち上がりが辛い、長引く痛みがある方へ。</p>
+      </a>
+      <a href="solutions/fall-risk/index.html" class="concern-card">
+        <div class="concern-illust"><img src="images/materials/decoration/L/soft-concerns/soft-concern-04.png" alt=""></div>
+        <h4>歩行・ふらつき</h4>
+        <p>室内外での転倒不安、つまずきが増えた方へ。</p>
+      </a>
+      <a href="solutions/frailty/index.html" class="concern-card">
+        <div class="concern-illust"><img src="images/materials/decoration/L/soft-concerns/soft-concern-05.png" alt=""></div>
+        <h4>体力・活気の低下</h4>
+        <p>最近疲れやすい、外出が億劫になった方へ。</p>
+      </a>
+      <a href="solutions/home-care-start/index.html" class="concern-card">
+        <div class="concern-illust"><img src="images/materials/decoration/L/soft-concerns/soft-concern-06.png" alt=""></div>
+        <h4>介護・生活相談</h4>
+        <p>介護保険の使い方、ご家族の負担を減らしたい方へ。</p>
+      </a>
+      <a href="services/shukatsu/index.html" class="concern-card">
+        <div class="concern-illust"><img src="images/materials/decoration/M/soft-team/soft-team-04.png" alt=""></div>
+        <h4>将来・終活準備</h4>
+        <p>相続、後見、身の回り整理を専門家に頼みたい方へ。</p>
+      </a>
+    </div>
+    <div class="center-cta">
+      <a href="solutions/index.html" class="btn btn-secondary">お悩み別解決策をすべて見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Professional Team ===== -->
+<section class="team-section">
+  <img class="team-sun"  src="images/materials/decoration/L/soft/soft-l-03.png" alt="">
+  <img class="team-leaf" src="images/materials/decoration/L/soft/soft-l-02.png" alt="">
+
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow-en">Professional Team</span>
+      <h2>専門家による<span class="wave-under">チーム支援</span></h2>
+      <p>国家資格・専門資格を持つスタッフがチームで支援します。</p>
+    </div>
+    <div class="team-layout">
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="icon-circle"><img src="images/materials/decoration/M/soft-team/soft-team-01.png" alt=""></div>
+          <h4>健康運動指導士</h4>
+          <p>安全で効果的な運動プログラムを計画・指導します。</p>
+        </div>
+        <div class="team-card">
+          <div class="icon-circle"><img src="images/materials/decoration/M/soft-team/soft-team-02.png" alt=""></div>
+          <h4>鍼灸マッサージ師</h4>
+          <p>国家資格に基づき、ご自宅での痛みの緩和や機能回復を担います。</p>
+        </div>
+        <div class="team-card">
+          <div class="icon-circle"><img src="images/materials/decoration/M/soft-team/soft-team-03.png" alt=""></div>
+          <h4>ケアマネジャー</h4>
+          <p>介護保険制度の活用と、最適な生活設計を共に整理します。</p>
+        </div>
+        <div class="team-card">
+          <div class="icon-circle"><img src="images/materials/decoration/M/soft-team/soft-team-04.png" alt=""></div>
+          <h4>行政書士</h4>
+          <p>成年後見や相続など、見落としがちな将来の法務手続きを支えます。</p>
+        </div>
+      </div>
+      <ul class="team-features">
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h4>国家資格者による専門チーム</h4>
+            <p>鍼灸マッサージ師、ケアマネジャー、行政書士、健康運動指導士など、各分野のプロフェッショナルが在籍しています。</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h4>豊富な現場経験</h4>
+            <p>累計16,000回以上の施術実績と、日々260名以上の方と向き合う確かな臨床・現場経験があります。</p>
+          </div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div>
+            <h4>地域との連携体制</h4>
+            <p>町田市周辺の病院、クリニック、地域包括支援センターと密接に連携し、必要な制度への橋渡しを行います。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust ===== -->
+<section class="trust">
+  <img class="trust-cloud" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+  <img class="trust-leaf"  src="images/materials/decoration/L/soft/soft-l-02.png" alt="">
+
+  <div class="container">
+    <div class="trust-grid trust-single">
+      <div>
+        <span class="eyebrow-en">Trust &amp; Credibility</span>
+        <h2>地域と医療が連携する<br><span class="wave-under">安心の支援体制</span></h2>
+        <p class="lead-text">
+          2011年の創業以来、町田市・南大沢エリアを中心に地域密着の「継続支援」を提供してきました。確かな資格と医療機関・地域包括支援センターとの連携がご家族の安心を支えます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Community ===== -->
+<section class="community-sec">
+  <img class="community-cloud" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+  <div class="community-grass">
+    <img src="images/materials/decoration/L/soft-meadow/meadow-l-02.png" alt="">
+  </div>
+
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow-en">Community &amp; Local Engagement</span>
+      <h2>地域密着の<span class="wave-under">コミュニティ活動</span></h2>
+      <p>べるつりーは、医療や介護の枠を超え、町田や南大沢の地域に根ざした健康づくりと居場所づくりに取り組んでいます。</p>
+    </div>
+    <div class="community-grid">
+      <div class="community-card">
+        <div class="img"></div>
+        <div class="body">
+          <h4>地域の健康増進（セミナー・運動教室）</h4>
+          <p>SOFTエクササイズプログラムや健康セミナーを通じ、地域の皆さまが安全に参加できる運動の機会を提供しています。</p>
+        </div>
+      </div>
+      <div class="community-card">
+        <div class="img"></div>
+        <div class="body">
+          <h4>フレイル予防活動</h4>
+          <p>介護施設等と連携した「健康倶楽部」での下肢筋力トレーニングなど、転倒防止と自立支援の取り組みを継続しています。</p>
+        </div>
+      </div>
+    </div>
+    <div class="center-cta">
+      <a href="services/community/index.html" class="btn btn-primary">地域活動の詳細・パートナー協働を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Consultation banner ===== -->
+<section class="consult-section">
+  <div class="container">
+    <div class="consult-banner">
+      <img class="deco-cloud-w"  src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+      <img class="deco-cloud-w2" src="images/materials/decoration/M/soft/soft-m-15.png" alt="">
+      <img class="deco-bird"     src="images/materials/decoration/M/soft/soft-m-16.png" alt="">
+      <span class="eyebrow">地域に根ざした支援について</span>
+      <h2>まずはお気軽に<span class="wave-under" style="background-image: linear-gradient(transparent 75%, #D88B6F 75%, #D88B6F 88%, transparent 88%);">ご相談ください</span></h2>
+      <p>
+        医療、運動、生活支援、終活支援までを横断して、あなたの現在地に合った相談先をご案内します。何から相談すればよいか分からない段階でも問題ありません。
+      </p>
+      <div class="actions">
+        <a href="contact/index.html" class="btn btn-primary">お問い合わせフォームへ</a>
+        <a href="services/index.html" class="btn btn-secondary">サービス一覧を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="container">
+    <div class="row">
+      <div class="footer-brand">
+        <div class="brand-mark">
+          <div class="logo-circle" style="background:var(--mustard);">べ</div>
+          <div class="name" style="color: var(--paper);">BellTree<small style="color:var(--mustard);">べるつりー</small></div>
+        </div>
+        <p>株式会社べるつりー<br>運動から介護、終活までを横断し、地域で人生後半を支える総合サポート企業です。</p>
+      </div>
+      <div>
+        <h4>企業情報</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about/index.html">会社概要</a></li>
+          <li><a href="model/index.html">理念とモデル</a></li>
+          <li><a href="news/index.html">お知らせ</a></li>
+          <li><a href="recruit/index.html">採用情報</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>解決策と事例</h4>
+        <ul>
+          <li><a href="solutions/index.html">悩み別解決策</a></li>
+          <li><a href="services/index.html">サービス一覧</a></li>
+          <li><a href="cases/index.html">改善事例</a></li>
+          <li><a href="team/index.html">スタッフ紹介</a></li>
+          <li><a href="family/index.html">ご家族の方へ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>地域・お問い合わせ</h4>
+        <ul>
+          <li><a href="community/index.html">地域連携・活動</a></li>
+          <li><a href="contact/index.html">お問い合わせ</a></li>
+          <li><a href="privacy-policy/index.html">個人情報保護方針</a></li>
+          <li><a href="terms-of-service/index.html">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; BellTree Inc. All Rights Reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

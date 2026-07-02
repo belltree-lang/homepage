@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>bellmfit.com — 素材レイヤー込みリッチモック v2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============ TOKEN ============ */
+    :root {
+      --bg-warm: #FCFCFA;
+      --bg-beige: #F5F0E8;
+      --bg-cream: #FAF6EF;
+      --primary: #1A365D;
+      --primary-light: #2D4A73;
+      --accent: #C27A65;
+      --accent-soft: #D89B89;
+      --text: #1F1F1F;
+      --muted: #6b7280;
+      --hairline: #E5E0D8;
+      --hairline-strong: #C9C3B6;
+      --green-soft: #6c9466;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg-warm);
+      color: var(--text);
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    /* ============ 共通：見出し・装飾 ============ */
+    .eyebrow {
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .eyebrow-cat {
+      color: var(--accent);
+      letter-spacing: 0.22em;
+      font-weight: 600;
+    }
+    h1, h2, h3, h4 {
+      font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      margin: 0 0 16px;
+    }
+    h1 { font-size: clamp(40px, 5vw, 68px); font-weight: 700; }
+    h2 { font-size: clamp(28px, 3.2vw, 40px); font-weight: 700; letter-spacing: 0.06em; }
+    h3 { font-size: clamp(20px, 1.8vw, 24px); font-weight: 500; }
+    h4 { font-size: 16px; font-weight: 500; }
+
+    /* H2 装飾：左 vertical tick + 下 short underline */
+    .h2-ornate {
+      position: relative;
+      padding-left: 24px;
+      display: inline-block;
+    }
+    .h2-ornate::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 22px;
+      width: 3px;
+      background: var(--primary);
+    }
+    .h2-ornate-underline {
+      display: block;
+      width: 44px;
+      height: 2px;
+      background: var(--accent);
+      margin: 12px 0 0;
+    }
+
+    /* common button */
+    .btn {
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .25s ease;
+      border: 1px solid;
+      letter-spacing: 0.03em;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-soft); }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+
+    section { padding: 112px 0; position: relative; }
+
+    /* セパレーター・装飾用ユーティリティ */
+    .float-circle {
+      position: absolute;
+      width: 96px;
+      height: 96px;
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    /* ============ HEADER ============ */
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid var(--hairline);
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+    }
+    .site-logo {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 22px;
+      color: var(--primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .site-logo .leaf {
+      width: 28px;
+      height: 28px;
+      background: var(--green-soft);
+      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-4 0-8 3-8 8 0 3 2 6 5 8l-1 4 4-2c2 1 4-1 5-3 2-2 3-5 3-7 0-4-3-8-8-8z" fill="black"/></svg>') no-repeat center / contain;
+              mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-4 0-8 3-8 8 0 3 2 6 5 8l-1 4 4-2c2 1 4-1 5-3 2-2 3-5 3-7 0-4-3-8-8-8z" fill="black"/></svg>') no-repeat center / contain;
+    }
+    .site-nav { display: flex; gap: 28px; align-items: center; }
+    .site-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .site-nav a:hover { color: var(--accent); }
+    .site-nav .cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 2px;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      padding: 0;
+      background: linear-gradient(120deg, var(--bg-cream) 0%, #f1ebe2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+      align-items: center;
+    }
+    .hero-content {
+      padding: 96px 64px 96px 24px;
+      max-width: 640px;
+      margin-left: auto;
+      position: relative;
+    }
+    .hero-eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .hero h1 { margin: 0 0 24px; line-height: 1.35; }
+    .hero-subtitle {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 18px;
+      color: var(--text);
+      margin: 0 0 40px;
+      line-height: 1.9;
+    }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-image {
+      position: relative;
+      height: 100%;
+      min-height: 640px;
+      overflow: hidden;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* corner brackets on hero content */
+    .hero-content::before {
+      content: "";
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border-top: 1.5px solid var(--accent);
+      border-left: 1.5px solid var(--accent);
+    }
+
+    /* ============ STATS ============ */
+    .stats {
+      background: var(--bg-warm);
+      position: relative;
+      overflow: hidden;
+    }
+    .stats::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(194,122,101,.18) 1.4px, transparent 1.6px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .stats .float-circle { top: 64px; right: 80px; }
+    .stats-head { text-align: center; margin-bottom: 64px; position: relative; }
+    .stats-head .eyebrow { justify-content: center; }
+    .stats-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .stat {
+      text-align: center;
+      padding: 32px 16px;
+      position: relative;
+    }
+    .stat + .stat::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 28px;
+      bottom: 28px;
+      width: 1px;
+      background: var(--accent);
+      opacity: 0.6;
+      border-left: 1px dotted var(--accent);
+      width: 0;
+    }
+    .stat-num {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: clamp(48px, 5vw, 76px);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+    .stat-num .unit {
+      font-size: 22px;
+      color: var(--muted);
+      margin-left: 4px;
+      font-weight: 500;
+    }
+    .stat-caption {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ============ SERVICES ============ */
+    .services {
+      background: var(--bg-beige);
+      position: relative;
+    }
+    .services::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26,54,93,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,54,93,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .services-head { margin-bottom: 64px; position: relative; }
+    .services-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      padding: 36px;
+      position: relative;
+      border: 1px solid var(--hairline);
+      transition: all .25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(26,54,93,.08);
+    }
+    /* corner brackets */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 14px;
+      height: 14px;
+      border-top: 1.5px solid var(--accent);
+      border-left: 1.5px solid var(--accent);
+    }
+    .service-card::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 14px;
+      height: 14px;
+      border-bottom: 1.5px solid var(--accent);
+      border-right: 1.5px solid var(--accent);
+    }
+    .service-photo {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .service-badge {
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-badge::before {
+      content: "";
+      width: 12px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .service-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .service-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .icon-needle { -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><path d="M8 8l12 12"/></svg>') no-repeat center / contain; mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><path d="M8 8l12 12"/></svg>') no-repeat center / contain; }
+    .icon-dumbbell { -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"><path d="M6 6h2v12H6zM16 6h2v12h-2zM4 9h2v6H4zM18 9h2v6h-2zM8 12h8"/></svg>') no-repeat center / contain; mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"><path d="M6 6h2v12H6zM16 6h2v12h-2zM4 9h2v6H4zM18 9h2v6h-2zM8 12h8"/></svg>') no-repeat center / contain; }
+    .icon-home { -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>') no-repeat center / contain; mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>') no-repeat center / contain; }
+    .icon-scale { -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M5 8l-3 8h6zM19 8l-3 8h6zM5 8h14"/></svg>') no-repeat center / contain; mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M5 8l-3 8h6zM19 8l-3 8h6zM5 8h14"/></svg>') no-repeat center / contain; }
+    .service-name {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 24px;
+      color: var(--primary);
+      margin: 0;
+    }
+    .service-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 12px 0 20px;
+    }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .service-link::after {
+      content: "→";
+      transition: transform .25s;
+    }
+    .service-link:hover::after { transform: translateX(4px); }
+
+    /* ============ PULL QUOTE ============ */
+    .pullquote {
+      background: var(--bg-warm);
+      position: relative;
+      padding: 96px 0;
+    }
+    .pullquote::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 30%, rgba(0,0,0,0.012) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 70%, rgba(0,0,0,0.012) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* diamond markers top & bottom */
+    .pullquote::after {
+      content: "◆";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--accent);
+      font-size: 10px;
+      background: var(--bg-warm);
+      padding: 0 16px;
+      letter-spacing: 0.6em;
+    }
+    .pullquote-inner {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 64px;
+      position: relative;
+    }
+    .pullquote-mark {
+      font-family: "Shippori Mincho B1", serif;
+      color: var(--accent);
+      font-size: 96px;
+      line-height: 1;
+      position: absolute;
+      top: -48px;
+      left: 32px;
+      font-style: normal;
+    }
+    .pullquote-text {
+      font-family: "Shippori Mincho B1", serif;
+      font-style: italic;
+      color: var(--primary);
+      font-size: clamp(22px, 2.4vw, 32px);
+      line-height: 1.9;
+      margin: 0 0 32px;
+      letter-spacing: 0.04em;
+    }
+    .pullquote-cite {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-align: right;
+    }
+    .pullquote-cite::before {
+      content: "—— ";
+      color: var(--accent);
+    }
+
+    /* ============ CASES ============ */
+    .cases {
+      background: #fff;
+      position: relative;
+    }
+    .cases::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent 0, transparent 63px, rgba(26,54,93,.025) 63px, rgba(26,54,93,.025) 64px);
+      pointer-events: none;
+    }
+    .cases-head { margin-bottom: 56px; }
+    .cases-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .case-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .case-photo {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+    .case-badge {
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .case-title {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 18px;
+      color: var(--primary);
+      margin: 0 0 12px;
+      line-height: 1.6;
+    }
+    .case-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .case-link {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+
+    /* ============ MESSAGE ============ */
+    .message {
+      background: var(--bg-beige);
+      position: relative;
+    }
+    .message::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent 0, transparent 79px, rgba(26,54,93,.04) 79px, rgba(26,54,93,.04) 80px);
+      pointer-events: none;
+    }
+    .message::after {
+      content: "◆";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--accent);
+      font-size: 10px;
+      background: var(--bg-beige);
+      padding: 0 16px;
+      letter-spacing: 0.6em;
+    }
+    .message-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: start;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .rep-portrait-wrap { position: relative; }
+    .rep-portrait {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--bg-warm);
+      box-shadow: 0 8px 24px rgba(26,54,93,0.12);
+    }
+    .rep-portrait-wrap::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 24px;
+      height: 24px;
+      border-top: 1.5px solid var(--accent);
+      border-left: 1.5px solid var(--accent);
+    }
+    .rep-message {
+      font-size: 15px;
+      line-height: 2.1;
+      color: var(--text);
+    }
+    .rep-message p { margin: 0 0 16px; }
+    .rep-signature {
+      margin-top: 24px;
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 17px;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+    }
+    .rep-signature small {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.22em;
+      margin-bottom: 4px;
+    }
+
+    /* ============ TIMELINE ============ */
+    .timeline-section {
+      background: var(--bg-warm);
+      position: relative;
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .timeline-head { margin-bottom: 64px; }
+    .timeline-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .timeline-list::before {
+      content: "";
+      position: absolute;
+      top: 38px;
+      left: 10%;
+      right: 10%;
+      height: 1.5px;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+    .timeline-step {
+      text-align: center;
+      position: relative;
+    }
+    .timeline-num {
+      font-family: "Shippori Mincho B1", serif;
+      color: var(--accent);
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      background: var(--bg-warm);
+      display: inline-block;
+      padding: 0 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin: 16px auto;
+      box-shadow: 0 0 0 4px var(--bg-warm), 0 0 0 5px var(--accent);
+    }
+    .timeline-icon {
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      margin: 0 auto 8px;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+    }
+    .ic-phone { -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>'); mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>'); }
+    .ic-pin { -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-8 8-13a8 8 0 1 0-16 0c0 5 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>'); mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-8 8-13a8 8 0 1 0-16 0c0 5 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>'); }
+    .ic-clipboard { -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></svg>'); mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></svg>'); }
+    .ic-refresh { -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>'); mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>'); }
+    .ic-share { -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>'); mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>'); }
+    .timeline-title {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 16px;
+      color: var(--primary);
+      margin: 12px 0 8px;
+      letter-spacing: 0.04em;
+    }
+    .timeline-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 160px;
+      margin: 0 auto;
+    }
+
+    /* ============ COMMUNITY ============ */
+    .community-section {
+      background: #fff;
+      position: relative;
+    }
+    .community-head { margin-bottom: 48px; }
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .community-item {
+      position: relative;
+    }
+    .community-item img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border: 1px solid var(--hairline);
+    }
+    .community-caption {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .community-cat {
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .community-title {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 18px;
+      color: var(--primary);
+      margin: 8px 0 0;
+    }
+
+    /* ============ NEWS ============ */
+    .news-section {
+      background: var(--bg-beige);
+      border-top: 1px solid var(--hairline);
+      padding: 96px 0;
+    }
+    .news-head { margin-bottom: 40px; }
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-top: 1px solid var(--hairline);
+    }
+    .news-item {
+      display: grid;
+      grid-template-columns: 100px 100px 1fr 40px;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 8px;
+      border-bottom: 1px solid var(--hairline);
+      text-decoration: none;
+      color: var(--text);
+      transition: background .2s;
+    }
+    .news-item:hover { background: rgba(255,255,255,.5); }
+    .news-date {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      font-variant-numeric: tabular-nums;
+    }
+    .news-cat {
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .news-title {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 15px;
+      color: var(--primary);
+    }
+    .news-arrow {
+      text-align: right;
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: var(--bg-beige);
+      position: relative;
+      padding: 56px 0 24px;
+      border-top: 1px solid var(--primary);
+      box-shadow: 0 -5px 0 -4px var(--primary);
+    }
+    .footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(26,54,93,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,54,93,.025) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+      gap: 40px;
+      position: relative;
+    }
+    .footer-brand .site-logo { font-size: 28px; }
+    .footer-tag {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      line-height: 1.9;
+    }
+    .footer-col h4 {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col li { font-size: 13px; margin-bottom: 8px; }
+    .footer-col a { color: var(--text); text-decoration: none; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-contact { font-size: 13px; color: var(--text); line-height: 2; }
+    .footer-tel {
+      font-family: "Shippori Mincho B1", serif;
+      font-size: 24px;
+      color: var(--primary);
+      margin: 4px 0 8px;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-tel .ico {
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>') no-repeat center / contain;
+              mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>') no-repeat center / contain;
+    }
+    .footer-hours {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .footer-cta { margin-top: 16px; }
+    .copyright {
+      margin-top: 48px;
+      padding-top: 16px;
+      text-align: center;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      border-top: 1px solid var(--hairline);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo"><span class="leaf"></span>べるつりー</a>
+      <nav class="site-nav">
+        <a href="#services">サービス</a>
+        <a href="#about">私たちについて</a>
+        <a href="#timeline">ご利用の流れ</a>
+        <a href="#news">お知らせ</a>
+        <a href="#recruit">採用情報</a>
+        <a href="#contact" class="cta">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="hero-eyebrow">VISIT ACUPUNCTURE · FITNESS · CARE · LEGAL</span>
+        <h1>人生の後半を、<br>共にあゆむ。</h1>
+        <p class="hero-subtitle">運動・施術・介護・終活を、<br>一本の線で支える。</p>
+        <div class="hero-cta">
+          <a href="#" class="btn btn-primary">はじめての方へ</a>
+          <a href="#" class="btn btn-outline">資料請求</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="../images/photos/acupuncture-visit-hero.png" alt="訪問鍼灸の様子">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <span class="float-circle"></span>
+    <div class="container">
+      <div class="stats-head">
+        <div class="eyebrow"><span class="eyebrow-cat">OUR NUMBERS · 01</span></div>
+        <h2 class="h2-ornate">数字で見る、わたしたちの歩み<span class="h2-ornate-underline"></span></h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-num">15<span class="unit">年</span></div><div class="stat-caption">地域に根ざした実績</div></div>
+        <div class="stat"><div class="stat-num">1,000<span class="unit">人</span></div><div class="stat-caption">のべ施術・サポート実績</div></div>
+        <div class="stat"><div class="stat-num">13<span class="unit">名</span></div><div class="stat-caption">専門スタッフ</div></div>
+        <div class="stat"><div class="stat-num">3<span class="unit">拠点</span></div><div class="stat-caption">東京・神奈川エリア</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-head">
+        <div class="eyebrow"><span class="eyebrow-cat">OUR SERVICES · 02</span></div>
+        <h2 class="h2-ornate">4つのサービスで、暮らしを一本の線で支える<span class="h2-ornate-underline"></span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <img class="service-photo" src="../images/photos/acupuncture-visit-hero.png" alt="訪問鍼灸">
+          <div class="service-badge">SERVICE 01 · MEDICAL</div>
+          <div class="service-icon-row">
+            <span class="service-icon icon-needle"></span>
+            <h3 class="service-name">訪問鍼灸マッサージ</h3>
+          </div>
+          <p class="service-desc">ご自宅で受けられる、やさしい鍼灸施術。痛みの緩和や体調の安定をサポートします。</p>
+          <a href="#" class="service-link">詳しく見る</a>
+        </div>
+        <div class="service-card">
+          <img class="service-photo" src="../images/photos/fitness-main-real.jpg" alt="べるフィット">
+          <div class="service-badge">SERVICE 02 · WELLNESS</div>
+          <div class="service-icon-row">
+            <span class="service-icon icon-dumbbell"></span>
+            <h3 class="service-name">べるフィット</h3>
+          </div>
+          <p class="service-desc">女性のためのパーソナルトレーニング。筋力・体幹・バランスを整え、動ける体へ。</p>
+          <a href="#" class="service-link">詳しく見る</a>
+        </div>
+        <div class="service-card">
+          <img class="service-photo" src="../images/photos/home-care-start-family.png" alt="居宅介護">
+          <div class="service-badge">SERVICE 03 · CARE</div>
+          <div class="service-icon-row">
+            <span class="service-icon icon-home"></span>
+            <h3 class="service-name">居宅介護支援</h3>
+          </div>
+          <p class="service-desc">住み慣れたご自宅での生活を支援。介護保険サービスで日常をサポートします。</p>
+          <a href="#" class="service-link">詳しく見る</a>
+        </div>
+        <div class="service-card">
+          <img class="service-photo" src="../images/photos/shukatsu-consultation.png" alt="べるリーガル">
+          <div class="service-badge">SERVICE 04 · LEGAL</div>
+          <div class="service-icon-row">
+            <span class="service-icon icon-scale"></span>
+            <h3 class="service-name">べるリーガル</h3>
+          </div>
+          <p class="service-desc">行政書士による終活・相続・遺言のサポートで、安心の将来設計をお手伝いします。</p>
+          <a href="#" class="service-link">詳しく見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pullquote">
+    <div class="pullquote-inner">
+      <span class="pullquote-mark">"</span>
+      <p class="pullquote-text">毎週来ていただける先生が、家族のように<br>私の体のことを覚えていてくれる。<br>それが何より安心です。</p>
+      <p class="pullquote-cite">80代女性 / 訪問鍼灸 5年</p>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="cases" id="cases">
+    <div class="container">
+      <div class="cases-head">
+        <div class="eyebrow"><span class="eyebrow-cat">CASE STUDIES · 03</span></div>
+        <h2 class="h2-ornate">ご利用事例<span class="h2-ornate-underline"></span></h2>
+      </div>
+      <div class="cases-grid">
+        <div class="case-card">
+          <img class="case-photo" src="../images/photos/cases-01-rehab.png" alt="骨折からの回復">
+          <div>
+            <div class="case-badge">CASE 01 · 歩行リハ</div>
+            <h3 class="case-title">骨折からの回復<br>（80代・女性）</h3>
+            <p class="case-desc">転倒による骨折後、歩行に不安が残っていました。鍼灸施術とリハビリを組み合わせ、再び自分の足で歩けるようになりました。</p>
+            <a href="#" class="case-link">詳しく見る →</a>
+          </div>
+        </div>
+        <div class="case-card">
+          <img class="case-photo" src="../images/photos/cases-02-training.png" alt="体幹強化">
+          <div>
+            <div class="case-badge">CASE 02 · 体幹改善</div>
+            <h3 class="case-title">体幹強化で姿勢が改善<br>（60代・女性）</h3>
+            <p class="case-desc">運動が苦手でしたが、無理のないトレーニングで体幹が安定。姿勢が良くなり、疲れにくい体になりました。</p>
+            <a href="#" class="case-link">詳しく見る →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE FROM REP -->
+  <section class="message">
+    <div class="container">
+      <div class="message-grid">
+        <div class="rep-portrait-wrap">
+          <img class="rep-portrait" src="../images/staff/representative-suzuki.jpg" alt="鈴木 俊平">
+        </div>
+        <div>
+          <div class="eyebrow"><span class="eyebrow-cat">MESSAGE · 04</span></div>
+          <h2 class="h2-ornate">支援が途切れる瞬間を無くしたい<span class="h2-ornate-underline"></span></h2>
+          <div class="rep-message">
+            <p>医療・介護・法律・運動の壁を越えて、人生の後半を切れ目なく支えること。それが、べるつりーの使命です。</p>
+            <p>ご本人はもちろん、ご家族の不安も受け止め、安心して暮らし続けられるように。地域に根ざし、一人ひとりに寄り添い続けます。</p>
+          </div>
+          <div class="rep-signature">
+            <small>REPRESENTATIVE</small>
+            代表取締役 / 行政書士 　 鈴木 俊平
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section" id="timeline">
+    <div class="container">
+      <div class="timeline-head">
+        <div class="eyebrow"><span class="eyebrow-cat">PROCESS · 05</span></div>
+        <h2 class="h2-ornate">ご利用の流れ<span class="h2-ornate-underline"></span></h2>
+      </div>
+      <ol class="timeline-list" style="list-style:none;padding:0;">
+        <li class="timeline-step">
+          <span class="timeline-num">01</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-icon ic-phone"></span>
+          <div class="timeline-title">ご相談</div>
+          <p class="timeline-desc">お電話またはフォームよりお気軽にご相談ください。</p>
+        </li>
+        <li class="timeline-step">
+          <span class="timeline-num">02</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-icon ic-pin"></span>
+          <div class="timeline-title">初回ご訪問</div>
+          <p class="timeline-desc">スタッフがご自宅へお伺いし、丁寧にお話をお聞きします。</p>
+        </li>
+        <li class="timeline-step">
+          <span class="timeline-num">03</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-icon ic-clipboard"></span>
+          <div class="timeline-title">状態の見立て</div>
+          <p class="timeline-desc">お身体の状態や生活環境を確認し、最適なケアプランをご提案します。</p>
+        </li>
+        <li class="timeline-step">
+          <span class="timeline-num">04</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-icon ic-refresh"></span>
+          <div class="timeline-title">継続施術</div>
+          <p class="timeline-desc">鍼灸や運動、介護サービスを組み合わせて、継続的にサポートします。</p>
+        </li>
+        <li class="timeline-step">
+          <span class="timeline-num">05</span>
+          <div class="timeline-dot"></div>
+          <span class="timeline-icon ic-share"></span>
+          <div class="timeline-title">ご家族・ケアマネと共有</div>
+          <p class="timeline-desc">定期的にご家族やケアマネと情報を共有し、安心のケアを一緒に築きます。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community-section">
+    <div class="container">
+      <div class="community-head">
+        <div class="eyebrow"><span class="eyebrow-cat">COMMUNITY · 06</span></div>
+        <h2 class="h2-ornate">地域での取り組み<span class="h2-ornate-underline"></span></h2>
+      </div>
+      <div class="community-grid">
+        <div class="community-item">
+          <img src="../images/photos/community-tamadaira-event.jpg" alt="地域の健康増進">
+          <div class="community-caption">
+            <div class="community-cat">HEALTH SEMINAR</div>
+            <div class="community-title">地域の健康増進</div>
+          </div>
+        </div>
+        <div class="community-item">
+          <img src="../images/photos/community-aishin-fitness-test.jpg" alt="フレイル予防活動">
+          <div class="community-caption">
+            <div class="community-cat">FRAILTY PREVENTION</div>
+            <div class="community-title">フレイル予防活動</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="news-section" id="news">
+    <div class="container">
+      <div class="news-head">
+        <div class="eyebrow"><span class="eyebrow-cat">NEWS · 07</span></div>
+        <h2 class="h2-ornate">お知らせ<span class="h2-ornate-underline"></span></h2>
+      </div>
+      <ul class="news-list">
+        <li>
+          <a href="#" class="news-item">
+            <span class="news-date">2025.05.12</span>
+            <span class="news-cat">ブログ更新</span>
+            <span class="news-title">高齢期の筋力維持に必要なこと</span>
+            <span class="news-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="news-item">
+            <span class="news-date">2025.04.25</span>
+            <span class="news-cat">お知らせ</span>
+            <span class="news-title">ゴールデンウィーク期間の営業について</span>
+            <span class="news-arrow">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="news-item">
+            <span class="news-date">2025.03.30</span>
+            <span class="news-cat">活動報告</span>
+            <span class="news-title">地域サロンで健康講座を開催しました</span>
+            <span class="news-arrow">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="site-logo"><span class="leaf"></span>べるつりー</a>
+          <p class="footer-tag">訪問鍼灸 / 女性フィットネス /<br>居宅介護 / 終活支援（行政書士）</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">訪問鍼灸</a></li>
+            <li><a href="#">べるフィット</a></li>
+            <li><a href="#">居宅介護</a></li>
+            <li><a href="#">べるリーガル</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">私たちについて</a></li>
+            <li><a href="#">代表メッセージ</a></li>
+            <li><a href="#">スタッフ紹介</a></li>
+            <li><a href="#">採用情報</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact">
+            〒194-0013<br>東京都町田市原町田 5-13-7
+          </div>
+          <div class="footer-tel"><span class="ico"></span>042-850-9980</div>
+          <div class="footer-hours">受付時間：9:00–18:00 日曜定休</div>
+          <div class="footer-cta">
+            <a href="#" class="btn btn-primary" style="padding:10px 24px;font-size:13px;">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2025 べるつりー · All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
