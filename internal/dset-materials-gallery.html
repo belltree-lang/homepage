@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dセット 素材確認ギャラリー（草原・抽象・図形）</title>
+<base href="../">
+<style>
+  :root {
+    --paper: #FCFCFA;
+    --slate: #2C4A6B;
+    --terracotta: #D88B6F;
+    --line: rgba(0,0,0,0.08);
+    --grid: rgba(0,0,0,0.04);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Noto Sans JP", sans-serif; color: var(--slate); background: #F5F1E8; line-height: 1.7; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 32px; }
+  header.page { background: var(--paper); padding: 32px 0; border-bottom: 2px solid var(--line); text-align: center; }
+  header.page h1 { margin: 0 0 8px; font-size: 24px; }
+  header.page p { margin: 0; color: #666; font-size: 13px; }
+  section { margin: 56px 0; }
+  section h2 { font-size: 18px; color: var(--terracotta); border-left: 4px solid var(--terracotta); padding-left: 12px; margin: 0 0 6px; }
+  section .sub { color: #666; font-size: 12px; margin-bottom: 24px; }
+
+  .checker {
+    background-color: #FFFFFF;
+    background-image:
+      linear-gradient(45deg, var(--grid) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--grid) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--grid) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--grid) 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  }
+  .dark { background: var(--slate); }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+
+  .tile { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; background: var(--paper); }
+  .tile .img-wrap.tall { aspect-ratio: 16/8; display: flex; align-items: center; justify-content: center; padding: 12px; }
+  .tile .img-wrap.square { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; padding: 18px; }
+  .tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .tile .label { font-size: 11px; color: #666; padding: 8px 12px; border-top: 1px solid var(--line); background: #FAFAF7; display: flex; justify-content: space-between; font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.08em; }
+  .tile .label b { color: var(--slate); }
+
+  .view-toggle { display: flex; gap: 8px; margin: 0 0 20px; }
+  .view-toggle button { padding: 6px 14px; border: 1px solid var(--line); background: var(--paper); cursor: pointer; font-size: 11px; letter-spacing: 0.08em; color: var(--slate); border-radius: 999px; }
+  .view-toggle button.active { background: var(--slate); color: var(--paper); border-color: var(--slate); }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <h1>Dセット 素材確認ギャラリー</h1>
+  <p>シート 21（草原 meadow）／22（抽象図形 abstract）／追加 6+9（円・四角・blob shapes）</p>
+</header>
+
+<div class="container">
+
+  <div class="view-toggle">
+    <button data-bg="checker" class="active">市松（透過確認）</button>
+    <button data-bg="dark">ダーク背景</button>
+    <button data-bg="">白背景</button>
+  </div>
+
+  <section>
+    <h2>21. 草原 meadow L（6種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/L/soft-meadow/meadow-l-XX.png ─ HERO 下部・草原表現</div>
+    <div class="grid-3">
+      <div class="tile"><div class="img-wrap tall checker"><img src="images/materials/decoration/L/soft-meadow/meadow-l-01.png" alt=""></div><div class="label"><b>meadow-01</b><span>dense</span></div></div>
+      <div class="tile"><div class="img-wrap tall checker"><img src="images/materials/decoration/L/soft-meadow/meadow-l-02.png" alt=""></div><div class="label"><b>meadow-02</b><span>sparse</span></div></div>
+      <div class="tile"><div class="img-wrap tall checker"><img src="images/materials/decoration/L/soft-meadow/meadow-l-03.png" alt=""></div><div class="label"><b>meadow-03</b><span>tufts</span></div></div>
+      <div class="tile"><div class="img-wrap tall checker"><img src="images/materials/decoration/L/soft-meadow/meadow-l-04.png" alt=""></div><div class="label"><b>meadow-04</b><span>leaf branch</span></div></div>
+      <div class="tile"><div class="img-wrap tall checker"><img src="images/materials/decoration/L/soft-meadow/meadow-l-05.png" alt=""></div><div class="label"><b>meadow-05</b><span>flowers</span></div></div>
+      <div class="tile"><div class="img-wrap tall checker"><img src="images/materials/decoration/L/soft-meadow/meadow-l-06.png" alt=""></div><div class="label"><b>meadow-06</b><span>haze</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>22. 抽象図形 abstract L（6種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/L/soft-abstract/abstract-l-XX.png ─ blob 周辺・空白部装飾</div>
+    <div class="grid-3">
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-abstract/abstract-l-01.png" alt=""></div><div class="label"><b>abs-01</b><span>dashed circle</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-abstract/abstract-l-02.png" alt=""></div><div class="label"><b>abs-02</b><span>dashed circle mustard</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-abstract/abstract-l-03.png" alt=""></div><div class="label"><b>abs-03</b><span>dashed arc</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-abstract/abstract-l-04.png" alt=""></div><div class="label"><b>abs-04</b><span>dot grid 4×4</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-abstract/abstract-l-05.png" alt=""></div><div class="label"><b>abs-05</b><span>scatter dots</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-abstract/abstract-l-06.png" alt=""></div><div class="label"><b>abs-06</b><span>concentric rings</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>+ 図形 shapes L（15種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/L/soft-shapes/shape-l-XX.png ─ 円・四角・blob（汎用フレーム/背景アクセント）</div>
+    <div class="grid-5">
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-01.png" alt=""></div><div class="label"><b>shape-01</b><span>circle outline</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-02.png" alt=""></div><div class="label"><b>shape-02</b><span>circle sage fill</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-03.png" alt=""></div><div class="label"><b>shape-03</b><span>dashed circle mustard</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-04.png" alt=""></div><div class="label"><b>shape-04</b><span>rounded sq outline</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-05.png" alt=""></div><div class="label"><b>shape-05</b><span>rounded sq pink</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-06.png" alt=""></div><div class="label"><b>shape-06</b><span>dashed rounded sq</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-07.png" alt=""></div><div class="label"><b>shape-07</b><span>circle outline 2</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-08.png" alt=""></div><div class="label"><b>shape-08</b><span>circle sage</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-09.png" alt=""></div><div class="label"><b>shape-09</b><span>dashed mustard</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-10.png" alt=""></div><div class="label"><b>shape-10</b><span>sq outline</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-11.png" alt=""></div><div class="label"><b>shape-11</b><span>sq pink</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-12.png" alt=""></div><div class="label"><b>shape-12</b><span>dashed sq sage</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-13.png" alt=""></div><div class="label"><b>shape-13</b><span>blob sage</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-14.png" alt=""></div><div class="label"><b>shape-14</b><span>blob rose</span></div></div>
+      <div class="tile"><div class="img-wrap square checker"><img src="images/materials/decoration/L/soft-shapes/shape-l-15.png" alt=""></div><div class="label"><b>shape-15</b><span>blob cream</span></div></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.view-toggle button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.bg;
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.img-wrap').forEach(el => {
+        el.classList.remove('checker', 'dark');
+        if (mode === 'checker') el.classList.add('checker');
+        if (mode === 'dark') el.classList.add('dark');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

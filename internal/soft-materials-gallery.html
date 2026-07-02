@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soft セット素材 確認ギャラリー</title>
+<base href="../">
+<style>
+  :root {
+    --paper: #FCFCFA;
+    --slate: #2C4A6B;
+    --terracotta: #D88B6F;
+    --line: rgba(0,0,0,0.08);
+    --grid: rgba(0,0,0,0.04);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    color: var(--slate);
+    background: #F5F1E8;
+    line-height: 1.7;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 32px; }
+  header.page {
+    background: var(--paper); padding: 32px 0; border-bottom: 2px solid var(--line);
+    text-align: center;
+  }
+  header.page h1 { margin: 0 0 8px; font-size: 24px; letter-spacing: 0.04em; }
+  header.page p { margin: 0; color: #666; font-size: 13px; }
+
+  section { margin: 56px 0; }
+  section h2 {
+    font-size: 18px; color: var(--terracotta);
+    border-left: 4px solid var(--terracotta); padding-left: 12px;
+    margin: 0 0 6px;
+  }
+  section .sub { color: #666; font-size: 12px; margin-bottom: 24px; }
+
+  /* checkered background to verify transparency */
+  .checker {
+    background-color: #FFFFFF;
+    background-image:
+      linear-gradient(45deg, var(--grid) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--grid) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--grid) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--grid) 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  }
+
+  /* dark background to verify transparency edges */
+  .dark {
+    background: var(--slate);
+  }
+
+  .grid-l { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .grid-m { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .grid-bg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+  .tile {
+    border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    background: var(--paper);
+  }
+  .tile .img-wrap {
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .tile .label {
+    font-size: 11px; color: #666; padding: 8px 12px;
+    border-top: 1px solid var(--line);
+    background: #FAFAF7;
+    display: flex; justify-content: space-between;
+    font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.08em;
+  }
+  .tile .label b { color: var(--slate); }
+
+  /* M size tiles smaller */
+  .grid-m .tile .img-wrap { aspect-ratio: 1/1; padding: 12px; }
+
+  /* bg tile big */
+  .grid-bg .tile .img-wrap { aspect-ratio: 16/9; padding: 0; }
+  .grid-bg .tile img { width: 100%; height: 100%; object-fit: cover; }
+
+  .view-toggle {
+    display: flex; gap: 8px; margin: 0 0 20px;
+  }
+  .view-toggle button {
+    padding: 6px 14px; border: 1px solid var(--line); background: var(--paper);
+    cursor: pointer; font-size: 11px; letter-spacing: 0.08em; color: var(--slate);
+    border-radius: 999px;
+  }
+  .view-toggle button.active { background: var(--slate); color: var(--paper); border-color: var(--slate); }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <h1>Soft セット素材 確認ギャラリー</h1>
+  <p>42.png 由来「やわらかパステル路線」 ─ 透過確認用（市松＝透過 / ダーク＝エッジ確認 / 白＝通常）</p>
+</header>
+
+<div class="container">
+
+  <!-- View Toggle -->
+  <div class="view-toggle">
+    <button data-bg="checker" class="active">市松（透過確認）</button>
+    <button data-bg="dark">ダーク背景（エッジ確認）</button>
+    <button data-bg="">白背景</button>
+  </div>
+
+  <!-- ============= L (decor) ============= -->
+  <section>
+    <h2>① 大装飾 L（6種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/L/soft/soft-l-XX.png</div>
+    <div class="grid-l">
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft/soft-l-01.png" alt=""></div><div class="label"><b>soft-l-01</b><span>cloud-cluster</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft/soft-l-02.png" alt=""></div><div class="label"><b>soft-l-02</b><span>leaf-pair</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft/soft-l-03.png" alt=""></div><div class="label"><b>soft-l-03</b><span>sun</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft/soft-l-04.png" alt=""></div><div class="label"><b>soft-l-04</b><span>birds</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft/soft-l-05.png" alt=""></div><div class="label"><b>soft-l-05</b><span>grass-strip</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft/soft-l-06.png" alt=""></div><div class="label"><b>soft-l-06</b><span>blob</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============= M (small) ============= -->
+  <section>
+    <h2>② 小装飾 M（20種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/M/soft/soft-m-XX.png</div>
+    <div class="grid-m">
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-01.png" alt=""></div><div class="label"><b>m-01</b><span>No.1</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-02.png" alt=""></div><div class="label"><b>m-02</b><span>No.2</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-03.png" alt=""></div><div class="label"><b>m-03</b><span>No.3</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-04.png" alt=""></div><div class="label"><b>m-04</b><span>No.4</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-05.png" alt=""></div><div class="label"><b>m-05</b><span>No.5</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-06.png" alt=""></div><div class="label"><b>m-06</b><span>welcome ⌄</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-07.png" alt=""></div><div class="label"><b>m-07</b><span>check ✓</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-08.png" alt=""></div><div class="label"><b>m-08</b><span>? mark</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-09.png" alt=""></div><div class="label"><b>m-09</b><span>dotted-circle</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-10.png" alt=""></div><div class="label"><b>m-10</b><span>dot-grid</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-11.png" alt=""></div><div class="label"><b>m-11</b><span>washi-tape</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-12.png" alt=""></div><div class="label"><b>m-12</b><span>wave-underline</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-13.png" alt=""></div><div class="label"><b>m-13</b><span>small-leaf</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-14.png" alt=""></div><div class="label"><b>m-14</b><span>tiny-flower</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-15.png" alt=""></div><div class="label"><b>m-15</b><span>small-cloud</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-16.png" alt=""></div><div class="label"><b>m-16</b><span>small-bird</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-17.png" alt=""></div><div class="label"><b>m-17</b><span>arrow →</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-18.png" alt=""></div><div class="label"><b>m-18</b><span>speech-bubble</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-19.png" alt=""></div><div class="label"><b>m-19</b><span>sparkles</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft/soft-m-20.png" alt=""></div><div class="label"><b>m-20</b><span>wave-line</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============= BG (背景) ============= -->
+  <section>
+    <h2>③ 背景 L（6種・不透過）</h2>
+    <div class="sub">images/materials/backgrounds/soft/soft-bg-XX.png ─ ※不透過なので市松トグルは関係なし</div>
+    <div class="grid-bg">
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/soft/soft-bg-01.png" alt=""></div><div class="label"><b>bg-01</b><span>HERO pink</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/soft/soft-bg-02.png" alt=""></div><div class="label"><b>bg-02</b><span>Entries mint</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/soft/soft-bg-03.png" alt=""></div><div class="label"><b>bg-03</b><span>Concerns cream</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/soft/soft-bg-04.png" alt=""></div><div class="label"><b>bg-04</b><span>Team sky</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/soft/soft-bg-05.png" alt=""></div><div class="label"><b>bg-05</b><span>Trust lavender</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/soft/soft-bg-06.png" alt=""></div><div class="label"><b>bg-06</b><span>peach + wave</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============= Bセット (写真路線) ============= -->
+  <section>
+    <h2>④ Bセット 写真フレーム L（6種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/L/photo/photo-l-XX.png ─ 46.png由来・写真と組み合わせるフレーム</div>
+    <div class="grid-l">
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/photo/photo-l-01.png" alt=""></div><div class="label"><b>photo-l-01</b><span>rounded-frame</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/photo/photo-l-02.png" alt=""></div><div class="label"><b>photo-l-02</b><span>oval-leaf-frame</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/photo/photo-l-03.png" alt=""></div><div class="label"><b>photo-l-03</b><span>polaroid</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/photo/photo-l-04.png" alt=""></div><div class="label"><b>photo-l-04</b><span>arch-frame</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/photo/photo-l-05.png" alt=""></div><div class="label"><b>photo-l-05</b><span>circle-petals</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/photo/photo-l-06.png" alt=""></div><div class="label"><b>photo-l-06</b><span>torn-paper-card</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>⑤ Bセット 写真補助 M（20種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/M/photo/photo-m-XX.png</div>
+    <div class="grid-m">
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-01.png" alt=""></div><div class="label"><b>m-01</b><span>heart outline</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-02.png" alt=""></div><div class="label"><b>m-02</b><span>heart filled</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-03.png" alt=""></div><div class="label"><b>m-03</b><span>double heart</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-04.png" alt=""></div><div class="label"><b>m-04</b><span>botanical heart</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-05.png" alt=""></div><div class="label"><b>m-05</b><span>tag</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-06.png" alt=""></div><div class="label"><b>m-06</b><span>ribbon</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-07.png" alt=""></div><div class="label"><b>m-07</b><span>bubble</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-08.png" alt=""></div><div class="label"><b>m-08</b><span>badge</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-09.png" alt=""></div><div class="label"><b>m-09</b><span>star</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-10.png" alt=""></div><div class="label"><b>m-10</b><span>sparkle</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-11.png" alt=""></div><div class="label"><b>m-11</b><span>sparkles</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-12.png" alt=""></div><div class="label"><b>m-12</b><span>sunburst</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-13.png" alt=""></div><div class="label"><b>m-13</b><span>flourish</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-14.png" alt=""></div><div class="label"><b>m-14</b><span>wavy line</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-15.png" alt=""></div><div class="label"><b>m-15</b><span>corner</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-16.png" alt=""></div><div class="label"><b>m-16</b><span>brackets</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-17.png" alt=""></div><div class="label"><b>m-17</b><span>sprig</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-18.png" alt=""></div><div class="label"><b>m-18</b><span>bird silhouette</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-19.png" alt=""></div><div class="label"><b>m-19</b><span>rose</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/photo/photo-m-20.png" alt=""></div><div class="label"><b>m-20</b><span>rainbow</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>⑥ Bセット 写真背景 L（6種・不透過）</h2>
+    <div class="sub">images/materials/backgrounds/photo/photo-bg-XX.png ─ 写真と相性のいい控えめ背景</div>
+    <div class="grid-bg">
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/photo/photo-bg-01.png" alt=""></div><div class="label"><b>bg-01</b><span>cream paper</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/photo/photo-bg-02.png" alt=""></div><div class="label"><b>bg-02</b><span>pink + leaves</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/photo/photo-bg-03.png" alt=""></div><div class="label"><b>bg-03</b><span>warm gradient</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/photo/photo-bg-04.png" alt=""></div><div class="label"><b>bg-04</b><span>hairline stripes</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/photo/photo-bg-05.png" alt=""></div><div class="label"><b>bg-05</b><span>faint dots</span></div></div>
+      <div class="tile"><div class="img-wrap"><img src="images/materials/backgrounds/photo/photo-bg-06.png" alt=""></div><div class="label"><b>bg-06</b><span>blur shapes</span></div></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.view-toggle button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.bg;
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // Update only L and M wraps (not bg section)
+      document.querySelectorAll('.grid-l .img-wrap, .grid-m .img-wrap').forEach(el => {
+        el.classList.remove('checker', 'dark');
+        if (mode === 'checker') el.classList.add('checker');
+        if (mode === 'dark') el.classList.add('dark');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

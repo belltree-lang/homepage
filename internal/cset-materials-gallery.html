@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cセット 素材確認ギャラリー（18・19・20）</title>
+<base href="../">
+<style>
+  :root {
+    --paper: #FCFCFA;
+    --slate: #2C4A6B;
+    --terracotta: #D88B6F;
+    --line: rgba(0,0,0,0.08);
+    --grid: rgba(0,0,0,0.04);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    color: var(--slate);
+    background: #F5F1E8;
+    line-height: 1.7;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 32px; }
+  header.page {
+    background: var(--paper); padding: 32px 0; border-bottom: 2px solid var(--line);
+    text-align: center;
+  }
+  header.page h1 { margin: 0 0 8px; font-size: 24px; letter-spacing: 0.04em; }
+  header.page p { margin: 0; color: #666; font-size: 13px; }
+
+  section { margin: 56px 0; }
+  section h2 {
+    font-size: 18px; color: var(--terracotta);
+    border-left: 4px solid var(--terracotta); padding-left: 12px;
+    margin: 0 0 6px;
+  }
+  section .sub { color: #666; font-size: 12px; margin-bottom: 24px; }
+
+  .checker {
+    background-color: #FFFFFF;
+    background-image:
+      linear-gradient(45deg, var(--grid) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--grid) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--grid) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--grid) 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  }
+  .dark { background: var(--slate); }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+  .tile {
+    border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    background: var(--paper);
+  }
+  .tile .img-wrap {
+    aspect-ratio: 1/1;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .tile img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .tile .label {
+    font-size: 11px; color: #666; padding: 8px 12px;
+    border-top: 1px solid var(--line);
+    background: #FAFAF7;
+    display: flex; justify-content: space-between;
+    font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.08em;
+  }
+  .tile .label b { color: var(--slate); }
+
+  .view-toggle {
+    display: flex; gap: 8px; margin: 0 0 20px;
+  }
+  .view-toggle button {
+    padding: 6px 14px; border: 1px solid var(--line); background: var(--paper);
+    cursor: pointer; font-size: 11px; letter-spacing: 0.08em; color: var(--slate);
+    border-radius: 999px;
+  }
+  .view-toggle button.active { background: var(--slate); color: var(--paper); border-color: var(--slate); }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <h1>Cセット 素材確認ギャラリー</h1>
+  <p>シート 18（5入口アイコン）／19（お悩みイラスト）／20（専門家アイコン）</p>
+</header>
+
+<div class="container">
+
+  <div class="view-toggle">
+    <button data-bg="checker" class="active">市松（透過確認）</button>
+    <button data-bg="dark">ダーク背景（エッジ確認）</button>
+    <button data-bg="">白背景</button>
+  </div>
+
+  <!-- ============= 18 ============= -->
+  <section>
+    <h2>18. 5入口セクション アイコン L（6種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/L/soft-icons/soft-icon-XX.png</div>
+    <div class="grid-3">
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-icons/soft-icon-01.png" alt=""></div><div class="label"><b>icon-01</b><span>acupuncture</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-icons/soft-icon-02.png" alt=""></div><div class="label"><b>icon-02</b><span>fitness</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-icons/soft-icon-03.png" alt=""></div><div class="label"><b>icon-03</b><span>home + heart</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-icons/soft-icon-04.png" alt=""></div><div class="label"><b>icon-04</b><span>legal scroll</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-icons/soft-icon-05.png" alt=""></div><div class="label"><b>icon-05</b><span>community 3 people</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-icons/soft-icon-06.png" alt=""></div><div class="label"><b>icon-06</b><span>bubble + leaf</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============= 19 ============= -->
+  <section>
+    <h2>19. お悩みカード イラスト L（6種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/L/soft-concerns/soft-concern-XX.png</div>
+    <div class="grid-3">
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-concerns/soft-concern-01.png" alt=""></div><div class="label"><b>concern-01</b><span>stroke</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-concerns/soft-concern-02.png" alt=""></div><div class="label"><b>concern-02</b><span>parkinson</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-concerns/soft-concern-03.png" alt=""></div><div class="label"><b>concern-03</b><span>knee pain</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-concerns/soft-concern-04.png" alt=""></div><div class="label"><b>concern-04</b><span>walking + cane</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-concerns/soft-concern-05.png" alt=""></div><div class="label"><b>concern-05</b><span>frailty</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/L/soft-concerns/soft-concern-06.png" alt=""></div><div class="label"><b>concern-06</b><span>care 2 people</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============= 20 ============= -->
+  <section>
+    <h2>20. 専門家チーム アイコン M（4種・透過PNG）</h2>
+    <div class="sub">images/materials/decoration/M/soft-team/soft-team-XX.png</div>
+    <div class="grid-2">
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft-team/soft-team-01.png" alt=""></div><div class="label"><b>team-01</b><span>運動指導士</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft-team/soft-team-02.png" alt=""></div><div class="label"><b>team-02</b><span>鍼灸マッサージ師</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft-team/soft-team-03.png" alt=""></div><div class="label"><b>team-03</b><span>ケアマネジャー</span></div></div>
+      <div class="tile"><div class="img-wrap checker"><img src="images/materials/decoration/M/soft-team/soft-team-04.png" alt=""></div><div class="label"><b>team-04</b><span>行政書士</span></div></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.view-toggle button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.bg;
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.img-wrap').forEach(el => {
+        el.classList.remove('checker', 'dark');
+        if (mode === 'checker') el.classList.add('checker');
+        if (mode === 'dark') el.classList.add('dark');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
