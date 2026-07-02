@@ -1,2 +1,10 @@
 # Ignore pages/ directory permanently to prevent editor tab regression
 pages/
+
+# 社内書庫・作業ファイルは公開リポジトリに含めない（2026-07-02 監査で確定）
+.company/
+tmp/
+output/
+tasks/
+.cursor/
+*.bak-*
