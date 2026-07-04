@@ -1,17 +1,32 @@
 RewriteEngine On
 
+# http・www アクセスを https://bellmfit.com/ に統一（301）
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://bellmfit.com/$1 [R=301,L]
+
 # 旧グループページは belltree1102.com / bellregal.com へ恒久移転（301）
+# ロリポップでは実体フォルダが残っていると Redirect 形式が素通しになるため全て RedirectMatch 形式で書く
 RedirectMatch 301 ^/services/?$ https://belltree1102.com/
-Redirect 301 /services/acupuncture https://belltree1102.com/services/home-visit/
-Redirect 301 /services/home-care https://belltree1102.com/services/home-care/
-Redirect 301 /services/legal https://bellregal.com/
-Redirect 301 /services/shukatsu https://bellregal.com/services/shukatsu/
-Redirect 301 /about https://belltree1102.com/about/
-Redirect 301 /team https://belltree1102.com/team/
+RedirectMatch 301 ^/services/acupuncture(/.*)?$ https://belltree1102.com/services/home-visit/
+RedirectMatch 301 ^/services/home-care(/.*)?$ https://belltree1102.com/services/home-care/
+RedirectMatch 301 ^/services/legal(/.*)?$ https://bellregal.com/
+RedirectMatch 301 ^/services/shukatsu(/.*)?$ https://bellregal.com/services/shukatsu/
+RedirectMatch 301 ^/about(/.*)?$ https://belltree1102.com/about/
+RedirectMatch 301 ^/team(/.*)?$ https://belltree1102.com/team/
 RedirectMatch 301 ^/solutions(/.*)?$ https://belltree1102.com/solutions$1
 RedirectMatch 301 ^/recruit(/.*)?$ https://belltree1102.com/recruit$1
-Redirect 301 /family https://belltree1102.com/
-Redirect 301 /community https://belltree1102.com/pro/
-Redirect 301 /cases https://belltree1102.com/
-Redirect 301 /news https://belltree1102.com/
-Redirect 301 /model https://belltree1102.com/about/
+RedirectMatch 301 ^/family(/.*)?$ https://belltree1102.com/
+RedirectMatch 301 ^/community(/.*)?$ https://belltree1102.com/pro/
+RedirectMatch 301 ^/cases(/.*)?$ https://belltree1102.com/
+RedirectMatch 301 ^/news(/.*)?$ https://belltree1102.com/
+RedirectMatch 301 ^/model(/.*)?$ https://belltree1102.com/about/
+
+# ステージング（/test/）とスタッフ向け（/internal/）は検索結果に載せない
+<IfModule mod_setenvif.c>
+SetEnvIf Request_URI "^/test/" NOINDEX_AREA
+SetEnvIf Request_URI "^/internal/" NOINDEX_AREA
+</IfModule>
+<IfModule mod_headers.c>
+Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX_AREA
+</IfModule>
