@@ -94,6 +94,9 @@ bellmfit.com の既存9ページに限定し、検索結果の表現、駐車場
 - `https://bellmfit.com/test/` 配下の9URL、内部リンク、画像を確認する。
 - トップ、contact、leafの表示スクリーンショットを保存する。
 - `main` へpushせず、`deploy.yml` を起動しない。
+- 9ページの canonical は本番URLのまま維持し、`/test/` へ書き換えない。
+- 配信後、ページ確認より先に `https://bellmfit.com/test/` の実レスポンスヘッダーを測定する。
+- `X-Robots-Tag: noindex, nofollow` が無い場合は、重複公開防止の条件を満たさないため、その時点で作業を停止して報告する。
 
 ## 報告内容
 
