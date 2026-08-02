@@ -233,12 +233,27 @@
             "name": "株式会社べるつりー",
             "url": "https://belltree1102.com/"
           },
-          "openingHoursSpecification": [{
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          }],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday", "Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ],
+          "amenityFeature": [
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "無料駐車場（10台／施設向かい2台・近隣提携8台）",
+              "value": true
+            }
+          ],
           "areaServed": [
             {"@type": "AdministrativeArea", "name": "町田市"}
           ]
@@ -382,6 +397,7 @@
               <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex: 1;">
                 <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-primary); font-weight: bold;">ナイト会員</div>
                 <h3 style="margin-bottom: var(--space-sm);">夜間・週末に通う</h3>
+                <p class="text-muted text-sm mb-sm"><strong>平日 20:00〜翌9:00／週末 24時間</strong><br/>20時以降と週末はスタッフのいない自由利用の時間帯です。</p>
                 <p class="text-muted text-sm mb-md">平日の夜間帯や週末に通える自由利用プランです。仕事や家事で日中が難しい方も、忙しい毎日のなかで運動の習慣を続けられます。</p>
                 <span style="margin-top: auto; color: var(--color-accent); font-weight: var(--font-weight-medium);">夜間・週末利用について見る &rarr;</span>
               </div>
@@ -395,6 +411,7 @@
               <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex: 1;">
                 <div style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-primary); font-weight: bold;">シード</div>
                 <h3 style="margin-bottom: var(--space-sm);">女性向けプログラム</h3>
+                <p class="text-muted text-sm mb-sm"><strong>平日 11:30〜13:30／16:30〜20:00</strong><br/>女性専用の時間帯です。</p>
                 <p class="text-muted text-sm mb-md">同性同士で気兼ねなく、運動と会話を楽しめる女性向けプログラムです。はじめての方も、安心できる空間で続けられます。</p>
                 <span style="margin-top: auto; color: var(--color-accent); font-weight: var(--font-weight-medium);">シードについて見る &rarr;</span>
               </div>
@@ -797,7 +814,7 @@
               株式会社べるつりー べるフィット<br/>
               東京都町田市木曽東4-9-14 Mビル2階<br/>
               駐車場10台・無料（施設向かい2台／近隣提携8台）<br/>
-              TEL <a href="tel:0426822839">042-682-2839</a>／営業時間 平日 9:00〜18:00
+              TEL <a href="tel:0426822839">042-682-2839</a>／電話受付 平日 9:00〜18:00
             </p>
           </div>
 
