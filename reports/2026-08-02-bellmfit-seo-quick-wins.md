@@ -2,13 +2,15 @@
 
 ## 結論
 
-第1.5段階 quick wins を対象9ページへ実装し、`staging` へ配信した。`main` は変更せず、本番用 `deploy.yml` は起動していない。
+第1.5段階 quick wins を対象9ページへ実装し、`staging` での検証とfact-check完了後、`main` へfast-forwardして本番配信した。
 
 ステージングの実レスポンスで `x-robots-tag: noindex, nofollow` を確認した後、9ページのHTTP 200、NAP完全一致、canonical維持、内部ページ・画像等の参照、デスクトップ／モバイル表示を確認し、すべて合格した。
 
 - ステージング: <https://bellmfit.com/test/>
 - 実装確認コミット: `98ab2d6`
 - staging workflow: <https://github.com/belltree-lang/homepage/actions/runs/30739607069>
+- main反映コミット: `385f7b5`
+- production workflow: <https://github.com/belltree-lang/homepage/actions/runs/30746438055>
 
 ## 変更差分の要約
 
@@ -114,11 +116,15 @@ x-robots-tag: noindex, nofollow
 
 ## Git・公開状態
 
-- `staging`: 実装コミット `98ab2d6` をpush済み
-- `main`: `f8f1e38` のまま。pushなし
-- 本番用 `.github/workflows/deploy.yml`: workflow_dispatchのみ。起動なし
-- 公開範囲: `https://bellmfit.com/test/` のみ
+- `staging`: `385f7b5` をpush済み
+- `main`: `staging` からfast-forwardし、`385f7b5` をpush済み
+- 本番用 `.github/workflows/deploy.yml`: `main` の `385f7b5` を指定して手動起動し、成功
+- 本番: `https://bellmfit.com/` へ公開済み
+- 本番9ページ: すべてHTTP 200、NAP各1回、canonical完全一致
+- 本番トップ: 指定title／descriptionと完全一致
+- 本番Leaf: 指定descriptionとSeed／Night導線を確認
+- 本番トップのレスポンス: `noindex` なし
 
 ## Claude Codeへのfact-check依頼
 
-本番公開判断の前に、駐車場の台数・無料条件、資格表現、サービス名称、満員表現、広告・医療介護関連表現の事実確認を依頼する。本報告時点では本番公開していない。
+駐車場の台数・無料条件、資格表現、サービス名称、満員表現、広告・医療介護関連表現について、Claude Codeのfact-checkで全項目クリアを確認した。その後、代表指示に基づき本番公開した。
