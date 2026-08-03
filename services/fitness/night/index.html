@@ -59,6 +59,9 @@
       /* 要約カード群：ヒーローの温かさを下へ引き継ぐ */
       .facts-deco{ position:relative; overflow:hidden; }
       .facts-deco > .facts-inner{ position:relative; z-index:2; }
+      /* ラベル下のアクセント罫：4枚に共通の構造。図版が付けられない項目でも色と段が入る */
+      .grid-2 .card.fact-card h4::after{ content:""; display:block; width:26px; height:2px;
+        margin:.5rem auto 0; background:var(--color-accent); opacity:.85; }
       .facts-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
       .facts-deco__wash{ top:-30%; right:-6%; width:min(34vw,420px); opacity:.32; filter:saturate(.9); }
       /* 駐車場：来館の場面。図は1点だけ、見出しの隣に置く */
@@ -304,9 +307,10 @@
         </div>
       </section>
 
-      <section class="section-spacing container-narrow facts-deco" style="margin: 0 auto;">
+      <section class="section-spacing bg-alt facts-deco">
         <img src="../../../images/materials/homepage/hp-wash-peach.webp" alt="" aria-hidden="true" class="facts-deco__wash" loading="lazy" />
-         <div class="grid grid-2 grid-gap-md facts-inner">
+        <div class="container-narrow facts-inner" style="margin: 0 auto;">
+         <div class="grid grid-2 grid-gap-md">
             <div class="card fact-card text-center">
               <h4>対象</h4>
               <p class="fact-card__main">働く世代の方</p>
@@ -329,6 +333,7 @@
               <p class="fact-card__note">施設向かい2台<br/>近隣提携8台</p>
             </div>
          </div>
+        </div>
       </section>
 
       <section class="section-spacing container-narrow" style="margin: 0 auto;">
