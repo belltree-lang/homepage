@@ -43,7 +43,8 @@
       .lead-note b{ color:var(--color-primary); font-weight:700; font-feature-settings:"tnum"; }
 
       /* === 駐車場ブロック：見出しは小さく、台数を主役に === */
-      .park-block{ display:grid; gap:.75rem; }
+      .park-block{ display:grid; gap:.75rem;
+        border-left:3px solid var(--color-accent); }
       @media (min-width:768px){ .park-block{ grid-template-columns:auto 1fr; align-items:center; gap:2rem; } }
       .park-block__label{
         font-size:.78rem !important; font-weight:600; letter-spacing:.14em;
