@@ -17,6 +17,43 @@
       .editorial-split .text-lead{ font-size:1.13rem !important; line-height:2.05 !important; max-width:32em; }
       .grid-2 .card h4{ font-size:1.25rem !important; letter-spacing:.04em; }
       .app-guide-num{ font-family:"Shippori Mincho B1", serif; font-weight:800; font-size:2.4rem; line-height:1; }
+
+      /* === 要約カード：数字を主役に。既存 .home-stat__num（明朝＋tnum＋単位0.7em）と
+             .vacancy-time-*（ラベル小・値大）の作法に合わせる。新しい語彙は作らない === */
+      .grid-2 .card.fact-card h4{
+        font-size:.78rem !important; font-weight:600; letter-spacing:.14em;
+        color:var(--color-text-muted); margin:0 0 .7rem; }
+      .fact-card__main{
+        font-family:"Shippori Mincho B1","Yu Mincho",serif; font-weight:700;
+        font-size:1.3rem; line-height:1.6; letter-spacing:.01em;
+        color:var(--color-primary); font-feature-settings:"tnum"; margin:0; }
+      .fact-card__main .u{
+        font-size:.62em; font-weight:500; color:var(--color-text-muted);
+        margin-left:.2em; letter-spacing:.04em; font-family:var(--font-family-base); }
+      .fact-card__note{
+        font-size:.78rem; line-height:1.9; letter-spacing:.03em;
+        color:var(--color-text-muted); margin:.55rem 0 0; }
+      .fact-card__link{ font-size:.78rem; letter-spacing:.03em; display:inline-block; margin-top:.6rem; }
+      @media (max-width:767px){ .fact-card__main{ font-size:1.18rem; } }
+
+      /* === リード直後の註記：本文と地続きにせず、アクセント罫で層を分ける === */
+      .lead-note{
+        margin-top:1.5rem; padding-left:.95rem; border-left:2px solid var(--color-accent);
+        font-size:.93rem; line-height:2.05; letter-spacing:.02em; color:var(--color-text-muted); }
+      .lead-note b{ color:var(--color-primary); font-weight:700; font-feature-settings:"tnum"; }
+
+      /* === 駐車場ブロック：見出しは小さく、台数を主役に === */
+      .park-block{ display:grid; gap:.75rem; }
+      @media (min-width:768px){ .park-block{ grid-template-columns:auto 1fr; align-items:baseline; gap:2.4rem; } }
+      .park-block__label{
+        font-size:.78rem !important; font-weight:600; letter-spacing:.14em;
+        color:var(--color-text-muted); margin:0; white-space:nowrap; }
+      .park-block__num{
+        font-family:"Shippori Mincho B1","Yu Mincho",serif; font-weight:700;
+        font-size:1.45rem; line-height:1.4; color:var(--color-primary);
+        font-feature-settings:"tnum"; margin:0 0 .35rem; }
+      .park-block__num .u{ font-size:.6em; font-weight:500; color:var(--color-text-muted); margin-left:.2em; font-family:var(--font-family-base); }
+      .park-block__body{ font-size:.88rem; line-height:1.95; letter-spacing:.02em; color:var(--color-text-muted); margin:0; }
     </style>
 
     <!-- ============================================================
@@ -248,7 +285,7 @@
             <span class="eyebrow">BELLFIT | NIGHT & WEEKEND</span>
             <h1 style="margin-bottom: var(--space-lg);"><span class="hl">自分のペース</span>で、<br/>無理なく続く運動習慣を。</h1>
             <p class="text-lead text-muted">日中は仕事などで通えない方や、ご自身のペースでトレーニングに集中したい方向けに、平日の夜間帯や週末を通した自由利用プラン（ナイト会員枠）を提供しています。</p>
-            <p class="text-muted">べるフィットは、町田市木曽東のメディカルフィットネスです。<br/>ナイトは平日20:00〜翌9:00、週末は24時間ご利用いただける通い方です。<br/>20時以降と週末はスタッフのいない自由利用の時間帯で、QRコードで入館していただきます。</p>
+            <p class="lead-note">べるフィットは、<b>町田市木曽東</b>のメディカルフィットネスです。<br/>ナイトは平日 <b>20:00〜翌9:00</b>、週末は <b>24時間</b> ご利用いただける通い方です。<br/>20時以降と週末はスタッフのいない自由利用の時間帯で、QRコードで入館していただきます。</p>
           </div>
           <div class="editorial-image">
              <img src="../../../images/photos/fitness-night.webp" alt="夜間枠での運動の様子" class="editorial-photo editorial-photo--hero">
@@ -258,21 +295,26 @@
 
       <section class="section-spacing container-narrow" style="margin: 0 auto;">
          <div class="grid grid-2 grid-gap-md">
-            <div class="card text-center">
-              <h4 style="margin-bottom: var(--space-xs); font-size: 1rem;">対象</h4>
-              <p class="text-muted text-sm mb-0">働く世代の方など、日中に通いにくい方</p>
+            <div class="card fact-card text-center">
+              <h4>対象</h4>
+              <p class="fact-card__main">働く世代の方</p>
+              <p class="fact-card__note">日中に通いにくい方へ</p>
             </div>
-            <div class="card text-center">
-              <h4 style="margin-bottom: var(--space-xs); font-size: 1rem;">利用できる時間</h4>
-              <p class="text-muted text-sm mb-0">平日 20:00〜翌9:00<br/>週末 24時間<br/>（スタッフのいない自由利用）</p>
+            <div class="card fact-card text-center">
+              <h4>利用できる時間</h4>
+              <p class="fact-card__main">平日 20:00<span class="u">〜翌</span>9:00<br/>週末 24<span class="u">時間</span></p>
+              <p class="fact-card__note">20時以降と週末は<br/>スタッフのいない自由利用</p>
             </div>
-            <div class="card text-center">
-              <h4 style="margin-bottom: var(--space-xs); font-size: 1rem;">料金</h4>
-              <p class="text-muted text-sm mb-0">月4,980円（税込）<br/>入会金16,500円<br/>見学・体験は無料<br/><a href="../../../price/index.html">料金の詳細</a></p>
+            <div class="card fact-card text-center">
+              <h4>料金</h4>
+              <p class="fact-card__main">4,980<span class="u">円 / 月</span></p>
+              <p class="fact-card__note">税込／入会金 16,500円<br/>見学・体験は無料</p>
+              <a class="fact-card__link" href="../../../price/index.html">料金の詳細を見る &rarr;</a>
             </div>
-            <div class="card text-center">
-              <h4 style="margin-bottom: var(--space-xs); font-size: 1rem;">駐車場</h4>
-              <p class="text-muted text-sm mb-0">10台・無料</p>
+            <div class="card fact-card text-center">
+              <h4>駐車場</h4>
+              <p class="fact-card__main">10<span class="u">台</span> 無料</p>
+              <p class="fact-card__note">施設向かい2台<br/>近隣提携8台</p>
             </div>
          </div>
       </section>
@@ -319,9 +361,12 @@
       </section>
 
       <section class="section-spacing container-narrow" style="margin: 0 auto;">
-        <div class="card">
-          <h4 style="margin-bottom: var(--space-xs);">お車でお越しの方へ</h4>
-          <p class="text-muted mb-0">施設の向かいに2台、近隣の提携駐車場に8台、あわせて10台分をご用意しています。いずれも無料でご利用いただけます。</p>
+        <div class="card park-block">
+          <h4 class="park-block__label">お車でお越しの方へ</h4>
+          <div>
+            <p class="park-block__num">10<span class="u">台</span> すべて無料</p>
+            <p class="park-block__body">施設の向かいに2台、近隣の提携駐車場に8台、あわせて10台分をご用意しています。</p>
+          </div>
         </div>
       </section>
 
