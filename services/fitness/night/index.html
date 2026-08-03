@@ -54,6 +54,17 @@
         font-feature-settings:"tnum"; margin:0 0 .35rem; }
       .park-block__num .u{ font-size:.6em; font-weight:500; color:var(--color-text-muted); margin-left:.2em; font-family:var(--font-family-base); }
       .park-block__body{ font-size:.88rem; line-height:1.95; letter-spacing:.02em; color:var(--color-text-muted); margin:0; }
+
+      /* === 追加ブロックを装飾レイヤーに合流させる（意味駆動・埋め草にしない） === */
+      /* 要約カード群：ヒーローの温かさを下へ引き継ぐ */
+      .facts-deco{ position:relative; overflow:hidden; }
+      .facts-deco > .facts-inner{ position:relative; z-index:2; }
+      .facts-deco > img{ position:absolute; pointer-events:none; user-select:none; z-index:1; }
+      .facts-deco__wash{ top:-30%; right:-6%; width:min(34vw,420px); opacity:.32; filter:saturate(.9); }
+      /* 駐車場：来館の場面。図は1点だけ、見出しの隣に置く */
+      .park-figure{ width:76px; height:auto; flex:0 0 auto; opacity:.95; }
+      .park-block__label{ display:flex; align-items:center; gap:.6rem; }
+      @media (max-width:767px){ .park-figure{ width:58px; } .facts-deco__wash{ width:56vw; opacity:.26; } }
     </style>
 
     <!-- ============================================================
@@ -293,8 +304,9 @@
         </div>
       </section>
 
-      <section class="section-spacing container-narrow" style="margin: 0 auto;">
-         <div class="grid grid-2 grid-gap-md">
+      <section class="section-spacing container-narrow facts-deco" style="margin: 0 auto;">
+        <img src="../../../images/materials/homepage/hp-wash-peach.webp" alt="" aria-hidden="true" class="facts-deco__wash" loading="lazy" />
+         <div class="grid grid-2 grid-gap-md facts-inner">
             <div class="card fact-card text-center">
               <h4>対象</h4>
               <p class="fact-card__main">働く世代の方</p>
@@ -362,7 +374,7 @@
 
       <section class="section-spacing container-narrow" style="margin: 0 auto;">
         <div class="card park-block">
-          <h4 class="park-block__label">お車でお越しの方へ</h4>
+          <h4 class="park-block__label"><img src="../../../images/materials/subpages/sp-moon.webp" alt="" aria-hidden="true" class="park-figure" loading="lazy" /><span>お車でお越しの方へ</span></h4>
           <div>
             <p class="park-block__num">10<span class="u">台</span> すべて無料</p>
             <p class="park-block__body">施設の向かいに2台、近隣の提携駐車場に8台、あわせて10台分をご用意しています。</p>
