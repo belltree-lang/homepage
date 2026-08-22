@@ -824,8 +824,11 @@ def update_top_page(posts: list[dict], dry: bool) -> tuple[bool, str]:
         return False, "トップページに差し込み口（NEWS_LATEST マーカー）がない"
     latest = posts[:3]
     cards = "\n".join(card_html(p, "news/") for p in latest)
+    # 地色は band-base（白）。直前の「改善事例」が紙色のカード並びなので、
+    # ここを紙色にすると同じ地色・同じ幅のカードが続いて1つの節に見える。
+    # 次の「わたしたちのこと」も白だが、あちらは本文中心なので見分けがつく。
     block = f"""{TOP_START}
-<section class="band-paper sec-pad" id="news" style="border-top:1px solid var(--bt-line-soft)">
+<section class="band-base sec-pad" id="news" style="border-top:1px solid var(--bt-line-soft)">
   <div class="wrap">
     <div class="news-sec-head">
       <span class="news-eyebrow">News &amp; Column</span>
