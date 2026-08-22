@@ -21,6 +21,8 @@
 <meta name="twitter:image" content="https://belltree1102.com/assets/img/og/og-default.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <link rel="alternate" type="application/rss+xml" title="べるつりー お知らせ" href="https://belltree1102.com/news/feed.xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="../../colors_and_type.css" />
 <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -92,11 +94,20 @@
   .footer-col a:hover { color: #fff; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 22px var(--bt-gutter); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.45); }
 
-  @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } }
   @media (max-width: 760px) { .footer-top { grid-template-columns: 1fr 1fr; } .approach-final { padding: 26px 22px; } }
-  @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
+  @media (max-width: 480px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .info-bar .wrap { font-size: 11px; gap: 6px 12px; }
+    /* 他ページと同じ畳み方にそろえる */
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .header-inner { gap: 10px; }
+    .brand-name { font-size: 17px; }
+    .brand-name .jp { font-size: 12px; }
+    .header-cta { gap: 10px; }
+    .btn-sm { height: 38px; padding: 0 15px; font-size: 12px; }
+  }
 
-  /* ハンバーガー・ドロワー */
+  /* ハンバーガー・ドロワー（表示の切り替えは colors_and_type.css の 1120px が持つ） */
   .nav-toggle { display: none; width: 44px; height: 44px; flex-shrink: 0; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; border: 1px solid var(--bt-line); border-radius: 10px; background: rgba(255,255,255,0.7); cursor: pointer; }
   .nav-toggle span { display: block; width: 20px; height: 2px; border-radius: 2px; background: var(--bt-primary); transition: transform var(--bt-dur) var(--bt-ease), opacity var(--bt-dur) var(--bt-ease); }
   body.drawer-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -107,8 +118,6 @@
   .nav-drawer-inner { display: flex; flex-direction: column; padding: 20px 24px 40px; }
   .nav-drawer-inner a { font-size: 16px; font-weight: 600; color: var(--bt-ink-1); padding: 17px 6px; border-bottom: 1px solid var(--bt-line-soft); white-space: nowrap; }
   .nav-drawer-inner a:hover { color: var(--bt-accent); }
-  @media (max-width: 1000px) { .nav-toggle { display: flex; } }
-  @media (max-width: 480px) { .header-inner { gap: 10px; } .brand-name { font-size: 17px; } .brand-name .jp { font-size: 12px; } .header-cta { gap: 10px; } .btn-sm { height: 38px; padding: 0 15px; font-size: 12px; } }
 
   .fab-call{position:fixed;right:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;gap:10px;height:60px;padding:0 22px 0 19px;border-radius:40px;background:var(--bt-accent,#C27A65);color:#fff;box-shadow:0 12px 30px rgba(80,55,30,.30);text-decoration:none;font-family:var(--bt-font-sans,"Noto Sans JP",sans-serif);}
   .fab-call svg{width:25px;height:25px;flex:none;}
@@ -126,6 +135,7 @@
   /* ---- 記事本文 ---- */
   .article-head { max-width: 780px; margin: 0 auto; text-align: center; padding: 56px 0 8px; }
   .article-head .news-meta { justify-content: center; }
+  .article-head .band { display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--cat-color, var(--bt-accent)); margin: 0 0 14px; }
   .article-head h1 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(25px, 3.4vw, 36px); line-height: 1.6; color: var(--bt-primary); margin: 0 0 18px; letter-spacing: 0.02em; }
   .article-head .lead { font-size: 15px; color: var(--bt-ink-2); line-height: 2; margin: 0; }
   .article-source { display: inline-block; margin-top: 20px; font-size: 12.5px; color: var(--bt-ink-4); border: 1px solid var(--bt-line); border-radius: var(--bt-r-pill); padding: 6px 16px; background: rgba(255,255,255,0.6); }
@@ -150,13 +160,12 @@
 
   .article-foot { max-width: 780px; margin: 32px auto 0; display: flex; justify-content: center; }
   .related { max-width: 1000px; margin: 0 auto; }
-  /* 直下の見出しだけ。カード内の h2 まで中央寄せにしないこと */
+  /* 直下の見出しだけ。カード内の見出しまで中央寄せにしないこと */
   .related > h2 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 19px; color: var(--bt-primary); text-align: center; margin: 0 0 26px; }
   /* 関連が2本以下のとき、3列グリッドの左寄せにならないよう中央に寄せる */
   .related .news-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 318px)); justify-content: center; }
 
-  @media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } }
+  @media (max-width: 600px) { .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -225,7 +234,7 @@
       <a href="../../index.html#concerns">お悩み別解決策</a>
       <a href="../../index.html#model">サービス一覧</a>
       <a href="../../index.html#cases">改善事例</a>
-      <a href="../../news/index.html">お知らせ</a>
+      <a href="../../news/index.html" class="current" aria-current="page">お知らせ</a>
       <a href="../../team/index.html">スタッフ紹介</a>
       <a href="../../about/index.html">会社概要</a>
     </nav>
@@ -336,8 +345,8 @@
         <span class="news-cat">健康コラム</span>
         <time class="news-date" datetime="2026-08-22">2026年8月22日</time>
       </div>
-      <h2>夏の疲れ、秋に持ち越していませんか</h2>
-      <p>冷たい物・冷房・動かない夏で、胃腸は少しずつ疲れています。今日からできる、立て直しの習慣を4つご紹介します。</p>
+      <h3>夏の疲れ、秋に持ち越していませんか</h3>
+      <p>冷たい物・冷房・動かない夏で、胃腸は少しずつ疲れています。今日からできる、立て直しの習慣</p>
       <span class="news-more">続きを読む →</span>
     </a>
     <a class="news-card" href="../toyo-igaku-natsu-tsukare/index.html" data-cat="健康コラム" style="--cat-color: var(--bt-svc-shinkyu);">
@@ -345,7 +354,7 @@
         <span class="news-cat">健康コラム</span>
         <time class="news-date" datetime="2026-08-22">2026年8月22日</time>
       </div>
-      <h2>東洋医学の知恵で、夏の疲れを立て直す</h2>
+      <h3>東洋医学の知恵で、夏の疲れを立て直す</h3>
       <p>東洋医学では、夏の湿気と冷たい物のとりすぎは、胃腸のはたらきを弱らせると考えられています。秋を元気に迎えるための、昔から伝わる知恵をご紹介します。</p>
       <span class="news-more">続きを読む →</span>
     </a>

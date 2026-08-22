@@ -7,26 +7,33 @@ _articles/*.md を読んで、
   news/index.html          一覧ページ
   news/<slug>/index.html   記事ページ
   news/feed.xml            RSS
-を書き出す。あわせて sitemap.xml・llms.txt・トップページの最新3件枠も更新する。
+を書き出す。あわせて sitemap.xml・llms.txt・トップページの最新3件枠も更新し、
+最後に _check.py（リンク切れ等の公開前チェック）を通す。
 
 このサイトはビルドツールを入れない方針なので、CI では動かさない。
 手元でこのスクリプトを走らせ、出来た HTML をコミットして公開する。
 
 使い方:
-    python _scripts/build_news.py --dry-run   何が作られるか見るだけ
-    python _scripts/build_news.py             生成する
+    python _scripts/build_news.py --dry-run          何が作られるか見るだけ（組み立ては実際に走らせる）
+    python _scripts/build_news.py                    生成する
+    python _scripts/build_news.py --include-future   配布日がまだ来ていない記事も出す
 
 記事の書き方（_articles/2026-09-01-example.md）:
     ---
     title: 記事の見出し
     description: 一覧とSNSカードに出る一文
+    eyebrow: 帯見出し（紙面にあれば。任意）
     date: 2026-09-01
     category: 健康コラム
     source: べるつりー通信 2026年9月号     ← 任意（紙面の再録なら書く）
+    order: 1                              ← 任意（同じ日付の中での並び。大きいほど前）
     draft: false
     ---
 
     本文（Markdown）
+
+紙面の再録では、確定文言を一字一句変えない。
+三点リーダの点数（…と……）も紙面のまま。揃えたくなっても揃えない。
 """
 
 from __future__ import annotations
@@ -35,9 +42,14 @@ import argparse
 import html
 import json
 import re
+import shutil
+import subprocess
 import sys
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from sync_nav import build_nav  # ナビの正本は sync_nav.py。ここでは持たない
 
 try:
     import markdown as md_lib
@@ -66,65 +78,128 @@ DEFAULT_CATEGORY = "お知らせ"
 # --------------------------------------------------------------------------
 
 FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.S)
+# 全角コロンで書かれていても拾う。前後の空白も許す。
+FM_LINE_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*)\s*[:：]\s*(.*)$")
+BOOL_KEYS = {"draft"}
+TRUE_WORDS = {"true", "yes", "on", "1"}
+FALSE_WORDS = {"false", "no", "off", "0", ""}
+SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+RESERVED_SLUGS = {"index", "feed", "assets"}
+DATE_FORMATS = ("%Y-%m-%d", "%Y/%m/%d", "%Y.%m.%d")
 
 
-def parse_front_matter(raw: str) -> tuple[dict, str]:
+class ArticleError(ValueError):
+    """記事1本の書き方の誤り。どのファイルかを必ず添える。"""
+
+
+def parse_front_matter(raw: str, where: str) -> tuple[dict, str]:
     """YAMLライブラリを使わずに済む範囲の簡易フロントマター解析。"""
+    raw = raw.lstrip("﻿").replace("\r\n", "\n")
     m = FM_RE.match(raw)
     if not m:
-        raise ValueError("フロントマター（--- で囲んだ冒頭）がありません")
+        raise ArticleError(f"{where}: フロントマター（--- で囲んだ冒頭）がありません")
     meta: dict = {}
-    for line in m.group(1).splitlines():
+    for lineno, line in enumerate(m.group(1).splitlines(), start=2):
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        if ":" not in line:
-            continue
-        key, _, value = line.partition(":")
-        key = key.strip()
-        value = value.strip()
+        hit = FM_LINE_RE.match(line)
+        if not hit:
+            # 黙って捨てると「書いたのに効かない」に化けるので必ず止める
+            raise ArticleError(f"{where}:{lineno}: フロントマターの書き方が読めません → {line!r}")
+        key, value = hit.group(1).strip(), hit.group(2).strip()
         if value.startswith("[") and value.endswith("]"):
             meta[key] = [v.strip().strip("\"'") for v in value[1:-1].split(",") if v.strip()]
-        elif value.lower() in ("true", "false"):
-            meta[key] = value.lower() == "true"
+            continue
+        value = value.strip("\"'").strip()
+        if key in BOOL_KEYS:
+            low = value.lower()
+            if low in TRUE_WORDS:
+                meta[key] = True
+            elif low in FALSE_WORDS:
+                meta[key] = False
+            else:
+                raise ArticleError(f"{where}: {key} は true / false で書く（いまは {value!r}）")
         else:
-            meta[key] = value.strip("\"'")
+            meta[key] = value
     return meta, m.group(2)
 
 
-def load_articles() -> list[dict]:
+def parse_date(value: str, where: str) -> date:
+    s = str(value).strip()
+    for fmt in DATE_FORMATS:
+        try:
+            return datetime.strptime(s, fmt).date()
+        except ValueError:
+            continue
+    raise ArticleError(f"{where}: date が読めません（{value!r}）。YYYY-MM-DD で書く")
+
+
+def load_articles(include_future: bool) -> tuple[list[dict], list[str]]:
+    """公開する記事の一覧と、見送った理由の一覧を返す。"""
+    notes: list[str] = []
     if not ARTICLES_DIR.exists():
-        return []
-    posts = []
+        return [], [f"{ARTICLES_DIR} がありません"]
+    today = datetime.now(JST).date()
+    posts: list[dict] = []
+    seen_slugs: dict[str, str] = {}
+
     for path in sorted(ARTICLES_DIR.glob("*.md")):
-        meta, body = parse_front_matter(path.read_text(encoding="utf-8"))
-        if meta.get("draft"):
+        where = path.name
+        meta, body = parse_front_matter(path.read_text(encoding="utf-8"), where)
+
+        if meta.get("draft") is True:
+            notes.append(f"{where}: draft: true のため見送り")
             continue
         for required in ("title", "date"):
             if not meta.get(required):
-                raise ValueError(f"{path.name}: {required} が空です")
-        slug = meta.get("slug") or re.sub(r"^\d{4}-\d{2}-\d{2}-", "", path.stem)
+                raise ArticleError(f"{where}: {required} が空です")
+
+        slug = (meta.get("slug") or re.sub(r"^\d{4}-\d{2}-\d{2}-", "", path.stem)).strip()
+        if not SLUG_RE.match(slug):
+            raise ArticleError(
+                f"{where}: slug「{slug}」は使えません。半角英小文字・数字・ハイフンだけで書く"
+            )
+        if slug in RESERVED_SLUGS:
+            raise ArticleError(f"{where}: slug「{slug}」は news/ の予約語なので使えません")
+        if slug in seen_slugs:
+            raise ArticleError(f"{where}: slug「{slug}」が {seen_slugs[slug]} と重複しています")
+        seen_slugs[slug] = where
+
+        d = parse_date(meta["date"], where)
+        if d > today and not include_future:
+            notes.append(f"{where}: 掲載日 {d.isoformat()} がまだ来ていないため見送り（--include-future で出せる）")
+            continue
+
         category = meta.get("category") or DEFAULT_CATEGORY
         if category not in CATEGORIES:
-            raise ValueError(f"{path.name}: 未定義のカテゴリ「{category}」")
-        html_body = md_lib.markdown(body, extensions=["extra", "sane_lists"])
+            raise ArticleError(f"{where}: 未定義のカテゴリ「{category}」")
+
+        try:
+            order = int(str(meta.get("order", 0) or 0))
+        except ValueError:
+            raise ArticleError(f"{where}: order は整数で書く（いまは {meta.get('order')!r}）")
+
         posts.append(
             {
                 "slug": slug,
                 "title": meta["title"],
                 "description": meta.get("description", ""),
-                "date": str(meta["date"]),
+                "eyebrow": meta.get("eyebrow", ""),
+                "date": d.isoformat(),
+                "date_obj": d,
                 "category": category,
                 "source": meta.get("source", ""),
                 "tags": meta.get("tags", []),
                 # 同じ日付の記事の並び順。大きいほど前に出る（既定0）
-                "order": int(meta.get("order", 0) or 0),
-                "body": html_body,
+                "order": order,
+                "body": md_lib.markdown(body, extensions=["extra", "sane_lists"]),
                 "path": path,
             }
         )
-    posts.sort(key=lambda p: (p["date"], p["order"], p["slug"]), reverse=True)
-    return posts
+
+    posts.sort(key=lambda p: (p["date_obj"], p["order"], p["slug"]), reverse=True)
+    return posts, notes
 
 
 def jp_date(iso: str) -> str:
@@ -133,13 +208,21 @@ def jp_date(iso: str) -> str:
 
 
 def esc(s: str) -> str:
-    return html.escape(s, quote=True)
+    return html.escape(str(s), quote=True)
+
+
+def ld_json(obj: dict) -> str:
+    """構造化データ。</script> や & がそのまま出ると HTML を壊すので退避する。"""
+    s = json.dumps(obj, ensure_ascii=False, indent=2)
+    return s.replace("<", "\\u003C").replace(">", "\\u003E").replace("&", "\\u0026")
 
 
 # --------------------------------------------------------------------------
 # 共通パーツ（ヘッダー・フッター・CSS）
 # --------------------------------------------------------------------------
 
+# 注: ヘッダーの折返し（1120px）・小さい画面の詰め（430px）・カード類は
+#     colors_and_type.css が正本。ここではそれと重ならないものだけ持つ。
 CHROME_CSS = """
   *, *::before, *::after { box-sizing: border-box; }
   body { margin: 0; overflow-x: hidden; }
@@ -210,11 +293,20 @@ CHROME_CSS = """
   .footer-col a:hover { color: #fff; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 22px var(--bt-gutter); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.45); }
 
-  @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } }
   @media (max-width: 760px) { .footer-top { grid-template-columns: 1fr 1fr; } .approach-final { padding: 26px 22px; } }
-  @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
+  @media (max-width: 480px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .info-bar .wrap { font-size: 11px; gap: 6px 12px; }
+    /* 他ページと同じ畳み方にそろえる */
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .header-inner { gap: 10px; }
+    .brand-name { font-size: 17px; }
+    .brand-name .jp { font-size: 12px; }
+    .header-cta { gap: 10px; }
+    .btn-sm { height: 38px; padding: 0 15px; font-size: 12px; }
+  }
 
-  /* ハンバーガー・ドロワー */
+  /* ハンバーガー・ドロワー（表示の切り替えは colors_and_type.css の 1120px が持つ） */
   .nav-toggle { display: none; width: 44px; height: 44px; flex-shrink: 0; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; border: 1px solid var(--bt-line); border-radius: 10px; background: rgba(255,255,255,0.7); cursor: pointer; }
   .nav-toggle span { display: block; width: 20px; height: 2px; border-radius: 2px; background: var(--bt-primary); transition: transform var(--bt-dur) var(--bt-ease), opacity var(--bt-dur) var(--bt-ease); }
   body.drawer-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -225,8 +317,6 @@ CHROME_CSS = """
   .nav-drawer-inner { display: flex; flex-direction: column; padding: 20px 24px 40px; }
   .nav-drawer-inner a { font-size: 16px; font-weight: 600; color: var(--bt-ink-1); padding: 17px 6px; border-bottom: 1px solid var(--bt-line-soft); white-space: nowrap; }
   .nav-drawer-inner a:hover { color: var(--bt-accent); }
-  @media (max-width: 1000px) { .nav-toggle { display: flex; } }
-  @media (max-width: 480px) { .header-inner { gap: 10px; } .brand-name { font-size: 17px; } .brand-name .jp { font-size: 12px; } .header-cta { gap: 10px; } .btn-sm { height: 38px; padding: 0 15px; font-size: 12px; } }
 
   .fab-call{position:fixed;right:18px;bottom:18px;z-index:900;display:inline-flex;align-items:center;gap:10px;height:60px;padding:0 22px 0 19px;border-radius:40px;background:var(--bt-accent,#C27A65);color:#fff;box-shadow:0 12px 30px rgba(80,55,30,.30);text-decoration:none;font-family:var(--bt-font-sans,"Noto Sans JP",sans-serif);}
   .fab-call svg{width:25px;height:25px;flex:none;}
@@ -248,6 +338,7 @@ NEWS_CSS = """
   /* ---- 記事本文 ---- */
   .article-head { max-width: 780px; margin: 0 auto; text-align: center; padding: 56px 0 8px; }
   .article-head .news-meta { justify-content: center; }
+  .article-head .band { display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--cat-color, var(--bt-accent)); margin: 0 0 14px; }
   .article-head h1 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(25px, 3.4vw, 36px); line-height: 1.6; color: var(--bt-primary); margin: 0 0 18px; letter-spacing: 0.02em; }
   .article-head .lead { font-size: 15px; color: var(--bt-ink-2); line-height: 2; margin: 0; }
   .article-source { display: inline-block; margin-top: 20px; font-size: 12.5px; color: var(--bt-ink-4); border: 1px solid var(--bt-line); border-radius: var(--bt-r-pill); padding: 6px 16px; background: rgba(255,255,255,0.6); }
@@ -272,13 +363,12 @@ NEWS_CSS = """
 
   .article-foot { max-width: 780px; margin: 32px auto 0; display: flex; justify-content: center; }
   .related { max-width: 1000px; margin: 0 auto; }
-  /* 直下の見出しだけ。カード内の h2 まで中央寄せにしないこと */
+  /* 直下の見出しだけ。カード内の見出しまで中央寄せにしないこと */
   .related > h2 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 19px; color: var(--bt-primary); text-align: center; margin: 0 0 26px; }
   /* 関連が2本以下のとき、3列グリッドの左寄せにならないよう中央に寄せる */
   .related .news-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 318px)); justify-content: center; }
 
-  @media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } }
+  @media (max-width: 600px) { .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } }
 """
 
 DRAWER_JS = """
@@ -322,17 +412,9 @@ FILTER_JS = """
 """
 
 
-def nav_html(prefix: str) -> str:
-    items = [
-        ("ホーム", f"{prefix}index.html"),
-        ("お悩み別解決策", f"{prefix}index.html#concerns"),
-        ("サービス一覧", f"{prefix}index.html#model"),
-        ("改善事例", f"{prefix}index.html#cases"),
-        ("お知らせ", f"{prefix}news/index.html"),
-        ("スタッフ紹介", f"{prefix}team/index.html"),
-        ("会社概要", f"{prefix}about/index.html"),
-    ]
-    links = "\n".join(f'      <a href="{h}">{l}</a>' for l, h in items)
+def nav_html(page_rel: str) -> str:
+    """ナビの中身は sync_nav.py の NAV_ITEMS が正本。ここでは組み立てるだけ。"""
+    links = "\n".join(f"      {a}" for a in build_nav(page_rel))
     return f'    <nav class="main-nav">\n{links}\n    </nav>'
 
 
@@ -343,14 +425,14 @@ PHONE_SVG = (
 )
 
 
-def header_html(prefix: str) -> str:
+def header_html(prefix: str, page_rel: str) -> str:
     return f"""<header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="{prefix}index.html" aria-label="べるつりーグループ">
       <img src="{prefix}assets/belltree-mark.svg" alt="" />
       <span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>
     </a>
-{nav_html(prefix)}
+{nav_html(page_rel)}
     <div class="header-cta">
       <span class="header-phone">
         {PHONE_SVG}
@@ -431,7 +513,8 @@ def footer_html(prefix: str) -> str:
 </a>"""
 
 
-def head_html(prefix: str, title: str, description: str, canonical: str, extra: str = "") -> str:
+def head_html(prefix: str, title: str, description: str, canonical: str,
+              og_type: str = "website", extra: str = "") -> str:
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -447,7 +530,7 @@ def head_html(prefix: str, title: str, description: str, canonical: str, extra: 
 <meta property="og:description" content="{esc(description)}" />
 <meta property="og:url" content="{canonical}" />
 <meta property="og:site_name" content="株式会社べるつりー" />
-<meta property="og:type" content="article" />
+<meta property="og:type" content="{og_type}" />
 <meta property="og:image" content="{SITE}/assets/img/og/og-default.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -455,6 +538,8 @@ def head_html(prefix: str, title: str, description: str, canonical: str, extra: 
 <meta name="twitter:image" content="{SITE}/assets/img/og/og-default.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <link rel="alternate" type="application/rss+xml" title="べるつりー お知らせ" href="{SITE}/news/feed.xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="{prefix}colors_and_type.css" />
 <style>{CHROME_CSS}{NEWS_CSS}</style>
 {extra}
@@ -471,7 +556,7 @@ def card_html(post: dict, prefix_to_news: str) -> str:
         <span class="news-cat">{esc(post['category'])}</span>
         <time class="news-date" datetime="{post['date']}">{jp_date(post['date'])}</time>
       </div>
-      <h2>{esc(post['title'])}</h2>
+      <h3>{esc(post['title'])}</h3>
       <p>{esc(desc)}</p>
       <span class="news-more">続きを読む →</span>
     </a>"""
@@ -489,17 +574,15 @@ def render_index(posts: list[dict]) -> str:
         for c in used_cats
     )
     cards = "\n".join(card_html(p, "") for p in posts)
-    if not posts:
-        cards = ""
 
-    breadcrumb_ld = json.dumps({
+    breadcrumb_ld = ld_json({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "ホーム", "item": f"{SITE}/"},
             {"@type": "ListItem", "position": 2, "name": "お知らせ・健康コラム", "item": f"{SITE}/news/"},
         ],
-    }, ensure_ascii=False, indent=2)
+    })
 
     extra = f'<script type="application/ld+json">\n{breadcrumb_ld}\n</script>'
 
@@ -509,9 +592,10 @@ def render_index(posts: list[dict]) -> str:
             "お知らせ・健康コラム｜株式会社べるつりー",
             "べるつりーグループからのお知らせと、毎月お配りしている「べるつりー通信」から生まれた健康コラム。季節ごとの体調の注意点、介護保険や医療保険のしくみ、地域での取り組みをご紹介します。",
             f"{SITE}/news/",
+            "website",
             extra,
         )
-        + header_html(prefix)
+        + header_html(prefix, "news/index.html")
         + f"""
 <nav class="breadcrumb" aria-label="現在位置">
   <div class="wrap">
@@ -531,8 +615,9 @@ def render_index(posts: list[dict]) -> str:
   </div>
 </section>
 
-<section class="sec-pad">
+<section class="sec-pad" aria-labelledby="news-list-title">
   <div class="wrap">
+    <h2 class="sr-only" id="news-list-title">記事の一覧</h2>
     <div class="cat-filter">
       <button class="cat-chip" type="button" data-cat="all" aria-pressed="true">すべて</button>
 {chips}
@@ -568,10 +653,10 @@ def render_article(post: dict, posts: list[dict]) -> str:
     color = CATEGORIES[post["category"]]
     related = [p for p in posts if p["slug"] != post["slug"] and p["category"] == post["category"]][:3]
     if len(related) < 3:
-        rest = [p for p in posts if p["slug"] != post["slug"] and p not in related]
-        related += rest[: 3 - len(related)]
+        chosen = {p["slug"] for p in related} | {post["slug"]}
+        related += [p for p in posts if p["slug"] not in chosen][: 3 - len(related)]
 
-    article_ld = json.dumps({
+    article_ld = ld_json({
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": post["title"],
@@ -587,9 +672,9 @@ def render_article(post: dict, posts: list[dict]) -> str:
             "name": "株式会社べるつりー",
             "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/belltree-mark.svg"},
         },
-    }, ensure_ascii=False, indent=2)
+    })
 
-    breadcrumb_ld = json.dumps({
+    breadcrumb_ld = ld_json({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -597,13 +682,14 @@ def render_article(post: dict, posts: list[dict]) -> str:
             {"@type": "ListItem", "position": 2, "name": "お知らせ・健康コラム", "item": f"{SITE}/news/"},
             {"@type": "ListItem", "position": 3, "name": post["title"], "item": f"{SITE}/news/{post['slug']}/"},
         ],
-    }, ensure_ascii=False, indent=2)
+    })
 
     extra = (
         f'<script type="application/ld+json">\n{article_ld}\n</script>\n'
         f'<script type="application/ld+json">\n{breadcrumb_ld}\n</script>'
     )
 
+    band_html = f'      <span class="band">{esc(post["eyebrow"])}</span>\n' if post["eyebrow"] else ""
     source_html = ""
     if post["source"]:
         source_html = f'      <span class="article-source">この記事は「{esc(post["source"])}」からの再録です</span>\n'
@@ -630,9 +716,10 @@ def render_article(post: dict, posts: list[dict]) -> str:
             f"{post['title']}｜株式会社べるつりー",
             post["description"],
             f"{SITE}/news/{post['slug']}/",
+            "article",
             extra,
         )
-        + header_html(prefix)
+        + header_html(prefix, f"news/{post['slug']}/index.html")
         + f"""
 <nav class="breadcrumb" aria-label="現在位置">
   <div class="wrap">
@@ -651,7 +738,7 @@ def render_article(post: dict, posts: list[dict]) -> str:
         <span class="news-cat">{esc(post['category'])}</span>
         <time class="news-date" datetime="{post['date']}">{jp_date(post['date'])}</time>
       </div>
-      <h1>{esc(post['title'])}</h1>
+{band_html}      <h1>{esc(post['title'])}</h1>
       <p class="lead">{esc(post['description'])}</p>
 {source_html}    </header>
   </div>
@@ -717,21 +804,25 @@ def render_feed(posts: list[dict]) -> str:
 
 # --------------------------------------------------------------------------
 # 派生ファイルの更新
+#   どれも「静かに何もしない」が一番こわいので、
+#   当たらなかったときは False を返して呼び出し側で失敗にする。
 # --------------------------------------------------------------------------
 
 TOP_START = "<!-- NEWS_LATEST_START -->"
 TOP_END = "<!-- NEWS_LATEST_END -->"
 
 
-def update_top_page(posts: list[dict], dry: bool) -> str:
+def update_top_page(posts: list[dict], dry: bool) -> tuple[bool, str]:
     path = ROOT / "index.html"
+    if not path.exists():
+        return False, "トップページ index.html が見つからない"
     text = path.read_text(encoding="utf-8")
     if TOP_START not in text or TOP_END not in text:
-        return "トップページに差し込み口（NEWS_LATEST マーカー）がないため未更新"
+        return False, "トップページに差し込み口（NEWS_LATEST マーカー）がない"
     latest = posts[:3]
     cards = "\n".join(card_html(p, "news/") for p in latest)
     block = f"""{TOP_START}
-<section class="band-base sec-pad" id="news" style="border-top:1px solid var(--bt-line-soft)">
+<section class="band-paper sec-pad" id="news" style="border-top:1px solid var(--bt-line-soft)">
   <div class="wrap">
     <div class="news-sec-head">
       <span class="news-eyebrow">News &amp; Column</span>
@@ -750,17 +841,23 @@ def update_top_page(posts: list[dict], dry: bool) -> str:
     pattern = re.compile(re.escape(TOP_START) + r".*?" + re.escape(TOP_END), re.S)
     new_text = pattern.sub(lambda _: block, text)
     if new_text == text:
-        return "トップページ: 変更なし"
+        return True, "トップページ: 変更なし"
     if not dry:
         path.write_text(new_text, encoding="utf-8")
-    return f"トップページ: 最新{len(latest)}件を更新"
+    return True, f"トップページ: 最新{len(latest)}件を更新"
 
 
-def update_sitemap(posts: list[dict], dry: bool) -> str:
+def update_sitemap(posts: list[dict], dry: bool) -> tuple[bool, str]:
     path = ROOT / "sitemap.xml"
+    if not path.exists():
+        return False, "sitemap.xml が見つからない"
     text = path.read_text(encoding="utf-8")
+    if "</urlset>" not in text:
+        return False, "sitemap.xml に </urlset> がない"
     # 既存の /news/ 行をいったん全部落としてから入れ直す（重複防止）
-    text = re.sub(r"[ \t]*<url><loc>https://belltree1102\.com/news/[^<]*</loc>.*?</url>\n", "", text)
+    text = re.sub(
+        r"[ \t]*<url><loc>" + re.escape(SITE) + r"/news/[^<]*</loc>.*?</url>\n", "", text, flags=re.S
+    )
     newest = posts[0]["date"] if posts else datetime.now(JST).strftime("%Y-%m-%d")
     lines = [
         f'  <url><loc>{SITE}/news/</loc><lastmod>{newest}</lastmod>'
@@ -774,14 +871,16 @@ def update_sitemap(posts: list[dict], dry: bool) -> str:
     new_text = text.replace("</urlset>", block + "</urlset>")
     if not dry:
         path.write_text(new_text, encoding="utf-8")
-    return f"sitemap.xml: {len(posts) + 1} 件のURLを登録"
+    return True, f"sitemap.xml: {len(posts) + 1} 件のURLを登録"
 
 
 LLMS_START = "## お知らせ・健康コラム"
 
 
-def update_llms(posts: list[dict], dry: bool) -> str:
+def update_llms(posts: list[dict], dry: bool) -> tuple[bool, str]:
     path = ROOT / "llms.txt"
+    if not path.exists():
+        return False, "llms.txt が見つからない"
     text = path.read_text(encoding="utf-8")
     lines = [LLMS_START, ""]
     lines.append(
@@ -794,50 +893,111 @@ def update_llms(posts: list[dict], dry: bool) -> str:
     block = "\n".join(lines) + "\n"
 
     if LLMS_START in text:
-        text = re.sub(
+        new_text = re.sub(
             re.escape(LLMS_START) + r".*?(?=\n## |\Z)", lambda _: block.rstrip("\n") + "\n", text, flags=re.S
         )
     else:
-        text = text.rstrip("\n") + "\n\n" + block
+        new_text = text.rstrip("\n") + "\n\n" + block
+    if LLMS_START not in new_text:
+        return False, "llms.txt: 差し替えに失敗した"
     if not dry:
-        path.write_text(text, encoding="utf-8")
-    return f"llms.txt: {min(len(posts), 20)} 件を掲載"
+        path.write_text(new_text, encoding="utf-8")
+    return True, f"llms.txt: {min(len(posts), 20)} 件を掲載"
+
+
+def prune_orphans(posts: list[dict], dry: bool) -> list[str]:
+    """記事mdが消えた・draftに戻ったのに news/ に残っているページを片づける。"""
+    if not NEWS_DIR.exists():
+        return []
+    keep = {p["slug"] for p in posts}
+    removed = []
+    for child in sorted(NEWS_DIR.iterdir()):
+        if not child.is_dir() or child.name in keep:
+            continue
+        if not (child / "index.html").exists():
+            continue  # 生成物でなさそうなものは触らない
+        removed.append(child.name)
+        if not dry:
+            shutil.rmtree(child)
+    return removed
+
+
+def run_check() -> tuple[bool, str]:
+    """公開前チェック（_check.py）をそのまま通す。"""
+    script = ROOT / "_check.py"
+    if not script.exists():
+        return True, "_check.py が無いので省略"
+    proc = subprocess.run(
+        [sys.executable, str(script)], cwd=str(ROOT), capture_output=True, text=True, encoding="utf-8"
+    )
+    out = (proc.stdout or "") + (proc.stderr or "")
+    ok = "errors: 0" in out
+    return ok, out.strip()
 
 
 # --------------------------------------------------------------------------
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true", help="書き出さずに結果だけ表示")
+    ap.add_argument("--dry-run", action="store_true", help="書き出さずに結果だけ表示（組み立ては実際に走らせる）")
+    ap.add_argument("--include-future", action="store_true", help="掲載日がまだ来ていない記事も出す")
     args = ap.parse_args()
 
-    posts = load_articles()
+    try:
+        posts, notes = load_articles(args.include_future)
+    except ArticleError as e:
+        print(f"記事の書き方に誤りがあります:\n  {e}", file=sys.stderr)
+        return 1
+
+    for n in notes:
+        print(f"  見送り: {n}")
     if not posts:
-        print("公開できる記事が _articles/ にありません（draft: true は除外されます）")
+        print("公開できる記事が _articles/ にありません", file=sys.stderr)
         return 1
 
     print(f"記事 {len(posts)} 件を読み込みました")
     for p in posts:
         print(f"  {p['date']}  [{p['category']}]  {p['title']}  → news/{p['slug']}/")
 
+    # --dry-run でも組み立てだけは必ず走らせる（テンプレートの壊れをここで拾う）
+    pages = {NEWS_DIR / "index.html": render_index(posts)}
+    for p in posts:
+        pages[NEWS_DIR / p["slug"] / "index.html"] = render_article(p, posts)
+    pages[NEWS_DIR / "feed.xml"] = render_feed(posts)
+
     if not args.dry_run:
-        NEWS_DIR.mkdir(exist_ok=True)
-        (NEWS_DIR / "index.html").write_text(render_index(posts), encoding="utf-8")
-        for p in posts:
-            d = NEWS_DIR / p["slug"]
-            d.mkdir(exist_ok=True)
-            (d / "index.html").write_text(render_article(p, posts), encoding="utf-8")
-        (NEWS_DIR / "feed.xml").write_text(render_feed(posts), encoding="utf-8")
+        for target, content in pages.items():
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(content, encoding="utf-8")
+
+    removed = prune_orphans(posts, args.dry_run)
+    if removed:
+        print(f"\n公開対象から外れたので news/ から削除: {', '.join(removed)}")
 
     print()
-    print(update_top_page(posts, args.dry_run))
-    print(update_sitemap(posts, args.dry_run))
-    print(update_llms(posts, args.dry_run))
+    failures = []
+    for ok, msg in (update_top_page(posts, args.dry_run),
+                    update_sitemap(posts, args.dry_run),
+                    update_llms(posts, args.dry_run)):
+        print(("" if ok else "【失敗】") + msg)
+        if not ok:
+            failures.append(msg)
 
     if args.dry_run:
-        print("\n--dry-run のため書き込みはしていない")
-    else:
-        print(f"\n生成しました: news/index.html ＋ 記事{len(posts)}本 ＋ feed.xml")
+        print("\n--dry-run のため書き込みはしていない（組み立ては通った）")
+        return 1 if failures else 0
+
+    print(f"\n生成しました: news/index.html ＋ 記事{len(posts)}本 ＋ feed.xml")
+
+    ok, out = run_check()
+    print("\n--- 公開前チェック（_check.py） ---")
+    print(out)
+    if not ok:
+        failures.append("_check.py がエラーを出した")
+
+    if failures:
+        print("\n未完了のものがあります。上を見て直してから公開する。", file=sys.stderr)
+        return 1
     return 0
 
 

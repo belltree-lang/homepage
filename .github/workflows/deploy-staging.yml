@@ -25,6 +25,10 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           server-dir: test/
+          # _articles/ と _scripts/ は必ず除外する。
+          # _articles/ には draft: true の未公開原稿が入っており、
+          # ここを外すと配布月の来ていない記事がそのまま配信される。
+          # （*.md はルート直下しか当たらないので別に書く必要がある）
           exclude: |
             **/.git*
             **/.git*/**
@@ -37,3 +41,5 @@ jobs:
             docs/**
             *.md
             lolipop_staging/**
+            **/_articles/**
+            **/_scripts/**
