@@ -3125,3 +3125,7 @@ textarea:focus-visible,
 @media (max-width: 767px) {
   .map-embed { aspect-ratio: 4 / 3; }
 }
+
+/* LINE CTA variant — LINEブランド色。LINEボタン以外に使わない */
+.fab-button--line { background-color: #06c755; animation: none; }
+.fab-button--line:hover { background-color: #05b34c; color: var(--color-surface); }
