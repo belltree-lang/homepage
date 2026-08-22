@@ -775,7 +775,10 @@ def render_article(post: dict, posts: list[dict]) -> str:
 
 
 def render_feed(posts: list[dict]) -> str:
-    now = datetime.now(JST).strftime("%a, %d %b %Y %H:%M:%S +0900")
+    # 「中身が最後に変わった日」＝いちばん新しい記事の日付。
+    # ここに実行時刻を入れると、走らせるたびに差分が出て git が汚れる。
+    newest = datetime.strptime(posts[0]["date"], "%Y-%m-%d").replace(tzinfo=JST) if posts else datetime.now(JST)
+    now = newest.strftime("%a, %d %b %Y 09:00:00 +0900")
     items = []
     for p in posts[:20]:
         pub = datetime.strptime(p["date"], "%Y-%m-%d").replace(tzinfo=JST)
