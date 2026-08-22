@@ -332,13 +332,18 @@ hr { border: none; border-top: 1px solid var(--bt-line); margin: var(--bt-s-6) 0
    臨時休業・年末年始など「必ず目に入れたい連絡」だけを出す枠。
    記事に pin: true を書いた月だけ build_news.py が中身を入れる。
    常設にすると読まれなくなるので、無い月は帯ごと出さない。
+
+   地色は白寄り（--bt-bg）。すぐ下のヒーローが桃色がかっているので、
+   紙色にすると下に溶けて実際より細く見える。
+   左のアクセント線は .wrap に付ける。帯そのものに付けると、画面が広いとき
+   本文から数百px離れた画面端に線だけ浮く。
    ========================================================= */
-.news-ticker { background: var(--bt-bg-sunk); border-bottom: 1px solid var(--bt-line); }
-.news-ticker .wrap { display: flex; align-items: center; gap: 14px; padding-top: 11px; padding-bottom: 11px; }
-.nt-label { flex: none; display: inline-flex; align-items: center; height: 23px; padding: 0 11px; border-radius: var(--bt-r-pill); background: var(--bt-accent); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; }
+.news-ticker { background: var(--bt-bg); border-top: 1px solid var(--bt-line); border-bottom: 2px solid var(--bt-accent); }
+.news-ticker .wrap { display: flex; align-items: center; gap: 14px; padding-top: 21px; padding-bottom: 21px; border-left: 5px solid var(--bt-accent); }
+.nt-label { flex: none; display: inline-flex; align-items: center; height: 27px; padding: 0 13px; border-radius: var(--bt-r-pill); background: var(--bt-accent); color: #fff; font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; }
 .nt-item { display: flex; align-items: baseline; gap: 12px; min-width: 0; color: var(--bt-ink-1); text-decoration: none; }
-.nt-item time { flex: none; font-size: 12.5px; color: var(--bt-ink-4); font-weight: 500; letter-spacing: 0.04em; }
-.nt-title { font-size: 14px; font-weight: 600; line-height: 1.6; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nt-item time { flex: none; font-size: 13px; color: var(--bt-ink-4); font-weight: 500; letter-spacing: 0.04em; }
+.nt-title { font-size: 16.5px; font-weight: 600; line-height: 1.6; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .nt-item:hover .nt-title { color: var(--bt-accent); text-decoration: underline; text-underline-offset: 3px; }
 .nt-more { flex: none; margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--bt-accent); text-decoration: none; white-space: nowrap; }
 .nt-more:hover { text-decoration: underline; text-underline-offset: 3px; }
