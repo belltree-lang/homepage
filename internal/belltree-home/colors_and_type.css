@@ -267,3 +267,7 @@ hr { border: none; border-top: 1px solid var(--bt-line); margin: var(--bt-s-6) 0
   box-shadow: var(--bt-shadow-1);
   padding: var(--bt-s-6);
 }
+
+/* LINE CTA — LINEブランド色。LINEボタン以外に使わない */
+.btn.line-cta { border-color: #06c755; color: #06c755; }
+.btn.line-cta:hover { background: rgba(6,199,85,.08); border-color: #06c755; color: #06c755; }
