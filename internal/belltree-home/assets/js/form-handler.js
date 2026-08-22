@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
           body: urlEncodedData
         });
         
+        // 計測: 実際に送信できたときだけ「問い合わせ1件」として数える
+        // （ページ側の submit 監視だと、bot の送信試行や中断も1件に数えてしまう）
+        if (window.gtag) {
+          gtag('event', 'generate_lead', {
+            method: 'form',
+            page: form.getAttribute('data-form-type') || 'form'
+          });
+        }
+
         // no-cors returns opaque response, assume success if no network error
         const redirectUrl = form.getAttribute('data-redirect-url') || './thanks/index.html';
         window.location.href = redirectUrl;

@@ -526,20 +526,18 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
 
 <script src="../assets/js/form-handler.js"></script>
 <script>
-  // 計測: 電話タップ・フォーム送信を generate_lead として記録
-  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+  // 計測: 電話タップだけをここで数える。
+  // フォーム送信は form-handler.js が「送信が通ったとき」に記録する。
+  // onclick を持つリンク（追従の電話ボタン）は二重に数えないよう除外。
+  document.querySelectorAll('a[href^="tel:"]:not([onclick])').forEach(function (a) {
     a.addEventListener('click', function () {
-      if (window.gtag) gtag('event', 'generate_lead', { method: 'phone', page: 'contact' });
+      if (window.gtag) gtag('event', 'phone_click', { method: 'phone', page: 'contact' });
     });
-  });
-  var f = document.querySelector('form[data-form-type]');
-  if (f) f.addEventListener('submit', function () {
-    if (window.gtag) gtag('event', 'generate_lead', { method: 'form', page: 'contact' });
   });
 </script>
 
 <!-- sticky phone CTA -->
-<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'fab'});}">
+<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','phone_click',{method:'phone',page:'fab'});}">
   <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
   <span class="fab-call-txt">電話で相談<small>042-682-2839</small></span>
 </a>
