@@ -80,7 +80,7 @@ DEFAULT_CATEGORY = "お知らせ"
 FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.S)
 # 全角コロンで書かれていても拾う。前後の空白も許す。
 FM_LINE_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*)\s*[:：]\s*(.*)$")
-BOOL_KEYS = {"draft"}
+BOOL_KEYS = {"draft", "pin"}
 TRUE_WORDS = {"true", "yes", "on", "1"}
 FALSE_WORDS = {"false", "no", "off", "0", ""}
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -193,6 +193,8 @@ def load_articles(include_future: bool) -> tuple[list[dict], list[str]]:
                 "tags": meta.get("tags", []),
                 # 同じ日付の記事の並び順。大きいほど前に出る（既定0）
                 "order": order,
+                # トップの「お知らせ帯」に出す（臨時休業・年末年始など）
+                "pin": meta.get("pin") is True,
                 "body": md_lib.markdown(body, extensions=["extra", "sane_lists"]),
                 "path": path,
             }
@@ -813,6 +815,51 @@ def render_feed(posts: list[dict]) -> str:
 
 TOP_START = "<!-- NEWS_LATEST_START -->"
 TOP_END = "<!-- NEWS_LATEST_END -->"
+TICKER_START = "<!-- NEWS_TICKER_START -->"
+TICKER_END = "<!-- NEWS_TICKER_END -->"
+
+
+def update_top_ticker(posts: list[dict], dry: bool) -> tuple[bool, str]:
+    """ヘッダー直下の1行帯。臨時休業・年末年始など、必ず目に入れたい連絡だけ出す。
+
+    記事に pin: true と書いた月だけ出て、無い月は帯ごと消える。
+    常設にすると「いつもある飾り」になって読まれなくなるため、条件付きにしている。
+    """
+    path = ROOT / "index.html"
+    if not path.exists():
+        return False, "トップページ index.html が見つからない"
+    text = path.read_text(encoding="utf-8")
+    if TICKER_START not in text or TICKER_END not in text:
+        return False, "トップページに差し込み口（NEWS_TICKER マーカー）がない"
+
+    pinned = [p for p in posts if p["pin"]]
+    if pinned:
+        p = pinned[0]
+        body = f"""
+<div class="news-ticker">
+  <div class="wrap">
+    <span class="nt-label">お知らせ</span>
+    <a class="nt-item" href="news/{p['slug']}/index.html">
+      <time datetime="{p['date']}">{jp_date(p['date'])}</time>
+      <span class="nt-title">{esc(p['title'])}</span>
+    </a>
+    <a class="nt-more" href="news/index.html">お知らせ一覧</a>
+  </div>
+</div>
+"""
+        msg = f"お知らせ帯: 「{p['title']}」を掲出"
+        if len(pinned) > 1:
+            msg += f"（pin が {len(pinned)} 件あるので新しい1件だけ出した）"
+    else:
+        body = "\n"
+        msg = "お知らせ帯: pin: true の記事が無いので出さない"
+
+    block = TICKER_START + body + TICKER_END
+    pattern = re.compile(re.escape(TICKER_START) + r".*?" + re.escape(TICKER_END), re.S)
+    new_text = pattern.sub(lambda _: block, text)
+    if new_text != text and not dry:
+        path.write_text(new_text, encoding="utf-8")
+    return True, msg
 
 
 def update_top_page(posts: list[dict], dry: bool) -> tuple[bool, str]:
@@ -982,7 +1029,9 @@ def main() -> int:
 
     print()
     failures = []
+    # index.html を触るものが2つあるので、必ず順に走らせる（各自が読み直す）
     for ok, msg in (update_top_page(posts, args.dry_run),
+                    update_top_ticker(posts, args.dry_run),
                     update_sitemap(posts, args.dry_run),
                     update_llms(posts, args.dry_run)):
         print(("" if ok else "【失敗】") + msg)

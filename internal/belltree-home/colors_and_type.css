@@ -327,5 +327,28 @@ hr { border: none; border-top: 1px solid var(--bt-line); margin: var(--bt-s-6) 0
 @media (max-width: 900px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .news-grid { grid-template-columns: 1fr; } }
 
+/* =========================================================
+   お知らせ帯（ヘッダー直下の1行・2026-08-23）
+   臨時休業・年末年始など「必ず目に入れたい連絡」だけを出す枠。
+   記事に pin: true を書いた月だけ build_news.py が中身を入れる。
+   常設にすると読まれなくなるので、無い月は帯ごと出さない。
+   ========================================================= */
+.news-ticker { background: var(--bt-bg-sunk); border-bottom: 1px solid var(--bt-line); }
+.news-ticker .wrap { display: flex; align-items: center; gap: 14px; padding-top: 11px; padding-bottom: 11px; }
+.nt-label { flex: none; display: inline-flex; align-items: center; height: 23px; padding: 0 11px; border-radius: var(--bt-r-pill); background: var(--bt-accent); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; }
+.nt-item { display: flex; align-items: baseline; gap: 12px; min-width: 0; color: var(--bt-ink-1); text-decoration: none; }
+.nt-item time { flex: none; font-size: 12.5px; color: var(--bt-ink-4); font-weight: 500; letter-spacing: 0.04em; }
+.nt-title { font-size: 14px; font-weight: 600; line-height: 1.6; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nt-item:hover .nt-title { color: var(--bt-accent); text-decoration: underline; text-underline-offset: 3px; }
+.nt-more { flex: none; margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--bt-accent); text-decoration: none; white-space: nowrap; }
+.nt-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 720px) {
+  .news-ticker .wrap { flex-wrap: wrap; gap: 8px 12px; }
+  .nt-item { flex-basis: 100%; order: 3; }
+  .nt-title { white-space: normal; }
+  .nt-item time { font-size: 12px; }
+  .nt-more { margin-left: auto; }
+}
+
 /* 画面には出さず、読み上げと見出しの並びのためだけに置く見出し */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
