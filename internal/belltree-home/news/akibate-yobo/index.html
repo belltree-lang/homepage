@@ -14,11 +14,11 @@
 <meta property="og:url" content="https://belltree1102.com/news/akibate-yobo/" />
 <meta property="og:site_name" content="株式会社べるつりー" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="https://belltree1102.com/assets/img/og/og-default.jpg" />
+<meta property="og:image" content="https://belltree1102.com/assets/img/og/og-news-akibate-yobo.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://belltree1102.com/assets/img/og/og-default.jpg" />
+<meta name="twitter:image" content="https://belltree1102.com/assets/img/og/og-news-akibate-yobo.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <link rel="alternate" type="application/rss+xml" title="べるつりー お知らせ" href="https://belltree1102.com/news/feed.xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -158,6 +158,18 @@
   .article-body img { border-radius: var(--bt-r-md); margin: 0 auto 22px; }
   .article-body hr { border: none; border-top: 1px solid var(--bt-line); margin: 36px 0; }
 
+  /* ---- 記事の写真・図（取り込みは _scripts/import_images.py） ---- */
+  .article-hero { max-width: 860px; margin: 26px auto 0; }
+  .article-hero img { width: 100%; height: auto; display: block; border-radius: 18px; box-shadow: 0 12px 34px rgba(80,55,30,0.14); }
+  .article-body figure { margin: 0 0 26px; }
+  .article-body .fig img { width: 100%; height: auto; display: block; margin: 0; border-radius: var(--bt-r-md); }
+  .article-body figcaption { margin-top: 9px; font-size: 13.5px; line-height: 1.8; color: var(--bt-ink-4); text-align: center; }
+  /* 横並びは透過イラスト用。淡い地色の枠に入れて、白の上に浮かないようにする */
+  .fig-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 0 0 26px; }
+  .fig-row figure { margin: 0; background: var(--bt-bg-sunk); border-radius: 14px; padding: 12px 10px 10px; }
+  .fig-row img { width: 100%; height: auto; display: block; margin: 0; border-radius: 0; }
+  .fig-row figcaption { margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--bt-ink-2); text-align: center; }
+
   .article-foot { max-width: 780px; margin: 32px auto 0; display: flex; justify-content: center; }
   .related { max-width: 1000px; margin: 0 auto; }
   /* 直下の見出しだけ。カード内の見出しまで中央寄せにしないこと */
@@ -165,7 +177,7 @@
   /* 関連が2本以下のとき、3列グリッドの左寄せにならないよう中央に寄せる */
   .related .news-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 318px)); justify-content: center; }
 
-  @media (max-width: 600px) { .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } }
+  @media (max-width: 600px) { .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } .article-hero { margin-top: 18px; } .fig-row { gap: 12px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -176,6 +188,7 @@
   "datePublished": "2026-08-22",
   "dateModified": "2026-08-22",
   "articleSection": "健康コラム",
+  "image": "https://belltree1102.com/assets/img/og/og-news-akibate-yobo.jpg",
   "inLanguage": "ja",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -286,6 +299,7 @@
       <span class="article-source">この記事は「べるつりー通信 2026年9月号」からの再録です</span>
     </header>
   </div>
+  <div class="wrap"><div class="article-hero"><img src="../../assets/img/news/akibate-yobo/photo-01-cold-drink.webp" width="1400" height="933" alt="木のテーブルに置かれた、氷の入った冷たい飲み物のグラス" /></div></div>
 
   <section class="sec-pad">
     <div class="wrap">
@@ -302,18 +316,21 @@
 <li>そのうえで、風がおなかや足元に直接当たらないように向きを調整しましょう。</li>
 <li>ひざかけやカーディガンを1枚そばに。おなかと足元を冷やさないのがコツです。</li>
 </ul>
+<figure class="fig"><img src="../../assets/img/news/akibate-yobo/photo-02-aircon.webp" width="1400" height="933" alt="部屋の壁に取り付けられたエアコンと、その下の窓とカーテン" loading="lazy" decoding="async" /></figure>
 <h2>③ 1日1回、温かい汁物を</h2>
 <ul>
 <li>味噌汁やスープなど、温かい一皿を1日1回。</li>
 <li>胃腸をいたわりながら、水分と塩分も一緒に補えます。</li>
 <li>冷たい麺だけで済ませた日こそ、温かい汁物をひと椀。</li>
 </ul>
+<figure class="fig"><img src="../../assets/img/news/akibate-yobo/photo-03-misoshiru.webp" width="1400" height="933" alt="豆腐とねぎの入った味噌汁と、白いごはんの茶碗" loading="lazy" decoding="async" /></figure>
 <h2>④ 軽く汗ばむくらい、体を動かす</h2>
 <ul>
 <li>こもった水分を汗として出す意味でも、軽い運動がよいとされています。</li>
 <li>涼しい時間帯の散歩や、座ったままの足踏み・体操など、できる範囲で構いません。</li>
 <li>無理は禁物。その日の体調と相談しながら。</li>
 </ul>
+<figure class="fig"><img src="../../assets/img/news/akibate-yobo/photo-04-walk.webp" width="1400" height="933" alt="色づいた並木道を、ゆっくり歩く高齢の男性の後ろ姿" loading="lazy" decoding="async" /></figure>
 <h2>この4つの変化に、気づいてあげてください</h2>
 <p>夏の疲れは、本人も気づかないうちに進みます。ご家族や周りの方は、この4つを見てあげてください。</p>
 <ul>
@@ -322,6 +339,7 @@
 <li><strong>お通じ</strong>……軟便や下痢が続いていないか</li>
 <li><strong>疲れ方</strong>……「なんとなく疲れが抜けない」が続いていないか</li>
 </ul>
+<figure class="fig"><img src="../../assets/img/news/akibate-yobo/people-06-family.webp" width="800" height="533" alt="椅子に座る高齢の女性に、娘さんがそっと寄り添っているイラスト" loading="lazy" decoding="async" /></figure>
 <p>気になる変化があったら、担当の施術者やケアマネジャーさん、かかりつけの先生に、遠慮なくお話しください。早めに気づくことが、いちばんの立て直しです。</p>
 <hr />
 <p>監修：漢方養生指導士（当社スタッフ）</p>
@@ -338,7 +356,8 @@
     <div class="related">
       <h2>あわせて読みたい</h2>
       <div class="news-grid">
-    <a class="news-card" href="../toyo-igaku-natsu-tsukare/index.html" data-cat="健康コラム" style="--cat-color: var(--bt-svc-shinkyu);">
+    <a class="news-card news-card--thumb" href="../toyo-igaku-natsu-tsukare/index.html" data-cat="健康コラム" style="--cat-color: var(--bt-svc-shinkyu);">
+      <div class="news-thumb"><img src="../../assets/img/news/toyo-igaku-natsu-tsukare/people-09-meal.webp" width="800" height="533" alt="" loading="lazy" decoding="async" /></div>
       <div class="news-meta">
         <span class="news-cat">健康コラム</span>
         <time class="news-date" datetime="2026-08-22">2026年8月22日</time>
@@ -347,7 +366,8 @@
       <p>東洋医学では、夏の湿気と冷たい物のとりすぎは、胃腸のはたらきを弱らせると考えられています。秋を元気に迎えるための、昔から伝わる知恵をご紹介します。</p>
       <span class="news-more">続きを読む →</span>
     </a>
-    <a class="news-card" href="../bellregal-kaigyo/index.html" data-cat="お知らせ" style="--cat-color: var(--bt-primary);">
+    <a class="news-card news-card--thumb" href="../bellregal-kaigyo/index.html" data-cat="お知らせ" style="--cat-color: var(--bt-primary);">
+      <div class="news-thumb"><img src="../../assets/img/news/bellregal-kaigyo/photo-07-soudan.webp" width="1400" height="933" alt="" loading="lazy" decoding="async" /></div>
       <div class="news-meta">
         <span class="news-cat">お知らせ</span>
         <time class="news-date" datetime="2026-08-22">2026年8月22日</time>
@@ -367,7 +387,7 @@
       <h2>気になることは、お気軽にご相談ください</h2>
       <p>記事を読んで「うちの場合はどうだろう」と思われたら、まずはお電話ください。ご本人・ご家族・ケアマネジャーの方、どなたからのご相談もお受けしています。</p>
       <div class="cta-row">
-        <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){gtag('event','phone_click',{method:'phone',page:'news-article'});}">042-682-2839 に電話する</a>
+        <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'news-article'});}">042-682-2839 に電話する</a>
         <a class="btn btn--ghost" href="../../contact/index.html">お問い合わせフォーム</a>
         <a class="btn btn--ghost line-cta line-cta--cta" href="https://lin.ee/rBK96fA" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag){gtag('event','line_click',{method:'line',page:'news-article'});}">LINEで相談する</a>
       </div>
@@ -404,7 +424,7 @@
     <div class="footer-col">
       <h5>お問い合わせ</h5>
       <ul>
-        <li><a href="tel:0426822839" onclick="if(window.gtag){gtag('event','phone_click',{method:'phone',page:'footer'});}">042-682-2839</a></li>
+        <li><a href="tel:0426822839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'footer'});}">042-682-2839</a></li>
         <li class="line-cta line-cta--footer"><a href="https://lin.ee/tag9YEf" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag){gtag('event','line_click',{method:'line',page:'footer'});}">LINEで相談する</a></li>
         <li><a href="../../contact/index.html">お問い合わせフォーム</a></li>
         <li><a href="../../faq/index.html">よくある質問</a></li>
@@ -421,7 +441,7 @@
   </div>
 </footer>
 
-<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','phone_click',{method:'phone',page:'fab'});}">
+<a class="fab-call" href="tel:0426822839" aria-label="電話で相談する 042-682-2839" onclick="if(window.gtag){gtag('event','generate_lead',{method:'phone',page:'fab'});}">
   <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 20 L 23 17 L 19 20 C 21 25 23 27 28 29 L 31 25 L 38 28 V 34 C 38 36 36 38 34 38 C 22 38 10 26 10 14 C 10 12 12 10 14 10 Z"/></svg>
   <span class="fab-call-txt">電話で相談<small>042-682-2839</small></span>
 </a>

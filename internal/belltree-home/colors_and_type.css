@@ -309,6 +309,11 @@ hr { border: none; border-top: 1px solid var(--bt-line); margin: var(--bt-s-6) 0
 .news-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .news-card { display: flex; flex-direction: column; background: rgba(255,255,255,0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 10px 30px rgba(80,55,30,0.08); border-top: 3px solid var(--cat-color, var(--bt-accent)); padding: 26px 26px 24px; color: inherit; text-decoration: none; transition: transform var(--bt-dur) var(--bt-ease), box-shadow var(--bt-dur) var(--bt-ease); }
 .news-card:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(80,55,30,0.13); }
+/* お知らせカードの写真。記事の hero を 3:2 で切り出して上端に敷く */
+.news-card--thumb { padding-top: 0; overflow: hidden; }
+.news-thumb { margin: 0 -26px 18px; aspect-ratio: 3 / 2; overflow: hidden; background: var(--bt-bg-sunk); }
+.news-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--bt-dur) var(--bt-ease); }
+.news-card:hover .news-thumb img { transform: scale(1.04); }
 .news-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
 .news-cat { display: inline-flex; align-items: center; height: 24px; padding: 0 11px; border-radius: var(--bt-r-pill); font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; color: #fff; background: var(--cat-color, var(--bt-accent)); }
 .news-date { font-size: 12px; color: var(--bt-ink-4); font-weight: 500; letter-spacing: 0.04em; }

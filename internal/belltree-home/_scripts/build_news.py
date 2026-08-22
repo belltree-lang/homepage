@@ -180,9 +180,23 @@ def load_articles(include_future: bool) -> tuple[list[dict], list[str]]:
         except ValueError:
             raise ArticleError(f"{where}: order は整数で書く（いまは {meta.get('order')!r}）")
 
+        hero = str(meta.get("hero", "") or "").strip()
+        hero_alt = str(meta.get("hero_alt", "") or "").strip()
+        if hero:
+            image_path(slug, hero, where)
+            if not hero_alt:
+                raise ArticleError(
+                    f"{where}: hero を置いたら hero_alt（写真の説明）も書く。"
+                    "目の見えない方の読み上げと、画像が出ないときの代わりの文になる"
+                )
+        elif hero_alt:
+            raise ArticleError(f"{where}: hero_alt だけあって hero がありません")
+
         posts.append(
             {
                 "slug": slug,
+                "hero": hero,
+                "hero_alt": hero_alt,
                 "title": meta["title"],
                 "description": meta.get("description", ""),
                 "eyebrow": meta.get("eyebrow", ""),
@@ -195,7 +209,9 @@ def load_articles(include_future: bool) -> tuple[list[dict], list[str]]:
                 "order": order,
                 # トップの「お知らせ帯」に出す（臨時休業・年末年始など）
                 "pin": meta.get("pin") is True,
-                "body": md_lib.markdown(body, extensions=["extra", "sane_lists"]),
+                "body": upgrade_images(
+                    md_lib.markdown(body, extensions=["extra", "sane_lists"]), slug, where
+                ),
                 "path": path,
             }
         )
@@ -217,6 +233,90 @@ def ld_json(obj: dict) -> str:
     """構造化データ。</script> や & がそのまま出ると HTML を壊すので退避する。"""
     s = json.dumps(obj, ensure_ascii=False, indent=2)
     return s.replace("<", "\\u003C").replace(">", "\\u003E").replace("&", "\\u0026")
+
+
+# --------------------------------------------------------------------------
+# 画像（紙面の写真・イラストを本文に置く）
+# --------------------------------------------------------------------------
+# 置き場は assets/img/news/<slug>/。取り込みは _scripts/import_images.py。
+# 記事の中では「ファイル名だけ」を書く（![説明](photo-02-aircon.webp)）。
+# パスの組み立てはここが引き受けるので、記事側で ../../ を書かない。
+
+IMG_URL = "assets/img/news"
+IMG_ROOT = ROOT / "assets" / "img" / "news"
+OG_ROOT = ROOT / "assets" / "img" / "og"
+OG_DEFAULT = "assets/img/og/og-default.jpg"
+
+# 本文の画像は記事ページ（news/<slug>/index.html）でしか使わないので、ここは固定。
+ARTICLE_PREFIX = "../../"
+NL = chr(10)
+
+FIG_P_RE = re.compile(r"<p>((?:<img [^>]+/>\s*)+)</p>")
+FIG_IMG_RE = re.compile(r'<img alt="([^"]*)" src="([^"]+)"(?: title="([^"]*)")? />')
+
+
+def image_path(slug: str, name: str, where: str) -> Path:
+    """記事が指した画像の実体を返す。無ければ止める（黙って画像なしで出さない）。"""
+    if "/" in name or "\\" in name:
+        raise ArticleError(f"{where}: 画像は assets/img/news/{slug}/ のファイル名だけで書く（{name!r}）")
+    path = IMG_ROOT / slug / name
+    if not path.exists():
+        raise ArticleError(
+            f"{where}: 画像 {name!r} が {IMG_ROOT / slug} にありません。"
+            f"先に _scripts/import_images.py {slug} <元画像> で取り込む"
+        )
+    return path
+
+
+def webp_size(path: Path) -> tuple[int, int] | None:
+    """WebPの縦横を読む。読み込み中に高さが確定して、文字がガクッと動くのを防ぐため。"""
+    head = path.read_bytes()[:40]
+    if len(head) < 30 or head[:4] != b"RIFF" or head[8:12] != b"WEBP":
+        return None
+    kind = head[12:16]
+    if kind == b"VP8X":
+        return (int.from_bytes(head[24:27], "little") + 1,
+                int.from_bytes(head[27:30], "little") + 1)
+    if kind == b"VP8 ":
+        return (int.from_bytes(head[26:28], "little") & 0x3FFF,
+                int.from_bytes(head[28:30], "little") & 0x3FFF)
+    if kind == b"VP8L":
+        bits = int.from_bytes(head[21:25], "little")
+        return ((bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1)
+    return None
+
+
+def img_tag(slug: str, name: str, alt: str, where: str, prefix: str, lazy: bool = True) -> str:
+    path = image_path(slug, name, where)
+    size = webp_size(path)
+    dims = f' width="{size[0]}" height="{size[1]}"' if size else ""
+    load = ' loading="lazy" decoding="async"' if lazy else ""
+    return f'<img src="{prefix}{IMG_URL}/{slug}/{name}"{dims} alt="{esc(alt)}"{load} />'
+
+
+def upgrade_images(body: str, slug: str, where: str) -> str:
+    """markdown の画像行を figure に組み直す。
+
+    1行に1枚 → 本文幅いっぱいの写真。
+    2枚以上を続けて書く → 横並び（透過イラスト向け。淡い地色の枠に入る）。
+    ![説明](file.webp "図の名前") の「図の名前」は図の下の小さな文字になる。
+    """
+    def cell(alt: str, name: str, caption: str, cls: str) -> str:
+        tag = img_tag(slug, name, alt, where, ARTICLE_PREFIX)
+        cap = f"<figcaption>{esc(caption)}</figcaption>" if caption else ""
+        return f'<figure class="{cls}">{tag}{cap}</figure>'
+
+    def repl(m: re.Match) -> str:
+        found = FIG_IMG_RE.findall(m.group(1))
+        if not found:
+            return m.group(0)
+        if len(found) == 1:
+            alt, name, caption = found[0]
+            return cell(alt, name, caption, "fig")
+        cells = "".join(cell(a, n, c, "fig-cell") for a, n, c in found)
+        return f'<div class="fig-row">{cells}</div>'
+
+    return FIG_P_RE.sub(repl, body)
 
 
 # --------------------------------------------------------------------------
@@ -363,6 +463,18 @@ NEWS_CSS = """
   .article-body img { border-radius: var(--bt-r-md); margin: 0 auto 22px; }
   .article-body hr { border: none; border-top: 1px solid var(--bt-line); margin: 36px 0; }
 
+  /* ---- 記事の写真・図（取り込みは _scripts/import_images.py） ---- */
+  .article-hero { max-width: 860px; margin: 26px auto 0; }
+  .article-hero img { width: 100%; height: auto; display: block; border-radius: 18px; box-shadow: 0 12px 34px rgba(80,55,30,0.14); }
+  .article-body figure { margin: 0 0 26px; }
+  .article-body .fig img { width: 100%; height: auto; display: block; margin: 0; border-radius: var(--bt-r-md); }
+  .article-body figcaption { margin-top: 9px; font-size: 13.5px; line-height: 1.8; color: var(--bt-ink-4); text-align: center; }
+  /* 横並びは透過イラスト用。淡い地色の枠に入れて、白の上に浮かないようにする */
+  .fig-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 0 0 26px; }
+  .fig-row figure { margin: 0; background: var(--bt-bg-sunk); border-radius: 14px; padding: 12px 10px 10px; }
+  .fig-row img { width: 100%; height: auto; display: block; margin: 0; border-radius: 0; }
+  .fig-row figcaption { margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--bt-ink-2); text-align: center; }
+
   .article-foot { max-width: 780px; margin: 32px auto 0; display: flex; justify-content: center; }
   .related { max-width: 1000px; margin: 0 auto; }
   /* 直下の見出しだけ。カード内の見出しまで中央寄せにしないこと */
@@ -370,7 +482,7 @@ NEWS_CSS = """
   /* 関連が2本以下のとき、3列グリッドの左寄せにならないよう中央に寄せる */
   .related .news-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 318px)); justify-content: center; }
 
-  @media (max-width: 600px) { .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } }
+  @media (max-width: 600px) { .article-body { padding: 28px 22px; } .article-head { padding-top: 36px; } .article-hero { margin-top: 18px; } .fig-row { gap: 12px; } }
 """
 
 DRAWER_JS = """
@@ -516,7 +628,7 @@ def footer_html(prefix: str) -> str:
 
 
 def head_html(prefix: str, title: str, description: str, canonical: str,
-              og_type: str = "website", extra: str = "") -> str:
+              og_type: str = "website", extra: str = "", og_image: str = OG_DEFAULT) -> str:
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -533,11 +645,11 @@ def head_html(prefix: str, title: str, description: str, canonical: str,
 <meta property="og:url" content="{canonical}" />
 <meta property="og:site_name" content="株式会社べるつりー" />
 <meta property="og:type" content="{og_type}" />
-<meta property="og:image" content="{SITE}/assets/img/og/og-default.jpg" />
+<meta property="og:image" content="{SITE}/{og_image}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="{SITE}/assets/img/og/og-default.jpg" />
+<meta name="twitter:image" content="{SITE}/{og_image}" />
 <meta property="og:locale" content="ja_JP" />
 <link rel="alternate" type="application/rss+xml" title="べるつりー お知らせ" href="{SITE}/news/feed.xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -550,11 +662,19 @@ def head_html(prefix: str, title: str, description: str, canonical: str,
 """
 
 
-def card_html(post: dict, prefix_to_news: str) -> str:
+def card_html(post: dict, prefix_to_news: str, asset_prefix: str = "") -> str:
+    """一覧・トップに並ぶカード。asset_prefix は、そのページから assets/ までの戻り方。"""
     color = CATEGORIES[post["category"]]
     desc = post["description"] or ""
-    return f"""    <a class="news-card" href="{prefix_to_news}{post['slug']}/index.html" data-cat="{esc(post['category'])}" style="--cat-color: {color};">
-      <div class="news-meta">
+    thumb = ""
+    klass = "news-card"
+    if post.get("hero"):
+        # カードの見出しがすぐ下にあるので、絵の説明は空にして読み上げの重複を避ける
+        tag = img_tag(post["slug"], post["hero"], "", post["slug"], asset_prefix)
+        thumb = '      <div class="news-thumb">' + tag + '</div>' + NL
+        klass = "news-card news-card--thumb"
+    return f"""    <a class="{klass}" href="{prefix_to_news}{post['slug']}/index.html" data-cat="{esc(post['category'])}" style="--cat-color: {color};">
+{thumb}      <div class="news-meta">
         <span class="news-cat">{esc(post['category'])}</span>
         <time class="news-date" datetime="{post['date']}">{jp_date(post['date'])}</time>
       </div>
@@ -575,7 +695,7 @@ def render_index(posts: list[dict]) -> str:
         f'      <button class="cat-chip" type="button" data-cat="{esc(c)}" aria-pressed="false">{esc(c)}</button>'
         for c in used_cats
     )
-    cards = "\n".join(card_html(p, "") for p in posts)
+    cards = "\n".join(card_html(p, "", "../") for p in posts)  # /news/ から assets/ へは1つ上
 
     breadcrumb_ld = ld_json({
         "@context": "https://schema.org",
@@ -654,6 +774,11 @@ def render_index(posts: list[dict]) -> str:
 def render_article(post: dict, posts: list[dict]) -> str:
     prefix = "../../"
     color = CATEGORIES[post["category"]]
+    # SNS・LINEに貼ったときの絵。記事ごとに用意があればそれを、無ければ共通のもの。
+    og_image = OG_DEFAULT
+    if (OG_ROOT / f"og-news-{post['slug']}.jpg").exists():
+        og_image = f"assets/img/og/og-news-{post['slug']}.jpg"
+
     related = [p for p in posts if p["slug"] != post["slug"] and p["category"] == post["category"]][:3]
     if len(related) < 3:
         chosen = {p["slug"] for p in related} | {post["slug"]}
@@ -667,6 +792,7 @@ def render_article(post: dict, posts: list[dict]) -> str:
         "datePublished": post["date"],
         "dateModified": post["date"],
         "articleSection": post["category"],
+        "image": f"{SITE}/{og_image}",
         "inLanguage": "ja",
         "mainEntityOfPage": {"@type": "WebPage", "@id": f"{SITE}/news/{post['slug']}/"},
         "author": {"@type": "Organization", "name": "株式会社べるつりー"},
@@ -692,6 +818,12 @@ def render_article(post: dict, posts: list[dict]) -> str:
         f'<script type="application/ld+json">\n{breadcrumb_ld}\n</script>'
     )
 
+    hero_html = ""
+    if post.get("hero"):
+        # 扉の1枚は遅らせない（画面を開いた瞬間に見える位置なので）
+        tag = img_tag(post["slug"], post["hero"], post["hero_alt"], post["slug"], prefix, lazy=False)
+        hero_html = '  <div class="wrap"><div class="article-hero">' + tag + '</div></div>' + NL
+
     band_html = f'      <span class="band">{esc(post["eyebrow"])}</span>\n' if post["eyebrow"] else ""
     source_html = ""
     if post["source"]:
@@ -699,7 +831,7 @@ def render_article(post: dict, posts: list[dict]) -> str:
 
     related_html = ""
     if related:
-        cards = "\n".join(card_html(p, "../") for p in related)
+        cards = "\n".join(card_html(p, "../", prefix) for p in related)
         related_html = f"""
 <section class="sec-pad" style="padding-top:24px;">
   <div class="wrap">
@@ -721,6 +853,7 @@ def render_article(post: dict, posts: list[dict]) -> str:
             f"{SITE}/news/{post['slug']}/",
             "article",
             extra,
+            og_image,
         )
         + header_html(prefix, f"news/{post['slug']}/index.html")
         + f"""
@@ -745,7 +878,7 @@ def render_article(post: dict, posts: list[dict]) -> str:
       <p class="lead">{esc(post['description'])}</p>
 {source_html}    </header>
   </div>
-
+{hero_html}
   <section class="sec-pad">
     <div class="wrap">
       <div class="article-body">
@@ -872,7 +1005,7 @@ def update_top_page(posts: list[dict], dry: bool) -> tuple[bool, str]:
     if TOP_START not in text or TOP_END not in text:
         return False, "トップページに差し込み口（NEWS_LATEST マーカー）がない"
     latest = posts[:3]
-    cards = "\n".join(card_html(p, "news/") for p in latest)
+    cards = "\n".join(card_html(p, "news/", "") for p in latest)  # トップは assets/ と同じ階層
     # 地色は band-base（白）。直前の「改善事例」が紙色のカード並びなので、
     # ここを紙色にすると同じ地色・同じ幅のカードが続いて1つの節に見える。
     # 次の「わたしたちのこと」も白だが、あちらは本文中心なので見分けがつく。

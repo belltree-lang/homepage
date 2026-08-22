@@ -8,3 +8,6 @@ output/
 tasks/
 .cursor/
 *.bak-*
+
+# Python の実行キャッシュ（_scripts/ を走らせると出る）
+__pycache__/
