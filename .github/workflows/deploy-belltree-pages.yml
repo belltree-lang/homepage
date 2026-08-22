@@ -43,6 +43,7 @@ jobs:
             --exclude='*.py' \
             --exclude='PROMPT-*.txt' \
             --exclude='_scripts/' \
+            --exclude='_articles/' \
             internal/belltree-home/ _site/
           echo "---- published top-level ----"
           ls -1 _site
