@@ -5,7 +5,6 @@ hero: people-09-meal.webp
 hero_alt: 湯気の立つお椀を両手で持つ、高齢の女性のイラスト
 date: 2026-08-22
 category: 健康コラム
-source: べるつりー通信 2026年9月号
 order: 2
 draft: false
 ---
