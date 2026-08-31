@@ -5,6 +5,37 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^(.*)$ https://bellmfit.com/$1 [R=301,L]
 
+# 旧サイト（WordPress時代）の /home/ 配下を現行ページへ恒久移転（301・2026-08-31 追加）
+# 入会案内に載せた /home/会員規約/ が 404 になっていたため。
+# 日本語パスはリクエスト行にパーセントエンコードのまま届くので %{THE_REQUEST} で判定する。
+# mod_rewrite は mod_alias（Redirect/RedirectMatch）より先に走るため、
+# 最後のまとめ送りに食われないよう /home/ 配下は全て RewriteRule で書く。
+
+# /home/会員規約/ → 現行の利用規約（%E4%BC%9A%E5%93%A1%E8%A6%8F%E7%B4%84 = 会員規約）
+RewriteCond %{THE_REQUEST} \s/home/%E4%BC%9A%E5%93%A1%E8%A6%8F%E7%B4%84/?[\s?] [NC]
+RewriteRule ^ https://bellmfit.com/terms-of-service/ [R=301,L]
+
+# /home/施設紹介/ → べるフィット（%E6%96%BD%E8%A8%AD%E7%B4%B9%E4%BB%8B = 施設紹介）
+RewriteCond %{THE_REQUEST} \s/home/%E6%96%BD%E8%A8%AD%E7%B4%B9%E4%BB%8B/?[\s?] [NC]
+RewriteRule ^ https://bellmfit.com/services/fitness/ [R=301,L]
+
+# /home/一般会員２４時間使い放題プラン/ → 料金
+RewriteCond %{THE_REQUEST} \s/home/%E4%B8%80%E8%88%AC%E4%BC%9A%E5%93%A1%EF%BC%92%EF%BC%94%E6%99%82%E9%96%93%E4%BD%BF%E3%81%84%E6%94%BE%E9%A1%8C%E3%83%97%E3%83%A9%E3%83%B3/?[\s?] [NC]
+RewriteRule ^ https://bellmfit.com/price/ [R=301,L]
+
+# ASCII パスの旧ページ
+RewriteRule ^home/package-detail/?$ https://bellmfit.com/price/ [R=301,L]
+RewriteRule ^home/contact/?$ https://bellmfit.com/contact/ [R=301,L]
+RewriteRule ^home/about/?$ https://belltree1102.com/about/ [R=301,L]
+
+# /home/特定商取引法に基づく表記/ → 新設した表記ページ
+RewriteCond %{THE_REQUEST} \s/home/%E7%89%B9%E5%AE%9A%E5%95%86%E5%8F%96%E5%BC%95%E6%B3%95%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E8%A1%A8%E8%A8%98/?[\s?] [NC]
+RewriteRule ^ https://bellmfit.com/tokushoho/ [R=301,L]
+
+# 残り（シニアフィットネス・べるフィットブログ 等）はトップへ。
+# 個別の行き先が決まったら、このまとめ送りより上に1行ずつ足す。
+RewriteRule ^home(/|$) https://bellmfit.com/ [R=301,L]
+
 # 旧グループページは belltree1102.com / bellregal.com へ恒久移転（301）
 # ロリポップでは実体フォルダが残っていると Redirect 形式が素通しになるため全て RedirectMatch 形式で書く
 RedirectMatch 301 ^/services/?$ https://belltree1102.com/
