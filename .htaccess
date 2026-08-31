@@ -33,6 +33,27 @@ RewriteRule ^ https://bellmfit.com/tokushoho/ [R=301,L]
 # 個別の行き先が決まったら、このまとめ送りより上に1行ずつ足す。
 RewriteRule ^home(/|$) https://bellmfit.com/ [R=301,L,NC]
 
+# Search Console の404残り（/home/ 外の旧URL・2026-08-31 追加）
+# 受け皿のある8件だけ301で拾う。/7172-2/ やカテゴリ・日付アーカイブは404のまま落とす。
+
+# 旧鍼灸ブログ /shinkyu/ 配下ぜんぶ → 訪問鍼灸マッサージのページ
+RewriteRule ^shinkyu(/|$) https://belltree1102.com/services/home-care/ [R=301,L,NC]
+
+# /通所フィットネス/ → リーフ（%E9%80%9A%E6%89%80... = 通所フィットネス）
+RewriteCond %{THE_REQUEST} \s/%E9%80%9A%E6%89%80%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9/?[\s?] [NC]
+RewriteRule ^ https://bellmfit.com/services/leaf/ [R=301,L]
+
+# /求人/ → 採用ページ（%E6%B1%82%E4%BA%BA = 求人）
+RewriteCond %{THE_REQUEST} \s/%E6%B1%82%E4%BA%BA/?[\s?] [NC]
+RewriteRule ^ https://belltree1102.com/recruit/ [R=301,L]
+
+# /会社概要/ → 会社案内（%E4%BC%9A%E7%A4%BE%E6%A6%82%E8%A6%81 = 会社概要）
+RewriteCond %{THE_REQUEST} \s/%E4%BC%9A%E7%A4%BE%E6%A6%82%E8%A6%81/?[\s?] [NC]
+RewriteRule ^ https://belltree1102.com/about/ [R=301,L]
+
+# 誤パスで拾われていた旧リンク
+RewriteRule ^pages/services/home-care/?$ https://belltree1102.com/services/home-care/ [R=301,L,NC]
+
 # http・www アクセスを https://bellmfit.com/ に統一（301）
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
