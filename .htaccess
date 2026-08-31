@@ -61,7 +61,8 @@ RewriteRule ^(.*)$ https://bellmfit.com/$1 [R=301,L]
 
 # 旧グループページは belltree1102.com / bellregal.com へ恒久移転（301）
 # ロリポップでは実体フォルダが残っていると Redirect 形式が素通しになるため全て RedirectMatch 形式で書く
-RedirectMatch 301 ^/services/?$ https://belltree1102.com/
+# /services/index.html はインデックスに残っている実URL（旧サイトの入口）。/? だけでは拾えない
+RedirectMatch 301 ^/services(/index\.html)?/?$ https://belltree1102.com/
 RedirectMatch 301 ^/services/acupuncture(/.*)?$ https://belltree1102.com/services/home-visit/
 RedirectMatch 301 ^/services/home-care(/.*)?$ https://belltree1102.com/services/home-care/
 RedirectMatch 301 ^/services/legal(/.*)?$ https://bellregal.com/
