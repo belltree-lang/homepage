@@ -542,7 +542,7 @@ PHONE_SVG = (
 def header_html(prefix: str, page_rel: str) -> str:
     return f"""<header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="{prefix}index.html" aria-label="べるつりーグループ">
+    <a class="brand" href="{prefix}" aria-label="べるつりーグループ">
       <img src="{prefix}assets/belltree-mark.svg" alt="" />
       <span class="brand-name">BellTree<span class="sep">／</span><span class="jp">べるつりー</span></span>
     </a>
@@ -552,7 +552,7 @@ def header_html(prefix: str, page_rel: str) -> str:
         {PHONE_SVG}
         042-682-2839
       </span>
-      <a class="btn-sm" href="{prefix}contact/index.html">ご相談窓口</a>
+      <a class="btn-sm" href="{prefix}contact/">ご相談窓口</a>
       <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-drawer">
         <span></span><span></span><span></span>
       </button>
@@ -585,20 +585,20 @@ def footer_html(prefix: str) -> str:
     <div class="footer-col">
       <h5>企業情報</h5>
       <ul>
-        <li><a href="{prefix}index.html">ホーム</a></li>
-        <li><a href="{prefix}about/index.html">会社概要</a></li>
-        <li><a href="{prefix}team/index.html">スタッフ紹介</a></li>
-        <li><a href="{prefix}recruit/index.html">採用情報</a></li>
-        <li><a href="{prefix}news/index.html">お知らせ</a></li>
+        <li><a href="{prefix}">ホーム</a></li>
+        <li><a href="{prefix}about/">会社概要</a></li>
+        <li><a href="{prefix}team/">スタッフ紹介</a></li>
+        <li><a href="{prefix}recruit/">採用情報</a></li>
+        <li><a href="{prefix}news/">お知らせ</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>サービス</h5>
       <ul>
-        <li><a href="{prefix}services/home-visit/index.html">訪問鍼灸マッサージ</a></li>
-        <li><a href="{prefix}services/fee-insurance/index.html">料金と保険</a></li>
-        <li><a href="{prefix}services/home-care/index.html">居宅介護支援</a></li>
-        <li><a href="{prefix}services/bellfit/index.html">べるフィット</a></li>
+        <li><a href="{prefix}services/home-visit/">訪問鍼灸マッサージ</a></li>
+        <li><a href="{prefix}services/fee-insurance/">料金と保険</a></li>
+        <li><a href="{prefix}services/home-care/">居宅介護支援</a></li>
+        <li><a href="{prefix}services/bellfit/">べるフィット</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -606,9 +606,9 @@ def footer_html(prefix: str) -> str:
       <ul>
         <li><a href="tel:0426822839" onclick="if(window.gtag){{gtag('event','generate_lead',{{method:'phone',page:'footer'}});}}">042-682-2839</a></li>
         <li class="line-cta line-cta--footer"><a href="https://lin.ee/tag9YEf" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag){{gtag('event','line_click',{{method:'line',page:'footer'}});}}">LINEで相談する</a></li>
-        <li><a href="{prefix}contact/index.html">お問い合わせフォーム</a></li>
-        <li><a href="{prefix}faq/index.html">よくある質問</a></li>
-        <li><a href="{prefix}privacy-policy/index.html">個人情報保護方針</a></li>
+        <li><a href="{prefix}contact/">お問い合わせフォーム</a></li>
+        <li><a href="{prefix}faq/">よくある質問</a></li>
+        <li><a href="{prefix}privacy-policy/">個人情報保護方針</a></li>
       </ul>
     </div>
   </div>
@@ -673,7 +673,7 @@ def card_html(post: dict, prefix_to_news: str, asset_prefix: str = "") -> str:
         tag = img_tag(post["slug"], post["hero"], "", post["slug"], asset_prefix)
         thumb = '      <div class="news-thumb">' + tag + '</div>' + NL
         klass = "news-card news-card--thumb"
-    return f"""    <a class="{klass}" href="{prefix_to_news}{post['slug']}/index.html" data-cat="{esc(post['category'])}" style="--cat-color: {color};">
+    return f"""    <a class="{klass}" href="{prefix_to_news}{post['slug']}/" data-cat="{esc(post['category'])}" style="--cat-color: {color};">
 {thumb}      <div class="news-meta">
         <span class="news-cat">{esc(post['category'])}</span>
         <time class="news-date" datetime="{post['date']}">{jp_date(post['date'])}</time>
@@ -721,7 +721,7 @@ def render_index(posts: list[dict]) -> str:
         + f"""
 <nav class="breadcrumb" aria-label="現在位置">
   <div class="wrap">
-    <a href="{prefix}index.html">ホーム</a>
+    <a href="{prefix}">ホーム</a>
     <span class="sep">／</span>
     <span aria-current="page">お知らせ・健康コラム</span>
   </div>
@@ -758,7 +758,7 @@ def render_index(posts: list[dict]) -> str:
       <p>「うちの場合はどうだろう」と思われたら、まずはお電話ください。ご本人・ご家族・ケアマネジャーの方、どなたからのご相談もお受けしています。</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){{gtag('event','generate_lead',{{method:'phone',page:'news'}});}}">042-682-2839 に電話する</a>
-        <a class="btn btn--ghost" href="{prefix}contact/index.html">お問い合わせフォーム</a>
+        <a class="btn btn--ghost" href="{prefix}contact/">お問い合わせフォーム</a>
         <a class="btn btn--ghost line-cta line-cta--cta" href="https://lin.ee/rBK96fA" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag){{gtag('event','line_click',{{method:'line',page:'news'}});}}">LINEで相談する</a>
       </div>
     </div>
@@ -859,9 +859,9 @@ def render_article(post: dict, posts: list[dict]) -> str:
         + f"""
 <nav class="breadcrumb" aria-label="現在位置">
   <div class="wrap">
-    <a href="{prefix}index.html">ホーム</a>
+    <a href="{prefix}">ホーム</a>
     <span class="sep">／</span>
-    <a href="../index.html">お知らせ・健康コラム</a>
+    <a href="../">お知らせ・健康コラム</a>
     <span class="sep">／</span>
     <span aria-current="page">{esc(post['title'])}</span>
   </div>
@@ -885,7 +885,7 @@ def render_article(post: dict, posts: list[dict]) -> str:
 {post['body']}
       </div>
       <div class="article-foot">
-        <a class="btn btn--ghost" href="../index.html">← お知らせ一覧へもどる</a>
+        <a class="btn btn--ghost" href="../">← お知らせ一覧へもどる</a>
       </div>
     </div>
   </section>
@@ -898,7 +898,7 @@ def render_article(post: dict, posts: list[dict]) -> str:
       <p>記事を読んで「うちの場合はどうだろう」と思われたら、まずはお電話ください。ご本人・ご家族・ケアマネジャーの方、どなたからのご相談もお受けしています。</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="tel:0426822839" onclick="if(window.gtag){{gtag('event','generate_lead',{{method:'phone',page:'news-article'}});}}">042-682-2839 に電話する</a>
-        <a class="btn btn--ghost" href="{prefix}contact/index.html">お問い合わせフォーム</a>
+        <a class="btn btn--ghost" href="{prefix}contact/">お問い合わせフォーム</a>
         <a class="btn btn--ghost line-cta line-cta--cta" href="https://lin.ee/rBK96fA" target="_blank" rel="noopener noreferrer" onclick="if(window.gtag){{gtag('event','line_click',{{method:'line',page:'news-article'}});}}">LINEで相談する</a>
       </div>
     </div>
@@ -974,11 +974,11 @@ def update_top_ticker(posts: list[dict], dry: bool) -> tuple[bool, str]:
 <div class="news-ticker">
   <div class="wrap">
     <span class="nt-label">お知らせ</span>
-    <a class="nt-item" href="news/{p['slug']}/index.html">
+    <a class="nt-item" href="news/{p['slug']}/">
       <time datetime="{p['date']}">{jp_date(p['date'])}</time>
       <span class="nt-title">{esc(p['title'])}</span>
     </a>
-    <a class="nt-more" href="news/index.html">お知らせ一覧</a>
+    <a class="nt-more" href="news/">お知らせ一覧</a>
   </div>
 </div>
 """
@@ -1021,7 +1021,7 @@ def update_top_page(posts: list[dict], dry: bool) -> tuple[bool, str]:
 {cards}
     </div>
     <div class="news-actions">
-      <a class="btn btn--ghost" href="news/index.html">お知らせを一覧で見る</a>
+      <a class="btn btn--ghost" href="news/">お知らせを一覧で見る</a>
     </div>
   </div>
 </section>
