@@ -56,3 +56,17 @@ Impact:
 
 No framework or build tool may be introduced by default.
 
+
+## 2026-08-31
+
+Decision:
+
+Header and footer are edited directly in each page. The sync script `scripts/sync_components.py` and the templates `templates/header.html` / `templates/footer.html` are retired to `_archive/2026-08-31/`.
+
+Reason:
+
+The templates still held the old BellTree corporate navigation (about / model / news / cases / solutions), while the live pages had moved to the BellFit layout with the tokushoho link added on 2026-08-31. Running the script would have wiped those page edits across the site.
+
+Impact:
+
+Site-wide header or footer changes are applied per page by hand (the FOOTER_START / FOOTER_END markers remain as grep anchors). `templates/**` and `_archive/**` are excluded from FTP deploys.
