@@ -88,6 +88,8 @@
 
   /* 数字カード */
   .num-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 880px; margin: 0 auto; }
+  .num-grid.is-4 { grid-template-columns: repeat(4, 1fr); max-width: 1000px; }
+  @media (max-width: 1000px) { .num-grid.is-4 { grid-template-columns: repeat(2, 1fr); max-width: 620px; } }
   .num-card { background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.85); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 30px 24px; text-align: center; }
   .num-card .num { font-family: var(--bt-font-serif); font-weight: 700; font-size: 38px; color: var(--bt-primary); line-height: 1.2; }
   .num-card .num small { font-size: 18px; font-weight: 600; }
@@ -151,10 +153,65 @@
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 22px var(--bt-gutter); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.45); }
 
   /* RESPONSIVE */
+
+  /* ===== 2026-09-01 追加：旧コーポレート版から移した節のための部品 ===== */
+
+  /* 横並びの流れ（連携モデル・選考フロー） */
+  .flow-row { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; max-width: 940px; margin: 0 auto; }
+  .flow-node { background: rgba(255,255,255,0.78); border: 1px solid rgba(255,255,255,0.9); border-radius: 14px; box-shadow: 0 8px 22px rgba(80,55,30,0.07); padding: 16px 22px; text-align: center; min-width: 148px; }
+  .flow-node .fn-t { display: block; font-family: var(--bt-font-serif); font-weight: 600; font-size: 15.5px; color: var(--bt-primary); }
+  .flow-node .fn-d { display: block; font-size: 12.5px; color: var(--bt-ink-3); margin-top: 5px; line-height: 1.7; }
+  .flow-arrow { color: var(--bt-accent); font-size: 17px; font-weight: 700; line-height: 1; }
+
+  /* 等級と収入のはしご */
+  .ladder { max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .ladder-row { display: grid; grid-template-columns: 116px 1fr auto; gap: 22px; align-items: center; background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.88); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); padding: 18px 26px; }
+  .ladder-row .lr-stage { font-size: 12.5px; font-weight: 700; color: #fff; background: var(--bt-primary); border-radius: var(--bt-r-pill); padding: 7px 0; text-align: center; letter-spacing: 0.04em; }
+  .ladder-row .lr-t { display: block; font-family: var(--bt-font-serif); font-weight: 600; font-size: 15.5px; color: var(--bt-primary); margin-bottom: 3px; }
+  .ladder-row .lr-d { display: block; font-size: 13px; color: var(--bt-ink-3); line-height: 1.8; }
+  .ladder-row .lr-pay { font-family: var(--bt-font-serif); font-weight: 700; font-size: 17px; color: var(--bt-accent); white-space: nowrap; }
+  .ladder-note { max-width: 840px; margin: 24px auto 0; font-size: 12.5px; color: var(--bt-ink-3); line-height: 1.95; }
+
+  /* 向いている人 / 向いていない人 */
+  .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 900px; margin: 0 auto; }
+  .fit-col { background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.88); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 28px 30px; }
+  .fit-col h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--bt-line-soft); }
+  .fit-col.is-yes h3 { color: var(--bt-success); }
+  .fit-col.is-no h3 { color: var(--bt-ink-3); }
+  .fit-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .fit-col li { font-size: 13.5px; color: var(--bt-ink-2); line-height: 1.8; padding-left: 20px; position: relative; }
+  .fit-col.is-yes li::before { content: ""; position: absolute; left: 0; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--bt-success); }
+  .fit-col.is-no li::before { content: ""; position: absolute; left: 0; top: 12px; width: 10px; height: 1.5px; background: var(--bt-ink-4); }
+
+  /* 時間の内訳 */
+  .tl-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .tl-row { display: grid; grid-template-columns: 74px 1fr; gap: 22px; align-items: baseline; background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.85); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); padding: 18px 26px; }
+  .tl-row .tl-min { font-family: var(--bt-font-serif); font-weight: 700; font-size: 20px; color: var(--bt-accent); text-align: right; }
+  .tl-row .tl-t { display: block; font-weight: 600; font-size: 15px; color: var(--bt-primary); margin-bottom: 3px; }
+  .tl-row .tl-d { display: block; font-size: 13px; color: var(--bt-ink-3); line-height: 1.8; }
+
+  /* ラベルチップ */
+  .chip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 720px; margin: 26px auto 0; }
+  .chip { background: rgba(255,255,255,0.7); border: 1px solid var(--bt-line-soft); border-radius: 12px; padding: 15px 10px; text-align: center; font-size: 14px; font-weight: 600; color: var(--bt-primary); }
+
+  /* 営業時間 */
+  .hours-table { max-width: 640px; margin: 0 auto; width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.72); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 26px rgba(80,55,30,0.08); }
+  .hours-table th, .hours-table td { padding: 15px 22px; font-size: 14.5px; text-align: left; border-bottom: 1px solid var(--bt-line-soft); }
+  .hours-table th { background: var(--bt-primary); color: #fff; font-weight: 600; letter-spacing: 0.04em; }
+  .hours-table td:first-child { font-family: var(--bt-font-serif); font-weight: 600; color: var(--bt-primary); width: 36%; }
+  .hours-table tr:last-child td { border-bottom: none; }
+  .hours-table .is-focus td { background: rgba(194,122,101,0.10); }
+
+  /* 紺帯の強調 */
+  .band-note { max-width: 860px; margin: 0 auto; background: var(--bt-primary); color: #fff; border-radius: 18px; padding: 32px 38px; text-align: center; }
+  .band-note h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 19px; margin: 0 0 10px; color: #fff; }
+  .band-note p { font-size: 14px; line-height: 1.95; margin: 0; color: rgba(255,255,255,0.86); }
+
   @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } .page-hero { min-height: 0; padding: 48px 0; } .page-hero::after { background: linear-gradient(170deg, rgba(18,38,70,0.90) 0%, rgba(18,38,70,0.84) 60%, rgba(18,38,70,0.62) 100%); } }
   @media (max-width: 860px) { .num-grid { grid-template-columns: 1fr; max-width: 560px; } }
   @media (max-width: 760px) { .approach-grid, .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .approach-final { padding: 28px 24px; } .sec-pad { padding: 56px 0; } .req-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 22px; } .req-card .req-head { padding: 22px 22px; } }
   @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
+  @media (max-width: 760px) { .ladder-row { grid-template-columns: 1fr; gap: 10px; } .ladder-row .lr-stage { justify-self: start; padding: 7px 20px; } .fit-grid { grid-template-columns: 1fr; } .chip-grid { grid-template-columns: repeat(2, 1fr); } .flow-arrow { transform: rotate(90deg); } .flow-row { flex-direction: column; } .flow-node { width: 100%; max-width: 320px; } .tl-row { grid-template-columns: 58px 1fr; gap: 14px; padding: 16px 20px; } .ladder-row { padding: 18px 20px; } .band-note { padding: 26px 22px; } .hours-table th, .hours-table td { padding: 13px 15px; font-size: 13.5px; } }
 /* === モバイル：ハンバーガー・ドロワー＋スマホ調整（2026-06-27 追加） === */
 .nav-toggle {
   display: none; width: 44px; height: 44px; flex-shrink: 0;
@@ -298,7 +355,7 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
       <h2>数字で見るべるつりー</h2>
       <p>長く働ける環境には理由があります。</p>
     </div>
-    <div class="num-grid">
+    <div class="num-grid is-4">
       <div class="num-card">
         <div class="num">0<small>人</small></div>
         <div class="label">離職者数</div>
@@ -313,6 +370,42 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
         <div class="num">50<small>%</small></div>
         <div class="label">紹介入社率</div>
         <div class="sub">スタッフ自身が仲間を呼ぶ職場です</div>
+      </div>
+      <div class="num-card">
+        <div class="num">約30<small>名</small></div>
+        <div class="label">スタッフ総数</div>
+        <div class="sub">多職種でチームを組んでいます</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ビジョン ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>治療院の中だけで、完結させない</h2>
+      <p>べるつりーは、運動・施術・介護支援を同じグループの中に持っています。一人の方を、元気なうちから最期まで、同じチームで見続けるための形です。</p>
+    </div>
+    <div class="flow-row" style="margin-bottom:44px">
+      <div class="flow-node"><span class="fn-t">運動</span><span class="fn-d">べるフィット</span></div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span class="fn-t">施術</span><span class="fn-d">鍼灸マッサージ</span></div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span class="fn-t">介護</span><span class="fn-d">居宅介護支援</span></div>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <h3>チームで関わる</h3>
+        <p>鍼灸マッサージ師、フィットネストレーナー、ケアマネジャーが同じ会社にいます。自分の専門の外に出た困りごとを、社内の別の専門職へそのまま渡せます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>運動という手段を持てる</h3>
+        <p>痛みが引いた後に「動ける体を保つ」ところまで関われます。施術で終わりにせず、べるフィットでの運動へつなぐ。予防の段階から関わることもできます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>薬だけに頼らない</h3>
+        <p>運動の習慣や、人と会う場所に通うこと。医療の外側にある手段で健康を保つという考え方を、地域の中で実際に回しています。</p>
       </div>
     </div>
   </div>
@@ -358,6 +451,34 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
   </div>
 </section>
 
+<!-- ===================== 働き方の自由度 ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>働き方は、あとから変えられます</h2>
+      <p>入社時の形のまま続ける必要はありません。生活が変われば、働き方も相談してください。</p>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <h3>直行直帰</h3>
+        <p>職場に寄らず、自宅から直接その日の最初の訪問先へ向かいます。最後の訪問先からそのまま帰宅します。</p>
+      </div>
+      <div class="approach-card">
+        <h3>休日を選べる</h3>
+        <p>土日祝休みが基本ですが、週休3日制も選べます。希望に合わせた休日の組み方を相談できます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>副業を認めています</h3>
+        <p>他の治療院での施術、講師、執筆など。会社の仕事に支障が出ない範囲で、届け出のうえ続けられます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>時短勤務の相談</h3>
+        <p>育児や介護と重なる時期は、勤務時間を短くする形も取れます。実際に使っているスタッフがいます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== 研修・育成 ===================== -->
 <section class="sec-pad">
   <div class="wrap">
@@ -371,6 +492,64 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
       <li><span class="step-badge">3</span><span class="step-body"><span class="step-t">先輩と共同で対応（半年〜1年）</span><span class="step-d">実践を重ねながら、自信をつけていく段階です。</span></span></li>
       <li><span class="step-badge">4</span><span class="step-body"><span class="step-t">単独訪問・新規対応</span><span class="step-d">独り立ち後も、希望に応じて同行やレビューを続けられます。</span></span></li>
     </ul>
+  </div>
+</section>
+
+<!-- ===================== 研修の中身 ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="approach-grid">
+      <div class="approach-card">
+        <h3>同行訪問</h3>
+        <p>デビューした後も、希望すれば先輩との同行訪問を続けられます。一人で抱えたまま何年も過ごす、ということにはなりません。</p>
+      </div>
+      <div class="approach-card">
+        <h3>技術研修と症例検討</h3>
+        <p>初期・育成期の技術研修は週2回。症例検討のミーティングは週1回。どちらも業務時間内なので、自分の休みを削る必要はありません。</p>
+      </div>
+      <div class="approach-card">
+        <h3>座学</h3>
+        <p>中医学・東洋医学の体系、リハビリテーション、介護保険の機能訓練の知識まで。現場で判断するための土台を扱います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 等級と収入 ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>等級と、基本給の幅</h2>
+      <p>就業規則の等級別基本給表にもとづく金額です。等級は毎年4月1日に見直します。役職に就くときは、その都度決めることもあります。</p>
+    </div>
+    <div class="ladder">
+      <div class="ladder-row">
+        <span class="lr-stage">第1等級</span>
+        <span class="lr-body"><span class="lr-t">一般</span><span class="lr-d">入社1年目。同行訪問から始め、研修はすべて業務時間内に受けます。</span></span>
+        <span class="lr-pay">200,000&thinsp;&ndash;&thinsp;239,000円</span>
+      </div>
+      <div class="ladder-row">
+        <span class="lr-stage">第2等級</span>
+        <span class="lr-body"><span class="lr-t">中堅</span><span class="lr-d">単独で訪問を担当します。1日7件以内、一人あたり約30分。</span></span>
+        <span class="lr-pay">230,000&thinsp;&ndash;&thinsp;279,000円</span>
+      </div>
+      <div class="ladder-row">
+        <span class="lr-stage">第3等級</span>
+        <span class="lr-body"><span class="lr-t">主任</span><span class="lr-d">臨床の経験を後輩に渡す側へ。教育担当を兼ねます。</span></span>
+        <span class="lr-pay">260,000&thinsp;&ndash;&thinsp;319,000円</span>
+      </div>
+      <div class="ladder-row">
+        <span class="lr-stage">第4等級</span>
+        <span class="lr-body"><span class="lr-t">副院長</span><span class="lr-d">エリアのチームをまとめます。後輩の育成と、他職種との連携が中心になります。</span></span>
+        <span class="lr-pay">300,000&thinsp;&ndash;&thinsp;369,000円</span>
+      </div>
+      <div class="ladder-row">
+        <span class="lr-stage">第5等級</span>
+        <span class="lr-body"><span class="lr-t">院長</span><span class="lr-d">事業全体の運営。経営、人の育成、地域との関係づくりを担います。</span></span>
+        <span class="lr-pay">340,000&thinsp;&ndash;&thinsp;500,000円以上</span>
+      </div>
+    </div>
+    <p class="ladder-note">金額は基本給と資格手当を合わせた額です。車両手当（月20,000円）と通勤手当は、これとは別に支給します。等級は職務の内容と責任の程度で決まり、所属長の評価を踏まえて代表取締役が決定します。</p>
   </div>
 </section>
 
@@ -392,6 +571,48 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
       <div class="approach-card">
         <h3>仲間が仲間を呼ぶ職場</h3>
         <p>入社の半分はスタッフからの紹介です。働いている本人が「いい職場だ」と思っていなければ、こうはなりません。まずは見学で、雰囲気を確かめてください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 求める人物像 ===================== -->
+<section class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>こんな方と働きたい</h2>
+      <p>技術は入ってから身につきます。先に持っていてほしいものは、そこではありません。</p>
+    </div>
+    <div class="approach-grid" style="margin-bottom:44px">
+      <div class="approach-card">
+        <h3>治療院の外に出たい</h3>
+        <p>院の中で待つのではなく、地域に出て、その方の生活の場で仕事をしたい。訪問はそういう働き方です。</p>
+      </div>
+      <div class="approach-card">
+        <h3>運動やリハビリと組み合わせたい</h3>
+        <p>施術だけで終わらせず、動ける体を保つところまで関わりたい方に向いています。</p>
+      </div>
+      <div class="approach-card">
+        <h3>東洋医学を続けて学びたい</h3>
+        <p>中医学・東洋医学の研修が業務時間内にあります。学び続ける前提で組んである職場です。</p>
+      </div>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col is-yes">
+        <h3>活躍している人</h3>
+        <ul>
+          <li>人と話すのが好きで、高齢の方と関わることが苦にならない</li>
+          <li>派手さより、地道に続けることができる</li>
+          <li>学び続けたいと思っている</li>
+        </ul>
+      </div>
+      <div class="fit-col is-no">
+        <h3>合わないかもしれない人</h3>
+        <ul>
+          <li>収入の額だけで職場を選びたい</li>
+          <li>人と話すことに負担を感じる</li>
+          <li>今の技術のままで構わないと思っている</li>
+        </ul>
       </div>
     </div>
   </div>

@@ -151,9 +151,64 @@
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 22px var(--bt-gutter); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.45); }
 
   /* RESPONSIVE */
+
+  /* ===== 2026-09-01 追加：旧コーポレート版から移した節のための部品 ===== */
+
+  /* 横並びの流れ（連携モデル・選考フロー） */
+  .flow-row { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; max-width: 940px; margin: 0 auto; }
+  .flow-node { background: rgba(255,255,255,0.78); border: 1px solid rgba(255,255,255,0.9); border-radius: 14px; box-shadow: 0 8px 22px rgba(80,55,30,0.07); padding: 16px 22px; text-align: center; min-width: 148px; }
+  .flow-node .fn-t { display: block; font-family: var(--bt-font-serif); font-weight: 600; font-size: 15.5px; color: var(--bt-primary); }
+  .flow-node .fn-d { display: block; font-size: 12.5px; color: var(--bt-ink-3); margin-top: 5px; line-height: 1.7; }
+  .flow-arrow { color: var(--bt-accent); font-size: 17px; font-weight: 700; line-height: 1; }
+
+  /* 等級と収入のはしご */
+  .ladder { max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .ladder-row { display: grid; grid-template-columns: 116px 1fr auto; gap: 22px; align-items: center; background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.88); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); padding: 18px 26px; }
+  .ladder-row .lr-stage { font-size: 12.5px; font-weight: 700; color: #fff; background: var(--bt-primary); border-radius: var(--bt-r-pill); padding: 7px 0; text-align: center; letter-spacing: 0.04em; }
+  .ladder-row .lr-t { display: block; font-family: var(--bt-font-serif); font-weight: 600; font-size: 15.5px; color: var(--bt-primary); margin-bottom: 3px; }
+  .ladder-row .lr-d { display: block; font-size: 13px; color: var(--bt-ink-3); line-height: 1.8; }
+  .ladder-row .lr-pay { font-family: var(--bt-font-serif); font-weight: 700; font-size: 17px; color: var(--bt-accent); white-space: nowrap; }
+  .ladder-note { max-width: 840px; margin: 24px auto 0; font-size: 12.5px; color: var(--bt-ink-3); line-height: 1.95; }
+
+  /* 向いている人 / 向いていない人 */
+  .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 900px; margin: 0 auto; }
+  .fit-col { background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.88); border-radius: 18px; box-shadow: 0 12px 30px rgba(80,55,30,0.08); padding: 28px 30px; }
+  .fit-col h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--bt-line-soft); }
+  .fit-col.is-yes h3 { color: var(--bt-success); }
+  .fit-col.is-no h3 { color: var(--bt-ink-3); }
+  .fit-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .fit-col li { font-size: 13.5px; color: var(--bt-ink-2); line-height: 1.8; padding-left: 20px; position: relative; }
+  .fit-col.is-yes li::before { content: ""; position: absolute; left: 0; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--bt-success); }
+  .fit-col.is-no li::before { content: ""; position: absolute; left: 0; top: 12px; width: 10px; height: 1.5px; background: var(--bt-ink-4); }
+
+  /* 時間の内訳 */
+  .tl-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .tl-row { display: grid; grid-template-columns: 74px 1fr; gap: 22px; align-items: baseline; background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.85); border-radius: 14px; box-shadow: 0 6px 18px rgba(80,55,30,0.06); padding: 18px 26px; }
+  .tl-row .tl-min { font-family: var(--bt-font-serif); font-weight: 700; font-size: 20px; color: var(--bt-accent); text-align: right; }
+  .tl-row .tl-t { display: block; font-weight: 600; font-size: 15px; color: var(--bt-primary); margin-bottom: 3px; }
+  .tl-row .tl-d { display: block; font-size: 13px; color: var(--bt-ink-3); line-height: 1.8; }
+
+  /* ラベルチップ */
+  .chip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 720px; margin: 26px auto 0; }
+  .chip { background: rgba(255,255,255,0.7); border: 1px solid var(--bt-line-soft); border-radius: 12px; padding: 15px 10px; text-align: center; font-size: 14px; font-weight: 600; color: var(--bt-primary); }
+
+  /* 営業時間 */
+  .hours-table { max-width: 640px; margin: 0 auto; width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.72); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 26px rgba(80,55,30,0.08); }
+  .hours-table th, .hours-table td { padding: 15px 22px; font-size: 14.5px; text-align: left; border-bottom: 1px solid var(--bt-line-soft); }
+  .hours-table th { background: var(--bt-primary); color: #fff; font-weight: 600; letter-spacing: 0.04em; }
+  .hours-table td:first-child { font-family: var(--bt-font-serif); font-weight: 600; color: var(--bt-primary); width: 36%; }
+  .hours-table tr:last-child td { border-bottom: none; }
+  .hours-table .is-focus td { background: rgba(194,122,101,0.10); }
+
+  /* 紺帯の強調 */
+  .band-note { max-width: 860px; margin: 0 auto; background: var(--bt-primary); color: #fff; border-radius: 18px; padding: 32px 38px; text-align: center; }
+  .band-note h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 19px; margin: 0 0 10px; color: #fff; }
+  .band-note p { font-size: 14px; line-height: 1.95; margin: 0; color: rgba(255,255,255,0.86); }
+
   @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } .page-hero { min-height: 0; padding: 48px 0; } .page-hero::after { background: linear-gradient(170deg, rgba(18,38,70,0.90) 0%, rgba(18,38,70,0.84) 60%, rgba(18,38,70,0.62) 100%); } }
   @media (max-width: 760px) { .approach-grid, .sub-nav-grid { grid-template-columns: 1fr; } .footer-top { grid-template-columns: 1fr 1fr; } .approach-final { padding: 28px 24px; } .sec-pad { padding: 56px 0; } .req-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 22px; } .req-card .req-head { padding: 22px 22px; } }
   @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } .info-bar .wrap { font-size: 11px; gap: 6px 12px; } }
+  @media (max-width: 760px) { .ladder-row { grid-template-columns: 1fr; gap: 10px; } .ladder-row .lr-stage { justify-self: start; padding: 7px 20px; } .fit-grid { grid-template-columns: 1fr; } .chip-grid { grid-template-columns: repeat(2, 1fr); } .flow-arrow { transform: rotate(90deg); } .flow-row { flex-direction: column; } .flow-node { width: 100%; max-width: 320px; } .tl-row { grid-template-columns: 58px 1fr; gap: 14px; padding: 16px 20px; } .ladder-row { padding: 18px 20px; } .band-note { padding: 26px 22px; } .hours-table th, .hours-table td { padding: 13px 15px; font-size: 13.5px; } }
 /* === モバイル：ハンバーガー・ドロワー＋スマホ調整（2026-06-27 追加） === */
 .nav-toggle {
   display: none; width: 44px; height: 44px; flex-shrink: 0;
@@ -327,6 +382,25 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
   </div>
 </section>
 
+<!-- ===================== リーフとシード ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>べるフィットの中に、2つの顔があります</h2>
+      <p>同じ建物で、時間帯によって別のサービスが動いています。運動サポーターが受け持つのは、このうち「シード」です。</p>
+    </div>
+    <div class="flow-row" style="margin-bottom:40px">
+      <div class="flow-node" style="min-width:200px"><span class="fn-t">リーフ</span><span class="fn-d">保険が使えるジム<br />午前と午後の時間帯</span></div>
+      <div class="flow-node" style="min-width:200px; border-color: var(--bt-accent); box-shadow: 0 10px 26px rgba(194,122,101,0.20);"><span class="fn-t" style="color:var(--bt-accent)">シード</span><span class="fn-d">女性向けプログラム<br />昼と夕方〜夜　&larr;&nbsp;こちらの担当</span></div>
+    </div>
+    <table class="hours-table">
+      <tr><th>シードの営業時間</th><th>時間帯</th></tr>
+      <tr class="is-focus"><td>昼</td><td>11:30 〜 13:30</td></tr>
+      <tr class="is-focus"><td>夕方〜夜</td><td>16:30 〜 20:00</td></tr>
+    </table>
+  </div>
+</section>
+
 <!-- ===================== 仕事内容 ===================== -->
 <section class="sec-pad" style="padding-top:0">
   <div class="wrap">
@@ -358,13 +432,29 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
   </div>
 </section>
 
+<!-- ===================== 長めに働く場合 ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>長めに入りたい方の、働き方の一例</h2>
+      <p>週1日3時間から始められますが、もっと時間を取りたいという方もいます。その場合はこんな組み方になります。</p>
+    </div>
+    <ul class="target-list">
+      <li><span class="step-badge">昼</span><span class="step-body"><span class="step-t">11:30〜13:30　シードの時間</span><span class="step-d">受付、会員さんとの会話、運動のサポート。ここが本来の持ち場です。</span></span></li>
+      <li><span class="step-badge">間</span><span class="step-body"><span class="step-t">シードが閉まっている時間</span><span class="step-d">休憩に充てるか、希望があればリーフ側のサポートや施設の整備に入ります。任意なので、休憩だけにして構いません。</span></span></li>
+      <li><span class="step-badge">夕</span><span class="step-body"><span class="step-t">16:30〜20:00　シードの時間</span><span class="step-d">仕事帰りの会員さんが増える時間帯です。閉店後に片付けをして退勤します。</span></span></li>
+    </ul>
+    <p class="ladder-note" style="text-align:center">昼だけ、夕方だけ、という入り方が基本です。上は「一日いたい」という方に向けた例で、必ずこの形になるわけではありません。</p>
+  </div>
+</section>
+
 <!-- ===================== この仕事の魅力 ===================== -->
 <section class="sec-pad" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
       <h2>この仕事の魅力</h2>
     </div>
-    <div class="approach-grid">
+    <div class="approach-grid" style="grid-template-columns:1fr 1fr; max-width:760px">
       <div class="approach-card">
         <h3>地域の健康づくりに関われる</h3>
         <p>地域の女性の健康と笑顔を、毎日直接支えることができます。</p>
@@ -374,8 +464,63 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
         <p>会員さんとの会話が仕事の中心です。人と話すことが好きな方にぴったりです。</p>
       </div>
       <div class="approach-card">
+        <h3>地域の居場所を育てる</h3>
+        <p>運動施設であると同時に、会員さん同士が顔を合わせる場所でもあります。その居場所を、一緒に育てていく仕事です。</p>
+      </div>
+      <div class="approach-card">
         <h3>未経験から始められる</h3>
         <p>運動・接客の研修を一から行います。特別な資格は必要ありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 向き不向き ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>こんな方に向いています</h2>
+      <p>運動を教える技術より、会員さんが「今日も来てよかった」と思って帰れるかどうかが仕事の中身です。</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col is-yes">
+        <h3>活躍している人</h3>
+        <ul>
+          <li>人と話すのが好き。おしゃべりが苦にならない</li>
+          <li>明るく前向きに、場を温められる</li>
+          <li>高齢の方と関わることが好き</li>
+          <li>健康や運動に興味がある</li>
+        </ul>
+      </div>
+      <div class="fit-col is-no">
+        <h3>合わないかもしれない人</h3>
+        <ul>
+          <li>人と話すことに負担を感じる</li>
+          <li>黙々と作業を進めるほうが落ち着く</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 雇用のかたち ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>雇用のかたち</h2>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <h3>パート</h3>
+        <p>家庭の時間に合わせて働きたい方に向いています。週1日3時間から、昼だけ・夕方だけという入り方ができます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>アルバイト</h3>
+        <p>学生の方も歓迎です。空いている時間で、地域の方と関わる仕事ができます。</p>
+      </div>
+      <div class="approach-card">
+        <h3>正社員登用</h3>
+        <p>希望する方には正社員への登用制度があります。続けるうちに関わり方を変えたくなったら、相談してください。</p>
       </div>
     </div>
   </div>
@@ -416,6 +561,25 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
         <span class="req-label">選考の流れ</span>
         <span class="req-val">お問い合わせ → 施設見学 → 面談 → 入社<span class="note">見学のみも歓迎です。応募・書類の提出は見学の後で大丈夫です。</span></span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 選考の流れ ===================== -->
+<section class="sec-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>「気になる」の段階で来てください</h2>
+      <p>見学だけで帰っていただいて構いません。応募も書類も、その後で結構です。</p>
+    </div>
+    <div class="flow-row">
+      <div class="flow-node"><span class="fn-t">お問い合わせ</span><span class="fn-d">電話・フォーム</span></div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span class="fn-t">施設見学</span><span class="fn-d">雰囲気を見に来る</span></div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span class="fn-t">面談</span><span class="fn-d">シフトの相談も</span></div>
+      <span class="flow-arrow">&rarr;</span>
+      <div class="flow-node"><span class="fn-t">入社</span><span class="fn-d">研修から始めます</span></div>
     </div>
   </div>
 </section>
