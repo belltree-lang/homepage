@@ -1,0 +1,40 @@
+/* recruit-motion.css — 採用ページのスクロール演出（2026-09-01）
+   sweep リビール／数字のカウント／ヒーローの視差／進み具合バー。
+   止める章（スクロールを占有する送り）は使わない。
+   動きを止める設定では、全部品を最初から表示する。 */
+
+/* ---- 進み具合バー ---- */
+.rd-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 300; pointer-events: none; }
+.rd-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--bt-accent), var(--bt-primary)); border-radius: 0 2px 2px 0; }
+
+/* ---- ヒーローの視差（写真だけ動く。文字は動かさない） ---- */
+.page-hero::before { transform: translate3d(0, var(--hero-shift, 0px), 0) scale(1.08); will-change: transform; }
+
+/* ---- sweep リビール ---- */
+[data-rv] {
+  opacity: 0;
+  transform: translate3d(var(--rv-x, 0px), var(--rv-y, 24px), 0);
+  transition: opacity .8s cubic-bezier(.21,.6,.35,1), transform .8s cubic-bezier(.21,.6,.35,1);
+  transition-delay: var(--rv-d, 0s);
+}
+[data-rv].is-in { opacity: 1; transform: none; }
+
+/* 部品ごとに距離と向きを変える（カードを1枚の板として動かさないための差） */
+[data-rv="lead"] { --rv-y: 26px; }
+[data-rv="part"] { --rv-y: 16px; }
+[data-rv="tag"]  { --rv-x: -14px; --rv-y: 0px; }
+[data-rv="pay"]  { --rv-y: 10px; }
+[data-rv="chip"] { --rv-y: 12px; }
+[data-rv="wide"] { --rv-y: 30px; }
+
+/* 数字はわずかに縮んだところから入る */
+.num-card .num[data-rv] { transform: translate3d(0, 14px, 0) scale(.94); transition-duration: .9s; }
+.num-card .num[data-rv].is-in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-rv], [data-rv].is-in, .num-card .num[data-rv] {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .page-hero::before { transform: scale(1.08) !important; }
+  .rd-bar { display: none; }
+}
