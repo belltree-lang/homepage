@@ -38,3 +38,155 @@
   .page-hero::before { transform: scale(1.08) !important; }
   .rd-bar { display: none; }
 }
+
+/* ==========================================================================
+   装飾（2026-09-01 追加）
+   サイト既存の意匠に合わせる: セクション背景の濃淡・英字ラベル・
+   線アイコン・水彩素材・紺帯。素材は decor/ と assets/icons/ の既存物。
+   ========================================================================== */
+
+/* ---- セクション背景の濃淡（13節が同じ色で続くのを断ち切る） ---- */
+.sec-pad { position: relative; }
+.band-sunk  { background: #F3F0E7; }
+.band-alt   { background: #F0EADD; }
+.band-shell { background: linear-gradient(180deg, rgba(232,201,191,0.55) 0%, rgba(243,240,231,0.85) 100%); }
+
+/* ---- 英字のセクションラベル ---- */
+.sec-head .sec-eyebrow {
+  display: block; font-size: 11.5px; letter-spacing: 0.20em; font-weight: 700;
+  color: var(--bt-accent); text-transform: uppercase; margin-bottom: 14px;
+}
+.sec-head .sec-eyebrow::after {
+  content: ""; display: block; width: 32px; height: 2px;
+  background: var(--bt-accent-soft); margin: 12px auto 0;
+}
+
+/* ---- 線アイコン（カード見出しの上） ---- */
+[data-ic]::before {
+  content: ""; display: block; width: 32px; height: 32px; margin: 0 0 14px;
+  background: var(--bt-accent);
+  -webkit-mask: var(--ic) center / contain no-repeat;
+  mask: var(--ic) center / contain no-repeat;
+}
+.num-card[data-ic]::before, .fit-col[data-ic]::before { margin-left: auto; margin-right: auto; }
+.approach-card[data-ic]::before { opacity: .9; }
+
+/* 見出しの行内に置くとき */
+.ic-inline { display: inline-flex; align-items: center; gap: 10px; }
+.ic-inline::before {
+  content: ""; width: 22px; height: 22px; flex-shrink: 0; margin: 0;
+  background: currentColor; -webkit-mask: var(--ic) center / contain no-repeat;
+  mask: var(--ic) center / contain no-repeat;
+}
+
+/* ---- 水彩素材（セクションの隅に薄く） ---- */
+.sec-deco { position: absolute; pointer-events: none; user-select: none; z-index: 0; opacity: .30; }
+.sec-pad > .wrap { position: relative; z-index: 1; }
+.d-leaf-bl { left: -18px;  bottom: -10px; width: 190px; transform: scaleX(-1); }
+.d-leaf-tr { right: -14px; top: 10px;     width: 160px; }
+.d-cloud-tl{ left: 2%;     top: 12px;     width: 210px; opacity: .26; }
+.d-cloud-br{ right: 3%;    bottom: 10px;  width: 190px; opacity: .24; }
+.d-bird    { right: 8%;    top: 34px;     width: 84px;  opacity: .34; }
+.d-sun     { right: 4%;    top: 18px;     width: 120px; opacity: .30; }
+.d-dots    { left: 4%;     bottom: 24px;  width: 140px; opacity: .22; }
+
+/* ---- 大きな写真の帯（重ねたキャプション） ---- */
+.photo-band { position: relative; max-width: 1000px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 22px 54px rgba(80,55,30,0.16); }
+.photo-band img { display: block; width: 100%; height: clamp(280px, 34vw, 420px); object-fit: cover; }
+.photo-band .pb-note {
+  position: absolute; right: 26px; bottom: 26px; max-width: 340px;
+  background: rgba(255,255,255,0.93); border-radius: 16px; padding: 22px 26px;
+  box-shadow: 0 14px 34px rgba(80,55,30,0.18);
+}
+.photo-band .pb-note .pb-eyebrow { display: block; font-size: 11px; letter-spacing: .14em; color: var(--bt-accent); font-weight: 700; margin-bottom: 8px; }
+.photo-band .pb-note p { margin: 0; font-size: 14px; line-height: 1.95; color: var(--bt-ink-2); }
+
+/* ---- 矢印つきリンク ---- */
+.arrow-link { display: inline-flex; align-items: center; gap: 8px; color: var(--bt-accent); font-weight: 600; font-size: 14px; border-bottom: 1px solid var(--bt-accent-soft); padding-bottom: 3px; }
+.arrow-link::after { content: "→"; transition: transform .25s ease; }
+.arrow-link:hover::after { transform: translateX(4px); }
+
+@media (max-width: 860px) {
+  .sec-deco { opacity: .18; }
+  .d-leaf-bl, .d-leaf-tr { width: 120px; }
+  .d-cloud-tl, .d-cloud-br { width: 150px; }
+  .photo-band .pb-note { position: static; max-width: none; border-radius: 0; box-shadow: none; }
+  .photo-band { box-shadow: 0 14px 34px rgba(80,55,30,0.14); }
+}
+
+/* ---- アイコンの実体（assets/icons/ をデータURI化） ---- */
+[data-ic="leaf"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M24%2038%20C%2014%2028%2010%2022%2010%2016%20C%2010%2011%2014%208%2018%208%20C%2021%208%2024%2010%2024%2014%20C%2024%2010%2027%208%2030%208%20C%2034%208%2038%2011%2038%2016%20C%2038%2022%2034%2028%2024%2038%20Z%22%20opacity%3D%220.2%22%20fill%3D%22%23000%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M24%2038%20C%2014%2028%2010%2022%2010%2016%20C%2010%2011%2014%208%2018%208%20C%2021%208%2024%2010%2024%2014%20C%2024%2010%2027%208%2030%208%20C%2034%208%2038%2011%2038%2016%20C%2038%2022%2034%2028%2024%2038%20Z%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="heart"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M24%2040%20S%208%2030%208%2018%20C%208%2012%2012%208%2017%208%20C%2020%208%2022%2010%2024%2012%20C%2026%2010%2028%208%2031%208%20C%2036%208%2040%2012%2040%2018%20C%2040%2030%2024%2040%2024%2040%20Z%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="user"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Ccircle%20cx%3D%2224%22%20cy%3D%2220%22%20r%3D%228%22%3E%3C%2Fcircle%3E%20%3Cpath%20d%3D%22M10%2040%20C%2010%2031%2018%2028%2024%2028%20C%2030%2028%2038%2031%2038%2040%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="chat"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M10%2016%20C%2010%2013%2012%2011%2015%2011%20H%2033%20C%2036%2011%2038%2013%2038%2016%20V%2032%20C%2038%2035%2036%2037%2033%2037%20H%2024%20L%2016%2042%20V%2037%20H%2015%20C%2012%2037%2010%2035%2010%2032%20Z%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="pin"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M24%206%20C%2016%206%2010%2012%2010%2020%20C%2010%2030%2024%2042%2024%2042%20C%2024%2042%2038%2030%2038%2020%20C%2038%2012%2032%206%2024%206%20Z%22%3E%3C%2Fpath%3E%20%3Ccircle%20cx%3D%2224%22%20cy%3D%2220%22%20r%3D%224%22%3E%3C%2Fcircle%3E%20%3C%2Fsvg%3E")}
+[data-ic="clock"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Ccircle%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%2216%22%3E%3C%2Fcircle%3E%20%3Cpath%20d%3D%22M24%2014%20V%2024%20L%2031%2028%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="calendar"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Crect%20x%3D%228%22%20y%3D%2212%22%20width%3D%2232%22%20height%3D%2228%22%20rx%3D%222%22%3E%3C%2Frect%3E%20%3Cpath%20d%3D%22M8%2020%20H%2040%20M16%208%20V%2016%20M32%208%20V%2016%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="check"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M12%2024%20L%2020%2032%20L%2036%2016%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="sun"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Ccircle%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%2210%22%3E%3C%2Fcircle%3E%20%3Cpath%20d%3D%22M24%204%20V%209%20M24%2039%20V%2044%20M4%2024%20H%209%20M39%2024%20H%2044%20M10%2010%20L%2013%2013%20M35%2035%20L%2038%2038%20M10%2038%20L%2013%2035%20M35%2013%20L%2038%2010%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="phone"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M14%2010%20H%2020%20L%2023%2017%20L%2019%2020%20C%2021%2025%2023%2027%2028%2029%20L%2031%2025%20L%2038%2028%20V%2034%20C%2038%2036%2036%2038%2034%2038%20C%2022%2038%2010%2026%2010%2014%20C%2010%2012%2012%2010%2014%2010%20Z%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="arrow-right"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M18%2012%20L%2030%2024%20L%2018%2036%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="service-community"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Ccircle%20cx%3D%2214%22%20cy%3D%2218%22%20r%3D%224%22%3E%3C%2Fcircle%3E%20%3Ccircle%20cx%3D%2224%22%20cy%3D%2214%22%20r%3D%224%22%3E%3C%2Fcircle%3E%20%3Ccircle%20cx%3D%2234%22%20cy%3D%2218%22%20r%3D%224%22%3E%3C%2Fcircle%3E%20%3Cpath%20d%3D%22M6%2034%20C%206%2027%2022%2027%2022%2034%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M16%2032%20C%2016%2025%2032%2025%2032%2032%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M26%2034%20C%2026%2027%2042%2027%2042%2034%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="service-fit"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Crect%20x%3D%226%22%20y%3D%2220%22%20width%3D%225%22%20height%3D%228%22%20rx%3D%221.2%22%3E%3C%2Frect%3E%20%3Crect%20x%3D%2237%22%20y%3D%2220%22%20width%3D%225%22%20height%3D%228%22%20rx%3D%221.2%22%3E%3C%2Frect%3E%20%3Cpath%20d%3D%22M11%2024%20L16%2024%20M32%2024%20L37%2024%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M16%2024%20L19%2024%20L21%2018%20L24%2030%20L26%2021%20L28%2024%20L32%2024%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="service-kaigo"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M10%2024%20L24%2012%20L38%2024%20V%2038%20H%2010%20Z%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M19%2030%20c%200%20-3%204%20-4%205%20-1%20c%201%20-3%205%20-2%205%201%20c%200%203%20-5%206%20-5%206%20s%20-5%20-3%20-5%20-6%20z%22%20fill%3D%22%23000%22%20fill-opacity%3D%220.15%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="service-legal"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M14%208%20H%2030%20L%2036%2014%20V%2040%20H%2014%20Z%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M30%208%20V%2014%20H%2036%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M18%2022%20H%2030%20M18%2028%20H%2028%20M18%2034%20H%2024%22%3E%3C%2Fpath%3E%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2236%22%20r%3D%223.5%22%20fill%3D%22%23000%22%20fill-opacity%3D%220.12%22%3E%3C%2Fcircle%3E%20%3C%2Fsvg%3E")}
+[data-ic="service-shinkyu"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M10%2038%20C%2014%2032%2020%2028%2026%2028%20L%2034%2028%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M34%2028%20L%2040%2022%22%3E%3C%2Fpath%3E%20%3Ccircle%20cx%3D%2240%22%20cy%3D%2222%22%20r%3D%221.5%22%20fill%3D%22%23000%22%3E%3C%2Fcircle%3E%20%3Cpath%20d%3D%22M12%2038%20L%2010%2040%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M16%2032%20C%2018%2030%2022%2030%2024%2032%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+[data-ic="service-shukatsu"]{--ic:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M10%2012%20C%2016%2010%2022%2011%2024%2014%20C%2026%2011%2032%2010%2038%2012%20V%2036%20C%2032%2034%2026%2035%2024%2038%20C%2022%2035%2016%2034%2010%2036%20Z%22%3E%3C%2Fpath%3E%20%3Cpath%20d%3D%22M24%2014%20V%2038%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E")}
+
+/* ============================================================
+   2段組（左に話・右に事実） — 旧採用ページの editorial-split を
+   べるつりーの配色で起こし直したもの。中央寄せ一辺倒をやめる。
+   ============================================================ */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: start; max-width: 1040px; margin: 0 auto; }
+.split.is-wide-left  { grid-template-columns: 1.12fr 0.88fr; }
+.split.is-wide-right { grid-template-columns: 0.88fr 1.12fr; }
+.split > * { min-width: 0; }
+.split .sec-eyebrow { display: block; font-size: 11.5px; letter-spacing: 0.20em; font-weight: 700; color: var(--bt-accent); text-transform: uppercase; margin-bottom: 14px; }
+.split .sec-eyebrow::after { content: ""; display: block; width: 32px; height: 2px; background: var(--bt-accent-soft); margin: 12px 0 0; }
+.split h2 { font-family: var(--bt-font-serif); font-weight: 600; font-size: clamp(21px, 2.2vw, 27px); line-height: 1.55; color: var(--bt-primary); margin: 0 0 18px; letter-spacing: 0.01em; }
+.split-lead { font-size: 14.5px; line-height: 2.05; color: var(--bt-ink-2); margin: 0 0 26px; }
+.split-stack > * + * { margin-top: 20px; }
+
+/* 見出しつきの箇条書き（旧 feature-list） */
+.check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.check-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 13.5px; line-height: 1.9; color: var(--bt-ink-2); }
+.check-list li::before { content: ""; flex: 0 0 20px; width: 20px; height: 20px; margin-top: 4px; border-radius: 50%; background: var(--bt-accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.6 10.4 8.6 13.3 14.5 6.9' fill='none' stroke='%231A365D' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat; }
+.check-list li > div { min-width: 0; }
+.check-list li b { display: block; font-weight: 600; font-size: 15px; color: var(--bt-primary); margin-bottom: 4px; }
+
+/* 右側に置く「事実の板」 */
+.fact-panel { background: rgba(255,255,255,0.74); border: 1px solid rgba(255,255,255,0.92); border-radius: var(--bt-r-xl); box-shadow: 0 14px 36px rgba(80,55,30,0.10); padding: 28px 30px; }
+.fact-panel h3 { font-family: var(--bt-font-serif); font-weight: 600; font-size: 16px; color: var(--bt-primary); margin: 0 0 18px; }
+.fact-row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--bt-line-soft); }
+.fact-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.fact-row .k { font-size: 13px; color: var(--bt-ink-3); }
+.fact-row .v { font-size: 14px; font-weight: 700; color: var(--bt-primary); text-align: right; }
+
+/* 色のついた小さな板（注意・強調） */
+.note-card { border-radius: var(--bt-r-xl); padding: 24px 28px; background: linear-gradient(180deg, rgba(232,201,191,0.50) 0%, rgba(255,255,255,0.70) 100%); border: 1px solid rgba(255,255,255,0.92); }
+.note-card .nc-t { display: block; font-family: var(--bt-font-serif); font-weight: 600; font-size: 16.5px; color: var(--bt-primary); margin-bottom: 10px; }
+.note-card p { margin: 0; font-size: 13.5px; line-height: 1.95; color: var(--bt-ink-2); }
+
+/* 並べるタイル（部位・時間帯など） */
+.tile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.tile-grid.is-2 { grid-template-columns: repeat(2, 1fr); }
+.tile { background: rgba(255,255,255,0.74); border: 1px solid rgba(255,255,255,0.92); border-radius: 12px; padding: 13px 8px; text-align: center; font-size: 13.5px; font-weight: 600; color: var(--bt-primary); box-shadow: 0 6px 16px rgba(80,55,30,0.06); }
+.tile small { display: block; font-size: 11px; font-weight: 500; color: var(--bt-ink-3); margin-top: 3px; letter-spacing: .02em; }
+.panel-cap { font-size: 12px; color: var(--bt-ink-3); margin: 0 0 12px; letter-spacing: .04em; font-weight: 600; }
+
+/* 締めのCTAは塗る（白い箱で終わらせない） */
+.approach-final { background: var(--bt-primary); border: 1px solid rgba(255,255,255,0.10); border-top: 4px solid var(--bt-accent); box-shadow: 0 26px 64px rgba(26,54,93,0.30); padding: 52px 44px; }
+.approach-final h2 { color: #fff; font-size: clamp(21px, 2.2vw, 26px); }
+.approach-final > p { color: rgba(255,255,255,0.84); }
+.approach-final .btn--ghost { border-color: rgba(255,255,255,0.45); color: #fff; background: transparent; }
+.approach-final .btn--ghost:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+@media (max-width: 900px) {
+  .split, .split.is-wide-left, .split.is-wide-right { grid-template-columns: 1fr; gap: 34px; }
+  .fact-panel { padding: 24px 22px; }
+  .note-card { padding: 22px 22px; }
+  .approach-final { padding: 34px 24px; }
+}
+.note-card.is-dark { background: var(--bt-primary); border-color: rgba(255,255,255,0.12); }
+.note-card.is-dark .nc-t { color: #fff; }
+.note-card.is-dark p { color: rgba(255,255,255,0.84); }

@@ -153,7 +153,6 @@
   .footer-col a:hover { color: #fff; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 22px var(--bt-gutter); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.45); }
 
-  .reveal { opacity: 1; }
 
   /* RESPONSIVE */
   @media (max-width: 1000px) { .main-nav, .header-phone { display: none; } .header-inner { gap: 12px; } .page-hero { min-height: 0; padding: 48px 0; } .page-hero::after { background: linear-gradient(170deg, rgba(18,38,70,0.90) 0%, rgba(18,38,70,0.84) 60%, rgba(18,38,70,0.62) 100%); } }
@@ -291,13 +290,15 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
 </section>
 
 <!-- ===================== 数字 ===================== -->
-<section class="sec-pad" style="padding-top:24px">
+<section class="sec-pad band-sunk" style="padding-top:24px">
+  <img class="sec-deco d-dots" src="../decor/dots-grid.png" alt="" />
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head">
+      <span class="sec-eyebrow">By the numbers</span>
       <h2>数字で見るべるつりー</h2>
       <p>長く働ける環境には理由があります。</p>
     </div>
-    <div class="num-grid reveal">
+    <div class="num-grid">
       <div class="num-card">
         <div class="num">0<small>人</small></div>
         <div class="label">離職者数</div>
@@ -318,13 +319,16 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
 </section>
 
 <!-- ===================== 募集職種 ===================== -->
-<section class="sec-pad" id="jobs">
+<section class="sec-pad band-alt" id="jobs">
+  <img class="sec-deco d-cloud-tl" src="../decor/clouds.png" alt="" />
+  <img class="sec-deco d-bird" src="../decor/birds.png" alt="" />
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head">
+      <span class="sec-eyebrow">Open positions</span>
       <h2>募集職種</h2>
       <p>くわしい募集要項は、職種ごとの案内ページをご覧ください。</p>
     </div>
-    <div class="job-grid reveal">
+    <div class="job-grid">
 
       <a class="job-card" href="acupuncture/">
         <span class="job-status job-status--hiring">募集中</span>
@@ -355,22 +359,36 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
   </div>
 </section>
 
+<section class="sec-pad band-alt" style="padding-top:0">
+  <div class="wrap">
+    <div class="photo-band">
+      <img src="../assets/img/photos/cases-01-rehab.webp" alt="施術用のベッドとトレーニングマシンが並ぶ施設で、スタッフが歩行を支える場面" />
+      <div class="pb-note">
+        <span class="pb-eyebrow">同じ床に、別の専門がある</span>
+        <p>手前は施術用のベッド、奥はトレーニングマシン。施術者もトレーナーもケアマネジャーも、同じ建物にいます。自分の専門の外で行き詰まったとき、渡す相手がすぐ隣にいます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== 働く環境 ===================== -->
 <section class="sec-pad">
+  <img class="sec-deco d-leaf-bl" src="../decor/leaf-plant.png" alt="" />
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head">
+      <span class="sec-eyebrow">Why belltree</span>
       <h2>べるつりーで働くということ</h2>
     </div>
-    <div class="approach-grid reveal">
-      <div class="approach-card">
+    <div class="approach-grid">
+      <div class="approach-card" data-ic="service-community">
         <h3>多職種がひとつのチーム</h3>
         <p>施術者・トレーナー・ケアマネジャーが同じグループにいます。自分の専門の先で困っている方を、社内の別の専門職へつなげます。一人で抱え込まない働き方です。</p>
       </div>
-      <div class="approach-card">
+      <div class="approach-card" data-ic="heart">
         <h3>一人の方と、長く付き合う</h3>
         <p>その場かぎりの対応ではなく、同じ方を継続して担当します。「また歩けるようになった」「外に出られるようになった」——変化に立ち会えるのがこの仕事の手応えです。</p>
       </div>
-      <div class="approach-card">
+      <div class="approach-card" data-ic="chat">
         <h3>仲間が仲間を呼ぶ職場</h3>
         <p>入社の半分はスタッフからの紹介です。働いている本人が「いい職場だ」と思っていなければ、こうはなりません。まずは見学で、雰囲気を確かめてください。</p>
       </div>
@@ -379,24 +397,36 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
 </section>
 
 <!-- ===================== 応募の流れ ===================== -->
-<section class="sec-pad">
+<section class="sec-pad band-sunk">
+  <img class="sec-deco d-sun" src="../decor/sun.png" alt="" />
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>応募の流れ</h2>
-      <p>「まずは話を聞いてみたい」という段階で構いません。</p>
+    <div class="split is-wide-right">
+      <div class="split-stack">
+        <div>
+          <span class="sec-eyebrow">How to apply</span>
+          <h2>応募の流れ</h2>
+          <p class="split-lead">「まずは話を聞いてみたい」という段階で構いません。</p>
+        </div>
+        <div class="note-card">
+          <span class="nc-t">決めていなくて大丈夫です</span>
+          <p>応募を決めていなくても構いません。仕事の中身や職場の雰囲気など、気になることをお聞かせください。</p>
+        </div>
+      </div>
+      <div>
+        <ul class="target-list">
+          <li><span class="step-badge">1</span><span class="step-body"><span class="step-t">お電話・フォームでご連絡</span><span class="step-d">お問い合わせフォームで「採用について」を選ぶか、お電話で「採用の件で」とお伝えください。</span></span></li>
+          <li><span class="step-badge">2</span><span class="step-body"><span class="step-t">見学・面談</span><span class="step-d">現場の見学と面談で、仕事内容・働き方・条件をすり合わせます。疑問はこの場ですべて聞いてください。</span></span></li>
+          <li><span class="step-badge">3</span><span class="step-body"><span class="step-t">入社</span><span class="step-d">入社日や勤務形態は、現職の引き継ぎなどご事情に合わせて調整します。</span></span></li>
+        </ul>
+      </div>
     </div>
-    <ul class="target-list reveal">
-      <li><span class="step-badge">1</span><span class="step-body"><span class="step-t">お電話・フォームでご連絡</span><span class="step-d">お問い合わせフォームで「採用について」を選ぶか、お電話で「採用の件で」とお伝えください。</span></span></li>
-      <li><span class="step-badge">2</span><span class="step-body"><span class="step-t">見学・面談</span><span class="step-d">現場の見学と面談で、仕事内容・働き方・条件をすり合わせます。疑問はこの場ですべて聞いてください。</span></span></li>
-      <li><span class="step-badge">3</span><span class="step-body"><span class="step-t">入社</span><span class="step-d">入社日や勤務形態は、現職の引き継ぎなどご事情に合わせて調整します。</span></span></li>
-    </ul>
   </div>
 </section>
 
 <!-- ===================== 最終CTA ===================== -->
-<section class="sec-pad" id="contact">
+<section class="sec-pad band-shell" id="contact">
   <div class="wrap">
-    <div class="approach-final reveal">
+    <div class="approach-final">
       <h2>見学・ご相談はこちらから</h2>
       <p>応募を決めていなくても大丈夫です。仕事の中身や職場の雰囲気など、気になることをお聞かせください。</p>
       <div class="cta-row">
@@ -411,9 +441,9 @@ body.drawer-open .nav-drawer { transform: translateX(0); visibility: visible; }
 </section>
 
 <!-- ===================== 関連 ===================== -->
-<section class="sec-pad" style="padding-top:0">
+<section class="sec-pad band-shell" style="padding-top:0">
   <div class="wrap">
-    <div class="sub-nav reveal">
+    <div class="sub-nav">
       <h3>関連するご案内</h3>
       <div class="sub-nav-grid">
         <a class="sub-nav-item" href="../team/">
