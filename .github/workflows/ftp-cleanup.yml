@@ -47,3 +47,15 @@ jobs:
           echo 'Remaining files after cleanup:'
           cls -l
           "
+
+      - name: Remove leaked internal site copies
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+          set ftp:ssl-allow no;
+          open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
+          rm -rf internal test/internal
+          "
