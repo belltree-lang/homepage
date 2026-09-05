@@ -41,6 +41,7 @@ jobs:
             docs/**
             *.md
             lolipop_staging/**
+            internal/**
             templates/**
             _archive/**
             **/_articles/**
