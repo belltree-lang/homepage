@@ -27,7 +27,7 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      if (/^(www\.)?bellmfit\.com$/.test(location.hostname)) {gtag('js', new Date());
+      if (/^(www\.)?bellmfit\.com$/.test(location.hostname) && !/^\/test(\/|$)/.test(location.pathname)) {gtag('js', new Date());
 
       gtag('config', 'G-4TCBEE6Y54');}
       // GA4 conversion: 予約(hacomono)/電話(tel:) クリック計測
