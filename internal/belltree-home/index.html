@@ -743,6 +743,21 @@
     .header-cta { gap: 10px; }
     .btn-sm { height: 38px; padding: 0 15px; font-size: 12px; }
   }
+
+  /* PARTNERS ロゴ帯（2026-09-06 追加） */
+  .pt-grid { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .pt-grid > li { flex: 0 0 130px; }
+  .pt-tile { display: flex; flex-direction: column; align-items: center; gap: 12px; height: 100%; padding: 18px 10px 14px; background: #fff; border: 1px solid var(--bt-line-soft); border-radius: 14px; box-shadow: var(--bt-shadow-1); transition: transform var(--bt-dur) var(--bt-ease), border-color var(--bt-dur) var(--bt-ease); }
+  a.pt-tile:hover { transform: translateY(-3px); border-color: var(--bt-accent-soft); }
+  .pt-tile--static { cursor: default; }
+  .pt-logo { display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; width: 100%; }
+  .pt-logo img { max-height: 44px; max-width: 100%; width: auto; height: auto; object-fit: contain; }
+  .pt-logo--legal img { width: 34px; height: 34px; }
+  .pt-word { font-family: var(--bt-font-serif); font-weight: 600; font-size: 15.5px; color: var(--bt-primary); letter-spacing: 0.02em; white-space: nowrap; }
+  .pt-cap { font-size: 10.5px; color: var(--bt-ink-4); letter-spacing: 0.02em; white-space: nowrap; text-align: center; line-height: 1.5; }
+  .pt-more { text-align: center; margin: 28px 0 0; font-size: 14px; }
+  .pt-more a { color: var(--bt-accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 480px) { .pt-grid { gap: 10px; } .pt-grid > li { flex: 0 0 calc(50% - 5px); } .pt-word { font-size: 15px; } .pt-tile { padding: 16px 10px 14px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -1127,6 +1142,28 @@
   </div>
 </section>
 
+<!-- ===================== PARTNERS（2026-09-06 追加。詳細は partners/） ===================== -->
+<!-- ロゴの掲載はいずれも先方の了解あり。帝京大学は佐藤教授の了承が取れたら足す。モンドのサイトは 403 のためリンクなし -->
+<section class="band-paper sec-pad" id="partners" aria-labelledby="pt-title" style="border-top:1px solid var(--bt-line-soft)">
+  <div class="wrap">
+    <div class="news-sec-head">
+      <span class="news-eyebrow">Partners</span>
+      <h2 id="pt-title">一緒に動いている学校・企業・グループ会社</h2>
+      <p>学生の実習を受け入れている学校、べるフィットの機器とシステム、同じグループの会社です。ロゴを押すと、それぞれのサイトが開きます。</p>
+    </div>
+    <ul class="pt-grid reveal">
+      <li><a class="pt-tile" href="https://alpha-net.ac.jp/" target="_blank" rel="noopener noreferrer"><span class="pt-logo"><img src="assets/img/partners/alpha-logo.png" alt="アルファ医療福祉美容専門学校" width="605" height="156" loading="lazy" /></span><span class="pt-cap">産学教育連携協定</span></a></li>
+      <li><a class="pt-tile" href="https://www.technogym.com/jp/" target="_blank" rel="noopener noreferrer"><span class="pt-logo"><img src="assets/img/partners/technogym-logo.svg" alt="テクノジムジャパン" width="118" height="33" loading="lazy" /></span><span class="pt-cap">べるフィットのマシン</span></a></li>
+      <li><a class="pt-tile" href="https://www.hacomono.jp/" target="_blank" rel="noopener noreferrer"><span class="pt-logo"><img src="assets/img/partners/hacomono-logo.png" alt="hacomono" width="900" height="189" loading="lazy" /></span><span class="pt-cap">予約・決済システム</span></a></li>
+      <li><a class="pt-tile" href="https://www.trxtraining.jp/" target="_blank" rel="noopener noreferrer"><span class="pt-logo"><img src="assets/img/partners/trx-mark.png" alt="TRX" width="359" height="360" loading="lazy" /></span><span class="pt-cap">トレーニング器具</span></a></li>
+      <li><a class="pt-tile" href="https://bellregal.com/" target="_blank" rel="noopener noreferrer"><span class="pt-logo pt-logo--legal"><img src="assets/logo-legal.png" alt="" loading="lazy" /><span class="pt-word">べるリーガル</span></span><span class="pt-cap">グループ／行政書士</span></a></li>
+      <li><span class="pt-tile pt-tile--static"><span class="pt-logo"><span class="pt-word">株式会社モンド</span></span><span class="pt-cap">グループ／配送・整理</span></span></li>
+      <li><a class="pt-tile" href="https://vchachioji.jimdofree.com/" target="_blank" rel="noopener noreferrer"><span class="pt-logo"><span class="pt-word">バラエティクラブ</span></span><span class="pt-cap">グループ／NPO法人</span></a></li>
+    </ul>
+    <p class="pt-more"><a href="partners/">連携先について、くわしく見る</a></p>
+  </div>
+</section>
+
 <!-- ===================== rv-02 COVERAGE ===================== -->
 <section class="band-paper sec-pad" id="coverage" aria-labelledby="cov-title">
   <div class="wrap">
@@ -1219,6 +1256,7 @@
         <li><a href="#cases">改善事例</a></li>
         <li><a href="about/#company">会社情報</a></li>
         <li><a href="news/">お知らせ</a></li>
+        <li><a href="partners/">連携先</a></li>
       </ul>
     </div>
     <div class="footer-col">
