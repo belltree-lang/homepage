@@ -590,6 +590,7 @@ def footer_html(prefix: str) -> str:
         <li><a href="{prefix}team/">スタッフ紹介</a></li>
         <li><a href="{prefix}recruit/">採用情報</a></li>
         <li><a href="{prefix}news/">お知らせ</a></li>
+        <li><a href="{prefix}partners/">連携先</a></li>
       </ul>
     </div>
     <div class="footer-col">
