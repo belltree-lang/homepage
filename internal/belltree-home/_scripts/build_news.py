@@ -637,7 +637,7 @@ def head_html(prefix: str, title: str, description: str, canonical: str,
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQRJ45S3V3"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-RQRJ45S3V3');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}if (/^(www\\.)?belltree1102\\.com$/.test(location.hostname)) {{gtag('js',new Date());gtag('config','G-RQRJ45S3V3');}}</script>
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}" />
 <link rel="canonical" href="{canonical}" />
