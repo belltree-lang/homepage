@@ -6,8 +6,23 @@
 const BELLTREE_FORM_CONFIG = {
   // Configurable placeholder for the Google Apps Script Web App URL
   gasEndpoint: "https://script.google.com/macros/s/AKfycbxGscrnn3F6USh7baej3inWP0WYREab4DrU3779tfn1TVYH3QRYj7McYLraF7QPDHAAtg/exec",
-  adminEmail: "belltree@belltree1102.com"
+  adminEmail: "belltree@belltree1102.com",
+  // ページを通った送信であることの印を作るための合鍵。公開JSに載るので秘密ではない。
+  // 目的は、ページを開かずに GAS の URL へ直接POSTしてくる送信を見分けること。
+  formKey: "3f5c042d71f4d55dd5f7773c6c4f3be4"
 };
+
+// 送信のたびに「時刻:フォーム種別:合鍵」の SHA-256 を作って添える。
+// GAS 側が同じ計算をして照合し、合わない送信は台帳から外す。
+async function belltreeSignSubmission(formType) {
+  const ts = String(Date.now());
+  const msg = ts + ':' + (formType || '') + ':' + BELLTREE_FORM_CONFIG.formKey;
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  const sig = Array.from(new Uint8Array(digest))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
+  return { ts, sig };
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('form[data-form-type]');
@@ -49,10 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const formData = new FormData(form);
-      formData.append('formType', form.getAttribute('data-form-type'));
-      const urlEncodedData = new URLSearchParams(formData).toString();
+      const formType = form.getAttribute('data-form-type');
+      formData.append('formType', formType);
 
       try {
+        // ページを通った送信であることの印。印の無い送信は GAS 側で台帳から外す
+        const stamp = await belltreeSignSubmission(formType);
+        formData.append('__ts', stamp.ts);
+        formData.append('__sig', stamp.sig);
+        const urlEncodedData = new URLSearchParams(formData).toString();
+
         // Use application/x-www-form-urlencoded to integrate with GAS doPost parameters natively
         const response = await fetch(BELLTREE_FORM_CONFIG.gasEndpoint, {
           method: 'POST',
