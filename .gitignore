@@ -11,3 +11,8 @@ tasks/
 
 # Python の実行キャッシュ（_scripts/ を走らせると出る）
 __pycache__/
+
+# Local credentials and generated deployment output
+.env*
+.dev.vars
+_site/

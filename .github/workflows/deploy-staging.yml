@@ -1,48 +1,15 @@
-name: Deploy to Staging (/test/)
+name: Staging deployment disabled (B5)
 
+# Retained as an inert workflow so even manual dispatch cannot republish /test/.
+# Apply this change to staging too; disable the old workflow in GitHub after GO.
 on:
-  push:
-    branches:
-      - staging
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
-  staging-deploy:
-    name: 🎉 Deploy to /test/
+  staging-disabled:
+    if: ${{ false }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: 📂 Sync files to staging
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          server-dir: test/
-          # _articles/ と _scripts/ は必ず除外する。
-          # _articles/ には draft: true の未公開原稿が入っており、
-          # ここを外すと配布月の来ていない記事がそのまま配信される。
-          # （*.md はルート直下しか当たらないので別に書く必要がある）
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            .github/**
-            governance/**
-            tasks/**
-            reports/**
-            scripts/**
-            docs/**
-            *.md
-            lolipop_staging/**
-            internal/**
-            templates/**
-            _archive/**
-            **/_articles/**
-            **/_scripts/**
+      - run: echo "The /test/ deployment has been retired."

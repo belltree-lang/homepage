@@ -13,6 +13,8 @@ on:
     paths:
       - 'internal/belltree-home/**'
       - '.github/workflows/deploy-belltree-pages.yml'
+      - 'scripts/assemble_belltree_site.py'
+      - 'scripts/test_security_publish.py'
   workflow_dispatch:
 
 permissions:
@@ -34,19 +36,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check publish boundaries
+        run: python -m unittest discover -s scripts -p test_security_publish.py -v
+
       - name: Assemble publish directory
-        run: |
-          rm -rf _site
-          mkdir -p _site
-          rsync -a \
-            --exclude='*.md' \
-            --exclude='*.py' \
-            --exclude='PROMPT-*.txt' \
-            --exclude='_scripts/' \
-            --exclude='_articles/' \
-            internal/belltree-home/ _site/
-          echo "---- published top-level ----"
-          ls -1 _site
+        run: python scripts/assemble_belltree_site.py --target github
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

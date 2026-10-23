@@ -1,0 +1,70 @@
+name: Remove retired Lolipop test directory (GO required)
+
+# Separate from ftp-cleanup.yml: no WordPress or production-root changes.
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'After representative GO, enter DELETE_TEST to remove bellmfit.com/test/'
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: lolipop-test-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup-test:
+    if: ${{ github.ref == 'refs/heads/main' && inputs.confirmation == 'DELETE_TEST' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: lolipop-test-cleanup
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Remove only test under the existing FTP login directory
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        shell: python
+        run: |
+          import os
+          import re
+          import subprocess
+
+          # Require the same hostname used by FTP deployment; never accept a path.
+          server = os.environ['FTP_SERVER']
+          if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9.-]*', server):
+              raise SystemExit('FTP_SERVER must be a hostname without a scheme or path.')
+
+          def quote(value):
+              if not value or any(c in value for c in '\r\n\x00'):
+                  raise SystemExit('Invalid FTP credential format.')
+              return '"' + value.replace('\\', '\\\\').replace('"', '\\"').replace('$', '\\$').replace('`', '\\`') + '"'
+
+          commands = '\n'.join([
+              'set cmd:fail-exit yes',
+              'set net:max-retries 1',
+              'set net:timeout 20',
+              'set ftp:ssl-force yes',
+              'set ftp:ssl-protect-data yes',
+              'set ssl:verify-certificate yes',
+              'open -u ' + quote(os.environ['FTP_USERNAME']) + ',' + quote(os.environ['FTP_PASSWORD']) + ' ftp://' + server,
+              # Fixed relative target; never accept a path input or change directory.
+              'rm -r test',
+              'bye',
+          ])
+          # No credentials in argv, no remote listings, no URL-bearing diagnostics.
+          try:
+              result = subprocess.run(['lftp'], input=commands, text=True,
+                                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                      timeout=240)
+          except subprocess.TimeoutExpired:
+              raise SystemExit('FTPS cleanup timed out; verify /test/ after GO.')
+          if result.returncode:
+              raise SystemExit('FTPS cleanup failed; verify credentials, TLS and the test directory after GO.')
+          print('Removed test directory. Verify /test/ returns 404/410 after this run.')
