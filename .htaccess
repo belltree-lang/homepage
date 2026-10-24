@@ -37,7 +37,7 @@ RewriteRule ^home(/|$) https://bellmfit.com/ [R=301,L,NC]
 # 受け皿のある8件だけ301で拾う。/7172-2/ やカテゴリ・日付アーカイブは404のまま落とす。
 
 # 旧鍼灸ブログ /shinkyu/ 配下ぜんぶ → 訪問鍼灸マッサージのページ
-RewriteRule ^shinkyu(/|$) https://belltree1102.com/services/home-care/ [R=301,L,NC]
+RewriteRule ^shinkyu(/|$) https://belltree1102.com/services/home-visit/ [R=301,L,NC]
 
 # /通所フィットネス/ → リーフ（%E9%80%9A%E6%89%80... = 通所フィットネス）
 RewriteCond %{THE_REQUEST} \s/%E9%80%9A%E6%89%80%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9/?[\s?] [NC]
